@@ -1,5 +1,4 @@
 import os
-import logging
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
 
@@ -31,10 +30,10 @@ def log_all_projects_info():
     with ThreadPoolExecutor() as executor:
         executor.map(project_info, project_ids, [True] * len(project_ids))
 
+
 def show_all_projects_info():
     """ Just show information about all projects """
     with ThreadPoolExecutor() as executor:
-        executor.map(project_info, project_ids)
         results = executor.map(project_info, project_ids)
         for res in results:
             print(f'{res[0]}, {res[1]}')
