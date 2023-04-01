@@ -24,6 +24,8 @@ def checkout_version(pid, vid, fixed=False):
 
 
 def checkout_all_projects():
+    """ Before checking out all projects, ensure that 
+        there is approximately 20GB of free space to generate a working directory."""
     bugs_number = {'Chart': 26, 'Cli': 40, 'Closure': 176, 'Codec': 18, 'Collections': 28, 'Compress': 47, 'Csv': 16, 
                   'Gson': 18, 'JacksonCore': 26, 'JacksonDatabind': 112, 'JacksonXml': 6, 'Jsoup': 93, 'JxPath': 22, 
                   'Lang': 65, 'Math': 106, 'Mockito': 38, 'Time': 27}
