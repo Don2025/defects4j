@@ -16,7 +16,7 @@ def checkout_version(pid, vid, fixed=False):
     cmd = f'defects4j checkout -p {pid} -v {vid}{version[0]} -w {work_dir}'
     try:
         with open(log_file_path, 'w') as log_file:
-            process  = subprocess.Popen(cmd, shell=True, cwd=defects4j_dir, stdout=log_file, stderr=subprocess.STDOUT)
+            process  = subprocess.Popen(cmd, shell=True, executable='/bin/bash', cwd=defects4j_dir, stdout=log_file, stderr=subprocess.STDOUT)
             process.wait()
         print(f'Checkout {pid}-{vid}_{version} success.')
     except subprocess.CalledProcessError as e:
@@ -30,8 +30,8 @@ def checkout_all_projects():
     with ThreadPoolExecutor() as executor:
         for pid in project_ids:
             vid_cnt = bugs_number.get(pid, 0)
-            executor.map(checkout_version, [pid]*vid_cnt, range(1, vid+1))
-            executor.map(checkout_version, [pid]*vid_cnt, range(1, vid+1), [True]*vid_cnt)
+            executor.map(checkout_version, [pid]*vid_cnt, range(1, vid_cnt+1))
+            executor.map(checkout_version, [pid]*vid_cnt, range(1, vid_cnt+1), [True]*vid_cnt)
 
 if __name__ == '__main__':
-	checkout_all_projects()
+    checkout_all_projects()

@@ -15,10 +15,10 @@ def project_info(pid, save=False):
         os.makedirs(log_dir, exist_ok=True)
         log_file = os.path.join(log_dir, f'{pid}-Info.log')
         with open(log_file, 'w') as f:
-            process = subprocess.Popen(query, shell=True, cwd=defects4j_dir, stdout=f, stderr=subprocess.STDOUT)
+            process = subprocess.Popen(query, shell=True, executable='/bin/bash', cwd=defects4j_dir, stdout=f, stderr=subprocess.STDOUT)
             process.wait()
     else:
-        process = subprocess.Popen(query, shell=True, cwd=defects4j_dir, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        process = subprocess.Popen(query, shell=True, executable='/bin/bash', cwd=defects4j_dir, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         with process.stdout:
             output = process.stdout.read().decode()
             return pid, output
