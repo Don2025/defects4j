@@ -19,8 +19,8 @@ def compile_and_test(pid, lock):
     for subfolder in subfolders:
         if subfolder.is_dir():
             log_file_path = os.path.join(log_dir, f'{subfolder.name}-test.log')
-            log_file = open(log_file_path, 'w')
             lock.acquire()
+            log_file = open(log_file_path, 'w')
             print(f'Compiling {subfolder.path}...')
             log_file.write(f'Compiling {subfolder.path}...\n')
 
@@ -35,8 +35,8 @@ def compile_and_test(pid, lock):
                 stdout_data, stderr_data = proc2.communicate()
                 print(stdout_data.decode('utf-8'))
                 log_file.write(stdout_data.decode('utf-8')+'\n')                
-            lock.release()
             log_file.close()
+            lock.release()
 
 
 def test_all_projects():

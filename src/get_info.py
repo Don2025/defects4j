@@ -16,7 +16,7 @@ def project_info(pid, save=False):
         log_file_path = os.path.join(log_dir, f'{pid}-Info.log')
         with open(log_file_path, 'w') as log_file:
             process = subprocess.Popen(query, shell=True, executable='/bin/bash', cwd=defects4j_dir, stdout=log_file, stderr=subprocess.STDOUT)
-            process.wait()
+        process.wait()
     else:
         process = subprocess.Popen(query, shell=True, executable='/bin/bash', cwd=defects4j_dir, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         with process.stdout:
