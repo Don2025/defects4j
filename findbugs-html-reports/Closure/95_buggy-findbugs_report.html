@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Closure/95_buggy/build/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>1360 lines of code analyzed,
+	in 14 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">2.94</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right" />
+<td align="right">0.00</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>4</b>
+</td>
+<td align="right">
+<b>2.94</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>4</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.FunctionInformationMap$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionInformationMap$Builder<br />In method com.google.javascript.jscomp.FunctionInformationMap$Builder.clone()<br />At FunctionInformationMap.java:[line 1068]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65602');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65602" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder<br />In method com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder.clone()<br />At FunctionInformationMap.java:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65656');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.FunctionInformationMap$Module$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65656" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionInformationMap$Module$Builder<br />In method com.google.javascript.jscomp.FunctionInformationMap$Module$Builder.clone()<br />At FunctionInformationMap.java:[line 750]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65710');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.Instrumentation$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65710" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.Instrumentation$Builder<br />In method com.google.javascript.jscomp.Instrumentation$Builder.clone()<br />At Instrumentation.java:[line 260]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE: Class defines clone() but doesn't implement Cloneable</a>
+</h2>
+
+<p> This class defines a clone() method but the class doesn't implement Cloneable.
+There are some situations in which this is OK (e.g., you want to control how subclasses
+can clone themselves), but just make sure that this is what you intended.
+</p>
+
+    </body>
+</html>

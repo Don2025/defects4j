@@ -1,0 +1,1944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>JxPath/20_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>11637 lines of code analyzed,
+	in 187 classes, 
+	in 16 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">0.34</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">93</td>
+<td align="right">7.99</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>97</b>
+</td>
+<td align="right">
+<b>8.34</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">42</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">17</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">20</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>97</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71566');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer defines compareTo(Object) and uses Object.equals()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71566" style="display: none;">
+<a href="#EQ_COMPARETO_USE_OBJECT_EQUALS">Bug type EQ_COMPARETO_USE_OBJECT_EQUALS (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer<br />In method org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer.compareTo(Object)<br />At BasicTypeConverter.java:[line 540]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68043');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.TokenMgrError.LexicalError(boolean, int, int, int, String, char) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68043" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.TokenMgrError<br />In method org.apache.commons.jxpath.ri.parser.TokenMgrError.LexicalError(boolean, int, int, int, String, char)<br />At TokenMgrError.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68096');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.AbbreviatedAxisSpecifier() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68096" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.AbbreviatedAxisSpecifier()<br />At XPathParser.java:[lines 894-904]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68149');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.AbsoluteLocationPath() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68149" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.AbsoluteLocationPath()<br />At XPathParser.java:[lines 522-549]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68202');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.AdditiveExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68202" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.AdditiveExpr()<br />At XPathParser.java:[lines 1462-1485]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68255');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.AndExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68255" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.AndExpr()<br />At XPathParser.java:[lines 1343-1366]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68308');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.Argument() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68308" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.Argument()<br />At XPathParser.java:[lines 1144-1145]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68361');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.ArgumentList() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68361" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.ArgumentList()<br />At XPathParser.java:[lines 1047-1137]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68414');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.AxisName() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68414" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.AxisName()<br />At XPathParser.java:[lines 808-867]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68467');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.AxisSpecifier() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68467" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.AxisSpecifier()<br />At XPathParser.java:[lines 775-795]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68520');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.CoreFunctionCall() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68520" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.CoreFunctionCall()<br />At XPathParser.java:[lines 1033-1041]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68573');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.CoreFunctionName() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68573" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.CoreFunctionName()<br />At XPathParser.java:[lines 180-310]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68626');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.EqualityExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68626" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.EqualityExpr()<br />At XPathParser.java:[lines 1373-1402]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68679');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.Expression() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68679" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.Expression()<br />At XPathParser.java:[lines 929-930]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68732');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.FilterExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68732" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.FilterExpr()<br />At XPathParser.java:[lines 1265-1301]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68785');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.FunctionCall() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68785" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.FunctionCall()<br />At XPathParser.java:[lines 1021-1027]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68838');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.FunctionName() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68838" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.FunctionName()<br />At XPathParser.java:[lines 1672-1673]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68891');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.LocationPath() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68891" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.LocationPath()<br />At XPathParser.java:[lines 445-515]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68944');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.LocationStep(ArrayList) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68944" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.LocationStep(ArrayList)<br />At XPathParser.java:[lines 586-602]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68997');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.MultiplicativeExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68997" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.MultiplicativeExpr()<br />At XPathParser.java:[lines 1514-1549]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69050');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.NodeTest(ArrayList) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69050" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.NodeTest(ArrayList)<br />At XPathParser.java:[lines 607-770]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69103');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.NodeType() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69103" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.NodeType()<br />At XPathParser.java:[lines 1815-1837]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69156');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.OrExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69156" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.OrExpr()<br />At XPathParser.java:[lines 1313-1336]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69209');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.PathExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69209" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.PathExpr()<br />At XPathParser.java:[lines 1185-1258]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69262');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.Predicate() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69262" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.Predicate()<br />At XPathParser.java:[lines 883-886]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69315');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.PrimaryExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69315" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.PrimaryExpr()<br />At XPathParser.java:[lines 936-1009]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69368');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.ReInit(InputStream) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69368" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.ReInit(InputStream)<br />At XPathParser.java:[lines 3120-3127]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69421');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.ReInit(Reader) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69421" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.ReInit(Reader)<br />At XPathParser.java:[lines 3140-3147]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69474');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.ReInit(XPathParserTokenManager) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69474" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.ReInit(XPathParserTokenManager)<br />At XPathParser.java:[lines 3159-3165]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69527');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.RelationalExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69527" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.RelationalExpr()<br />At XPathParser.java:[lines 1410-1451]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69580');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.RelativeLocationPath() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69580" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.RelativeLocationPath()<br />At XPathParser.java:[lines 555-570]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69633');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.SubtractiveExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69633" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.SubtractiveExpr()<br />At XPathParser.java:[lines 1490-1506]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69686');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.UnaryExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69686" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.UnaryExpr()<br />At XPathParser.java:[lines 1556-1632]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69739');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.UnionExpr() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69739" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.UnionExpr()<br />At XPathParser.java:[lines 1156-1179]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69792');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.VariableReference() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69792" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.VariableReference()<br />At XPathParser.java:[lines 1680-1682]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69845');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParser.WildcardName() doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69845" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.WildcardName()<br />At XPathParser.java:[lines 1689-1808]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70166');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.ReInit(SimpleCharStream) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70166" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserTokenManager<br />In method org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.ReInit(SimpleCharStream)<br />At XPathParserTokenManager.java:[lines 1772-1776]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70219');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.ReInit(SimpleCharStream, int) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70219" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserTokenManager<br />In method org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.ReInit(SimpleCharStream, int)<br />At XPathParserTokenManager.java:[lines 1786-1788]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70272');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>The method name org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.SwitchTo(int) doesn't start with a lower case letter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70272" style="display: none;">
+<a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserTokenManager<br />In method org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.SwitchTo(int)<br />At XPathParserTokenManager.java:[lines 1791-1795]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67116');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer defines non-transient non-serializable instance field attr</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67116" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer<br />Field org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer.attr<br />Actual type org.w3c.dom.Attr<br />In DOMAttributePointer.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67174');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.apache.commons.jxpath.ri.model.dom.DOMNodePointer defines non-transient non-serializable instance field node</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67174" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.dom.DOMNodePointer<br />Field org.apache.commons.jxpath.ri.model.dom.DOMNodePointer.node<br />Actual type org.w3c.dom.Node<br />In DOMNodePointer.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67422');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer defines non-transient non-serializable instance field handler</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67422" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer<br />Field org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer.handler<br />Actual type org.apache.commons.jxpath.DynamicPropertyHandler<br />In DynamicPropertyPointer.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67047');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.jxpath.ri.model.beans.NullElementPointer overrides equals in CollectionPointer and may not be symmetric</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67047" style="display: none;">
+<a href="#EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC">Bug type EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.beans.NullElementPointer<br />In method org.apache.commons.jxpath.ri.model.beans.NullElementPointer.equals(Object)<br />Overrides org.apache.commons.jxpath.ri.model.beans.CollectionPointer.equals(Object)<br />At NullElementPointer.java:[lines 106-115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65751');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of JXPathBasicBeanInfo.propertyDescriptors in org.apache.commons.jxpath.JXPathBasicBeanInfo.getPropertyDescriptors() on exception path</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65751" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH_EXCEPTION">Bug type NP_NULL_ON_SOME_PATH_EXCEPTION (click for details)</a>
+<br />In class org.apache.commons.jxpath.JXPathBasicBeanInfo<br />In method org.apache.commons.jxpath.JXPathBasicBeanInfo.getPropertyDescriptors()<br />Value contained in org.apache.commons.jxpath.JXPathBasicBeanInfo.propertyDescriptors<br />Dereferenced at JXPathBasicBeanInfo.java:[line 126]<br />Null value at JXPathBasicBeanInfo.java:[line 102]<br />Known null at JXPathBasicBeanInfo.java:[line 121]<br />Known null at JXPathBasicBeanInfo.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66067');">
+<td>
+<span class="priority-1">RpC</span>
+</td>
+<td>Repeated conditional test in org.apache.commons.jxpath.ri.InfoSetUtil.booleanValue(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66067" style="display: none;">
+<a href="#RpC_REPEATED_CONDITIONAL_TEST">Bug type RpC_REPEATED_CONDITIONAL_TEST (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.InfoSetUtil<br />In method org.apache.commons.jxpath.ri.InfoSetUtil.booleanValue(Object)<br />At InfoSetUtil.java:[line 140]<br />At InfoSetUtil.java:[line 140]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65998');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.jxpath.JXPathContextFactory.findFactory(String, String): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65998" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.jxpath.JXPathContextFactory<br />In method org.apache.commons.jxpath.JXPathContextFactory.findFactory(String, String)<br />Called method new java.io.InputStreamReader(InputStream)<br />At JXPathContextFactory.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67756');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in new org.apache.commons.jxpath.ri.parser.SimpleCharStream(InputStream, int, int, int): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67756" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.SimpleCharStream<br />In method new org.apache.commons.jxpath.ri.parser.SimpleCharStream(InputStream, int, int, int)<br />Called method new java.io.InputStreamReader(InputStream)<br />At SimpleCharStream.java:[line 292]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67825');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.jxpath.ri.parser.SimpleCharStream.ReInit(InputStream, int, int, int): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67825" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.SimpleCharStream<br />In method org.apache.commons.jxpath.ri.parser.SimpleCharStream.ReInit(InputStream, int, int, int)<br />Called method new java.io.InputStreamReader(InputStream)<br />At SimpleCharStream.java:[line 309]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65683');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.JXPathBasicBeanInfo.getPropertyDescriptors() may expose internal representation by returning JXPathBasicBeanInfo.propertyDescriptors</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65683" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.JXPathBasicBeanInfo<br />In method org.apache.commons.jxpath.JXPathBasicBeanInfo.getPropertyDescriptors()<br />Field org.apache.commons.jxpath.JXPathBasicBeanInfo.propertyDescriptors<br />At JXPathBasicBeanInfo.java:[line 127]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66482');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.compiler.ExpressionPath.getPredicates() may expose internal representation by returning ExpressionPath.predicates</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66482" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.ExpressionPath<br />In method org.apache.commons.jxpath.ri.compiler.ExpressionPath.getPredicates()<br />Field org.apache.commons.jxpath.ri.compiler.ExpressionPath.predicates<br />At ExpressionPath.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66625');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.compiler.Operation.getArguments() may expose internal representation by returning Operation.args</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66625" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.Operation<br />In method org.apache.commons.jxpath.ri.compiler.Operation.getArguments()<br />Field org.apache.commons.jxpath.ri.compiler.Operation.args<br />At Operation.java:[line 41]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66768');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.compiler.Path.getSteps() may expose internal representation by returning Path.steps</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66768" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.Path<br />In method org.apache.commons.jxpath.ri.compiler.Path.getSteps()<br />Field org.apache.commons.jxpath.ri.compiler.Path.steps<br />At Path.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66911');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.compiler.Step.getPredicates() may expose internal representation by returning Step.predicates</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66911" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.Step<br />In method org.apache.commons.jxpath.ri.compiler.Step.getPredicates()<br />Field org.apache.commons.jxpath.ri.compiler.Step.predicates<br />At Step.java:[line 63]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66979');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer.getPropertyNames() may expose internal representation by returning BeanPropertyPointer.names</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66979" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer<br />In method org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer.getPropertyNames()<br />Field org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer.names<br />At BeanPropertyPointer.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67232');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer.getPropertyNames() may expose internal representation by returning DynaBeanPropertyPointer.names</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67232" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer<br />In method org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer.getPropertyNames()<br />Field org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer.names<br />At DynaBeanPropertyPointer.java:[line 88]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67354');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer.getPropertyNames() may expose internal representation by returning DynamicPropertyPointer.names</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67354" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer<br />In method org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer.getPropertyNames()<br />Field org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer.names<br />At DynamicPropertyPointer.java:[line 96]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66322');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.jxpath.ri.axes.UnionContext(EvalContext, EvalContext[]) may expose internal representation by storing an externally mutable object into UnionContext.contexts</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66322" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.axes.UnionContext<br />In method new org.apache.commons.jxpath.ri.axes.UnionContext(EvalContext, EvalContext[])<br />Field org.apache.commons.jxpath.ri.axes.UnionContext.contexts<br />Local variable named contexts<br />At UnionContext.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66550');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.jxpath.ri.compiler.ExpressionPath(Expression, Expression[], Step[]) may expose internal representation by storing an externally mutable object into ExpressionPath.predicates</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66550" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.ExpressionPath<br />In method new org.apache.commons.jxpath.ri.compiler.ExpressionPath(Expression, Expression[], Step[])<br />Field org.apache.commons.jxpath.ri.compiler.ExpressionPath.predicates<br />Local variable named predicates<br />At ExpressionPath.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66693');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.jxpath.ri.compiler.Operation(Expression[]) may expose internal representation by storing an externally mutable object into Operation.args</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66693" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.Operation<br />In method new org.apache.commons.jxpath.ri.compiler.Operation(Expression[])<br />Field org.apache.commons.jxpath.ri.compiler.Operation.args<br />Local variable named args<br />At Operation.java:[line 33]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66836');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.jxpath.ri.compiler.Path(Step[]) may expose internal representation by storing an externally mutable object into Path.steps</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66836" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.Path<br />In method new org.apache.commons.jxpath.ri.compiler.Path(Step[])<br />Field org.apache.commons.jxpath.ri.compiler.Path.steps<br />Local variable named steps<br />At Path.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67553');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.jxpath.ri.parser.ParseException(Token, int[][], String[]) may expose internal representation by storing an externally mutable object into ParseException.expectedTokenSequences</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67553" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.ParseException<br />In method new org.apache.commons.jxpath.ri.parser.ParseException(Token, int[][], String[])<br />Field org.apache.commons.jxpath.ri.parser.ParseException.expectedTokenSequences<br />Local variable named expectedTokenSequencesVal<br />At ParseException.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67628');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.jxpath.ri.parser.ParseException(Token, int[][], String[]) may expose internal representation by storing an externally mutable object into ParseException.tokenImage</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67628" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.ParseException<br />In method new org.apache.commons.jxpath.ri.parser.ParseException(Token, int[][], String[])<br />Field org.apache.commons.jxpath.ri.parser.ParseException.tokenImage<br />Local variable named tokenImageVal<br />At ParseException.java:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66130');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static org.apache.commons.jxpath.ri.JXPathContextReferenceImpl.getNodePointerFactories() may expose internal representation by returning JXPathContextReferenceImpl.nodeFactoryArray</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66130" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.JXPathContextReferenceImpl<br />In method org.apache.commons.jxpath.ri.JXPathContextReferenceImpl.getNodePointerFactories()<br />Field org.apache.commons.jxpath.ri.JXPathContextReferenceImpl.nodeFactoryArray<br />At JXPathContextReferenceImpl.java:[line 153]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69998');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.jxpath.ri.parser.XPathParserConstants.tokenImage should be moved out of an interface and made package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69998" style="display: none;">
+<a href="#MS_OOI_PKGPROTECT">Bug type MS_OOI_PKGPROTECT (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserConstants<br />Field org.apache.commons.jxpath.ri.parser.XPathParserConstants.tokenImage<br />At XPathParserConstants.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70114');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.jjstrLiteralImages should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70114" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserTokenManager<br />Field org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.jjstrLiteralImages<br />At XPathParserTokenManager.java:[line 1724]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.jxpath.FunctionLibrary.byNamespace; locked 75% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.jxpath.FunctionLibrary<br />Field org.apache.commons.jxpath.FunctionLibrary.byNamespace<br />Synchronized 75% of the time<br />Unsynchronized access at FunctionLibrary.java:[line 45]<br />Unsynchronized access at FunctionLibrary.java:[line 54]<br />Synchronized access at FunctionLibrary.java:[line 104]<br />Synchronized access at FunctionLibrary.java:[line 126]<br />Synchronized access at FunctionLibrary.java:[line 105]<br />Synchronized access at FunctionLibrary.java:[line 112]<br />Synchronized access at FunctionLibrary.java:[line 114]<br />Synchronized access at FunctionLibrary.java:[line 119]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66198');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.jxpath.ri.NamespaceResolver.pointer; locked 50% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66198" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.NamespaceResolver<br />Field org.apache.commons.jxpath.ri.NamespaceResolver.pointer<br />Synchronized 50% of the time<br />Unsynchronized access at NamespaceResolver.java:[line 114]<br />Unsynchronized access at NamespaceResolver.java:[line 117]<br />Unsynchronized access at NamespaceResolver.java:[line 106]<br />Synchronized access at NamespaceResolver.java:[line 157]<br />Synchronized access at NamespaceResolver.java:[line 157]<br />Synchronized access at NamespaceResolver.java:[line 132]<br />Synchronized access at NamespaceResolver.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65860');">
+<td>
+<span class="priority-2">LI</span>
+</td>
+<td>Incorrect lazy initialization of static field org.apache.commons.jxpath.JXPathContext.compilationContext in org.apache.commons.jxpath.JXPathContext.compile(String)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65860" style="display: none;">
+<a href="#LI_LAZY_INIT_STATIC">Bug type LI_LAZY_INIT_STATIC (click for details)</a>
+<br />In class org.apache.commons.jxpath.JXPathContext<br />In method org.apache.commons.jxpath.JXPathContext.compile(String)<br />On field org.apache.commons.jxpath.JXPathContext.compilationContext<br />At JXPathContext.java:[lines 649-650]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65929');">
+<td>
+<span class="priority-2">LI</span>
+</td>
+<td>Incorrect lazy initialization of static field org.apache.commons.jxpath.JXPathContext.contextFactory in org.apache.commons.jxpath.JXPathContext.getContextFactory()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65929" style="display: none;">
+<a href="#LI_LAZY_INIT_STATIC">Bug type LI_LAZY_INIT_STATIC (click for details)</a>
+<br />In class org.apache.commons.jxpath.JXPathContext<br />In method org.apache.commons.jxpath.JXPathContext.getContextFactory()<br />On field org.apache.commons.jxpath.JXPathContext.contextFactory<br />At JXPathContext.java:[lines 438-439]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66397');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.ri.compiler.CoreFunction.functionPosition(EvalContext) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66397" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.compiler.CoreFunction<br />In method org.apache.commons.jxpath.ri.compiler.CoreFunction.functionPosition(EvalContext)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At CoreFunction.java:[line 344]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70376');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double) invokes inefficient new Byte(byte) constructor; use Byte.valueOf(byte) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70376" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double)<br />Called method new Byte(byte)<br />Should call Byte.valueOf(byte) instead<br />At BasicTypeConverter.java:[line 358]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70461');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70461" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At BasicTypeConverter.java:[line 364]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70546');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70546" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At BasicTypeConverter.java:[line 367]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70631');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double) invokes inefficient new Short(short) constructor; use Short.valueOf(short) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70631" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.allocateNumber(Class, double)<br />Called method new Short(short)<br />Should call Short.valueOf(short) instead<br />At BasicTypeConverter.java:[line 361]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70716');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class) invokes inefficient new Byte(byte) constructor; use Byte.valueOf(byte) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70716" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class)<br />Called method new Byte(byte)<br />Should call Byte.valueOf(byte) instead<br />At BasicTypeConverter.java:[line 294]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70801');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70801" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At BasicTypeConverter.java:[line 291]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70886');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70886" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At BasicTypeConverter.java:[line 300]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70971');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70971" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At BasicTypeConverter.java:[line 303]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71056');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class) invokes inefficient new Short(short) constructor; use Short.valueOf(short) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71056" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertNullToPrimitive(Class)<br />Called method new Short(short)<br />Should call Short.valueOf(short) instead<br />At BasicTypeConverter.java:[line 297]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71141');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class) invokes inefficient new Byte(String) constructor; use Byte.valueOf(String) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71141" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class)<br />Called method new Byte(String)<br />Should call Byte.valueOf(String) instead<br />At BasicTypeConverter.java:[line 329]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71226');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71226" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At BasicTypeConverter.java:[line 326]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71311');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class) invokes inefficient new Integer(String) constructor; use Integer.valueOf(String) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71311" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class)<br />Called method new Integer(String)<br />Should call Integer.valueOf(String) instead<br />At BasicTypeConverter.java:[line 335]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71396');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class) invokes inefficient new Long(String) constructor; use Long.valueOf(String) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71396" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class)<br />Called method new Long(String)<br />Should call Long.valueOf(String) instead<br />At BasicTypeConverter.java:[line 338]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71481');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class) invokes inefficient new Short(String) constructor; use Short.valueOf(String) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71481" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.BasicTypeConverter<br />In method org.apache.commons.jxpath.util.BasicTypeConverter.convertStringToPrimitive(Object, Class)<br />Called method new Short(String)<br />Should call Short.valueOf(String) instead<br />At BasicTypeConverter.java:[line 332]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71619');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.ValueUtils.getIndexedPropertyLength(Object, IndexedPropertyDescriptor) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71619" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.ValueUtils<br />In method org.apache.commons.jxpath.util.ValueUtils.getIndexedPropertyLength(Object, IndexedPropertyDescriptor)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At ValueUtils.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71704');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.ValueUtils.getValue(Object, PropertyDescriptor, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71704" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.ValueUtils<br />In method org.apache.commons.jxpath.util.ValueUtils.getValue(Object, PropertyDescriptor, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At ValueUtils.java:[line 444]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71789');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.jxpath.util.ValueUtils.setValue(Object, PropertyDescriptor, int, Object) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71789" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.jxpath.util.ValueUtils<br />In method org.apache.commons.jxpath.util.ValueUtils.setValue(Object, PropertyDescriptor, int, Object)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At ValueUtils.java:[line 487]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67703');">
+<td>
+<span class="priority-2">SBSC</span>
+</td>
+<td>org.apache.commons.jxpath.ri.parser.ParseException.getMessage() concatenates strings using + in a loop</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67703" style="display: none;">
+<a href="#SBSC_USE_STRINGBUFFER_CONCATENATION">Bug type SBSC_USE_STRINGBUFFER_CONCATENATION (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.ParseException<br />In method org.apache.commons.jxpath.ri.parser.ParseException.getMessage()<br />At ParseException.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69951');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: org.apache.commons.jxpath.ri.parser.XPathParser.jj_semLA</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69951" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />Field org.apache.commons.jxpath.ri.parser.XPathParser.jj_semLA<br />In XPathParser.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67480');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to name in org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer.getRelativePositionByQName()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67480" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer<br />In method org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer.getRelativePositionByQName()<br />Local variable named name<br />At JDOMNodePointer.java:[line 693]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70050');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to active1 in org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.jjMoveStringLiteralDfa15_0(long, long, long, long)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70050" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserTokenManager<br />In method org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.jjMoveStringLiteralDfa15_0(long, long, long, long)<br />Local variable named active1<br />At XPathParserTokenManager.java:[line 1115]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67300');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer doesn't override DynaBeanPointer.equals(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67300" style="display: none;">
+<a href="#EQ_DOESNT_OVERRIDE_EQUALS">Bug type EQ_DOESNT_OVERRIDE_EQUALS (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer<br />At StrictLazyDynaBeanPointerFactory.java:[line 1]<br />Did you intend to override org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPointer.equals(Object)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69898');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.jxpath.ri.parser.XPathParser.jj_rescan_token() where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69898" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParser<br />In method org.apache.commons.jxpath.ri.parser.XPathParser.jj_rescan_token()<br />At XPathParser.java:[lines 3319-3325]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67894');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: org.apache.commons.jxpath.ri.parser.Token.endColumn</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67894" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.Token<br />Field org.apache.commons.jxpath.ri.parser.Token.endColumn<br />At XPathParserTokenManager.java:[line 1806]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67945');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: org.apache.commons.jxpath.ri.parser.Token.endLine</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67945" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.Token<br />Field org.apache.commons.jxpath.ri.parser.Token.endLine<br />At XPathParserTokenManager.java:[line 1805]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70325');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.debugStream</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70325" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.XPathParserTokenManager<br />Field org.apache.commons.jxpath.ri.parser.XPathParserTokenManager.debugStream<br />At XPathParserTokenManager.java:[line 9]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67996');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused public or protected field: org.apache.commons.jxpath.ri.parser.Token.specialToken</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67996" style="display: none;">
+<a href="#UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD">Bug type UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.jxpath.ri.parser.Token<br />Field org.apache.commons.jxpath.ri.parser.Token.specialToken<br />In Token.java</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_NUMBER_CTOR">DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead</a>
+</h2>
+      
+      <p>
+      Using <code>new Integer(int)</code> is guaranteed to always result in a new object whereas
+      <code>Integer.valueOf(int)</code> allows caching of values to be done by the compiler, class library, or JVM.
+      Using of cached values avoids object allocation and the code will be faster.
+      </p>
+      <p>
+      Values between -128 and 127 are guaranteed to have corresponding cached instances
+      and using <code>valueOf</code> is approximately 3.5 times faster than using constructor.
+      For values outside the constant range the performance of both styles is the same.
+      </p>
+      <p>
+      Unless the class must be compatible with JVMs predating Java 1.5,
+      use either autoboxing or the <code>valueOf()</code> method when creating instances of
+      <code>Long</code>, <code>Integer</code>, <code>Short</code>, <code>Character</code>, and <code>Byte</code>.
+      </p>
+      
+    
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_COMPARETO_USE_OBJECT_EQUALS">EQ_COMPARETO_USE_OBJECT_EQUALS: Class defines compareTo(...) and uses Object.equals()</a>
+</h2>
+
+  <p> This class defines a <code>compareTo(...)</code> method but inherits its
+  <code>equals()</code> method from <code>java.lang.Object</code>.
+    Generally, the value of compareTo should return zero if and only if
+    equals returns true. If this is violated, weird and unpredictable
+    failures will occur in classes such as PriorityQueue.
+    In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    while in Java 6 it uses the equals method.</p>
+
+<p>From the JavaDoc for the compareTo method in the Comparable interface:
+<blockquote>
+It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+Generally speaking, any class that implements the Comparable interface and violates this condition
+should clearly indicate this fact. The recommended language
+is "Note: this class has a natural ordering that is inconsistent with equals."
+</blockquote></p>
+
+    
+<h2>
+<a name="EQ_DOESNT_OVERRIDE_EQUALS">EQ_DOESNT_OVERRIDE_EQUALS: Class doesn't override equals in superclass</a>
+</h2>
+
+  <p> This class extends a class that defines an equals method and adds fields, but doesn't
+define an equals method itself. Thus, equality on instances of this class will
+ignore the identity of the subclass and the added fields. Be sure this is what is intended,
+and that you don't need to override the equals method. Even if you don't need to override
+the equals method, consider overriding it anyway to document the fact
+that the equals method for the subclass just return the result of
+invoking super.equals(o).
+  </p>
+
+    
+<h2>
+<a name="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC">EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC: equals method overrides equals in superclass and may not be symmetric</a>
+</h2>
+
+  <p> This class defines an equals method that overrides an equals method in a superclass. Both equals methods
+methods use <code>instanceof</code> in the determination of whether two objects are equal. This is fraught with peril,
+since it is important that the equals method is symmetrical (in other words, <code>a.equals(b) == b.equals(a)</code>).
+If B is a subtype of A, and A's equals method checks that the argument is an instanceof A, and B's equals method
+checks that the argument is an instanceof B, it is quite likely that the equivalence relation defined by these
+methods is not symmetric.
+</p>
+
+    
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">IS2_INCONSISTENT_SYNC: Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<h2>
+<a name="LI_LAZY_INIT_STATIC">LI_LAZY_INIT_STATIC: Incorrect lazy initialization of static field</a>
+</h2>
+
+<p> This method contains an unsynchronized lazy initialization of a non-volatile static field.
+Because the compiler or processor may reorder instructions,
+threads are not guaranteed to see a completely initialized object,
+<em>if the method can be called by multiple threads</em>.
+You can make the field volatile to correct the problem.
+For more information, see the
+<a href="http://www.cs.umd.edu/~pugh/java/memoryModel/">Java Memory Model web site</a>.
+</p>
+
+    
+<h2>
+<a name="MS_OOI_PKGPROTECT">MS_OOI_PKGPROTECT: Field should be moved out of an interface and made package protected</a>
+</h2>
+
+<p>
+ A final static field that is
+defined in an interface references a mutable
+   object such as an array or hashtable.
+   This mutable object could
+   be changed by malicious code or
+        by accident from another package.
+   To solve this, the field needs to be moved to a class
+   and made package protected
+   to avoid
+        this vulnerability.</p>
+
+    
+<h2>
+<a name="MS_PKGPROTECT">MS_PKGPROTECT: Field should be package protected</a>
+</h2>
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    
+<h2>
+<a name="MS_EXPOSE_REP">MS_EXPOSE_REP: Public static method may expose internal representation by returning array</a>
+</h2>
+
+  <p> A public static method returns a reference to
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    
+<h2>
+<a name="NM_METHOD_NAMING_CONVENTION">NM_METHOD_NAMING_CONVENTION: Method names should start with a lower case letter</a>
+</h2>
+
+  <p>
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of each internal word capitalized.
+</p>
+
+    
+<h2>
+<a name="NP_NULL_ON_SOME_PATH_EXCEPTION">NP_NULL_ON_SOME_PATH_EXCEPTION: Possible null pointer dereference in method on exception path</a>
+</h2>
+
+<p> A reference value which is null on some exception control path is
+dereferenced here.&nbsp; This may lead to a <code>NullPointerException</code>
+when the code is executed.&nbsp;
+Note that because FindBugs currently does not prune infeasible exception paths,
+this may be a false warning.</p>
+
+<p> Also note that FindBugs considers the default case of a switch statement to
+be an exception path, since the default case is often infeasible.</p>
+
+    
+<h2>
+<a name="RpC_REPEATED_CONDITIONAL_TEST">RpC_REPEATED_CONDITIONAL_TEST: Repeated conditional tests</a>
+</h2>
+
+<p>The code contains a conditional test is performed twice, one right after the other
+(e.g., <code>x == 0 || x == 0</code>). Perhaps the second occurrence is intended to be something else
+(e.g., <code>x == 0 || y == 0</code>).
+</p>
+
+    
+<h2>
+<a name="SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION: Method concatenates strings using + in a loop</a>
+</h2>
+
+<p> The method seems to be building a String using concatenation in a loop.
+In each iteration, the String is converted to a StringBuffer/StringBuilder,
+   appended to, and converted back to a String.
+   This can lead to a cost quadratic in the number of iterations,
+   as the growing string is recopied in each iteration. </p>
+
+<p>Better performance can be obtained by using
+a StringBuffer (or StringBuilder in Java 1.5) explicitly.</p>
+
+<p> For example:</p>
+<pre>
+  // This is bad
+  String s = "";
+  for (int i = 0; i &lt; field.length; ++i) {
+    s = s + field[i];
+  }
+
+  // This is better
+  StringBuffer buf = new StringBuffer();
+  for (int i = 0; i &lt; field.length; ++i) {
+    buf.append(field[i]);
+  }
+  String s = buf.toString();
+</pre>
+
+    
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD: Unread public/protected field</a>
+</h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    
+<h2>
+<a name="UUF_UNUSED_FIELD">UUF_UNUSED_FIELD: Unused field</a>
+</h2>
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    
+<h2>
+<a name="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD">UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD: Unused public or protected field</a>
+</h2>
+
+  <p> This field is never used.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    </body>
+</html>

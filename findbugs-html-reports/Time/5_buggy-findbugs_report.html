@@ -1,0 +1,774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Time/5_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>19167 lines of code analyzed,
+	in 232 classes, 
+	in 7 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">22</td>
+<td align="right">1.15</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>24</b>
+</td>
+<td align="right">
+<b>1.25</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">7</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>24</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66918');">
+<td>
+<span class="priority-2">DE</span>
+</td>
+<td>org.joda.time.tz.ZoneInfoProvider.loadZoneData(String) might ignore java.io.IOException</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66918" style="display: none;">
+<a href="#DE_MIGHT_IGNORE">Bug type DE_MIGHT_IGNORE (click for details)</a>
+<br />In class org.joda.time.tz.ZoneInfoProvider<br />In method org.joda.time.tz.ZoneInfoProvider.loadZoneData(String)<br />Exception class java.io.IOException<br />At ZoneInfoProvider.java:[line 238]<br />At ZoneInfoProvider.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66315');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.joda.time.format.DateTimeParserBucket$SavedField defines compareTo(DateTimeParserBucket$SavedField) and uses Object.equals()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66315" style="display: none;">
+<a href="#EQ_COMPARETO_USE_OBJECT_EQUALS">Bug type EQ_COMPARETO_USE_OBJECT_EQUALS (click for details)</a>
+<br />In class org.joda.time.format.DateTimeParserBucket$SavedField<br />In method org.joda.time.format.DateTimeParserBucket$SavedField.compareTo(DateTimeParserBucket$SavedField)<br />At DateTimeParserBucket.java:[lines 499-505]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65602');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.joda.time.LocalDateTime defines equals but not hashCode</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65602" style="display: none;">
+<a href="#HE_EQUALS_NO_HASHCODE">Bug type HE_EQUALS_NO_HASHCODE (click for details)</a>
+<br />In class org.joda.time.LocalDateTime<br />In method org.joda.time.LocalDateTime.equals(Object)<br />At LocalDateTime.java:[lines 673-682]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65655');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.joda.time.LocalTime defines equals but not hashCode</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65655" style="display: none;">
+<a href="#HE_EQUALS_NO_HASHCODE">Bug type HE_EQUALS_NO_HASHCODE (click for details)</a>
+<br />In class org.joda.time.LocalTime<br />In method org.joda.time.LocalTime.equals(Object)<br />At LocalTime.java:[lines 682-691]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66436');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.joda.time.tz.DateTimeZoneBuilder$DSTZone defines equals but not hashCode</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66436" style="display: none;">
+<a href="#HE_EQUALS_NO_HASHCODE">Bug type HE_EQUALS_NO_HASHCODE (click for details)</a>
+<br />In class org.joda.time.tz.DateTimeZoneBuilder$DSTZone<br />In method org.joda.time.tz.DateTimeZoneBuilder$DSTZone.equals(Object)<br />At DateTimeZoneBuilder.java:[lines 1286-1297]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66609');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.joda.time.tz.DateTimeZoneBuilder$OfYear defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66609" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.joda.time.tz.DateTimeZoneBuilder$OfYear<br />In method org.joda.time.tz.DateTimeZoneBuilder$OfYear.equals(Object)<br />At DateTimeZoneBuilder.java:[lines 629-642]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66662');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.joda.time.tz.DateTimeZoneBuilder$PrecalculatedZone defines equals but not hashCode</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66662" style="display: none;">
+<a href="#HE_EQUALS_NO_HASHCODE">Bug type HE_EQUALS_NO_HASHCODE (click for details)</a>
+<br />In class org.joda.time.tz.DateTimeZoneBuilder$PrecalculatedZone<br />In method org.joda.time.tz.DateTimeZoneBuilder$PrecalculatedZone.equals(Object)<br />At DateTimeZoneBuilder.java:[lines 1622-1637]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66715');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.joda.time.tz.DateTimeZoneBuilder$Recurrence defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66715" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.joda.time.tz.DateTimeZoneBuilder$Recurrence<br />In method org.joda.time.tz.DateTimeZoneBuilder$Recurrence.equals(Object)<br />At DateTimeZoneBuilder.java:[lines 780-790]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66237');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>org.joda.time.format.DateTimeParserBucket.compareReverse(DurationField, DurationField) negates the return value of org.joda.time.DurationField.compareTo(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66237" style="display: none;">
+<a href="#RV_NEGATING_RESULT_OF_COMPARETO">Bug type RV_NEGATING_RESULT_OF_COMPARETO (click for details)</a>
+<br />In class org.joda.time.format.DateTimeParserBucket<br />In method org.joda.time.format.DateTimeParserBucket.compareReverse(DurationField, DurationField)<br />Called method org.joda.time.DurationField.compareTo(Object)<br />Return value of org.joda.time.DurationField.compareTo(Object) of type int<br />At DateTimeParserBucket.java:[line 520]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66837');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Exceptional return value of java.io.File.mkdirs() ignored in org.joda.time.tz.ZoneInfoCompiler.compile(File, File[])</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66837" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Bug type RV_RETURN_VALUE_IGNORED_BAD_PRACTICE (click for details)</a>
+<br />In class org.joda.time.tz.ZoneInfoCompiler<br />In method org.joda.time.tz.ZoneInfoCompiler.compile(File, File[])<br />Called method java.io.File.mkdirs()<br />At ZoneInfoCompiler.java:[line 404]<br />Another occurrence at ZoneInfoCompiler.java:[line 446]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65965');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.joda.time.chrono.GJChronology$LinkedDurationField defines non-transient non-serializable instance field iField</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65965" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.joda.time.chrono.GJChronology$LinkedDurationField<br />Field org.joda.time.chrono.GJChronology$LinkedDurationField.iField<br />Actual type org.joda.time.chrono.GJChronology$ImpreciseCutoverField<br />In GJChronology.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66489');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.joda.time.tz.DateTimeZoneBuilder$DSTZone defines non-transient non-serializable instance field iEndRecurrence</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66489" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.joda.time.tz.DateTimeZoneBuilder$DSTZone<br />Field org.joda.time.tz.DateTimeZoneBuilder$DSTZone.iEndRecurrence<br />Actual type org.joda.time.tz.DateTimeZoneBuilder$Recurrence<br />In DateTimeZoneBuilder.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66549');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.joda.time.tz.DateTimeZoneBuilder$DSTZone defines non-transient non-serializable instance field iStartRecurrence</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66549" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.joda.time.tz.DateTimeZoneBuilder$DSTZone<br />Field org.joda.time.tz.DateTimeZoneBuilder$DSTZone.iStartRecurrence<br />Actual type org.joda.time.tz.DateTimeZoneBuilder$Recurrence<br />In DateTimeZoneBuilder.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66768');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.joda.time.tz.ZoneInfoCompiler.compile(File, File[]): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66768" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.joda.time.tz.ZoneInfoCompiler<br />In method org.joda.time.tz.ZoneInfoCompiler.compile(File, File[])<br />Called method new java.io.FileReader(File)<br />At ZoneInfoCompiler.java:[line 370]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65761');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.joda.time.Partial(DateTimeFieldType[], int[], Chronology) may expose internal representation by storing an externally mutable object into Partial.iTypes</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65761" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.joda.time.Partial<br />In method new org.joda.time.Partial(DateTimeFieldType[], int[], Chronology)<br />Field org.joda.time.Partial.iTypes<br />Local variable named types<br />At Partial.java:[line 203]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65836');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.joda.time.Partial(DateTimeFieldType[], int[], Chronology) may expose internal representation by storing an externally mutable object into Partial.iValues</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65836" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.joda.time.Partial<br />In method new org.joda.time.Partial(DateTimeFieldType[], int[], Chronology)<br />Field org.joda.time.Partial.iValues<br />Local variable named values<br />At Partial.java:[line 204]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66078');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>org.joda.time.format.DateTimeFormat.parsePatternTo(DateTimeFormatterBuilder, String) invokes inefficient new String(String) constructor</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66078" style="display: none;">
+<a href="#DM_STRING_CTOR">Bug type DM_STRING_CTOR (click for details)</a>
+<br />In class org.joda.time.format.DateTimeFormat<br />In method org.joda.time.format.DateTimeFormat.parsePatternTo(DateTimeFormatterBuilder, String)<br />At DateTimeFormat.java:[line 567]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65911');">
+<td>
+<span class="priority-2">ICAST</span>
+</td>
+<td>Result of integer multiplication cast to long in org.joda.time.chrono.BasicChronology.getDateTimeMillis(int, int, int, int, int, int, int)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65911" style="display: none;">
+<a href="#ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">Bug type ICAST_INTEGER_MULTIPLY_CAST_TO_LONG (click for details)</a>
+<br />In class org.joda.time.chrono.BasicChronology<br />In method org.joda.time.chrono.BasicChronology.getDateTimeMillis(int, int, int, int, int, int, int)<br />At BasicChronology.java:[line 177]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66025');">
+<td>
+<span class="priority-2">IM</span>
+</td>
+<td>Check for oddness that won't work for negative numbers in org.joda.time.chrono.IslamicChronology.getTotalMillisByYearMonth(int, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66025" style="display: none;">
+<a href="#IM_BAD_CHECK_FOR_ODD">Bug type IM_BAD_CHECK_FOR_ODD (click for details)</a>
+<br />In class org.joda.time.chrono.IslamicChronology<br />In method org.joda.time.chrono.IslamicChronology.getTotalMillisByYearMonth(int, int)<br />At IslamicChronology.java:[line 361]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in org.joda.time.DateTimeUtils.getDateFormatSymbols(Locale)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class org.joda.time.DateTimeUtils<br />In method org.joda.time.DateTimeUtils.getDateFormatSymbols(Locale)<br />At DateTimeUtils.java:[line 399]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66131');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.joda.time.format.DateTimeFormat.parsePatternTo(DateTimeFormatterBuilder, String) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66131" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.joda.time.format.DateTimeFormat<br />In method org.joda.time.format.DateTimeFormat.parsePatternTo(DateTimeFormatterBuilder, String)<br />At DateTimeFormat.java:[lines 477-485]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66184');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.joda.time.format.DateTimeFormat$StyleFormatter.getPattern(Locale) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66184" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.joda.time.format.DateTimeFormat$StyleFormatter<br />In method org.joda.time.format.DateTimeFormat$StyleFormatter.getPattern(Locale)<br />At DateTimeFormat.java:[lines 859-867]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65708');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.joda.time.MutableDateTime.setMillis(long) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65708" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.joda.time.MutableDateTime<br />In method org.joda.time.MutableDateTime.setMillis(long)<br />At MutableDateTime.java:[lines 454-470]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66368');">
+<td>
+<span class="priority-1">UC</span>
+</td>
+<td>Useless condition: it's known that mustParse == false at this point</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66368" style="display: none;">
+<a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+<br />In class org.joda.time.format.PeriodFormatterBuilder$FieldFormatter<br />In method org.joda.time.format.PeriodFormatterBuilder$FieldFormatter.parseInto(ReadWritablePeriod, String, int, Locale)<br />Value mustParse == false<br />Unreachable code at PeriodFormatterBuilder.java:[line 1230]<br />At PeriodFormatterBuilder.java:[line 1224]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DE_MIGHT_IGNORE">DE_MIGHT_IGNORE: Method might ignore exception</a>
+</h2>
+
+  <p> This method might ignore an exception.&nbsp; In general, exceptions
+  should be handled or reported in some way, or they should be thrown
+  out of the method.</p>
+
+    
+<h2>
+<a name="DM_STRING_CTOR">DM_STRING_CTOR: Method invokes inefficient new String(String) constructor</a>
+</h2>
+
+  <p> Using the <code>java.lang.String(String)</code> constructor wastes memory
+  because the object so constructed will be functionally indistinguishable
+  from the <code>String</code> passed as a parameter.&nbsp; Just use the
+  argument <code>String</code> directly.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_COMPARETO_USE_OBJECT_EQUALS">EQ_COMPARETO_USE_OBJECT_EQUALS: Class defines compareTo(...) and uses Object.equals()</a>
+</h2>
+
+  <p> This class defines a <code>compareTo(...)</code> method but inherits its
+  <code>equals()</code> method from <code>java.lang.Object</code>.
+    Generally, the value of compareTo should return zero if and only if
+    equals returns true. If this is violated, weird and unpredictable
+    failures will occur in classes such as PriorityQueue.
+    In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    while in Java 6 it uses the equals method.</p>
+
+<p>From the JavaDoc for the compareTo method in the Comparable interface:
+<blockquote>
+It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+Generally speaking, any class that implements the Comparable interface and violates this condition
+should clearly indicate this fact. The recommended language
+is "Note: this class has a natural ordering that is inconsistent with equals."
+</blockquote></p>
+
+    
+<h2>
+<a name="HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode()</a>
+</h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>, and inherits the implementation of
+  <code>hashCode()</code> from <code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+<p>If you don't think instances of this class will ever be inserted into a HashMap/HashTable,
+the recommended <code>hashCode</code> implementation to use is:</p>
+<pre>public int hashCode() {
+  assert false : "hashCode not designed";
+  return 42; // any arbitrary constant will do
+  }</pre>
+
+    
+<h2>
+<a name="HE_EQUALS_NO_HASHCODE">HE_EQUALS_NO_HASHCODE: Class defines equals() but not hashCode()</a>
+</h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>.&nbsp; Therefore, the class may violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+    
+<h2>
+<a name="ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">ICAST_INTEGER_MULTIPLY_CAST_TO_LONG: Result of integer multiplication cast to long</a>
+</h2>
+
+<p>
+This code performs integer multiply and then converts the result to a long,
+as in:</p>
+<pre>
+    long convertDaysToMilliseconds(int days) { return 1000*3600*24*days; }
+</pre>
+<p>
+If the multiplication is done using long arithmetic, you can avoid
+the possibility that the result will overflow. For example, you
+could fix the above code to:</p>
+<pre>
+    long convertDaysToMilliseconds(int days) { return 1000L*3600*24*days; }
+</pre>
+or
+<pre>
+    static final long MILLISECONDS_PER_DAY = 24L*3600*1000;
+    long convertDaysToMilliseconds(int days) { return days * MILLISECONDS_PER_DAY; }
+</pre>
+
+    
+<h2>
+<a name="IM_BAD_CHECK_FOR_ODD">IM_BAD_CHECK_FOR_ODD: Check for oddness that won't work for negative numbers </a>
+</h2>
+
+<p>
+The code uses x % 2 == 1 to check to see if a value is odd, but this won't work
+for negative numbers (e.g., (-5) % 2 == -1). If this code is intending to check
+for oddness, consider using x &amp; 1 == 1, or x % 2 != 0.
+</p>
+
+    
+<h2>
+<a name="REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION: Exception is caught when Exception is not thrown</a>
+</h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+  <pre>
+  try {
+    ...
+  } catch (RuntimeException e) {
+    throw e;
+  } catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+  }</pre>
+  
+     
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">RV_RETURN_VALUE_IGNORED_BAD_PRACTICE: Method ignores exceptional return value</a>
+</h2>
+
+   <p> This method returns a value that is not checked. The return value should be checked
+since it can indicate an unusual or unexpected function execution. For
+example, the <code>File.delete()</code> method returns false
+if the file could not be successfully deleted (rather than
+throwing an Exception).
+If you don't check the result, you won't notice if the method invocation
+signals unexpected behavior by returning an atypical return value.
+</p>
+
+    
+<h2>
+<a name="RV_NEGATING_RESULT_OF_COMPARETO">RV_NEGATING_RESULT_OF_COMPARETO: Negating the result of compareTo()/compare()</a>
+</h2>
+
+  <p> This code negatives the return value of a compareTo or compare method.
+This is a questionable or bad programming practice, since if the return
+value is Integer.MIN_VALUE, negating the return value won't
+negate the sign of the result. You can achieve the same intended result
+by reversing the order of the operands rather than by negating the results.
+</p>
+
+    
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="UC_USELESS_CONDITION">UC_USELESS_CONDITION: Condition has no effect</a>
+</h2>
+
+<p>This condition always produces the same result as the value of the involved variable was narrowed before. 
+Probably something else was meant or condition can be removed.</p>
+
+    </body>
+</html>

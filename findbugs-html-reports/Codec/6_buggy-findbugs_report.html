@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Codec/6_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>2205 lines of code analyzed,
+	in 33 classes, 
+	in 5 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.45</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">2.27</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>6</b>
+</td>
+<td align="right">
+<b>2.72</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>6</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65707');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.codec.language.RefinedSoundex.US_ENGLISH_MAPPING should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65707" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class org.apache.commons.codec.language.RefinedSoundex<br />Field org.apache.commons.codec.language.RefinedSoundex.US_ENGLISH_MAPPING<br />At RefinedSoundex.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65759');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.codec.language.Soundex.US_ENGLISH_MAPPING should be package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65759" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class org.apache.commons.codec.language.Soundex<br />Field org.apache.commons.codec.language.Soundex.US_ENGLISH_MAPPING<br />At Soundex.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65811');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>org.apache.commons.codec.net.URLCodec.ESCAPE_CHAR isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65811" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class org.apache.commons.codec.net.URLCodec<br />Field org.apache.commons.codec.net.URLCodec.ESCAPE_CHAR<br />At URLCodec.java:[line 69]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.codec.binary.Base64.decode(byte[], int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.codec.binary.Base64<br />In method org.apache.commons.codec.binary.Base64.decode(byte[], int, int)<br />At Base64.java:[lines 591-598]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65601');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.codec.binary.Base64.encode(byte[], int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65601" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.codec.binary.Base64<br />In method org.apache.commons.codec.binary.Base64.encode(byte[], int, int)<br />At Base64.java:[lines 475-492]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65654');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.codec.language.Metaphone.metaphone(String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65654" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.codec.language.Metaphone<br />In method org.apache.commons.codec.language.Metaphone.metaphone(String)<br />At Metaphone.java:[lines 144-306]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="MS_SHOULD_BE_FINAL">MS_SHOULD_BE_FINAL: Field isn't final but should be</a>
+</h2>
+
+   <p>
+This static field public but not final, and
+could be changed by malicious code or
+        by accident from another package.
+        The field could be made final to avoid
+        this vulnerability.</p>
+
+    
+<h2>
+<a name="MS_PKGPROTECT">MS_PKGPROTECT: Field should be package protected</a>
+</h2>
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    </body>
+</html>

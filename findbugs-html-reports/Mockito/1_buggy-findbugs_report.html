@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Mockito/1_buggy/build/classes/main</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>7425 lines of code analyzed,
+	in 393 classes, 
+	in 56 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">1.75</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">22</td>
+<td align="right">2.96</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>35</b>
+</td>
+<td align="right">
+<b>4.71</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">16</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">9</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>35</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65965');">
+<td>
+<span class="priority-1">Eq</span>
+</td>
+<td>org.mockito.internal.creation.DelegatingMethod.equals(Object) checks for operand being a reflect.Method </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65965" style="display: none;">
+<a href="#EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS">Bug type EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS (click for details)</a>
+<br />In class org.mockito.internal.creation.DelegatingMethod<br />In method org.mockito.internal.creation.DelegatingMethod.equals(Object)<br />Actual type reflect.Method<br />At DelegatingMethod.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67632');">
+<td>
+<span class="priority-1">Eq</span>
+</td>
+<td>org.mockito.internal.util.reflection.GenericMetadataSupport$WildCardBoundedType.equals(Object) checks for operand being a GenericMetadataSupport$TypeVarBoundedType </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67632" style="display: none;">
+<a href="#EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS">Bug type EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS (click for details)</a>
+<br />In class org.mockito.internal.util.reflection.GenericMetadataSupport$WildCardBoundedType<br />In method org.mockito.internal.util.reflection.GenericMetadataSupport$WildCardBoundedType.equals(Object)<br />Actual type org.mockito.internal.util.reflection.GenericMetadataSupport$TypeVarBoundedType<br />At GenericMetadataSupport.java:[line 606]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66669');">
+<td>
+<span class="priority-2">FS</span>
+</td>
+<td>Format string should use %n rather than \n in org.mockito.internal.invocation.SerializableMethod.getJavaMethod()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66669" style="display: none;">
+<a href="#VA_FORMAT_STRING_USES_NEWLINE">Bug type VA_FORMAT_STRING_USES_NEWLINE (click for details)</a>
+<br />In class org.mockito.internal.invocation.SerializableMethod<br />In method org.mockito.internal.invocation.SerializableMethod.getJavaMethod()<br />Called method String.format(String, Object[])<br />Format string "The method %1$s.%2$s does not exists and you should not get to this point.\nPlease report this as a defect with an example of how to reproduce it."<br />At SerializableMethod.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66743');">
+<td>
+<span class="priority-2">FS</span>
+</td>
+<td>Format string should use %n rather than \n in org.mockito.internal.invocation.SerializableMethod.getJavaMethod()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66743" style="display: none;">
+<a href="#VA_FORMAT_STRING_USES_NEWLINE">Bug type VA_FORMAT_STRING_USES_NEWLINE (click for details)</a>
+<br />In class org.mockito.internal.invocation.SerializableMethod<br />In method org.mockito.internal.invocation.SerializableMethod.getJavaMethod()<br />Called method String.format(String, Object[])<br />Format string "The method %1$s.%2$s is probably private or protected and cannot be mocked.\nPlease report this as a defect with an example of how to reproduce it."<br />At SerializableMethod.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">Nm</span>
+</td>
+<td>The class name org.mockito.exceptions.Discrepancy shadows the simple name of the superclass org.mockito.internal.reporting.Discrepancy</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Bug type NM_SAME_SIMPLE_NAME_AS_SUPERCLASS (click for details)</a>
+<br />In class org.mockito.exceptions.Discrepancy<br />In class org.mockito.internal.reporting.Discrepancy<br />At Discrepancy.java:[lines 15-16]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65595');">
+<td>
+<span class="priority-1">Nm</span>
+</td>
+<td>The class name org.mockito.exceptions.Pluralizer shadows the simple name of the superclass org.mockito.internal.reporting.Pluralizer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65595" style="display: none;">
+<a href="#NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Bug type NM_SAME_SIMPLE_NAME_AS_SUPERCLASS (click for details)</a>
+<br />In class org.mockito.exceptions.Pluralizer<br />In class org.mockito.internal.reporting.Pluralizer<br />At Pluralizer.java:[line 13]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67279');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>Class org.mockito.internal.stubbing.answers.ThrowsException is not derived from an Exception, even though it is named as such</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67279" style="display: none;">
+<a href="#NM_CLASS_NOT_EXCEPTION">Bug type NM_CLASS_NOT_EXCEPTION (click for details)</a>
+<br />In class org.mockito.internal.stubbing.answers.ThrowsException<br />At ThrowsException.java:[lines 18-34]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67698');">
+<td>
+<span class="priority-1">Nm</span>
+</td>
+<td>The class name org.mockito.stubbing.answers.ReturnsElementsOf shadows the simple name of the superclass org.mockito.internal.stubbing.answers.ReturnsElementsOf</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67698" style="display: none;">
+<a href="#NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Bug type NM_SAME_SIMPLE_NAME_AS_SUPERCLASS (click for details)</a>
+<br />In class org.mockito.stubbing.answers.ReturnsElementsOf<br />In class org.mockito.internal.stubbing.answers.ReturnsElementsOf<br />At ReturnsElementsOf.java:[lines 27-28]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66084');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.mockito.internal.creation.bytebuddy.InterceptedInvocation$SuperMethod$FromCallable defines non-transient non-serializable instance field callable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66084" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.creation.bytebuddy.InterceptedInvocation$SuperMethod$FromCallable<br />Field org.mockito.internal.creation.bytebuddy.InterceptedInvocation$SuperMethod$FromCallable.callable<br />Actual type java.util.concurrent.Callable&lt;?&gt;<br />In InterceptedInvocation.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66197');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.mockito.internal.creation.settings.CreationSettings defines non-transient non-serializable instance field invocationListeners</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66197" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.creation.settings.CreationSettings<br />Field org.mockito.internal.creation.settings.CreationSettings.invocationListeners<br />Actual type org.mockito.listeners.InvocationListener<br />In CreationSettings.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66817');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.mockito.internal.invocation.finder.AllInvocationsFinder$SequenceNumberComparator implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66817" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.mockito.internal.invocation.finder.AllInvocationsFinder$SequenceNumberComparator<br />At AllInvocationsFinder.java:[lines 33-35]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66852');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.mockito.internal.invocation.realmethod.DefaultRealMethod defines non-transient non-serializable instance field methodProxy</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66852" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.invocation.realmethod.DefaultRealMethod<br />Field org.mockito.internal.invocation.realmethod.DefaultRealMethod.methodProxy<br />Actual type org.mockito.internal.creation.util.MockitoMethodProxy<br />In DefaultRealMethod.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67221');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.mockito.internal.stubbing.answers.AnswerReturnValuesAdapter defines non-transient non-serializable instance field returnValues</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67221" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.stubbing.answers.AnswerReturnValuesAdapter<br />Field org.mockito.internal.stubbing.answers.AnswerReturnValuesAdapter.returnValues<br />Actual type org.mockito.ReturnValues<br />In AnswerReturnValuesAdapter.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67314');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.mockito.internal.stubbing.defaultanswers.ReturnsDeepStubs$ReturnsDeepStubsSerializationFallback defines non-transient non-serializable instance field returnTypeGenericMetadata</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67314" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.stubbing.defaultanswers.ReturnsDeepStubs$ReturnsDeepStubsSerializationFallback<br />Field org.mockito.internal.stubbing.defaultanswers.ReturnsDeepStubs$ReturnsDeepStubsSerializationFallback.returnTypeGenericMetadata<br />Actual type org.mockito.internal.util.reflection.GenericMetadataSupport<br />In ReturnsDeepStubs.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67374');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues defines non-transient non-serializable instance field mockUtil</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67374" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues<br />Field org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues.mockUtil<br />Actual type org.mockito.internal.util.MockUtil<br />In ReturnsEmptyValues.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67434');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class org.mockito.internal.stubbing.defaultanswers.ReturnsMocks defines non-transient non-serializable instance field mockitoCore</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67434" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.stubbing.defaultanswers.ReturnsMocks<br />Field org.mockito.internal.stubbing.defaultanswers.ReturnsMocks.mockitoCore<br />Actual type org.mockito.internal.MockitoCore<br />In ReturnsMocks.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66972');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of throwableClasses in org.mockito.internal.stubbing.BaseStubbing.thenThrow(Class[])</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66972" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class org.mockito.internal.stubbing.BaseStubbing<br />In method org.mockito.internal.stubbing.BaseStubbing.thenThrow(Class[])<br />Value loaded from throwableClasses<br />Dereferenced at BaseStubbing.java:[line 61]<br />Null value at BaseStubbing.java:[line 57]<br />Known null at BaseStubbing.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67056');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of throwables in org.mockito.internal.stubbing.BaseStubbing.thenThrow(Throwable[])</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67056" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class org.mockito.internal.stubbing.BaseStubbing<br />In method org.mockito.internal.stubbing.BaseStubbing.thenThrow(Throwable[])<br />Value loaded from throwables<br />Dereferenced at BaseStubbing.java:[line 42]<br />Null value at BaseStubbing.java:[line 38]<br />Known null at BaseStubbing.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66143');">
+<td>
+<span class="priority-1">RV</span>
+</td>
+<td>Bad attempt to compute absolute value of signed random integer in org.mockito.internal.creation.bytebuddy.MockBytecodeGenerator.nameFor(Class)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66143" style="display: none;">
+<a href="#RV_ABSOLUTE_VALUE_OF_RANDOM_INT">Bug type RV_ABSOLUTE_VALUE_OF_RANDOM_INT (click for details)</a>
+<br />In class org.mockito.internal.creation.bytebuddy.MockBytecodeGenerator<br />In method org.mockito.internal.creation.bytebuddy.MockBytecodeGenerator.nameFor(Class)<br />At MockBytecodeGenerator.java:[line 68]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67494');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.mockito.internal.util.io.IOUtil.readLines(InputStream): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67494" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.mockito.internal.util.io.IOUtil<br />In method org.mockito.internal.util.io.IOUtil.readLines(InputStream)<br />Called method new java.io.InputStreamReader(InputStream)<br />At IOUtil.java:[line 32]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67563');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.mockito.internal.util.io.IOUtil.writeText(String, File): new java.io.FileWriter(File)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67563" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.mockito.internal.util.io.IOUtil<br />In method org.mockito.internal.util.io.IOUtil.writeText(String, File)<br />Called method new java.io.FileWriter(File)<br />At IOUtil.java:[line 21]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65642');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.exceptions.base.MockitoAssertionError.getUnfilteredStackTrace() may expose internal representation by returning MockitoAssertionError.unfilteredStackTrace</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65642" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.exceptions.base.MockitoAssertionError<br />In method org.mockito.exceptions.base.MockitoAssertionError.getUnfilteredStackTrace()<br />Field org.mockito.exceptions.base.MockitoAssertionError.unfilteredStackTrace<br />At MockitoAssertionError.java:[line 27]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65710');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.exceptions.base.MockitoException.getUnfilteredStackTrace() may expose internal representation by returning MockitoException.unfilteredStackTrace</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65710" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.exceptions.base.MockitoException<br />In method org.mockito.exceptions.base.MockitoException.getUnfilteredStackTrace()<br />Field org.mockito.exceptions.base.MockitoException.unfilteredStackTrace<br />At MockitoException.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65778');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.exceptions.base.MockitoSerializationIssue.getUnfilteredStackTrace() may expose internal representation by returning MockitoSerializationIssue.unfilteredStackTrace</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65778" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.exceptions.base.MockitoSerializationIssue<br />In method org.mockito.exceptions.base.MockitoSerializationIssue.getUnfilteredStackTrace()<br />Field org.mockito.exceptions.base.MockitoSerializationIssue.unfilteredStackTrace<br />At MockitoSerializationIssue.java:[line 47]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65846');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.exceptions.verification.junit.ArgumentsAreDifferent.getUnfilteredStackTrace() may expose internal representation by returning ArgumentsAreDifferent.unfilteredStackTrace</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65846" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.exceptions.verification.junit.ArgumentsAreDifferent<br />In method org.mockito.exceptions.verification.junit.ArgumentsAreDifferent.getUnfilteredStackTrace()<br />Field org.mockito.exceptions.verification.junit.ArgumentsAreDifferent.unfilteredStackTrace<br />At ArgumentsAreDifferent.java:[line 34]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66255');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.internal.invocation.InvocationImpl.getArguments() may expose internal representation by returning InvocationImpl.arguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66255" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.internal.invocation.InvocationImpl<br />In method org.mockito.internal.invocation.InvocationImpl.getArguments()<br />Field org.mockito.internal.invocation.InvocationImpl.arguments<br />At InvocationImpl.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66323');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.internal.invocation.InvocationImpl.getRawArguments() may expose internal representation by returning InvocationImpl.rawArguments</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66323" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.internal.invocation.InvocationImpl<br />In method org.mockito.internal.invocation.InvocationImpl.getRawArguments()<br />Field org.mockito.internal.invocation.InvocationImpl.rawArguments<br />At InvocationImpl.java:[line 105]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66533');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.internal.invocation.SerializableMethod.getExceptionTypes() may expose internal representation by returning SerializableMethod.exceptionTypes</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66533" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.internal.invocation.SerializableMethod<br />In method org.mockito.internal.invocation.SerializableMethod.getExceptionTypes()<br />Field org.mockito.internal.invocation.SerializableMethod.exceptionTypes<br />At SerializableMethod.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66601');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.mockito.internal.invocation.SerializableMethod.getParameterTypes() may expose internal representation by returning SerializableMethod.parameterTypes</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66601" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.mockito.internal.invocation.SerializableMethod<br />In method org.mockito.internal.invocation.SerializableMethod.getParameterTypes()<br />Field org.mockito.internal.invocation.SerializableMethod.parameterTypes<br />At SerializableMethod.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66391');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.mockito.internal.invocation.InvocationImpl(Object, MockitoMethod, Object[], int, RealMethod) may expose internal representation by storing an externally mutable object into InvocationImpl.rawArguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66391" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.mockito.internal.invocation.InvocationImpl<br />In method new org.mockito.internal.invocation.InvocationImpl(Object, MockitoMethod, Object[], int, RealMethod)<br />Field org.mockito.internal.invocation.InvocationImpl.rawArguments<br />Local variable named args<br />At InvocationImpl.java:[line 48]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67140');">
+<td>
+<span class="priority-2">JLM</span>
+</td>
+<td>Synchronization performed on java.util.concurrent.ConcurrentLinkedQueue in org.mockito.internal.stubbing.StubbedInvocationMatcher.answer(InvocationOnMock)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67140" style="display: none;">
+<a href="#JLM_JSR166_UTILCONCURRENT_MONITORENTER">Bug type JLM_JSR166_UTILCONCURRENT_MONITORENTER (click for details)</a>
+<br />In class org.mockito.internal.stubbing.StubbedInvocationMatcher<br />In method org.mockito.internal.stubbing.StubbedInvocationMatcher.answer(InvocationOnMock)<br />Type java.util.concurrent.ConcurrentLinkedQueue<br />Value loaded from field org.mockito.internal.stubbing.StubbedInvocationMatcher.answers<br />At StubbedInvocationMatcher.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66031');">
+<td>
+<span class="priority-2">UL</span>
+</td>
+<td>org.mockito.internal.creation.bytebuddy.ByteBuddyCrossClassLoaderSerializationSupport.writeReplace(Object) does not release lock on all exception paths</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66031" style="display: none;">
+<a href="#UL_UNRELEASED_LOCK_EXCEPTION_PATH">Bug type UL_UNRELEASED_LOCK_EXCEPTION_PATH (click for details)</a>
+<br />In class org.mockito.internal.creation.bytebuddy.ByteBuddyCrossClassLoaderSerializationSupport<br />In method org.mockito.internal.creation.bytebuddy.ByteBuddyCrossClassLoaderSerializationSupport.writeReplace(Object)<br />At ByteBuddyCrossClassLoaderSerializationSupport.java:[line 112]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65914');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: org.mockito.internal.configuration.injection.ConstructorInjection.argResolver</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65914" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class org.mockito.internal.configuration.injection.ConstructorInjection<br />Field org.mockito.internal.configuration.injection.ConstructorInjection.argResolver<br />At ConstructorInjection.java:[line 46]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66466');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to indexOfVararg in org.mockito.internal.invocation.InvocationMatcher.captureArgumentsFrom(Invocation)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66466" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class org.mockito.internal.invocation.InvocationMatcher<br />In method org.mockito.internal.invocation.InvocationMatcher.captureArgumentsFrom(Invocation)<br />Local variable named indexOfVararg<br />At InvocationMatcher.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66910');">
+<td>
+<span class="priority-1">RCN</span>
+</td>
+<td>Redundant nullcheck of o2, which is known to be non-null in org.mockito.internal.matchers.Equality.areEqual(Object, Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66910" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class org.mockito.internal.matchers.Equality<br />In method org.mockito.internal.matchers.Equality.areEqual(Object, Object)<br />Value loaded from o2<br />Redundant null check at Equality.java:[line 16]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS">EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS: Equals checks for incompatible operand</a>
+</h2>
+
+  <p> This equals method is checking to see if the argument is some incompatible type
+(i.e., a class that is neither a supertype nor subtype of the class that defines
+the equals method). For example, the Foo class might have an equals method
+that looks like:
+</p>
+<pre>
+public boolean equals(Object o) {
+  if (o instanceof Foo)
+    return name.equals(((Foo)o).name);
+  else if (o instanceof String)
+    return name.equals(o);
+  else return false;
+</pre>
+
+<p>This is considered bad practice, as it makes it very hard to implement an equals method that
+is symmetric and transitive. Without those properties, very unexpected behavoirs are possible.
+</p>
+
+    
+<h2>
+<a name="VA_FORMAT_STRING_USES_NEWLINE">VA_FORMAT_STRING_USES_NEWLINE: Format string should use %n rather than \n</a>
+</h2>
+
+<p>
+This format string include a newline character (\n). In format strings, it is generally
+ preferable better to use %n, which will produce the platform-specific line separator.
+</p>
+
+     
+<h2>
+<a name="JLM_JSR166_UTILCONCURRENT_MONITORENTER">JLM_JSR166_UTILCONCURRENT_MONITORENTER: Synchronization performed on util.concurrent instance</a>
+</h2>
+
+<p> This method performs synchronization an object that is an instance of
+a class from the java.util.concurrent package (or its subclasses). Instances
+of these classes have their own concurrency control mechanisms that are orthogonal to
+the synchronization provided by the Java keyword <code>synchronized</code>. For example,
+synchronizing on an <code>AtomicBoolean</code> will not prevent other threads
+from modifying the  <code>AtomicBoolean</code>.</p>
+<p>Such code may be correct, but should be carefully reviewed and documented,
+and may confuse people who have to maintain the code at a later date.
+</p>
+
+
+<h2>
+<a name="NM_CLASS_NOT_EXCEPTION">NM_CLASS_NOT_EXCEPTION: Class is not derived from an Exception, even though it is named as such</a>
+</h2>
+
+<p> This class is not derived from another exception, but ends with 'Exception'. This will
+be confusing to users of this class.</p>
+
+    
+<h2>
+<a name="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">NM_SAME_SIMPLE_NAME_AS_SUPERCLASS: Class names shouldn't shadow simple name of superclass</a>
+</h2>
+
+  <p> This class has a simple name that is identical to that of its superclass, except
+that its superclass is in a different package (e.g., <code>alpha.Foo</code> extends <code>beta.Foo</code>).
+This can be exceptionally confusing, create lots of situations in which you have to look at import statements
+to resolve references and creates many
+opportunities to accidentally define methods that do not override methods in their superclasses.
+</p>
+
+    
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">NP_NULL_ON_SOME_PATH: Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE: Redundant nullcheck of value known to be non-null</a>
+</h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    
+<h2>
+<a name="RV_ABSOLUTE_VALUE_OF_RANDOM_INT">RV_ABSOLUTE_VALUE_OF_RANDOM_INT: Bad attempt to compute absolute value of signed random integer</a>
+</h2>
+
+<p> This code generates a random signed integer and then computes
+the absolute value of that random integer.  If the number returned by the random number
+generator is <code>Integer.MIN_VALUE</code>, then the result will be negative as well (since
+<code>Math.abs(Integer.MIN_VALUE) == Integer.MIN_VALUE</code>). (Same problem arised for long values as well).
+</p>
+
+    
+<h2>
+<a name="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">SE_COMPARATOR_SHOULD_BE_SERIALIZABLE: Comparator doesn't implement Serializable</a>
+</h2>
+
+  <p> This class implements the <code>Comparator</code> interface. You
+should consider whether or not it should also implement the <code>Serializable</code>
+interface. If a comparator is used to construct an ordered collection
+such as a <code>TreeMap</code>, then the <code>TreeMap</code>
+will be serializable only if the comparator is also serializable.
+As most comparators have little or no state, making them serializable
+is generally easy and good defensive programming.
+</p>
+
+    
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="UL_UNRELEASED_LOCK_EXCEPTION_PATH">UL_UNRELEASED_LOCK_EXCEPTION_PATH: Method does not release lock on all exception paths</a>
+</h2>
+
+<p> This method acquires a JSR-166 (<code>java.util.concurrent</code>) lock,
+but does not release it on all exception paths out of the method.  In general, the correct idiom
+for using a JSR-166 lock is:
+</p>
+<pre>
+    Lock l = ...;
+    l.lock();
+    try {
+        // do something
+    } finally {
+        l.unlock();
+    }
+</pre>
+
+    
+<h2>
+<a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+</h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    </body>
+</html>

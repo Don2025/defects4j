@@ -1,0 +1,3107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>JacksonDatabind/101_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>38199 lines of code analyzed,
+	in 642 classes, 
+	in 20 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">22</td>
+<td align="right">0.58</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">153</td>
+<td align="right">4.01</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>175</b>
+</td>
+<td align="right">
+<b>4.58</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">100</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">22</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">30</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">17</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>175</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72073');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.introspect.AnnotatedClass assumes the argument is of type AnnotatedClass</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72073" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedClass<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedClass.equals(Object)<br />At AnnotatedClass.java:[line 411]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72126');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.introspect.AnnotatedConstructor assumes the argument is of type AnnotatedConstructor</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72126" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedConstructor<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.equals(Object)<br />At AnnotatedConstructor.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72294');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.introspect.AnnotatedField assumes the argument is of type AnnotatedField</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72294" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedField<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedField.equals(Object)<br />At AnnotatedField.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72401');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.introspect.AnnotatedMethod assumes the argument is of type AnnotatedMethod</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72401" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedMethod<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedMethod.equals(Object)<br />At AnnotatedMethod.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72708');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.introspect.AnnotatedParameter assumes the argument is of type AnnotatedParameter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72708" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedParameter<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedParameter.equals(Object)<br />At AnnotatedParameter.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73272');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.introspect.VirtualAnnotatedMember assumes the argument is of type VirtualAnnotatedMember</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73272" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.VirtualAnnotatedMember<br />In method com.fasterxml.jackson.databind.introspect.VirtualAnnotatedMember.equals(Object)<br />At VirtualAnnotatedMember.java:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76207');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for com.fasterxml.jackson.databind.type.TypeBindings assumes the argument is of type TypeBindings</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76207" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.type.TypeBindings<br />In method com.fasterxml.jackson.databind.type.TypeBindings.equals(Object)<br />At TypeBindings.java:[line 342]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76738');">
+<td>
+<span class="priority-2">CN</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.ISO8601DateFormat.clone() does not call super.clone()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76738" style="display: none;">
+<a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.ISO8601DateFormat<br />In method com.fasterxml.jackson.databind.util.ISO8601DateFormat.clone()<br />At ISO8601DateFormat.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76982');">
+<td>
+<span class="priority-2">CN</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.StdDateFormat.clone() does not call super.clone()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76982" style="display: none;">
+<a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />In method com.fasterxml.jackson.databind.util.StdDateFormat.clone()<br />At StdDateFormat.java:[line 253]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72576');">
+<td>
+<span class="priority-1">DE</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.AnnotatedMethodCollector.collect(TypeFactory, TypeResolutionContext, JavaType, List, Class) might ignore java.lang.Exception</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72576" style="display: none;">
+<a href="#DE_MIGHT_IGNORE">Bug type DE_MIGHT_IGNORE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedMethodCollector<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedMethodCollector.collect(TypeFactory, TypeResolutionContext, JavaType, List, Class)<br />Exception class java.lang.Exception<br />At AnnotatedMethodCollector.java:[line 81]<br />At AnnotatedMethodCollector.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73219');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.POJOPropertyBuilder defines compareTo(POJOPropertyBuilder) and uses Object.equals()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73219" style="display: none;">
+<a href="#EQ_COMPARETO_USE_OBJECT_EQUALS">Bug type EQ_COMPARETO_USE_OBJECT_EQUALS (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.POJOPropertyBuilder<br />In method com.fasterxml.jackson.databind.introspect.POJOPropertyBuilder.compareTo(POJOPropertyBuilder)<br />At POJOPropertyBuilder.java:[lines 132-142]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68911');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap._find2(String, int, Object) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68911" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap<br />In method com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap._find2(String, int, Object)<br />Actual type String<br />Value loaded from key<br />Value loaded from match<br />At BeanPropertyMap.java:[line 557]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68995');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap._find2ViaAlias(String, int, Object) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68995" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap<br />In method com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap._find2ViaAlias(String, int, Object)<br />Actual type String<br />Value loaded from key<br />Value loaded from match<br />At BeanPropertyMap.java:[line 598]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76586');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in com.fasterxml.jackson.databind.util.CompactStringObjectMap._find2(String, int, Object) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76586" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.CompactStringObjectMap<br />In method com.fasterxml.jackson.databind.util.CompactStringObjectMap._find2(String, int, Object)<br />Actual type String<br />Value loaded from key<br />Value loaded from match<br />At CompactStringObjectMap.java:[line 119]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76458');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.ArrayBuilders$1 defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76458" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.ArrayBuilders$1<br />In method com.fasterxml.jackson.databind.util.ArrayBuilders$1.equals(Object)<br />At ArrayBuilders.java:[lines 164-180]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.isIgnorableType(AnnotatedClass) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.isIgnorableType(AnnotatedClass)<br />At AnnotationIntrospector.java:[line 252]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65602');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.isTypeId(AnnotatedMember) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65602" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.isTypeId(AnnotatedMember)<br />At AnnotationIntrospector.java:[line 425]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65656');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.findIgnoreUnknownProperties(AnnotatedClass) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65656" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.findIgnoreUnknownProperties(AnnotatedClass)<br />At AnnotationIntrospector.java:[line 316]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65710');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.findMergeInfo(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65710" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.findMergeInfo(Annotated)<br />At AnnotationIntrospector.java:[line 1243]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65764');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.findSerializationSortAlphabetically(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65764" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.findSerializationSortAlphabetically(Annotated)<br />At AnnotationIntrospector.java:[line 845]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65818');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.hasAnyGetter(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65818" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.hasAnyGetter(Annotated)<br />At AnnotationIntrospector.java:[line 923]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65872');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.hasAnySetter(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65872" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.hasAnySetter(Annotated)<br />At AnnotationIntrospector.java:[line 1224]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65926');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.hasAsValue(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65926" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.hasAsValue(Annotated)<br />At AnnotationIntrospector.java:[line 901]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65980');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.AnnotationIntrospector.hasRequiredMarker(AnnotatedMember) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65980" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.AnnotationIntrospector<br />In method com.fasterxml.jackson.databind.AnnotationIntrospector.hasRequiredMarker(AnnotatedMember)<br />At AnnotationIntrospector.java:[line 488]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67726');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.AbstractDeserializer.supportsUpdate(DeserializationConfig) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67726" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.AbstractDeserializer<br />In method com.fasterxml.jackson.databind.deser.AbstractDeserializer.supportsUpdate(DeserializationConfig)<br />At AbstractDeserializer.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70933');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.StdDeserializer.findFormatFeature(DeserializationContext, BeanProperty, Class, JsonFormat$Feature) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70933" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.StdDeserializer.findFormatFeature(DeserializationContext, BeanProperty, Class, JsonFormat$Feature)<br />At StdDeserializer.java:[line 1024]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71786');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer.supportsUpdate(DeserializationConfig) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71786" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer.supportsUpdate(DeserializationConfig)<br />At UntypedObjectDeserializer.java:[line 233]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71840');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.supportsUpdate(DeserializationConfig) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71840" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla<br />In method com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.supportsUpdate(DeserializationConfig)<br />At UntypedObjectDeserializer.java:[line 639]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71965');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.ext.Java7SupportImpl.findTransient(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71965" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ext.Java7SupportImpl<br />In method com.fasterxml.jackson.databind.ext.Java7SupportImpl.findTransient(Annotated)<br />At Java7SupportImpl.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72019');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.ext.Java7SupportImpl.hasCreatorAnnotation(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72019" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ext.Java7SupportImpl<br />In method com.fasterxml.jackson.databind.ext.Java7SupportImpl.hasCreatorAnnotation(Annotated)<br />At Java7SupportImpl.java:[line 67]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73003');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector._findSortAlpha(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73003" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector<br />In method com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector._findSortAlpha(Annotated)<br />At JacksonAnnotationIntrospector.java:[line 898]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73057');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.hasAnyGetter(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73057" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector<br />In method com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.hasAnyGetter(Annotated)<br />At JacksonAnnotationIntrospector.java:[line 1033]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73111');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.hasAsValue(Annotated) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73111" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector<br />In method com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.hasAsValue(Annotated)<br />At JacksonAnnotationIntrospector.java:[line 1024]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73165');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.hasRequiredMarker(AnnotatedMember) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73165" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector<br />In method com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.hasRequiredMarker(AnnotatedMember)<br />At JacksonAnnotationIntrospector.java:[line 369]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66271');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.JsonDeserializer.supportsUpdate(DeserializationConfig) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66271" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.JsonDeserializer<br />In method com.fasterxml.jackson.databind.JsonDeserializer.supportsUpdate(DeserializationConfig)<br />At JsonDeserializer.java:[line 389]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75982');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.databind.ser.std.StdSerializer.findFormatFeature(SerializerProvider, BeanProperty, Class, JsonFormat$Feature) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75982" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.StdSerializer<br />In method com.fasterxml.jackson.databind.ser.std.StdSerializer.findFormatFeature(SerializerProvider, BeanProperty, Class, JsonFormat$Feature)<br />At StdSerializer.java:[line 468]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69545');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(DeserializationContext, BeanProperty)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69545" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.CollectionDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(DeserializationContext, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase._unwrapSingle<br />At CollectionDeserializer.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69626');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.handleNonArray(JsonParser, DeserializationContext, Collection)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69626" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.CollectionDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.handleNonArray(JsonParser, DeserializationContext, Collection)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase._unwrapSingle<br />At CollectionDeserializer.java:[line 328]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69911');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.EnumDeserializer.withResolved(Boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69911" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.EnumDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.EnumDeserializer.withResolved(Boolean)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.EnumDeserializer._caseInsensitive<br />At EnumDeserializer.java:[line 136]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70113');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer.handleNonArray(JsonParser, DeserializationContext, EnumSet)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70113" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer.handleNonArray(JsonParser, DeserializationContext, EnumSet)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer._unwrapSingle<br />At EnumSetDeserializer.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70194');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer.withResolved(JsonDeserializer, Boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70194" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer.withResolved(JsonDeserializer, Boolean)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer._unwrapSingle<br />At EnumSetDeserializer.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70480');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.handleNonArray(JsonParser, DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70480" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.handleNonArray(JsonParser, DeserializationContext)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase._unwrapSingle<br />At ObjectArrayDeserializer.java:[line 319]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70561');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.withResolved(TypeDeserializer, JsonDeserializer, NullValueProvider, Boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70561" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.withResolved(TypeDeserializer, JsonDeserializer, NullValueProvider, Boolean)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase._unwrapSingle<br />At ObjectArrayDeserializer.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70642');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers.createContextual(DeserializationContext, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70642" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers<br />In method com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers.createContextual(DeserializationContext, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers._unwrapSingle<br />At PrimitiveArrayDeserializers.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70723');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers.handleNonArray(JsonParser, DeserializationContext)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70723" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers<br />In method com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers.handleNonArray(JsonParser, DeserializationContext)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers._unwrapSingle<br />At PrimitiveArrayDeserializers.java:[line 234]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71401');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer.createContextual(DeserializationContext, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71401" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer.createContextual(DeserializationContext, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer._unwrapSingle<br />At StringArrayDeserializer.java:[line 119]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71482');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer.handleNonArray(JsonParser, DeserializationContext)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71482" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer.handleNonArray(JsonParser, DeserializationContext)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer._unwrapSingle<br />At StringArrayDeserializer.java:[line 298]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71624');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.handleNonArray(JsonParser, DeserializationContext, Collection)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71624" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.handleNonArray(JsonParser, DeserializationContext, Collection)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase._unwrapSingle<br />At StringCollectionDeserializer.java:[line 262]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71705');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.withResolved(JsonDeserializer, JsonDeserializer, NullValueProvider, Boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71705" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.withResolved(JsonDeserializer, JsonDeserializer, NullValueProvider, Boolean)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase._unwrapSingle<br />At StringCollectionDeserializer.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74228');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(List, JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74228" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer<br />In method com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(List, JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase._unwrapSingle<br />At IndexedListSerializer.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74309');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.impl.IndexedStringListSerializer.serialize(List, JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74309" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.IndexedStringListSerializer<br />In method com.fasterxml.jackson.databind.ser.impl.IndexedStringListSerializer.serialize(List, JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase._unwrapSingle<br />At IndexedStringListSerializer.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74506');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.impl.StringArraySerializer.createContextual(SerializerProvider, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74506" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.StringArraySerializer<br />In method com.fasterxml.jackson.databind.ser.impl.StringArraySerializer.createContextual(SerializerProvider, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.ArraySerializerBase._unwrapSingle<br />At StringArraySerializer.java:[line 119]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74587');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.impl.StringArraySerializer.serialize(String[], JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74587" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.StringArraySerializer<br />In method com.fasterxml.jackson.databind.ser.impl.StringArraySerializer.serialize(String[], JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.ArraySerializerBase._unwrapSingle<br />At StringArraySerializer.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74668');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.impl.StringCollectionSerializer.serialize(Collection, JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74668" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.StringCollectionSerializer<br />In method com.fasterxml.jackson.databind.ser.impl.StringCollectionSerializer.serialize(Collection, JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase._unwrapSingle<br />At StringCollectionSerializer.java:[line 73]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74140');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.PropertyBuilder.getDefaultBean()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74140" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.PropertyBuilder<br />In method com.fasterxml.jackson.databind.ser.PropertyBuilder.getDefaultBean()<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.PropertyBuilder.NO_DEFAULT_MARKER<br />Value loaded from def<br />At PropertyBuilder.java:[line 328]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74749');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.ArraySerializerBase.createContextual(SerializerProvider, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74749" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.ArraySerializerBase<br />In method com.fasterxml.jackson.databind.ser.std.ArraySerializerBase.createContextual(SerializerProvider, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.ArraySerializerBase._unwrapSingle<br />At ArraySerializerBase.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74830');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase.createContextual(SerializerProvider, BeanProperty)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74830" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase<br />In method com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase.createContextual(SerializerProvider, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase._unwrapSingle<br />At AsArraySerializerBase.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75061');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serialize(Collection, JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75061" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.CollectionSerializer<br />In method com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serialize(Collection, JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase._unwrapSingle<br />At CollectionSerializer.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75142');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.EnumSerializer.createContextual(SerializerProvider, BeanProperty)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75142" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.EnumSerializer<br />In method com.fasterxml.jackson.databind.ser.std.EnumSerializer.createContextual(SerializerProvider, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.EnumSerializer._serializeAsIndex<br />At EnumSerializer.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75223');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.EnumSetSerializer.serialize(EnumSet, JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75223" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.EnumSetSerializer<br />In method com.fasterxml.jackson.databind.ser.std.EnumSetSerializer.serialize(EnumSet, JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase._unwrapSingle<br />At EnumSetSerializer.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75304');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.IterableSerializer.serialize(Iterable, JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75304" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.IterableSerializer<br />In method com.fasterxml.jackson.databind.ser.std.IterableSerializer.serialize(Iterable, JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.AsArraySerializerBase._unwrapSingle<br />At IterableSerializer.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75652');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer.serialize(Object[], JsonGenerator, SerializerProvider)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75652" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer<br />In method com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer.serialize(Object[], JsonGenerator, SerializerProvider)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.ArraySerializerBase._unwrapSingle<br />At ObjectArraySerializer.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75733');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer.withResolved(BeanProperty, TypeSerializer, JsonSerializer, Boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75733" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer<br />In method com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer.withResolved(BeanProperty, TypeSerializer, JsonSerializer, Boolean)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.ArraySerializerBase._unwrapSingle<br />At ObjectArraySerializer.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75814');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase.createContextual(SerializerProvider, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75814" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase<br />In method com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase.createContextual(SerializerProvider, BeanProperty)<br />Actual type Boolean<br />Value loaded from field com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase._unwrapSingle<br />At StaticListSerializerBase.java:[line 90]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67261');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.BaseSettings defines non-transient non-serializable instance field _handlerInstantiator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67261" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.BaseSettings<br />Field com.fasterxml.jackson.databind.cfg.BaseSettings._handlerInstantiator<br />Actual type com.fasterxml.jackson.databind.cfg.HandlerInstantiator<br />In BaseSettings.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67321');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.BaseSettings defines non-transient non-serializable instance field _typeResolverBuilder</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67321" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.BaseSettings<br />Field com.fasterxml.jackson.databind.cfg.BaseSettings._typeResolverBuilder<br />Actual type com.fasterxml.jackson.databind.jsontype.TypeResolverBuilder&lt;?&gt;<br />In BaseSettings.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67432');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig defines non-transient non-serializable instance field _modifiers</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67432" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig<br />Field com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._modifiers<br />Actual type com.fasterxml.jackson.databind.deser.BeanDeserializerModifier<br />In DeserializerFactoryConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67492');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig defines non-transient non-serializable instance field _valueInstantiators</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67492" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig<br />Field com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._valueInstantiators<br />Actual type com.fasterxml.jackson.databind.deser.ValueInstantiators<br />In DeserializerFactoryConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67550');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig defines non-transient non-serializable instance field _additionalKeySerializers</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67550" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig<br />Field com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig._additionalKeySerializers<br />Actual type com.fasterxml.jackson.databind.ser.Serializers<br />In SerializerFactoryConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67608');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig defines non-transient non-serializable instance field _additionalSerializers</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67608" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig<br />Field com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig._additionalSerializers<br />Actual type com.fasterxml.jackson.databind.ser.Serializers<br />In SerializerFactoryConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67666');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig defines non-transient non-serializable instance field _modifiers</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67666" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig<br />Field com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig._modifiers<br />Actual type com.fasterxml.jackson.databind.ser.BeanSerializerModifier<br />In SerializerFactoryConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67864');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field com.fasterxml.jackson.databind.deser.AbstractDeserializer._properties is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67864" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.AbstractDeserializer<br />Field com.fasterxml.jackson.databind.deser.AbstractDeserializer._properties<br />In AbstractDeserializer.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69485');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.impl.SetterlessProperty defines non-transient non-serializable instance field _getter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69485" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.SetterlessProperty<br />Field com.fasterxml.jackson.databind.deser.impl.SetterlessProperty._getter<br />Actual type reflect.Method<br />In SetterlessProperty.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69780');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.std.DateDeserializers$CalendarDeserializer defines non-transient non-serializable instance field _defaultCtor</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69780" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.DateDeserializers$CalendarDeserializer<br />Field com.fasterxml.jackson.databind.deser.std.DateDeserializers$CalendarDeserializer._defaultCtor<br />Actual type reflect.Constructor&lt;java.util.Calendar&gt;<br />In DateDeserializers.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70053');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer defines non-transient non-serializable instance field _propertyBasedCreator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70053" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer<br />Field com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer._propertyBasedCreator<br />Actual type com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator<br />In EnumMapDeserializer.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70420');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.std.MapDeserializer defines non-transient non-serializable instance field _propertyBasedCreator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70420" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.MapDeserializer<br />Field com.fasterxml.jackson.databind.deser.std.MapDeserializer._propertyBasedCreator<br />Actual type com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator<br />In MapDeserializer.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70874');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer defines non-transient non-serializable instance field _converter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70874" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer<br />Field com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer._converter<br />Actual type com.fasterxml.jackson.databind.util.Converter&lt;java.lang.Object,T&gt;<br />In StdDelegatingDeserializer.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70987');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer$StringCtorKeyDeserializer defines non-transient non-serializable instance field _ctor</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70987" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer$StringCtorKeyDeserializer<br />Field com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer$StringCtorKeyDeserializer._ctor<br />Actual type reflect.Constructor&lt;?&gt;<br />In StdKeyDeserializer.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71048');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer$StringFactoryKeyDeserializer defines non-transient non-serializable instance field _factoryMethod</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71048" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer$StringFactoryKeyDeserializer<br />Field com.fasterxml.jackson.databind.deser.std.StdKeyDeserializer$StringFactoryKeyDeserializer._factoryMethod<br />Actual type reflect.Method<br />In StdKeyDeserializer.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66034');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.DeserializationConfig defines non-transient non-serializable instance field _problemHandlers</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66034" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.DeserializationConfig<br />Field com.fasterxml.jackson.databind.DeserializationConfig._problemHandlers<br />Actual type com.fasterxml.jackson.databind.util.LinkedNode&lt;com.fasterxml.jackson.databind.deser.DeserializationProblemHandler&gt;<br />In DeserializationConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72233');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.introspect.AnnotatedConstructor defines non-transient non-serializable instance field _constructor</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72233" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedConstructor<br />Field com.fasterxml.jackson.databind.introspect.AnnotatedConstructor._constructor<br />Actual type reflect.Constructor&lt;?&gt;<br />In AnnotatedConstructor.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72761');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.introspect.AnnotationCollector$OneAnnotation defines non-transient non-serializable instance field _value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72761" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotationCollector$OneAnnotation<br />Field com.fasterxml.jackson.databind.introspect.AnnotationCollector$OneAnnotation._value<br />Actual type annotation.Annotation<br />In AnnotationCollector.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72819');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.introspect.AnnotationCollector$TwoAnnotations defines non-transient non-serializable instance field _value1</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72819" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotationCollector$TwoAnnotations<br />Field com.fasterxml.jackson.databind.introspect.AnnotationCollector$TwoAnnotations._value1<br />Actual type annotation.Annotation<br />In AnnotationCollector.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72877');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.introspect.AnnotationCollector$TwoAnnotations defines non-transient non-serializable instance field _value2</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72877" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotationCollector$TwoAnnotations<br />Field com.fasterxml.jackson.databind.introspect.AnnotationCollector$TwoAnnotations._value2<br />Actual type annotation.Annotation<br />In AnnotationCollector.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66325');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field com.fasterxml.jackson.databind.JsonMappingException$Reference._from is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66325" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.JsonMappingException$Reference<br />Field com.fasterxml.jackson.databind.JsonMappingException$Reference._from<br />In JsonMappingException.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73325');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.module.SimpleModule defines non-transient non-serializable instance field _deserializerModifier</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73325" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.module.SimpleModule<br />Field com.fasterxml.jackson.databind.module.SimpleModule._deserializerModifier<br />Actual type com.fasterxml.jackson.databind.deser.BeanDeserializerModifier<br />In SimpleModule.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73385');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.module.SimpleModule defines non-transient non-serializable instance field _serializerModifier</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73385" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.module.SimpleModule<br />Field com.fasterxml.jackson.databind.module.SimpleModule._serializerModifier<br />Actual type com.fasterxml.jackson.databind.ser.BeanSerializerModifier<br />In SimpleModule.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66983');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ObjectReader defines non-transient non-serializable instance field _dataFormatReaders</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66983" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectReader<br />Field com.fasterxml.jackson.databind.ObjectReader._dataFormatReaders<br />Actual type com.fasterxml.jackson.databind.deser.DataFormatReaders<br />In ObjectReader.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67043');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ObjectWriter$Prefetch defines non-transient non-serializable instance field typeSerializer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67043" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectWriter$Prefetch<br />Field com.fasterxml.jackson.databind.ObjectWriter$Prefetch.typeSerializer<br />Actual type com.fasterxml.jackson.databind.jsontype.TypeSerializer<br />In ObjectWriter.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73884');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ser.BeanPropertyWriter defines non-transient non-serializable instance field _typeSerializer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73884" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.BeanPropertyWriter<br />Field com.fasterxml.jackson.databind.ser.BeanPropertyWriter._typeSerializer<br />Actual type com.fasterxml.jackson.databind.jsontype.TypeSerializer<br />In BeanPropertyWriter.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74390');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider defines non-transient non-serializable instance field _defaultFilter</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74390" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider<br />Field com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider._defaultFilter<br />Actual type com.fasterxml.jackson.databind.ser.PropertyFilter<br />In SimpleFilterProvider.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74448');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider defines non-transient non-serializable instance field _filtersById</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74448" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider<br />Field com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider._filtersById<br />Actual type com.fasterxml.jackson.databind.ser.PropertyFilter<br />In SimpleFilterProvider.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75472');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ser.std.MapProperty defines non-transient non-serializable instance field _typeSerializer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75472" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.MapProperty<br />Field com.fasterxml.jackson.databind.ser.std.MapProperty._typeSerializer<br />Actual type com.fasterxml.jackson.databind.jsontype.TypeSerializer<br />In MapProperty.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75532');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ser.std.MapSerializer defines non-transient non-serializable instance field _dynamicValueSerializers</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75532" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.MapSerializer<br />Field com.fasterxml.jackson.databind.ser.std.MapSerializer._dynamicValueSerializers<br />Actual type com.fasterxml.jackson.databind.ser.impl.PropertySerializerMap<br />In MapSerializer.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75592');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.ser.std.MapSerializer defines non-transient non-serializable instance field _valueTypeSerializer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75592" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.MapSerializer<br />Field com.fasterxml.jackson.databind.ser.std.MapSerializer._valueTypeSerializer<br />Actual type com.fasterxml.jackson.databind.jsontype.TypeSerializer<br />In MapSerializer.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76338');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.type.TypeFactory defines non-transient non-serializable instance field _classLoader</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76338" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.type.TypeFactory<br />Field com.fasterxml.jackson.databind.type.TypeFactory._classLoader<br />Actual type ClassLoader<br />In TypeFactory.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76398');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.databind.type.TypeFactory defines non-transient non-serializable instance field _modifiers</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76398" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.type.TypeFactory<br />Field com.fasterxml.jackson.databind.type.TypeFactory._modifiers<br />Actual type com.fasterxml.jackson.databind.type.TypeModifier<br />In TypeFactory.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77123');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field com.fasterxml.jackson.databind.util.StdDateFormat._timezone is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77123" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />Field com.fasterxml.jackson.databind.util.StdDateFormat._timezone<br />In StdDateFormat.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75947');">
+<td>
+<span class="priority-2">SnVI</span>
+</td>
+<td>com.fasterxml.jackson.databind.ser.std.StdKeySerializers$Dynamic is Serializable; consider declaring a serialVersionUID</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75947" style="display: none;">
+<a href="#SE_NO_SERIALVERSIONID">Bug type SE_NO_SERIALVERSIONID (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.StdKeySerializers$Dynamic<br />At StdKeySerializers.java:[lines 205-250]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77088');">
+<td>
+<span class="priority-2">SnVI</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.StdDateFormat is Serializable; consider declaring a serialVersionUID</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77088" style="display: none;">
+<a href="#SE_NO_SERIALVERSIONID">Bug type SE_NO_SERIALVERSIONID (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />At StdDateFormat.java:[lines 20-767]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75385');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>instanceof will always return false in com.fasterxml.jackson.databind.ser.std.JsonValueSerializer._acceptJsonFormatVisitorForEnum(JsonFormatVisitorWrapper, JavaType, Class), since a RuntimeException can't be a reflect.InvocationTargetException</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75385" style="display: none;">
+<a href="#BC_IMPOSSIBLE_INSTANCEOF">Bug type BC_IMPOSSIBLE_INSTANCEOF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.JsonValueSerializer<br />In method com.fasterxml.jackson.databind.ser.std.JsonValueSerializer._acceptJsonFormatVisitorForEnum(JsonFormatVisitorWrapper, JavaType, Class)<br />Actual type RuntimeException<br />Expected reflect.InvocationTargetException<br />Value loaded from t<br />At JsonValueSerializer.java:[line 293]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71894');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store of java.beans.Transient.class in new com.fasterxml.jackson.databind.ext.Java7SupportImpl()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71894" style="display: none;">
+<a href="#DLS_DEAD_STORE_OF_CLASS_LITERAL">Bug type DLS_DEAD_STORE_OF_CLASS_LITERAL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ext.Java7SupportImpl<br />In method new com.fasterxml.jackson.databind.ext.Java7SupportImpl()<br />Local variable named cls<br />Type java.beans.Transient<br />At Java7SupportImpl.java:[line 24]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74087');">
+<td>
+<span class="priority-2">EC</span>
+</td>
+<td>Call to equals(null) in com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.includeFilterSuppressNulls(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74087" style="display: none;">
+<a href="#EC_NULL_ARG">Bug type EC_NULL_ARG (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.DefaultSerializerProvider<br />In method com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.includeFilterSuppressNulls(Object)<br />At DefaultSerializerProvider.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67780');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of idProp in com.fasterxml.jackson.databind.deser.AbstractDeserializer.createContextual(DeserializationContext, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67780" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.AbstractDeserializer<br />In method com.fasterxml.jackson.databind.deser.AbstractDeserializer.createContextual(DeserializationContext, BeanProperty)<br />Value loaded from idProp<br />Dereferenced at AbstractDeserializer.java:[line 148]<br />Null value at AbstractDeserializer.java:[line 143]<br />Known null at AbstractDeserializer.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67911');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of intr in com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.constructCreatorProperty(DeserializationContext, BeanDescription, PropertyName, int, AnnotatedParameter, JacksonInject$Value)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67911" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BasicDeserializerFactory<br />In method com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.constructCreatorProperty(DeserializationContext, BeanDescription, PropertyName, int, AnnotatedParameter, JacksonInject$Value)<br />Value loaded from intr<br />Dereferenced at BasicDeserializerFactory.java:[line 1058]<br />Null value at BasicDeserializerFactory.java:[line 1047]<br />Known null at BasicDeserializerFactory.java:[line 1048]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68073');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of backProp in com.fasterxml.jackson.databind.deser.BeanDeserializerBase._resolveManagedReferenceProperty(DeserializationContext, SettableBeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68073" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BeanDeserializerBase<br />In method com.fasterxml.jackson.databind.deser.BeanDeserializerBase._resolveManagedReferenceProperty(DeserializationContext, SettableBeanProperty)<br />Value loaded from backProp<br />Dereferenced at BeanDeserializerBase.java:[line 794]<br />Null value at BeanDeserializerBase.java:[line 787]<br />Known null at BeanDeserializerBase.java:[line 788]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68157');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of idProp in com.fasterxml.jackson.databind.deser.BeanDeserializerBase.createContextual(DeserializationContext, BeanProperty)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68157" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BeanDeserializerBase<br />In method com.fasterxml.jackson.databind.deser.BeanDeserializerBase.createContextual(DeserializationContext, BeanProperty)<br />Value loaded from idProp<br />Dereferenced at BeanDeserializerBase.java:[line 712]<br />Null value at BeanDeserializerBase.java:[line 707]<br />Known null at BeanDeserializerBase.java:[line 708]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68241');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of ctxt in com.fasterxml.jackson.databind.deser.BeanDeserializerBase.wrapInstantiationProblem(Throwable, DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68241" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BeanDeserializerBase<br />In method com.fasterxml.jackson.databind.deser.BeanDeserializerBase.wrapInstantiationProblem(Throwable, DeserializationContext)<br />Value loaded from ctxt<br />Dereferenced at BeanDeserializerBase.java:[line 1754]<br />Known null at BeanDeserializerBase.java:[line 1750]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68314');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of _findDelegateDeserializer(DeserializationContext, JavaType, AnnotatedWithParams) in com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(DeserializationContext)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68314" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BeanDeserializerBase<br />In method com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(DeserializationContext)<br />Called method com.fasterxml.jackson.databind.deser.BeanDeserializerBase._findDelegateDeserializer(DeserializationContext, JavaType, AnnotatedWithParams)<br />Argument 2 might be null but must not be null<br />Value loaded from delegateType<br />Method invoked at BeanDeserializerBase.java:[line 552]<br />Null value at BeanDeserializerBase.java:[line 547]<br />Known null at BeanDeserializerBase.java:[line 548]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68419');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of _findDelegateDeserializer(DeserializationContext, JavaType, AnnotatedWithParams) in com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68419" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BeanDeserializerBase<br />In method com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(DeserializationContext)<br />Called method com.fasterxml.jackson.databind.deser.BeanDeserializerBase._findDelegateDeserializer(DeserializationContext, JavaType, AnnotatedWithParams)<br />Argument 2 might be null but must not be null<br />Value loaded from delegateType<br />Method invoked at BeanDeserializerBase.java:[line 564]<br />Null value at BeanDeserializerBase.java:[line 559]<br />Known null at BeanDeserializerBase.java:[line 560]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68524');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of new com.fasterxml.jackson.databind.deser.impl.FieldProperty(BeanPropertyDefinition, JavaType, TypeDeserializer, Annotations, AnnotatedField) in com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(DeserializationContext, BeanDescription, BeanPropertyDefinition, JavaType)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68524" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BeanDeserializerFactory<br />In method com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(DeserializationContext, BeanDescription, BeanPropertyDefinition, JavaType)<br />Called method new com.fasterxml.jackson.databind.deser.impl.FieldProperty(BeanPropertyDefinition, JavaType, TypeDeserializer, Annotations, AnnotatedField)<br />Argument 5 might be null but must not be null<br />Value loaded from mutator<br />Method invoked at BeanDeserializerFactory.java:[line 800]<br />Null value at BeanDeserializerFactory.java:[line 788]<br />Known null at BeanDeserializerFactory.java:[line 789]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69707');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of vi in com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase.getEmptyValue(DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69707" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase<br />In method com.fasterxml.jackson.databind.deser.std.ContainerDeserializerBase.getEmptyValue(DeserializationContext)<br />Value loaded from vi<br />Dereferenced at ContainerDeserializerBase.java:[line 153]<br />Known null at ContainerDeserializerBase.java:[line 147]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70336');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of accumulator in com.fasterxml.jackson.databind.deser.std.MapDeserializer.handleUnresolvedReference(DeserializationContext, MapDeserializer$MapReferringAccumulator, Object, UnresolvedForwardReference)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70336" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.MapDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.MapDeserializer.handleUnresolvedReference(DeserializationContext, MapDeserializer$MapReferringAccumulator, Object, UnresolvedForwardReference)<br />Value loaded from accumulator<br />Dereferenced at MapDeserializer.java:[line 764]<br />Null value at MapDeserializer.java:[line 760]<br />Known null at MapDeserializer.java:[line 761]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66095');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of DeserializationContext._injectableValues in com.fasterxml.jackson.databind.DeserializationContext.findInjectableValue(Object, BeanProperty, Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66095" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.DeserializationContext<br />In method com.fasterxml.jackson.databind.DeserializationContext.findInjectableValue(Object, BeanProperty, Object)<br />Value contained in com.fasterxml.jackson.databind.DeserializationContext._injectableValues<br />Dereferenced at DeserializationContext.java:[line 382]<br />Null value at DeserializationContext.java:[line 378]<br />Known null at DeserializationContext.java:[line 379]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66187');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of deser in com.fasterxml.jackson.databind.DeserializationContext.readValue(JsonParser, JavaType)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66187" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.DeserializationContext<br />In method com.fasterxml.jackson.databind.DeserializationContext.readValue(JsonParser, JavaType)<br />Value loaded from deser<br />Dereferenced at DeserializationContext.java:[line 759]<br />Null value at DeserializationContext.java:[line 755]<br />Known null at DeserializationContext.java:[line 756]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66668');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of java.util.concurrent.ConcurrentHashMap.get(Object) in com.fasterxml.jackson.databind.ObjectReader._findRootDeserializer(DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66668" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectReader<br />In method com.fasterxml.jackson.databind.ObjectReader._findRootDeserializer(DeserializationContext)<br />Called method java.util.concurrent.ConcurrentHashMap.get(Object)<br />Argument 1 might be null but must not be null<br />Value loaded from t<br />Method invoked at ObjectReader.java:[line 1890]<br />Null value at ObjectReader.java:[line 1885]<br />Known null at ObjectReader.java:[line 1886]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66773');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of java.util.concurrent.ConcurrentHashMap.put(Object, Object) in com.fasterxml.jackson.databind.ObjectReader._findRootDeserializer(DeserializationContext)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66773" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectReader<br />In method com.fasterxml.jackson.databind.ObjectReader._findRootDeserializer(DeserializationContext)<br />Called method java.util.concurrent.ConcurrentHashMap.put(Object, Object)<br />Argument 2 might be null but must not be null<br />Value loaded from deser<br />Method invoked at ObjectReader.java:[line 1899]<br />Null value at ObjectReader.java:[line 1896]<br />Known null at ObjectReader.java:[line 1897]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66878');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of java.util.concurrent.ConcurrentHashMap.put(Object, Object) in com.fasterxml.jackson.databind.ObjectReader._findTreeDeserializer(DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66878" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectReader<br />In method com.fasterxml.jackson.databind.ObjectReader._findTreeDeserializer(DeserializationContext)<br />Called method java.util.concurrent.ConcurrentHashMap.put(Object, Object)<br />Argument 2 might be null but must not be null<br />Value loaded from deser<br />Method invoked at ObjectReader.java:[line 1917]<br />Null value at ObjectReader.java:[line 1913]<br />Known null at ObjectReader.java:[line 1914]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76036');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of filters in com.fasterxml.jackson.databind.ser.std.StdSerializer.findPropertyFilter(SerializerProvider, Object, Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76036" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.StdSerializer<br />In method com.fasterxml.jackson.databind.ser.std.StdSerializer.findPropertyFilter(SerializerProvider, Object, Object)<br />Value loaded from filters<br />Dereferenced at StdSerializer.java:[line 430]<br />Null value at StdSerializer.java:[line 425]<br />Known null at StdSerializer.java:[line 426]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67156');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Null passed for non-null parameter of com.fasterxml.jackson.databind.ser.impl.ReadOnlyClassToSerializerMap.untypedValueSerializer(JavaType) in com.fasterxml.jackson.databind.SerializerProvider.findValueSerializer(JavaType, BeanProperty)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67156" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF">Bug type NP_NULL_PARAM_DEREF (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.SerializerProvider<br />In method com.fasterxml.jackson.databind.SerializerProvider.findValueSerializer(JavaType, BeanProperty)<br />Called method com.fasterxml.jackson.databind.ser.impl.ReadOnlyClassToSerializerMap.untypedValueSerializer(JavaType)<br />Argument 1 might be null but must not be null<br />Value loaded from valueType<br />Method invoked at SerializerProvider.java:[line 547]<br />Null value at SerializerProvider.java:[line 543]<br />Known null at SerializerProvider.java:[line 544]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76120');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Non-virtual method call in com.fasterxml.jackson.databind.type.ReferenceType.construct(Class, JavaType) passes null for non-null parameter of new ReferenceType(Class, TypeBindings, JavaType, JavaType[], JavaType, JavaType, Object, Object, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76120" style="display: none;">
+<a href="#NP_NULL_PARAM_DEREF_NONVIRTUAL">Bug type NP_NULL_PARAM_DEREF_NONVIRTUAL (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.type.ReferenceType<br />In method com.fasterxml.jackson.databind.type.ReferenceType.construct(Class, JavaType)<br />Called method new com.fasterxml.jackson.databind.type.ReferenceType(Class, TypeBindings, JavaType, JavaType[], JavaType, JavaType, Object, Object, boolean)<br />At ReferenceType.java:[line 88]<br />Argument 5 is definitely null but must not be null</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66372');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Nullcheck of MappingIterator._parser at line 244 of value previously dereferenced in com.fasterxml.jackson.databind.MappingIterator.hasNextValue()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66372" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.MappingIterator<br />In method com.fasterxml.jackson.databind.MappingIterator.hasNextValue()<br />Value loaded from field com.fasterxml.jackson.databind.MappingIterator._parser<br />At MappingIterator.java:[line 238]<br />Redundant null check at MappingIterator.java:[line 244]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68843');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap.getPropertiesInInsertionOrder() may expose internal representation by returning BeanPropertyMap._propsInOrder</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68843" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap<br />In method com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap.getPropertiesInInsertionOrder()<br />Field com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap._propsInOrder<br />At BeanPropertyMap.java:[line 487]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69417');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.impl.PropertyValueBuffer.getParameters(SettableBeanProperty[]) may expose internal representation by returning PropertyValueBuffer._creatorParameters</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69417" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.PropertyValueBuffer<br />In method com.fasterxml.jackson.databind.deser.impl.PropertyValueBuffer.getParameters(SettableBeanProperty[])<br />Field com.fasterxml.jackson.databind.deser.impl.PropertyValueBuffer._creatorParameters<br />At PropertyValueBuffer.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71108');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.getFromObjectArguments(DeserializationConfig) may expose internal representation by returning StdValueInstantiator._constructorArguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71108" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdValueInstantiator<br />In method com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.getFromObjectArguments(DeserializationConfig)<br />Field com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._constructorArguments<br />At StdValueInstantiator.java:[line 254]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72454');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.AnnotatedMethod.getRawParameterTypes() may expose internal representation by returning AnnotatedMethod._paramClasses</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72454" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedMethod<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedMethod.getRawParameterTypes()<br />Field com.fasterxml.jackson.databind.introspect.AnnotatedMethod._paramClasses<br />At AnnotatedMethod.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72935');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.introspect.BasicBeanDescription.findDefaultViews() may expose internal representation by returning BasicBeanDescription._defaultViews</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72935" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.BasicBeanDescription<br />In method com.fasterxml.jackson.databind.introspect.BasicBeanDescription.findDefaultViews()<br />Field com.fasterxml.jackson.databind.introspect.BasicBeanDescription._defaultViews<br />At BasicBeanDescription.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73445');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.node.BinaryNode.binaryValue() may expose internal representation by returning BinaryNode._data</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73445" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.node.BinaryNode<br />In method com.fasterxml.jackson.databind.node.BinaryNode.binaryValue()<br />Field com.fasterxml.jackson.databind.node.BinaryNode._data<br />At BinaryNode.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73741');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.ser.BeanPropertyWriter.getViews() may expose internal representation by returning BeanPropertyWriter._includeInViews</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73741" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.BeanPropertyWriter<br />In method com.fasterxml.jackson.databind.ser.BeanPropertyWriter.getViews()<br />Field com.fasterxml.jackson.databind.ser.BeanPropertyWriter._includeInViews<br />At BeanPropertyWriter.java:[line 669]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73944');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.ser.BeanSerializerBuilder.getFilteredProperties() may expose internal representation by returning BeanSerializerBuilder._filteredProperties</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73944" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.BeanSerializerBuilder<br />In method com.fasterxml.jackson.databind.ser.BeanSerializerBuilder.getFilteredProperties()<br />Field com.fasterxml.jackson.databind.ser.BeanSerializerBuilder._filteredProperties<br />At BeanSerializerBuilder.java:[line 161]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76670');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.EnumResolver.getRawEnums() may expose internal representation by returning EnumResolver._enums</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76670" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.EnumResolver<br />In method com.fasterxml.jackson.databind.util.EnumResolver.getRawEnums()<br />Field com.fasterxml.jackson.databind.util.EnumResolver._enums<br />At EnumResolver.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76846');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.ObjectBuffer.resetAndStart() may expose internal representation by returning ObjectBuffer._freeBuffer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76846" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.ObjectBuffer<br />In method com.fasterxml.jackson.databind.util.ObjectBuffer.resetAndStart()<br />Field com.fasterxml.jackson.databind.util.ObjectBuffer._freeBuffer<br />At ObjectBuffer.java:[line 72]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76914');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.ObjectBuffer.resetAndStart(Object[], int) may expose internal representation by returning ObjectBuffer._freeBuffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76914" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.ObjectBuffer<br />In method com.fasterxml.jackson.databind.util.ObjectBuffer.resetAndStart(Object[], int)<br />Field com.fasterxml.jackson.databind.util.ObjectBuffer._freeBuffer<br />At ObjectBuffer.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68693');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer(BeanDeserializerBase, JavaType, SettableBeanProperty[], AnnotatedMethod) may expose internal representation by storing an externally mutable object into BeanAsArrayBuilderDeserializer._orderedProperties</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68693" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer<br />In method new com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer(BeanDeserializerBase, JavaType, SettableBeanProperty[], AnnotatedMethod)<br />Field com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer._orderedProperties<br />Local variable named ordered<br />At BeanAsArrayBuilderDeserializer.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68768');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer(BeanDeserializerBase, SettableBeanProperty[]) may expose internal representation by storing an externally mutable object into BeanAsArrayDeserializer._orderedProperties</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68768" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer<br />In method new com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer(BeanDeserializerBase, SettableBeanProperty[])<br />Field com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer._orderedProperties<br />Local variable named ordered<br />At BeanAsArrayDeserializer.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69140');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.impl.CreatorCollector.addDelegatingCreator(AnnotatedWithParams, boolean, SettableBeanProperty[], int) may expose internal representation by storing an externally mutable object into CreatorCollector._arrayDelegateArgs</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69140" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.CreatorCollector<br />In method com.fasterxml.jackson.databind.deser.impl.CreatorCollector.addDelegatingCreator(AnnotatedWithParams, boolean, SettableBeanProperty[], int)<br />Field com.fasterxml.jackson.databind.deser.impl.CreatorCollector._arrayDelegateArgs<br />Local variable named injectables<br />At CreatorCollector.java:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69215');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.impl.CreatorCollector.addDelegatingCreator(AnnotatedWithParams, boolean, SettableBeanProperty[], int) may expose internal representation by storing an externally mutable object into CreatorCollector._delegateArgs</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69215" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.CreatorCollector<br />In method com.fasterxml.jackson.databind.deser.impl.CreatorCollector.addDelegatingCreator(AnnotatedWithParams, boolean, SettableBeanProperty[], int)<br />Field com.fasterxml.jackson.databind.deser.impl.CreatorCollector._delegateArgs<br />Local variable named injectables<br />At CreatorCollector.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69290');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.impl.CreatorCollector.addPropertyCreator(AnnotatedWithParams, boolean, SettableBeanProperty[]) may expose internal representation by storing an externally mutable object into CreatorCollector._propertyBasedArgs</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69290" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.CreatorCollector<br />In method com.fasterxml.jackson.databind.deser.impl.CreatorCollector.addPropertyCreator(AnnotatedWithParams, boolean, SettableBeanProperty[])<br />Field com.fasterxml.jackson.databind.deser.impl.CreatorCollector._propertyBasedArgs<br />Local variable named properties<br />At CreatorCollector.java:[line 191]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71176');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.configureFromArraySettings(AnnotatedWithParams, JavaType, SettableBeanProperty[]) may expose internal representation by storing an externally mutable object into StdValueInstantiator._arrayDelegateArguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71176" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdValueInstantiator<br />In method com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.configureFromArraySettings(AnnotatedWithParams, JavaType, SettableBeanProperty[])<br />Field com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._arrayDelegateArguments<br />Local variable named arrayDelegateArgs<br />At StdValueInstantiator.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71251');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.configureFromObjectSettings(AnnotatedWithParams, AnnotatedWithParams, JavaType, SettableBeanProperty[], AnnotatedWithParams, SettableBeanProperty[]) may expose internal representation by storing an externally mutable object into StdValueInstantiator._constructorArguments</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71251" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdValueInstantiator<br />In method com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.configureFromObjectSettings(AnnotatedWithParams, AnnotatedWithParams, JavaType, SettableBeanProperty[], AnnotatedWithParams, SettableBeanProperty[])<br />Field com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._constructorArguments<br />Local variable named constructorArgs<br />At StdValueInstantiator.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71326');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.configureFromObjectSettings(AnnotatedWithParams, AnnotatedWithParams, JavaType, SettableBeanProperty[], AnnotatedWithParams, SettableBeanProperty[]) may expose internal representation by storing an externally mutable object into StdValueInstantiator._delegateArguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71326" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StdValueInstantiator<br />In method com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.configureFromObjectSettings(AnnotatedWithParams, AnnotatedWithParams, JavaType, SettableBeanProperty[], AnnotatedWithParams, SettableBeanProperty[])<br />Field com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._delegateArguments<br />Local variable named delegateArgs<br />At StdValueInstantiator.java:[line 133]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73513');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.node.BinaryNode(byte[]) may expose internal representation by storing an externally mutable object into BinaryNode._data</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73513" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.node.BinaryNode<br />In method new com.fasterxml.jackson.databind.node.BinaryNode(byte[])<br />Field com.fasterxml.jackson.databind.node.BinaryNode._data<br />Local variable named data<br />At BinaryNode.java:[line 23]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73588');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.node.BinaryNode(byte[], int, int) may expose internal representation by storing an externally mutable object into BinaryNode._data</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73588" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.node.BinaryNode<br />In method new com.fasterxml.jackson.databind.node.BinaryNode(byte[], int, int)<br />Field com.fasterxml.jackson.databind.node.BinaryNode._data<br />Local variable named data<br />At BinaryNode.java:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73809');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.ser.BeanPropertyWriter(BeanPropertyDefinition, AnnotatedMember, Annotations, JavaType, JsonSerializer, TypeSerializer, JavaType, boolean, Object, Class[]) may expose internal representation by storing an externally mutable object into BeanPropertyWriter._includeInViews</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73809" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.BeanPropertyWriter<br />In method new com.fasterxml.jackson.databind.ser.BeanPropertyWriter(BeanPropertyDefinition, AnnotatedMember, Annotations, JavaType, JsonSerializer, TypeSerializer, JavaType, boolean, Object, Class[])<br />Field com.fasterxml.jackson.databind.ser.BeanPropertyWriter._includeInViews<br />Local variable named includeInViews<br />At BeanPropertyWriter.java:[line 247]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74012');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.databind.ser.BeanSerializerBuilder.setFilteredProperties(BeanPropertyWriter[]) may expose internal representation by storing an externally mutable object into BeanSerializerBuilder._filteredProperties</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74012" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.BeanSerializerBuilder<br />In method com.fasterxml.jackson.databind.ser.BeanSerializerBuilder.setFilteredProperties(BeanPropertyWriter[])<br />Field com.fasterxml.jackson.databind.ser.BeanSerializerBuilder._filteredProperties<br />Local variable named properties<br />At BeanSerializerBuilder.java:[line 121]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74911');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.ser.std.BeanSerializerBase(BeanSerializerBase, BeanPropertyWriter[], BeanPropertyWriter[]) may expose internal representation by storing an externally mutable object into BeanSerializerBase._filteredProps</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74911" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.BeanSerializerBase<br />In method new com.fasterxml.jackson.databind.ser.std.BeanSerializerBase(BeanSerializerBase, BeanPropertyWriter[], BeanPropertyWriter[])<br />Field com.fasterxml.jackson.databind.ser.std.BeanSerializerBase._filteredProps<br />Local variable named filteredProperties<br />At BeanSerializerBase.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74986');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.ser.std.BeanSerializerBase(BeanSerializerBase, BeanPropertyWriter[], BeanPropertyWriter[]) may expose internal representation by storing an externally mutable object into BeanSerializerBase._props</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74986" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.BeanSerializerBase<br />In method new com.fasterxml.jackson.databind.ser.std.BeanSerializerBase(BeanSerializerBase, BeanPropertyWriter[], BeanPropertyWriter[])<br />Field com.fasterxml.jackson.databind.ser.std.BeanSerializerBase._props<br />Local variable named properties<br />At BeanSerializerBase.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76511');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.databind.util.ArrayIterator(Object[]) may expose internal representation by storing an externally mutable object into ArrayIterator._a</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76511" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.ArrayIterator<br />In method new com.fasterxml.jackson.databind.util.ArrayIterator(Object[])<br />Field com.fasterxml.jackson.databind.util.ArrayIterator._a<br />Local variable named a<br />At ArrayIterator.java:[line 17]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67380');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.DEFAULT_KEY_DESERIALIZERS should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67380" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig<br />Field com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.DEFAULT_KEY_DESERIALIZERS<br />At DeserializerFactoryConfig.java:[line 28]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69365');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.databind.deser.impl.CreatorCollector.TYPE_DESCS should be package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69365" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.CreatorCollector<br />Field com.fasterxml.jackson.databind.deser.impl.CreatorCollector.TYPE_DESCS<br />At CreatorCollector.java:[line 32]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75895');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.databind.ser.std.StdArraySerializers._arraySerializers is a mutable collection which should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75895" style="display: none;">
+<a href="#MS_MUTABLE_COLLECTION_PKGPROTECT">Bug type MS_MUTABLE_COLLECTION_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ser.std.StdArraySerializers<br />Field com.fasterxml.jackson.databind.ser.std.StdArraySerializers._arraySerializers<br />At StdArraySerializers.java:[line 25]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77036');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.StdDateFormat.ALL_FORMATS should be package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77036" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />Field com.fasterxml.jackson.databind.util.StdDateFormat.ALL_FORMATS<br />At StdDateFormat.java:[line 70]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66506');">
+<td>
+<span class="priority-2">AT</span>
+</td>
+<td>Sequence of calls to java.util.concurrent.ConcurrentHashMap may not be atomic in com.fasterxml.jackson.databind.ObjectReader._findTreeDeserializer(DeserializationContext)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66506" style="display: none;">
+<a href="#AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION">Bug type AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectReader<br />In method com.fasterxml.jackson.databind.ObjectReader._findTreeDeserializer(DeserializationContext)<br />Type java.util.concurrent.ConcurrentHashMap<br />Called method java.util.concurrent.ConcurrentHashMap.put(Object, Object)<br />At ObjectReader.java:[line 1917]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66587');">
+<td>
+<span class="priority-2">AT</span>
+</td>
+<td>Sequence of calls to java.util.concurrent.ConcurrentHashMap may not be atomic in com.fasterxml.jackson.databind.ObjectReader._prefetchRootDeserializer(JavaType)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66587" style="display: none;">
+<a href="#AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION">Bug type AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.ObjectReader<br />In method com.fasterxml.jackson.databind.ObjectReader._prefetchRootDeserializer(JavaType)<br />Type java.util.concurrent.ConcurrentHashMap<br />Called method java.util.concurrent.ConcurrentHashMap.put(Object, Object)<br />At ObjectReader.java:[line 1940]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77235');">
+<td>
+<span class="priority-2">STCAL</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_ISO8601 is a static field of type java.text.DateFormat, which isn't thread safe</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77235" style="display: none;">
+<a href="#STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE">Bug type STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />Field com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_ISO8601<br />In StdDateFormat.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77283');">
+<td>
+<span class="priority-2">STCAL</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_RFC1123 is a static field of type java.text.DateFormat, which isn't thread safe</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77283" style="display: none;">
+<a href="#STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE">Bug type STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />Field com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_RFC1123<br />In StdDateFormat.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77331');">
+<td>
+<span class="priority-2">STCAL</span>
+</td>
+<td>com.fasterxml.jackson.databind.util.StdDateFormat.instance is a static field of type java.text.DateFormat, which isn't thread safe</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77331" style="display: none;">
+<a href="#STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE">Bug type STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />Field com.fasterxml.jackson.databind.util.StdDateFormat.instance<br />In StdDateFormat.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67103');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>com.fasterxml.jackson.databind.PropertyName.&lt;static initializer for PropertyName&gt;() invokes inefficient new String(String) constructor</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67103" style="display: none;">
+<a href="#DM_STRING_CTOR">Bug type DM_STRING_CTOR (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.PropertyName<br />In method com.fasterxml.jackson.databind.PropertyName.&lt;static initializer for PropertyName&gt;()<br />At PropertyName.java:[line 36]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68629');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to cdDef in com.fasterxml.jackson.databind.deser.DeserializerCache.modifyTypeByAnnotation(DeserializationContext, Annotated, JavaType)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68629" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.DeserializerCache<br />In method com.fasterxml.jackson.databind.deser.DeserializerCache.modifyTypeByAnnotation(DeserializationContext, Annotated, JavaType)<br />Local variable named cdDef<br />At DeserializerCache.java:[line 511]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69079');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap.renameAll(NameTransformer)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69079" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap<br />In method com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap.renameAll(NameTransformer)<br />Value loaded from prop<br />At BeanPropertyMap.java:[line 320]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69992');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer._deserializeUsingProperties(JsonParser, DeserializationContext)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69992" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer._deserializeUsingProperties(JsonParser, DeserializationContext)<br />Value loaded from keyName<br />At EnumMapDeserializer.java:[line 412]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70275');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.fasterxml.jackson.databind.deser.std.MapDeserializer._deserializeUsingCreator(JsonParser, DeserializationContext)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70275" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.MapDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.MapDeserializer._deserializeUsingCreator(JsonParser, DeserializationContext)<br />Value loaded from key<br />At MapDeserializer.java:[line 613]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71563');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.createContextual(DeserializationContext, BeanProperty)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71563" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.createContextual(DeserializationContext, BeanProperty)<br />Value loaded from valueDeser<br />At StringCollectionDeserializer.java:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67995');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of valueInstantiator, which is known to be non-null in com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.createEnumDeserializer(DeserializationContext, JavaType, BeanDescription)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67995" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.BasicDeserializerFactory<br />In method com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.createEnumDeserializer(DeserializationContext, JavaType, BeanDescription)<br />Value loaded from valueInstantiator<br />Return value of com.fasterxml.jackson.databind.deser.BasicDeserializerFactory._constructDefaultValueInstantiator(DeserializationContext, BeanDescription) of type com.fasterxml.jackson.databind.deser.ValueInstantiator<br />Redundant null check at BasicDeserializerFactory.java:[line 1452]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70804');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of com.fasterxml.jackson.databind.deser.std.ReferenceTypeDeserializer._valueTypeDeserializer which is known to be null in com.fasterxml.jackson.databind.deser.std.ReferenceTypeDeserializer.deserialize(JsonParser, DeserializationContext, Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70804" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.ReferenceTypeDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.ReferenceTypeDeserializer.deserialize(JsonParser, DeserializationContext, Object)<br />Value loaded from field com.fasterxml.jackson.databind.deser.std.ReferenceTypeDeserializer._valueTypeDeserializer<br />Redundant null check at ReferenceTypeDeserializer.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73663');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of n, which is known to be non-null in com.fasterxml.jackson.databind.node.TreeTraversingParser.getNumberType()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73663" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.node.TreeTraversingParser<br />In method com.fasterxml.jackson.databind.node.TreeTraversingParser.getNumberType()<br />Value loaded from n<br />Return value of com.fasterxml.jackson.databind.node.TreeTraversingParser.currentNumericNode() of type com.fasterxml.jackson.databind.JsonNode<br />Redundant null check at TreeTraversingParser.java:[line 281]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76260');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of vars, which is known to be non-null in com.fasterxml.jackson.databind.type.TypeBindings.createIfNeeded(Class, JavaType)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76260" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.type.TypeBindings<br />In method com.fasterxml.jackson.databind.type.TypeBindings.createIfNeeded(Class, JavaType)<br />Value loaded from vars<br />Return value of Class.getTypeParameters() of type java.lang.reflect.TypeVariable[]<br />Redundant null check at TypeBindings.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72179');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.readResolve()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72179" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedConstructor<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.readResolve()<br />At AnnotatedConstructor.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72347');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in com.fasterxml.jackson.databind.introspect.AnnotatedField.readResolve()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72347" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedField<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedField.readResolve()<br />At AnnotatedField.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72522');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in com.fasterxml.jackson.databind.introspect.AnnotatedMethod.readResolve()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72522" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedMethod<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedMethod.readResolve()<br />At AnnotatedMethod.java:[line 273]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72654');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in com.fasterxml.jackson.databind.introspect.AnnotatedMethodCollector.collect(TypeFactory, TypeResolutionContext, JavaType, List, Class)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72654" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.introspect.AnnotatedMethodCollector<br />In method com.fasterxml.jackson.databind.introspect.AnnotatedMethodCollector.collect(TypeFactory, TypeResolutionContext, JavaType, List, Class)<br />At AnnotatedMethodCollector.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76792');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in com.fasterxml.jackson.databind.util.ISO8601Utils.parse(String, ParsePosition)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76792" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.ISO8601Utils<br />In method com.fasterxml.jackson.databind.util.ISO8601Utils.parse(String, ParsePosition)<br />At ISO8601Utils.java:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69841');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Return value of java.text.SimpleDateFormat.toPattern() ignored, but method has no side effect</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69841" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT">Bug type RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.deser.std.DateDeserializers$DateBasedDeserializer<br />In method com.fasterxml.jackson.databind.deser.std.DateDeserializers$DateBasedDeserializer.createContextual(DeserializationContext, BeanProperty)<br />Called method java.text.SimpleDateFormat.toPattern()<br />At DateDeserializers.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66452');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.databind.MappingIterator.hasNextValue() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66452" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.MappingIterator<br />In method com.fasterxml.jackson.databind.MappingIterator.hasNextValue()<br />At MappingIterator.java:[lines 235-238]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77170');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.databind.util.StdDateFormat._parseAsISO8601(String, ParsePosition) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77170" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.databind.util.StdDateFormat<br />In method com.fasterxml.jackson.databind.util.StdDateFormat._parseAsISO8601(String, ParsePosition)<br />At StdDateFormat.java:[lines 678-680]<br />Another occurrence at StdDateFormat.java:[lines 680-682]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION">AT_OPERATION_SEQUENCE_ON_CONCURRENT_ABSTRACTION: Sequence of calls to concurrent abstraction may not be atomic</a>
+</h2>
+          
+        <p>This code contains a sequence of calls to a concurrent  abstraction
+            (such as a concurrent hash map).
+            These calls will not be executed atomically.
+          
+      
+<h2>
+<a name="BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS: Equals method should not assume anything about the type of its argument</a>
+</h2>
+
+<p>
+The <code>equals(Object o)</code> method shouldn't make any assumptions
+about the type of <code>o</code>. It should simply return
+false if <code>o</code> is not the same type as <code>this</code>.
+</p>
+
+    
+<h2>
+<a name="BC_IMPOSSIBLE_INSTANCEOF">BC_IMPOSSIBLE_INSTANCEOF: instanceof will always return false</a>
+</h2>
+
+<p>
+This instanceof test will always return false. Although this is safe, make sure it isn't
+an indication of some misunderstanding or some other logic error.
+</p>
+
+    
+<h2>
+<a name="CN_IDIOM_NO_SUPER_CALL">CN_IDIOM_NO_SUPER_CALL: clone method does not call super.clone()</a>
+</h2>
+
+<p> This non-final class defines a clone() method that does not call super.clone().
+If this class ("<i>A</i>") is extended by a subclass ("<i>B</i>"),
+and the subclass <i>B</i> calls super.clone(), then it is likely that
+<i>B</i>'s clone() method will return an object of type <i>A</i>,
+which violates the standard contract for clone().</p>
+
+<p> If all clone() methods call super.clone(), then they are guaranteed
+to use Object.clone(), which always returns an object of the correct type.</p>
+
+    
+<h2>
+<a name="DE_MIGHT_IGNORE">DE_MIGHT_IGNORE: Method might ignore exception</a>
+</h2>
+
+  <p> This method might ignore an exception.&nbsp; In general, exceptions
+  should be handled or reported in some way, or they should be thrown
+  out of the method.</p>
+
+    
+<h2>
+<a name="DLS_DEAD_STORE_OF_CLASS_LITERAL">DLS_DEAD_STORE_OF_CLASS_LITERAL: Dead store of class literal</a>
+</h2>
+
+<p>
+This instruction assigns a class literal to a variable and then never uses it.
+<a href="//java.sun.com/j2se/1.5.0/compatibility.html#literal">The behavior of this differs in Java 1.4 and in Java 5.</a>
+In Java 1.4 and earlier, a reference to <code>Foo.class</code> would force the static initializer
+for <code>Foo</code> to be executed, if it has not been executed already.
+In Java 5 and later, it does not.
+</p>
+<p>See Sun's <a href="//java.sun.com/j2se/1.5.0/compatibility.html#literal">article on Java SE compatibility</a>
+for more details and examples, and suggestions on how to force class initialization in Java 5.
+</p>
+
+    
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<h2>
+<a name="DM_STRING_CTOR">DM_STRING_CTOR: Method invokes inefficient new String(String) constructor</a>
+</h2>
+
+  <p> Using the <code>java.lang.String(String)</code> constructor wastes memory
+  because the object so constructed will be functionally indistinguishable
+  from the <code>String</code> passed as a parameter.&nbsp; Just use the
+  argument <code>String</code> directly.</p>
+
+    
+<h2>
+<a name="EC_NULL_ARG">EC_NULL_ARG: Call to equals(null)</a>
+</h2>
+
+<p> This method calls equals(Object), passing a null value as
+the argument. According to the contract of the equals() method,
+this call should always return <code>false</code>.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_COMPARETO_USE_OBJECT_EQUALS">EQ_COMPARETO_USE_OBJECT_EQUALS: Class defines compareTo(...) and uses Object.equals()</a>
+</h2>
+
+  <p> This class defines a <code>compareTo(...)</code> method but inherits its
+  <code>equals()</code> method from <code>java.lang.Object</code>.
+    Generally, the value of compareTo should return zero if and only if
+    equals returns true. If this is violated, weird and unpredictable
+    failures will occur in classes such as PriorityQueue.
+    In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    while in Java 6 it uses the equals method.</p>
+
+<p>From the JavaDoc for the compareTo method in the Comparable interface:
+<blockquote>
+It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+Generally speaking, any class that implements the Comparable interface and violates this condition
+should clearly indicate this fact. The recommended language
+is "Note: this class has a natural ordering that is inconsistent with equals."
+</blockquote></p>
+
+    
+<h2>
+<a name="ES_COMPARING_PARAMETER_STRING_WITH_EQ">ES_COMPARING_PARAMETER_STRING_WITH_EQ: Comparison of String parameter using == or !=</a>
+</h2>
+
+  <p>This code compares a <code>java.lang.String</code> parameter for reference
+equality using the == or != operators. Requiring callers to
+pass only String constants or interned strings to a method is unnecessarily
+fragile, and rarely leads to measurable performance gains. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode()</a>
+</h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>, and inherits the implementation of
+  <code>hashCode()</code> from <code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+<p>If you don't think instances of this class will ever be inserted into a HashMap/HashTable,
+the recommended <code>hashCode</code> implementation to use is:</p>
+<pre>public int hashCode() {
+  assert false : "hashCode not designed";
+  return 42; // any arbitrary constant will do
+  }</pre>
+
+    
+<h2>
+<a name="MS_MUTABLE_COLLECTION_PKGPROTECT">MS_MUTABLE_COLLECTION_PKGPROTECT: Field is a mutable collection which should be package protected</a>
+</h2>
+
+ <p>A mutable collection instance is assigned to a final static field, 
+   thus can be changed by malicious code or by accident from another package.
+   The field could be made package protected to avoid this vulnerability. 
+   Alternatively you may wrap this field into Collections.unmodifiableSet/List/Map/etc.
+   to avoid this vulnerability.</p>
+
+    
+<h2>
+<a name="MS_PKGPROTECT">MS_PKGPROTECT: Field should be package protected</a>
+</h2>
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    
+<h2>
+<a name="NP_LOAD_OF_KNOWN_NULL_VALUE">NP_LOAD_OF_KNOWN_NULL_VALUE: Load of known null value</a>
+</h2>
+
+  <p> The variable referenced at this point is known to be null due to an earlier
+   check against null. Although this is valid, it might be a mistake (perhaps you
+intended to refer to a different variable, or perhaps the earlier check to see if the
+variable is null should have been a check to see if it was non-null).
+</p>
+
+    
+<h2>
+<a name="NP_NULL_PARAM_DEREF">NP_NULL_PARAM_DEREF: Method call passes null for non-null parameter</a>
+</h2>
+      
+      <p>
+      This method call passes a null value for a non-null method parameter.
+    Either the parameter is annotated as a parameter that should
+    always be non-null, or analysis has shown that it will always be
+    dereferenced.
+      </p>
+      
+   
+<h2>
+<a name="NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL: Method with Boolean return type returns explicit null</a>
+</h2>
+       
+       <p>
+    A method that returns either Boolean.TRUE, Boolean.FALSE or null is an accident waiting to happen.
+    This method can be invoked as though it returned a value of type boolean, and
+    the compiler will insert automatic unboxing of the Boolean value. If a null value is returned,
+    this will result in a NullPointerException.
+       </p>
+       
+       
+<h2>
+<a name="NP_NULL_PARAM_DEREF_NONVIRTUAL">NP_NULL_PARAM_DEREF_NONVIRTUAL: Non-virtual method call passes null for non-null parameter</a>
+</h2>
+      
+      <p>
+      A possibly-null value is passed to a non-null method parameter.
+    Either the parameter is annotated as a parameter that should
+    always be non-null, or analysis has shown that it will always be
+    dereferenced.
+      </p>
+      
+   
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">NP_NULL_ON_SOME_PATH: Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    
+<h2>
+<a name="RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN: Suspicious reference comparison of Boolean values</a>
+</h2>
+
+<p> This method compares two Boolean values using the == or != operator.
+Normally, there are only two Boolean values (Boolean.TRUE and Boolean.FALSE),
+but it is possible to create other Boolean objects using the <code>new Boolean(b)</code>
+constructor. It is best to avoid such objects, but if they do exist,
+then checking Boolean objects for equality using == or != will give results
+than are different than you would get using <code>.equals(...)</code>
+</p>
+
+    
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE: Nullcheck of value previously dereferenced</a>
+</h2>
+
+<p> A value is checked here to see whether it is null, but this value can't
+be null because it was previously dereferenced and if it were null a null pointer
+exception would have occurred at the earlier dereference.
+Essentially, this code and the previous dereference
+disagree as to whether this value is allowed to be null. Either the check is redundant
+or the previous dereference is erroneous.</p>
+
+    
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE: Redundant nullcheck of value known to be non-null</a>
+</h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE: Redundant nullcheck of value known to be null</a>
+</h2>
+
+<p> This method contains a redundant check of a known null value against
+the constant null.</p>
+
+    
+<h2>
+<a name="REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION: Exception is caught when Exception is not thrown</a>
+</h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+  <pre>
+  try {
+    ...
+  } catch (RuntimeException e) {
+    throw e;
+  } catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+  }</pre>
+  
+     
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT">RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT: Return value of method without side effect is ignored</a>
+</h2>
+
+<p>This code calls a method and ignores the return value. However our analysis shows that
+the method (including its implementations in subclasses if any) does not produce any effect 
+other than return value. Thus this call can be removed.
+</p>
+<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
+Common false-positive cases include:</p>
+<p>- The method is designed to be overridden and produce a side effect in other projects which are out of the scope of the analysis.</p>
+<p>- The method is called to trigger the class loading which may have a side effect.</p>
+<p>- The method is called just to get some exception.</p>
+<p>If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation
+to instruct FindBugs that ignoring the return value of this method is acceptable.
+</p>
+
+    
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="SE_TRANSIENT_FIELD_NOT_RESTORED">SE_TRANSIENT_FIELD_NOT_RESTORED: Transient field that isn't set by deserialization. </a>
+</h2>
+
+  <p> This class contains a field that is updated at multiple places in the class, thus it seems to be part of the state of the class. However, since the field is marked as transient and not set in readObject or readResolve, it will contain the default value in any
+deserialized instance of the class.
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SE_NO_SERIALVERSIONID">SE_NO_SERIALVERSIONID: Class is Serializable, but doesn't define serialVersionUID</a>
+</h2>
+
+  <p> This class implements the <code>Serializable</code> interface, but does
+  not define a <code>serialVersionUID</code> field.&nbsp;
+  A change as simple as adding a reference to a .class object
+    will add synthetic fields to the class,
+   which will unfortunately change the implicit
+   serialVersionUID (e.g., adding a reference to <code>String.class</code>
+   will generate a static field <code>class$java$lang$String</code>).
+   Also, different source code to bytecode compilers may use different
+   naming conventions for synthetic variables generated for
+   references to class objects or inner classes.
+   To ensure interoperability of Serializable across versions,
+   consider adding an explicit serialVersionUID.</p>
+
+    
+<h2>
+<a name="STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE">STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE: Static DateFormat</a>
+</h2>
+
+<p>As the JavaDoc states, DateFormats are inherently unsafe for multithreaded use.
+Sharing a single instance across thread boundaries without proper synchronization will result in erratic behavior of the
+application.</p>
+<p>You may also experience serialization problems.</p>
+<p>Using an instance field is recommended.</p>
+<p>For more information on this see <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6231579">Sun Bug #6231579</a>
+and <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6178997">Sun Bug #6178997</a>.</p>
+
+</body>
+</html>

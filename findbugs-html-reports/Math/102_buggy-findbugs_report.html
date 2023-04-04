@@ -1,0 +1,1100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Math/102_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>11083 lines of code analyzed,
+	in 229 classes, 
+	in 21 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">0.90</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">39</td>
+<td align="right">3.52</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>49</b>
+</td>
+<td align="right">
+<b>4.42</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">10</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">25</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>49</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68869');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency$NaturalComparator implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68869" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency$NaturalComparator<br />At Frequency.java:[lines 438-453]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65718');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65718" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathException.java:[line 252]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66942');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(File): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66942" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(File)<br />Called method new java.io.FileReader(File)<br />At EmpiricalDistributionImpl.java:[line 155]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67022');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67022" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL)<br />Called method new java.io.InputStreamReader(InputStream)<br />At EmpiricalDistributionImpl.java:[line 125]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67272');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.ValueServer.resetReplayFile(): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67272" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.ValueServer<br />In method org.apache.commons.math.random.ValueServer.resetReplayFile()<br />Called method new java.io.InputStreamReader(InputStream)<br />At ValueServer.java:[line 239]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66499');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.math.linear.BigMatrixImpl.getDataRef() may expose internal representation by returning BigMatrixImpl.data</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66499" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.math.linear.BigMatrixImpl<br />In method org.apache.commons.math.linear.BigMatrixImpl.getDataRef()<br />Field org.apache.commons.math.linear.BigMatrixImpl.data<br />At BigMatrixImpl.java:[line 368]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66619');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.math.linear.RealMatrixImpl.getDataRef() may expose internal representation by returning RealMatrixImpl.data</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66619" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.math.linear.RealMatrixImpl<br />In method org.apache.commons.math.linear.RealMatrixImpl.getDataRef()<br />Field org.apache.commons.math.linear.RealMatrixImpl.data<br />At RealMatrixImpl.java:[line 277]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65787');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.math.MathException.getArguments() may expose internal representation by returning MathException.arguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65787" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.getArguments()<br />Field org.apache.commons.math.MathException.arguments<br />At MathException.java:[line 216]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69139');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.math.util.ResizableDoubleArray.getValues() may expose internal representation by returning ResizableDoubleArray.internalArray</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69139" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />In method org.apache.commons.math.util.ResizableDoubleArray.getValues()<br />Field org.apache.commons.math.util.ResizableDoubleArray.internalArray<br />At ResizableDoubleArray.java:[line 545]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65855');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.MathException(String, Object[]) may expose internal representation by storing an externally mutable object into MathException.arguments</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65855" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method new org.apache.commons.math.MathException(String, Object[])<br />Field org.apache.commons.math.MathException.arguments<br />Local variable named arguments<br />At MathException.java:[line 153]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65930');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.MathException(String, Object[], Throwable) may expose internal representation by storing an externally mutable object into MathException.arguments</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65930" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method new org.apache.commons.math.MathException(String, Object[], Throwable)<br />Field org.apache.commons.math.MathException.arguments<br />Local variable named arguments<br />At MathException.java:[line 199]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66739');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.ode.AdaptiveStepsizeIntegrator(double, double, double[], double[]) may expose internal representation by storing an externally mutable object into AdaptiveStepsizeIntegrator.vecAbsoluteTolerance</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66739" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.ode.AdaptiveStepsizeIntegrator<br />In method new org.apache.commons.math.ode.AdaptiveStepsizeIntegrator(double, double, double[], double[])<br />Field org.apache.commons.math.ode.AdaptiveStepsizeIntegrator.vecAbsoluteTolerance<br />Local variable named vecAbsoluteTolerance<br />At AdaptiveStepsizeIntegrator.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66814');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.ode.AdaptiveStepsizeIntegrator(double, double, double[], double[]) may expose internal representation by storing an externally mutable object into AdaptiveStepsizeIntegrator.vecRelativeTolerance</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66814" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.ode.AdaptiveStepsizeIntegrator<br />In method new org.apache.commons.math.ode.AdaptiveStepsizeIntegrator(double, double, double[], double[])<br />Field org.apache.commons.math.ode.AdaptiveStepsizeIntegrator.vecRelativeTolerance<br />Local variable named vecRelativeTolerance<br />At AdaptiveStepsizeIntegrator.java:[line 102]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66567');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>org.apache.commons.math.linear.BigMatrixImpl.TOO_SMALL isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66567" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class org.apache.commons.math.linear.BigMatrixImpl<br />Field org.apache.commons.math.linear.BigMatrixImpl.TOO_SMALL<br />At BigMatrixImpl.java:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66687');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>org.apache.commons.math.linear.RealMatrixImpl.TOO_SMALL isn't final but should be</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66687" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class org.apache.commons.math.linear.RealMatrixImpl<br />Field org.apache.commons.math.linear.RealMatrixImpl.TOO_SMALL<br />At RealMatrixImpl.java:[line 71]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68904');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.stat.descriptive.SummaryStatistics.geoMeanImpl; locked 50% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68904" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.stat.descriptive.SummaryStatistics<br />Field org.apache.commons.math.stat.descriptive.SummaryStatistics.geoMeanImpl<br />Synchronized 50% of the time<br />Unsynchronized access at SummaryStatistics.java:[line 315]<br />Unsynchronized access at SummaryStatistics.java:[line 282]<br />Synchronized access at SummaryStatistics.java:[line 519]<br />Synchronized access at SummaryStatistics.java:[line 502]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68995');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.stat.descriptive.SummaryStatistics.sumLogImpl; locked 50% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68995" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.stat.descriptive.SummaryStatistics<br />Field org.apache.commons.math.stat.descriptive.SummaryStatistics.sumLogImpl<br />Synchronized 50% of the time<br />Unsynchronized access at SummaryStatistics.java:[line 313]<br />Unsynchronized access at SummaryStatistics.java:[line 162]<br />Synchronized access at SummaryStatistics.java:[line 493]<br />Synchronized access at SummaryStatistics.java:[line 476]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69207');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.initialCapacity; locked 50% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69207" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.initialCapacity<br />Synchronized 50% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 626]<br />Synchronized access at ResizableDoubleArray.java:[line 344]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66005');">
+<td>
+<span class="priority-2">LI</span>
+</td>
+<td>Incorrect lazy initialization of static field org.apache.commons.math.MathException.cachedResources in org.apache.commons.math.MathException.translate(String, Locale)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66005" style="display: none;">
+<a href="#LI_LAZY_INIT_STATIC">Bug type LI_LAZY_INIT_STATIC (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.translate(String, Locale)<br />On field org.apache.commons.math.MathException.cachedResources<br />At MathException.java:[lines 83-85]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66329');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.analysis.UnivariateRealSolverUtils.bracket(UnivariateRealFunction, double, double, double, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66329" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.analysis.UnivariateRealSolverUtils<br />In method org.apache.commons.math.analysis.UnivariateRealSolverUtils.bracket(UnivariateRealFunction, double, double, double, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At UnivariateRealSolverUtils.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>new org.apache.commons.math.DimensionMismatchException(int, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.DimensionMismatchException<br />In method new org.apache.commons.math.DimensionMismatchException(int, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At DimensionMismatchException.java:[line 34]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65633');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>new org.apache.commons.math.DuplicateSampleAbscissaException(double, int, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65633" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.DuplicateSampleAbscissaException<br />In method new org.apache.commons.math.DuplicateSampleAbscissaException(double, int, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At DuplicateSampleAbscissaException.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66414');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>new org.apache.commons.math.fraction.FractionConversionException(double, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66414" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.fraction.FractionConversionException<br />In method new org.apache.commons.math.fraction.FractionConversionException(double, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At FractionConversionException.java:[line 34]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66074');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>new org.apache.commons.math.MaxIterationsExceededException(int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66074" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.MaxIterationsExceededException<br />In method new org.apache.commons.math.MaxIterationsExceededException(int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At MaxIterationsExceededException.java:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66889');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>Primitive value is boxed and then immediately unboxed in org.apache.commons.math.random.EmpiricalDistributionImpl.fillBinStats(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66889" style="display: none;">
+<a href="#BX_BOXING_IMMEDIATELY_UNBOXED">Bug type BX_BOXING_IMMEDIATELY_UNBOXED (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.fillBinStats(Object)<br />At EmpiricalDistributionImpl.java:[line 335]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67102');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.random.RandomDataImpl.nextHexString(int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67102" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.random.RandomDataImpl<br />In method org.apache.commons.math.random.RandomDataImpl.nextHexString(int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At RandomDataImpl.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67187');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.random.RandomDataImpl.nextSecureHexString(int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67187" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.random.RandomDataImpl<br />In method org.apache.commons.math.random.RandomDataImpl.nextSecureHexString(int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At RandomDataImpl.java:[line 235]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67402');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.addValue(char) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67402" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.addValue(char)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At Frequency.java:[line 147]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67487');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.addValue(int) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67487" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.addValue(int)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 120]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67572');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.addValue(long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67572" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.addValue(long)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67657');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.addValue(Integer) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67657" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.addValue(Integer)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67742');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.addValue(Object) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67742" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.addValue(Object)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 99]<br />Another occurrence at Frequency.java:[line 104]<br />Another occurrence at Frequency.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67849');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCount(char) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67849" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCount(char)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At Frequency.java:[line 233]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67934');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCount(int) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67934" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCount(int)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 213]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68019');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCount(long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68019" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCount(long)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 223]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68104');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCumFreq(char) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68104" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCumFreq(char)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At Frequency.java:[line 372]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68189');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCumFreq(int) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68189" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCumFreq(int)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 348]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68274');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCumFreq(long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68274" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCumFreq(long)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 360]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68359');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCumPct(char) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68359" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCumPct(char)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At Frequency.java:[line 431]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68444');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCumPct(int) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68444" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCumPct(int)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 405]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68529');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getCumPct(long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68529" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getCumPct(long)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 418]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68614');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getPct(char) invokes inefficient new Character(char) constructor; use Character.valueOf(char) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68614" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getPct(char)<br />Called method new Character(char)<br />Should call Character.valueOf(char) instead<br />At Frequency.java:[line 284]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68699');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getPct(int) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68699" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getPct(int)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 262]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68784');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.math.stat.Frequency.getPct(long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68784" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.math.stat.Frequency<br />In method org.apache.commons.math.stat.Frequency.getPct(long)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At Frequency.java:[line 273]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66159');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.analysis.BrentSolver.solve(double, double, double, double, double, double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66159" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.analysis.BrentSolver<br />In method org.apache.commons.math.analysis.BrentSolver.solve(double, double, double, double, double, double)<br />At BrentSolver.java:[line 205]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66212');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.analysis.MullerSolver.solve(double, double)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66212" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.analysis.MullerSolver<br />In method org.apache.commons.math.analysis.MullerSolver.solve(double, double)<br />At MullerSolver.java:[line 156]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66265');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.analysis.MullerSolver.solve2(double, double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66265" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.analysis.MullerSolver<br />In method org.apache.commons.math.analysis.MullerSolver.solve2(double, double)<br />At MullerSolver.java:[line 248]<br />Another occurrence at MullerSolver.java:[line 248]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69086');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.util.MathUtils.roundUnscaled(double, double, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69086" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.util.MathUtils<br />In method org.apache.commons.math.util.MathUtils.roundUnscaled(double, double, int)<br />At MathUtils.java:[line 787]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67341');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Dereference of the result of readLine() without nullcheck in org.apache.commons.math.random.ValueServer.getNextReplay()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67341" style="display: none;">
+<a href="#NP_DEREFERENCE_OF_READLINE_VALUE">Bug type NP_DEREFERENCE_OF_READLINE_VALUE (click for details)</a>
+<br />In class org.apache.commons.math.random.ValueServer<br />In method org.apache.commons.math.random.ValueServer.getNextReplay()<br />Local variable stored in JVM register ?<br />At ValueServer.java:[line 328]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_NUMBER_CTOR">DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead</a>
+</h2>
+      
+      <p>
+      Using <code>new Integer(int)</code> is guaranteed to always result in a new object whereas
+      <code>Integer.valueOf(int)</code> allows caching of values to be done by the compiler, class library, or JVM.
+      Using of cached values avoids object allocation and the code will be faster.
+      </p>
+      <p>
+      Values between -128 and 127 are guaranteed to have corresponding cached instances
+      and using <code>valueOf</code> is approximately 3.5 times faster than using constructor.
+      For values outside the constant range the performance of both styles is the same.
+      </p>
+      <p>
+      Unless the class must be compatible with JVMs predating Java 1.5,
+      use either autoboxing or the <code>valueOf()</code> method when creating instances of
+      <code>Long</code>, <code>Integer</code>, <code>Short</code>, <code>Character</code>, and <code>Byte</code>.
+      </p>
+      
+    
+<h2>
+<a name="BX_BOXING_IMMEDIATELY_UNBOXED">BX_BOXING_IMMEDIATELY_UNBOXED: Primitive value is boxed and then immediately unboxed</a>
+</h2>
+
+  <p>A primitive is boxed, and then immediately unboxed. This probably is due to a manual
+    boxing in a place where an unboxed value is required, thus forcing the compiler
+to immediately undo the work of the boxing.
+</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">IS2_INCONSISTENT_SYNC: Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<h2>
+<a name="LI_LAZY_INIT_STATIC">LI_LAZY_INIT_STATIC: Incorrect lazy initialization of static field</a>
+</h2>
+
+<p> This method contains an unsynchronized lazy initialization of a non-volatile static field.
+Because the compiler or processor may reorder instructions,
+threads are not guaranteed to see a completely initialized object,
+<em>if the method can be called by multiple threads</em>.
+You can make the field volatile to correct the problem.
+For more information, see the
+<a href="http://www.cs.umd.edu/~pugh/java/memoryModel/">Java Memory Model web site</a>.
+</p>
+
+    
+<h2>
+<a name="MS_SHOULD_BE_FINAL">MS_SHOULD_BE_FINAL: Field isn't final but should be</a>
+</h2>
+
+   <p>
+This static field public but not final, and
+could be changed by malicious code or
+        by accident from another package.
+        The field could be made final to avoid
+        this vulnerability.</p>
+
+    
+<h2>
+<a name="NP_DEREFERENCE_OF_READLINE_VALUE">NP_DEREFERENCE_OF_READLINE_VALUE: Dereference of the result of readLine() without nullcheck</a>
+</h2>
+
+  <p> The result of invoking readLine() is dereferenced without checking to see if the result is null. If there are no more lines of text
+to read, readLine() will return null and dereferencing that will generate a null pointer exception.
+</p>
+
+    
+<h2>
+<a name="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">SE_COMPARATOR_SHOULD_BE_SERIALIZABLE: Comparator doesn't implement Serializable</a>
+</h2>
+
+  <p> This class implements the <code>Comparator</code> interface. You
+should consider whether or not it should also implement the <code>Serializable</code>
+interface. If a comparator is used to construct an ordered collection
+such as a <code>TreeMap</code>, then the <code>TreeMap</code>
+will be serializable only if the comparator is also serializable.
+As most comparators have little or no state, making them serializable
+is generally easy and good defensive programming.
+</p>
+
+    </body>
+</html>

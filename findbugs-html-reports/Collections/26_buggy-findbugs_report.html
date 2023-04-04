@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Collections/26_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>19074 lines of code analyzed,
+	in 529 classes, 
+	in 18 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.05</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">0.68</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+<td align="right">
+<b>0.73</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">7</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65613');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.collections4.MapUtils.getBoolean(Map, Object) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65613" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.collections4.MapUtils<br />In method org.apache.commons.collections4.MapUtils.getBoolean(Map, Object)<br />At MapUtils.java:[line 169]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">INT</span>
+</td>
+<td>Bad comparison of nonnegative value with 0 in org.apache.commons.collections4.ListUtils$Partition.get(int)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE">Bug type INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE (click for details)</a>
+<br />In class org.apache.commons.collections4.ListUtils$Partition<br />In method org.apache.commons.collections4.ListUtils$Partition.get(int)<br />Value 0<br />Local variable named listSize<br />At ListUtils.java:[line 674]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65875');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.collections4.iterators.ObjectArrayIterator.getArray() may expose internal representation by returning ObjectArrayIterator.array</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65875" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.collections4.iterators.ObjectArrayIterator<br />In method org.apache.commons.collections4.iterators.ObjectArrayIterator.getArray()<br />Field org.apache.commons.collections4.iterators.ObjectArrayIterator.array<br />At ObjectArrayIterator.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65943');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.collections4.iterators.ObjectArrayIterator(Object[], int, int) may expose internal representation by storing an externally mutable object into ObjectArrayIterator.array</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65943" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.collections4.iterators.ObjectArrayIterator<br />In method new org.apache.commons.collections4.iterators.ObjectArrayIterator(Object[], int, int)<br />Field org.apache.commons.collections4.iterators.ObjectArrayIterator.array<br />Local variable named array<br />At ObjectArrayIterator.java:[line 96]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66018');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.collections4.keyvalue.MultiKey(Object[], boolean) may expose internal representation by storing an externally mutable object into MultiKey.keys</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66018" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.collections4.keyvalue.MultiKey<br />In method new org.apache.commons.collections4.keyvalue.MultiKey(Object[], boolean)<br />Field org.apache.commons.collections4.keyvalue.MultiKey.keys<br />Local variable named keys<br />At MultiKey.java:[line 165]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65773');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.collections4.bidimap.UnmodifiableBidiMap.inverse; locked 80% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65773" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.collections4.bidimap.UnmodifiableBidiMap<br />Field org.apache.commons.collections4.bidimap.UnmodifiableBidiMap.inverse<br />Synchronized 80% of the time<br />Unsynchronized access at UnmodifiableBidiMap.java:[line 131]<br />Synchronized access at UnmodifiableBidiMap.java:[line 129]<br />Synchronized access at UnmodifiableBidiMap.java:[line 133]<br />Synchronized access at UnmodifiableBidiMap.java:[line 130]<br />Synchronized access at UnmodifiableBidiMap.java:[line 131]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66215');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator.currentValue</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66215" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator<br />Field org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator.currentValue<br />At AbstractReferenceMap.java:[line 795]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65667');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.collections4.bidimap.TreeBidiMap.equals(Object) is unusual</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65667" style="display: none;">
+<a href="#EQ_UNUSUAL">Bug type EQ_UNUSUAL (click for details)</a>
+<br />In class org.apache.commons.collections4.bidimap.TreeBidiMap<br />In method org.apache.commons.collections4.bidimap.TreeBidiMap.equals(Object)<br />At TreeBidiMap.java:[line 472]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65720');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse.equals(Object) is unusual</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65720" style="display: none;">
+<a href="#EQ_UNUSUAL">Bug type EQ_UNUSUAL (click for details)</a>
+<br />In class org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse<br />In method org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse.equals(Object)<br />At TreeBidiMap.java:[line 2214]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66161');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.collections4.map.AbstractLinkedMap$LinkEntry doesn't override AbstractHashedMap$HashEntry.equals(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66161" style="display: none;">
+<a href="#EQ_DOESNT_OVERRIDE_EQUALS">Bug type EQ_DOESNT_OVERRIDE_EQUALS (click for details)</a>
+<br />In class org.apache.commons.collections4.map.AbstractLinkedMap$LinkEntry<br />At AbstractLinkedMap.java:[line 1]<br />Did you intend to override org.apache.commons.collections4.map.AbstractHashedMap$HashEntry.equals(Object)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66266');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.collections4.map.Flat3Map.convertToMap() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66266" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.collections4.map.Flat3Map<br />In method org.apache.commons.collections4.map.Flat3Map.convertToMap()<br />At Flat3Map.java:[lines 400-402]<br />Another occurrence at Flat3Map.java:[lines 402-404]<br />Another occurrence at Flat3Map.java:[lines 404-406]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66342');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.collections4.map.Flat3Map.hashCode() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66342" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.collections4.map.Flat3Map<br />In method org.apache.commons.collections4.map.Flat3Map.hashCode()<br />At Flat3Map.java:[lines 1197-1199]<br />Another occurrence at Flat3Map.java:[lines 1199-1201]<br />Another occurrence at Flat3Map.java:[lines 1201-1203]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66418');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.collections4.map.Flat3Map.toString() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66418" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.collections4.map.Flat3Map<br />In method org.apache.commons.collections4.map.Flat3Map.toString()<br />At Flat3Map.java:[lines 1230-1232]<br />Another occurrence at Flat3Map.java:[lines 1235-1237]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66093');">
+<td>
+<span class="priority-1">UC</span>
+</td>
+<td>Useless condition: it's known that this.relativePosition &gt; 0 at this point</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66093" style="display: none;">
+<a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+<br />In class org.apache.commons.collections4.list.TreeList$AVLNode<br />In method org.apache.commons.collections4.list.TreeList$AVLNode.removeSelf()<br />Value this.relativePosition &gt; 0<br />Unreachable code at TreeList.java:[line 626]<br />At TreeList.java:[line 626]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_DOESNT_OVERRIDE_EQUALS">EQ_DOESNT_OVERRIDE_EQUALS: Class doesn't override equals in superclass</a>
+</h2>
+
+  <p> This class extends a class that defines an equals method and adds fields, but doesn't
+define an equals method itself. Thus, equality on instances of this class will
+ignore the identity of the subclass and the added fields. Be sure this is what is intended,
+and that you don't need to override the equals method. Even if you don't need to override
+the equals method, consider overriding it anyway to document the fact
+that the equals method for the subclass just return the result of
+invoking super.equals(o).
+  </p>
+
+    
+<h2>
+<a name="EQ_UNUSUAL">EQ_UNUSUAL: Unusual equals method </a>
+</h2>
+
+  <p> This class doesn't do any of the patterns we recognize for checking that the type of the argument
+is compatible with the type of the <code>this</code> object. There might not be anything wrong with
+this code, but it is worth reviewing.
+</p>
+
+    
+<h2>
+<a name="INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE">INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE: Bad comparison of nonnegative value with negative constant or zero</a>
+</h2>
+
+<p> This code compares a value that is guaranteed to be non-negative with a negative constant or zero.
+</p>
+
+    
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">IS2_INCONSISTENT_SYNC: Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<h2>
+<a name="NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL: Method with Boolean return type returns explicit null</a>
+</h2>
+       
+       <p>
+    A method that returns either Boolean.TRUE, Boolean.FALSE or null is an accident waiting to happen.
+    This method can be invoked as though it returned a value of type boolean, and
+    the compiler will insert automatic unboxing of the Boolean value. If a null value is returned,
+    this will result in a NullPointerException.
+       </p>
+       
+       
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="UC_USELESS_CONDITION">UC_USELESS_CONDITION: Condition has no effect</a>
+</h2>
+
+<p>This condition always produces the same result as the value of the involved variable was narrowed before. 
+Probably something else was meant or condition can be removed.</p>
+
+    
+<h2>
+<a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+</h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    </body>
+</html>

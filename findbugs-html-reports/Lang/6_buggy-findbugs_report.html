@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Lang/6_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>15025 lines of code analyzed,
+	in 169 classes, 
+	in 12 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.20</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">1.20</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+<td align="right">
+<b>1.40</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">10</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">7</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66945');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for org.apache.commons.lang3.time.FormatCache$MultipartKey assumes the argument is of type FormatCache$MultipartKey</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66945" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FormatCache$MultipartKey<br />In method org.apache.commons.lang3.time.FormatCache$MultipartKey.equals(Object)<br />At FormatCache.java:[line 191]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66012');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66012" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.H<br />Value loaded from value<br />At DurationFormatUtils.java:[line 438]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66101');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66101" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.M<br />Value loaded from value<br />At DurationFormatUtils.java:[line 430]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66190');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66190" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.S<br />Value loaded from value<br />At DurationFormatUtils.java:[line 450]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66279');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66279" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.d<br />Value loaded from value<br />At DurationFormatUtils.java:[line 434]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66368');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66368" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.m<br />Value loaded from value<br />At DurationFormatUtils.java:[line 442]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66457');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66457" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.s<br />Value loaded from value<br />At DurationFormatUtils.java:[line 446]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66546');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66546" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang3.time.DurationFormatUtils.y<br />Value loaded from value<br />At DurationFormatUtils.java:[line 426]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66635');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang3.time.DurationFormatUtils.lexx(String) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66635" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DurationFormatUtils<br />In method org.apache.commons.lang3.time.DurationFormatUtils.lexx(String)<br />Actual type String<br />Value loaded from value<br />Return value of org.apache.commons.lang3.time.DurationFormatUtils$Token.getValue() of type Object<br />At DurationFormatUtils.java:[line 528]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66998');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.time.FormatCache$MultipartKey.equals(Object) does not check for null argument</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66998" style="display: none;">
+<a href="#NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">Bug type NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FormatCache$MultipartKey<br />In method org.apache.commons.lang3.time.FormatCache$MultipartKey.equals(Object)<br />Parameter obj<br />At FormatCache.java:[line 191]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66725');">
+<td>
+<span class="priority-1">GC</span>
+</td>
+<td>Integer is incompatible with expected argument type java.util.Locale in org.apache.commons.lang3.time.FastDateParser.getLocaleSpecificStrategy(int, Calendar)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66725" style="display: none;">
+<a href="#GC_UNRELATED_TYPES">Bug type GC_UNRELATED_TYPES (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FastDateParser<br />In method org.apache.commons.lang3.time.FastDateParser.getLocaleSpecificStrategy(int, Calendar)<br />Actual type Integer<br />Expected java.util.Locale<br />Called method java.util.concurrent.ConcurrentMap.get(Object)<br />Invoked on cache<br />Integer.equals(Object) used to determine equality<br />At FastDateParser.java:[line 502]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65684');">
+<td>
+<span class="priority-1">RpC</span>
+</td>
+<td>Repeated conditional test in org.apache.commons.lang3.math.NumberUtils.createBigInteger(String)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65684" style="display: none;">
+<a href="#RpC_REPEATED_CONDITIONAL_TEST">Bug type RpC_REPEATED_CONDITIONAL_TEST (click for details)</a>
+<br />In class org.apache.commons.lang3.math.NumberUtils<br />In method org.apache.commons.lang3.math.NumberUtils.createBigInteger(String)<br />At NumberUtils.java:[line 716]<br />At NumberUtils.java:[line 716]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65615');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.lang3.StringUtils.toString(byte[], String): new String(byte[])</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65615" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.lang3.StringUtils<br />In method org.apache.commons.lang3.StringUtils.toString(byte[], String)<br />Called method new String(byte[])<br />At StringUtils.java:[line 7101]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>org.apache.commons.lang3.ClassUtils.&lt;static initializer for ClassUtils&gt;() makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class org.apache.commons.lang3.ClassUtils<br />In method org.apache.commons.lang3.ClassUtils.&lt;static initializer for ClassUtils&gt;()<br />Field org.apache.commons.lang3.ClassUtils.primitiveWrapperMap<br />At ClassUtils.java:[line 87]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65747');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.math.NumberUtils.createNumber(String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65747" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.math.NumberUtils<br />In method org.apache.commons.lang3.math.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 510-551]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65800');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.text.ExtendedMessageFormat.parseFormatDescription(String, ParsePosition) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65800" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.text.ExtendedMessageFormat<br />In method org.apache.commons.lang3.text.ExtendedMessageFormat.parseFormatDescription(String, ParsePosition)<br />At ExtendedMessageFormat.java:[lines 378-389]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65853');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.DateUtils.getFragment(Calendar, int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65853" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DateUtils<br />In method org.apache.commons.lang3.time.DateUtils.getFragment(Calendar, int, int)<br />At DateUtils.java:[lines 1690-1695]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65906');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.DateUtils.iterator(Calendar, int) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65906" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DateUtils<br />In method org.apache.commons.lang3.time.DateUtils.iterator(Calendar, int)<br />At DateUtils.java:[lines 1182-1196]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65959');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.DateUtils.modify(Calendar, int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65959" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DateUtils<br />In method org.apache.commons.lang3.time.DateUtils.modify(Calendar, int, int)<br />At DateUtils.java:[lines 1047-1073]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66839');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.FastDateParser.escapeRegex(StringBuilder, String, boolean) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66839" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FastDateParser<br />In method org.apache.commons.lang3.time.FastDateParser.escapeRegex(StringBuilder, String, boolean)<br />At FastDateParser.java:[lines 303-327]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66892');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.FastDateParser.getStrategy(String, Calendar) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66892" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FastDateParser<br />In method org.apache.commons.lang3.time.FastDateParser.getStrategy(String, Calendar)<br />At FastDateParser.java:[lines 428-469]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS: Equals method should not assume anything about the type of its argument</a>
+</h2>
+
+<p>
+The <code>equals(Object o)</code> method shouldn't make any assumptions
+about the type of <code>o</code>. It should simply return
+false if <code>o</code> is not the same type as <code>this</code>.
+</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="ES_COMPARING_STRINGS_WITH_EQ">ES_COMPARING_STRINGS_WITH_EQ: Comparison of String objects using == or !=</a>
+</h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="GC_UNRELATED_TYPES">GC_UNRELATED_TYPES: No relationship between generic parameter and method argument</a>
+</h2>
+     
+     <p> This call to a generic collection method contains an argument
+     with an incompatible class from that of the collection's parameter
+    (i.e., the type of the argument is neither a supertype nor a subtype
+        of the corresponding generic type argument).
+     Therefore, it is unlikely that the collection contains any objects
+    that are equal to the method argument used here.
+    Most likely, the wrong value is being passed to the method.</p>
+    <p>In general, instances of two unrelated classes are not equal.
+    For example, if the <code>Foo</code> and <code>Bar</code> classes
+    are not related by subtyping, then an instance of <code>Foo</code>
+        should not be equal to an instance of <code>Bar</code>.
+    Among other issues, doing so will likely result in an equals method
+    that is not symmetrical. For example, if you define the <code>Foo</code> class
+    so that a <code>Foo</code> can be equal to a <code>String</code>,
+    your equals method isn't symmetrical since a <code>String</code> can only be equal
+    to a <code>String</code>.
+    </p>
+    <p>In rare cases, people do define nonsymmetrical equals methods and still manage to make
+    their code work. Although none of the APIs document or guarantee it, it is typically
+    the case that if you check if a <code>Collection&lt;String&gt;</code> contains
+    a <code>Foo</code>, the equals method of argument (e.g., the equals method of the
+    <code>Foo</code> class) used to perform the equality checks.
+    </p>
+     
+    
+<h2>
+<a name="NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT: equals() method does not check for null argument</a>
+</h2>
+      
+      <p>
+      This implementation of equals(Object) violates the contract defined
+      by java.lang.Object.equals() because it does not check for null
+      being passed as the argument.  All equals() methods should return
+      false if passed a null value.
+      </p>
+      
+   
+<h2>
+<a name="RpC_REPEATED_CONDITIONAL_TEST">RpC_REPEATED_CONDITIONAL_TEST: Repeated conditional tests</a>
+</h2>
+
+<p>The code contains a conditional test is performed twice, one right after the other
+(e.g., <code>x == 0 || x == 0</code>). Perhaps the second occurrence is intended to be something else
+(e.g., <code>x == 0 || y == 0</code>).
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>

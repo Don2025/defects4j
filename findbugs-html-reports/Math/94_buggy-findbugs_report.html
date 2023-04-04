@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Math/94_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>17627 lines of code analyzed,
+	in 313 classes, 
+	in 25 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">8</td>
+<td align="right">0.45</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">17</td>
+<td align="right">0.96</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>25</b>
+</td>
+<td align="right">
+<b>1.42</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">9</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>25</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65824');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math.fraction.Fraction.compareTo(Fraction) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65824" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math.fraction.Fraction<br />In method org.apache.commons.math.fraction.Fraction.compareTo(Fraction)<br />Type double<br />Should call Double.compare(double, double) instead<br />Local variable named second<br />Local variable named first<br />At Fraction.java:[line 261]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66138');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class org.apache.commons.math.ode.FirstOrderConverter defines non-transient non-serializable instance field equations</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66138" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.math.ode.FirstOrderConverter<br />Field org.apache.commons.math.ode.FirstOrderConverter.equations<br />Actual type org.apache.commons.math.ode.SecondOrderDifferentialEquations<br />In FirstOrderConverter.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66787');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.math.transform.FastFourierTransformer$MultiDimensionalComplexMatrix is serializable and an inner class</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66787" style="display: none;">
+<a href="#SE_INNER_CLASS">Bug type SE_INNER_CLASS (click for details)</a>
+<br />In class org.apache.commons.math.transform.FastFourierTransformer$MultiDimensionalComplexMatrix<br />At FastFourierTransformer.java:[lines 652-803]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66822');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field org.apache.commons.math.util.OpenIntToDoubleHashMap.count is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66822" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class org.apache.commons.math.util.OpenIntToDoubleHashMap<br />Field org.apache.commons.math.util.OpenIntToDoubleHashMap.count<br />In OpenIntToDoubleHashMap.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66703');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of vector in org.apache.commons.math.transform.FastFourierTransformer$MultiDimensionalComplexMatrix.set(Complex, int[])</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66703" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class org.apache.commons.math.transform.FastFourierTransformer$MultiDimensionalComplexMatrix<br />In method org.apache.commons.math.transform.FastFourierTransformer$MultiDimensionalComplexMatrix.set(Complex, int[])<br />Value loaded from vector<br />Dereferenced at FastFourierTransformer.java:[line 743]<br />Known null at FastFourierTransformer.java:[line 725]<br />Known null at FastFourierTransformer.java:[line 729]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66636');">
+<td>
+<span class="priority-1">SA</span>
+</td>
+<td>Self assignment of field FirstMoment.nDev in org.apache.commons.math.stat.descriptive.moment.FirstMoment.copy(FirstMoment, FirstMoment)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66636" style="display: none;">
+<a href="#SA_FIELD_SELF_ASSIGNMENT">Bug type SA_FIELD_SELF_ASSIGNMENT (click for details)</a>
+<br />In class org.apache.commons.math.stat.descriptive.moment.FirstMoment<br />In method org.apache.commons.math.stat.descriptive.moment.FirstMoment.copy(FirstMoment, FirstMoment)<br />Field org.apache.commons.math.stat.descriptive.moment.FirstMoment.nDev<br />At FirstMoment.java:[line 152]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathException.java:[line 195]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65686');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathRuntimeException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65686" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathRuntimeException<br />In method org.apache.commons.math.MathRuntimeException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathRuntimeException.java:[line 184]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66346');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(File): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66346" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(File)<br />Called method new java.io.FileReader(File)<br />At EmpiricalDistributionImpl.java:[line 166]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66426');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66426" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL)<br />Called method new java.io.InputStreamReader(InputStream)<br />At EmpiricalDistributionImpl.java:[line 126]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66567');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.ValueServer.resetReplayFile(): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66567" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.ValueServer<br />In method org.apache.commons.math.random.ValueServer.resetReplayFile()<br />Called method new java.io.InputStreamReader(InputStream)<br />At ValueServer.java:[line 251]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66196');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator(String, double, double, double[], double[]) may expose internal representation by storing an externally mutable object into AdaptiveStepsizeIntegrator.vecAbsoluteTolerance</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66196" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator<br />In method new org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator(String, double, double, double[], double[])<br />Field org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator.vecAbsoluteTolerance<br />Local variable named vecAbsoluteTolerance<br />At AdaptiveStepsizeIntegrator.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66271');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator(String, double, double, double[], double[]) may expose internal representation by storing an externally mutable object into AdaptiveStepsizeIntegrator.vecRelativeTolerance</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66271" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator<br />In method new org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator(String, double, double, double[], double[])<br />Field org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator.vecRelativeTolerance<br />Local variable named vecRelativeTolerance<br />At AdaptiveStepsizeIntegrator.java:[line 114]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66869');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.contractionCriteria; locked 60% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66869" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.contractionCriteria<br />Synchronized 60% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 526]<br />Unsynchronized access at ResizableDoubleArray.java:[line 651]<br />Unsynchronized access at ResizableDoubleArray.java:[line 359]<br />Unsynchronized access at ResizableDoubleArray.java:[line 878]<br />Synchronized access at ResizableDoubleArray.java:[line 807]<br />Synchronized access at ResizableDoubleArray.java:[line 807]<br />Synchronized access at ResizableDoubleArray.java:[line 854]<br />Synchronized access at ResizableDoubleArray.java:[line 854]<br />Synchronized access at ResizableDoubleArray.java:[line 770]<br />Synchronized access at ResizableDoubleArray.java:[line 768]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67026');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.expansionFactor; locked 66% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67026" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.expansionFactor<br />Synchronized 66% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 695]<br />Unsynchronized access at ResizableDoubleArray.java:[line 576]<br />Unsynchronized access at ResizableDoubleArray.java:[line 877]<br />Synchronized access at ResizableDoubleArray.java:[line 492]<br />Synchronized access at ResizableDoubleArray.java:[line 490]<br />Synchronized access at ResizableDoubleArray.java:[line 808]<br />Synchronized access at ResizableDoubleArray.java:[line 808]<br />Synchronized access at ResizableDoubleArray.java:[line 855]<br />Synchronized access at ResizableDoubleArray.java:[line 855]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67172');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.expansionMode; locked 66% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67172" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.expansionMode<br />Synchronized 66% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 710]<br />Unsynchronized access at ResizableDoubleArray.java:[line 587]<br />Unsynchronized access at ResizableDoubleArray.java:[line 880]<br />Synchronized access at ResizableDoubleArray.java:[line 489]<br />Synchronized access at ResizableDoubleArray.java:[line 809]<br />Synchronized access at ResizableDoubleArray.java:[line 809]<br />Synchronized access at ResizableDoubleArray.java:[line 856]<br />Synchronized access at ResizableDoubleArray.java:[line 856]<br />Synchronized access at ResizableDoubleArray.java:[line 767]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67318');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.initialCapacity; locked 85% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67318" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.initialCapacity<br />Synchronized 85% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 879]<br />Synchronized access at ResizableDoubleArray.java:[line 382]<br />Synchronized access at ResizableDoubleArray.java:[line 723]<br />Synchronized access at ResizableDoubleArray.java:[line 806]<br />Synchronized access at ResizableDoubleArray.java:[line 806]<br />Synchronized access at ResizableDoubleArray.java:[line 853]<br />Synchronized access at ResizableDoubleArray.java:[line 853]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67442');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.internalArray; locked 97% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67442" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.internalArray<br />Synchronized 97% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 876]<br />Synchronized access at ResizableDoubleArray.java:[line 268]<br />Synchronized access at ResizableDoubleArray.java:[line 271]<br />Synchronized access at ResizableDoubleArray.java:[line 641]<br />Synchronized access at ResizableDoubleArray.java:[line 599]<br />Synchronized access at ResizableDoubleArray.java:[line 492]<br />Synchronized access at ResizableDoubleArray.java:[line 490]<br />Synchronized access at ResizableDoubleArray.java:[line 497]<br />Synchronized access at ResizableDoubleArray.java:[line 497]<br />Synchronized access at ResizableDoubleArray.java:[line 498]<br />Synchronized access at ResizableDoubleArray.java:[line 394]<br />Synchronized access at ResizableDoubleArray.java:[line 395]<br />Synchronized access at ResizableDoubleArray.java:[line 327]<br />Synchronized access at ResizableDoubleArray.java:[line 329]<br />Synchronized access at ResizableDoubleArray.java:[line 382]<br />Synchronized access at ResizableDoubleArray.java:[line 675]<br />Synchronized access at ResizableDoubleArray.java:[line 678]<br />Synchronized access at ResizableDoubleArray.java:[line 509]<br />Synchronized access at ResizableDoubleArray.java:[line 509]<br />Synchronized access at ResizableDoubleArray.java:[line 510]<br />Synchronized access at ResizableDoubleArray.java:[line 294]<br />Synchronized access at ResizableDoubleArray.java:[line 296]<br />Synchronized access at ResizableDoubleArray.java:[line 303]<br />Synchronized access at ResizableDoubleArray.java:[line 752]<br />Synchronized access at ResizableDoubleArray.java:[line 558]<br />Synchronized access at ResizableDoubleArray.java:[line 810]<br />Synchronized access at ResizableDoubleArray.java:[line 810]<br />Synchronized access at ResizableDoubleArray.java:[line 811]<br />Synchronized access at ResizableDoubleArray.java:[line 811]<br />Synchronized access at ResizableDoubleArray.java:[line 811]<br />Synchronized access at ResizableDoubleArray.java:[line 862]<br />Synchronized access at ResizableDoubleArray.java:[line 862]<br />Synchronized access at ResizableDoubleArray.java:[line 770]<br />Synchronized access at ResizableDoubleArray.java:[line 768]<br />Synchronized access at ResizableDoubleArray.java:[line 542]<br />Synchronized access at ResizableDoubleArray.java:[line 625]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67885');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.numElements; locked 96% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67885" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.numElements<br />Synchronized 96% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 881]<br />Synchronized access at ResizableDoubleArray.java:[line 267]<br />Synchronized access at ResizableDoubleArray.java:[line 267]<br />Synchronized access at ResizableDoubleArray.java:[line 268]<br />Synchronized access at ResizableDoubleArray.java:[line 271]<br />Synchronized access at ResizableDoubleArray.java:[line 391]<br />Synchronized access at ResizableDoubleArray.java:[line 394]<br />Synchronized access at ResizableDoubleArray.java:[line 455]<br />Synchronized access at ResizableDoubleArray.java:[line 464]<br />Synchronized access at ResizableDoubleArray.java:[line 464]<br />Synchronized access at ResizableDoubleArray.java:[line 322]<br />Synchronized access at ResizableDoubleArray.java:[line 327]<br />Synchronized access at ResizableDoubleArray.java:[line 329]<br />Synchronized access at ResizableDoubleArray.java:[line 381]<br />Synchronized access at ResizableDoubleArray.java:[line 672]<br />Synchronized access at ResizableDoubleArray.java:[line 673]<br />Synchronized access at ResizableDoubleArray.java:[line 609]<br />Synchronized access at ResizableDoubleArray.java:[line 296]<br />Synchronized access at ResizableDoubleArray.java:[line 303]<br />Synchronized access at ResizableDoubleArray.java:[line 757]<br />Synchronized access at ResizableDoubleArray.java:[line 557]<br />Synchronized access at ResizableDoubleArray.java:[line 558]<br />Synchronized access at ResizableDoubleArray.java:[line 813]<br />Synchronized access at ResizableDoubleArray.java:[line 813]<br />Synchronized access at ResizableDoubleArray.java:[line 857]<br />Synchronized access at ResizableDoubleArray.java:[line 857]<br />Synchronized access at ResizableDoubleArray.java:[line 770]<br />Synchronized access at ResizableDoubleArray.java:[line 768]<br />Synchronized access at ResizableDoubleArray.java:[line 538]<br />Synchronized access at ResizableDoubleArray.java:[line 539]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68262');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math.util.ResizableDoubleArray.startIndex; locked 96% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68262" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math.util.ResizableDoubleArray<br />Field org.apache.commons.math.util.ResizableDoubleArray.startIndex<br />Synchronized 96% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 882]<br />Synchronized access at ResizableDoubleArray.java:[line 784]<br />Synchronized access at ResizableDoubleArray.java:[line 268]<br />Synchronized access at ResizableDoubleArray.java:[line 271]<br />Synchronized access at ResizableDoubleArray.java:[line 394]<br />Synchronized access at ResizableDoubleArray.java:[line 398]<br />Synchronized access at ResizableDoubleArray.java:[line 465]<br />Synchronized access at ResizableDoubleArray.java:[line 465]<br />Synchronized access at ResizableDoubleArray.java:[line 327]<br />Synchronized access at ResizableDoubleArray.java:[line 329]<br />Synchronized access at ResizableDoubleArray.java:[line 675]<br />Synchronized access at ResizableDoubleArray.java:[line 678]<br />Synchronized access at ResizableDoubleArray.java:[line 676]<br />Synchronized access at ResizableDoubleArray.java:[line 294]<br />Synchronized access at ResizableDoubleArray.java:[line 296]<br />Synchronized access at ResizableDoubleArray.java:[line 300]<br />Synchronized access at ResizableDoubleArray.java:[line 300]<br />Synchronized access at ResizableDoubleArray.java:[line 303]<br />Synchronized access at ResizableDoubleArray.java:[line 752]<br />Synchronized access at ResizableDoubleArray.java:[line 753]<br />Synchronized access at ResizableDoubleArray.java:[line 558]<br />Synchronized access at ResizableDoubleArray.java:[line 814]<br />Synchronized access at ResizableDoubleArray.java:[line 814]<br />Synchronized access at ResizableDoubleArray.java:[line 858]<br />Synchronized access at ResizableDoubleArray.java:[line 858]<br />Synchronized access at ResizableDoubleArray.java:[line 542]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65617');">
+<td>
+<span class="priority-2">LI</span>
+</td>
+<td>Incorrect lazy initialization of static field org.apache.commons.math.MathException.cachedResources in org.apache.commons.math.MathException.translate(String, Locale)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65617" style="display: none;">
+<a href="#LI_LAZY_INIT_STATIC">Bug type LI_LAZY_INIT_STATIC (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.translate(String, Locale)<br />On field org.apache.commons.math.MathException.cachedResources<br />At MathException.java:[lines 63-65]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65755');">
+<td>
+<span class="priority-2">LI</span>
+</td>
+<td>Incorrect lazy initialization of static field org.apache.commons.math.MathRuntimeException.cachedResources in org.apache.commons.math.MathRuntimeException.translate(String, Locale)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65755" style="display: none;">
+<a href="#LI_LAZY_INIT_STATIC">Bug type LI_LAZY_INIT_STATIC (click for details)</a>
+<br />In class org.apache.commons.math.MathRuntimeException<br />In method org.apache.commons.math.MathRuntimeException.translate(String, Locale)<br />On field org.apache.commons.math.MathRuntimeException.cachedResources<br />At MathRuntimeException.java:[lines 64-66]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65911');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.geometry.Vector3D.equals(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65911" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.geometry.Vector3D<br />In method org.apache.commons.math.geometry.Vector3D.equals(Object)<br />At Vector3D.java:[line 413]<br />Another occurrence at Vector3D.java:[line 413]<br />Another occurrence at Vector3D.java:[line 413]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65986');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.linear.EigenDecompositionImpl.computeShiftIncrement(int, int, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65986" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.linear.EigenDecompositionImpl<br />In method org.apache.commons.math.linear.EigenDecompositionImpl.computeShiftIncrement(int, int, int)<br />At EigenDecompositionImpl.java:[line 1445]<br />Another occurrence at EigenDecompositionImpl.java:[line 1445]<br />Another occurrence at EigenDecompositionImpl.java:[line 1451]<br />Another occurrence at EigenDecompositionImpl.java:[line 1451]<br />Another occurrence at EigenDecompositionImpl.java:[line 1475]<br />Another occurrence at EigenDecompositionImpl.java:[line 1523]<br />Another occurrence at EigenDecompositionImpl.java:[line 1583]<br />Another occurrence at EigenDecompositionImpl.java:[line 1583]<br />Another occurrence at EigenDecompositionImpl.java:[line 1619]<br />Another occurrence at EigenDecompositionImpl.java:[line 1629]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66506');">
+<td>
+<span class="priority-2">UC</span>
+</td>
+<td>Useless object stored in variable binUpperBounds of method org.apache.commons.math.random.EmpiricalDistributionImpl.fillBinStats(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66506" style="display: none;">
+<a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.fillBinStats(Object)<br />Value binUpperBounds<br />Type double[]<br />At EmpiricalDistributionImpl.java:[line 351]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CO_COMPARETO_INCORRECT_FLOATING">CO_COMPARETO_INCORRECT_FLOATING: compareTo()/compare() incorrectly handles float or double value</a>
+</h2>
+
+  <p>This method compares double or float values using pattern like this: val1 &gt; val2 ? 1 : val1 &lt; val2 ? -1 : 0.
+This pattern works incorrectly for -0.0 and NaN values which may result in incorrect sorting result or broken collection 
+(if compared values are used as keys). Consider using Double.compare or Float.compare static methods which handle all 
+the special cases correctly.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">IS2_INCONSISTENT_SYNC: Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<h2>
+<a name="LI_LAZY_INIT_STATIC">LI_LAZY_INIT_STATIC: Incorrect lazy initialization of static field</a>
+</h2>
+
+<p> This method contains an unsynchronized lazy initialization of a non-volatile static field.
+Because the compiler or processor may reorder instructions,
+threads are not guaranteed to see a completely initialized object,
+<em>if the method can be called by multiple threads</em>.
+You can make the field volatile to correct the problem.
+For more information, see the
+<a href="http://www.cs.umd.edu/~pugh/java/memoryModel/">Java Memory Model web site</a>.
+</p>
+
+    
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">NP_NULL_ON_SOME_PATH: Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    
+<h2>
+<a name="SA_FIELD_SELF_ASSIGNMENT">SA_FIELD_SELF_ASSIGNMENT: Self assignment of field</a>
+</h2>
+
+<p> This method contains a self assignment of a field; e.g.
+</p>
+<pre>
+  int x;
+  public void foo() {
+    x = x;
+  }
+</pre>
+<p>Such assignments are useless, and may indicate a logic error or typo.</p>
+
+    
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="SE_INNER_CLASS">SE_INNER_CLASS: Serializable inner class</a>
+</h2>
+
+<p> This Serializable class is an inner class.  Any attempt to serialize
+it will also serialize the associated outer instance. The outer instance is serializable,
+so this won't fail, but it might serialize a lot more data than intended.
+If possible, making the inner class a static inner class (also known as a nested class) should solve the
+problem.
+
+    
+<h2>
+<a name="SE_TRANSIENT_FIELD_NOT_RESTORED">SE_TRANSIENT_FIELD_NOT_RESTORED: Transient field that isn't set by deserialization. </a>
+</h2>
+
+  <p> This class contains a field that is updated at multiple places in the class, thus it seems to be part of the state of the class. However, since the field is marked as transient and not set in readObject or readResolve, it will contain the default value in any
+deserialized instance of the class.
+</p>
+
+    
+<h2>
+<a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+</h2>
+
+<p>Our analysis shows that this object is useless. 
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    </body>
+</html>

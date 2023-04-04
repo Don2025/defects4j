@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Math/34_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>41128 lines of code analyzed,
+	in 831 classes, 
+	in 46 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">8</td>
+<td align="right">0.19</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">0.24</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+<td align="right">
+<b>0.44</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">9</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65761');">
+<td>
+<span class="priority-2">CNT</span>
+</td>
+<td>Rough value of Math.PI found: 3.141592653489793</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65761" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.geometry.euclidean.threed.Line<br />In method org.apache.commons.math3.geometry.euclidean.threed.Line.isSimilarTo(Line)<br />Value 3.141592653489793<br />Value Math.PI<br />At Line.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65822');">
+<td>
+<span class="priority-2">CNT</span>
+</td>
+<td>Rough value of Math.PI found: 3.141592653489793</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65822" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.geometry.euclidean.threed.Plane<br />In method org.apache.commons.math3.geometry.euclidean.threed.Plane.isSimilarTo(Plane)<br />Value 3.141592653489793<br />Value Math.PI<br />At Plane.java:[line 259]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66621');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66621" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.util.FastMath<br />In method org.apache.commons.math3.util.FastMath.cos(double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 2267]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66682');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66682" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.util.FastMath<br />In method org.apache.commons.math3.util.FastMath.sin(double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 2181]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66743');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66743" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.util.FastMath<br />In method org.apache.commons.math3.util.FastMath.tan(double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 2363]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66077');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66077" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getWeight() of type double<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getWeight() of type double<br />At GaussianFitter.java:[line 329]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66182');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66182" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getX() of type double<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getX() of type double<br />At GaussianFitter.java:[line 317]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66287');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66287" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getY() of type double<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getY() of type double<br />At GaussianFitter.java:[line 323]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66804');">
+<td>
+<span class="priority-2">It</span>
+</td>
+<td>org.apache.commons.math3.util.MultidimensionalCounter$Iterator.next() can't throw NoSuchElementException</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66804" style="display: none;">
+<a href="#IT_NO_SUCH_ELEMENT">Bug type IT_NO_SUCH_ELEMENT (click for details)</a>
+<br />In class org.apache.commons.math3.util.MultidimensionalCounter$Iterator<br />In method org.apache.commons.math3.util.MultidimensionalCounter$Iterator.next()<br />At MultidimensionalCounter.java:[lines 105-114]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66392');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math3.random.EmpiricalDistribution.load(File): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66392" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math3.random.EmpiricalDistribution<br />In method org.apache.commons.math3.random.EmpiricalDistribution.load(File)<br />Called method new java.io.FileReader(File)<br />At EmpiricalDistribution.java:[line 242]<br />Another occurrence at EmpiricalDistribution.java:[line 246]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66472');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math3.random.EmpiricalDistribution.load(URL): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66472" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math3.random.EmpiricalDistribution<br />In method org.apache.commons.math3.random.EmpiricalDistribution.load(URL)<br />Called method new java.io.InputStreamReader(InputStream)<br />At EmpiricalDistribution.java:[line 213]<br />Another occurrence at EmpiricalDistribution.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66552');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math3.random.ValueServer.resetReplayFile(): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66552" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math3.random.ValueServer<br />In method org.apache.commons.math3.random.ValueServer.resetReplayFile()<br />Called method new java.io.InputStreamReader(InputStream)<br />At ValueServer.java:[line 270]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65676');">
+<td>
+<span class="priority-1">Bx</span>
+</td>
+<td>Primitive is boxed to call Double.compareTo(Double): use Double.compare(double, double) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65676" style="display: none;">
+<a href="#DM_BOXED_PRIMITIVE_FOR_COMPARE">Bug type DM_BOXED_PRIMITIVE_FOR_COMPARE (click for details)</a>
+<br />In class org.apache.commons.math3.genetics.Chromosome<br />In method org.apache.commons.math3.genetics.Chromosome.compareTo(Chromosome)<br />Called method Double.compareTo(Double)<br />Should call Double.compare(double, double) instead<br />At Chromosome.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>org.apache.commons.math3.exception.util.ExceptionContext.serializeContext(ObjectOutputStream) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65609" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class org.apache.commons.math3.exception.util.ExceptionContext<br />In method org.apache.commons.math3.exception.util.ExceptionContext.serializeContext(ObjectOutputStream)<br />Field org.apache.commons.math3.exception.util.ExceptionContext.context<br />At ExceptionContext.java:[line 292]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65883');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.altmov(int, double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65883" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.altmov(int, double)<br />At BOBYQAOptimizer.java:[line 1461]<br />Another occurrence at BOBYQAOptimizer.java:[line 1488]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65947');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.bobyqb(double[], double[]) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65947" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.bobyqb(double[], double[])<br />At BOBYQAOptimizer.java:[lines 546-556]<br />Another occurrence at BOBYQAOptimizer.java:[lines 1116-1119]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66012');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.trsbox(double, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66012" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.trsbox(double, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector)<br />At BOBYQAOptimizer.java:[lines 1882-1885]<br />Another occurrence at BOBYQAOptimizer.java:[lines 2027-2035]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">UC</span>
+</td>
+<td>Useless object stored in variable c of method org.apache.commons.math3.dfp.DfpMath.sin(Dfp)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+<br />In class org.apache.commons.math3.dfp.DfpMath<br />In method org.apache.commons.math3.dfp.DfpMath.sin(Dfp)<br />Value c<br />Type org.apache.commons.math3.dfp.Dfp[]<br />At DfpMath.java:[line 760]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_BOXED_PRIMITIVE_FOR_COMPARE">DM_BOXED_PRIMITIVE_FOR_COMPARE: Boxing a primitive to compare</a>
+</h2>
+
+  <p>A boxed primitive is created just to call compareTo method. It's more efficient to use static compare method 
+  (for double and float since Java 1.4, for other primitive types since Java 1.7) which works on primitives directly.
+  </p>
+
+    
+<h2>
+<a name="CNT_ROUGH_CONSTANT_VALUE">CNT_ROUGH_CONSTANT_VALUE: Rough value of known constant found</a>
+</h2>
+      
+    <p>It's recommended to use the predefined library constant for code clarity and better precision.</p>
+
+    
+<h2>
+<a name="CO_COMPARETO_INCORRECT_FLOATING">CO_COMPARETO_INCORRECT_FLOATING: compareTo()/compare() incorrectly handles float or double value</a>
+</h2>
+
+  <p>This method compares double or float values using pattern like this: val1 &gt; val2 ? 1 : val1 &lt; val2 ? -1 : 0.
+This pattern works incorrectly for -0.0 and NaN values which may result in incorrect sorting result or broken collection 
+(if compared values are used as keys). Consider using Double.compare or Float.compare static methods which handle all 
+the special cases correctly.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="IT_NO_SUCH_ELEMENT">IT_NO_SUCH_ELEMENT: Iterator next() method can't throw NoSuchElementException</a>
+</h2>
+
+  <p> This class implements the <code>java.util.Iterator</code> interface.&nbsp;
+  However, its <code>next()</code> method is not capable of throwing
+  <code>java.util.NoSuchElementException</code>.&nbsp; The <code>next()</code>
+  method should be changed so it throws <code>NoSuchElementException</code>
+  if is called when there are no more elements to return.</p>
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+</h2>
+
+<p>Our analysis shows that this object is useless. 
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>

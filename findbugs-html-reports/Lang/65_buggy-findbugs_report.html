@@ -1,0 +1,1095 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Lang/65_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>12018 lines of code analyzed,
+	in 126 classes, 
+	in 9 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">0.42</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">38</td>
+<td align="right">3.16</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>43</b>
+</td>
+<td align="right">
+<b>3.58</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">20</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">7</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">10</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>43</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67145');">
+<td>
+<span class="priority-2">CN</span>
+</td>
+<td>Class org.apache.commons.lang.text.StrBuilder implements Cloneable but does not define or use clone method</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67145" style="display: none;">
+<a href="#CN_IDIOM">Bug type CN_IDIOM (click for details)</a>
+<br />In class org.apache.commons.lang.text.StrBuilder<br />At StrBuilder.java:[lines 92-2178]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67181');">
+<td>
+<span class="priority-2">CN</span>
+</td>
+<td>org.apache.commons.lang.text.StrTokenizer.clone() does not call super.clone()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67181" style="display: none;">
+<a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+<br />In class org.apache.commons.lang.text.StrTokenizer<br />In method org.apache.commons.lang.text.StrTokenizer.clone()<br />At StrTokenizer.java:[lines 1062-1064]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in org.apache.commons.lang.BooleanUtils.toBoolean(String) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.toBoolean(String)<br />Actual type String<br />String constant "true"<br />Value loaded from str<br />At BooleanUtils.java:[line 613]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66353');">
+<td>
+<span class="priority-1">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in org.apache.commons.lang.StringUtils.indexOfDifference(String, String) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66353" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.StringUtils<br />In method org.apache.commons.lang.StringUtils.indexOfDifference(String, String)<br />Actual type String<br />Value loaded from str2<br />Value loaded from str1<br />At StringUtils.java:[line 4720]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67544');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67544" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.H<br />Value loaded from value<br />At DurationFormatUtils.java:[line 398]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67633');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67633" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.M<br />Value loaded from value<br />At DurationFormatUtils.java:[line 390]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67722');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67722" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.S<br />Value loaded from value<br />At DurationFormatUtils.java:[line 410]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67811');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67811" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.d<br />Value loaded from value<br />At DurationFormatUtils.java:[line 394]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67900');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67900" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.m<br />Value loaded from value<br />At DurationFormatUtils.java:[line 402]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67989');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67989" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.s<br />Value loaded from value<br />At DurationFormatUtils.java:[line 406]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68078');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68078" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.format(DurationFormatUtils$Token[], int, int, int, int, int, int, int, boolean)<br />Actual type String<br />Value loaded from field org.apache.commons.lang.time.DurationFormatUtils.y<br />Value loaded from value<br />At DurationFormatUtils.java:[line 386]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68167');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.lang.time.DurationFormatUtils.lexx(String) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68167" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang.time.DurationFormatUtils<br />In method org.apache.commons.lang.time.DurationFormatUtils.lexx(String)<br />Actual type String<br />Value loaded from value<br />Return value of org.apache.commons.lang.time.DurationFormatUtils$Token.getValue() of type Object<br />At DurationFormatUtils.java:[line 509]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66558');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>org.apache.commons.lang.enum.ValuedEnum.getEnum(Class, int) uses enum for a variable name, which is a keyword in later versions of Java</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66558" style="display: none;">
+<a href="#NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER">Bug type NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER (click for details)</a>
+<br />In class org.apache.commons.lang.enum.ValuedEnum<br />In method org.apache.commons.lang.enum.ValuedEnum.getEnum(Class, int)<br />Local variable named enum<br />At ValuedEnum.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang.BooleanUtils.negate(Boolean) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65630" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.negate(Boolean)<br />At BooleanUtils.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65684');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang.BooleanUtils.toBooleanObject(int, int, int, int) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65684" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.toBooleanObject(int, int, int, int)<br />At BooleanUtils.java:[line 313]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65738');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang.BooleanUtils.toBooleanObject(Integer) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65738" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.toBooleanObject(Integer)<br />At BooleanUtils.java:[line 225]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65792');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang.BooleanUtils.toBooleanObject(Integer, Integer, Integer, Integer) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65792" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.toBooleanObject(Integer, Integer, Integer, Integer)<br />At BooleanUtils.java:[line 345]<br />Another occurrence at BooleanUtils.java:[line 352]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65857');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang.BooleanUtils.toBooleanObject(String) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65857" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.toBooleanObject(String)<br />At BooleanUtils.java:[line 537]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65911');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang.BooleanUtils.toBooleanObject(String, String, String, String) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65911" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang.BooleanUtils<br />In method org.apache.commons.lang.BooleanUtils.toBooleanObject(String, String, String, String)<br />At BooleanUtils.java:[line 566]<br />Another occurrence at BooleanUtils.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66950');">
+<td>
+<span class="priority-1">SnVI</span>
+</td>
+<td>org.apache.commons.lang.exception.NestableDelegate is Serializable; consider declaring a serialVersionUID</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66950" style="display: none;">
+<a href="#SE_NO_SERIALVERSIONID">Bug type SE_NO_SERIALVERSIONID (click for details)</a>
+<br />In class org.apache.commons.lang.exception.NestableDelegate<br />At NestableDelegate.java:[lines 60-395]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66505');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.lang.enum.Enum.equals(Object) compares class names rather than class objects</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66505" style="display: none;">
+<a href="#EQ_COMPARING_CLASS_NAMES">Bug type EQ_COMPARING_CLASS_NAMES (click for details)</a>
+<br />In class org.apache.commons.lang.enum.Enum<br />In method org.apache.commons.lang.enum.Enum.equals(Object)<br />At Enum.java:[line 546]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66618');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.lang.enums.Enum.equals(Object) compares class names rather than class objects</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66618" style="display: none;">
+<a href="#EQ_COMPARING_CLASS_NAMES">Bug type EQ_COMPARING_CLASS_NAMES (click for details)</a>
+<br />In class org.apache.commons.lang.enums.Enum<br />In method org.apache.commons.lang.enums.Enum.equals(Object)<br />At Enum.java:[line 543]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66028');">
+<td>
+<span class="priority-1">SF</span>
+</td>
+<td>Value of entityValue from previous case is overwritten here due to switch statement fall through</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66028" style="display: none;">
+<a href="#SF_DEAD_STORE_DUE_TO_SWITCH_FALLTHROUGH">Bug type SF_DEAD_STORE_DUE_TO_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.lang.Entities<br />In method org.apache.commons.lang.Entities.unescape(Writer, String)<br />Local variable named entityValue<br />At Entities.java:[line 912]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66725');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.lang.exception.NestableDelegate.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66725" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.lang.exception.NestableDelegate<br />In method org.apache.commons.lang.exception.NestableDelegate.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At NestableDelegate.java:[line 284]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66437');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.lang.builder.ReflectionToStringBuilder.getExcludeFieldNames() may expose internal representation by returning ReflectionToStringBuilder.excludeFieldNames</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66437" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.lang.builder.ReflectionToStringBuilder<br />In method org.apache.commons.lang.builder.ReflectionToStringBuilder.getExcludeFieldNames()<br />Field org.apache.commons.lang.builder.ReflectionToStringBuilder.excludeFieldNames<br />At ReflectionToStringBuilder.java:[line 720]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67235');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.lang.text.StrTokenizer(char[]) may expose internal representation by storing an externally mutable object into StrTokenizer.chars</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67235" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.lang.text.StrTokenizer<br />In method new org.apache.commons.lang.text.StrTokenizer(char[])<br />Field org.apache.commons.lang.text.StrTokenizer.chars<br />Local variable named input<br />At StrTokenizer.java:[line 335]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67310');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>org.apache.commons.lang.text.StrTokenizer.reset(char[]) may expose internal representation by storing an externally mutable object into StrTokenizer.chars</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67310" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.lang.text.StrTokenizer<br />In method org.apache.commons.lang.text.StrTokenizer.reset(char[])<br />Field org.apache.commons.lang.text.StrTokenizer.chars<br />Local variable named input<br />At StrTokenizer.java:[line 504]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65976');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.lang.CharSet.COMMON is a mutable collection which should be package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65976" style="display: none;">
+<a href="#MS_MUTABLE_COLLECTION_PKGPROTECT">Bug type MS_MUTABLE_COLLECTION_PKGPROTECT (click for details)</a>
+<br />In class org.apache.commons.lang.CharSet<br />Field org.apache.commons.lang.CharSet.COMMON<br />At CharSet.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66794');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.lang.exception.NestableDelegate.matchSubclasses isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66794" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class org.apache.commons.lang.exception.NestableDelegate<br />Field org.apache.commons.lang.exception.NestableDelegate.matchSubclasses<br />At NestableDelegate.java:[line 90]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66846');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.lang.exception.NestableDelegate.topDown isn't final but should be</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66846" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class org.apache.commons.lang.exception.NestableDelegate<br />Field org.apache.commons.lang.exception.NestableDelegate.topDown<br />At NestableDelegate.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66898');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.apache.commons.lang.exception.NestableDelegate.trimStackFrames isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66898" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class org.apache.commons.lang.exception.NestableDelegate<br />Field org.apache.commons.lang.exception.NestableDelegate.trimStackFrames<br />At NestableDelegate.java:[line 80]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66985');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>org.apache.commons.lang.math.JVMRandom.nextInt(int) uses the nextDouble method of Random to generate a random integer; using nextInt is more efficient</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66985" style="display: none;">
+<a href="#DM_NEXTINT_VIA_NEXTDOUBLE">Bug type DM_NEXTINT_VIA_NEXTDOUBLE (click for details)</a>
+<br />In class org.apache.commons.lang.math.JVMRandom<br />In method org.apache.commons.lang.math.JVMRandom.nextInt(int)<br />At JVMRandom.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66195');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: org.apache.commons.lang.IntHashMap$Entry.key</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66195" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.lang.IntHashMap$Entry<br />Field org.apache.commons.lang.IntHashMap$Entry.key<br />At IntHashMap.java:[line 84]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66142');">
+<td>
+<span class="priority-2">IM</span>
+</td>
+<td>Computation of average could overflow in org.apache.commons.lang.Entities$BinaryEntityMap.binarySearch(int)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66142" style="display: none;">
+<a href="#IM_AVERAGE_COMPUTATION_COULD_OVERFLOW">Bug type IM_AVERAGE_COMPUTATION_COULD_OVERFLOW (click for details)</a>
+<br />In class org.apache.commons.lang.Entities$BinaryEntityMap<br />In method org.apache.commons.lang.Entities$BinaryEntityMap.binarySearch(int)<br />At Entities.java:[line 648]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66671');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in org.apache.commons.lang.exception.ExceptionUtils.&lt;static initializer for ExceptionUtils&gt;()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66671" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class org.apache.commons.lang.exception.ExceptionUtils<br />In method org.apache.commons.lang.exception.ExceptionUtils.&lt;static initializer for ExceptionUtils&gt;()<br />At ExceptionUtils.java:[line 96]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66089');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.Entities.unescape(Writer, String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66089" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang.Entities<br />In method org.apache.commons.lang.Entities.unescape(Writer, String)<br />At Entities.java:[lines 906-909]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67038');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.math.NumberUtils.createNumber(String) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67038" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.lang.math.NumberUtils<br />In method org.apache.commons.lang.math.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 475-482]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67092');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.math.NumberUtils.createNumber(String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67092" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang.math.NumberUtils<br />In method org.apache.commons.lang.math.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 449-491]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66246');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.NumberUtils.createNumber(String) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66246" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.lang.NumberUtils<br />In method org.apache.commons.lang.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 216-223]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66300');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.NumberUtils.createNumber(String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66300" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang.NumberUtils<br />In method org.apache.commons.lang.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 190-232]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67385');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.text.VariableFormatter.doReplace(char[], int, int, Object, List) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67385" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang.text.VariableFormatter<br />In method org.apache.commons.lang.text.VariableFormatter.doReplace(char[], int, int, Object, List)<br />At VariableFormatter.java:[lines 735-784]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67438');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.time.DateUtils.iterator(Calendar, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67438" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang.time.DateUtils<br />In method org.apache.commons.lang.time.DateUtils.iterator(Calendar, int)<br />At DateUtils.java:[lines 803-817]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67491');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang.time.DateUtils.modify(Calendar, int, boolean) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67491" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang.time.DateUtils<br />In method org.apache.commons.lang.time.DateUtils.modify(Calendar, int, boolean)<br />At DateUtils.java:[lines 670-696]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CN_IDIOM">CN_IDIOM: Class implements Cloneable but does not define or use clone method</a>
+</h2>
+
+<p>
+   Class implements Cloneable but does not define or
+   use the clone method.</p>
+
+    
+<h2>
+<a name="CN_IDIOM_NO_SUPER_CALL">CN_IDIOM_NO_SUPER_CALL: clone method does not call super.clone()</a>
+</h2>
+
+<p> This non-final class defines a clone() method that does not call super.clone().
+If this class ("<i>A</i>") is extended by a subclass ("<i>B</i>"),
+and the subclass <i>B</i> calls super.clone(), then it is likely that
+<i>B</i>'s clone() method will return an object of type <i>A</i>,
+which violates the standard contract for clone().</p>
+
+<p> If all clone() methods call super.clone(), then they are guaranteed
+to use Object.clone(), which always returns an object of the correct type.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="DM_NEXTINT_VIA_NEXTDOUBLE">DM_NEXTINT_VIA_NEXTDOUBLE: Use the nextInt method of Random rather than nextDouble to generate a random integer</a>
+</h2>
+
+  <p>If <code>r</code> is a <code>java.util.Random</code>, you can generate a random number from <code>0</code> to <code>n-1</code>
+using <code>r.nextInt(n)</code>, rather than using <code>(int)(r.nextDouble() * n)</code>.
+</p>
+<p>The argument to nextInt must be positive. If, for example, you want to generate a random
+value from -99 to 0, use <code>-r.nextInt(100)</code>.
+</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_COMPARING_CLASS_NAMES">EQ_COMPARING_CLASS_NAMES: equals method compares class names rather than class objects</a>
+</h2>
+
+  <p> This method checks to see if two objects are the same class by checking to see if the names
+of their classes are equal. You can have different classes with the same name if they are loaded by
+different class loaders. Just check to see if the class objects are the same.
+</p>
+
+    
+<h2>
+<a name="ES_COMPARING_STRINGS_WITH_EQ">ES_COMPARING_STRINGS_WITH_EQ: Comparison of String objects using == or !=</a>
+</h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="ES_COMPARING_PARAMETER_STRING_WITH_EQ">ES_COMPARING_PARAMETER_STRING_WITH_EQ: Comparison of String parameter using == or !=</a>
+</h2>
+
+  <p>This code compares a <code>java.lang.String</code> parameter for reference
+equality using the == or != operators. Requiring callers to
+pass only String constants or interned strings to a method is unnecessarily
+fragile, and rarely leads to measurable performance gains. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="IM_AVERAGE_COMPUTATION_COULD_OVERFLOW">IM_AVERAGE_COMPUTATION_COULD_OVERFLOW: Computation of average could overflow</a>
+</h2>
+
+<p>The code computes the average of two integers using either division or signed right shift,
+and then uses the result as the index of an array.
+If the values being averaged are very large, this can overflow (resulting in the computation
+of a negative average).  Assuming that the result is intended to be nonnegative, you
+can use an unsigned right shift instead. In other words, rather that using <code>(low+high)/2</code>,
+use <code>(low+high) &gt;&gt;&gt; 1</code>
+</p>
+<p>This bug exists in many earlier implementations of binary search and merge sort.
+Martin Buchholz <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6412541">found and fixed it</a>
+in the JDK libraries, and Joshua Bloch
+<a href="http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html">widely
+publicized the bug pattern</a>.
+</p>
+
+    
+<h2>
+<a name="MS_MUTABLE_COLLECTION_PKGPROTECT">MS_MUTABLE_COLLECTION_PKGPROTECT: Field is a mutable collection which should be package protected</a>
+</h2>
+
+ <p>A mutable collection instance is assigned to a final static field, 
+   thus can be changed by malicious code or by accident from another package.
+   The field could be made package protected to avoid this vulnerability. 
+   Alternatively you may wrap this field into Collections.unmodifiableSet/List/Map/etc.
+   to avoid this vulnerability.</p>
+
+    
+<h2>
+<a name="MS_SHOULD_BE_FINAL">MS_SHOULD_BE_FINAL: Field isn't final but should be</a>
+</h2>
+
+   <p>
+This static field public but not final, and
+could be changed by malicious code or
+        by accident from another package.
+        The field could be made final to avoid
+        this vulnerability.</p>
+
+    
+<h2>
+<a name="NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER">NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER: Use of identifier that is a keyword in later versions of Java</a>
+</h2>
+
+<p>The identifier is a word that is reserved as a keyword in later versions of Java, and your code will need to be changed
+in order to compile it in later versions of Java.</p>
+
+
+    
+<h2>
+<a name="NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL: Method with Boolean return type returns explicit null</a>
+</h2>
+       
+       <p>
+    A method that returns either Boolean.TRUE, Boolean.FALSE or null is an accident waiting to happen.
+    This method can be invoked as though it returned a value of type boolean, and
+    the compiler will insert automatic unboxing of the Boolean value. If a null value is returned,
+    this will result in a NullPointerException.
+       </p>
+       
+       
+<h2>
+<a name="REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION: Exception is caught when Exception is not thrown</a>
+</h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+  <pre>
+  try {
+    ...
+  } catch (RuntimeException e) {
+    throw e;
+  } catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+  }</pre>
+  
+     
+<h2>
+<a name="SF_DEAD_STORE_DUE_TO_SWITCH_FALLTHROUGH">SF_DEAD_STORE_DUE_TO_SWITCH_FALLTHROUGH: Dead store due to switch statement fall through</a>
+</h2>
+
+  <p> A value stored in the previous switch case is overwritten here due to a switch fall through. It is likely that
+    you forgot to put a break or return at the end of the previous case.
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SE_NO_SERIALVERSIONID">SE_NO_SERIALVERSIONID: Class is Serializable, but doesn't define serialVersionUID</a>
+</h2>
+
+  <p> This class implements the <code>Serializable</code> interface, but does
+  not define a <code>serialVersionUID</code> field.&nbsp;
+  A change as simple as adding a reference to a .class object
+    will add synthetic fields to the class,
+   which will unfortunately change the implicit
+   serialVersionUID (e.g., adding a reference to <code>String.class</code>
+   will generate a static field <code>class$java$lang$String</code>).
+   Also, different source code to bytecode compilers may use different
+   naming conventions for synthetic variables generated for
+   references to class objects or inner classes.
+   To ensure interoperability of Serializable across versions,
+   consider adding an explicit serialVersionUID.</p>
+
+    
+<h2>
+<a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+</h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    </body>
+</html>

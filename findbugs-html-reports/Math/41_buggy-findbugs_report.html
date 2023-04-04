@@ -1,0 +1,900 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Math/41_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>41366 lines of code analyzed,
+	in 848 classes, 
+	in 46 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">0.31</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">21</td>
+<td align="right">0.51</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+<td align="right">
+<b>0.82</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">10</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66078');">
+<td>
+<span class="priority-2">CNT</span>
+</td>
+<td>Rough value of Math.PI found: 3.141592653489793</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66078" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math.geometry.euclidean.threed.Line<br />In method org.apache.commons.math.geometry.euclidean.threed.Line.isSimilarTo(Line)<br />Value 3.141592653489793<br />Value Math.PI<br />At Line.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66139');">
+<td>
+<span class="priority-2">CNT</span>
+</td>
+<td>Rough value of Math.PI found: 3.141592653489793</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66139" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math.geometry.euclidean.threed.Plane<br />In method org.apache.commons.math.geometry.euclidean.threed.Plane.isSimilarTo(Plane)<br />Value 3.141592653489793<br />Value Math.PI<br />At Plane.java:[line 259]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67469');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67469" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math.util.FastMath<br />In method org.apache.commons.math.util.FastMath.cos(double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 2267]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67530');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67530" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math.util.FastMath<br />In method org.apache.commons.math.util.FastMath.sin(double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 2181]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67591');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67591" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math.util.FastMath<br />In method org.apache.commons.math.util.FastMath.tan(double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 2363]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66532');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66532" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math.optimization.fitting.WeightedObservedPoint.getWeight() of type double<br />Return value of org.apache.commons.math.optimization.fitting.WeightedObservedPoint.getWeight() of type double<br />At GaussianFitter.java:[line 329]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66637');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66637" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math.optimization.fitting.WeightedObservedPoint.getX() of type double<br />Return value of org.apache.commons.math.optimization.fitting.WeightedObservedPoint.getX() of type double<br />At GaussianFitter.java:[line 317]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66742');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66742" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math.optimization.fitting.WeightedObservedPoint.getY() of type double<br />Return value of org.apache.commons.math.optimization.fitting.WeightedObservedPoint.getY() of type double<br />At GaussianFitter.java:[line 323]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67730');">
+<td>
+<span class="priority-2">It</span>
+</td>
+<td>org.apache.commons.math.util.MultidimensionalCounter$Iterator.next() can't throw NoSuchElementException</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67730" style="display: none;">
+<a href="#IT_NO_SUCH_ELEMENT">Bug type IT_NO_SUCH_ELEMENT (click for details)</a>
+<br />In class org.apache.commons.math.util.MultidimensionalCounter$Iterator<br />In method org.apache.commons.math.util.MultidimensionalCounter$Iterator.next()<br />At MultidimensionalCounter.java:[lines 105-114]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67652');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>org.apache.commons.math.util.MathArrays.isMonotonic(Comparable[], MathArrays$OrderDirection, boolean) negates the return value of Comparable.compareTo(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67652" style="display: none;">
+<a href="#RV_NEGATING_RESULT_OF_COMPARETO">Bug type RV_NEGATING_RESULT_OF_COMPARETO (click for details)</a>
+<br />In class org.apache.commons.math.util.MathArrays<br />In method org.apache.commons.math.util.MathArrays.isMonotonic(Comparable[], MathArrays$OrderDirection, boolean)<br />Called method Comparable.compareTo(Object)<br />Return value of Comparable.compareTo(Object) of type int<br />At MathArrays.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67058');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field org.apache.commons.math.random.ISAACRandom.i is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67058" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class org.apache.commons.math.random.ISAACRandom<br />Field org.apache.commons.math.random.ISAACRandom.i<br />In ISAACRandom.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67105');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field org.apache.commons.math.random.ISAACRandom.j is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67105" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class org.apache.commons.math.random.ISAACRandom<br />Field org.apache.commons.math.random.ISAACRandom.j<br />In ISAACRandom.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67152');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field org.apache.commons.math.random.ISAACRandom.x is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67152" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class org.apache.commons.math.random.ISAACRandom<br />Field org.apache.commons.math.random.ISAACRandom.x<br />In ISAACRandom.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66253');">
+<td>
+<span class="priority-2">Nm</span>
+</td>
+<td>VERY confusing to have methods org.apache.commons.math.ode.nonstiff.GraggBulirschStoerIntegrator.setStepsizeControl(double, double, double, double) and org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator.setStepSizeControl(double, double, double, double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66253" style="display: none;">
+<a href="#NM_VERY_CONFUSING">Bug type NM_VERY_CONFUSING (click for details)</a>
+<br />In class org.apache.commons.math.ode.nonstiff.GraggBulirschStoerIntegrator<br />In method org.apache.commons.math.ode.nonstiff.GraggBulirschStoerIntegrator.setStepsizeControl(double, double, double, double)<br />superclass is org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator<br />Did you intend to override org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator.setStepSizeControl(double, double, double, double)<br />At GraggBulirschStoerIntegrator.java:[lines 261-285]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathException.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65617');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathRuntimeException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65617" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathRuntimeException<br />In method org.apache.commons.math.MathRuntimeException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathRuntimeException.java:[line 207]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66898');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(File): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66898" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(File)<br />Called method new java.io.FileReader(File)<br />At EmpiricalDistributionImpl.java:[line 225]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 229]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66978');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66978" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL)<br />Called method new java.io.InputStreamReader(InputStream)<br />At EmpiricalDistributionImpl.java:[line 196]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67199');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.ValueServer.resetReplayFile(): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67199" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.ValueServer<br />In method org.apache.commons.math.random.ValueServer.resetReplayFile()<br />Called method new java.io.InputStreamReader(InputStream)<br />At ValueServer.java:[line 270]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67268');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.stat.regression.RegressionResults(double[], double[][], boolean, long, int, double, double, double, boolean, boolean) may expose internal representation by storing an externally mutable object into RegressionResults.parameters</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67268" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.stat.regression.RegressionResults<br />In method new org.apache.commons.math.stat.regression.RegressionResults(double[], double[][], boolean, long, int, double, double, double, boolean, boolean)<br />Field org.apache.commons.math.stat.regression.RegressionResults.parameters<br />Local variable named parameters<br />At RegressionResults.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67343');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math.stat.regression.RegressionResults(double[], double[][], boolean, long, int, double, double, double, boolean, boolean) may expose internal representation by storing an externally mutable object into RegressionResults.varCovData</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67343" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math.stat.regression.RegressionResults<br />In method new org.apache.commons.math.stat.regression.RegressionResults(double[], double[][], boolean, long, int, double, double, double, boolean, boolean)<br />Field org.apache.commons.math.stat.regression.RegressionResults.varCovData<br />Local variable named varcov<br />At RegressionResults.java:[line 109]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65940');">
+<td>
+<span class="priority-1">Bx</span>
+</td>
+<td>Primitive is boxed to call Double.compareTo(Double): use Double.compare(double, double) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65940" style="display: none;">
+<a href="#DM_BOXED_PRIMITIVE_FOR_COMPARE">Bug type DM_BOXED_PRIMITIVE_FOR_COMPARE (click for details)</a>
+<br />In class org.apache.commons.math.genetics.Chromosome<br />In method org.apache.commons.math.genetics.Chromosome.compareTo(Chromosome)<br />Called method Double.compareTo(Double)<br />Should call Double.compare(double, double) instead<br />At Chromosome.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67418');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: org.apache.commons.math.stat.regression.RegressionResults.indexOutOfBound; should this field be static?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67418" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class org.apache.commons.math.stat.regression.RegressionResults<br />Field org.apache.commons.math.stat.regression.RegressionResults.indexOutOfBound<br />At RegressionResults.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65873');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>org.apache.commons.math.exception.util.ExceptionContext.serializeContext(ObjectOutputStream) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65873" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class org.apache.commons.math.exception.util.ExceptionContext<br />In method org.apache.commons.math.exception.util.ExceptionContext.serializeContext(ObjectOutputStream)<br />Field org.apache.commons.math.exception.util.ExceptionContext.context<br />At ExceptionContext.java:[line 292]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65739');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to imAppendTo in org.apache.commons.math.complex.ComplexFormat.format(Complex, StringBuffer, FieldPosition)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65739" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class org.apache.commons.math.complex.ComplexFormat<br />In method org.apache.commons.math.complex.ComplexFormat.format(Complex, StringBuffer, FieldPosition)<br />Local variable named imAppendTo<br />At ComplexFormat.java:[line 182]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65686');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.analysis.solvers.BaseSecantSolver.doSolve()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65686" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.analysis.solvers.BaseSecantSolver<br />In method org.apache.commons.math.analysis.solvers.BaseSecantSolver.doSolve()<br />At BaseSecantSolver.java:[line 190]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66025');">
+<td>
+<span class="priority-2">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.genetics.Chromosome.getFitness()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66025" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.genetics.Chromosome<br />In method org.apache.commons.math.genetics.Chromosome.getFitness()<br />At Chromosome.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66200');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.linear.EigenDecomposition.findEigenVectors(double[][])</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66200" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.linear.EigenDecomposition<br />In method org.apache.commons.math.linear.EigenDecomposition.findEigenVectors(double[][])<br />At EigenDecomposition.java:[line 527]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66338');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.optimization.direct.BOBYQAOptimizer.altmov(int, double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66338" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math.optimization.direct.BOBYQAOptimizer.altmov(int, double)<br />At BOBYQAOptimizer.java:[line 1460]<br />Another occurrence at BOBYQAOptimizer.java:[line 1487]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67783');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.util.Precision.roundUnscaled(double, double, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67783" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.util.Precision<br />In method org.apache.commons.math.util.Precision.roundUnscaled(double, double, int)<br />At Precision.java:[line 435]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66402');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.math.optimization.direct.BOBYQAOptimizer.bobyqb(double[], double[]) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66402" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.math.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math.optimization.direct.BOBYQAOptimizer.bobyqb(double[], double[])<br />At BOBYQAOptimizer.java:[lines 545-555]<br />Another occurrence at BOBYQAOptimizer.java:[lines 1115-1118]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66467');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.math.optimization.direct.BOBYQAOptimizer.trsbox(double, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66467" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.math.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math.optimization.direct.BOBYQAOptimizer.trsbox(double, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector)<br />At BOBYQAOptimizer.java:[lines 1879-1882]<br />Another occurrence at BOBYQAOptimizer.java:[lines 2024-2032]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65812');">
+<td>
+<span class="priority-2">UC</span>
+</td>
+<td>Useless object stored in variable c of method org.apache.commons.math.dfp.DfpMath.sin(Dfp)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65812" style="display: none;">
+<a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+<br />In class org.apache.commons.math.dfp.DfpMath<br />In method org.apache.commons.math.dfp.DfpMath.sin(Dfp)<br />Value c<br />Type org.apache.commons.math.dfp.Dfp[]<br />At DfpMath.java:[line 760]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66847');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: org.apache.commons.math.optimization.general.AbstractLeastSquaresOptimizer.residuals</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66847" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.math.optimization.general.AbstractLeastSquaresOptimizer<br />Field org.apache.commons.math.optimization.general.AbstractLeastSquaresOptimizer.residuals<br />At AbstractLeastSquaresOptimizer.java:[line 255]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_BOXED_PRIMITIVE_FOR_COMPARE">DM_BOXED_PRIMITIVE_FOR_COMPARE: Boxing a primitive to compare</a>
+</h2>
+
+  <p>A boxed primitive is created just to call compareTo method. It's more efficient to use static compare method 
+  (for double and float since Java 1.4, for other primitive types since Java 1.7) which works on primitives directly.
+  </p>
+
+    
+<h2>
+<a name="CNT_ROUGH_CONSTANT_VALUE">CNT_ROUGH_CONSTANT_VALUE: Rough value of known constant found</a>
+</h2>
+      
+    <p>It's recommended to use the predefined library constant for code clarity and better precision.</p>
+
+    
+<h2>
+<a name="CO_COMPARETO_INCORRECT_FLOATING">CO_COMPARETO_INCORRECT_FLOATING: compareTo()/compare() incorrectly handles float or double value</a>
+</h2>
+
+  <p>This method compares double or float values using pattern like this: val1 &gt; val2 ? 1 : val1 &lt; val2 ? -1 : 0.
+This pattern works incorrectly for -0.0 and NaN values which may result in incorrect sorting result or broken collection 
+(if compared values are used as keys). Consider using Double.compare or Float.compare static methods which handle all 
+the special cases correctly.</p>
+
+    
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="IT_NO_SUCH_ELEMENT">IT_NO_SUCH_ELEMENT: Iterator next() method can't throw NoSuchElementException</a>
+</h2>
+
+  <p> This class implements the <code>java.util.Iterator</code> interface.&nbsp;
+  However, its <code>next()</code> method is not capable of throwing
+  <code>java.util.NoSuchElementException</code>.&nbsp; The <code>next()</code>
+  method should be changed so it throws <code>NoSuchElementException</code>
+  if is called when there are no more elements to return.</p>
+
+    
+<h2>
+<a name="NM_VERY_CONFUSING">NM_VERY_CONFUSING: Very confusing method names</a>
+</h2>
+
+  <p> The referenced methods have names that differ only by capitalization.
+This is very confusing because if the capitalization were
+identical then one of the methods would override the other.
+</p>
+
+    
+<h2>
+<a name="RV_NEGATING_RESULT_OF_COMPARETO">RV_NEGATING_RESULT_OF_COMPARETO: Negating the result of compareTo()/compare()</a>
+</h2>
+
+  <p> This code negatives the return value of a compareTo or compare method.
+This is a questionable or bad programming practice, since if the return
+value is Integer.MIN_VALUE, negating the return value won't
+negate the sign of the result. You can achieve the same intended result
+by reversing the order of the operands rather than by negating the results.
+</p>
+
+    
+<h2>
+<a name="SE_TRANSIENT_FIELD_NOT_RESTORED">SE_TRANSIENT_FIELD_NOT_RESTORED: Transient field that isn't set by deserialization. </a>
+</h2>
+
+  <p> This class contains a field that is updated at multiple places in the class, thus it seems to be part of the state of the class. However, since the field is marked as transient and not set in readObject or readResolve, it will contain the default value in any
+deserialized instance of the class.
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SS_SHOULD_BE_STATIC">SS_SHOULD_BE_STATIC: Unread field: should this field be static?</a>
+</h2>
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    
+<h2>
+<a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+</h2>
+
+<p>Our analysis shows that this object is useless. 
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    
+<h2>
+<a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD: Unread public/protected field</a>
+</h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>

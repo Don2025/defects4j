@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Math/83_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>26573 lines of code analyzed,
+	in 477 classes, 
+	in 37 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">7</td>
+<td align="right">0.26</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.11</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>10</b>
+</td>
+<td align="right">
+<b>0.38</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>10</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65824');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Nullcheck of d at line 109 of value previously dereferenced in new org.apache.commons.math.linear.Array2DRowFieldMatrix(FieldElement[][], boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65824" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+<br />In class org.apache.commons.math.linear.Array2DRowFieldMatrix<br />In method new org.apache.commons.math.linear.Array2DRowFieldMatrix(FieldElement[][], boolean)<br />Value loaded from d<br />At Array2DRowFieldMatrix.java:[line 105]<br />Redundant null check at Array2DRowFieldMatrix.java:[line 109]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66186');">
+<td>
+<span class="priority-1">SA</span>
+</td>
+<td>Self assignment of field FirstMoment.nDev in org.apache.commons.math.stat.descriptive.moment.FirstMoment.copy(FirstMoment, FirstMoment)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66186" style="display: none;">
+<a href="#SA_FIELD_SELF_ASSIGNMENT">Bug type SA_FIELD_SELF_ASSIGNMENT (click for details)</a>
+<br />In class org.apache.commons.math.stat.descriptive.moment.FirstMoment<br />In method org.apache.commons.math.stat.descriptive.moment.FirstMoment.copy(FirstMoment, FirstMoment)<br />Field org.apache.commons.math.stat.descriptive.moment.FirstMoment.nDev<br />At FirstMoment.java:[line 157]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathException<br />In method org.apache.commons.math.MathException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathException.java:[line 191]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65617');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.MathRuntimeException.printStackTrace(PrintStream): new java.io.PrintWriter(OutputStream, boolean)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65617" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.MathRuntimeException<br />In method org.apache.commons.math.MathRuntimeException.printStackTrace(PrintStream)<br />Called method new java.io.PrintWriter(OutputStream, boolean)<br />At MathRuntimeException.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65896');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(File): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65896" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(File)<br />Called method new java.io.FileReader(File)<br />At EmpiricalDistributionImpl.java:[line 164]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 178]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65976');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65976" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.load(URL)<br />Called method new java.io.InputStreamReader(InputStream)<br />At EmpiricalDistributionImpl.java:[line 126]<br />Another occurrence at EmpiricalDistributionImpl.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66117');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math.random.ValueServer.resetReplayFile(): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66117" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math.random.ValueServer<br />In method org.apache.commons.math.random.ValueServer.resetReplayFile()<br />Called method new java.io.InputStreamReader(InputStream)<br />At ValueServer.java:[line 246]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65686');">
+<td>
+<span class="priority-1">Bx</span>
+</td>
+<td>Primitive is boxed to call Double.compareTo(Double): use Double.compare(double, double) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65686" style="display: none;">
+<a href="#DM_BOXED_PRIMITIVE_FOR_COMPARE">Bug type DM_BOXED_PRIMITIVE_FOR_COMPARE (click for details)</a>
+<br />In class org.apache.commons.math.genetics.Chromosome<br />In method org.apache.commons.math.genetics.Chromosome.compareTo(Chromosome)<br />Called method Double.compareTo(Double)<br />Should call Double.compare(double, double) instead<br />At Chromosome.java:[line 65]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65771');">
+<td>
+<span class="priority-2">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math.genetics.Chromosome.getFitness()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65771" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math.genetics.Chromosome<br />In method org.apache.commons.math.genetics.Chromosome.getFitness()<br />At Chromosome.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66056');">
+<td>
+<span class="priority-2">UC</span>
+</td>
+<td>Useless object stored in variable binUpperBounds of method org.apache.commons.math.random.EmpiricalDistributionImpl.fillBinStats(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66056" style="display: none;">
+<a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+<br />In class org.apache.commons.math.random.EmpiricalDistributionImpl<br />In method org.apache.commons.math.random.EmpiricalDistributionImpl.fillBinStats(Object)<br />Value binUpperBounds<br />Type double[]<br />At EmpiricalDistributionImpl.java:[line 354]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_BOXED_PRIMITIVE_FOR_COMPARE">DM_BOXED_PRIMITIVE_FOR_COMPARE: Boxing a primitive to compare</a>
+</h2>
+
+  <p>A boxed primitive is created just to call compareTo method. It's more efficient to use static compare method 
+  (for double and float since Java 1.4, for other primitive types since Java 1.7) which works on primitives directly.
+  </p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE: Nullcheck of value previously dereferenced</a>
+</h2>
+
+<p> A value is checked here to see whether it is null, but this value can't
+be null because it was previously dereferenced and if it were null a null pointer
+exception would have occurred at the earlier dereference.
+Essentially, this code and the previous dereference
+disagree as to whether this value is allowed to be null. Either the check is redundant
+or the previous dereference is erroneous.</p>
+
+    
+<h2>
+<a name="SA_FIELD_SELF_ASSIGNMENT">SA_FIELD_SELF_ASSIGNMENT: Self assignment of field</a>
+</h2>
+
+<p> This method contains a self assignment of a field; e.g.
+</p>
+<pre>
+  int x;
+  public void foo() {
+    x = x;
+  }
+</pre>
+<p>Such assignments are useless, and may indicate a logic error or typo.</p>
+
+    
+<h2>
+<a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+</h2>
+
+<p>Our analysis shows that this object is useless. 
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    </body>
+</html>

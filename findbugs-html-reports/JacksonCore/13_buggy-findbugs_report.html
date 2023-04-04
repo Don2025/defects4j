@@ -1,0 +1,1549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>JacksonCore/13_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>13635 lines of code analyzed,
+	in 96 classes, 
+	in 9 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">0.37</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">68</td>
+<td align="right">4.99</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>73</b>
+</td>
+<td align="right">
+<b>5.35</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">35</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">6</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">19</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>73</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70084');">
+<td>
+<span class="priority-2">DE</span>
+</td>
+<td>com.fasterxml.jackson.core.util.VersionUtil._close(Closeable) might ignore java.io.IOException</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70084" style="display: none;">
+<a href="#DE_MIGHT_IGNORE">Bug type DE_MIGHT_IGNORE (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.VersionUtil<br />In method com.fasterxml.jackson.core.util.VersionUtil._close(Closeable)<br />Exception class java.io.IOException<br />At VersionUtil.java:[line 169]<br />At VersionUtil.java:[line 169]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68192');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextBooleanValue() has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68192" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextBooleanValue()<br />At ReaderBasedJsonParser.java:[line 1170]<br />Another occurrence at ReaderBasedJsonParser.java:[line 1178]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68879');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextBooleanValue() has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68879" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextBooleanValue()<br />At UTF8StreamJsonParser.java:[line 1324]<br />Another occurrence at UTF8StreamJsonParser.java:[line 1334]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65983');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.fasterxml.jackson.core.JsonParser.nextBooleanValue() has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65983" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonParser<br />In method com.fasterxml.jackson.core.JsonParser.nextBooleanValue()<br />At JsonParser.java:[line 721]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65822');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.fasterxml.jackson.core.JsonFactory defines non-transient non-serializable instance field _objectCodec</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65822" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonFactory<br />Field com.fasterxml.jackson.core.JsonFactory._objectCodec<br />Actual type com.fasterxml.jackson.core.ObjectCodec<br />In JsonFactory.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65936');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field com.fasterxml.jackson.core.JsonLocation._sourceRef is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65936" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonLocation<br />Field com.fasterxml.jackson.core.JsonLocation._sourceRef<br />In JsonLocation.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69636');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>The field com.fasterxml.jackson.core.util.DefaultPrettyPrinter._nesting is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69636" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.DefaultPrettyPrinter<br />Field com.fasterxml.jackson.core.util.DefaultPrettyPrinter._nesting<br />In DefaultPrettyPrinter.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67445');">
+<td>
+<span class="priority-2">SnVI</span>
+</td>
+<td>com.fasterxml.jackson.core.io.SerializedString is Serializable; consider declaring a serialVersionUID</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67445" style="display: none;">
+<a href="#SE_NO_SERIALVERSIONID">Bug type SE_NO_SERIALVERSIONID (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.SerializedString<br />At SerializedString.java:[lines 47-267]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67789');">
+<td>
+<span class="priority-1">BC</span>
+</td>
+<td>Impossible cast from com.fasterxml.jackson.core.JsonGenerator to com.fasterxml.jackson.core.JsonParser in com.fasterxml.jackson.core.json.JsonReadContext._checkDup(DupDetector, String)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67789" style="display: none;">
+<a href="#BC_IMPOSSIBLE_CAST">Bug type BC_IMPOSSIBLE_CAST (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.JsonReadContext<br />In method com.fasterxml.jackson.core.json.JsonReadContext._checkDup(DupDetector, String)<br />Actual type com.fasterxml.jackson.core.JsonGenerator<br />Expected com.fasterxml.jackson.core.JsonParser<br />Value loaded from src<br />At JsonReadContext.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69348');">
+<td>
+<span class="priority-2">FS</span>
+</td>
+<td>Format-string method String.format(String, Object[]) called with format string "[%s: size=%d, hashSize=%d, %d/%d/%d/%d pri/sec/ter/spill (=%s), total:%d]" wants 9 arguments but is given 10 in com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer.toString()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69348" style="display: none;">
+<a href="#VA_FORMAT_STRING_EXTRA_ARGUMENTS_PASSED">Bug type VA_FORMAT_STRING_EXTRA_ARGUMENTS_PASSED (click for details)</a>
+<br />In class com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer<br />In method com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer.toString()<br />Called method String.format(String, Object[])<br />Format string "[%s: size=%d, hashSize=%d, %d/%d/%d/%d pri/sec/ter/spill (=%s), total:%d]"<br />Expected 9 arguments<br />Found 10 arguments<br />At ByteQuadsCanonicalizer.java:[line 457]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">INT</span>
+</td>
+<td>Bad comparison of signed byte with 127 in com.fasterxml.jackson.core.Base64Variant.decodeBase64Byte(byte)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#INT_BAD_COMPARISON_WITH_SIGNED_BYTE">Bug type INT_BAD_COMPARISON_WITH_SIGNED_BYTE (click for details)</a>
+<br />In class com.fasterxml.jackson.core.Base64Variant<br />In method com.fasterxml.jackson.core.Base64Variant.decodeBase64Byte(byte)<br />Value 127<br />Local variable named b<br />At Base64Variant.java:[line 222]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65613');">
+<td>
+<span class="priority-2">OBL</span>
+</td>
+<td>com.fasterxml.jackson.core.JsonFactory.createGenerator(File, JsonEncoding) may fail to clean up java.io.OutputStream</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65613" style="display: none;">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonFactory<br />In method com.fasterxml.jackson.core.JsonFactory.createGenerator(File, JsonEncoding)<br />Reference type java.io.OutputStream<br />1 instances of obligation remaining<br />Obligation to clean up resource created at JsonFactory.java:[line 1140] is not discharged<br />Path continues at JsonFactory.java:[line 1142]<br />Path continues at JsonFactory.java:[line 1143]<br />Path continues at JsonFactory.java:[line 1144]<br />Path continues at JsonFactory.java:[line 1145]<br />Remaining obligations: {OutputStream x 1}</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65734');">
+<td>
+<span class="priority-2">OBL</span>
+</td>
+<td>com.fasterxml.jackson.core.JsonFactory.createParser(File) may fail to clean up java.io.InputStream</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65734" style="display: none;">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonFactory<br />In method com.fasterxml.jackson.core.JsonFactory.createParser(File)<br />Reference type java.io.InputStream<br />1 instances of obligation remaining<br />Obligation to clean up resource created at JsonFactory.java:[line 753] is not discharged<br />Path continues at JsonFactory.java:[line 754]<br />Remaining obligations: {InputStream x 1}</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66479');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.base.ParserBase.getBinaryValue(Base64Variant) may expose internal representation by returning ParserBase._binaryValue</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66479" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.ParserBase<br />In method com.fasterxml.jackson.core.base.ParserBase.getBinaryValue(Base64Variant)<br />Field com.fasterxml.jackson.core.base.ParserBase._binaryValue<br />At ParserBase.java:[line 481]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67929');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getBinaryValue(Base64Variant) may expose internal representation by returning ReaderBasedJsonParser._binaryValue</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67929" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getBinaryValue(Base64Variant)<br />Field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._binaryValue<br />At ReaderBasedJsonParser.java:[line 428]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67997');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextCharacters() may expose internal representation by returning ReaderBasedJsonParser._nameCopyBuffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67997" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextCharacters()<br />Field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._nameCopyBuffer<br />At ReaderBasedJsonParser.java:[line 337]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68616');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getBinaryValue(Base64Variant) may expose internal representation by returning UTF8StreamJsonParser._binaryValue</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68616" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getBinaryValue(Base64Variant)<br />Field com.fasterxml.jackson.core.json.UTF8StreamJsonParser._binaryValue<br />At UTF8StreamJsonParser.java:[line 533]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68684');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextCharacters() may expose internal representation by returning UTF8StreamJsonParser._nameCopyBuffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68684" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextCharacters()<br />Field com.fasterxml.jackson.core.json.UTF8StreamJsonParser._nameCopyBuffer<br />At UTF8StreamJsonParser.java:[line 438]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66037');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.JsonToken.asByteArray() may expose internal representation by returning JsonToken._serializedBytes</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66037" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonToken<br />In method com.fasterxml.jackson.core.JsonToken.asByteArray()<br />Field com.fasterxml.jackson.core.JsonToken._serializedBytes<br />At JsonToken.java:[line 170]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66105');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.JsonToken.asCharArray() may expose internal representation by returning JsonToken._serializedChars</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66105" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonToken<br />In method com.fasterxml.jackson.core.JsonToken.asCharArray()<br />Field com.fasterxml.jackson.core.JsonToken._serializedChars<br />At JsonToken.java:[line 169]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69432');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.ByteArrayBuilder.finishCurrentSegment() may expose internal representation by returning ByteArrayBuilder._currBlock</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69432" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.ByteArrayBuilder<br />In method com.fasterxml.jackson.core.util.ByteArrayBuilder.finishCurrentSegment()<br />Field com.fasterxml.jackson.core.util.ByteArrayBuilder._currBlock<br />At ByteArrayBuilder.java:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69500');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.ByteArrayBuilder.getCurrentSegment() may expose internal representation by returning ByteArrayBuilder._currBlock</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69500" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.ByteArrayBuilder<br />In method com.fasterxml.jackson.core.util.ByteArrayBuilder.getCurrentSegment()<br />Field com.fasterxml.jackson.core.util.ByteArrayBuilder._currBlock<br />At ByteArrayBuilder.java:[line 177]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69568');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.ByteArrayBuilder.resetAndGetFirstSegment() may expose internal representation by returning ByteArrayBuilder._currBlock</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69568" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.ByteArrayBuilder<br />In method com.fasterxml.jackson.core.util.ByteArrayBuilder.resetAndGetFirstSegment()<br />Field com.fasterxml.jackson.core.util.ByteArrayBuilder._currBlock<br />At ByteArrayBuilder.java:[line 150]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69737');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.TextBuffer.getCurrentSegment() may expose internal representation by returning TextBuffer._currentSegment</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69737" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.TextBuffer<br />In method com.fasterxml.jackson.core.util.TextBuffer.getCurrentSegment()<br />Field com.fasterxml.jackson.core.util.TextBuffer._currentSegment<br />At TextBuffer.java:[line 532]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69805');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer() may expose internal representation by returning TextBuffer._currentSegment</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69805" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.TextBuffer<br />In method com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer()<br />Field com.fasterxml.jackson.core.util.TextBuffer._currentSegment<br />At TextBuffer.java:[line 313]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69873');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer() may expose internal representation by returning TextBuffer._inputBuffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69873" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.TextBuffer<br />In method com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer()<br />Field com.fasterxml.jackson.core.util.TextBuffer._inputBuffer<br />At TextBuffer.java:[line 306]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69941');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer() may expose internal representation by returning TextBuffer._resultArray</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69941" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.TextBuffer<br />In method com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer()<br />Field com.fasterxml.jackson.core.util.TextBuffer._resultArray<br />At TextBuffer.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66669');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.format.InputAccessor$Std(InputStream, byte[]) may expose internal representation by storing an externally mutable object into InputAccessor$Std._buffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66669" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.format.InputAccessor$Std<br />In method new com.fasterxml.jackson.core.format.InputAccessor$Std(InputStream, byte[])<br />Field com.fasterxml.jackson.core.format.InputAccessor$Std._buffer<br />Local variable named buffer<br />At InputAccessor.java:[line 67]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66744');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.format.InputAccessor$Std(byte[]) may expose internal representation by storing an externally mutable object into InputAccessor$Std._buffer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66744" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.format.InputAccessor$Std<br />In method new com.fasterxml.jackson.core.format.InputAccessor$Std(byte[])<br />Field com.fasterxml.jackson.core.format.InputAccessor$Std._buffer<br />Local variable named inputDocument<br />At InputAccessor.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66819');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.format.InputAccessor$Std(byte[], int, int) may expose internal representation by storing an externally mutable object into InputAccessor$Std._buffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66819" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.format.InputAccessor$Std<br />In method new com.fasterxml.jackson.core.format.InputAccessor$Std(byte[], int, int)<br />Field com.fasterxml.jackson.core.format.InputAccessor$Std._buffer<br />Local variable named inputDocument<br />At InputAccessor.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67370');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.io.MergedStream(IOContext, InputStream, byte[], int, int) may expose internal representation by storing an externally mutable object into MergedStream._b</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67370" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.MergedStream<br />In method new com.fasterxml.jackson.core.io.MergedStream(IOContext, InputStream, byte[], int, int)<br />Field com.fasterxml.jackson.core.io.MergedStream._b<br />Local variable named buf<br />At MergedStream.java:[line 28]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67480');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.io.UTF32Reader(IOContext, InputStream, byte[], int, int, boolean) may expose internal representation by storing an externally mutable object into UTF32Reader._buffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67480" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.UTF32Reader<br />In method new com.fasterxml.jackson.core.io.UTF32Reader(IOContext, InputStream, byte[], int, int, boolean)<br />Field com.fasterxml.jackson.core.io.UTF32Reader._buffer<br />Local variable named buf<br />At UTF32Reader.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67555');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper(IOContext, byte[], int, int) may expose internal representation by storing an externally mutable object into ByteSourceJsonBootstrapper._inputBuffer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67555" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper<br />In method new com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper(IOContext, byte[], int, int)<br />Field com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper._inputBuffer<br />Local variable named inputBuffer<br />At ByteSourceJsonBootstrapper.java:[line 96]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68065');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.json.ReaderBasedJsonParser(IOContext, int, Reader, ObjectCodec, CharsToNameCanonicalizer, char[], int, int, boolean) may expose internal representation by storing an externally mutable object into ReaderBasedJsonParser._inputBuffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68065" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method new com.fasterxml.jackson.core.json.ReaderBasedJsonParser(IOContext, int, Reader, ObjectCodec, CharsToNameCanonicalizer, char[], int, int, boolean)<br />Field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._inputBuffer<br />Local variable named inputBuffer<br />At ReaderBasedJsonParser.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68541');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.json.UTF8JsonGenerator(IOContext, int, ObjectCodec, OutputStream, byte[], int, boolean) may expose internal representation by storing an externally mutable object into UTF8JsonGenerator._outputBuffer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68541" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8JsonGenerator<br />In method new com.fasterxml.jackson.core.json.UTF8JsonGenerator(IOContext, int, ObjectCodec, OutputStream, byte[], int, boolean)<br />Field com.fasterxml.jackson.core.json.UTF8JsonGenerator._outputBuffer<br />Local variable named outputBuffer<br />At UTF8JsonGenerator.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68752');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.fasterxml.jackson.core.json.UTF8StreamJsonParser(IOContext, int, InputStream, ObjectCodec, ByteQuadsCanonicalizer, byte[], int, int, boolean) may expose internal representation by storing an externally mutable object into UTF8StreamJsonParser._inputBuffer</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68752" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method new com.fasterxml.jackson.core.json.UTF8StreamJsonParser(IOContext, int, InputStream, ObjectCodec, ByteQuadsCanonicalizer, byte[], int, int, boolean)<br />Field com.fasterxml.jackson.core.json.UTF8StreamJsonParser._inputBuffer<br />Local variable named inputBuffer<br />At UTF8StreamJsonParser.java:[line 139]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70009');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>com.fasterxml.jackson.core.util.TextBuffer.resetWithShared(char[], int, int) may expose internal representation by storing an externally mutable object into TextBuffer._inputBuffer</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70009" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.TextBuffer<br />In method com.fasterxml.jackson.core.util.TextBuffer.resetWithShared(char[], int, int)<br />Field com.fasterxml.jackson.core.util.TextBuffer._inputBuffer<br />Local variable named buf<br />At TextBuffer.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66894');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.get7BitOutputEscapes() may expose internal representation by returning CharTypes.sOutputEscapes128</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66894" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.get7BitOutputEscapes()<br />Field com.fasterxml.jackson.core.io.CharTypes.sOutputEscapes128<br />At CharTypes.java:[line 211]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66962');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.getInputCodeComment() may expose internal representation by returning CharTypes.sInputCodesComment</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66962" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.getInputCodeComment()<br />Field com.fasterxml.jackson.core.io.CharTypes.sInputCodesComment<br />At CharTypes.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67030');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.getInputCodeLatin1() may expose internal representation by returning CharTypes.sInputCodes</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67030" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.getInputCodeLatin1()<br />Field com.fasterxml.jackson.core.io.CharTypes.sInputCodes<br />At CharTypes.java:[line 195]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67098');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.getInputCodeLatin1JsNames() may expose internal representation by returning CharTypes.sInputCodesJsNames</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67098" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.getInputCodeLatin1JsNames()<br />Field com.fasterxml.jackson.core.io.CharTypes.sInputCodesJsNames<br />At CharTypes.java:[line 198]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67166');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.getInputCodeUtf8() may expose internal representation by returning CharTypes.sInputCodesUTF8</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67166" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.getInputCodeUtf8()<br />Field com.fasterxml.jackson.core.io.CharTypes.sInputCodesUTF8<br />At CharTypes.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67234');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.getInputCodeUtf8JsNames() may expose internal representation by returning CharTypes.sInputCodesUtf8JsNames</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67234" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.getInputCodeUtf8JsNames()<br />Field com.fasterxml.jackson.core.io.CharTypes.sInputCodesUtf8JsNames<br />At CharTypes.java:[line 199]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67302');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static com.fasterxml.jackson.core.io.CharTypes.getInputCodeWS() may expose internal representation by returning CharTypes.sInputCodesWS</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67302" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class com.fasterxml.jackson.core.io.CharTypes<br />In method com.fasterxml.jackson.core.io.CharTypes.getInputCodeWS()<br />Field com.fasterxml.jackson.core.io.CharTypes.sInputCodesWS<br />At CharTypes.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67737');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.core.json.JsonGeneratorImpl.sOutputEscapes should be package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67737" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.JsonGeneratorImpl<br />Field com.fasterxml.jackson.core.json.JsonGeneratorImpl.sOutputEscapes<br />At JsonGeneratorImpl.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68140');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.core.json.ReaderBasedJsonParser._icLatin1 should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68140" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />Field com.fasterxml.jackson.core.json.ReaderBasedJsonParser._icLatin1<br />At ReaderBasedJsonParser.java:[line 24]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68827');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.core.json.UTF8StreamJsonParser._icLatin1 should be package protected</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68827" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />Field com.fasterxml.jackson.core.json.UTF8StreamJsonParser._icLatin1<br />At UTF8StreamJsonParser.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69228');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>com.fasterxml.jackson.core.json.WriterBasedJsonGenerator.HEX_CHARS should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69228" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.WriterBasedJsonGenerator<br />Field com.fasterxml.jackson.core.json.WriterBasedJsonGenerator.HEX_CHARS<br />At WriterBasedJsonGenerator.java:[line 19]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66173');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.fasterxml.jackson.core.base.GeneratorBase.WRITE_BINARY; should this field be static?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66173" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.GeneratorBase<br />Field com.fasterxml.jackson.core.base.GeneratorBase.WRITE_BINARY<br />At GeneratorBase.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66224');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.fasterxml.jackson.core.base.GeneratorBase.WRITE_BOOLEAN; should this field be static?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66224" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.GeneratorBase<br />Field com.fasterxml.jackson.core.base.GeneratorBase.WRITE_BOOLEAN<br />At GeneratorBase.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66275');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.fasterxml.jackson.core.base.GeneratorBase.WRITE_NULL; should this field be static?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66275" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.GeneratorBase<br />Field com.fasterxml.jackson.core.base.GeneratorBase.WRITE_NULL<br />At GeneratorBase.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66326');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.fasterxml.jackson.core.base.GeneratorBase.WRITE_NUMBER; should this field be static?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66326" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.GeneratorBase<br />Field com.fasterxml.jackson.core.base.GeneratorBase.WRITE_NUMBER<br />At GeneratorBase.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66377');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.fasterxml.jackson.core.base.GeneratorBase.WRITE_RAW; should this field be static?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66377" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.GeneratorBase<br />Field com.fasterxml.jackson.core.base.GeneratorBase.WRITE_RAW<br />At GeneratorBase.java:[line 41]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66428');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.fasterxml.jackson.core.base.GeneratorBase.WRITE_STRING; should this field be static?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66428" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.fasterxml.jackson.core.base.GeneratorBase<br />Field com.fasterxml.jackson.core.base.GeneratorBase.WRITE_STRING<br />At GeneratorBase.java:[line 42]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69683');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>com.fasterxml.jackson.core.util.InternCache doesn't override java.util.concurrent.ConcurrentHashMap.equals(Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69683" style="display: none;">
+<a href="#EQ_DOESNT_OVERRIDE_EQUALS">Bug type EQ_DOESNT_OVERRIDE_EQUALS (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.InternCache<br />At InternCache.java:[line 1]<br />Did you intend to override java.util.concurrent.ConcurrentHashMap.equals(Object)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66547');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.fasterxml.jackson.core.filter.FilteringParserDelegate._nextToken2()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66547" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.core.filter.FilteringParserDelegate<br />In method com.fasterxml.jackson.core.filter.FilteringParserDelegate._nextToken2()<br />Value loaded from t<br />At FilteringParserDelegate.java:[line 441]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66608');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.fasterxml.jackson.core.filter.FilteringParserDelegate.nextToken()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66608" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.fasterxml.jackson.core.filter.FilteringParserDelegate<br />In method com.fasterxml.jackson.core.filter.FilteringParserDelegate.nextToken()<br />Value loaded from t<br />At FilteringParserDelegate.java:[line 269]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70162');">
+<td>
+<span class="priority-2">REC</span>
+</td>
+<td>Exception is caught when Exception is not thrown in com.fasterxml.jackson.core.util.VersionUtil.packageVersionFor(Class)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70162" style="display: none;">
+<a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+<br />In class com.fasterxml.jackson.core.util.VersionUtil<br />In method com.fasterxml.jackson.core.util.VersionUtil.packageVersionFor(Class)<br />At VersionUtil.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67630');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper.handleBOM(int) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67630" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper<br />In method com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper.handleBOM(int)<br />At ByteSourceJsonBootstrapper.java:[lines 396-398]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67684');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper.handleBOM(int) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67684" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper<br />In method com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper.handleBOM(int)<br />At ByteSourceJsonBootstrapper.java:[lines 384-398]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67876');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.JsonReadContext.toString() where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67876" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.JsonReadContext<br />In method com.fasterxml.jackson.core.json.JsonReadContext.toString()<br />At JsonReadContext.java:[lines 222-240]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68257');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextCharacters() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68257" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextCharacters()<br />At ReaderBasedJsonParser.java:[lines 341-346]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68311');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextLength() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68311" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextLength()<br />At ReaderBasedJsonParser.java:[lines 364-369]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68365');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextOffset() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68365" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.getTextOffset()<br />At ReaderBasedJsonParser.java:[lines 388-393]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68419');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68419" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken()<br />At ReaderBasedJsonParser.java:[lines 674-676]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68944');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(int) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68944" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(int)<br />At UTF8StreamJsonParser.java:[lines 2595-2597]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68998');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextCharacters() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68998" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextCharacters()<br />At UTF8StreamJsonParser.java:[lines 443-448]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69052');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextLength() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69052" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextLength()<br />At UTF8StreamJsonParser.java:[lines 468-473]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69106');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextOffset() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69106" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser.getTextOffset()<br />At UTF8StreamJsonParser.java:[lines 493-498]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65882');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.fasterxml.jackson.core.JsonGenerator.copyCurrentEvent(JsonParser) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65882" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.fasterxml.jackson.core.JsonGenerator<br />In method com.fasterxml.jackson.core.JsonGenerator.copyCurrentEvent(JsonParser)<br />At JsonGenerator.java:[lines 1481-1483]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68473');">
+<td>
+<span class="priority-1">UC</span>
+</td>
+<td>Useless condition: it's known that i &gt;= 32 (' ') at this point</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68473" style="display: none;">
+<a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.ReaderBasedJsonParser<br />In method com.fasterxml.jackson.core.json.ReaderBasedJsonParser._skipColon2(boolean)<br />Value i &gt;= 32 (' ')<br />Unreachable code at ReaderBasedJsonParser.java:[line 2132]<br />At ReaderBasedJsonParser.java:[line 2131]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69160');">
+<td>
+<span class="priority-1">UC</span>
+</td>
+<td>Useless condition: it's known that i &gt;= 32 (' ') at this point</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69160" style="display: none;">
+<a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+<br />In class com.fasterxml.jackson.core.json.UTF8StreamJsonParser<br />In method com.fasterxml.jackson.core.json.UTF8StreamJsonParser._skipColon2(boolean)<br />Value i &gt;= 32 (' ')<br />Unreachable code at UTF8StreamJsonParser.java:[line 3022]<br />At UTF8StreamJsonParser.java:[line 3021]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69280');">
+<td>
+<span class="priority-1">UC</span>
+</td>
+<td>Useless condition: it's known that len != 0 at this point</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69280" style="display: none;">
+<a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+<br />In class com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer<br />In method com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer.findName(int[], int)<br />Value len != 0<br />Unreachable code at ByteQuadsCanonicalizer.java:[line 599]<br />At ByteQuadsCanonicalizer.java:[line 598]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="BC_IMPOSSIBLE_CAST">BC_IMPOSSIBLE_CAST: Impossible cast</a>
+</h2>
+
+<p>
+This cast will always throw a ClassCastException.
+FindBugs tracks type information from instanceof checks,
+and also uses more precise information about the types
+of values returned from methods and loaded from fields.
+Thus, it may have more precise information that just
+the declared type of a variable, and can use this to determine
+that a cast will always throw an exception at runtime.
+
+</p>
+
+    
+<h2>
+<a name="DE_MIGHT_IGNORE">DE_MIGHT_IGNORE: Method might ignore exception</a>
+</h2>
+
+  <p> This method might ignore an exception.&nbsp; In general, exceptions
+  should be handled or reported in some way, or they should be thrown
+  out of the method.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_DOESNT_OVERRIDE_EQUALS">EQ_DOESNT_OVERRIDE_EQUALS: Class doesn't override equals in superclass</a>
+</h2>
+
+  <p> This class extends a class that defines an equals method and adds fields, but doesn't
+define an equals method itself. Thus, equality on instances of this class will
+ignore the identity of the subclass and the added fields. Be sure this is what is intended,
+and that you don't need to override the equals method. Even if you don't need to override
+the equals method, consider overriding it anyway to document the fact
+that the equals method for the subclass just return the result of
+invoking super.equals(o).
+  </p>
+
+    
+<h2>
+<a name="VA_FORMAT_STRING_EXTRA_ARGUMENTS_PASSED">VA_FORMAT_STRING_EXTRA_ARGUMENTS_PASSED: More arguments are passed than are actually used in the format string</a>
+</h2>
+
+<p>
+A format-string method with a variable number of arguments is called,
+but more arguments are passed than are actually used by the format string.
+This won't cause a runtime exception, but the code may be silently omitting
+information that was intended to be included in the formatted string.
+</p>
+
+     
+<h2>
+<a name="INT_BAD_COMPARISON_WITH_SIGNED_BYTE">INT_BAD_COMPARISON_WITH_SIGNED_BYTE: Bad comparison of signed byte</a>
+</h2>
+
+<p> Signed bytes can only have a value in the range -128 to 127. Comparing
+a signed byte with a value outside that range is vacuous and likely to be incorrect.
+To convert a signed byte <code>b</code> to an unsigned value in the range 0..255,
+use <code>0xff &amp; b</code>
+</p>
+
+    
+<h2>
+<a name="MS_PKGPROTECT">MS_PKGPROTECT: Field should be package protected</a>
+</h2>
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    
+<h2>
+<a name="MS_EXPOSE_REP">MS_EXPOSE_REP: Public static method may expose internal representation by returning array</a>
+</h2>
+
+  <p> A public static method returns a reference to
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    
+<h2>
+<a name="NP_LOAD_OF_KNOWN_NULL_VALUE">NP_LOAD_OF_KNOWN_NULL_VALUE: Load of known null value</a>
+</h2>
+
+  <p> The variable referenced at this point is known to be null due to an earlier
+   check against null. Although this is valid, it might be a mistake (perhaps you
+intended to refer to a different variable, or perhaps the earlier check to see if the
+variable is null should have been a check to see if it was non-null).
+</p>
+
+    
+<h2>
+<a name="NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL: Method with Boolean return type returns explicit null</a>
+</h2>
+       
+       <p>
+    A method that returns either Boolean.TRUE, Boolean.FALSE or null is an accident waiting to happen.
+    This method can be invoked as though it returned a value of type boolean, and
+    the compiler will insert automatic unboxing of the Boolean value. If a null value is returned,
+    this will result in a NullPointerException.
+       </p>
+       
+       
+<h2>
+<a name="OBL_UNSATISFIED_OBLIGATION">OBL_UNSATISFIED_OBLIGATION: Method may fail to clean up stream or resource</a>
+</h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      
+<h2>
+<a name="REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION: Exception is caught when Exception is not thrown</a>
+</h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+  <pre>
+  try {
+    ...
+  } catch (RuntimeException e) {
+    throw e;
+  } catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+  }</pre>
+  
+     
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="SE_TRANSIENT_FIELD_NOT_RESTORED">SE_TRANSIENT_FIELD_NOT_RESTORED: Transient field that isn't set by deserialization. </a>
+</h2>
+
+  <p> This class contains a field that is updated at multiple places in the class, thus it seems to be part of the state of the class. However, since the field is marked as transient and not set in readObject or readResolve, it will contain the default value in any
+deserialized instance of the class.
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SE_NO_SERIALVERSIONID">SE_NO_SERIALVERSIONID: Class is Serializable, but doesn't define serialVersionUID</a>
+</h2>
+
+  <p> This class implements the <code>Serializable</code> interface, but does
+  not define a <code>serialVersionUID</code> field.&nbsp;
+  A change as simple as adding a reference to a .class object
+    will add synthetic fields to the class,
+   which will unfortunately change the implicit
+   serialVersionUID (e.g., adding a reference to <code>String.class</code>
+   will generate a static field <code>class$java$lang$String</code>).
+   Also, different source code to bytecode compilers may use different
+   naming conventions for synthetic variables generated for
+   references to class objects or inner classes.
+   To ensure interoperability of Serializable across versions,
+   consider adding an explicit serialVersionUID.</p>
+
+    
+<h2>
+<a name="SS_SHOULD_BE_STATIC">SS_SHOULD_BE_STATIC: Unread field: should this field be static?</a>
+</h2>
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    
+<h2>
+<a name="UC_USELESS_CONDITION">UC_USELESS_CONDITION: Condition has no effect</a>
+</h2>
+
+<p>This condition always produces the same result as the value of the involved variable was narrowed before. 
+Probably something else was meant or condition can be removed.</p>
+
+    </body>
+</html>

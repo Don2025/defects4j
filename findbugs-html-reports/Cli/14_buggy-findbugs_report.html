@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Cli/14_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>2691 lines of code analyzed,
+	in 54 classes, 
+	in 7 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.37</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">6.69</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>19</b>
+</td>
+<td align="right">
+<b>7.06</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">10</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">6</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>19</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65601');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in org.apache.commons.cli2.option.GroupImpl.process(WriteableCommandLine, ListIterator) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65601" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.cli2.option.GroupImpl<br />In method org.apache.commons.cli2.option.GroupImpl.process(WriteableCommandLine, ListIterator)<br />Actual type String<br />Value loaded from previous<br />Value loaded from arg<br />At GroupImpl.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65682');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>org.apache.commons.cli2.option.ReverseStringComparator.compare(Object, Object) negates the return value of String.compareTo(String)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65682" style="display: none;">
+<a href="#RV_NEGATING_RESULT_OF_COMPARETO">Bug type RV_NEGATING_RESULT_OF_COMPARETO (click for details)</a>
+<br />In class org.apache.commons.cli2.option.ReverseStringComparator<br />In method org.apache.commons.cli2.option.ReverseStringComparator.compare(Object, Object)<br />Called method String.compareTo(String)<br />Return value of String.compareTo(String) of type int<br />At GroupImpl.java:[line 512]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65978');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$Reverse.compare(Object, Object) negates the return value of java.util.Comparator.compare(Object, Object)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65978" style="display: none;">
+<a href="#RV_NEGATING_RESULT_OF_COMPARETO">Bug type RV_NEGATING_RESULT_OF_COMPARETO (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$Reverse<br />In method org.apache.commons.cli2.util.Comparators$Reverse.compare(Object, Object)<br />Called method java.util.Comparator.compare(Object, Object)<br />Return value of java.util.Comparator.compare(Object, Object) of type int<br />At Comparators.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65768');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$CommandFirst implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65768" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$CommandFirst<br />At Comparators.java:[lines 287-298]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65803');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$DefaultOptionFirst implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65803" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$DefaultOptionFirst<br />At Comparators.java:[lines 322-333]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65838');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$GroupFirst implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65838" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$GroupFirst<br />At Comparators.java:[lines 217-228]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65873');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$Named implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65873" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$Named<br />At Comparators.java:[lines 370-386]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65908');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$PreferredName implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65908" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$PreferredName<br />At Comparators.java:[lines 410-415]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65943');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$Required implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65943" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$Required<br />At Comparators.java:[lines 439-453]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66056');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.commons.cli2.util.Comparators$SwitchFirst implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66056" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class org.apache.commons.cli2.util.Comparators$SwitchFirst<br />At Comparators.java:[lines 252-263]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66091');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in new org.apache.commons.cli2.util.HelpFormatter(String, String, String, int): new java.io.PrintWriter(OutputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66091" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.cli2.util.HelpFormatter<br />In method new org.apache.commons.cli2.util.HelpFormatter(String, String, String, int)<br />Called method new java.io.PrintWriter(OutputStream)<br />At HelpFormatter.java:[line 110]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66245');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.cli2.validation.DateValidator.getFormats() may expose internal representation by returning DateValidator.formats</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66245" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.cli2.validation.DateValidator<br />In method org.apache.commons.cli2.validation.DateValidator.getFormats()<br />Field org.apache.commons.cli2.validation.DateValidator.formats<br />At DateValidator.java:[line 306]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66313');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.cli2.validation.DateValidator.getMaximum() may expose internal representation by returning DateValidator.maximum</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66313" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.cli2.validation.DateValidator<br />In method org.apache.commons.cli2.validation.DateValidator.getMaximum()<br />Field org.apache.commons.cli2.validation.DateValidator.maximum<br />At DateValidator.java:[line 210]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66381');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.cli2.validation.DateValidator.getMinimum() may expose internal representation by returning DateValidator.minimum</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66381" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.cli2.validation.DateValidator<br />In method org.apache.commons.cli2.validation.DateValidator.getMinimum()<br />Field org.apache.commons.cli2.validation.DateValidator.minimum<br />At DateValidator.java:[line 230]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66449');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>org.apache.commons.cli2.validation.DateValidator.setFormats(DateFormat[]) may expose internal representation by storing an externally mutable object into DateValidator.formats</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66449" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.cli2.validation.DateValidator<br />In method org.apache.commons.cli2.validation.DateValidator.setFormats(DateFormat[])<br />Field org.apache.commons.cli2.validation.DateValidator.formats<br />Local variable named formats<br />At DateValidator.java:[line 296]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66524');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>org.apache.commons.cli2.validation.DateValidator.setMaximum(Date) may expose internal representation by storing an externally mutable object into DateValidator.maximum</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66524" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.cli2.validation.DateValidator<br />In method org.apache.commons.cli2.validation.DateValidator.setMaximum(Date)<br />Field org.apache.commons.cli2.validation.DateValidator.maximum<br />Local variable named maximum<br />At DateValidator.java:[line 220]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66599');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>org.apache.commons.cli2.validation.DateValidator.setMinimum(Date) may expose internal representation by storing an externally mutable object into DateValidator.minimum</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66599" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.cli2.validation.DateValidator<br />In method org.apache.commons.cli2.validation.DateValidator.setMinimum(Date)<br />Field org.apache.commons.cli2.validation.DateValidator.minimum<br />Local variable named minimum<br />At DateValidator.java:[line 240]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66160');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>org.apache.commons.cli2.util.HelpFormatter.wrap(String, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66160" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class org.apache.commons.cli2.util.HelpFormatter<br />In method org.apache.commons.cli2.util.HelpFormatter.wrap(String, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At HelpFormatter.java:[line 344]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>org.apache.commons.cli2.commandline.Parser.parse(String[]) invokes inefficient new String(String) constructor</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#DM_STRING_CTOR">Bug type DM_STRING_CTOR (click for details)</a>
+<br />In class org.apache.commons.cli2.commandline.Parser<br />In method org.apache.commons.cli2.commandline.Parser.parse(String[])<br />At Parser.java:[line 66]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_NUMBER_CTOR">DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead</a>
+</h2>
+      
+      <p>
+      Using <code>new Integer(int)</code> is guaranteed to always result in a new object whereas
+      <code>Integer.valueOf(int)</code> allows caching of values to be done by the compiler, class library, or JVM.
+      Using of cached values avoids object allocation and the code will be faster.
+      </p>
+      <p>
+      Values between -128 and 127 are guaranteed to have corresponding cached instances
+      and using <code>valueOf</code> is approximately 3.5 times faster than using constructor.
+      For values outside the constant range the performance of both styles is the same.
+      </p>
+      <p>
+      Unless the class must be compatible with JVMs predating Java 1.5,
+      use either autoboxing or the <code>valueOf()</code> method when creating instances of
+      <code>Long</code>, <code>Integer</code>, <code>Short</code>, <code>Character</code>, and <code>Byte</code>.
+      </p>
+      
+    
+<h2>
+<a name="DM_STRING_CTOR">DM_STRING_CTOR: Method invokes inefficient new String(String) constructor</a>
+</h2>
+
+  <p> Using the <code>java.lang.String(String)</code> constructor wastes memory
+  because the object so constructed will be functionally indistinguishable
+  from the <code>String</code> passed as a parameter.&nbsp; Just use the
+  argument <code>String</code> directly.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="ES_COMPARING_STRINGS_WITH_EQ">ES_COMPARING_STRINGS_WITH_EQ: Comparison of String objects using == or !=</a>
+</h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="RV_NEGATING_RESULT_OF_COMPARETO">RV_NEGATING_RESULT_OF_COMPARETO: Negating the result of compareTo()/compare()</a>
+</h2>
+
+  <p> This code negatives the return value of a compareTo or compare method.
+This is a questionable or bad programming practice, since if the return
+value is Integer.MIN_VALUE, negating the return value won't
+negate the sign of the result. You can achieve the same intended result
+by reversing the order of the operands rather than by negating the results.
+</p>
+
+    
+<h2>
+<a name="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">SE_COMPARATOR_SHOULD_BE_SERIALIZABLE: Comparator doesn't implement Serializable</a>
+</h2>
+
+  <p> This class implements the <code>Comparator</code> interface. You
+should consider whether or not it should also implement the <code>Serializable</code>
+interface. If a comparator is used to construct an ordered collection
+such as a <code>TreeMap</code>, then the <code>TreeMap</code>
+will be serializable only if the comparator is also serializable.
+As most comparators have little or no state, making them serializable
+is generally easy and good defensive programming.
+</p>
+
+    </body>
+</html>

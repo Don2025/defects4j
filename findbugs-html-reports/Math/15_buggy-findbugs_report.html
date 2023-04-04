@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Math/15_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>45419 lines of code analyzed,
+	in 899 classes, 
+	in 48 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">6</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">0.40</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>24</b>
+</td>
+<td align="right">
+<b>0.53</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">9</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">6</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>24</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65761');">
+<td>
+<span class="priority-2">CNT</span>
+</td>
+<td>Rough value of Math.PI found: 3.141592653489793</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65761" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.geometry.euclidean.threed.Line<br />In method org.apache.commons.math3.geometry.euclidean.threed.Line.isSimilarTo(Line)<br />Value 3.141592653489793<br />Value Math.PI<br />At Line.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65822');">
+<td>
+<span class="priority-2">CNT</span>
+</td>
+<td>Rough value of Math.PI found: 3.141592653489793</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65822" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.geometry.euclidean.threed.Plane<br />In method org.apache.commons.math3.geometry.euclidean.threed.Plane.isSimilarTo(Plane)<br />Value 3.141592653489793<br />Value Math.PI<br />At Plane.java:[line 261]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66776');">
+<td>
+<span class="priority-1">CNT</span>
+</td>
+<td>Rough value of Math.PI/2 found: 1.570796251296997</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66776" style="display: none;">
+<a href="#CNT_ROUGH_CONSTANT_VALUE">Bug type CNT_ROUGH_CONSTANT_VALUE (click for details)</a>
+<br />In class org.apache.commons.math3.util.FastMath$CodyWaite<br />In method new org.apache.commons.math3.util.FastMath$CodyWaite(double, double)<br />Value 1.570796251296997<br />Value Math.PI/2<br />At FastMath.java:[line 3817]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66147');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66147" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getWeight() of type double<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getWeight() of type double<br />At GaussianFitter.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66252');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66252" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getX() of type double<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getX() of type double<br />At GaussianFitter.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66357');">
+<td>
+<span class="priority-2">Co</span>
+</td>
+<td>org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint) incorrectly handles double value</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66357" style="display: none;">
+<a href="#CO_COMPARETO_INCORRECT_FLOATING">Bug type CO_COMPARETO_INCORRECT_FLOATING (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1<br />In method org.apache.commons.math3.optimization.fitting.GaussianFitter$ParameterGuesser$1.compare(WeightedObservedPoint, WeightedObservedPoint)<br />Type double<br />Should call Double.compare(double, double) instead<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getY() of type double<br />Return value of org.apache.commons.math3.optimization.fitting.WeightedObservedPoint.getY() of type double<br />At GaussianFitter.java:[line 208]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66837');">
+<td>
+<span class="priority-2">It</span>
+</td>
+<td>org.apache.commons.math3.util.MultidimensionalCounter$Iterator.next() can't throw NoSuchElementException</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66837" style="display: none;">
+<a href="#IT_NO_SUCH_ELEMENT">Bug type IT_NO_SUCH_ELEMENT (click for details)</a>
+<br />In class org.apache.commons.math3.util.MultidimensionalCounter$Iterator<br />In method org.apache.commons.math3.util.MultidimensionalCounter$Iterator.next()<br />At MultidimensionalCounter.java:[lines 106-115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65883');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>org.apache.commons.math3.optimization.PointValuePair is Serializable but its superclass doesn't define an accessible void constructor</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65883" style="display: none;">
+<a href="#SE_NO_SUITABLE_CONSTRUCTOR">Bug type SE_NO_SUITABLE_CONSTRUCTOR (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.PointValuePair<br />At PointValuePair.java:[lines 47-91]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65918');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>org.apache.commons.math3.optimization.PointVectorValuePair is Serializable but its superclass doesn't define an accessible void constructor</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65918" style="display: none;">
+<a href="#SE_NO_SUITABLE_CONSTRUCTOR">Bug type SE_NO_SUITABLE_CONSTRUCTOR (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.PointVectorValuePair<br />At PointVectorValuePair.java:[lines 33-116]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66564');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.math3.random.ValueServer.resetReplayFile(): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66564" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.math3.random.ValueServer<br />In method org.apache.commons.math3.random.ValueServer.resetReplayFile()<br />Called method new java.io.InputStreamReader(InputStream)<br />At ValueServer.java:[line 284]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66633');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.math3.stat.clustering.EuclideanDoublePoint.getPoint() may expose internal representation by returning EuclideanDoublePoint.point</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66633" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.math3.stat.clustering.EuclideanDoublePoint<br />In method org.apache.commons.math3.stat.clustering.EuclideanDoublePoint.getPoint()<br />Field org.apache.commons.math3.stat.clustering.EuclideanDoublePoint.point<br />At EuclideanDoublePoint.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66701');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new org.apache.commons.math3.stat.clustering.EuclideanDoublePoint(double[]) may expose internal representation by storing an externally mutable object into EuclideanDoublePoint.point</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66701" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.math3.stat.clustering.EuclideanDoublePoint<br />In method new org.apache.commons.math3.stat.clustering.EuclideanDoublePoint(double[])<br />Field org.apache.commons.math3.stat.clustering.EuclideanDoublePoint.point<br />Local variable named point<br />At EuclideanDoublePoint.java:[line 46]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66890');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math3.util.ResizableDoubleArray.expansionMode; locked 77% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66890" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math3.util.ResizableDoubleArray<br />Field org.apache.commons.math3.util.ResizableDoubleArray.expansionMode<br />Synchronized 77% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 1009]<br />Unsynchronized access at ResizableDoubleArray.java:[line 801]<br />Synchronized access at ResizableDoubleArray.java:[line 1109]<br />Synchronized access at ResizableDoubleArray.java:[line 1109]<br />Synchronized access at ResizableDoubleArray.java:[line 1156]<br />Synchronized access at ResizableDoubleArray.java:[line 1156]<br />Synchronized access at ResizableDoubleArray.java:[line 1061]<br />Synchronized access at ResizableDoubleArray.java:[line 1179]<br />Synchronized access at ResizableDoubleArray.java:[line 684]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67036');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math3.util.ResizableDoubleArray.internalArray; locked 92% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67036" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math3.util.ResizableDoubleArray<br />Field org.apache.commons.math3.util.ResizableDoubleArray.internalArray<br />Synchronized 92% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 834]<br />Unsynchronized access at ResizableDoubleArray.java:[line 885]<br />Unsynchronized access at ResizableDoubleArray.java:[line 927]<br />Synchronized access at ResizableDoubleArray.java:[line 822]<br />Synchronized access at ResizableDoubleArray.java:[line 509]<br />Synchronized access at ResizableDoubleArray.java:[line 511]<br />Synchronized access at ResizableDoubleArray.java:[line 948]<br />Synchronized access at ResizableDoubleArray.java:[line 951]<br />Synchronized access at ResizableDoubleArray.java:[line 473]<br />Synchronized access at ResizableDoubleArray.java:[line 475]<br />Synchronized access at ResizableDoubleArray.java:[line 482]<br />Synchronized access at ResizableDoubleArray.java:[line 1110]<br />Synchronized access at ResizableDoubleArray.java:[line 1110]<br />Synchronized access at ResizableDoubleArray.java:[line 1111]<br />Synchronized access at ResizableDoubleArray.java:[line 1111]<br />Synchronized access at ResizableDoubleArray.java:[line 1111]<br />Synchronized access at ResizableDoubleArray.java:[line 770]<br />Synchronized access at ResizableDoubleArray.java:[line 1162]<br />Synchronized access at ResizableDoubleArray.java:[line 1162]<br />Synchronized access at ResizableDoubleArray.java:[line 1064]<br />Synchronized access at ResizableDoubleArray.java:[line 1062]<br />Synchronized access at ResizableDoubleArray.java:[line 1180]<br />Synchronized access at ResizableDoubleArray.java:[line 435]<br />Synchronized access at ResizableDoubleArray.java:[line 438]<br />Synchronized access at ResizableDoubleArray.java:[line 862]<br />Synchronized access at ResizableDoubleArray.java:[line 687]<br />Synchronized access at ResizableDoubleArray.java:[line 685]<br />Synchronized access at ResizableDoubleArray.java:[line 692]<br />Synchronized access at ResizableDoubleArray.java:[line 692]<br />Synchronized access at ResizableDoubleArray.java:[line 693]<br />Synchronized access at ResizableDoubleArray.java:[line 587]<br />Synchronized access at ResizableDoubleArray.java:[line 588]<br />Synchronized access at ResizableDoubleArray.java:[line 704]<br />Synchronized access at ResizableDoubleArray.java:[line 704]<br />Synchronized access at ResizableDoubleArray.java:[line 705]<br />Synchronized access at ResizableDoubleArray.java:[line 1046]<br />Synchronized access at ResizableDoubleArray.java:[line 449]<br />Synchronized access at ResizableDoubleArray.java:[line 451]<br />Synchronized access at ResizableDoubleArray.java:[line 755]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67512');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math3.util.ResizableDoubleArray.numElements; locked 97% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67512" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math3.util.ResizableDoubleArray<br />Field org.apache.commons.math3.util.ResizableDoubleArray.numElements<br />Synchronized 97% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 927]<br />Synchronized access at ResizableDoubleArray.java:[line 648]<br />Synchronized access at ResizableDoubleArray.java:[line 658]<br />Synchronized access at ResizableDoubleArray.java:[line 658]<br />Synchronized access at ResizableDoubleArray.java:[line 649]<br />Synchronized access at ResizableDoubleArray.java:[line 503]<br />Synchronized access at ResizableDoubleArray.java:[line 508]<br />Synchronized access at ResizableDoubleArray.java:[line 574]<br />Synchronized access at ResizableDoubleArray.java:[line 945]<br />Synchronized access at ResizableDoubleArray.java:[line 946]<br />Synchronized access at ResizableDoubleArray.java:[line 844]<br />Synchronized access at ResizableDoubleArray.java:[line 475]<br />Synchronized access at ResizableDoubleArray.java:[line 482]<br />Synchronized access at ResizableDoubleArray.java:[line 1113]<br />Synchronized access at ResizableDoubleArray.java:[line 1113]<br />Synchronized access at ResizableDoubleArray.java:[line 769]<br />Synchronized access at ResizableDoubleArray.java:[line 770]<br />Synchronized access at ResizableDoubleArray.java:[line 1157]<br />Synchronized access at ResizableDoubleArray.java:[line 1157]<br />Synchronized access at ResizableDoubleArray.java:[line 1064]<br />Synchronized access at ResizableDoubleArray.java:[line 1062]<br />Synchronized access at ResizableDoubleArray.java:[line 1181]<br />Synchronized access at ResizableDoubleArray.java:[line 435]<br />Synchronized access at ResizableDoubleArray.java:[line 438]<br />Synchronized access at ResizableDoubleArray.java:[line 438]<br />Synchronized access at ResizableDoubleArray.java:[line 584]<br />Synchronized access at ResizableDoubleArray.java:[line 587]<br />Synchronized access at ResizableDoubleArray.java:[line 1051]<br />Synchronized access at ResizableDoubleArray.java:[line 448]<br />Synchronized access at ResizableDoubleArray.java:[line 449]<br />Synchronized access at ResizableDoubleArray.java:[line 450]<br />Synchronized access at ResizableDoubleArray.java:[line 453]<br />Synchronized access at ResizableDoubleArray.java:[line 453]<br />Synchronized access at ResizableDoubleArray.java:[line 752]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67933');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of org.apache.commons.math3.util.ResizableDoubleArray.startIndex; locked 93% of time</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67933" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class org.apache.commons.math3.util.ResizableDoubleArray<br />Field org.apache.commons.math3.util.ResizableDoubleArray.startIndex<br />Synchronized 93% of the time<br />Unsynchronized access at ResizableDoubleArray.java:[line 900]<br />Unsynchronized access at ResizableDoubleArray.java:[line 927]<br />Synchronized access at ResizableDoubleArray.java:[line 1080]<br />Synchronized access at ResizableDoubleArray.java:[line 660]<br />Synchronized access at ResizableDoubleArray.java:[line 660]<br />Synchronized access at ResizableDoubleArray.java:[line 508]<br />Synchronized access at ResizableDoubleArray.java:[line 575]<br />Synchronized access at ResizableDoubleArray.java:[line 948]<br />Synchronized access at ResizableDoubleArray.java:[line 951]<br />Synchronized access at ResizableDoubleArray.java:[line 949]<br />Synchronized access at ResizableDoubleArray.java:[line 473]<br />Synchronized access at ResizableDoubleArray.java:[line 475]<br />Synchronized access at ResizableDoubleArray.java:[line 479]<br />Synchronized access at ResizableDoubleArray.java:[line 479]<br />Synchronized access at ResizableDoubleArray.java:[line 482]<br />Synchronized access at ResizableDoubleArray.java:[line 1114]<br />Synchronized access at ResizableDoubleArray.java:[line 1114]<br />Synchronized access at ResizableDoubleArray.java:[line 770]<br />Synchronized access at ResizableDoubleArray.java:[line 1158]<br />Synchronized access at ResizableDoubleArray.java:[line 1158]<br />Synchronized access at ResizableDoubleArray.java:[line 1182]<br />Synchronized access at ResizableDoubleArray.java:[line 435]<br />Synchronized access at ResizableDoubleArray.java:[line 438]<br />Synchronized access at ResizableDoubleArray.java:[line 587]<br />Synchronized access at ResizableDoubleArray.java:[line 591]<br />Synchronized access at ResizableDoubleArray.java:[line 1045]<br />Synchronized access at ResizableDoubleArray.java:[line 449]<br />Synchronized access at ResizableDoubleArray.java:[line 452]<br />Synchronized access at ResizableDoubleArray.java:[line 755]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65676');">
+<td>
+<span class="priority-1">Bx</span>
+</td>
+<td>Primitive is boxed to call Double.compareTo(Double): use Double.compare(double, double) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65676" style="display: none;">
+<a href="#DM_BOXED_PRIMITIVE_FOR_COMPARE">Bug type DM_BOXED_PRIMITIVE_FOR_COMPARE (click for details)</a>
+<br />In class org.apache.commons.math3.genetics.Chromosome<br />In method org.apache.commons.math3.genetics.Chromosome.compareTo(Chromosome)<br />Called method Double.compareTo(Double)<br />Should call Double.compare(double, double) instead<br />At Chromosome.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>org.apache.commons.math3.exception.util.ExceptionContext.serializeContext(ObjectOutputStream) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65609" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class org.apache.commons.math3.exception.util.ExceptionContext<br />In method org.apache.commons.math3.exception.util.ExceptionContext.serializeContext(ObjectOutputStream)<br />Field org.apache.commons.math3.exception.util.ExceptionContext.context<br />At ExceptionContext.java:[line 292]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65953');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.altmov(int, double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65953" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.altmov(int, double)<br />At BOBYQAOptimizer.java:[line 1462]<br />Another occurrence at BOBYQAOptimizer.java:[line 1489]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66017');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.bobyqb(double[], double[]) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66017" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.bobyqb(double[], double[])<br />At BOBYQAOptimizer.java:[lines 547-557]<br />Another occurrence at BOBYQAOptimizer.java:[lines 1117-1120]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66082');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.trsbox(double, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66082" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.direct.BOBYQAOptimizer<br />In method org.apache.commons.math3.optimization.direct.BOBYQAOptimizer.trsbox(double, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector, ArrayRealVector)<br />At BOBYQAOptimizer.java:[lines 1883-1886]<br />Another occurrence at BOBYQAOptimizer.java:[lines 2028-2036]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">UC</span>
+</td>
+<td>Useless object stored in variable c of method org.apache.commons.math3.dfp.DfpMath.sin(Dfp)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+<br />In class org.apache.commons.math3.dfp.DfpMath<br />In method org.apache.commons.math3.dfp.DfpMath.sin(Dfp)<br />Value c<br />Type org.apache.commons.math3.dfp.Dfp[]<br />At DfpMath.java:[line 760]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66462');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizer.weightedResidualJacobian</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66462" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizer<br />Field org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizer.weightedResidualJacobian<br />At AbstractLeastSquaresOptimizer.java:[line 152]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66513');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizer.weightedResiduals</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66513" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizer<br />Field org.apache.commons.math3.optimization.general.AbstractLeastSquaresOptimizer.weightedResiduals<br />At AbstractLeastSquaresOptimizer.java:[line 210]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_BOXED_PRIMITIVE_FOR_COMPARE">DM_BOXED_PRIMITIVE_FOR_COMPARE: Boxing a primitive to compare</a>
+</h2>
+
+  <p>A boxed primitive is created just to call compareTo method. It's more efficient to use static compare method 
+  (for double and float since Java 1.4, for other primitive types since Java 1.7) which works on primitives directly.
+  </p>
+
+    
+<h2>
+<a name="CNT_ROUGH_CONSTANT_VALUE">CNT_ROUGH_CONSTANT_VALUE: Rough value of known constant found</a>
+</h2>
+      
+    <p>It's recommended to use the predefined library constant for code clarity and better precision.</p>
+
+    
+<h2>
+<a name="CO_COMPARETO_INCORRECT_FLOATING">CO_COMPARETO_INCORRECT_FLOATING: compareTo()/compare() incorrectly handles float or double value</a>
+</h2>
+
+  <p>This method compares double or float values using pattern like this: val1 &gt; val2 ? 1 : val1 &lt; val2 ? -1 : 0.
+This pattern works incorrectly for -0.0 and NaN values which may result in incorrect sorting result or broken collection 
+(if compared values are used as keys). Consider using Double.compare or Float.compare static methods which handle all 
+the special cases correctly.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">IS2_INCONSISTENT_SYNC: Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<h2>
+<a name="IT_NO_SUCH_ELEMENT">IT_NO_SUCH_ELEMENT: Iterator next() method can't throw NoSuchElementException</a>
+</h2>
+
+  <p> This class implements the <code>java.util.Iterator</code> interface.&nbsp;
+  However, its <code>next()</code> method is not capable of throwing
+  <code>java.util.NoSuchElementException</code>.&nbsp; The <code>next()</code>
+  method should be changed so it throws <code>NoSuchElementException</code>
+  if is called when there are no more elements to return.</p>
+
+    
+<h2>
+<a name="SE_NO_SUITABLE_CONSTRUCTOR">SE_NO_SUITABLE_CONSTRUCTOR: Class is Serializable but its superclass doesn't define a void constructor</a>
+</h2>
+
+  <p> This class implements the <code>Serializable</code> interface
+   and its superclass does not. When such an object is deserialized,
+   the fields of the superclass need to be initialized by
+   invoking the void constructor of the superclass.
+   Since the superclass does not have one,
+   serialization and deserialization will fail at runtime.</p>
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+</h2>
+
+<p>Our analysis shows that this object is useless. 
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    
+<h2>
+<a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD: Unread public/protected field</a>
+</h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>

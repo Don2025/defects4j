@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Compress/1_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>5112 lines of code analyzed,
+	in 66 classes, 
+	in 11 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">3.52</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">12</td>
+<td align="right">2.35</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>30</b>
+</td>
+<td align="right">
+<b>5.87</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">16</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>30</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67248');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>org.apache.commons.compress.archivers.zip.Simple8BitZipEncoding$Simple8BitChar defines compareTo(Object) and uses Object.equals()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67248" style="display: none;">
+<a href="#EQ_COMPARETO_USE_OBJECT_EQUALS">Bug type EQ_COMPARETO_USE_OBJECT_EQUALS (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.Simple8BitZipEncoding$Simple8BitChar<br />In method org.apache.commons.compress.archivers.zip.Simple8BitZipEncoding$Simple8BitChar.compareTo(Object)<br />At Simple8BitZipEncoding.java:[lines 62-64]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65777');">
+<td>
+<span class="priority-1">RV</span>
+</td>
+<td>new IllegalArgumentException(String) not thrown in org.apache.commons.compress.archivers.cpio.CpioArchiveEntry.setMode(long)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65777" style="display: none;">
+<a href="#RV_EXCEPTION_NOT_THROWN">Bug type RV_EXCEPTION_NOT_THROWN (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveEntry<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveEntry.setMode(long)<br />Called method new IllegalArgumentException(String)<br />At CpioArchiveEntry.java:[line 604]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66336');">
+<td>
+<span class="priority-2">UwF</span>
+</td>
+<td>Field only ever set to null: org.apache.commons.compress.archivers.jar.JarArchiveEntry.certificates</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66336" style="display: none;">
+<a href="#UWF_NULL_FIELD">Bug type UWF_NULL_FIELD (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.jar.JarArchiveEntry<br />Field org.apache.commons.compress.archivers.jar.JarArchiveEntry.certificates<br />In JarArchiveEntry.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66383');">
+<td>
+<span class="priority-2">UwF</span>
+</td>
+<td>Field only ever set to null: org.apache.commons.compress.archivers.jar.JarArchiveEntry.manifestAttributes</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66383" style="display: none;">
+<a href="#UWF_NULL_FIELD">Bug type UWF_NULL_FIELD (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.jar.JarArchiveEntry<br />Field org.apache.commons.compress.archivers.jar.JarArchiveEntry.manifestAttributes<br />In JarArchiveEntry.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.ar.ArArchiveInputStream.getNextArEntry(): new String(byte[])</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.ar.ArArchiveInputStream<br />In method org.apache.commons.compress.archivers.ar.ArArchiveInputStream.getNextArEntry()<br />Called method new String(byte[])<br />At ArArchiveInputStream.java:[line 50]<br />Another occurrence at ArArchiveInputStream.java:[line 91]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65628');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.ar.ArArchiveInputStream.getNextArEntry(): String.getBytes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65628" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.ar.ArArchiveInputStream<br />In method org.apache.commons.compress.archivers.ar.ArArchiveInputStream.getNextArEntry()<br />Called method String.getBytes()<br />At ArArchiveInputStream.java:[line 42]<br />Another occurrence at ArArchiveInputStream.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65708');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.ar.ArArchiveOutputStream.writeArchiveHeader(): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65708" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.ar.ArArchiveOutputStream<br />In method org.apache.commons.compress.archivers.ar.ArArchiveOutputStream.writeArchiveHeader()<br />Called method String.getBytes()<br />At ArArchiveOutputStream.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65847');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.getNextCPIOEntry(): new String(byte[])</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65847" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.getNextCPIOEntry()<br />Called method new String(byte[])<br />At CpioArchiveInputStream.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65916');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.readAsciiLong(int, int): new String(byte[])</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65916" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.readAsciiLong(int, int)<br />Called method new String(byte[])<br />At CpioArchiveInputStream.java:[line 311]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65985');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.readCString(int): new String(byte[], int, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65985" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.readCString(int)<br />Called method new String(byte[], int, int)<br />At CpioArchiveInputStream.java:[line 383]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66054');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeAsciiLong(long, int, int): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66054" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeAsciiLong(long, int, int)<br />Called method String.getBytes()<br />At CpioArchiveOutputStream.java:[line 386]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66123');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeCString(String): String.getBytes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66123" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeCString(String)<br />Called method String.getBytes()<br />At CpioArchiveOutputStream.java:[line 390]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66192');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeHeader(CpioArchiveEntry): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66192" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeHeader(CpioArchiveEntry)<br />Called method String.getBytes()<br />At CpioArchiveOutputStream.java:[line 176]<br />Another occurrence at CpioArchiveOutputStream.java:[line 180]<br />Another occurrence at CpioArchiveOutputStream.java:[line 184]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66503');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(): new String(byte[], int, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66503" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.tar.TarArchiveInputStream<br />In method org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry()<br />Called method new String(byte[], int, int)<br />At TarArchiveInputStream.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66572');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.putNextEntry(TarArchiveEntry): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66572" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.tar.TarArchiveOutputStream<br />In method org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.putNextEntry(TarArchiveEntry)<br />Called method String.getBytes()<br />At TarArchiveOutputStream.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66903');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.zip.AsiExtraField.getLocalFileDataData(): String.getBytes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66903" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.AsiExtraField<br />In method org.apache.commons.compress.archivers.zip.AsiExtraField.getLocalFileDataData()<br />Called method String.getBytes()<br />At AsiExtraField.java:[line 125]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66972');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.zip.AsiExtraField.getLocalFileDataLength(): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66972" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.AsiExtraField<br />In method org.apache.commons.compress.archivers.zip.AsiExtraField.getLocalFileDataLength()<br />Called method String.getBytes()<br />At AsiExtraField.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67041');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.zip.AsiExtraField.parseFromLocalFileData(byte[], int, int): new String(byte[])</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67041" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.AsiExtraField<br />In method org.apache.commons.compress.archivers.zip.AsiExtraField.parseFromLocalFileData(byte[], int, int)<br />Called method new String(byte[])<br />At AsiExtraField.java:[line 283]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67110');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.zip.FallbackZipEncoding.decode(byte[]): new String(byte[])</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67110" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.FallbackZipEncoding<br />In method org.apache.commons.compress.archivers.zip.FallbackZipEncoding.decode(byte[])<br />Called method new String(byte[])<br />At FallbackZipEncoding.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67179');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.commons.compress.archivers.zip.FallbackZipEncoding.encode(String): String.getBytes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67179" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.FallbackZipEncoding<br />In method org.apache.commons.compress.archivers.zip.FallbackZipEncoding.encode(String)<br />Called method String.getBytes()<br />At FallbackZipEncoding.java:[line 77]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66692');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.getCentralDirectoryData() may expose internal representation by returning AbstractUnicodeExtraField.data</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66692" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField<br />In method org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.getCentralDirectoryData()<br />Field org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.data<br />At AbstractUnicodeExtraField.java:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66760');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.getUnicodeName() may expose internal representation by returning AbstractUnicodeExtraField.unicodeName</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66760" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField<br />In method org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.getUnicodeName()<br />Field org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.unicodeName<br />At AbstractUnicodeExtraField.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66828');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.setUnicodeName(byte[]) may expose internal representation by storing an externally mutable object into AbstractUnicodeExtraField.unicodeName</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66828" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField<br />In method org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.setUnicodeName(byte[])<br />Field org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.unicodeName<br />Local variable named unicodeName<br />At AbstractUnicodeExtraField.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67354');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>Public static org.apache.commons.compress.archivers.zip.ZipUtil.toDosTime(long) may expose internal representation by returning ZipUtil.DOS_TIME_MIN</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67354" style="display: none;">
+<a href="#MS_EXPOSE_REP">Bug type MS_EXPOSE_REP (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.ZipUtil<br />In method org.apache.commons.compress.archivers.zip.ZipUtil.toDosTime(long)<br />Field org.apache.commons.compress.archivers.zip.ZipUtil.DOS_TIME_MIN<br />At ZipUtil.java:[line 51]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66641');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.debug</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66641" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.tar.TarArchiveOutputStream<br />Field org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.debug<br />At TarArchiveOutputStream.java:[line 84]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66430');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference in org.apache.commons.compress.archivers.tar.TarArchiveEntry.getDirectoryEntries() due to return value of called method</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66430" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.tar.TarArchiveEntry<br />In method org.apache.commons.compress.archivers.tar.TarArchiveEntry.getDirectoryEntries()<br />Value loaded from list<br />Dereferenced at TarArchiveEntry.java:[line 522]<br />Known null at TarArchiveEntry.java:[line 521]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67301');">
+<td>
+<span class="priority-1">NS</span>
+</td>
+<td>Potentially dangerous use of non-short-circuit logic in org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.setEncoding(String)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67301" style="display: none;">
+<a href="#NS_DANGEROUS_NON_SHORT_CIRCUIT">Bug type NS_DANGEROUS_NON_SHORT_CIRCUIT (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream<br />In method org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.setEncoding(String)<br />At ZipArchiveOutputStream.java:[line 290]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66283');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeHeader(CpioArchiveEntry) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66283" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream<br />In method org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.writeHeader(CpioArchiveEntry)<br />At CpioArchiveOutputStream.java:[lines 174-190]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67422');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream.generateMTFValues() where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67422" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream<br />In method org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream.generateMTFValues()<br />At BZip2CompressorOutputStream.java:[lines 1586-1595]<br />Another occurrence at BZip2CompressorOutputStream.java:[lines 1614-1623]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67486');">
+<td>
+<span class="priority-2">UC</span>
+</td>
+<td>Useless object stored in variable fave of method org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream.sendMTFValues()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67486" style="display: none;">
+<a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+<br />In class org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream<br />In method org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream.sendMTFValues()<br />Value fave<br />Type int[]<br />At BZip2CompressorOutputStream.java:[line 639]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_COMPARETO_USE_OBJECT_EQUALS">EQ_COMPARETO_USE_OBJECT_EQUALS: Class defines compareTo(...) and uses Object.equals()</a>
+</h2>
+
+  <p> This class defines a <code>compareTo(...)</code> method but inherits its
+  <code>equals()</code> method from <code>java.lang.Object</code>.
+    Generally, the value of compareTo should return zero if and only if
+    equals returns true. If this is violated, weird and unpredictable
+    failures will occur in classes such as PriorityQueue.
+    In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    while in Java 6 it uses the equals method.</p>
+
+<p>From the JavaDoc for the compareTo method in the Comparable interface:
+<blockquote>
+It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+Generally speaking, any class that implements the Comparable interface and violates this condition
+should clearly indicate this fact. The recommended language
+is "Note: this class has a natural ordering that is inconsistent with equals."
+</blockquote></p>
+
+    
+<h2>
+<a name="MS_EXPOSE_REP">MS_EXPOSE_REP: Public static method may expose internal representation by returning array</a>
+</h2>
+
+  <p> A public static method returns a reference to
+   an array that is part of the static state of the class.
+   Any code that calls this method can freely modify
+   the underlying array.
+   One fix is to return a copy of the array.</p>
+
+    
+<h2>
+<a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
+</h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   
+<h2>
+<a name="NS_DANGEROUS_NON_SHORT_CIRCUIT">NS_DANGEROUS_NON_SHORT_CIRCUIT: Potentially dangerous use of non-short-circuit logic</a>
+</h2>
+
+  <p> This code seems to be using non-short-circuit logic (e.g., &amp;
+or |)
+rather than short-circuit logic (&amp;&amp; or ||). In addition,
+it seem possible that, depending on the value of the left hand side, you might not
+want to evaluate the right hand side (because it would have side effects, could cause an exception
+or could be expensive.</p>
+<p>
+Non-short-circuit logic causes both sides of the expression
+to be evaluated even when the result can be inferred from
+knowing the left-hand side. This can be less efficient and
+can result in errors if the left-hand side guards cases
+when evaluating the right-hand side can generate an error.
+</p>
+
+<p>See <a href="http://java.sun.com/docs/books/jls/third_edition/html/expressions.html#15.22.2">the Java
+Language Specification</a> for details
+
+</p>
+
+    
+<h2>
+<a name="RV_EXCEPTION_NOT_THROWN">RV_EXCEPTION_NOT_THROWN: Exception created and dropped rather than thrown</a>
+</h2>
+
+   <p> This code creates an exception (or error) object, but doesn't do anything with it. For example,
+something like </p>
+<blockquote>
+<pre>
+if (x &lt; 0)
+  new IllegalArgumentException("x must be nonnegative");
+</pre>
+</blockquote>
+<p>It was probably the intent of the programmer to throw the created exception:</p>
+<blockquote>
+<pre>
+if (x &lt; 0)
+  throw new IllegalArgumentException("x must be nonnegative");
+</pre>
+</blockquote>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+</h2>
+
+<p>Our analysis shows that this object is useless. 
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    
+<h2>
+<a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+</h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    
+<h2>
+<a name="UWF_NULL_FIELD">UWF_NULL_FIELD: Field only ever set to null</a>
+</h2>
+
+  <p> All writes to this field are of the constant value null, and thus
+all reads of the field will return null.
+Check for errors, or remove it if it is useless.</p>
+
+    </body>
+</html>

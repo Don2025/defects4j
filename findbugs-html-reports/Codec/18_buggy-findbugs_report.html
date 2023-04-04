@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Codec/18_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>24838 lines of code analyzed,
+	in 367 classes, 
+	in 20 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">0.16</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">0.72</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>22</b>
+</td>
+<td align="right">
+<b>0.89</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">7</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>22</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66893');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Equals method for org.apache.commons.lang3.time.FormatCache$MultipartKey assumes the argument is of type FormatCache$MultipartKey</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66893" style="display: none;">
+<a href="#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug type BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FormatCache$MultipartKey<br />In method org.apache.commons.lang3.time.FormatCache$MultipartKey.equals(Object)<br />At FormatCache.java:[line 243]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66568');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>org.apache.commons.lang3.text.StrTokenizer.clone() does not call super.clone()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66568" style="display: none;">
+<a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+<br />In class org.apache.commons.lang3.text.StrTokenizer<br />In method org.apache.commons.lang3.text.StrTokenizer.clone()<br />has subclass org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer<br />At StrTokenizer.java:[lines 1077-1079]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65652');">
+<td>
+<span class="priority-1">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in org.apache.commons.lang3.BooleanUtils.toBooleanObject(String) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65652" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBooleanObject(String)<br />Actual type String<br />String constant "true"<br />Value loaded from str<br />At BooleanUtils.java:[line 553]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66172');">
+<td>
+<span class="priority-1">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in org.apache.commons.lang3.StringUtils.compare(String, String, boolean) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66172" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.StringUtils<br />In method org.apache.commons.lang3.StringUtils.compare(String, String, boolean)<br />Actual type String<br />Value loaded from str2<br />Value loaded from str1<br />At StringUtils.java:[line 1122]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66256');">
+<td>
+<span class="priority-1">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in org.apache.commons.lang3.StringUtils.compareIgnoreCase(String, String, boolean) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66256" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class org.apache.commons.lang3.StringUtils<br />In method org.apache.commons.lang3.StringUtils.compareIgnoreCase(String, String, boolean)<br />Actual type String<br />Value loaded from str2<br />Value loaded from str1<br />At StringUtils.java:[line 1215]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65734');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.BooleanUtils.negate(Boolean) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65734" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.negate(Boolean)<br />At BooleanUtils.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65788');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.BooleanUtils.toBooleanObject(int, int, int, int) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65788" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBooleanObject(int, int, int, int)<br />At BooleanUtils.java:[line 331]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.BooleanUtils.toBooleanObject(Integer) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65842" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBooleanObject(Integer)<br />At BooleanUtils.java:[line 239]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65896');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.BooleanUtils.toBooleanObject(Integer, Integer, Integer, Integer) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65896" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBooleanObject(Integer, Integer, Integer, Integer)<br />At BooleanUtils.java:[line 364]<br />Another occurrence at BooleanUtils.java:[line 371]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65961');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.BooleanUtils.toBooleanObject(String) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65961" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBooleanObject(String)<br />At BooleanUtils.java:[line 557]<br />Another occurrence at BooleanUtils.java:[line 633]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66026');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.BooleanUtils.toBooleanObject(String, String, String, String) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66026" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBooleanObject(String, String, String, String)<br />At BooleanUtils.java:[line 664]<br />Another occurrence at BooleanUtils.java:[line 671]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66946');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>org.apache.commons.lang3.time.FormatCache$MultipartKey.equals(Object) does not check for null argument</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66946" style="display: none;">
+<a href="#NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">Bug type NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FormatCache$MultipartKey<br />In method org.apache.commons.lang3.time.FormatCache$MultipartKey.equals(Object)<br />Parameter obj<br />At FormatCache.java:[line 243]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66091');">
+<td>
+<span class="priority-2">RC</span>
+</td>
+<td>Suspicious comparison of Boolean references in org.apache.commons.lang3.BooleanUtils.toBoolean(String)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66091" style="display: none;">
+<a href="#RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">Bug type RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN (click for details)</a>
+<br />In class org.apache.commons.lang3.BooleanUtils<br />In method org.apache.commons.lang3.BooleanUtils.toBoolean(String)<br />Actual type Boolean<br />Value loaded from field java.lang.Boolean.TRUE<br />At BooleanUtils.java:[line 709]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66447');">
+<td>
+<span class="priority-2">UR</span>
+</td>
+<td>registry isn't initialized in org.apache.commons.lang3.text.ExtendedMessageFormat.applyPattern(String) when invoked from constructor for superclass</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66447" style="display: none;">
+<a href="#UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR">Bug type UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR (click for details)</a>
+<br />In class org.apache.commons.lang3.text.ExtendedMessageFormat<br />In method org.apache.commons.lang3.text.ExtendedMessageFormat.applyPattern(String)<br />Field org.apache.commons.lang3.text.ExtendedMessageFormat.registry<br />Superclass constructor is new java.text.MessageFormat(String)<br />Call from superclass constructor at MessageFormat.java:[line 362]<br />Constructor is new org.apache.commons.lang3.text.ExtendedMessageFormat(String, Locale, Map)<br />Field set (too late) at ExtendedMessageFormat.java:[line 129]<br />At ExtendedMessageFormat.java:[line 148]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: org.apache.commons.codec.binary.BaseNCodec.PAD; should this field be static?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class org.apache.commons.codec.binary.BaseNCodec<br />Field org.apache.commons.codec.binary.BaseNCodec.PAD<br />At BaseNCodec.java:[line 159]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65599');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.codec.digest.PureJavaCrc32C.update(byte[], int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65599" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.codec.digest.PureJavaCrc32C<br />In method org.apache.commons.codec.digest.PureJavaCrc32C.update(byte[], int, int)<br />At PureJavaCrc32C.java:[lines 84-91]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66340');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.math.NumberUtils.createNumber(String) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66340" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.lang3.math.NumberUtils<br />In method org.apache.commons.lang3.math.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 749-756]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66394');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.math.NumberUtils.createNumber(String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66394" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.math.NumberUtils<br />In method org.apache.commons.lang3.math.NumberUtils.createNumber(String)<br />At NumberUtils.java:[lines 724-765]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66635');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.DateUtils.getFragment(Calendar, int, TimeUnit) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66635" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.lang3.time.DateUtils<br />In method org.apache.commons.lang3.time.DateUtils.getFragment(Calendar, int, TimeUnit)<br />At DateUtils.java:[lines 1693-1696]<br />Another occurrence at DateUtils.java:[lines 1696-1699]<br />Another occurrence at DateUtils.java:[lines 1699-1702]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66711');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.FastDateParser.simpleQuote(StringBuilder, String) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66711" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FastDateParser<br />In method org.apache.commons.lang3.time.FastDateParser.simpleQuote(StringBuilder, String)<br />At FastDateParser.java:[lines 433-446]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66764');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.FastDatePrinter.appendFullDigits(Appendable, int, int) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66764" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FastDatePrinter<br />In method org.apache.commons.lang3.time.FastDatePrinter.appendFullDigits(Appendable, int, int)<br />At FastDatePrinter.java:[lines 717-719]<br />Another occurrence at FastDatePrinter.java:[lines 723-726]<br />Another occurrence at FastDatePrinter.java:[lines 730-733]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66840');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.apache.commons.lang3.time.FastDatePrinter.appendFullDigits(Appendable, int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66840" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.apache.commons.lang3.time.FastDatePrinter<br />In method org.apache.commons.lang3.time.FastDatePrinter.appendFullDigits(Appendable, int, int)<br />At FastDatePrinter.java:[lines 714-733]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS: Equals method should not assume anything about the type of its argument</a>
+</h2>
+
+<p>
+The <code>equals(Object o)</code> method shouldn't make any assumptions
+about the type of <code>o</code>. It should simply return
+false if <code>o</code> is not the same type as <code>this</code>.
+</p>
+
+    
+<h2>
+<a name="CN_IDIOM_NO_SUPER_CALL">CN_IDIOM_NO_SUPER_CALL: clone method does not call super.clone()</a>
+</h2>
+
+<p> This non-final class defines a clone() method that does not call super.clone().
+If this class ("<i>A</i>") is extended by a subclass ("<i>B</i>"),
+and the subclass <i>B</i> calls super.clone(), then it is likely that
+<i>B</i>'s clone() method will return an object of type <i>A</i>,
+which violates the standard contract for clone().</p>
+
+<p> If all clone() methods call super.clone(), then they are guaranteed
+to use Object.clone(), which always returns an object of the correct type.</p>
+
+    
+<h2>
+<a name="ES_COMPARING_PARAMETER_STRING_WITH_EQ">ES_COMPARING_PARAMETER_STRING_WITH_EQ: Comparison of String parameter using == or !=</a>
+</h2>
+
+  <p>This code compares a <code>java.lang.String</code> parameter for reference
+equality using the == or != operators. Requiring callers to
+pass only String constants or interned strings to a method is unnecessarily
+fragile, and rarely leads to measurable performance gains. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT: equals() method does not check for null argument</a>
+</h2>
+      
+      <p>
+      This implementation of equals(Object) violates the contract defined
+      by java.lang.Object.equals() because it does not check for null
+      being passed as the argument.  All equals() methods should return
+      false if passed a null value.
+      </p>
+      
+   
+<h2>
+<a name="NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL: Method with Boolean return type returns explicit null</a>
+</h2>
+       
+       <p>
+    A method that returns either Boolean.TRUE, Boolean.FALSE or null is an accident waiting to happen.
+    This method can be invoked as though it returned a value of type boolean, and
+    the compiler will insert automatic unboxing of the Boolean value. If a null value is returned,
+    this will result in a NullPointerException.
+       </p>
+       
+       
+<h2>
+<a name="RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN">RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN: Suspicious reference comparison of Boolean values</a>
+</h2>
+
+<p> This method compares two Boolean values using the == or != operator.
+Normally, there are only two Boolean values (Boolean.TRUE and Boolean.FALSE),
+but it is possible to create other Boolean objects using the <code>new Boolean(b)</code>
+constructor. It is best to avoid such objects, but if they do exist,
+then checking Boolean objects for equality using == or != will give results
+than are different than you would get using <code>.equals(...)</code>
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SS_SHOULD_BE_STATIC">SS_SHOULD_BE_STATIC: Unread field: should this field be static?</a>
+</h2>
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    
+<h2>
+<a name="UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR">UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR: Uninitialized read of field method called from constructor of superclass</a>
+</h2>
+
+  <p> This method is invoked in the constructor of of the superclass. At this point,
+    the fields of the class have not yet initialized.</p>
+<p>To make this more concrete, consider the following classes:</p>
+<pre>abstract class A {
+  int hashCode;
+  abstract Object getValue();
+  A() {
+    hashCode = getValue().hashCode();
+    }
+  }
+class B extends A {
+  Object value;
+  B(Object v) {
+    this.value = v;
+    }
+  Object getValue() {
+    return value;
+  }
+  }</pre>
+<p>When a <code>B</code> is constructed,
+the constructor for the <code>A</code> class is invoked
+<em>before</em> the constructor for <code>B</code> sets <code>value</code>.
+Thus, when the constructor for <code>A</code> invokes <code>getValue</code>,
+an uninitialized value is read for <code>value</code>
+</p>
+
+    </body>
+</html>

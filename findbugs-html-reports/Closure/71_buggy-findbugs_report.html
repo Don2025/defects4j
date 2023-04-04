@@ -1,0 +1,4178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Closure/71_buggy/build/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>58579 lines of code analyzed,
+	in 1243 classes, 
+	in 9 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">38</td>
+<td align="right">0.65</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">195</td>
+<td align="right">3.33</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>233</b>
+</td>
+<td align="right">
+<b>3.98</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">32</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">12</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">11</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">50</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">116</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>233</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66196');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.debugging.sourcemap.proto.Mapping$LineMapping$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66196" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.debugging.sourcemap.proto.Mapping$LineMapping$Builder<br />In method com.google.debugging.sourcemap.proto.Mapping$LineMapping$Builder.clone()<br />At Mapping.java:[line 205]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66250');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.debugging.sourcemap.proto.Mapping$OriginalMapping$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66250" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.debugging.sourcemap.proto.Mapping$OriginalMapping$Builder<br />In method com.google.debugging.sourcemap.proto.Mapping$OriginalMapping$Builder.clone()<br />At Mapping.java:[line 605]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69894');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.FunctionInformationMap$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69894" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionInformationMap$Builder<br />In method com.google.javascript.jscomp.FunctionInformationMap$Builder.clone()<br />At FunctionInformationMap.java:[line 1068]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69948');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69948" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder<br />In method com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder.clone()<br />At FunctionInformationMap.java:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70002');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.FunctionInformationMap$Module$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70002" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionInformationMap$Module$Builder<br />In method com.google.javascript.jscomp.FunctionInformationMap$Module$Builder.clone()<br />At FunctionInformationMap.java:[line 750]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70769');">
+<td>
+<span class="priority-1">CN</span>
+</td>
+<td>com.google.javascript.jscomp.Instrumentation$Builder defines clone() but doesn't implement Cloneable</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70769" style="display: none;">
+<a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.Instrumentation$Builder<br />In method com.google.javascript.jscomp.Instrumentation$Builder.clone()<br />At Instrumentation.java:[line 260]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66373');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>com.google.javascript.jscomp.AbstractCommandLineRunner.run() invokes System.exit(...), which shuts down the entire virtual machine</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66373" style="display: none;">
+<a href="#DM_EXIT">Bug type DM_EXIT (click for details)</a>
+<br />In class com.google.javascript.jscomp.AbstractCommandLineRunner<br />In method com.google.javascript.jscomp.AbstractCommandLineRunner.run()<br />At AbstractCommandLineRunner.java:[line 304]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71491');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>com.google.javascript.jscomp.NameAnalyzer$JsName defines compareTo(NameAnalyzer$JsName) and uses Object.equals()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71491" style="display: none;">
+<a href="#EQ_COMPARETO_USE_OBJECT_EQUALS">Bug type EQ_COMPARETO_USE_OBJECT_EQUALS (click for details)</a>
+<br />In class com.google.javascript.jscomp.NameAnalyzer$JsName<br />In method com.google.javascript.jscomp.NameAnalyzer$JsName.compareTo(NameAnalyzer$JsName)<br />At NameAnalyzer.java:[line 255]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65648');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String objects using == or != in com.google.debugging.sourcemap.SourceMapGeneratorV1$MappingWriter.appendMappingTo(SourceMapGeneratorV1$Mapping, Appendable) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65648" style="display: none;">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV1$MappingWriter<br />In method com.google.debugging.sourcemap.SourceMapGeneratorV1$MappingWriter.appendMappingTo(SourceMapGeneratorV1$Mapping, Appendable)<br />Actual type String<br />Value loaded from sourceFile<br />Value loaded from field com.google.debugging.sourcemap.SourceMapGeneratorV1$MappingWriter.lastSourceFile<br />At SourceMapGeneratorV1.java:[line 104]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65857');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in com.google.debugging.sourcemap.SourceMapGeneratorV2.getSourceId(String) </td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65857" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV2<br />In method com.google.debugging.sourcemap.SourceMapGeneratorV2.getSourceId(String)<br />Actual type String<br />Value loaded from field com.google.debugging.sourcemap.SourceMapGeneratorV2.lastSourceFile<br />Value loaded from sourceName<br />At SourceMapGeneratorV2.java:[line 404]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66069');">
+<td>
+<span class="priority-2">ES</span>
+</td>
+<td>Comparison of String parameter using == or != in com.google.debugging.sourcemap.SourceMapGeneratorV3.getSourceId(String) </td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66069" style="display: none;">
+<a href="#ES_COMPARING_PARAMETER_STRING_WITH_EQ">Bug type ES_COMPARING_PARAMETER_STRING_WITH_EQ (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV3<br />In method com.google.debugging.sourcemap.SourceMapGeneratorV3.getSourceId(String)<br />Actual type String<br />Value loaded from field com.google.debugging.sourcemap.SourceMapGeneratorV3.lastSourceFile<br />Value loaded from sourceName<br />At SourceMapGeneratorV3.java:[line 621]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66497');">
+<td>
+<span class="priority-2">FS</span>
+</td>
+<td>Format string should use %n rather than \n in com.google.javascript.jscomp.AbstractCommandLineRunner.printModuleGraphManifestTo(JSModuleGraph, Appendable)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66497" style="display: none;">
+<a href="#VA_FORMAT_STRING_USES_NEWLINE">Bug type VA_FORMAT_STRING_USES_NEWLINE (click for details)</a>
+<br />In class com.google.javascript.jscomp.AbstractCommandLineRunner<br />In method com.google.javascript.jscomp.AbstractCommandLineRunner.printModuleGraphManifestTo(JSModuleGraph, Appendable)<br />Called method String.format(String, Object[])<br />Format string "{%s%s}\n"<br />At AbstractCommandLineRunner.java:[line 1172]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67267');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>com.google.javascript.jscomp.CheckPropertyOrder$PropertyOrders defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67267" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckPropertyOrder$PropertyOrders<br />In method com.google.javascript.jscomp.CheckPropertyOrder$PropertyOrders.equals(Object)<br />At CheckPropertyOrder.java:[lines 213-216]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76360');">
+<td>
+<span class="priority-1">HE</span>
+</td>
+<td>com.google.javascript.jscomp.deps.SimpleDependencyInfo defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76360" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class com.google.javascript.jscomp.deps.SimpleDependencyInfo<br />In method com.google.javascript.jscomp.deps.SimpleDependencyInfo.equals(Object)<br />At SimpleDependencyInfo.java:[lines 86-90]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71006');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>com.google.javascript.jscomp.LinkedFlowScope defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71006" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class com.google.javascript.jscomp.LinkedFlowScope<br />In method com.google.javascript.jscomp.LinkedFlowScope.equals(Object)<br />At LinkedFlowScope.java:[lines 254-301]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71385');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>com.google.javascript.jscomp.MustBeReachingVariableDef$Definition defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71385" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class com.google.javascript.jscomp.MustBeReachingVariableDef$Definition<br />In method com.google.javascript.jscomp.MustBeReachingVariableDef$Definition.equals(Object)<br />At MustBeReachingVariableDef.java:[lines 76-82]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71438');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>com.google.javascript.jscomp.MustBeReachingVariableDef$MustDef defines equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71438" style="display: none;">
+<a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class com.google.javascript.jscomp.MustBeReachingVariableDef$MustDef<br />In method com.google.javascript.jscomp.MustBeReachingVariableDef$MustDef.equals(Object)<br />At MustBeReachingVariableDef.java:[line 139]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71059');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.google.javascript.jscomp.LiveVariablesAnalysis$LiveVariableLattice.equals(Object) does not check for null argument</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71059" style="display: none;">
+<a href="#NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">Bug type NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT (click for details)</a>
+<br />In class com.google.javascript.jscomp.LiveVariablesAnalysis$LiveVariableLattice<br />In method com.google.javascript.jscomp.LiveVariablesAnalysis$LiveVariableLattice.equals(Object)<br />Parameter other<br />At LiveVariablesAnalysis.java:[lines 86-87]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72345');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>com.google.javascript.jscomp.PeepholeFoldConstants.compareAsNumbers(int, Node, Node) has Boolean return type and returns explicit null</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72345" style="display: none;">
+<a href="#NP_BOOLEAN_RETURN_NULL">Bug type NP_BOOLEAN_RETURN_NULL (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeFoldConstants<br />In method com.google.javascript.jscomp.PeepholeFoldConstants.compareAsNumbers(int, Node, Node)<br />At PeepholeFoldConstants.java:[line 1095]<br />Another occurrence at PeepholeFoldConstants.java:[line 1099]<br />Another occurrence at PeepholeFoldConstants.java:[line 1124]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66427');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Exceptional return value of java.io.File.mkdirs() ignored in com.google.javascript.jscomp.AbstractCommandLineRunner.maybeCreateDirsForPath(String)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66427" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Bug type RV_RETURN_VALUE_IGNORED_BAD_PRACTICE (click for details)</a>
+<br />In class com.google.javascript.jscomp.AbstractCommandLineRunner<br />In method com.google.javascript.jscomp.AbstractCommandLineRunner.maybeCreateDirsForPath(String)<br />Called method java.io.File.mkdirs()<br />At AbstractCommandLineRunner.java:[line 593]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67039');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.google.javascript.jscomp.BasicErrorManager$LeveledJSErrorComparator implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67039" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.BasicErrorManager$LeveledJSErrorComparator<br />At BasicErrorManager.java:[lines 115-169]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68017');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.CompilerInput defines non-transient non-serializable instance field compiler</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68017" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerInput<br />Field com.google.javascript.jscomp.CompilerInput.compiler<br />Actual type com.google.javascript.jscomp.AbstractCompiler<br />In CompilerInput.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68077');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.CompilerInput defines non-transient non-serializable instance field errorManager</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68077" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerInput<br />Field com.google.javascript.jscomp.CompilerInput.errorManager<br />Actual type com.google.javascript.jscomp.ErrorManager<br />In CompilerInput.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68411');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.CompilerOptions defines non-transient non-serializable instance field cssRenamingMap</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68411" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerOptions<br />Field com.google.javascript.jscomp.CompilerOptions.cssRenamingMap<br />Actual type com.google.javascript.jscomp.CssRenamingMap<br />In CompilerOptions.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68469');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>The field com.google.javascript.jscomp.CompilerOptions.aliasHandler is transient but isn't set by deserialization</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68469" style="display: none;">
+<a href="#SE_TRANSIENT_FIELD_NOT_RESTORED">Bug type SE_TRANSIENT_FIELD_NOT_RESTORED (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerOptions<br />Field com.google.javascript.jscomp.CompilerOptions.aliasHandler<br />In CompilerOptions.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76605');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.graph.StandardUnionFind defines non-transient non-serializable instance field elmap</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76605" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.graph.StandardUnionFind<br />Field com.google.javascript.jscomp.graph.StandardUnionFind.elmap<br />Actual type com.google.javascript.jscomp.graph.StandardUnionFind$Node&lt;E&gt;<br />In StandardUnionFind.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72041');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.PassConfig$State defines non-transient non-serializable instance field anonymousFunctionNameMap</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72041" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.PassConfig$State<br />Field com.google.javascript.jscomp.PassConfig$State.anonymousFunctionNameMap<br />Actual type com.google.javascript.jscomp.VariableMap<br />In PassConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72101');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.PassConfig$State defines non-transient non-serializable instance field propertyMap</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72101" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.PassConfig$State<br />Field com.google.javascript.jscomp.PassConfig$State.propertyMap<br />Actual type com.google.javascript.jscomp.VariableMap<br />In PassConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72161');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.PassConfig$State defines non-transient non-serializable instance field stringMap</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72161" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.PassConfig$State<br />Field com.google.javascript.jscomp.PassConfig$State.stringMap<br />Actual type com.google.javascript.jscomp.VariableMap<br />In PassConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72221');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.google.javascript.jscomp.PassConfig$State defines non-transient non-serializable instance field variableMap</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72221" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.PassConfig$State<br />Field com.google.javascript.jscomp.PassConfig$State.variableMap<br />Actual type com.google.javascript.jscomp.VariableMap<br />In PassConfig.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77799');">
+<td>
+<span class="priority-1">Se</span>
+</td>
+<td>Class com.google.javascript.rhino.JSDocInfo defines non-transient non-serializable instance field documentation</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77799" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.JSDocInfo<br />Field com.google.javascript.rhino.JSDocInfo.documentation<br />Actual type com.google.javascript.rhino.JSDocInfo$LazilyInitializedDocumentation<br />In JSDocInfo.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78889');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>Class com.google.javascript.rhino.jstype.NamedType defines non-transient non-serializable instance field propertyContinuations</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78889" style="display: none;">
+<a href="#SE_BAD_FIELD">Bug type SE_BAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.NamedType<br />Field com.google.javascript.rhino.jstype.NamedType.propertyContinuations<br />Actual type com.google.javascript.rhino.jstype.NamedType$PropertyContinuation<br />In NamedType.java</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73848');">
+<td>
+<span class="priority-2">Eq</span>
+</td>
+<td>com.google.javascript.jscomp.Scope$Arguments overrides equals in Scope$Var and may not be symmetric</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73848" style="display: none;">
+<a href="#EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC">Bug type EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.Scope$Arguments<br />In method com.google.javascript.jscomp.Scope$Arguments.equals(Object)<br />Overrides com.google.javascript.jscomp.Scope$Var.equals(Object)<br />At Scope.java:[lines 320-325]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65583');">
+<td>
+<span class="priority-2">INT</span>
+</td>
+<td>Bad comparison of nonnegative value with 0 in com.google.debugging.sourcemap.SourceMapConsumerV3.getMappingForLine(int, int)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65583" style="display: none;">
+<a href="#INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE">Bug type INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapConsumerV3<br />In method com.google.debugging.sourcemap.SourceMapConsumerV3.getMappingForLine(int, int)<br />Value 0<br />Local variable named lineNumber<br />At SourceMapConsumerV3.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76739');">
+<td>
+<span class="priority-1">IP</span>
+</td>
+<td>The parameter token to com.google.javascript.jscomp.parsing.JsDocInfoParser.parseResultType(JsDocToken) is dead upon entry but overwritten</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76739" style="display: none;">
+<a href="#IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN">Bug type IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN (click for details)</a>
+<br />In class com.google.javascript.jscomp.parsing.JsDocInfoParser<br />In method com.google.javascript.jscomp.parsing.JsDocInfoParser.parseResultType(JsDocToken)<br />Local variable named token<br />At JsDocInfoParser.java:[line 1929]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70682');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of addingRoot in com.google.javascript.jscomp.InstrumentFunctions$InstrumentCallback.visit(NodeTraversal, Node, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70682" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.google.javascript.jscomp.InstrumentFunctions$InstrumentCallback<br />In method com.google.javascript.jscomp.InstrumentFunctions$InstrumentCallback.visit(NodeTraversal, Node, Node)<br />Value loaded from addingRoot<br />Dereferenced at InstrumentFunctions.java:[line 333]<br />Null value at InstrumentFunctions.java:[line 318]<br />Known null at InstrumentFunctions.java:[line 325]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71736');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of addingRoot in com.google.javascript.jscomp.NodeUtil.getAddingRoot(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71736" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.google.javascript.jscomp.NodeUtil<br />In method com.google.javascript.jscomp.NodeUtil.getAddingRoot(Node)<br />Value loaded from addingRoot<br />Dereferenced at NodeUtil.java:[line 2252]<br />Null value at NodeUtil.java:[line 2238]<br />Known null at NodeUtil.java:[line 2240]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74695');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of TightenTypes$NativeCallFunctionCall.firstArgument in com.google.javascript.jscomp.TightenTypes$NativeCallFunctionCall.getAssignments(TightenTypes$ConcreteScope)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74695" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.google.javascript.jscomp.TightenTypes$NativeCallFunctionCall<br />In method com.google.javascript.jscomp.TightenTypes$NativeCallFunctionCall.getAssignments(TightenTypes$ConcreteScope)<br />Value contained in com.google.javascript.jscomp.TightenTypes$NativeCallFunctionCall.firstArgument<br />Dereferenced at TightenTypes.java:[line 560]<br />Known null at TightenTypes.java:[line 549]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N79021');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of null in com.google.javascript.rhino.jstype.ProxyObjectType.hasReferenceName()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N79021" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.ProxyObjectType<br />In method com.google.javascript.rhino.jstype.ProxyObjectType.hasReferenceName()<br />Constant value null<br />Dereferenced at ProxyObjectType.java:[line 93]<br />Known null at ProxyObjectType.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72962');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Nullcheck of enclosingQname at line 418 of value previously dereferenced in com.google.javascript.jscomp.ProcessClosurePrimitives.processBaseClassCall(NodeTraversal, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72962" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+<br />In class com.google.javascript.jscomp.ProcessClosurePrimitives<br />In method com.google.javascript.jscomp.ProcessClosurePrimitives.processBaseClassCall(NodeTraversal, Node)<br />Value loaded from enclosingQname<br />Return value of com.google.javascript.rhino.Node.getQualifiedName() of type String<br />At ProcessClosurePrimitives.java:[line 418]<br />Redundant null check at ProcessClosurePrimitives.java:[line 459]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75368');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Nullcheck of fnNode at line 97 of value previously dereferenced in com.google.javascript.jscomp.TypedCodeGenerator.getFunctionAnnotation(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75368" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedCodeGenerator<br />In method com.google.javascript.jscomp.TypedCodeGenerator.getFunctionAnnotation(Node)<br />Value loaded from fnNode<br />At TypedCodeGenerator.java:[line 79]<br />Redundant null check at TypedCodeGenerator.java:[line 97]<br />Another occurrence at TypedCodeGenerator.java:[line 148]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78949');">
+<td>
+<span class="priority-1">RCN</span>
+</td>
+<td>Nullcheck of that at line 462 of value previously dereferenced in com.google.javascript.rhino.jstype.PrototypeObjectType.isSubtype(JSType)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78949" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.PrototypeObjectType<br />In method com.google.javascript.rhino.jstype.PrototypeObjectType.isSubtype(JSType)<br />Value loaded from that<br />At PrototypeObjectType.java:[line 431]<br />Redundant null check at PrototypeObjectType.java:[line 462]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77910');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Nullcheck of node2 at line 1419 of value previously dereferenced in com.google.javascript.rhino.Node.checkTreeEqualsImpl(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77910" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+<br />In class com.google.javascript.rhino.Node<br />In method com.google.javascript.rhino.Node.checkTreeEqualsImpl(Node)<br />Value loaded from node2<br />At Node.java:[line 1416]<br />Redundant null check at Node.java:[line 1419]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78106');">
+<td>
+<span class="priority-2">UwF</span>
+</td>
+<td>Unwritten field: com.google.javascript.rhino.RhinoException.interpreterStackInfo</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78106" style="display: none;">
+<a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.RhinoException<br />Field com.google.javascript.rhino.RhinoException.interpreterStackInfo<br />At RhinoException.java:[line 242]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68880');">
+<td>
+<span class="priority-2">OBL</span>
+</td>
+<td>com.google.javascript.jscomp.DefaultPassConfig$89$1.process(Node, Node) may fail to clean up java.io.Reader</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68880" style="display: none;">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+<br />In class com.google.javascript.jscomp.DefaultPassConfig$89$1<br />In method com.google.javascript.jscomp.DefaultPassConfig$89$1.process(Node, Node)<br />Reference type java.io.Reader<br />1 instances of obligation remaining<br />Obligation to clean up resource created at DefaultPassConfig.java:[line 2024] is not discharged<br />Path continues at DefaultPassConfig.java:[line 2026]<br />Path continues at DefaultPassConfig.java:[line 2035]<br />Path continues at DefaultPassConfig.java:[line 2036]<br />Remaining obligations: {Reader x 1}</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76137');">
+<td>
+<span class="priority-2">OBL</span>
+</td>
+<td>com.google.javascript.jscomp.deps.DepsFileParser.parseFile(String) may fail to clean up java.io.Reader</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76137" style="display: none;">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+<br />In class com.google.javascript.jscomp.deps.DepsFileParser<br />In method com.google.javascript.jscomp.deps.DepsFileParser.parseFile(String)<br />Reference type java.io.Reader<br />1 instances of obligation remaining<br />Obligation to clean up resource created at DepsFileParser.java:[line 81] is not discharged<br />Remaining obligations: {Reader x 1}</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76283');">
+<td>
+<span class="priority-2">OBL</span>
+</td>
+<td>com.google.javascript.jscomp.deps.JsFileParser.parseFile(String, String) may fail to clean up java.io.Reader</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76283" style="display: none;">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+<br />In class com.google.javascript.jscomp.deps.JsFileParser<br />In method com.google.javascript.jscomp.deps.JsFileParser.parseFile(String, String)<br />Reference type java.io.Reader<br />1 instances of obligation remaining<br />Obligation to clean up resource created at JsFileParser.java:[line 74] is not discharged<br />Remaining obligations: {Reader x 1}</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66304');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.AbstractCommandLineRunner.streamToOutputWriter(OutputStream): new java.io.OutputStreamWriter(OutputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66304" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.AbstractCommandLineRunner<br />In method com.google.javascript.jscomp.AbstractCommandLineRunner.streamToOutputWriter(OutputStream)<br />Called method new java.io.OutputStreamWriter(OutputStream)<br />At AbstractCommandLineRunner.java:[line 920]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66691');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.AliasStrings$StringInfo.encodeStringAsIdentifier(String, String): String.getBytes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66691" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.AliasStrings$StringInfo<br />In method com.google.javascript.jscomp.AliasStrings$StringInfo.encodeStringAsIdentifier(String, String)<br />Called method String.getBytes()<br />At AliasStrings.java:[line 446]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68811');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.DefaultPassConfig$89$1.process(Node, Node): new java.io.FileReader(String)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68811" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.DefaultPassConfig$89$1<br />In method com.google.javascript.jscomp.DefaultPassConfig$89$1.process(Node, Node)<br />Called method new java.io.FileReader(String)<br />At DefaultPassConfig.java:[line 2024]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76068');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.deps.DepsFileParser.parseFile(String): new java.io.FileReader(String)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76068" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.deps.DepsFileParser<br />In method com.google.javascript.jscomp.deps.DepsFileParser.parseFile(String)<br />Called method new java.io.FileReader(String)<br />At DepsFileParser.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76214');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.deps.JsFileParser.parseFile(String, String): new java.io.FileReader(String)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76214" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.deps.JsFileParser<br />In method com.google.javascript.jscomp.deps.JsFileParser.parseFile(String, String)<br />Called method new java.io.FileReader(String)<br />At JsFileParser.java:[line 74]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70823');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.JsMessage$Hash.hash64(String, long): String.getBytes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70823" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.JsMessage$Hash<br />In method com.google.javascript.jscomp.JsMessage$Hash.hash64(String, long)<br />Called method String.getBytes()<br />At JsMessage.java:[line 514]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72840');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.PerformanceTracker$CodeSizeEstimatePrinter.append(String): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72840" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.PerformanceTracker$CodeSizeEstimatePrinter<br />In method com.google.javascript.jscomp.PerformanceTracker$CodeSizeEstimatePrinter.append(String)<br />Called method String.getBytes()<br />At PerformanceTracker.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74280');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in com.google.javascript.jscomp.SourceFile$OnDisk.getCodeReader(): new java.io.FileReader(File)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74280" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br />In class com.google.javascript.jscomp.SourceFile$OnDisk<br />In method com.google.javascript.jscomp.SourceFile$OnDisk.getCodeReader()<br />Called method new java.io.FileReader(File)<br />At SourceFile.java:[line 388]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66971');">
+<td>
+<span class="priority-2">EI</span>
+</td>
+<td>com.google.javascript.jscomp.AnonymousFunctionNamingPolicy.getReservedCharacters() may expose internal representation by returning AnonymousFunctionNamingPolicy.reservedCharacters</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66971" style="display: none;">
+<a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+<br />In class com.google.javascript.jscomp.AnonymousFunctionNamingPolicy<br />In method com.google.javascript.jscomp.AnonymousFunctionNamingPolicy.getReservedCharacters()<br />Field com.google.javascript.jscomp.AnonymousFunctionNamingPolicy.reservedCharacters<br />At AnonymousFunctionNamingPolicy.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74205');">
+<td>
+<span class="priority-2">EI2</span>
+</td>
+<td>new com.google.javascript.jscomp.ShowByPathWarningsGuard(String[], ShowByPathWarningsGuard$ShowType) may expose internal representation by storing an externally mutable object into ShowByPathWarningsGuard.paths</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74205" style="display: none;">
+<a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+<br />In class com.google.javascript.jscomp.ShowByPathWarningsGuard<br />In method new com.google.javascript.jscomp.ShowByPathWarningsGuard(String[], ShowByPathWarningsGuard$ShowType)<br />Field com.google.javascript.jscomp.ShowByPathWarningsGuard.paths<br />Local variable named paths<br />At ShowByPathWarningsGuard.java:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68990');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.ACCESS_CONTROLS isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68990" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.ACCESS_CONTROLS<br />At DiagnosticGroups.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69042');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.CHECK_TYPES isn't final but should be</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69042" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.CHECK_TYPES<br />At DiagnosticGroups.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69094');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.CHECK_VARIABLES isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69094" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.CHECK_VARIABLES<br />At DiagnosticGroups.java:[line 168]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69146');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.CONSTANT_PROPERTY isn't final but should be</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69146" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.CONSTANT_PROPERTY<br />At DiagnosticGroups.java:[line 102]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69198');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.DEPRECATED isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69198" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.DEPRECATED<br />At DiagnosticGroups.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69250');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.GLOBAL_THIS isn't final but should be</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69250" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.GLOBAL_THIS<br />At DiagnosticGroups.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69302');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.MISSING_PROPERTIES isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69302" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.MISSING_PROPERTIES<br />At DiagnosticGroups.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69354');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.NON_STANDARD_JSDOC isn't final but should be</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69354" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.NON_STANDARD_JSDOC<br />At DiagnosticGroups.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69406');">
+<td>
+<span class="priority-1">MS</span>
+</td>
+<td>com.google.javascript.jscomp.DiagnosticGroups.VISIBILITY isn't final but should be</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69406" style="display: none;">
+<a href="#MS_SHOULD_BE_FINAL">Bug type MS_SHOULD_BE_FINAL (click for details)</a>
+<br />In class com.google.javascript.jscomp.DiagnosticGroups<br />Field com.google.javascript.jscomp.DiagnosticGroups.VISIBILITY<br />At DiagnosticGroups.java:[line 94]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71961');">
+<td>
+<span class="priority-2">IS</span>
+</td>
+<td>Inconsistent synchronization of com.google.javascript.jscomp.ParallelCompilerPass.worklist; locked 66% of time</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71961" style="display: none;">
+<a href="#IS2_INCONSISTENT_SYNC">Bug type IS2_INCONSISTENT_SYNC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ParallelCompilerPass<br />Field com.google.javascript.jscomp.ParallelCompilerPass.worklist<br />Synchronized 66% of the time<br />Unsynchronized access at ParallelCompilerPass.java:[line 125]<br />Synchronized access at ParallelCompilerPass.java:[line 220]<br />Synchronized access at ParallelCompilerPass.java:[line 223]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65772');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>com.google.debugging.sourcemap.SourceMapGeneratorV2.writeMetaMap(Appendable, String, List) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65772" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV2<br />In method com.google.debugging.sourcemap.SourceMapGeneratorV2.writeMetaMap(Appendable, String, List)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At SourceMapGeneratorV2.java:[line 893]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65984');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>com.google.debugging.sourcemap.SourceMapGeneratorV3.writeMetaMap(Appendable, String, List) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65984" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV3<br />In method com.google.debugging.sourcemap.SourceMapGeneratorV3.writeMetaMap(Appendable, String, List)<br />Called method new Long(long)<br />Should call Long.valueOf(long) instead<br />At SourceMapGeneratorV3.java:[line 599]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68241');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>com.google.javascript.jscomp.CompilerOptions.setDefineToNumberLiteral(String, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68241" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerOptions<br />In method com.google.javascript.jscomp.CompilerOptions.setDefineToNumberLiteral(String, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At CompilerOptions.java:[line 876]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68326');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>com.google.javascript.jscomp.CompilerOptions.setTweakToNumberLiteral(String, int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68326" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerOptions<br />In method com.google.javascript.jscomp.CompilerOptions.setTweakToNumberLiteral(String, int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At CompilerOptions.java:[line 908]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76959');">
+<td>
+<span class="priority-2">Bx</span>
+</td>
+<td>com.google.javascript.rhino.Context.setLanguageVersion(int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76959" style="display: none;">
+<a href="#DM_NUMBER_CTOR">Bug type DM_NUMBER_CTOR (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />In method com.google.javascript.rhino.Context.setLanguageVersion(int)<br />Called method new Integer(int)<br />Should call Integer.valueOf(int) instead<br />At Context.java:[line 492]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68135');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>com.google.javascript.jscomp.CompilerOptions.setDefineToBooleanLiteral(String, boolean) invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68135" style="display: none;">
+<a href="#DM_BOOLEAN_CTOR">Bug type DM_BOOLEAN_CTOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerOptions<br />In method com.google.javascript.jscomp.CompilerOptions.setDefineToBooleanLiteral(String, boolean)<br />At CompilerOptions.java:[line 860]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68188');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>com.google.javascript.jscomp.CompilerOptions.setTweakToBooleanLiteral(String, boolean) invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68188" style="display: none;">
+<a href="#DM_BOOLEAN_CTOR">Bug type DM_BOOLEAN_CTOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.CompilerOptions<br />In method com.google.javascript.jscomp.CompilerOptions.setTweakToBooleanLiteral(String, boolean)<br />At CompilerOptions.java:[line 892]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67528');">
+<td>
+<span class="priority-2">SBSC</span>
+</td>
+<td>com.google.javascript.jscomp.CoalesceVariableNames.visit(NodeTraversal, Node, Node) concatenates strings using + in a loop</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67528" style="display: none;">
+<a href="#SBSC_USE_STRINGBUFFER_CONCATENATION">Bug type SBSC_USE_STRINGBUFFER_CONCATENATION (click for details)</a>
+<br />In class com.google.javascript.jscomp.CoalesceVariableNames<br />In method com.google.javascript.jscomp.CoalesceVariableNames.visit(NodeTraversal, Node, Node)<br />At CoalesceVariableNames.java:[line 187]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71595');">
+<td>
+<span class="priority-2">SBSC</span>
+</td>
+<td>com.google.javascript.jscomp.NameGenerator.generateNextName() concatenates strings using + in a loop</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71595" style="display: none;">
+<a href="#SBSC_USE_STRINGBUFFER_CONCATENATION">Bug type SBSC_USE_STRINGBUFFER_CONCATENATION (click for details)</a>
+<br />In class com.google.javascript.jscomp.NameGenerator<br />In method com.google.javascript.jscomp.NameGenerator.generateNextName()<br />At NameGenerator.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76800');">
+<td>
+<span class="priority-2">SBSC</span>
+</td>
+<td>com.google.javascript.jscomp.parsing.JsDocInfoParser.parseTypeName(JsDocToken) concatenates strings using + in a loop</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76800" style="display: none;">
+<a href="#SBSC_USE_STRINGBUFFER_CONCATENATION">Bug type SBSC_USE_STRINGBUFFER_CONCATENATION (click for details)</a>
+<br />In class com.google.javascript.jscomp.parsing.JsDocInfoParser<br />In method com.google.javascript.jscomp.parsing.JsDocInfoParser.parseTypeName(JsDocToken)<br />At JsDocInfoParser.java:[line 1732]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.debugging.sourcemap.SourceMapConsumerV1$FileName be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapConsumerV1$FileName<br />At SourceMapConsumerV1.java:[lines 203-210]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65737');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.debugging.sourcemap.SourceMapGeneratorV1$UsedMappingCheck be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65737" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV1$UsedMappingCheck<br />At SourceMapGeneratorV1.java:[lines 477-487]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65949');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.debugging.sourcemap.SourceMapGeneratorV2$UsedMappingCheck be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65949" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV2$UsedMappingCheck<br />At SourceMapGeneratorV2.java:[lines 722-732]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66161');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.debugging.sourcemap.SourceMapGeneratorV3$UsedMappingCheck be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66161" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.debugging.sourcemap.SourceMapGeneratorV3$UsedMappingCheck<br />At SourceMapGeneratorV3.java:[lines 428-438]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66813');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.AmbiguateProperties$PropertyGraphNode be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66813" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.AmbiguateProperties$PropertyGraphNode<br />At AmbiguateProperties.java:[lines 401-420]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66848');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.AnalyzePrototypeProperties$GlobalFunction be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66848" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.AnalyzePrototypeProperties$GlobalFunction<br />At AnalyzePrototypeProperties.java:[lines 465-496]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66883');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.AnalyzePrototypeProperties$NameContext be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66883" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.AnalyzePrototypeProperties$NameContext<br />At AnalyzePrototypeProperties.java:[lines 607-609]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67493');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.CheckUnreachableCode$ReachablePredicate be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67493" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckUnreachableCode$ReachablePredicate<br />At CheckUnreachableCode.java:[lines 91-111]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68741');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.CreateSyntheticBlocks$Marker be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68741" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.CreateSyntheticBlocks$Marker<br />At CreateSyntheticBlocks.java:[lines 64-67]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68776');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.CrossModuleCodeMotion$Declaration be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68776" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.CrossModuleCodeMotion$Declaration<br />At CrossModuleCodeMotion.java:[lines 191-194]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70612');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.InlineVariables$IdentifyConstants be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70612" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.InlineVariables$IdentifyConstants<br />At InlineVariables.java:[lines 111-114]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70647');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.InlineVariables$IdentifyLocals be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70647" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.InlineVariables$IdentifyLocals<br />At InlineVariables.java:[lines 121-124]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71701');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.NameReferenceGraphReport$DiGraphNodeComparator be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71701" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.NameReferenceGraphReport$DiGraphNodeComparator<br />At NameReferenceGraphReport.java:[lines 283-305]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71926');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.Normalize$ScopeTicklingCallback be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71926" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.Normalize$ScopeTicklingCallback<br />At Normalize.java:[lines 755-778]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73103');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.ProcessClosurePrimitives$UnrecognizedRequire be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73103" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ProcessClosurePrimitives$UnrecognizedRequire<br />At ProcessClosurePrimitives.java:[lines 1083-1087]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73543');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.RenameProperties$Property be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73543" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.RenameProperties$Property<br />At RenameProperties.java:[lines 570-574]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73578');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.RenameProperties$PropertyAffinity be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73578" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.RenameProperties$PropertyAffinity<br />At RenameProperties.java:[lines 577-587]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73778');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.ReplaceStrings$Config be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73778" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ReplaceStrings$Config<br />At ReplaceStrings.java:[lines 78-81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73813');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.ReplaceStrings$Location be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73813" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ReplaceStrings$Location<br />At ReplaceStrings.java:[lines 111-115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73917');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.ScopedAliases$AliasedNode be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73917" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ScopedAliases$AliasedNode<br />At ScopedAliases.java:[lines 142-150]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73952');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should com.google.javascript.jscomp.ScopedAliases$AliasedTypeNode be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73952" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ScopedAliases$AliasedTypeNode<br />At ScopedAliases.java:[lines 158-165]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73727');">
+<td>
+<span class="priority-2">SS</span>
+</td>
+<td>Unread field: com.google.javascript.jscomp.ReplaceStrings.DEFAULT_PLACEHOLDER_TOKEN; should this field be static?</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73727" style="display: none;">
+<a href="#SS_SHOULD_BE_STATIC">Bug type SS_SHOULD_BE_STATIC (click for details)</a>
+<br />In class com.google.javascript.jscomp.ReplaceStrings<br />Field com.google.javascript.jscomp.ReplaceStrings.DEFAULT_PLACEHOLDER_TOKEN<br />At ReplaceStrings.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67864');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: com.google.javascript.jscomp.CommandLineRunner$Flags.jscomp_error</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67864" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.CommandLineRunner$Flags<br />Field com.google.javascript.jscomp.CommandLineRunner$Flags.jscomp_error<br />At CommandLineRunner.java:[line 227]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67915');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: com.google.javascript.jscomp.CommandLineRunner$Flags.jscomp_off</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67915" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.CommandLineRunner$Flags<br />Field com.google.javascript.jscomp.CommandLineRunner$Flags.jscomp_off<br />At CommandLineRunner.java:[line 243]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67966');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: com.google.javascript.jscomp.CommandLineRunner$Flags.jscomp_warning</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67966" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.CommandLineRunner$Flags<br />Field com.google.javascript.jscomp.CommandLineRunner$Flags.jscomp_warning<br />At CommandLineRunner.java:[line 235]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71544');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread field: com.google.javascript.jscomp.NameAnalyzer$JsNameRefNode.node</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71544" style="display: none;">
+<a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+<br />In class com.google.javascript.jscomp.NameAnalyzer$JsNameRefNode<br />Field com.google.javascript.jscomp.NameAnalyzer$JsNameRefNode.node<br />At NameAnalyzer.java:[line 297]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77111');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: com.google.javascript.rhino.Context.instructionCount</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77111" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />Field com.google.javascript.rhino.Context.instructionCount<br />In Context.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77158');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: com.google.javascript.rhino.Context.interpreterSecurityDomain</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77158" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />Field com.google.javascript.rhino.Context.interpreterSecurityDomain<br />In Context.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77205');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: com.google.javascript.rhino.Context.iterating</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77205" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />Field com.google.javascript.rhino.Context.iterating<br />In Context.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77252');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: com.google.javascript.rhino.Context.lastInterpreterFrame</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77252" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />Field com.google.javascript.rhino.Context.lastInterpreterFrame<br />In Context.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77299');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: com.google.javascript.rhino.Context.previousInterpreterInvocations</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77299" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />Field com.google.javascript.rhino.Context.previousInterpreterInvocations<br />In Context.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77346');">
+<td>
+<span class="priority-2">UuF</span>
+</td>
+<td>Unused field: com.google.javascript.rhino.Context.useDynamicScope</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77346" style="display: none;">
+<a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />Field com.google.javascript.rhino.Context.useDynamicScope<br />In Context.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66624');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.jscomp.AliasStrings.outputStringUsage() makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66624" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.AliasStrings<br />In method com.google.javascript.jscomp.AliasStrings.outputStringUsage()<br />Field com.google.javascript.jscomp.AliasStrings.stringInfoMap<br />At AliasStrings.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67373');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback.visitScriptNode(NodeTraversal, Node) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67373" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback<br />In method com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback.visitScriptNode(NodeTraversal, Node)<br />Field com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback.ctors<br />At CheckProvides.java:[line 107]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73423');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.jscomp.RenameProperties.process(Node, Node) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73423" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.RenameProperties<br />In method com.google.javascript.jscomp.RenameProperties.process(Node, Node)<br />Field com.google.javascript.jscomp.RenameProperties.callNodeToParentMap<br />At RenameProperties.java:[line 245]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74349');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.jscomp.SpecializeModule.addDummyVarDeclarationsToInitialModule(JSModule) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74349" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.SpecializeModule<br />In method com.google.javascript.jscomp.SpecializeModule.addDummyVarDeclarationsToInitialModule(JSModule)<br />Field com.google.javascript.jscomp.SpecializeModule.functionInfoBySpecializedFunctionNode<br />At SpecializeModule.java:[line 294]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74416');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.jscomp.SpecializeModule.replaceOriginalModuleInputsWithSpecialized() makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74416" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.SpecializeModule<br />In method com.google.javascript.jscomp.SpecializeModule.replaceOriginalModuleInputsWithSpecialized()<br />Field com.google.javascript.jscomp.SpecializeModule.specializedInputRootsByOriginal<br />At SpecializeModule.java:[line 268]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74829');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.jscomp.Tracer$ThreadTrace.toString() makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74829" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.jscomp.Tracer$ThreadTrace<br />In method com.google.javascript.jscomp.Tracer$ThreadTrace.toString()<br />Field com.google.javascript.jscomp.Tracer$ThreadTrace.stats<br />At Tracer.java:[line 903]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N79092');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>new com.google.javascript.rhino.jstype.RecordType(JSTypeRegistry, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N79092" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.RecordType<br />In method new com.google.javascript.rhino.jstype.RecordType(JSTypeRegistry, Map)<br />At RecordType.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N79145');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>com.google.javascript.rhino.jstype.RecordType.toString() makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N79145" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.RecordType<br />In method com.google.javascript.rhino.jstype.RecordType.toString()<br />Field com.google.javascript.rhino.jstype.RecordType.properties<br />At RecordType.java:[line 300]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70056');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>instanceof will always return true for all non-null values in com.google.javascript.jscomp.FunctionTypeBuilder.inferInheritance(JSDocInfo), since all com.google.javascript.rhino.jstype.FunctionType are instances of com.google.javascript.rhino.jstype.FunctionType</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70056" style="display: none;">
+<a href="#BC_VACUOUS_INSTANCEOF">Bug type BC_VACUOUS_INSTANCEOF (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionTypeBuilder<br />In method com.google.javascript.jscomp.FunctionTypeBuilder.inferInheritance(JSDocInfo)<br />Actual type com.google.javascript.rhino.jstype.FunctionType<br />Expected com.google.javascript.rhino.jstype.FunctionType<br />At FunctionTypeBuilder.java:[line 378]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67127');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to rhs in com.google.javascript.jscomp.CheckGlobalThis.shouldTraverse(NodeTraversal, Node, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67127" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckGlobalThis<br />In method com.google.javascript.jscomp.CheckGlobalThis.shouldTraverse(NodeTraversal, Node, Node)<br />Local variable named rhs<br />At CheckGlobalThis.java:[line 124]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67197');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to cfg in com.google.javascript.jscomp.CheckPropertyOrder.checkConstructor(Node, ObjectType, String, String)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67197" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckPropertyOrder<br />In method com.google.javascript.jscomp.CheckPropertyOrder.checkConstructor(Node, ObjectType, String, String)<br />Local variable named cfg<br />At CheckPropertyOrder.java:[line 125]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67741');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to greatGreatGramps in com.google.javascript.jscomp.CollapseProperties.updateSimpleDeclaration(String, GlobalNamespace$Name, GlobalNamespace$Ref)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67741" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.CollapseProperties<br />In method com.google.javascript.jscomp.CollapseProperties.updateSimpleDeclaration(String, GlobalNamespace$Name, GlobalNamespace$Ref)<br />Local variable named greatGreatGramps<br />At CollapseProperties.java:[line 525]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69458');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to scope in com.google.javascript.jscomp.DisambiguateProperties.process(Node, Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69458" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.DisambiguateProperties<br />In method com.google.javascript.jscomp.DisambiguateProperties.process(Node, Node)<br />Local variable named scope<br />At DisambiguateProperties.java:[line 286]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69528');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to extractedConditional in com.google.javascript.jscomp.ExpressionDecomposer.exposeExpression(Node, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69528" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.ExpressionDecomposer<br />In method com.google.javascript.jscomp.ExpressionDecomposer.exposeExpression(Node, Node)<br />Local variable named extractedConditional<br />At ExpressionDecomposer.java:[line 233]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69651');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to functionJSDocInfo in com.google.javascript.jscomp.ExternExportsPass$Export.checkForFunctionsWithUnknownTypes(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69651" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.ExternExportsPass$Export<br />In method com.google.javascript.jscomp.ExternExportsPass$Export.checkForFunctionsWithUnknownTypes(Node)<br />Local variable named functionJSDocInfo<br />At ExternExportsPass.java:[line 234]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69774');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to defs in com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(NodeTraversal, Node, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69774" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates<br />In method com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(NodeTraversal, Node, Node)<br />Local variable named defs<br />At FlowSensitiveInlineVariables.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70189');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to info in com.google.javascript.jscomp.GlobalNamespace$Name.isSimpleStubDeclaration()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70189" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.GlobalNamespace$Name<br />In method com.google.javascript.jscomp.GlobalNamespace$Name.isSimpleStubDeclaration()<br />Local variable named info<br />At GlobalNamespace.java:[line 932]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76535');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to uNode in com.google.javascript.jscomp.graph.LinkedUndirectedGraph.getNeighborNodes(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76535" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.graph.LinkedUndirectedGraph<br />In method com.google.javascript.jscomp.graph.LinkedUndirectedGraph.getNeighborNodes(Object)<br />Local variable named uNode<br />At LinkedUndirectedGraph.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70542');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to newCode in com.google.javascript.jscomp.InlineFunctions$Inline.inlineFunction(NodeTraversal, Node, InlineFunctions$FunctionState, FunctionInjector$InliningMode)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70542" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.InlineFunctions$Inline<br />In method com.google.javascript.jscomp.InlineFunctions$Inline.inlineFunction(NodeTraversal, Node, InlineFunctions$FunctionState, FunctionInjector$InliningMode)<br />Local variable named newCode<br />At InlineFunctions.java:[line 631]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76666');">
+<td>
+<span class="priority-1">DLS</span>
+</td>
+<td>Dead store to token in com.google.javascript.jscomp.parsing.JsDocInfoParser.parseResultType(JsDocToken)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76666" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.parsing.JsDocInfoParser<br />In method com.google.javascript.jscomp.parsing.JsDocInfoParser.parseResultType(JsDocToken)<br />Local variable named token<br />At JsDocInfoParser.java:[line 1929]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72527');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to increment in com.google.javascript.jscomp.PeepholeRemoveDeadCode.tryFoldFor(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72527" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeRemoveDeadCode<br />In method com.google.javascript.jscomp.PeepholeRemoveDeadCode.tryFoldFor(Node)<br />Local variable named increment<br />At PeepholeRemoveDeadCode.java:[line 774]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72597');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to init in com.google.javascript.jscomp.PeepholeRemoveDeadCode.tryFoldFor(Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72597" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeRemoveDeadCode<br />In method com.google.javascript.jscomp.PeepholeRemoveDeadCode.tryFoldFor(Node)<br />Local variable named init<br />At PeepholeRemoveDeadCode.java:[line 770]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72667');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to cond in com.google.javascript.jscomp.PeepholeRemoveDeadCode.tryFoldIf(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72667" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeRemoveDeadCode<br />In method com.google.javascript.jscomp.PeepholeRemoveDeadCode.tryFoldIf(Node)<br />Local variable named cond<br />At PeepholeRemoveDeadCode.java:[line 669]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73244');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to name in com.google.javascript.jscomp.PureFunctionIdentifier$SideEffectPropagationCallback.traverseEdge(PureFunctionIdentifier$FunctionInformation, Node, PureFunctionIdentifier$FunctionInformation)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73244" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.PureFunctionIdentifier$SideEffectPropagationCallback<br />In method com.google.javascript.jscomp.PureFunctionIdentifier$SideEffectPropagationCallback.traverseEdge(PureFunctionIdentifier$FunctionInformation, Node, PureFunctionIdentifier$FunctionInformation)<br />Local variable named name<br />At PureFunctionIdentifier.java:[line 805]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74896');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to functionType in com.google.javascript.jscomp.TypeCheck.shouldTraverse(NodeTraversal, Node, Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74896" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeCheck<br />In method com.google.javascript.jscomp.TypeCheck.shouldTraverse(NodeTraversal, Node, Node)<br />Local variable named functionType<br />At TypeCheck.java:[line 416]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74963');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to outerThis in com.google.javascript.jscomp.TypeCheck.shouldTraverse(NodeTraversal, Node, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74963" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeCheck<br />In method com.google.javascript.jscomp.TypeCheck.shouldTraverse(NodeTraversal, Node, Node)<br />Local variable named outerThis<br />At TypeCheck.java:[line 414]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75033');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to info in com.google.javascript.jscomp.TypeCheck.visitFunction(NodeTraversal, Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75033" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeCheck<br />In method com.google.javascript.jscomp.TypeCheck.visitFunction(NodeTraversal, Node)<br />Local variable named info<br />At TypeCheck.java:[line 1396]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75839');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to body in com.google.javascript.jscomp.TypedScopeCreator$LocalScopeBuilder.declareArguments(Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75839" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$LocalScopeBuilder<br />In method com.google.javascript.jscomp.TypedScopeCreator$LocalScopeBuilder.declareArguments(Node)<br />Local variable named body<br />At TypedScopeCreator.java:[line 1736]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78469');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to arrayPrototype in com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N78469" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.JSTypeRegistry<br />In method com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()<br />Local variable named arrayPrototype<br />At JSTypeRegistry.java:[line 314]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78539');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to booleanPrototype in com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78539" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.JSTypeRegistry<br />In method com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()<br />Local variable named booleanPrototype<br />At JSTypeRegistry.java:[line 325]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78609');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to datePrototype in com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N78609" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.JSTypeRegistry<br />In method com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()<br />Local variable named datePrototype<br />At JSTypeRegistry.java:[line 342]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78679');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to numberPrototype in com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78679" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.JSTypeRegistry<br />In method com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()<br />Local variable named numberPrototype<br />At JSTypeRegistry.java:[line 422]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78749');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to regexpPrototype in com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N78749" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.JSTypeRegistry<br />In method com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()<br />Local variable named regexpPrototype<br />At JSTypeRegistry.java:[line 438]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78819');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to stringPrototype in com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78819" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class com.google.javascript.rhino.jstype.JSTypeRegistry<br />In method com.google.javascript.rhino.jstype.JSTypeRegistry.initializeBuiltInTypes()<br />Local variable named stringPrototype<br />At JSTypeRegistry.java:[line 449]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78381');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to keys rather than field with same name in com.google.javascript.rhino.UintMap.ensureIndex(int, boolean)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N78381" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD">Bug type DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.UintMap<br />In method com.google.javascript.rhino.UintMap.ensureIndex(int, boolean)<br />Local variable named keys<br />Did you mean to refer to the field com.google.javascript.rhino.UintMap.keys?<br />At UintMap.java:[line 360]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67581');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in com.google.javascript.jscomp.CodeConsumer.addNumber(double)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67581" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class com.google.javascript.jscomp.CodeConsumer<br />In method com.google.javascript.jscomp.CodeConsumer.addNumber(double)<br />At CodeConsumer.java:[line 246]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72281');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in com.google.javascript.jscomp.PeepholeFoldConstants.performArithmeticOp(int, Node, Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72281" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeFoldConstants<br />In method com.google.javascript.jscomp.PeepholeFoldConstants.performArithmeticOp(int, Node, Node)<br />At PeepholeFoldConstants.java:[line 737]<br />Another occurrence at PeepholeFoldConstants.java:[line 739]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77393');">
+<td>
+<span class="priority-1">FE</span>
+</td>
+<td>Test for floating point equality in com.google.javascript.rhino.DToA.JS_dtoa(double, int, boolean, int, boolean[], StringBuffer)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77393" style="display: none;">
+<a href="#FE_FLOATING_POINT_EQUALITY">Bug type FE_FLOATING_POINT_EQUALITY (click for details)</a>
+<br />In class com.google.javascript.rhino.DToA<br />In method com.google.javascript.rhino.DToA.JS_dtoa(double, int, boolean, int, boolean[], StringBuffer)<br />At DToA.java:[line 601]<br />Another occurrence at DToA.java:[line 824]<br />Another occurrence at DToA.java:[line 839]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67634');">
+<td>
+<span class="priority-2">ICAST</span>
+</td>
+<td>Integral division result cast to double or float in com.google.javascript.jscomp.CodeConsumer.addNumber(double)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67634" style="display: none;">
+<a href="#ICAST_IDIV_CAST_TO_DOUBLE">Bug type ICAST_IDIV_CAST_TO_DOUBLE (click for details)</a>
+<br />In class com.google.javascript.jscomp.CodeConsumer<br />In method com.google.javascript.jscomp.CodeConsumer.addNumber(double)<br />At CodeConsumer.java:[line 246]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76413');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.google.javascript.jscomp.graph.LinkedDirectedGraph.getDirectedPredNodes(DiGraph$DiGraphNode)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76413" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.graph.LinkedDirectedGraph<br />In method com.google.javascript.jscomp.graph.LinkedDirectedGraph.getDirectedPredNodes(DiGraph$DiGraphNode)<br />Value loaded from dNode<br />At LinkedDirectedGraph.java:[line 231]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76474');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.google.javascript.jscomp.graph.LinkedDirectedGraph.getDirectedSuccNodes(DiGraph$DiGraphNode)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76474" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.graph.LinkedDirectedGraph<br />In method com.google.javascript.jscomp.graph.LinkedDirectedGraph.getDirectedSuccNodes(DiGraph$DiGraphNode)<br />Value loaded from dNode<br />At LinkedDirectedGraph.java:[line 244]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70945');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.google.javascript.jscomp.JsMessageVisitor.extractFromCallNode(JsMessage$Builder, Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70945" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.JsMessageVisitor<br />In method com.google.javascript.jscomp.JsMessageVisitor.extractFromCallNode(JsMessage$Builder, Node)<br />Value loaded from stringLiteralNode<br />At JsMessageVisitor.java:[line 620]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73666');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.google.javascript.jscomp.ReplaceMessages.checkNode(Node, int)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73666" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.ReplaceMessages<br />In method com.google.javascript.jscomp.ReplaceMessages.checkNode(Node, int)<br />Value loaded from node<br />At ReplaceMessages.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73987');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.google.javascript.jscomp.ScopedAliases$Traversal.getSourceRegion(Node)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73987" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.ScopedAliases$Traversal<br />In method com.google.javascript.jscomp.ScopedAliases$Traversal.getSourceRegion(Node)<br />Value loaded from next<br />At ScopedAliases.java:[line 241]<br />Another occurrence at ScopedAliases.java:[line 242]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75451');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Load of known null value in com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.createEnumTypeFromNodes(Node, String, JSDocInfo, Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75451" style="display: none;">
+<a href="#NP_LOAD_OF_KNOWN_NULL_VALUE">Bug type NP_LOAD_OF_KNOWN_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder<br />In method com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.createEnumTypeFromNodes(Node, String, JSDocInfo, Node)<br />Value loaded from keyName<br />At TypedScopeCreator.java:[line 943]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70259');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of com.google.javascript.jscomp.GlobalNamespace$Name.refs, which is known to be non-null in com.google.javascript.jscomp.GlobalNamespace$Name.removeRef(GlobalNamespace$Ref)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70259" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.GlobalNamespace$Name<br />In method com.google.javascript.jscomp.GlobalNamespace$Name.removeRef(GlobalNamespace$Ref)<br />Value loaded from field com.google.javascript.jscomp.GlobalNamespace$Name.refs<br />Redundant null check at GlobalNamespace.java:[line 868]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74059');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of next which is known to be null in com.google.javascript.jscomp.ScopedAliases$Traversal.getSourceRegion(Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74059" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.ScopedAliases$Traversal<br />In method com.google.javascript.jscomp.ScopedAliases$Traversal.getSourceRegion(Node)<br />Value loaded from next<br />Redundant null check at ScopedAliases.java:[line 241]<br />Another occurrence at ScopedAliases.java:[line 242]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74132');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of leftType, which is known to be non-null in com.google.javascript.jscomp.SemanticReverseAbstractInterpreter.caseAndOrNotShortCircuiting(Node, Node, FlowScope, boolean)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74132" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.SemanticReverseAbstractInterpreter<br />In method com.google.javascript.jscomp.SemanticReverseAbstractInterpreter.caseAndOrNotShortCircuiting(Node, Node, FlowScope, boolean)<br />Value loaded from leftType<br />Redundant null check at SemanticReverseAbstractInterpreter.java:[line 345]<br />Another occurrence at SemanticReverseAbstractInterpreter.java:[line 348]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75512');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of valueType, which is known to be non-null in com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(NodeTraversal, JSDocInfo, Node, Node, Node)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75512" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder<br />In method com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(NodeTraversal, JSDocInfo, Node, Node, Node)<br />Value loaded from valueType<br />Redundant null check at TypedScopeCreator.java:[line 1383]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78036');">
+<td>
+<span class="priority-2">RCN</span>
+</td>
+<td>Redundant nullcheck of com.google.javascript.rhino.RhinoException.sourceName, which is known to be non-null in com.google.javascript.rhino.RhinoException.getMessage()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78036" style="display: none;">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+<br />In class com.google.javascript.rhino.RhinoException<br />In method com.google.javascript.rhino.RhinoException.getMessage()<br />Value loaded from field com.google.javascript.rhino.RhinoException.sourceName<br />Redundant null check at RhinoException.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68516');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Return value of com.google.javascript.rhino.jstype.StaticSlot.getType() ignored, but method has no side effect</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68516" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT">Bug type RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ConcreteType$ConcreteFunctionType<br />In method com.google.javascript.jscomp.ConcreteType$ConcreteFunctionType.toString()<br />Called method com.google.javascript.rhino.jstype.StaticSlot.getType()<br />At ConcreteType.java:[line 425]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66571');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.AliasExternals$GetAliasableNames.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66571" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.AliasExternals$GetAliasableNames<br />In method com.google.javascript.jscomp.AliasExternals$GetAliasableNames.visit(NodeTraversal, Node, Node)<br />At AliasExternals.java:[lines 473-479]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66760');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.AmbiguateProperties$ProcessProperties.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66760" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.AmbiguateProperties$ProcessProperties<br />In method com.google.javascript.jscomp.AmbiguateProperties$ProcessProperties.visit(NodeTraversal, Node, Node)<br />At AmbiguateProperties.java:[lines 447-477]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66918');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.AnonymousFunctionNamingCallback.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66918" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.AnonymousFunctionNamingCallback<br />In method com.google.javascript.jscomp.AnonymousFunctionNamingCallback.visit(NodeTraversal, Node, Node)<br />At AnonymousFunctionNamingCallback.java:[lines 68-104]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76015');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ant.AntErrorManager.println(CheckLevel, JSError) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76015" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ant.AntErrorManager<br />In method com.google.javascript.jscomp.ant.AntErrorManager.println(CheckLevel, JSError)<br />At AntErrorManager.java:[lines 43-48]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67074');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.CheckAccessControls.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67074" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckAccessControls<br />In method com.google.javascript.jscomp.CheckAccessControls.visit(NodeTraversal, Node, Node)<br />At CheckAccessControls.java:[lines 215-226]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67320');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67320" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback<br />In method com.google.javascript.jscomp.CheckProvides$CheckProvidesCallback.visit(NodeTraversal, Node, Node)<br />At CheckProvides.java:[lines 65-77]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67440');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.CheckRequiresForConstructors$CheckRequiresForConstructorsCallback.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67440" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.CheckRequiresForConstructors$CheckRequiresForConstructorsCallback<br />In method com.google.javascript.jscomp.CheckRequiresForConstructors$CheckRequiresForConstructorsCallback.visit(NodeTraversal, Node, Node)<br />At CheckRequiresForConstructors.java:[lines 84-124]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67688');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.CodeGenerator.jsString(String, CharsetEncoder) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N67688" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.CodeGenerator<br />In method com.google.javascript.jscomp.CodeGenerator.jsString(String, CharsetEncoder)<br />At CodeGenerator.java:[lines 948-950]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67811');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclaration(GlobalNamespace$Name, String, boolean) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N67811" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.CollapseProperties<br />In method com.google.javascript.jscomp.CollapseProperties.updateObjLitOrFunctionDeclaration(GlobalNamespace$Name, String, boolean)<br />At CollapseProperties.java:[lines 621-630]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68582');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ControlFlowAnalysis.shouldTraverse(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68582" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ControlFlowAnalysis<br />In method com.google.javascript.jscomp.ControlFlowAnalysis.shouldTraverse(NodeTraversal, Node, Node)<br />At ControlFlowAnalysis.java:[lines 251-287]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68635');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ControlStructureCheck.check(Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N68635" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ControlStructureCheck<br />In method com.google.javascript.jscomp.ControlStructureCheck.check(Node)<br />At ControlStructureCheck.java:[lines 52-64]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68688');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ConvertToDottedProperties.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N68688" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ConvertToDottedProperties<br />In method com.google.javascript.jscomp.ConvertToDottedProperties.visit(NodeTraversal, Node, Node)<br />At ConvertToDottedProperties.java:[lines 45-63]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69598');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ExternExportsPass.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69598" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ExternExportsPass<br />In method com.google.javascript.jscomp.ExternExportsPass.visit(NodeTraversal, Node, Node)<br />At ExternExportsPass.java:[lines 445-469]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69721');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.FindExportableNodes.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N69721" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.FindExportableNodes<br />In method com.google.javascript.jscomp.FindExportableNodes.visit(NodeTraversal, Node, Node)<br />At FindExportableNodes.java:[lines 71-92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69841');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.FunctionArgumentInjector.gatherLocalNames(Node, Set) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N69841" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.FunctionArgumentInjector<br />In method com.google.javascript.jscomp.FunctionArgumentInjector.gatherLocalNames(Node, Set)<br />At FunctionArgumentInjector.java:[lines 437-440]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70136');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.GlobalNamespace$BuildGlobalNamespace.collect(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70136" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.GlobalNamespace$BuildGlobalNamespace<br />In method com.google.javascript.jscomp.GlobalNamespace$BuildGlobalNamespace.collect(NodeTraversal, Node, Node)<br />At GlobalNamespace.java:[lines 290-309]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70330');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.InferJSDocInfo.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70330" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.InferJSDocInfo<br />In method com.google.javascript.jscomp.InferJSDocInfo.visit(NodeTraversal, Node, Node)<br />At InferJSDocInfo.java:[lines 85-170]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70383');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.InlineFunctions$CallVisitor.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70383" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.InlineFunctions$CallVisitor<br />In method com.google.javascript.jscomp.InlineFunctions$CallVisitor.visit(NodeTraversal, Node, Node)<br />At InlineFunctions.java:[lines 381-406]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70436');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.InlineFunctions$FindCandidateFunctions.findFunctionExpressions(NodeTraversal, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70436" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.InlineFunctions$FindCandidateFunctions<br />In method com.google.javascript.jscomp.InlineFunctions$FindCandidateFunctions.findFunctionExpressions(NodeTraversal, Node)<br />At InlineFunctions.java:[lines 205-223]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70489');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.InlineFunctions$FindCandidateFunctions.findNamedFunctions(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N70489" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.InlineFunctions$FindCandidateFunctions<br />In method com.google.javascript.jscomp.InlineFunctions$FindCandidateFunctions.findNamedFunctions(NodeTraversal, Node, Node)<br />At InlineFunctions.java:[lines 173-192]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70892');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.JsMessage$Hash.hash64(byte[], int, int, long) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N70892" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.JsMessage$Hash<br />In method com.google.javascript.jscomp.JsMessage$Hash.hash64(byte[], int, int, long)<br />At JsMessage.java:[lines 568-618]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71120');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.LoggerErrorManager.println(CheckLevel, JSError) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71120" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.LoggerErrorManager<br />In method com.google.javascript.jscomp.LoggerErrorManager.println(CheckLevel, JSError)<br />At LoggerErrorManager.java:[lines 51-56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71173');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.MakeDeclaredNamesUnique.shouldTraverse(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71173" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.MakeDeclaredNamesUnique<br />In method com.google.javascript.jscomp.MakeDeclaredNamesUnique.shouldTraverse(NodeTraversal, Node, Node)<br />At MakeDeclaredNamesUnique.java:[lines 108-133]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71226');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.MakeDeclaredNamesUnique.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71226" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.MakeDeclaredNamesUnique<br />In method com.google.javascript.jscomp.MakeDeclaredNamesUnique.visit(NodeTraversal, Node, Node)<br />At MakeDeclaredNamesUnique.java:[lines 143-164]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71279');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.MethodCompilerPass$GatherSignatures.processPrototypeParent(NodeTraversal, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71279" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.MethodCompilerPass$GatherSignatures<br />In method com.google.javascript.jscomp.MethodCompilerPass$GatherSignatures.processPrototypeParent(NodeTraversal, Node)<br />At MethodCompilerPass.java:[lines 231-251]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71332');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.MinimizeExitPoints.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71332" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.MinimizeExitPoints<br />In method com.google.javascript.jscomp.MinimizeExitPoints.visit(NodeTraversal, Node, Node)<br />At MinimizeExitPoints.java:[lines 52-79]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71648');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.NameReferenceGraphConstruction$Traversal.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71648" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.NameReferenceGraphConstruction$Traversal<br />In method com.google.javascript.jscomp.NameReferenceGraphConstruction$Traversal.visit(NodeTraversal, Node, Node)<br />At NameReferenceGraphConstruction.java:[lines 168-236]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71820');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.Normalize$NormalizeStatements.extractForInitializer(Node, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N71820" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.Normalize$NormalizeStatements<br />In method com.google.javascript.jscomp.Normalize$NormalizeStatements.extractForInitializer(Node, Node, Node)<br />At Normalize.java:[lines 503-538]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71873');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.Normalize$NormalizeStatements.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N71873" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.Normalize$NormalizeStatements<br />In method com.google.javascript.jscomp.Normalize$NormalizeStatements.visit(NodeTraversal, Node, Node)<br />At Normalize.java:[lines 319-341]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76853');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.parsing.JsDocInfoParser.parse() where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N76853" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.parsing.JsDocInfoParser<br />In method com.google.javascript.jscomp.parsing.JsDocInfoParser.parse()<br />At JsDocInfoParser.java:[lines 813-863]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76906');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.parsing.JsDocTokenStream.getJsDocToken() where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N76906" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.parsing.JsDocTokenStream<br />In method com.google.javascript.jscomp.parsing.JsDocTokenStream.getJsDocToken()<br />At JsDocTokenStream.java:[lines 77-154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72421');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.PeepholeFoldConstants.tryFoldTypeof(Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72421" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeFoldConstants<br />In method com.google.javascript.jscomp.PeepholeFoldConstants.tryFoldTypeof(Node)<br />At PeepholeFoldConstants.java:[lines 283-309]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72474');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.PeepholeFoldConstants.tryReduceOperandsForOp(Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72474" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeFoldConstants<br />In method com.google.javascript.jscomp.PeepholeFoldConstants.tryReduceOperandsForOp(Node)<br />At PeepholeFoldConstants.java:[lines 177-211]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72734');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntax.makeForwardSlashBracketSafe(Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72734" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntax<br />In method com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntax.makeForwardSlashBracketSafe(Node)<br />At PeepholeSubstituteAlternateSyntax.java:[lines 1355-1359]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72787');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntax.tryReduceReturn(Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N72787" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntax<br />In method com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntax.tryReduceReturn(Node)<br />At PeepholeSubstituteAlternateSyntax.java:[lines 196-208]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72909');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.PrepareAst$PrepareAnnotations.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N72909" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.PrepareAst$PrepareAnnotations<br />In method com.google.javascript.jscomp.PrepareAst$PrepareAnnotations.visit(NodeTraversal, Node, Node)<br />At PrepareAst.java:[lines 150-157]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73050');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ProcessClosurePrimitives.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73050" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ProcessClosurePrimitives<br />In method com.google.javascript.jscomp.ProcessClosurePrimitives.visit(NodeTraversal, Node, Node)<br />At ProcessClosurePrimitives.java:[lines 171-256]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73138');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ProcessDefines$CollectDefines.updateAssignAllowedStack(Node, boolean) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73138" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ProcessDefines$CollectDefines<br />In method com.google.javascript.jscomp.ProcessDefines$CollectDefines.updateAssignAllowedStack(Node, boolean)<br />At ProcessDefines.java:[lines 377-388]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73191');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.ProcessTweaks$CollectTweaks.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73191" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.ProcessTweaks$CollectTweaks<br />In method com.google.javascript.jscomp.ProcessTweaks$CollectTweaks.visit(NodeTraversal, Node, Node)<br />At ProcessTweaks.java:[lines 375-423]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73317');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.RemoveUnusedVars.traverseNode(Node, Node, Scope) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73317" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.RemoveUnusedVars<br />In method com.google.javascript.jscomp.RemoveUnusedVars.traverseNode(Node, Node, Scope)<br />At RemoveUnusedVars.java:[lines 193-284]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73370');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.RenameLabels$ProcessLabels.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73370" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.RenameLabels$ProcessLabels<br />In method com.google.javascript.jscomp.RenameLabels$ProcessLabels.visit(NodeTraversal, Node, Node)<br />At RenameLabels.java:[lines 168-175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73490');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.RenameProperties$ProcessProperties.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N73490" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.RenameProperties$ProcessProperties<br />In method com.google.javascript.jscomp.RenameProperties$ProcessProperties.visit(NodeTraversal, Node, Node)<br />At RenameProperties.java:[lines 406-464]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73613');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.RenamePrototypes$ProcessExternedProperties.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N73613" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.RenamePrototypes$ProcessExternedProperties<br />In method com.google.javascript.jscomp.RenamePrototypes$ProcessExternedProperties.visit(NodeTraversal, Node, Node)<br />At RenamePrototypes.java:[lines 293-298]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74483');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.StripCode$Strip.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74483" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.StripCode$Strip<br />In method com.google.javascript.jscomp.StripCode$Strip.visit(NodeTraversal, Node, Node)<br />At StripCode.java:[lines 102-136]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74536');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.SuspiciousPropertiesCheck$ProcessExternedProperties.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74536" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.SuspiciousPropertiesCheck$ProcessExternedProperties<br />In method com.google.javascript.jscomp.SuspiciousPropertiesCheck$ProcessExternedProperties.visit(NodeTraversal, Node, Node)<br />At SuspiciousPropertiesCheck.java:[lines 146-171]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74589');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.SyntacticScopeCreator.scanVars(Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74589" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.SyntacticScopeCreator<br />In method com.google.javascript.jscomp.SyntacticScopeCreator.scanVars(Node, Node)<br />At SyntacticScopeCreator.java:[lines 118-156]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74642');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TightenTypes$CreateScope.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N74642" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TightenTypes$CreateScope<br />In method com.google.javascript.jscomp.TightenTypes$CreateScope.visit(NodeTraversal, Node, Node)<br />At TightenTypes.java:[lines 581-728]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74776');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.Tracer.appendSpaces(StringBuilder, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N74776" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.Tracer<br />In method com.google.javascript.jscomp.Tracer.appendSpaces(StringBuilder, int)<br />At Tracer.java:[lines 348-359]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75103');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypeCheck.checkNoTypeCheckSection(Node, boolean) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75103" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeCheck<br />In method com.google.javascript.jscomp.TypeCheck.checkNoTypeCheckSection(Node, boolean)<br />At TypeCheck.java:[lines 382-396]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75156');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypeCheck.shouldTraverse(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75156" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeCheck<br />In method com.google.javascript.jscomp.TypeCheck.shouldTraverse(NodeTraversal, Node, Node)<br />At TypeCheck.java:[lines 411-425]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75574');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.attachLiteralTypes(NodeTraversal, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75574" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder<br />In method com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.attachLiteralTypes(NodeTraversal, Node)<br />At TypedScopeCreator.java:[lines 492-526]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75627');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75627" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder<br />In method com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(NodeTraversal, Node, Node)<br />At TypedScopeCreator.java:[lines 447-485]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75680');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75680" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties<br />In method com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(NodeTraversal, Node, Node)<br />At TypedScopeCreator.java:[lines 1499-1505]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75733');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypedScopeCreator$DiscoverEnumsAndTypedefs.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75733" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$DiscoverEnumsAndTypedefs<br />In method com.google.javascript.jscomp.TypedScopeCreator$DiscoverEnumsAndTypedefs.visit(NodeTraversal, Node, Node)<br />At TypedScopeCreator.java:[lines 293-309]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75786');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75786" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder<br />In method com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(NodeTraversal, Node, Node)<br />At TypedScopeCreator.java:[lines 1575-1586]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75209');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypeInference.branchedFlowThrough(Node, FlowScope) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75209" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeInference<br />In method com.google.javascript.jscomp.TypeInference.branchedFlowThrough(Node, FlowScope)<br />At TypeInference.java:[lines 207-289]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75262');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypeInference.traverse(Node, FlowScope) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75262" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeInference<br />In method com.google.javascript.jscomp.TypeInference.traverse(Node, FlowScope)<br />At TypeInference.java:[lines 303-442]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75315');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.TypeInference.updateScopeForTypeChange(FlowScope, Node, JSType, JSType) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75315" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.TypeInference<br />In method com.google.javascript.jscomp.TypeInference.updateScopeForTypeChange(FlowScope, Node, JSType, JSType)<br />At TypeInference.java:[lines 497-537]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75909');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.UnfoldCompoundAssignments.visit(NodeTraversal, Node, Node) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N75909" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.UnfoldCompoundAssignments<br />In method com.google.javascript.jscomp.UnfoldCompoundAssignments.visit(NodeTraversal, Node, Node)<br />At UnfoldCompoundAssignments.java:[lines 60-76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75962');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.jscomp.UnreachableCodeElimination.removeDeadExprStatementSafely(Node) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N75962" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.jscomp.UnreachableCodeElimination<br />In method com.google.javascript.jscomp.UnreachableCodeElimination.removeDeadExprStatementSafely(Node)<br />At UnreachableCodeElimination.java:[lines 201-220]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77693');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.Decompiler.decompile(String, int, UintMap) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77693" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.Decompiler<br />In method com.google.javascript.rhino.Decompiler.decompile(String, int, UintMap)<br />At Decompiler.java:[lines 425-433]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77468');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.DToA.JS_dtoa(double, int, boolean, int, boolean[], StringBuffer) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77468" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.google.javascript.rhino.DToA<br />In method com.google.javascript.rhino.DToA.JS_dtoa(double, int, boolean, int, boolean[], StringBuffer)<br />At DToA.java:[lines 650-653]<br />Another occurrence at DToA.java:[lines 658-661]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77533');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.DToA.JS_dtostr(StringBuffer, int, int, double) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77533" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.google.javascript.rhino.DToA<br />In method com.google.javascript.rhino.DToA.JS_dtostr(StringBuffer, int, int, double)<br />At DToA.java:[lines 1216-1219]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77587');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.DToA.JS_dtoa(double, int, boolean, int, boolean[], StringBuffer) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77587" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.DToA<br />In method com.google.javascript.rhino.DToA.JS_dtoa(double, int, boolean, int, boolean[], StringBuffer)<br />At DToA.java:[lines 642-665]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77640');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.DToA.JS_dtostr(StringBuffer, int, int, double) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77640" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.DToA<br />In method com.google.javascript.rhino.DToA.JS_dtostr(StringBuffer, int, int, double)<br />At DToA.java:[lines 1199-1226]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77746');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.IRFactory.createBinary(int, Node, Node, int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77746" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.IRFactory<br />In method com.google.javascript.rhino.IRFactory.createBinary(int, Node, Node, int, int)<br />At IRFactory.java:[lines 636-646]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77982');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.Parser.primaryExpr() where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77982" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.google.javascript.rhino.Parser<br />In method com.google.javascript.rhino.Parser.primaryExpr()<br />At Parser.java:[lines 2245-2247]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78157');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.ScriptRuntime.stringToNumber(String, int, int) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N78157" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class com.google.javascript.rhino.ScriptRuntime<br />In method com.google.javascript.rhino.ScriptRuntime.stringToNumber(String, int, int)<br />At ScriptRuntime.java:[lines 206-210]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78211');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.ScriptRuntime.escapeString(String, char) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78211" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.ScriptRuntime<br />In method com.google.javascript.rhino.ScriptRuntime.escapeString(String, char)<br />At ScriptRuntime.java:[lines 275-283]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78264');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.ScriptRuntime.stringToNumber(String, int, int) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N78264" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.ScriptRuntime<br />In method com.google.javascript.rhino.ScriptRuntime.stringToNumber(String, int, int)<br />At ScriptRuntime.java:[lines 181-210]<br />Another occurrence at ScriptRuntime.java:[lines 214-234]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78328');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in com.google.javascript.rhino.TokenStream.getJSDocToken() where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N78328" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class com.google.javascript.rhino.TokenStream<br />In method com.google.javascript.rhino.TokenStream.getJSDocToken()<br />At TokenStream.java:[lines 895-972]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77044');">
+<td>
+<span class="priority-2">ST</span>
+</td>
+<td>Write to static field com.google.javascript.rhino.Context.implementationVersion from instance method com.google.javascript.rhino.Context.getImplementationVersion()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N77044" style="display: none;">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+<br />In class com.google.javascript.rhino.Context<br />In method com.google.javascript.rhino.Context.getImplementationVersion()<br />Field com.google.javascript.rhino.Context.implementationVersion<br />At Context.java:[line 545]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77859');">
+<td>
+<span class="priority-2">UrF</span>
+</td>
+<td>Unread public/protected field: com.google.javascript.rhino.JSDocInfo$TypePosition.hasBrackets</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N77859" style="display: none;">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Bug type URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+<br />In class com.google.javascript.rhino.JSDocInfo$TypePosition<br />Field com.google.javascript.rhino.JSDocInfo$TypePosition.hasBrackets<br />At JSDocInfo.java:[line 132]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="BC_VACUOUS_INSTANCEOF">BC_VACUOUS_INSTANCEOF: instanceof will always return true</a>
+</h2>
+
+<p>
+This instanceof test will always return true (unless the value being tested is null).
+Although this is safe, make sure it isn't
+an indication of some misunderstanding or some other logic error.
+If you really want to test the value for being null, perhaps it would be clearer to do
+better to do a null test rather than an instanceof test.
+</p>
+
+    
+<h2>
+<a name="DM_NUMBER_CTOR">DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead</a>
+</h2>
+      
+      <p>
+      Using <code>new Integer(int)</code> is guaranteed to always result in a new object whereas
+      <code>Integer.valueOf(int)</code> allows caching of values to be done by the compiler, class library, or JVM.
+      Using of cached values avoids object allocation and the code will be faster.
+      </p>
+      <p>
+      Values between -128 and 127 are guaranteed to have corresponding cached instances
+      and using <code>valueOf</code> is approximately 3.5 times faster than using constructor.
+      For values outside the constant range the performance of both styles is the same.
+      </p>
+      <p>
+      Unless the class must be compatible with JVMs predating Java 1.5,
+      use either autoboxing or the <code>valueOf()</code> method when creating instances of
+      <code>Long</code>, <code>Integer</code>, <code>Short</code>, <code>Character</code>, and <code>Byte</code>.
+      </p>
+      
+    
+<h2>
+<a name="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE: Class defines clone() but doesn't implement Cloneable</a>
+</h2>
+
+<p> This class defines a clone() method but the class doesn't implement Cloneable.
+There are some situations in which this is OK (e.g., you want to control how subclasses
+can clone themselves), but just make sure that this is what you intended.
+</p>
+
+    
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD">DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD: Dead store to local variable that shadows field</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used. There is a field with the same name as the local variable. Did you
+mean to assign to that variable instead?
+</p>
+
+    
+<h2>
+<a name="DM_BOOLEAN_CTOR">DM_BOOLEAN_CTOR: Method invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</a>
+</h2>
+
+  <p> Creating new instances of <code>java.lang.Boolean</code> wastes
+  memory, since <code>Boolean</code> objects are immutable and there are
+  only two useful values of this type.&nbsp; Use the <code>Boolean.valueOf()</code>
+  method (or Java 1.5 autoboxing) to create <code>Boolean</code> objects instead.</p>
+
+    
+<h2>
+<a name="DM_EXIT">DM_EXIT: Method invokes System.exit(...)</a>
+</h2>
+
+  <p> Invoking System.exit shuts down the entire Java virtual machine. This
+   should only been done when it is appropriate. Such calls make it
+   hard or impossible for your code to be invoked by other code.
+   Consider throwing a RuntimeException instead.</p>
+
+    
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<h2>
+<a name="EQ_COMPARETO_USE_OBJECT_EQUALS">EQ_COMPARETO_USE_OBJECT_EQUALS: Class defines compareTo(...) and uses Object.equals()</a>
+</h2>
+
+  <p> This class defines a <code>compareTo(...)</code> method but inherits its
+  <code>equals()</code> method from <code>java.lang.Object</code>.
+    Generally, the value of compareTo should return zero if and only if
+    equals returns true. If this is violated, weird and unpredictable
+    failures will occur in classes such as PriorityQueue.
+    In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    while in Java 6 it uses the equals method.</p>
+
+<p>From the JavaDoc for the compareTo method in the Comparable interface:
+<blockquote>
+It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+Generally speaking, any class that implements the Comparable interface and violates this condition
+should clearly indicate this fact. The recommended language
+is "Note: this class has a natural ordering that is inconsistent with equals."
+</blockquote></p>
+
+    
+<h2>
+<a name="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC">EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC: equals method overrides equals in superclass and may not be symmetric</a>
+</h2>
+
+  <p> This class defines an equals method that overrides an equals method in a superclass. Both equals methods
+methods use <code>instanceof</code> in the determination of whether two objects are equal. This is fraught with peril,
+since it is important that the equals method is symmetrical (in other words, <code>a.equals(b) == b.equals(a)</code>).
+If B is a subtype of A, and A's equals method checks that the argument is an instanceof A, and B's equals method
+checks that the argument is an instanceof B, it is quite likely that the equivalence relation defined by these
+methods is not symmetric.
+</p>
+
+    
+<h2>
+<a name="ES_COMPARING_STRINGS_WITH_EQ">ES_COMPARING_STRINGS_WITH_EQ: Comparison of String objects using == or !=</a>
+</h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="ES_COMPARING_PARAMETER_STRING_WITH_EQ">ES_COMPARING_PARAMETER_STRING_WITH_EQ: Comparison of String parameter using == or !=</a>
+</h2>
+
+  <p>This code compares a <code>java.lang.String</code> parameter for reference
+equality using the == or != operators. Requiring callers to
+pass only String constants or interned strings to a method is unnecessarily
+fragile, and rarely leads to measurable performance gains. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<h2>
+<a name="FE_FLOATING_POINT_EQUALITY">FE_FLOATING_POINT_EQUALITY: Test for floating point equality</a>
+</h2>
+   
+    <p>
+    This operation compares two floating point values for equality.
+    Because floating point calculations may involve rounding,
+   calculated float and double values may not be accurate.
+    For values that must be precise, such as monetary values,
+   consider using a fixed-precision type such as BigDecimal.
+    For values that need not be precise, consider comparing for equality
+    within some range, for example:
+    <code>if ( Math.abs(x - y) &lt; .0000001 )</code>.
+   See the Java Language Specification, section 4.2.4.
+    </p>
+    
+     
+<h2>
+<a name="VA_FORMAT_STRING_USES_NEWLINE">VA_FORMAT_STRING_USES_NEWLINE: Format string should use %n rather than \n</a>
+</h2>
+
+<p>
+This format string include a newline character (\n). In format strings, it is generally
+ preferable better to use %n, which will produce the platform-specific line separator.
+</p>
+
+     
+<h2>
+<a name="HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode()</a>
+</h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>, and inherits the implementation of
+  <code>hashCode()</code> from <code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+<p>If you don't think instances of this class will ever be inserted into a HashMap/HashTable,
+the recommended <code>hashCode</code> implementation to use is:</p>
+<pre>public int hashCode() {
+  assert false : "hashCode not designed";
+  return 42; // any arbitrary constant will do
+  }</pre>
+
+    
+<h2>
+<a name="ICAST_IDIV_CAST_TO_DOUBLE">ICAST_IDIV_CAST_TO_DOUBLE: Integral division result cast to double or float</a>
+</h2>
+
+<p>
+This code casts the result of an integral division (e.g., int or long division)
+operation to double or
+float.
+Doing division on integers truncates the result
+to the integer value closest to zero.  The fact that the result
+was cast to double suggests that this precision should have been retained.
+What was probably meant was to cast one or both of the operands to
+double <em>before</em> performing the division.  Here is an example:
+</p>
+<blockquote>
+<pre>
+int x = 2;
+int y = 5;
+// Wrong: yields result 0.0
+double value1 =  x / y;
+
+// Right: yields result 0.4
+double value2 =  x / (double) y;
+</pre>
+</blockquote>
+
+    
+<h2>
+<a name="INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE">INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE: Bad comparison of nonnegative value with negative constant or zero</a>
+</h2>
+
+<p> This code compares a value that is guaranteed to be non-negative with a negative constant or zero.
+</p>
+
+    
+<h2>
+<a name="IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN">IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN: A parameter is dead upon entry to a method but overwritten</a>
+</h2>
+
+<p>
+The initial value of this parameter is ignored, and the parameter
+is overwritten here. This often indicates a mistaken belief that
+the write to the parameter will be conveyed back to
+the caller.
+</p>
+
+    
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">IS2_INCONSISTENT_SYNC: Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<h2>
+<a name="MS_SHOULD_BE_FINAL">MS_SHOULD_BE_FINAL: Field isn't final but should be</a>
+</h2>
+
+   <p>
+This static field public but not final, and
+could be changed by malicious code or
+        by accident from another package.
+        The field could be made final to avoid
+        this vulnerability.</p>
+
+    
+<h2>
+<a name="NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT: equals() method does not check for null argument</a>
+</h2>
+      
+      <p>
+      This implementation of equals(Object) violates the contract defined
+      by java.lang.Object.equals() because it does not check for null
+      being passed as the argument.  All equals() methods should return
+      false if passed a null value.
+      </p>
+      
+   
+<h2>
+<a name="NP_LOAD_OF_KNOWN_NULL_VALUE">NP_LOAD_OF_KNOWN_NULL_VALUE: Load of known null value</a>
+</h2>
+
+  <p> The variable referenced at this point is known to be null due to an earlier
+   check against null. Although this is valid, it might be a mistake (perhaps you
+intended to refer to a different variable, or perhaps the earlier check to see if the
+variable is null should have been a check to see if it was non-null).
+</p>
+
+    
+<h2>
+<a name="NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL: Method with Boolean return type returns explicit null</a>
+</h2>
+       
+       <p>
+    A method that returns either Boolean.TRUE, Boolean.FALSE or null is an accident waiting to happen.
+    This method can be invoked as though it returned a value of type boolean, and
+    the compiler will insert automatic unboxing of the Boolean value. If a null value is returned,
+    this will result in a NullPointerException.
+       </p>
+       
+       
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">NP_NULL_ON_SOME_PATH: Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    
+<h2>
+<a name="OBL_UNSATISFIED_OBLIGATION">OBL_UNSATISFIED_OBLIGATION: Method may fail to clean up stream or resource</a>
+</h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE: Nullcheck of value previously dereferenced</a>
+</h2>
+
+<p> A value is checked here to see whether it is null, but this value can't
+be null because it was previously dereferenced and if it were null a null pointer
+exception would have occurred at the earlier dereference.
+Essentially, this code and the previous dereference
+disagree as to whether this value is allowed to be null. Either the check is redundant
+or the previous dereference is erroneous.</p>
+
+    
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE: Redundant nullcheck of value known to be non-null</a>
+</h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE: Redundant nullcheck of value known to be null</a>
+</h2>
+
+<p> This method contains a redundant check of a known null value against
+the constant null.</p>
+
+    
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">RV_RETURN_VALUE_IGNORED_BAD_PRACTICE: Method ignores exceptional return value</a>
+</h2>
+
+   <p> This method returns a value that is not checked. The return value should be checked
+since it can indicate an unusual or unexpected function execution. For
+example, the <code>File.delete()</code> method returns false
+if the file could not be successfully deleted (rather than
+throwing an Exception).
+If you don't check the result, you won't notice if the method invocation
+signals unexpected behavior by returning an atypical return value.
+</p>
+
+    
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT">RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT: Return value of method without side effect is ignored</a>
+</h2>
+
+<p>This code calls a method and ignores the return value. However our analysis shows that
+the method (including its implementations in subclasses if any) does not produce any effect 
+other than return value. Thus this call can be removed.
+</p>
+<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
+Common false-positive cases include:</p>
+<p>- The method is designed to be overridden and produce a side effect in other projects which are out of the scope of the analysis.</p>
+<p>- The method is called to trigger the class loading which may have a side effect.</p>
+<p>- The method is called just to get some exception.</p>
+<p>If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation
+to instruct FindBugs that ignoring the return value of this method is acceptable.
+</p>
+
+    
+<h2>
+<a name="SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION: Method concatenates strings using + in a loop</a>
+</h2>
+
+<p> The method seems to be building a String using concatenation in a loop.
+In each iteration, the String is converted to a StringBuffer/StringBuilder,
+   appended to, and converted back to a String.
+   This can lead to a cost quadratic in the number of iterations,
+   as the growing string is recopied in each iteration. </p>
+
+<p>Better performance can be obtained by using
+a StringBuffer (or StringBuilder in Java 1.5) explicitly.</p>
+
+<p> For example:</p>
+<pre>
+  // This is bad
+  String s = "";
+  for (int i = 0; i &lt; field.length; ++i) {
+    s = s + field[i];
+  }
+
+  // This is better
+  StringBuffer buf = new StringBuffer();
+  for (int i = 0; i &lt; field.length; ++i) {
+    buf.append(field[i]);
+  }
+  String s = buf.toString();
+</pre>
+
+    
+<h2>
+<a name="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">SE_COMPARATOR_SHOULD_BE_SERIALIZABLE: Comparator doesn't implement Serializable</a>
+</h2>
+
+  <p> This class implements the <code>Comparator</code> interface. You
+should consider whether or not it should also implement the <code>Serializable</code>
+interface. If a comparator is used to construct an ordered collection
+such as a <code>TreeMap</code>, then the <code>TreeMap</code>
+will be serializable only if the comparator is also serializable.
+As most comparators have little or no state, making them serializable
+is generally easy and good defensive programming.
+</p>
+
+    
+<h2>
+<a name="SE_BAD_FIELD">SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<h2>
+<a name="SE_TRANSIENT_FIELD_NOT_RESTORED">SE_TRANSIENT_FIELD_NOT_RESTORED: Transient field that isn't set by deserialization. </a>
+</h2>
+
+  <p> This class contains a field that is updated at multiple places in the class, thus it seems to be part of the state of the class. However, since the field is marked as transient and not set in readObject or readResolve, it will contain the default value in any
+deserialized instance of the class.
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SIC_INNER_SHOULD_BE_STATIC">SIC_INNER_SHOULD_BE_STATIC: Should be a static inner class</a>
+</h2>
+
+  <p> This class is an inner class, but does not use its embedded reference
+  to the object which created it.&nbsp; This reference makes the instances
+  of the class larger, and may keep the reference to the creator object
+  alive longer than necessary.&nbsp; If possible, the class should be
+   made static.
+</p>
+
+    
+<h2>
+<a name="SS_SHOULD_BE_STATIC">SS_SHOULD_BE_STATIC: Unread field: should this field be static?</a>
+</h2>
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    
+<h2>
+<a name="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method</a>
+</h2>
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    
+<h2>
+<a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+</h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    
+<h2>
+<a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD: Unread public/protected field</a>
+</h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    
+<h2>
+<a name="UUF_UNUSED_FIELD">UUF_UNUSED_FIELD: Unused field</a>
+</h2>
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    
+<h2>
+<a name="UWF_UNWRITTEN_FIELD">UWF_UNWRITTEN_FIELD: Unwritten field</a>
+</h2>
+
+  <p> This field is never written.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>

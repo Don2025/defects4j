@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>Jsoup/50_buggy/target/classes</li>
+</ul>
+<p>
+<br />
+<br />
+</p>
+<h2>Metrics</h2>
+<p>8648 lines of code analyzed,
+	in 240 classes, 
+	in 7 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right" />
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">24</td>
+<td align="right">2.78</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>24</b>
+</td>
+<td align="right">
+<b>2.78</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br />
+<br />
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">9</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">12</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>24</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66719');">
+<td>
+<span class="priority-2">CN</span>
+</td>
+<td>org.jsoup.select.Elements.clone() does not call super.clone()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66719" style="display: none;">
+<a href="#CN_IDIOM_NO_SUPER_CALL">Bug type CN_IDIOM_NO_SUPER_CALL (click for details)</a>
+<br />In class org.jsoup.select.Elements<br />In method org.jsoup.select.Elements.clone()<br />At Elements.java:[lines 43-48]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65583');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.Comment inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65583" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.Comment<br />At Comment.java:[lines 16-45]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65618');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.DataNode inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65618" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.DataNode<br />At DataNode.java:[lines 16-61]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65653');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.Document inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65653" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.Document<br />At Document.java:[lines 17-563]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65909');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.DocumentType inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65909" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.DocumentType<br />At DocumentType.java:[lines 23-57]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65944');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.Element inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65944" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.Element<br />At Element.java:[lines 21-1203]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65979');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.FormElement inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65979" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.FormElement<br />At FormElement.java:[lines 18-105]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66081');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.TextNode inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66081" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.TextNode<br />At TextNode.java:[lines 26-173]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66116');">
+<td>
+<span class="priority-2">HE</span>
+</td>
+<td>org.jsoup.nodes.XmlDeclaration inherits equals and uses Object.hashCode()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66116" style="display: none;">
+<a href="#HE_INHERITS_EQUALS_USE_HASHCODE">Bug type HE_INHERITS_EQUALS_USE_HASHCODE (click for details)</a>
+<br />In class org.jsoup.nodes.XmlDeclaration<br />At XmlDeclaration.java:[lines 18-67]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66214');">
+<td>
+<span class="priority-2">MS</span>
+</td>
+<td>org.jsoup.parser.HtmlTreeBuilder.TagsSearchInScope should be package protected</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66214" style="display: none;">
+<a href="#MS_PKGPROTECT">Bug type MS_PKGPROTECT (click for details)</a>
+<br />In class org.jsoup.parser.HtmlTreeBuilder<br />Field org.jsoup.parser.HtmlTreeBuilder.TagsSearchInScope<br />At HtmlTreeBuilder.java:[line 17]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should org.jsoup.examples.HtmlToPlainText$FormattingVisitor be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65548" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br />In class org.jsoup.examples.HtmlToPlainText$FormattingVisitor<br />At HtmlToPlainText.java:[lines 70-128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66652');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>org.jsoup.safety.Whitelist.removeAttributes(String, String[]) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66652" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br />In class org.jsoup.safety.Whitelist<br />In method org.jsoup.safety.Whitelist.removeAttributes(String, String[])<br />Field org.jsoup.safety.Whitelist.attributes<br />At Whitelist.java:[line 308]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66151');">
+<td>
+<span class="priority-2">DB</span>
+</td>
+<td>org.jsoup.parser.HtmlTreeBuilder.parseFragment(String, Element, String, ParseErrorList) uses the same code for two branches</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66151" style="display: none;">
+<a href="#DB_DUPLICATE_BRANCHES">Bug type DB_DUPLICATE_BRANCHES (click for details)</a>
+<br />In class org.jsoup.parser.HtmlTreeBuilder<br />In method org.jsoup.parser.HtmlTreeBuilder.parseFragment(String, Element, String, ParseErrorList)<br />At HtmlTreeBuilder.java:[line 79]<br />At HtmlTreeBuilder.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66014');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to node in org.jsoup.nodes.Node.hasSameValue(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66014" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class org.jsoup.nodes.Node<br />In method org.jsoup.nodes.Node.hasSameValue(Object)<br />Local variable named node<br />At Node.java:[line 599]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66266');">
+<td>
+<span class="priority-2">DLS</span>
+</td>
+<td>Dead store to meta in org.jsoup.parser.HtmlTreeBuilderState$4.process(Token, HtmlTreeBuilder)</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66266" style="display: none;">
+<a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+<br />In class org.jsoup.parser.HtmlTreeBuilderState$4<br />In method org.jsoup.parser.HtmlTreeBuilderState$4.process(Token, HtmlTreeBuilder)<br />Local variable named meta<br />At HtmlTreeBuilderState.java:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65688');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Return value of Element.appendElement(String) ignored, is this OK in org.jsoup.nodes.Document.createShell(String)</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65688" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_INFERRED">Bug type RV_RETURN_VALUE_IGNORED_INFERRED (click for details)</a>
+<br />In class org.jsoup.nodes.Document<br />In method org.jsoup.nodes.Document.createShell(String)<br />Called method org.jsoup.nodes.Element.appendElement(String)<br />At Document.java:[line 44]<br />Another occurrence at Document.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65769');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Return value of Element.appendElement(String) ignored, is this OK in org.jsoup.nodes.Document.normalise()</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N65769" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_INFERRED">Bug type RV_RETURN_VALUE_IGNORED_INFERRED (click for details)</a>
+<br />In class org.jsoup.nodes.Document<br />In method org.jsoup.nodes.Document.normalise()<br />Called method org.jsoup.nodes.Element.appendElement(String)<br />At Document.java:[line 121]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65839');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Return value of Element.prependElement(String) ignored, is this OK in org.jsoup.nodes.Document.normalise()</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N65839" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_INFERRED">Bug type RV_RETURN_VALUE_IGNORED_INFERRED (click for details)</a>
+<br />In class org.jsoup.nodes.Document<br />In method org.jsoup.nodes.Document.normalise()<br />Called method org.jsoup.nodes.Element.prependElement(String)<br />At Document.java:[line 119]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66333');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.jsoup.parser.TokeniserState$10.read(Tokeniser, CharacterReader) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66333" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.jsoup.parser.TokeniserState$10<br />In method org.jsoup.parser.TokeniserState$10.read(Tokeniser, CharacterReader)<br />At TokeniserState.java:[lines 191-211]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66386');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.jsoup.parser.TokeniserState$35.read(Tokeniser, CharacterReader) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66386" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.jsoup.parser.TokeniserState$35<br />In method org.jsoup.parser.TokeniserState$35.read(Tokeniser, CharacterReader)<br />At TokeniserState.java:[lines 652-682]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66439');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.jsoup.parser.TokeniserState$38.read(Tokeniser, CharacterReader) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66439" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.jsoup.parser.TokeniserState$38<br />In method org.jsoup.parser.TokeniserState$38.read(Tokeniser, CharacterReader)<br />At TokeniserState.java:[lines 790-807]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66492');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.jsoup.parser.TokeniserState$39.read(Tokeniser, CharacterReader) where default case is missing</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66492" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.jsoup.parser.TokeniserState$39<br />In method org.jsoup.parser.TokeniserState$39.read(Tokeniser, CharacterReader)<br />At TokeniserState.java:[lines 822-839]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66545');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.jsoup.parser.TokeniserState$40.read(Tokeniser, CharacterReader) where default case is missing</td>
+</tr>
+<tr class="detailrow1">
+<td />
+<td>
+<p id="N66545" style="display: none;">
+<a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+<br />In class org.jsoup.parser.TokeniserState$40<br />In method org.jsoup.parser.TokeniserState$40.read(Tokeniser, CharacterReader)<br />At TokeniserState.java:[lines 852-885]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66598');">
+<td>
+<span class="priority-2">SF</span>
+</td>
+<td>Switch statement found in org.jsoup.parser.TokeniserState$51.read(Tokeniser, CharacterReader) where one case falls through to the next case</td>
+</tr>
+<tr class="detailrow0">
+<td />
+<td>
+<p id="N66598" style="display: none;">
+<a href="#SF_SWITCH_FALLTHROUGH">Bug type SF_SWITCH_FALLTHROUGH (click for details)</a>
+<br />In class org.jsoup.parser.TokeniserState$51<br />In method org.jsoup.parser.TokeniserState$51.read(Tokeniser, CharacterReader)<br />At TokeniserState.java:[lines 1147-1150]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CN_IDIOM_NO_SUPER_CALL">CN_IDIOM_NO_SUPER_CALL: clone method does not call super.clone()</a>
+</h2>
+
+<p> This non-final class defines a clone() method that does not call super.clone().
+If this class ("<i>A</i>") is extended by a subclass ("<i>B</i>"),
+and the subclass <i>B</i> calls super.clone(), then it is likely that
+<i>B</i>'s clone() method will return an object of type <i>A</i>,
+which violates the standard contract for clone().</p>
+
+<p> If all clone() methods call super.clone(), then they are guaranteed
+to use Object.clone(), which always returns an object of the correct type.</p>
+
+    
+<h2>
+<a name="DB_DUPLICATE_BRANCHES">DB_DUPLICATE_BRANCHES: Method uses the same code for two branches</a>
+</h2>
+      
+      <p>
+      This method uses the same code to implement two branches of a conditional branch.
+    Check to ensure that this isn't a coding mistake.
+      </p>
+      
+   
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<h2>
+<a name="HE_INHERITS_EQUALS_USE_HASHCODE">HE_INHERITS_EQUALS_USE_HASHCODE: Class inherits equals() and uses Object.hashCode()</a>
+</h2>
+
+  <p> This class inherits <code>equals(Object)</code> from an abstract
+  superclass, and <code>hashCode()</code> from
+<code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+  <p>If you don't want to define a hashCode method, and/or don't
+   believe the object will ever be put into a HashMap/Hashtable,
+   define the <code>hashCode()</code> method
+   to throw <code>UnsupportedOperationException</code>.</p>
+
+    
+<h2>
+<a name="MS_PKGPROTECT">MS_PKGPROTECT: Field should be package protected</a>
+</h2>
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_INFERRED">RV_RETURN_VALUE_IGNORED_INFERRED: Method ignores return value, is this OK?</a>
+</h2>
+
+<p>This code calls a method and ignores the return value. The return value
+is the same type as the type the method is invoked on, and from our analysis it looks
+like the return value might be important (e.g., like ignoring the
+return value of <code>String.toLowerCase()</code>).
+</p>
+<p>We are guessing that ignoring the return value might be a bad idea just from
+a simple analysis of the body of the method. You can use a @CheckReturnValue annotation
+to instruct FindBugs as to whether ignoring the return value of this method
+is important or acceptable.
+</p>
+<p>Please investigate this closely to decide whether it is OK to ignore the return value.
+</p>
+
+    
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<h2>
+<a name="SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH: Switch statement found where one case falls through to the next case</a>
+</h2>
+
+  <p> This method contains a switch statement where one case branch will fall through to the next case.
+  Usually you need to end this case with a break or return.</p>
+
+    
+<h2>
+<a name="SIC_INNER_SHOULD_BE_STATIC">SIC_INNER_SHOULD_BE_STATIC: Should be a static inner class</a>
+</h2>
+
+  <p> This class is an inner class, but does not use its embedded reference
+  to the object which created it.&nbsp; This reference makes the instances
+  of the class larger, and may keep the reference to the creator object
+  alive longer than necessary.&nbsp; If possible, the class should be
+   made static.
+</p>
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>
