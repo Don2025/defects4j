@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680357304600" analysisTimestamp="1680689624664" release="">
+  <Project projectName="">
+    <Jar>Lang/24_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE">
+    <Class classname="org.apache.commons.lang3.AnnotationUtils">
+      <SourceLine classname="org.apache.commons.lang3.AnnotationUtils" start="33" end="294" sourcefile="AnnotationUtils.java" sourcepath="org/apache/commons/lang3/AnnotationUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.AnnotationUtils" name="equals" signature="(Ljava/lang/annotation/Annotation;Ljava/lang/annotation/Annotation;)Z" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.AnnotationUtils" start="101" end="128" startBytecode="0" endBytecode="440" sourcefile="AnnotationUtils.java" sourcepath="org/apache/commons/lang3/AnnotationUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.AnnotationUtils" start="125" end="125" startBytecode="169" endBytecode="169" sourcefile="AnnotationUtils.java" sourcepath="org/apache/commons/lang3/AnnotationUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="1" rank="14" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="553" end="639" startBytecode="0" endBytecode="227" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <String value="true" role="STRING_CONSTANT"/>
+    <LocalVariable name="str" register="0" pc="1" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="553" end="553" startBytecode="3" endBytecode="3" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER_IN_PUBLIC_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="negate" signature="(Ljava/lang/Boolean;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="65" end="68" startBytecode="0" endBytecode="72" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="66" end="66" startBytecode="5" endBytecode="5" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(IIII)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="332" end="340" startBytecode="0" endBytecode="130" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="337" end="337" startBytecode="24" endBytecode="24" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/Integer;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="248" end="251" startBytecode="0" endBytecode="72" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="249" end="249" startBytecode="5" endBytecode="5" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="363" end="379" startBytecode="0" endBytecode="193" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="369" end="369" startBytecode="25" endBytecode="25" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="376" end="376" startBytecode="59" endBytecode="59" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="553" end="639" startBytecode="0" endBytecode="800" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="557" end="557" startBytecode="15" endBytecode="15" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="639" end="639" startBytecode="464" endBytecode="464" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="665" end="681" startBytecode="0" endBytecode="193" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="671" end="671" startBytecode="25" endBytecode="25" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="678" end="678" startBytecode="59" endBytecode="59" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN" priority="2" rank="16" abbrev="RC" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="45" end="971" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBoolean" signature="(Ljava/lang/String;)Z" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="712" end="712" startBytecode="0" endBytecode="7" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/Boolean;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.Boolean" start="43" end="333" sourcefile="Boolean.java" sourcepath="java/lang/Boolean.java"/>
+    </Type>
+    <Field classname="java.lang.Boolean" name="TRUE" signature="Ljava/lang/Boolean;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="java.lang.Boolean" sourcefile="Boolean.java" sourcepath="java/lang/Boolean.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="712" end="712" startBytecode="7" endBytecode="7" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" rank="18" abbrev="WMI" category="PERFORMANCE">
+    <Class classname="org.apache.commons.lang3.ClassUtils">
+      <SourceLine classname="org.apache.commons.lang3.ClassUtils" start="58" end="1064" sourcefile="ClassUtils.java" sourcepath="org/apache/commons/lang3/ClassUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.ClassUtils" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.ClassUtils" start="58" end="132" startBytecode="0" endBytecode="517" sourcefile="ClassUtils.java" sourcepath="org/apache/commons/lang3/ClassUtils.java"/>
+    </Method>
+    <Field classname="org.apache.commons.lang3.ClassUtils" name="primitiveWrapperMap" signature="Ljava/util/Map;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.ClassUtils" sourcefile="ClassUtils.java" sourcepath="org/apache/commons/lang3/ClassUtils.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.lang3.ClassUtils" start="92" end="92" startBytecode="208" endBytecode="208" sourcefile="ClassUtils.java" sourcepath="org/apache/commons/lang3/ClassUtils.java"/>
+  </BugInstance>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" rank="18" abbrev="WMI" category="PERFORMANCE">
+    <Class classname="org.apache.commons.lang3.exception.DefaultExceptionContext">
+      <SourceLine classname="org.apache.commons.lang3.exception.DefaultExceptionContext" start="36" end="149" sourcefile="DefaultExceptionContext.java" sourcepath="org/apache/commons/lang3/exception/DefaultExceptionContext.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.exception.DefaultExceptionContext" name="getFormattedExceptionMessage" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.exception.DefaultExceptionContext" start="111" end="149" startBytecode="0" endBytecode="461" sourcefile="DefaultExceptionContext.java" sourcepath="org/apache/commons/lang3/exception/DefaultExceptionContext.java"/>
+    </Method>
+    <Field classname="org.apache.commons.lang3.exception.DefaultExceptionContext" name="contextValueMap" signature="Ljava/util/Map;" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.exception.DefaultExceptionContext" sourcefile="DefaultExceptionContext.java" sourcepath="org/apache/commons/lang3/exception/DefaultExceptionContext.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.lang3.exception.DefaultExceptionContext" start="130" end="130" startBytecode="138" endBytecode="138" sourcefile="DefaultExceptionContext.java" sourcepath="org/apache/commons/lang3/exception/DefaultExceptionContext.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.math.NumberUtils">
+      <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="41" end="1420" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.math.NumberUtils" name="createNumber" signature="(Ljava/lang/String;)Ljava/lang/Number;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="453" end="598" startBytecode="0" endBytecode="1404" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="507" end="548" startBytecode="327" endBytecode="549" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_DOESNT_OVERRIDE_EQUALS" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="org.apache.commons.lang3.text.ExtendedMessageFormat">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="90" end="479" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Class>
+    <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="1" end="1" startBytecode="0" endBytecode="0" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    <Method classname="java.text.MessageFormat" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_DID_YOU_MEAN_TO_OVERRIDE">
+      <SourceLine classname="java.text.MessageFormat" start="1102" end="1107" startBytecode="0" endBytecode="225" sourcefile="MessageFormat.java" sourcepath="java/text/MessageFormat.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.text.ExtendedMessageFormat">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="90" end="479" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="parseFormatDescription" signature="(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="319" end="339" startBytecode="0" endBytecode="283" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="324" end="335" startBytecode="39" endBytecode="103" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+  </BugInstance>
+  <BugInstance type="UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR" priority="2" rank="10" abbrev="UR" category="CORRECTNESS">
+    <Class classname="org.apache.commons.lang3.text.ExtendedMessageFormat">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="90" end="479" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="applyPattern" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="145" end="208" startBytecode="0" endBytecode="865" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Method>
+    <Field classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="registry" signature="Ljava/util/Map;" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Field>
+    <Method classname="java.text.MessageFormat" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_SUPERCLASS_CONSTRUCTOR">
+      <SourceLine classname="java.text.MessageFormat" start="360" end="363" startBytecode="0" endBytecode="111" sourcefile="MessageFormat.java" sourcepath="java/text/MessageFormat.java"/>
+    </Method>
+    <SourceLine classname="java.text.MessageFormat" start="362" end="362" startBytecode="52" endBytecode="52" sourcefile="MessageFormat.java" sourcepath="java/text/MessageFormat.java" role="SOURCE_LINE_CALLED_FROM_SUPERCLASS_AT"/>
+    <Method classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/util/Locale;Ljava/util/Map;)V" isStatic="false" role="METHOD_CONSTRUCTOR">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="124" end="128" startBytecode="0" endBytecode="127" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="126" end="126" startBytecode="13" endBytecode="13" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java" role="SOURCE_LINE_FIELD_SET_TOO_LATE_AT"/>
+    <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="145" end="145" startBytecode="1" endBytecode="1" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.DateUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="60" end="1815" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DateUtils" name="getFragment" signature="(Ljava/util/Calendar;II)J" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1671" end="1709" startBytecode="0" endBytecode="412" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1678" end="1683" startBytecode="23" endBytecode="85" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.DateUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="60" end="1815" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DateUtils" name="iterator" signature="(Ljava/util/Calendar;I)Ljava/util/Iterator;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1138" end="1206" startBytecode="0" endBytecode="571" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1167" end="1181" startBytecode="118" endBytecode="196" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.DateUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="60" end="1815" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DateUtils" name="modify" signature="(Ljava/util/Calendar;II)V" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="942" end="1075" startBytecode="0" endBytecode="1065" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1032" end="1058" startBytecode="353" endBytecode="478" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="H" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="199" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="445" end="445" startBytecode="202" endBytecode="202" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="M" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="113" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="437" end="437" startBytecode="116" endBytecode="116" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="S" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="334" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="457" end="457" startBytecode="337" endBytecode="337" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="d" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="156" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="441" end="441" startBytecode="159" endBytecode="159" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="m" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="244" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="449" end="449" startBytecode="247" endBytecode="247" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="s" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="289" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="453" end="453" startBytecode="292" endBytecode="292" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="format" signature="([Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;IIIIIIIZ)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="423" end="473" startBytecode="0" endBytecode="190" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Field classname="org.apache.commons.lang3.time.DurationFormatUtils" name="y" signature="Ljava/lang/Object;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Field>
+    <LocalVariable name="value" register="14" pc="70" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="433" end="433" startBytecode="73" endBytecode="73" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.DurationFormatUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="58" end="543" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils" name="lexx" signature="(Ljava/lang/String;)[Lorg/apache/commons/lang3/time/DurationFormatUtils$Token;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="491" end="543" startBytecode="0" endBytecode="132" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <LocalVariable name="value" register="9" pc="291" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <Method classname="org.apache.commons.lang3.time.DurationFormatUtils$Token" name="getValue" signature="()Ljava/lang/Object;" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils$Token" start="615" end="615" startBytecode="0" endBytecode="46" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.DurationFormatUtils" start="533" end="533" startBytecode="293" endBytecode="293" sourcefile="DurationFormatUtils.java" sourcepath="org/apache/commons/lang3/time/DurationFormatUtils.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 1 Apr 2023 21:55:04 +0800" total_classes="143" referenced_classes="330" total_bugs="26" total_size="13252" num_packages="11" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="90.97" clock_seconds="20.11" peak_mbytes="343.53" alloc_mbytes="683.00" gc_seconds="0.88" priority_2="25" priority_1="1">
+    <PackageStats package="org.apache.commons.lang3" total_bugs="10" total_types="30" total_size="4695" priority_2="9" priority_1="1">
+      <ClassStats class="org.apache.commons.lang3.AnnotationUtils" sourceFile="AnnotationUtils.java" interface="false" size="116" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.lang3.AnnotationUtils$1" sourceFile="AnnotationUtils.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ArrayUtils" sourceFile="ArrayUtils.java" interface="false" size="1233" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.BitField" sourceFile="BitField.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.BooleanUtils" sourceFile="BooleanUtils.java" interface="false" size="203" bugs="8" priority_2="7" priority_1="1"/>
+      <ClassStats class="org.apache.commons.lang3.CharEncoding" sourceFile="CharEncoding.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharRange" sourceFile="CharRange.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharRange$1" sourceFile="CharRange.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharRange$CharacterIterator" sourceFile="CharRange.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharSequenceUtils" sourceFile="CharSequenceUtils.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharSet" sourceFile="CharSet.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharSetUtils" sourceFile="CharSetUtils.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharUtils" sourceFile="CharUtils.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils" sourceFile="ClassUtils.java" interface="false" size="318" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.lang3.EnumUtils" sourceFile="EnumUtils.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.LocaleUtils" sourceFile="LocaleUtils.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ObjectUtils" sourceFile="ObjectUtils.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ObjectUtils$Null" sourceFile="ObjectUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Pair" sourceFile="Pair.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.RandomStringUtils" sourceFile="RandomStringUtils.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Range" sourceFile="Range.java" interface="false" size="94" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Range$ComparableComparator" sourceFile="Range.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.SerializationException" sourceFile="SerializationException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.SerializationUtils" sourceFile="SerializationUtils.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringEscapeUtils" sourceFile="StringEscapeUtils.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringEscapeUtils$CsvEscaper" sourceFile="StringEscapeUtils.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringEscapeUtils$CsvUnescaper" sourceFile="StringEscapeUtils.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringUtils" sourceFile="StringUtils.java" interface="false" size="1391" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.SystemUtils" sourceFile="SystemUtils.java" interface="false" size="243" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Validate" sourceFile="Validate.java" interface="false" size="172" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.builder" total_bugs="0" total_types="14" total_size="1902">
+      <ClassStats class="org.apache.commons.lang3.builder.Builder" sourceFile="Builder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.CompareToBuilder" sourceFile="CompareToBuilder.java" interface="false" size="289" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.EqualsBuilder" sourceFile="EqualsBuilder.java" interface="false" size="303" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.HashCodeBuilder" sourceFile="HashCodeBuilder.java" interface="false" size="198" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.IDKey" sourceFile="IDKey.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ReflectionToStringBuilder" sourceFile="ReflectionToStringBuilder.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.StandardToStringStyle" sourceFile="StandardToStringStyle.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringBuilder" sourceFile="ToStringBuilder.java" interface="false" size="203" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="623" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$DefaultToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$MultiLineToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$NoFieldNameToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$ShortPrefixToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$SimpleToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="12" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.concurrent" total_bugs="0" total_types="20" total_size="487">
+      <ClassStats class="org.apache.commons.lang3.concurrent.AtomicInitializer" sourceFile="AtomicInitializer.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AtomicSafeInitializer" sourceFile="AtomicSafeInitializer.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BackgroundInitializer" sourceFile="BackgroundInitializer.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BackgroundInitializer$InitializationTask" sourceFile="BackgroundInitializer.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BasicThreadFactory" sourceFile="BasicThreadFactory.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BasicThreadFactory$1" sourceFile="BasicThreadFactory.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BasicThreadFactory$Builder" sourceFile="BasicThreadFactory.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.CallableBackgroundInitializer" sourceFile="CallableBackgroundInitializer.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentException" sourceFile="ConcurrentException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentInitializer" sourceFile="ConcurrentInitializer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentRuntimeException" sourceFile="ConcurrentRuntimeException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentUtils" sourceFile="ConcurrentUtils.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentUtils$ConstantFuture" sourceFile="ConcurrentUtils.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConstantInitializer" sourceFile="ConstantInitializer.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.LazyInitializer" sourceFile="LazyInitializer.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.MultiBackgroundInitializer" sourceFile="MultiBackgroundInitializer.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.MultiBackgroundInitializer$1" sourceFile="MultiBackgroundInitializer.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.MultiBackgroundInitializer$MultiBackgroundInitializerResults" sourceFile="MultiBackgroundInitializer.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.TimedSemaphore" sourceFile="TimedSemaphore.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.TimedSemaphore$1" sourceFile="TimedSemaphore.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.event" total_bugs="0" total_types="4" total_size="111">
+      <ClassStats class="org.apache.commons.lang3.event.EventListenerSupport" sourceFile="EventListenerSupport.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.event.EventListenerSupport$ProxyInvocationHandler" sourceFile="EventListenerSupport.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.event.EventUtils" sourceFile="EventUtils.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.event.EventUtils$EventBindingInvocationHandler" sourceFile="EventUtils.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.exception" total_bugs="1" total_types="6" total_size="326" priority_2="1">
+      <ClassStats class="org.apache.commons.lang3.exception.CloneFailedException" sourceFile="CloneFailedException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ContextedException" sourceFile="ContextedException.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ContextedRuntimeException" sourceFile="ContextedRuntimeException.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.DefaultExceptionContext" sourceFile="DefaultExceptionContext.java" interface="false" size="52" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ExceptionContext" sourceFile="ExceptionContext.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ExceptionUtils" sourceFile="ExceptionUtils.java" interface="false" size="173" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.math" total_bugs="1" total_types="3" total_size="829" priority_2="1">
+      <ClassStats class="org.apache.commons.lang3.math.Fraction" sourceFile="Fraction.java" interface="false" size="316" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.math.IEEE754rUtils" sourceFile="IEEE754rUtils.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.math.NumberUtils" sourceFile="NumberUtils.java" interface="false" size="442" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.mutable" total_bugs="0" total_types="9" total_size="499">
+      <ClassStats class="org.apache.commons.lang3.mutable.Mutable" sourceFile="Mutable.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableBoolean" sourceFile="MutableBoolean.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableByte" sourceFile="MutableByte.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableDouble" sourceFile="MutableDouble.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableFloat" sourceFile="MutableFloat.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableInt" sourceFile="MutableInt.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableLong" sourceFile="MutableLong.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableObject" sourceFile="MutableObject.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableShort" sourceFile="MutableShort.java" interface="false" size="71" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.reflect" total_bugs="0" total_types="5" total_size="712">
+      <ClassStats class="org.apache.commons.lang3.reflect.ConstructorUtils" sourceFile="ConstructorUtils.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.FieldUtils" sourceFile="FieldUtils.java" interface="false" size="160" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.MemberUtils" sourceFile="MemberUtils.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.MethodUtils" sourceFile="MethodUtils.java" interface="false" size="130" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils" sourceFile="TypeUtils.java" interface="false" size="307" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.text" total_bugs="3" total_types="18" total_size="1988" priority_2="3">
+      <ClassStats class="org.apache.commons.lang3.text.CompositeFormat" sourceFile="CompositeFormat.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.ExtendedMessageFormat" sourceFile="ExtendedMessageFormat.java" interface="false" size="192" bugs="3" priority_2="3"/>
+      <ClassStats class="org.apache.commons.lang3.text.FormatFactory" sourceFile="FormatFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder" sourceFile="StrBuilder.java" interface="false" size="812" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder$StrBuilderReader" sourceFile="StrBuilder.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer" sourceFile="StrBuilder.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder$StrBuilderWriter" sourceFile="StrBuilder.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrLookup" sourceFile="StrLookup.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrLookup$MapStrLookup" sourceFile="StrLookup.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher" sourceFile="StrMatcher.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$CharMatcher" sourceFile="StrMatcher.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$CharSetMatcher" sourceFile="StrMatcher.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$NoMatcher" sourceFile="StrMatcher.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$StringMatcher" sourceFile="StrMatcher.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$TrimMatcher" sourceFile="StrMatcher.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrSubstitutor" sourceFile="StrSubstitutor.java" interface="false" size="255" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrTokenizer" sourceFile="StrTokenizer.java" interface="false" size="328" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.WordUtils" sourceFile="WordUtils.java" interface="false" size="155" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.text.translate" total_bugs="0" total_types="10" total_size="272">
+      <ClassStats class="org.apache.commons.lang3.text.translate.AggregateTranslator" sourceFile="AggregateTranslator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.CharSequenceTranslator" sourceFile="CharSequenceTranslator.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.CodePointTranslator" sourceFile="CodePointTranslator.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.EntityArrays" sourceFile="EntityArrays.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.LookupTranslator" sourceFile="LookupTranslator.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.NumericEntityEscaper" sourceFile="NumericEntityEscaper.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.NumericEntityUnescaper" sourceFile="NumericEntityUnescaper.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.UnicodeEscaper" sourceFile="UnicodeEscaper.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.UnicodeUnescaper" sourceFile="UnicodeUnescaper.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.UnicodeUnescaper$OPTION" sourceFile="UnicodeUnescaper.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.time" total_bugs="11" total_types="24" total_size="1431" priority_2="11">
+      <ClassStats class="org.apache.commons.lang3.time.DateFormatUtils" sourceFile="DateFormatUtils.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DateUtils" sourceFile="DateUtils.java" interface="false" size="373" bugs="3" priority_2="3"/>
+      <ClassStats class="org.apache.commons.lang3.time.DateUtils$DateIterator" sourceFile="DateUtils.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DurationFormatUtils" sourceFile="DurationFormatUtils.java" interface="false" size="231" bugs="8" priority_2="8"/>
+      <ClassStats class="org.apache.commons.lang3.time.DurationFormatUtils$Token" sourceFile="DurationFormatUtils.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat" sourceFile="FastDateFormat.java" interface="false" size="324" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$CharacterLiteral" sourceFile="FastDateFormat.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$NumberRule" sourceFile="FastDateFormat.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$PaddedNumberField" sourceFile="FastDateFormat.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$Pair" sourceFile="FastDateFormat.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$Rule" sourceFile="FastDateFormat.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$StringLiteral" sourceFile="FastDateFormat.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TextField" sourceFile="FastDateFormat.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TimeZoneDisplayKey" sourceFile="FastDateFormat.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TimeZoneNameRule" sourceFile="FastDateFormat.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TimeZoneNumberRule" sourceFile="FastDateFormat.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TwelveHourField" sourceFile="FastDateFormat.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TwentyFourHourField" sourceFile="FastDateFormat.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TwoDigitMonthField" sourceFile="FastDateFormat.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TwoDigitNumberField" sourceFile="FastDateFormat.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$TwoDigitYearField" sourceFile="FastDateFormat.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$UnpaddedMonthField" sourceFile="FastDateFormat.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$UnpaddedNumberField" sourceFile="FastDateFormat.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch" sourceFile="StopWatch.java" interface="false" size="85" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1134" invocations="2249" avgMicrosecondsPerInvocation="504" maxMicrosecondsPerInvocation="143139" standardDeviationMircosecondsPerInvocation="4121"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1048" invocations="2207" avgMicrosecondsPerInvocation="475" maxMicrosecondsPerInvocation="43964" standardDeviationMircosecondsPerInvocation="2531"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="901" invocations="2282" avgMicrosecondsPerInvocation="395" maxMicrosecondsPerInvocation="41252" standardDeviationMircosecondsPerInvocation="2510"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="874" invocations="1087" avgMicrosecondsPerInvocation="804" maxMicrosecondsPerInvocation="42565" standardDeviationMircosecondsPerInvocation="3359"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="837" invocations="2250" avgMicrosecondsPerInvocation="372" maxMicrosecondsPerInvocation="41224" standardDeviationMircosecondsPerInvocation="2369"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="814" invocations="2275" avgMicrosecondsPerInvocation="358" maxMicrosecondsPerInvocation="54629" standardDeviationMircosecondsPerInvocation="2401"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="799" invocations="2231" avgMicrosecondsPerInvocation="358" maxMicrosecondsPerInvocation="47478" standardDeviationMircosecondsPerInvocation="2324"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="688" invocations="3096" avgMicrosecondsPerInvocation="222" maxMicrosecondsPerInvocation="57058" standardDeviationMircosecondsPerInvocation="1828"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="613" invocations="330" avgMicrosecondsPerInvocation="1859" maxMicrosecondsPerInvocation="101519" standardDeviationMircosecondsPerInvocation="7138"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="541" invocations="1856" avgMicrosecondsPerInvocation="291" maxMicrosecondsPerInvocation="60567" standardDeviationMircosecondsPerInvocation="2177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="465" invocations="2249" avgMicrosecondsPerInvocation="207" maxMicrosecondsPerInvocation="49919" standardDeviationMircosecondsPerInvocation="1975"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="370" invocations="330" avgMicrosecondsPerInvocation="1121" maxMicrosecondsPerInvocation="26648" standardDeviationMircosecondsPerInvocation="2842"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="369" invocations="100" avgMicrosecondsPerInvocation="3695" maxMicrosecondsPerInvocation="316798" standardDeviationMircosecondsPerInvocation="31547"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="306" invocations="143" avgMicrosecondsPerInvocation="2142" maxMicrosecondsPerInvocation="32941" standardDeviationMircosecondsPerInvocation="6148"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="293" invocations="330" avgMicrosecondsPerInvocation="888" maxMicrosecondsPerInvocation="108091" standardDeviationMircosecondsPerInvocation="6903"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="283" invocations="2195" avgMicrosecondsPerInvocation="129" maxMicrosecondsPerInvocation="39628" standardDeviationMircosecondsPerInvocation="1600"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="280" invocations="2271" avgMicrosecondsPerInvocation="123" maxMicrosecondsPerInvocation="115163" standardDeviationMircosecondsPerInvocation="2525"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="262" invocations="143" avgMicrosecondsPerInvocation="1832" maxMicrosecondsPerInvocation="58795" standardDeviationMircosecondsPerInvocation="6323"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="247" invocations="391" avgMicrosecondsPerInvocation="632" maxMicrosecondsPerInvocation="49466" standardDeviationMircosecondsPerInvocation="3614"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="240" invocations="143" avgMicrosecondsPerInvocation="1681" maxMicrosecondsPerInvocation="77130" standardDeviationMircosecondsPerInvocation="7346"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="232" invocations="26980" avgMicrosecondsPerInvocation="8" maxMicrosecondsPerInvocation="29029" standardDeviationMircosecondsPerInvocation="325"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="221" invocations="143" avgMicrosecondsPerInvocation="1547" maxMicrosecondsPerInvocation="28415" standardDeviationMircosecondsPerInvocation="4426"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="215" invocations="2207" avgMicrosecondsPerInvocation="97" maxMicrosecondsPerInvocation="24152" standardDeviationMircosecondsPerInvocation="1052"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="213" invocations="330" avgMicrosecondsPerInvocation="648" maxMicrosecondsPerInvocation="46348" standardDeviationMircosecondsPerInvocation="3765"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="205" invocations="330" avgMicrosecondsPerInvocation="621" maxMicrosecondsPerInvocation="29146" standardDeviationMircosecondsPerInvocation="2887"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="203" invocations="2271" avgMicrosecondsPerInvocation="89" maxMicrosecondsPerInvocation="28355" standardDeviationMircosecondsPerInvocation="941"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="195" invocations="143" avgMicrosecondsPerInvocation="1368" maxMicrosecondsPerInvocation="96324" standardDeviationMircosecondsPerInvocation="8432"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="179" invocations="143" avgMicrosecondsPerInvocation="1253" maxMicrosecondsPerInvocation="44021" standardDeviationMircosecondsPerInvocation="5233"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="178" invocations="1090" avgMicrosecondsPerInvocation="163" maxMicrosecondsPerInvocation="11752" standardDeviationMircosecondsPerInvocation="720"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="174" invocations="330" avgMicrosecondsPerInvocation="528" maxMicrosecondsPerInvocation="31937" standardDeviationMircosecondsPerInvocation="2681"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="156" invocations="143" avgMicrosecondsPerInvocation="1091" maxMicrosecondsPerInvocation="24618" standardDeviationMircosecondsPerInvocation="3359"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="145" invocations="143" avgMicrosecondsPerInvocation="1014" maxMicrosecondsPerInvocation="46574" standardDeviationMircosecondsPerInvocation="4359"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="133" invocations="143" avgMicrosecondsPerInvocation="934" maxMicrosecondsPerInvocation="32316" standardDeviationMircosecondsPerInvocation="3575"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDerefsInvolvingNonShortCircuitEvaluation" totalMilliseconds="128" invocations="143" avgMicrosecondsPerInvocation="897" maxMicrosecondsPerInvocation="40969" standardDeviationMircosecondsPerInvocation="4988"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUnsatisfiedObligation" totalMilliseconds="125" invocations="143" avgMicrosecondsPerInvocation="880" maxMicrosecondsPerInvocation="48743" standardDeviationMircosecondsPerInvocation="4874"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="120" invocations="1033" avgMicrosecondsPerInvocation="116" maxMicrosecondsPerInvocation="20676" standardDeviationMircosecondsPerInvocation="958"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="120" invocations="143" avgMicrosecondsPerInvocation="840" maxMicrosecondsPerInvocation="26756" standardDeviationMircosecondsPerInvocation="3692"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

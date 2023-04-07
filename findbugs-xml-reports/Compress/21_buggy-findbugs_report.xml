@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680369012675" analysisTimestamp="1680690804332" release="">
+  <Project projectName="">
+    <Jar>Compress/21_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.arj.ArjArchiveInputStream">
+      <SourceLine classname="org.apache.commons.compress.archivers.arj.ArjArchiveInputStream" start="41" end="345" sourcefile="ArjArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/arj/ArjArchiveInputStream.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.arj.ArjArchiveInputStream" name="readString" signature="(Ljava/io/DataInputStream;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.arj.ArjArchiveInputStream" start="109" end="117" startBytecode="0" endBytecode="151" sourcefile="ArjArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/arj/ArjArchiveInputStream.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="&lt;init&gt;" signature="([B)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="566" end="567" startBytecode="0" endBytecode="36" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.arj.ArjArchiveInputStream" start="117" end="117" startBytecode="56" endBytecode="56" sourcefile="ArjArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/arj/ArjArchiveInputStream.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream">
+      <SourceLine classname="org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream" start="70" end="554" sourcefile="CpioArchiveOutputStream.java" sourcepath="org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream" name="writeHeader" signature="(Lorg/apache/commons/compress/archivers/cpio/CpioArchiveEntry;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream" start="246" end="268" startBytecode="0" endBytecode="273" sourcefile="CpioArchiveOutputStream.java" sourcepath="org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream" start="246" end="265" startBytecode="4" endBytecode="146" sourcefile="CpioArchiveOutputStream.java" sourcepath="org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE">
+    <Class classname="org.apache.commons.compress.archivers.sevenz.Folder">
+      <SourceLine classname="org.apache.commons.compress.archivers.sevenz.Folder" start="23" end="71" sourcefile="Folder.java" sourcepath="org/apache/commons/compress/archivers/sevenz/Folder.java"/>
+    </Class>
+    <Field classname="org.apache.commons.compress.archivers.sevenz.Folder" name="totalInputStreams" signature="J" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.sevenz.Folder" sourcefile="Folder.java" sourcepath="org/apache/commons/compress/archivers/sevenz/Folder.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.compress.archivers.sevenz.SevenZFile" start="518" end="518" startBytecode="280" endBytecode="280" sourcefile="SevenZFile.java" sourcepath="org/apache/commons/compress/archivers/sevenz/SevenZFile.java"/>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE">
+    <Class classname="org.apache.commons.compress.archivers.tar.TarArchiveEntry">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveEntry" start="118" end="1070" sourcefile="TarArchiveEntry.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveEntry.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.tar.TarArchiveEntry" name="getDirectoryEntries" signature="()[Lorg/apache/commons/compress/archivers/tar/TarArchiveEntry;" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveEntry" start="809" end="820" startBytecode="0" endBytecode="175" sourcefile="TarArchiveEntry.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveEntry.java"/>
+    </Method>
+    <LocalVariable name="list" register="1" pc="30" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveEntry" start="814" end="814" startBytecode="31" endBytecode="31" sourcefile="TarArchiveEntry.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveEntry.java" role="SOURCE_LINE_DEREF"/>
+    <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveEntry" start="813" end="813" startBytecode="26" endBytecode="26" sourcefile="TarArchiveEntry.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveEntry.java" role="SOURCE_LINE_KNOWN_NULL"/>
+  </BugInstance>
+  <BugInstance type="SR_NOT_CHECKED" priority="2" rank="16" abbrev="RR" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" start="52" end="682" sourcefile="TarArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" name="getNextTarEntry" signature="()Lorg/apache/commons/compress/archivers/tar/TarArchiveEntry;" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" start="226" end="293" startBytecode="0" endBytecode="445" sourcefile="TarArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java"/>
+    </Method>
+    <Method classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" name="skip" signature="(J)J" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" start="196" end="202" startBytecode="0" endBytecode="137" sourcefile="TarArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" start="232" end="232" startBytecode="20" endBytecode="20" sourcefile="TarArchiveInputStream.java" sourcepath="org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.tar.TarUtils">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarUtils" start="40" end="628" sourcefile="TarUtils.java" sourcepath="org/apache/commons/compress/archivers/tar/TarUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.tar.TarUtils" name="exceptionMessage" signature="([BIIIB)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.compress.archivers.tar.TarUtils" start="249" end="253" startBytecode="0" endBytecode="191" sourcefile="TarUtils.java" sourcepath="org/apache/commons/compress/archivers/tar/TarUtils.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="&lt;init&gt;" signature="([BII)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="544" end="547" startBytecode="0" endBytecode="56" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.tar.TarUtils" start="249" end="249" startBytecode="7" endBytecode="7" sourcefile="TarUtils.java" sourcepath="org/apache/commons/compress/archivers/tar/TarUtils.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.zip.AsiExtraField">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="55" end="328" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.zip.AsiExtraField" name="getLocalFileDataData" signature="()[B" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="127" end="150" startBytecode="0" endBytecode="276" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="958" end="958" startBytecode="0" endBytecode="37" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="130" end="130" startBytecode="30" endBytecode="30" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.zip.AsiExtraField">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="55" end="328" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.zip.AsiExtraField" name="getLocalFileDataLength" signature="()Lorg/apache/commons/compress/archivers/zip/ZipShort;" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="103" end="103" startBytecode="0" endBytecode="60" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="958" end="958" startBytecode="0" endBytecode="37" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="103" end="103" startBytecode="10" endBytecode="10" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.zip.AsiExtraField">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="55" end="328" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.zip.AsiExtraField" name="parseFromLocalFileData" signature="([BII)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="265" end="293" startBytecode="0" endBytecode="404" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="&lt;init&gt;" signature="([B)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="566" end="567" startBytecode="0" endBytecode="36" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.zip.AsiExtraField" start="288" end="288" startBytecode="180" endBytecode="180" sourcefile="AsiExtraField.java" sourcepath="org/apache/commons/compress/archivers/zip/AsiExtraField.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" start="50" end="92" sourcefile="FallbackZipEncoding.java" sourcepath="org/apache/commons/compress/archivers/zip/FallbackZipEncoding.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" name="decode" signature="([B)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" start="89" end="92" startBytecode="0" endBytecode="88" sourcefile="FallbackZipEncoding.java" sourcepath="org/apache/commons/compress/archivers/zip/FallbackZipEncoding.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="&lt;init&gt;" signature="([B)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="566" end="567" startBytecode="0" endBytecode="36" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" start="90" end="90" startBytecode="12" endBytecode="12" sourcefile="FallbackZipEncoding.java" sourcepath="org/apache/commons/compress/archivers/zip/FallbackZipEncoding.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" start="50" end="92" sourcefile="FallbackZipEncoding.java" sourcepath="org/apache/commons/compress/archivers/zip/FallbackZipEncoding.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" name="encode" signature="(Ljava/lang/String;)Ljava/nio/ByteBuffer;" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" start="77" end="80" startBytecode="0" endBytecode="86" sourcefile="FallbackZipEncoding.java" sourcepath="org/apache/commons/compress/archivers/zip/FallbackZipEncoding.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="958" end="958" startBytecode="0" endBytecode="37" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" start="78" end="78" startBytecode="8" endBytecode="8" sourcefile="FallbackZipEncoding.java" sourcepath="org/apache/commons/compress/archivers/zip/FallbackZipEncoding.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.compress.utils.PureJavaCrc32C">
+      <SourceLine classname="org.apache.commons.compress.utils.PureJavaCrc32C" start="41" end="115" sourcefile="PureJavaCrc32C.java" sourcepath="org/apache/commons/compress/utils/PureJavaCrc32C.java"/>
+    </Class>
+    <Method classname="org.apache.commons.compress.utils.PureJavaCrc32C" name="update" signature="([BII)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.compress.utils.PureJavaCrc32C" start="58" end="95" startBytecode="0" endBytecode="729" sourcefile="PureJavaCrc32C.java" sourcepath="org/apache/commons/compress/utils/PureJavaCrc32C.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.compress.utils.PureJavaCrc32C" start="81" end="88" startBytecode="233" endBytecode="464" sourcefile="PureJavaCrc32C.java" sourcepath="org/apache/commons/compress/utils/PureJavaCrc32C.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="8">
+    <MissingClass>org.tukaani.xz.FinishableWrapperOutputStream</MissingClass>
+    <MissingClass>org.tukaani.xz.LZMA2InputStream</MissingClass>
+    <MissingClass>org.tukaani.xz.LZMA2Options</MissingClass>
+    <MissingClass>org.tukaani.xz.LZMAInputStream</MissingClass>
+    <MissingClass>org.tukaani.xz.SingleXZInputStream</MissingClass>
+    <MissingClass>org.tukaani.xz.XZ</MissingClass>
+    <MissingClass>org.tukaani.xz.XZInputStream</MissingClass>
+    <MissingClass>org.tukaani.xz.XZOutputStream</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 01:10:12 +0800" total_classes="188" referenced_classes="351" total_bugs="12" total_size="12537" num_packages="19" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="93.72" clock_seconds="19.52" peak_mbytes="309.62" alloc_mbytes="683.00" gc_seconds="0.93" priority_2="5" priority_1="7">
+    <PackageStats package="org.apache.commons.compress.archivers" total_bugs="0" total_types="6" total_size="218">
+      <ClassStats class="org.apache.commons.compress.archivers.ArchiveEntry" sourceFile="ArchiveEntry.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.ArchiveException" sourceFile="ArchiveException.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.ArchiveInputStream" sourceFile="ArchiveInputStream.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.ArchiveOutputStream" sourceFile="ArchiveOutputStream.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.ArchiveStreamFactory" sourceFile="ArchiveStreamFactory.java" interface="false" size="119" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.Lister" sourceFile="Lister.java" interface="false" size="27" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.ar" total_bugs="0" total_types="3" total_size="354">
+      <ClassStats class="org.apache.commons.compress.archivers.ar.ArArchiveEntry" sourceFile="ArArchiveEntry.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.ar.ArArchiveInputStream" sourceFile="ArArchiveInputStream.java" interface="false" size="174" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.ar.ArArchiveOutputStream" sourceFile="ArArchiveOutputStream.java" interface="false" size="120" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.arj" total_bugs="1" total_types="9" total_size="418" priority_1="1">
+      <ClassStats class="org.apache.commons.compress.archivers.arj.ArjArchiveEntry" sourceFile="ArjArchiveEntry.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.ArjArchiveEntry$HostOs" sourceFile="ArjArchiveEntry.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.ArjArchiveInputStream" sourceFile="ArjArchiveInputStream.java" interface="false" size="195" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.LocalFileHeader" sourceFile="LocalFileHeader.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.LocalFileHeader$FileTypes" sourceFile="LocalFileHeader.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.LocalFileHeader$Flags" sourceFile="LocalFileHeader.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.LocalFileHeader$Methods" sourceFile="LocalFileHeader.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.MainHeader" sourceFile="MainHeader.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.arj.MainHeader$Flags" sourceFile="MainHeader.java" interface="false" size="11" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.cpio" total_bugs="1" total_types="5" total_size="794" priority_2="1">
+      <ClassStats class="org.apache.commons.compress.archivers.cpio.CpioArchiveEntry" sourceFile="CpioArchiveEntry.java" interface="false" size="234" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream" sourceFile="CpioArchiveInputStream.java" interface="false" size="245" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream" sourceFile="CpioArchiveOutputStream.java" interface="false" size="241" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.compress.archivers.cpio.CpioConstants" sourceFile="CpioConstants.java" interface="true" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.cpio.CpioUtil" sourceFile="CpioUtil.java" interface="false" size="40" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.dump" total_bugs="0" total_types="19" total_size="969">
+      <ClassStats class="org.apache.commons.compress.archivers.dump.Dirent" sourceFile="Dirent.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveConstants" sourceFile="DumpArchiveConstants.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveConstants$COMPRESSION_TYPE" sourceFile="DumpArchiveConstants.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveConstants$SEGMENT_TYPE" sourceFile="DumpArchiveConstants.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveEntry" sourceFile="DumpArchiveEntry.java" interface="false" size="205" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveEntry$PERMISSION" sourceFile="DumpArchiveEntry.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveEntry$TYPE" sourceFile="DumpArchiveEntry.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveEntry$TapeSegmentHeader" sourceFile="DumpArchiveEntry.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveException" sourceFile="DumpArchiveException.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveInputStream" sourceFile="DumpArchiveInputStream.java" interface="false" size="224" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveInputStream$1" sourceFile="DumpArchiveInputStream.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveSummary" sourceFile="DumpArchiveSummary.java" interface="false" size="114" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.DumpArchiveUtil" sourceFile="DumpArchiveUtil.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.InvalidFormatException" sourceFile="InvalidFormatException.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.ShortFileException" sourceFile="ShortFileException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.TapeInputStream" sourceFile="TapeInputStream.java" interface="false" size="125" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.TapeInputStream$1" sourceFile="TapeInputStream.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.UnrecognizedFormatException" sourceFile="UnrecognizedFormatException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.dump.UnsupportedCompressionAlgorithmException" sourceFile="UnsupportedCompressionAlgorithmException.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.jar" total_bugs="0" total_types="3" total_size="52">
+      <ClassStats class="org.apache.commons.compress.archivers.jar.JarArchiveEntry" sourceFile="JarArchiveEntry.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.jar.JarArchiveInputStream" sourceFile="JarArchiveInputStream.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.jar.JarArchiveOutputStream" sourceFile="JarArchiveOutputStream.java" interface="false" size="12" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.sevenz" total_bugs="1" total_types="28" total_size="1454" priority_2="1">
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Archive" sourceFile="Archive.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.BindPair" sourceFile="BindPair.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.BoundedRandomAccessFileInputStream" sourceFile="BoundedRandomAccessFileInputStream.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coder" sourceFile="Coder.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders" sourceFile="Coders.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$1" sourceFile="Coders.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$AES256SHA256Decoder" sourceFile="Coders.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$AES256SHA256Decoder$1" sourceFile="Coders.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$BZIP2Decoder" sourceFile="Coders.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$CoderBase" sourceFile="Coders.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$CoderId" sourceFile="Coders.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$CopyDecoder" sourceFile="Coders.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$DeflateDecoder" sourceFile="Coders.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$DummyByteAddingInputStream" sourceFile="Coders.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Coders$LZMADecoder" sourceFile="Coders.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.Folder" sourceFile="Folder.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.LZMA2Decoder" sourceFile="LZMA2Decoder.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.NID" sourceFile="NID.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry" sourceFile="SevenZArchiveEntry.java" interface="false" size="150" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZFile" sourceFile="SevenZFile.java" interface="false" size="524" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZMethod" sourceFile="SevenZMethod.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZMethod$1" sourceFile="SevenZMethod.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZOutputFile" sourceFile="SevenZOutputFile.java" interface="false" size="407" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZOutputFile$1" sourceFile="SevenZOutputFile.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SevenZOutputFile$OutputStreamWrapper" sourceFile="SevenZOutputFile.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.StartHeader" sourceFile="StartHeader.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.StreamMap" sourceFile="StreamMap.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.sevenz.SubStreamsInfo" sourceFile="SubStreamsInfo.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.tar" total_bugs="3" total_types="7" total_size="1141" priority_2="2" priority_1="1">
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarArchiveEntry" sourceFile="TarArchiveEntry.java" interface="false" size="350" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarArchiveInputStream" sourceFile="TarArchiveInputStream.java" interface="false" size="248" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarArchiveOutputStream" sourceFile="TarArchiveOutputStream.java" interface="false" size="271" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarArchiveSparseEntry" sourceFile="TarArchiveSparseEntry.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarConstants" sourceFile="TarConstants.java" interface="true" size="56" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarUtils" sourceFile="TarUtils.java" interface="false" size="186" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.compress.archivers.tar.TarUtils$1" sourceFile="TarUtils.java" interface="false" size="20" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.archivers.zip" total_bugs="5" total_types="54" total_size="3529" priority_1="5">
+      <ClassStats class="org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField" sourceFile="AbstractUnicodeExtraField.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.AsiExtraField" sourceFile="AsiExtraField.java" interface="false" size="108" bugs="3" priority_1="3"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.BinaryTree" sourceFile="BinaryTree.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.BitStream" sourceFile="BitStream.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.CircularBuffer" sourceFile="CircularBuffer.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ExplodingInputStream" sourceFile="ExplodingInputStream.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ExtraFieldUtils" sourceFile="ExtraFieldUtils.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ExtraFieldUtils$UnparseableExtraField" sourceFile="ExtraFieldUtils.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.FallbackZipEncoding" sourceFile="FallbackZipEncoding.java" interface="false" size="20" bugs="2" priority_1="2"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.GeneralPurposeBit" sourceFile="GeneralPurposeBit.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.JarMarker" sourceFile="JarMarker.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.NioZipEncoding" sourceFile="NioZipEncoding.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.Simple8BitZipEncoding" sourceFile="Simple8BitZipEncoding.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.Simple8BitZipEncoding$Simple8BitChar" sourceFile="Simple8BitZipEncoding.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnicodeCommentExtraField" sourceFile="UnicodeCommentExtraField.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnicodePathExtraField" sourceFile="UnicodePathExtraField.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnixStat" sourceFile="UnixStat.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnparseableExtraFieldData" sourceFile="UnparseableExtraFieldData.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnrecognizedExtraField" sourceFile="UnrecognizedExtraField.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnshrinkingInputStream" sourceFile="UnshrinkingInputStream.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnsupportedZipFeatureException" sourceFile="UnsupportedZipFeatureException.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.UnsupportedZipFeatureException$Feature" sourceFile="UnsupportedZipFeatureException.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.X5455_ExtendedTimestamp" sourceFile="X5455_ExtendedTimestamp.java" interface="false" size="153" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.X7875_NewUnix" sourceFile="X7875_NewUnix.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.Zip64ExtendedInformationExtraField" sourceFile="Zip64ExtendedInformationExtraField.java" interface="false" size="129" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.Zip64Mode" sourceFile="Zip64Mode.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.Zip64RequiredException" sourceFile="Zip64RequiredException.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveEntry" sourceFile="ZipArchiveEntry.java" interface="false" size="242" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveInputStream" sourceFile="ZipArchiveInputStream.java" interface="false" size="411" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveInputStream$1" sourceFile="ZipArchiveInputStream.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveInputStream$BoundedInputStream" sourceFile="ZipArchiveInputStream.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveInputStream$CurrentEntry" sourceFile="ZipArchiveInputStream.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream" sourceFile="ZipArchiveOutputStream.java" interface="false" size="520" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream$1" sourceFile="ZipArchiveOutputStream.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream$CurrentEntry" sourceFile="ZipArchiveOutputStream.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream$UnicodeExtraFieldPolicy" sourceFile="ZipArchiveOutputStream.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipConstants" sourceFile="ZipConstants.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipEightByteInteger" sourceFile="ZipEightByteInteger.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipEncoding" sourceFile="ZipEncoding.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipEncodingHelper" sourceFile="ZipEncodingHelper.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipEncodingHelper$SimpleEncodingHolder" sourceFile="ZipEncodingHelper.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipExtraField" sourceFile="ZipExtraField.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile" sourceFile="ZipFile.java" interface="false" size="317" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$1" sourceFile="ZipFile.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$2" sourceFile="ZipFile.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$3" sourceFile="ZipFile.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$BoundedInputStream" sourceFile="ZipFile.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$Entry" sourceFile="ZipFile.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$NameAndComment" sourceFile="ZipFile.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipFile$OffsetEntry" sourceFile="ZipFile.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipLong" sourceFile="ZipLong.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipMethod" sourceFile="ZipMethod.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipShort" sourceFile="ZipShort.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.archivers.zip.ZipUtil" sourceFile="ZipUtil.java" interface="false" size="104" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.changes" total_bugs="0" total_types="7" total_size="221">
+      <ClassStats class="org.apache.commons.compress.changes.Change" sourceFile="Change.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.changes.ChangeSet" sourceFile="ChangeSet.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.changes.ChangeSetPerformer" sourceFile="ChangeSetPerformer.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.changes.ChangeSetPerformer$ArchiveEntryIterator" sourceFile="ChangeSetPerformer.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.changes.ChangeSetPerformer$ArchiveInputStreamIterator" sourceFile="ChangeSetPerformer.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.changes.ChangeSetPerformer$ZipFileIterator" sourceFile="ChangeSetPerformer.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.changes.ChangeSetResults" sourceFile="ChangeSetResults.java" interface="false" size="28" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors" total_bugs="0" total_types="5" total_size="169">
+      <ClassStats class="org.apache.commons.compress.compressors.CompressorException" sourceFile="CompressorException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.CompressorInputStream" sourceFile="CompressorInputStream.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.CompressorOutputStream" sourceFile="CompressorOutputStream.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.CompressorStreamFactory" sourceFile="CompressorStreamFactory.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.FileNameUtil" sourceFile="FileNameUtil.java" interface="false" size="62" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.bzip2" total_bugs="0" total_types="9" total_size="1816">
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream" sourceFile="BZip2CompressorInputStream.java" interface="false" size="549" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream$Data" sourceFile="BZip2CompressorInputStream.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream" sourceFile="BZip2CompressorOutputStream.java" interface="false" size="650" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream$Data" sourceFile="BZip2CompressorOutputStream.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BZip2Constants" sourceFile="BZip2Constants.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BZip2Utils" sourceFile="BZip2Utils.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.BlockSort" sourceFile="BlockSort.java" interface="false" size="463" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.CRC" sourceFile="CRC.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.bzip2.Rand" sourceFile="Rand.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.gzip" total_bugs="0" total_types="4" total_size="283">
+      <ClassStats class="org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream" sourceFile="GzipCompressorInputStream.java" interface="false" size="133" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.gzip.GzipCompressorOutputStream" sourceFile="GzipCompressorOutputStream.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.gzip.GzipParameters" sourceFile="GzipParameters.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.gzip.GzipUtils" sourceFile="GzipUtils.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.lzma" total_bugs="0" total_types="1" total_size="21">
+      <ClassStats class="org.apache.commons.compress.compressors.lzma.LZMACompressorInputStream" sourceFile="LZMACompressorInputStream.java" interface="false" size="21" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.pack200" total_bugs="0" total_types="11" total_size="248">
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.InMemoryCachingStreamBridge" sourceFile="InMemoryCachingStreamBridge.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200CompressorInputStream" sourceFile="Pack200CompressorInputStream.java" interface="false" size="80" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200CompressorInputStream$1" sourceFile="Pack200CompressorInputStream.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200CompressorOutputStream" sourceFile="Pack200CompressorOutputStream.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200Strategy" sourceFile="Pack200Strategy.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200Strategy$1" sourceFile="Pack200Strategy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200Strategy$2" sourceFile="Pack200Strategy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.Pack200Utils" sourceFile="Pack200Utils.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.StreamBridge" sourceFile="StreamBridge.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.TempFileCachingStreamBridge" sourceFile="TempFileCachingStreamBridge.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.pack200.TempFileCachingStreamBridge$1" sourceFile="TempFileCachingStreamBridge.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.snappy" total_bugs="0" total_types="2" total_size="298">
+      <ClassStats class="org.apache.commons.compress.compressors.snappy.FramedSnappyCompressorInputStream" sourceFile="FramedSnappyCompressorInputStream.java" interface="false" size="155" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.snappy.SnappyCompressorInputStream" sourceFile="SnappyCompressorInputStream.java" interface="false" size="143" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.xz" total_bugs="0" total_types="3" total_size="81">
+      <ClassStats class="org.apache.commons.compress.compressors.xz.XZCompressorInputStream" sourceFile="XZCompressorInputStream.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.xz.XZCompressorOutputStream" sourceFile="XZCompressorOutputStream.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.xz.XZUtils" sourceFile="XZUtils.java" interface="false" size="23" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.compressors.z" total_bugs="0" total_types="2" total_size="170">
+      <ClassStats class="org.apache.commons.compress.compressors.z.AbstractLZWInputStream" sourceFile="AbstractLZWInputStream.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.compressors.z.ZCompressorInputStream" sourceFile="ZCompressorInputStream.java" interface="false" size="66" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.compress.utils" total_bugs="1" total_types="10" total_size="301" priority_2="1">
+      <ClassStats class="org.apache.commons.compress.utils.ArchiveUtils" sourceFile="ArchiveUtils.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.BoundedInputStream" sourceFile="BoundedInputStream.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.CRC32VerifyingInputStream" sourceFile="CRC32VerifyingInputStream.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.CharsetNames" sourceFile="CharsetNames.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.Charsets" sourceFile="Charsets.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.ChecksumVerifyingInputStream" sourceFile="ChecksumVerifyingInputStream.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.CountingInputStream" sourceFile="CountingInputStream.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.CountingOutputStream" sourceFile="CountingOutputStream.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.IOUtils" sourceFile="IOUtils.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.compress.utils.PureJavaCrc32C" sourceFile="PureJavaCrc32C.java" interface="false" size="52" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1348" invocations="1625" avgMicrosecondsPerInvocation="829" maxMicrosecondsPerInvocation="325422" standardDeviationMircosecondsPerInvocation="8762"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1171" invocations="1160" avgMicrosecondsPerInvocation="1009" maxMicrosecondsPerInvocation="64150" standardDeviationMircosecondsPerInvocation="4272"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1055" invocations="1620" avgMicrosecondsPerInvocation="651" maxMicrosecondsPerInvocation="93407" standardDeviationMircosecondsPerInvocation="3751"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="694" invocations="1623" avgMicrosecondsPerInvocation="427" maxMicrosecondsPerInvocation="47755" standardDeviationMircosecondsPerInvocation="2213"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="685" invocations="1642" avgMicrosecondsPerInvocation="417" maxMicrosecondsPerInvocation="47848" standardDeviationMircosecondsPerInvocation="2497"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="673" invocations="351" avgMicrosecondsPerInvocation="1918" maxMicrosecondsPerInvocation="54455" standardDeviationMircosecondsPerInvocation="6364"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="634" invocations="1646" avgMicrosecondsPerInvocation="385" maxMicrosecondsPerInvocation="28491" standardDeviationMircosecondsPerInvocation="1760"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="631" invocations="1628" avgMicrosecondsPerInvocation="387" maxMicrosecondsPerInvocation="74301" standardDeviationMircosecondsPerInvocation="2617"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="558" invocations="351" avgMicrosecondsPerInvocation="1592" maxMicrosecondsPerInvocation="34585" standardDeviationMircosecondsPerInvocation="4546"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="553" invocations="2312" avgMicrosecondsPerInvocation="239" maxMicrosecondsPerInvocation="60772" standardDeviationMircosecondsPerInvocation="1888"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="427" invocations="1197" avgMicrosecondsPerInvocation="357" maxMicrosecondsPerInvocation="25556" standardDeviationMircosecondsPerInvocation="1962"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="402" invocations="1655" avgMicrosecondsPerInvocation="243" maxMicrosecondsPerInvocation="177379" standardDeviationMircosecondsPerInvocation="4564"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="309" invocations="1655" avgMicrosecondsPerInvocation="186" maxMicrosecondsPerInvocation="101977" standardDeviationMircosecondsPerInvocation="2917"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="305" invocations="1165" avgMicrosecondsPerInvocation="262" maxMicrosecondsPerInvocation="29639" standardDeviationMircosecondsPerInvocation="1617"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="300" invocations="1625" avgMicrosecondsPerInvocation="184" maxMicrosecondsPerInvocation="32070" standardDeviationMircosecondsPerInvocation="1386"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="292" invocations="435" avgMicrosecondsPerInvocation="672" maxMicrosecondsPerInvocation="118955" standardDeviationMircosecondsPerInvocation="5962"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="256" invocations="188" avgMicrosecondsPerInvocation="1365" maxMicrosecondsPerInvocation="35146" standardDeviationMircosecondsPerInvocation="4074"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="248" invocations="188" avgMicrosecondsPerInvocation="1322" maxMicrosecondsPerInvocation="25693" standardDeviationMircosecondsPerInvocation="4054"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="245" invocations="425" avgMicrosecondsPerInvocation="577" maxMicrosecondsPerInvocation="48317" standardDeviationMircosecondsPerInvocation="3131"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="238" invocations="188" avgMicrosecondsPerInvocation="1266" maxMicrosecondsPerInvocation="28722" standardDeviationMircosecondsPerInvocation="3932"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="234" invocations="1094" avgMicrosecondsPerInvocation="214" maxMicrosecondsPerInvocation="40724" standardDeviationMircosecondsPerInvocation="2004"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="229" invocations="351" avgMicrosecondsPerInvocation="653" maxMicrosecondsPerInvocation="55364" standardDeviationMircosecondsPerInvocation="3784"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="226" invocations="188" avgMicrosecondsPerInvocation="1204" maxMicrosecondsPerInvocation="143149" standardDeviationMircosecondsPerInvocation="10685"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="206" invocations="188" avgMicrosecondsPerInvocation="1097" maxMicrosecondsPerInvocation="33396" standardDeviationMircosecondsPerInvocation="4008"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="201" invocations="188" avgMicrosecondsPerInvocation="1072" maxMicrosecondsPerInvocation="88000" standardDeviationMircosecondsPerInvocation="6888"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="179" invocations="188" avgMicrosecondsPerInvocation="954" maxMicrosecondsPerInvocation="25566" standardDeviationMircosecondsPerInvocation="3481"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="167" invocations="351" avgMicrosecondsPerInvocation="476" maxMicrosecondsPerInvocation="29789" standardDeviationMircosecondsPerInvocation="2207"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="154" invocations="188" avgMicrosecondsPerInvocation="820" maxMicrosecondsPerInvocation="65456" standardDeviationMircosecondsPerInvocation="4940"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="151" invocations="351" avgMicrosecondsPerInvocation="431" maxMicrosecondsPerInvocation="23263" standardDeviationMircosecondsPerInvocation="2135"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="148" invocations="188" avgMicrosecondsPerInvocation="791" maxMicrosecondsPerInvocation="45752" standardDeviationMircosecondsPerInvocation="4126"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="141" invocations="188" avgMicrosecondsPerInvocation="753" maxMicrosecondsPerInvocation="45391" standardDeviationMircosecondsPerInvocation="3967"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="137" invocations="351" avgMicrosecondsPerInvocation="392" maxMicrosecondsPerInvocation="63982" standardDeviationMircosecondsPerInvocation="3831"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="135" invocations="188" avgMicrosecondsPerInvocation="721" maxMicrosecondsPerInvocation="63727" standardDeviationMircosecondsPerInvocation="4887"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="134" invocations="351" avgMicrosecondsPerInvocation="382" maxMicrosecondsPerInvocation="20667" standardDeviationMircosecondsPerInvocation="1986"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="132" invocations="351" avgMicrosecondsPerInvocation="377" maxMicrosecondsPerInvocation="29067" standardDeviationMircosecondsPerInvocation="2205"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="131" invocations="188" avgMicrosecondsPerInvocation="699" maxMicrosecondsPerInvocation="29011" standardDeviationMircosecondsPerInvocation="2705"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

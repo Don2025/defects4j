@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680381796158" analysisTimestamp="1680690257303" release="">
+  <Project projectName="">
+    <Jar>Closure/84_buggy/build/classes</Jar>
+  </Project>
+  <BugInstance type="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE" priority="1" rank="14" abbrev="CN" category="BAD_PRACTICE">
+    <Class classname="com.google.javascript.jscomp.FunctionInformationMap$Builder">
+      <SourceLine classname="com.google.javascript.jscomp.FunctionInformationMap$Builder" start="1041" end="1281" sourcefile="FunctionInformationMap.java" sourcepath="com/google/javascript/jscomp/FunctionInformationMap.java"/>
+    </Class>
+    <Method classname="com.google.javascript.jscomp.FunctionInformationMap$Builder" name="clone" signature="()Lcom/google/javascript/jscomp/FunctionInformationMap$Builder;" isStatic="false">
+      <SourceLine classname="com.google.javascript.jscomp.FunctionInformationMap$Builder" start="1068" end="1068" startBytecode="0" endBytecode="52" sourcefile="FunctionInformationMap.java" sourcepath="com/google/javascript/jscomp/FunctionInformationMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE" priority="1" rank="14" abbrev="CN" category="BAD_PRACTICE">
+    <Class classname="com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder">
+      <SourceLine classname="com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder" start="261" end="554" sourcefile="FunctionInformationMap.java" sourcepath="com/google/javascript/jscomp/FunctionInformationMap.java"/>
+    </Class>
+    <Method classname="com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder" name="clone" signature="()Lcom/google/javascript/jscomp/FunctionInformationMap$Entry$Builder;" isStatic="false">
+      <SourceLine classname="com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder" start="288" end="288" startBytecode="0" endBytecode="52" sourcefile="FunctionInformationMap.java" sourcepath="com/google/javascript/jscomp/FunctionInformationMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE" priority="1" rank="14" abbrev="CN" category="BAD_PRACTICE">
+    <Class classname="com.google.javascript.jscomp.FunctionInformationMap$Module$Builder">
+      <SourceLine classname="com.google.javascript.jscomp.FunctionInformationMap$Module$Builder" start="723" end="885" sourcefile="FunctionInformationMap.java" sourcepath="com/google/javascript/jscomp/FunctionInformationMap.java"/>
+    </Class>
+    <Method classname="com.google.javascript.jscomp.FunctionInformationMap$Module$Builder" name="clone" signature="()Lcom/google/javascript/jscomp/FunctionInformationMap$Module$Builder;" isStatic="false">
+      <SourceLine classname="com.google.javascript.jscomp.FunctionInformationMap$Module$Builder" start="750" end="750" startBytecode="0" endBytecode="52" sourcefile="FunctionInformationMap.java" sourcepath="com/google/javascript/jscomp/FunctionInformationMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE" priority="1" rank="14" abbrev="CN" category="BAD_PRACTICE">
+    <Class classname="com.google.javascript.jscomp.Instrumentation$Builder">
+      <SourceLine classname="com.google.javascript.jscomp.Instrumentation$Builder" start="233" end="559" sourcefile="Instrumentation.java" sourcepath="com/google/javascript/jscomp/Instrumentation.java"/>
+    </Class>
+    <Method classname="com.google.javascript.jscomp.Instrumentation$Builder" name="clone" signature="()Lcom/google/javascript/jscomp/Instrumentation$Builder;" isStatic="false">
+      <SourceLine classname="com.google.javascript.jscomp.Instrumentation$Builder" start="260" end="260" startBytecode="0" endBytecode="52" sourcefile="Instrumentation.java" sourcepath="com/google/javascript/jscomp/Instrumentation.java"/>
+    </Method>
+  </BugInstance>
+  <Errors errors="0" missingClasses="12">
+    <MissingClass>com.google.protobuf.CodedInputStream</MissingClass>
+    <MissingClass>com.google.protobuf.CodedOutputStream</MissingClass>
+    <MissingClass>com.google.protobuf.Descriptors$Descriptor</MissingClass>
+    <MissingClass>com.google.protobuf.Descriptors$FileDescriptor</MissingClass>
+    <MissingClass>com.google.protobuf.Descriptors$FileDescriptor$InternalDescriptorAssigner</MissingClass>
+    <MissingClass>com.google.protobuf.GeneratedMessage</MissingClass>
+    <MissingClass>com.google.protobuf.GeneratedMessage$Builder</MissingClass>
+    <MissingClass>com.google.protobuf.GeneratedMessage$FieldAccessorTable</MissingClass>
+    <MissingClass>com.google.protobuf.Message</MissingClass>
+    <MissingClass>com.google.protobuf.UninitializedMessageException</MissingClass>
+    <MissingClass>com.google.protobuf.UnknownFieldSet</MissingClass>
+    <MissingClass>com.google.protobuf.UnknownFieldSet$Builder</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 04:43:16 +0800" total_classes="14" referenced_classes="33" total_bugs="4" total_size="1360" num_packages="1" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="28.04" clock_seconds="6.28" peak_mbytes="284.58" alloc_mbytes="683.00" gc_seconds="0.42" priority_1="4">
+    <PackageStats package="com.google.javascript.jscomp" total_bugs="4" total_types="14" total_size="1360" priority_1="4">
+      <ClassStats class="com.google.javascript.jscomp.FunctionInfo" sourceFile="FunctionInfo.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInfo$1" sourceFile="FunctionInfo.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap" sourceFile="FunctionInformationMap.java" interface="false" size="120" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap$1" sourceFile="FunctionInformationMap.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap$Builder" sourceFile="FunctionInformationMap.java" interface="false" size="169" bugs="1" priority_1="1"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap$Entry" sourceFile="FunctionInformationMap.java" interface="false" size="185" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap$Entry$Builder" sourceFile="FunctionInformationMap.java" interface="false" size="200" bugs="1" priority_1="1"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap$Module" sourceFile="FunctionInformationMap.java" interface="false" size="110" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.FunctionInformationMap$Module$Builder" sourceFile="FunctionInformationMap.java" interface="false" size="116" bugs="1" priority_1="1"/>
+      <ClassStats class="com.google.javascript.jscomp.Instrumentation" sourceFile="Instrumentation.java" interface="false" size="176" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.Instrumentation$1" sourceFile="Instrumentation.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.Instrumentation$Builder" sourceFile="Instrumentation.java" interface="false" size="220" bugs="1" priority_1="1"/>
+      <ClassStats class="com.google.javascript.jscomp.InstrumentationTemplate" sourceFile="InstrumentationTemplate.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.google.javascript.jscomp.InstrumentationTemplate$1" sourceFile="InstrumentationTemplate.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="543" invocations="340" avgMicrosecondsPerInvocation="1597" maxMicrosecondsPerInvocation="272351" standardDeviationMircosecondsPerInvocation="15165"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="541" invocations="420" avgMicrosecondsPerInvocation="1289" maxMicrosecondsPerInvocation="91273" standardDeviationMircosecondsPerInvocation="5513"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="330" invocations="14" avgMicrosecondsPerInvocation="23625" maxMicrosecondsPerInvocation="139718" standardDeviationMircosecondsPerInvocation="36840"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="226" invocations="452" avgMicrosecondsPerInvocation="500" maxMicrosecondsPerInvocation="28164" standardDeviationMircosecondsPerInvocation="2445"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="200" invocations="452" avgMicrosecondsPerInvocation="442" maxMicrosecondsPerInvocation="42385" standardDeviationMircosecondsPerInvocation="3109"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="194" invocations="33" avgMicrosecondsPerInvocation="5902" maxMicrosecondsPerInvocation="59522" standardDeviationMircosecondsPerInvocation="12729"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="192" invocations="452" avgMicrosecondsPerInvocation="426" maxMicrosecondsPerInvocation="24490" standardDeviationMircosecondsPerInvocation="2061"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="174" invocations="455" avgMicrosecondsPerInvocation="382" maxMicrosecondsPerInvocation="25243" standardDeviationMircosecondsPerInvocation="2150"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="169" invocations="363" avgMicrosecondsPerInvocation="466" maxMicrosecondsPerInvocation="60509" standardDeviationMircosecondsPerInvocation="3601"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="167" invocations="452" avgMicrosecondsPerInvocation="371" maxMicrosecondsPerInvocation="131334" standardDeviationMircosecondsPerInvocation="6177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="162" invocations="557" avgMicrosecondsPerInvocation="291" maxMicrosecondsPerInvocation="21435" standardDeviationMircosecondsPerInvocation="1723"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="151" invocations="364" avgMicrosecondsPerInvocation="416" maxMicrosecondsPerInvocation="26789" standardDeviationMircosecondsPerInvocation="2175"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="143" invocations="423" avgMicrosecondsPerInvocation="338" maxMicrosecondsPerInvocation="24758" standardDeviationMircosecondsPerInvocation="1761"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="130" invocations="60" avgMicrosecondsPerInvocation="2180" maxMicrosecondsPerInvocation="64039" standardDeviationMircosecondsPerInvocation="8995"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="116" invocations="14" avgMicrosecondsPerInvocation="8334" maxMicrosecondsPerInvocation="64798" standardDeviationMircosecondsPerInvocation="17008"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="107" invocations="14" avgMicrosecondsPerInvocation="7668" maxMicrosecondsPerInvocation="41691" standardDeviationMircosecondsPerInvocation="12862"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="93" invocations="33" avgMicrosecondsPerInvocation="2822" maxMicrosecondsPerInvocation="25264" standardDeviationMircosecondsPerInvocation="5442"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="88" invocations="353" avgMicrosecondsPerInvocation="249" maxMicrosecondsPerInvocation="27346" standardDeviationMircosecondsPerInvocation="1864"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="87" invocations="14" avgMicrosecondsPerInvocation="6261" maxMicrosecondsPerInvocation="42778" standardDeviationMircosecondsPerInvocation="12877"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="76" invocations="33" avgMicrosecondsPerInvocation="2326" maxMicrosecondsPerInvocation="23766" standardDeviationMircosecondsPerInvocation="5777"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="66" invocations="4116" avgMicrosecondsPerInvocation="16" maxMicrosecondsPerInvocation="13483" standardDeviationMircosecondsPerInvocation="302"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="64" invocations="200" avgMicrosecondsPerInvocation="320" maxMicrosecondsPerInvocation="17174" standardDeviationMircosecondsPerInvocation="1746"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="54" invocations="33" avgMicrosecondsPerInvocation="1638" maxMicrosecondsPerInvocation="16535" standardDeviationMircosecondsPerInvocation="3622"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteRecursiveLoop" totalMilliseconds="53" invocations="14" avgMicrosecondsPerInvocation="3852" maxMicrosecondsPerInvocation="48625" standardDeviationMircosecondsPerInvocation="12427"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SynchronizingOnContentsOfFieldToProtectField" totalMilliseconds="47" invocations="14" avgMicrosecondsPerInvocation="3387" maxMicrosecondsPerInvocation="43292" standardDeviationMircosecondsPerInvocation="11075"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

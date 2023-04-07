@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680358624441" analysisTimestamp="1680689167383" release="">
+  <Project projectName="">
+    <Jar>Jsoup/5_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="EQ_DOESNT_OVERRIDE_EQUALS" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="org.jsoup.nodes.Document">
+      <SourceLine classname="org.jsoup.nodes.Document" start="16" end="246" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Class>
+    <SourceLine classname="org.jsoup.nodes.Document" start="1" end="1" startBytecode="0" endBytecode="0" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    <Method classname="org.jsoup.nodes.Element" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_DID_YOU_MEAN_TO_OVERRIDE">
+      <SourceLine classname="org.jsoup.nodes.Element" start="956" end="964" startBytecode="0" endBytecode="147" sourcefile="Element.java" sourcepath="org/jsoup/nodes/Element.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_INFERRED" priority="2" rank="17" abbrev="RV" category="STYLE">
+    <Class classname="org.jsoup.nodes.Document">
+      <SourceLine classname="org.jsoup.nodes.Document" start="16" end="246" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Class>
+    <Method classname="org.jsoup.nodes.Document" name="createShell" signature="(Ljava/lang/String;)Lorg/jsoup/nodes/Document;" isStatic="true">
+      <SourceLine classname="org.jsoup.nodes.Document" start="34" end="41" startBytecode="0" endBytecode="117" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Method>
+    <Method classname="org.jsoup.nodes.Element" name="appendElement" signature="(Ljava/lang/String;)Lorg/jsoup/nodes/Element;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="org.jsoup.nodes.Element" start="236" end="238" startBytecode="0" endBytecode="93" sourcefile="Element.java" sourcepath="org/jsoup/nodes/Element.java"/>
+    </Method>
+    <SourceLine classname="org.jsoup.nodes.Document" start="38" end="38" startBytecode="23" endBytecode="23" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    <SourceLine classname="org.jsoup.nodes.Document" start="39" end="39" startBytecode="30" endBytecode="30" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_INFERRED" priority="2" rank="17" abbrev="RV" category="STYLE">
+    <Class classname="org.jsoup.nodes.Document">
+      <SourceLine classname="org.jsoup.nodes.Document" start="16" end="246" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Class>
+    <Method classname="org.jsoup.nodes.Document" name="normalise" signature="()Lorg/jsoup/nodes/Document;" isStatic="false">
+      <SourceLine classname="org.jsoup.nodes.Document" start="99" end="113" startBytecode="0" endBytecode="158" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Method>
+    <Method classname="org.jsoup.nodes.Element" name="appendElement" signature="(Ljava/lang/String;)Lorg/jsoup/nodes/Element;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="org.jsoup.nodes.Element" start="236" end="238" startBytecode="0" endBytecode="93" sourcefile="Element.java" sourcepath="org/jsoup/nodes/Element.java"/>
+    </Method>
+    <SourceLine classname="org.jsoup.nodes.Document" start="105" end="105" startBytecode="43" endBytecode="43" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_INFERRED" priority="2" rank="17" abbrev="RV" category="STYLE">
+    <Class classname="org.jsoup.nodes.Document">
+      <SourceLine classname="org.jsoup.nodes.Document" start="16" end="246" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Class>
+    <Method classname="org.jsoup.nodes.Document" name="normalise" signature="()Lorg/jsoup/nodes/Document;" isStatic="false">
+      <SourceLine classname="org.jsoup.nodes.Document" start="99" end="113" startBytecode="0" endBytecode="158" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Method>
+    <Method classname="org.jsoup.nodes.Element" name="prependElement" signature="(Ljava/lang/String;)Lorg/jsoup/nodes/Element;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="org.jsoup.nodes.Element" start="249" end="251" startBytecode="0" endBytecode="93" sourcefile="Element.java" sourcepath="org/jsoup/nodes/Element.java"/>
+    </Method>
+    <SourceLine classname="org.jsoup.nodes.Document" start="103" end="103" startBytecode="29" endBytecode="29" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.jsoup.nodes.Document$OutputSettings">
+      <SourceLine classname="org.jsoup.nodes.Document$OutputSettings" start="174" end="237" sourcefile="Document.java" sourcepath="org/jsoup/nodes/Document.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="2" rank="16" abbrev="UC" category="STYLE">
+    <Class classname="org.jsoup.nodes.Entities">
+      <SourceLine classname="org.jsoup.nodes.Entities" start="16" end="2242" sourcefile="Entities.java" sourcepath="org/jsoup/nodes/Entities.java"/>
+    </Class>
+    <Method classname="org.jsoup.nodes.Entities" name="unescape" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.jsoup.nodes.Entities" start="48" end="77" startBytecode="0" endBytecode="400" sourcefile="Entities.java" sourcepath="org/jsoup/nodes/Entities.java"/>
+    </Method>
+    <String value="charval &lt;= 65535 (0xffff)"/>
+    <SourceLine classname="org.jsoup.nodes.Entities" start="69" end="69" startBytecode="133" endBytecode="133" sourcefile="Entities.java" sourcepath="org/jsoup/nodes/Entities.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="1" rank="14" abbrev="UC" category="STYLE">
+    <Class classname="org.jsoup.parser.TokenQueue">
+      <SourceLine classname="org.jsoup.parser.TokenQueue" start="12" end="397" sourcefile="TokenQueue.java" sourcepath="org/jsoup/parser/TokenQueue.java"/>
+    </Class>
+    <Method classname="org.jsoup.parser.TokenQueue" name="consumeToIgnoreCase" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.jsoup.parser.TokenQueue" start="201" end="219" startBytecode="0" endBytecode="304" sourcefile="TokenQueue.java" sourcepath="org/jsoup/parser/TokenQueue.java"/>
+    </Method>
+    <String value="skip &gt;= 0"/>
+    <SourceLine classname="org.jsoup.parser.TokenQueue" start="210" end="210" startBytecode="87" endBytecode="87" sourcefile="TokenQueue.java" sourcepath="org/jsoup/parser/TokenQueue.java" role="SOURCE_UNREACHABLE_CODE"/>
+    <SourceLine classname="org.jsoup.parser.TokenQueue" start="209" end="209" startBytecode="84" endBytecode="84" sourcefile="TokenQueue.java" sourcepath="org/jsoup/parser/TokenQueue.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 1 Apr 2023 22:17:04 +0800" total_classes="67" referenced_classes="166" total_bugs="7" total_size="2734" num_packages="7" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="44.01" clock_seconds="7.79" peak_mbytes="302.79" alloc_mbytes="683.00" gc_seconds="0.37" priority_2="6" priority_1="1">
+    <PackageStats package="org.jsoup" total_bugs="0" total_types="3" total_size="92">
+      <ClassStats class="org.jsoup.DataUtil" sourceFile="DataUtil.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.jsoup.Jsoup" sourceFile="Jsoup.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.jsoup.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.jsoup.examples" total_bugs="0" total_types="2" total_size="34">
+      <ClassStats class="org.jsoup.examples.ListLinks" sourceFile="ListLinks.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.jsoup.examples.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.jsoup.helper" total_bugs="0" total_types="2" total_size="97">
+      <ClassStats class="org.jsoup.helper.StringUtil" sourceFile="StringUtil.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.jsoup.helper.Validate" sourceFile="Validate.java" interface="false" size="35" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.jsoup.nodes" total_bugs="6" total_types="39" total_size="1144" priority_2="6">
+      <ClassStats class="org.jsoup.nodes.Attribute" sourceFile="Attribute.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Attributes" sourceFile="Attributes.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Attributes$1" sourceFile="Attributes.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Attributes$Dataset" sourceFile="Attributes.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Attributes$Dataset$DatasetIterator" sourceFile="Attributes.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Attributes$Dataset$EntrySet" sourceFile="Attributes.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Comment" sourceFile="Comment.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.DataNode" sourceFile="DataNode.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Document" sourceFile="Document.java" interface="false" size="73" bugs="4" priority_2="4"/>
+      <ClassStats class="org.jsoup.nodes.Document$OutputSettings" sourceFile="Document.java" interface="false" size="26" bugs="1" priority_2="1"/>
+      <ClassStats class="org.jsoup.nodes.Element" sourceFile="Element.java" interface="false" size="348" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Entities" sourceFile="Entities.java" interface="false" size="62" bugs="1" priority_2="1"/>
+      <ClassStats class="org.jsoup.nodes.Entities$EscapeMode" sourceFile="Entities.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$1" sourceFile="Evaluator.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AllElements" sourceFile="Evaluator.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$Attribute" sourceFile="Evaluator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeKeyPair" sourceFile="Evaluator.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeStarting" sourceFile="Evaluator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeWithValue" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeWithValueContaining" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeWithValueEnding" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeWithValueMatching" sourceFile="Evaluator.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeWithValueNot" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$AttributeWithValueStarting" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$Class" sourceFile="Evaluator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$ContainsText" sourceFile="Evaluator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$Id" sourceFile="Evaluator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$IndexEquals" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$IndexEvaluator" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$IndexGreaterThan" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$IndexLessThan" sourceFile="Evaluator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$Matches" sourceFile="Evaluator.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Evaluator$Tag" sourceFile="Evaluator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Node" sourceFile="Node.java" interface="false" size="175" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.Node$OuterHtmlVisitor" sourceFile="Node.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.TextNode" sourceFile="TextNode.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.XmlDeclaration" sourceFile="XmlDeclaration.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.jsoup.nodes.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.jsoup.parser" total_bugs="1" total_types="4" total_size="670" priority_1="1">
+      <ClassStats class="org.jsoup.parser.Parser" sourceFile="Parser.java" interface="false" size="203" bugs="0"/>
+      <ClassStats class="org.jsoup.parser.Tag" sourceFile="Tag.java" interface="false" size="292" bugs="0"/>
+      <ClassStats class="org.jsoup.parser.TokenQueue" sourceFile="TokenQueue.java" interface="false" size="174" bugs="1" priority_1="1"/>
+      <ClassStats class="org.jsoup.parser.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.jsoup.safety" total_bugs="0" total_types="9" total_size="213">
+      <ClassStats class="org.jsoup.safety.Cleaner" sourceFile="Cleaner.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Cleaner$ElementMeta" sourceFile="Cleaner.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Whitelist" sourceFile="Whitelist.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Whitelist$AttributeKey" sourceFile="Whitelist.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Whitelist$AttributeValue" sourceFile="Whitelist.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Whitelist$Protocol" sourceFile="Whitelist.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Whitelist$TagName" sourceFile="Whitelist.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.Whitelist$TypedValue" sourceFile="Whitelist.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.jsoup.safety.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.jsoup.select" total_bugs="0" total_types="8" total_size="484">
+      <ClassStats class="org.jsoup.select.Collector" sourceFile="Collector.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.jsoup.select.Collector$Accumulator" sourceFile="Collector.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.jsoup.select.Elements" sourceFile="Elements.java" interface="false" size="204" bugs="0"/>
+      <ClassStats class="org.jsoup.select.NodeTraversor" sourceFile="NodeTraversor.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.jsoup.select.NodeVisitor" sourceFile="NodeVisitor.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.jsoup.select.Selector" sourceFile="Selector.java" interface="false" size="225" bugs="0"/>
+      <ClassStats class="org.jsoup.select.Selector$SelectorParseException" sourceFile="Selector.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.jsoup.select.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="551" invocations="524" avgMicrosecondsPerInvocation="1052" maxMicrosecondsPerInvocation="250648" standardDeviationMircosecondsPerInvocation="11169"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="536" invocations="858" avgMicrosecondsPerInvocation="624" maxMicrosecondsPerInvocation="52530" standardDeviationMircosecondsPerInvocation="2766"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="334" invocations="512" avgMicrosecondsPerInvocation="652" maxMicrosecondsPerInvocation="36172" standardDeviationMircosecondsPerInvocation="2945"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="332" invocations="953" avgMicrosecondsPerInvocation="348" maxMicrosecondsPerInvocation="108328" standardDeviationMircosecondsPerInvocation="4228"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="307" invocations="525" avgMicrosecondsPerInvocation="586" maxMicrosecondsPerInvocation="36787" standardDeviationMircosecondsPerInvocation="2662"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="288" invocations="166" avgMicrosecondsPerInvocation="1740" maxMicrosecondsPerInvocation="44472" standardDeviationMircosecondsPerInvocation="5205"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="278" invocations="518" avgMicrosecondsPerInvocation="537" maxMicrosecondsPerInvocation="44550" standardDeviationMircosecondsPerInvocation="2898"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="269" invocations="529" avgMicrosecondsPerInvocation="509" maxMicrosecondsPerInvocation="20354" standardDeviationMircosecondsPerInvocation="1937"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="241" invocations="525" avgMicrosecondsPerInvocation="460" maxMicrosecondsPerInvocation="29456" standardDeviationMircosecondsPerInvocation="2256"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="190" invocations="166" avgMicrosecondsPerInvocation="1147" maxMicrosecondsPerInvocation="17952" standardDeviationMircosecondsPerInvocation="2703"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="164" invocations="478" avgMicrosecondsPerInvocation="343" maxMicrosecondsPerInvocation="19164" standardDeviationMircosecondsPerInvocation="1550"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="151" invocations="861" avgMicrosecondsPerInvocation="176" maxMicrosecondsPerInvocation="23831" standardDeviationMircosecondsPerInvocation="1055"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="148" invocations="67" avgMicrosecondsPerInvocation="2209" maxMicrosecondsPerInvocation="35648" standardDeviationMircosecondsPerInvocation="6661"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="142" invocations="524" avgMicrosecondsPerInvocation="272" maxMicrosecondsPerInvocation="35789" standardDeviationMircosecondsPerInvocation="2253"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="121" invocations="817" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="14160" standardDeviationMircosecondsPerInvocation="956"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReadOfInstanceFieldInMethodInvokedByConstructorInSuperclass" totalMilliseconds="117" invocations="67" avgMicrosecondsPerInvocation="1748" maxMicrosecondsPerInvocation="87617" standardDeviationMircosecondsPerInvocation="10724"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="113" invocations="166" avgMicrosecondsPerInvocation="684" maxMicrosecondsPerInvocation="29201" standardDeviationMircosecondsPerInvocation="3208"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="109" invocations="67" avgMicrosecondsPerInvocation="1639" maxMicrosecondsPerInvocation="40478" standardDeviationMircosecondsPerInvocation="6788"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="105" invocations="531" avgMicrosecondsPerInvocation="198" maxMicrosecondsPerInvocation="40046" standardDeviationMircosecondsPerInvocation="1929"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="98" invocations="67" avgMicrosecondsPerInvocation="1476" maxMicrosecondsPerInvocation="22575" standardDeviationMircosecondsPerInvocation="4112"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="93" invocations="205" avgMicrosecondsPerInvocation="457" maxMicrosecondsPerInvocation="30549" standardDeviationMircosecondsPerInvocation="2342"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="92" invocations="67" avgMicrosecondsPerInvocation="1384" maxMicrosecondsPerInvocation="34358" standardDeviationMircosecondsPerInvocation="5191"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="80" invocations="531" avgMicrosecondsPerInvocation="150" maxMicrosecondsPerInvocation="13272" standardDeviationMircosecondsPerInvocation="1113"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="78" invocations="67" avgMicrosecondsPerInvocation="1164" maxMicrosecondsPerInvocation="21940" standardDeviationMircosecondsPerInvocation="4065"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="66" invocations="67" avgMicrosecondsPerInvocation="992" maxMicrosecondsPerInvocation="32342" standardDeviationMircosecondsPerInvocation="4353"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="59" invocations="9802" avgMicrosecondsPerInvocation="6" maxMicrosecondsPerInvocation="18857" standardDeviationMircosecondsPerInvocation="207"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindMaskedFields" totalMilliseconds="58" invocations="67" avgMicrosecondsPerInvocation="877" maxMicrosecondsPerInvocation="54024" standardDeviationMircosecondsPerInvocation="6546"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="56" invocations="166" avgMicrosecondsPerInvocation="341" maxMicrosecondsPerInvocation="18092" standardDeviationMircosecondsPerInvocation="1625"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="55" invocations="166" avgMicrosecondsPerInvocation="333" maxMicrosecondsPerInvocation="13042" standardDeviationMircosecondsPerInvocation="1183"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="54" invocations="166" avgMicrosecondsPerInvocation="328" maxMicrosecondsPerInvocation="13079" standardDeviationMircosecondsPerInvocation="1178"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="53" invocations="166" avgMicrosecondsPerInvocation="322" maxMicrosecondsPerInvocation="17564" standardDeviationMircosecondsPerInvocation="1736"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="51" invocations="67" avgMicrosecondsPerInvocation="766" maxMicrosecondsPerInvocation="30891" standardDeviationMircosecondsPerInvocation="3877"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

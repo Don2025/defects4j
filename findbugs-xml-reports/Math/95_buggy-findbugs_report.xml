@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680382347029" analysisTimestamp="1680692089673" release="">
+  <Project projectName="">
+    <Jar>Math/95_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.MathException">
+      <SourceLine classname="org.apache.commons.math.MathException" start="47" end="247" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.MathException" name="printStackTrace" signature="(Ljava/io/PrintStream;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.MathException" start="226" end="232" startBytecode="0" endBytecode="163" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Method>
+    <Method classname="java.io.PrintWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;Z)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintWriter" start="148" end="154" startBytecode="0" endBytecode="93" sourcefile="PrintWriter.java" sourcepath="java/io/PrintWriter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.MathException" start="227" end="227" startBytecode="10" endBytecode="10" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+  </BugInstance>
+  <BugInstance type="LI_LAZY_INIT_STATIC" priority="2" rank="14" abbrev="LI" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.math.MathException">
+      <SourceLine classname="org.apache.commons.math.MathException" start="47" end="247" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.MathException" name="translate" signature="(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.math.MathException" start="84" end="101" startBytecode="0" endBytecode="25" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Method>
+    <Field classname="org.apache.commons.math.MathException" name="cachedResources" signature="Ljava/util/ResourceBundle;" isStatic="true" role="FIELD_ON">
+      <SourceLine classname="org.apache.commons.math.MathException" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.math.MathException" start="84" end="86" startBytecode="0" endBytecode="25" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+  </BugInstance>
+  <BugInstance type="CO_COMPARETO_INCORRECT_FLOATING" priority="2" rank="16" abbrev="Co" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.math.fraction.Fraction">
+      <SourceLine classname="org.apache.commons.math.fraction.Fraction" start="28" end="542" sourcefile="Fraction.java" sourcepath="org/apache/commons/math/fraction/Fraction.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.fraction.Fraction" name="compareTo" signature="(Lorg/apache/commons/math/fraction/Fraction;)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.fraction.Fraction" start="250" end="263" startBytecode="0" endBytecode="171" sourcefile="Fraction.java" sourcepath="org/apache/commons/math/fraction/Fraction.java"/>
+    </Method>
+    <Type descriptor="D"/>
+    <Method classname="java.lang.Double" name="compare" signature="(DD)I" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Double" start="1000" end="1009" startBytecode="0" endBytecode="119" sourcefile="Double.java" sourcepath="java/lang/Double.java"/>
+    </Method>
+    <LocalVariable name="second" register="5" pc="33" role="LOCAL_VARIABLE_NAMED"/>
+    <LocalVariable name="first" register="3" pc="33" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.math.fraction.Fraction" start="258" end="258" startBytecode="33" endBytecode="33" sourcefile="Fraction.java" sourcepath="org/apache/commons/math/fraction/Fraction.java"/>
+  </BugInstance>
+  <BugInstance type="FE_FLOATING_POINT_EQUALITY" priority="1" rank="15" abbrev="FE" category="STYLE">
+    <Class classname="org.apache.commons.math.geometry.Vector3D">
+      <SourceLine classname="org.apache.commons.math.geometry.Vector3D" start="35" end="488" sourcefile="Vector3D.java" sourcepath="org/apache/commons/math/geometry/Vector3D.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.geometry.Vector3D" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.geometry.Vector3D" start="396" end="415" startBytecode="0" endBytecode="233" sourcefile="Vector3D.java" sourcepath="org/apache/commons/math/geometry/Vector3D.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.geometry.Vector3D" start="411" end="411" startBytecode="39" endBytecode="39" sourcefile="Vector3D.java" sourcepath="org/apache/commons/math/geometry/Vector3D.java"/>
+    <SourceLine classname="org.apache.commons.math.geometry.Vector3D" start="411" end="411" startBytecode="51" endBytecode="51" sourcefile="Vector3D.java" sourcepath="org/apache/commons/math/geometry/Vector3D.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.apache.commons.math.geometry.Vector3D" start="411" end="411" startBytecode="63" endBytecode="63" sourcefile="Vector3D.java" sourcepath="org/apache/commons/math/geometry/Vector3D.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.math.ode.FirstOrderConverter">
+      <SourceLine classname="org.apache.commons.math.ode.FirstOrderConverter" start="66" end="104" sourcefile="FirstOrderConverter.java" sourcepath="org/apache/commons/math/ode/FirstOrderConverter.java"/>
+    </Class>
+    <Field classname="org.apache.commons.math.ode.FirstOrderConverter" name="equations" signature="Lorg/apache/commons/math/ode/SecondOrderDifferentialEquations;" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.ode.FirstOrderConverter" sourcefile="FirstOrderConverter.java" sourcepath="org/apache/commons/math/ode/FirstOrderConverter.java"/>
+    </Field>
+    <Type descriptor="Lorg/apache/commons/math/ode/SecondOrderDifferentialEquations;" role="TYPE_FOUND">
+      <SourceLine classname="org.apache.commons.math.ode.SecondOrderDifferentialEquations" sourcefile="SecondOrderDifferentialEquations.java" sourcepath="org/apache/commons/math/ode/SecondOrderDifferentialEquations.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator">
+      <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" start="72" end="314" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" name="&lt;init&gt;" signature="(Ljava/lang/String;DD[D[D)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" start="102" end="115" startBytecode="0" endBytecode="177" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" name="vecAbsoluteTolerance" signature="[D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+    </Field>
+    <LocalVariable name="vecAbsoluteTolerance" register="6" pc="36" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" start="110" end="110" startBytecode="36" endBytecode="36" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator">
+      <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" start="72" end="314" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" name="&lt;init&gt;" signature="(Ljava/lang/String;DD[D[D)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" start="102" end="115" startBytecode="0" endBytecode="177" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" name="vecRelativeTolerance" signature="[D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+    </Field>
+    <LocalVariable name="vecRelativeTolerance" register="7" pc="42" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" start="111" end="111" startBytecode="42" endBytecode="42" sourcefile="AdaptiveStepsizeIntegrator.java" sourcepath="org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.random.EmpiricalDistributionImpl">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="61" end="477" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.EmpiricalDistributionImpl" name="load" signature="(Ljava/io/File;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="159" end="179" startBytecode="0" endBytecode="407" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/io/File;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader" start="72" end="73" startBytecode="0" endBytecode="40" sourcefile="FileReader.java" sourcepath="java/io/FileReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="159" end="159" startBytecode="9" endBytecode="9" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="167" end="167" startBytecode="57" endBytecode="57" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.random.EmpiricalDistributionImpl">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="61" end="477" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.EmpiricalDistributionImpl" name="load" signature="(Ljava/net/URL;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="126" end="150" startBytecode="0" endBytecode="466" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="126" end="126" startBytecode="12" endBytecode="12" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="138" end="138" startBytecode="107" endBytecode="107" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_OBJECT" priority="2" rank="17" abbrev="UC" category="STYLE">
+    <Class classname="org.apache.commons.math.random.EmpiricalDistributionImpl">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="61" end="477" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.EmpiricalDistributionImpl" name="fillBinStats" signature="(Ljava/lang/Object;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="335" end="376" startBytecode="0" endBytecode="711" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Method>
+    <String value="binUpperBounds"/>
+    <Type descriptor="[D"/>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="338" end="338" startBytecode="39" endBytecode="39" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.random.ValueServer">
+      <SourceLine classname="org.apache.commons.math.random.ValueServer" start="49" end="375" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.ValueServer" name="resetReplayFile" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.ValueServer" start="232" end="241" startBytecode="0" endBytecode="145" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.ValueServer" start="240" end="240" startBytecode="39" endBytecode="39" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 04:52:27 +0800" total_classes="268" referenced_classes="415" total_bugs="11" total_size="14078" num_packages="25" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="92.49" clock_seconds="21.11" peak_mbytes="306.85" alloc_mbytes="683.00" gc_seconds="0.94" priority_2="6" priority_1="5">
+    <PackageStats package="org.apache.commons.math" total_bugs="2" total_types="9" total_size="175" priority_2="1" priority_1="1">
+      <ClassStats class="org.apache.commons.math.ArgumentOutsideDomainException" sourceFile="ArgumentOutsideDomainException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ConvergenceException" sourceFile="ConvergenceException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.DimensionMismatchException" sourceFile="DimensionMismatchException.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.DuplicateSampleAbscissaException" sourceFile="DuplicateSampleAbscissaException.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.FunctionEvaluationException" sourceFile="FunctionEvaluationException.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.MathConfigurationException" sourceFile="MathConfigurationException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.MathException" sourceFile="MathException.java" interface="false" size="78" bugs="2" priority_2="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.math.MaxIterationsExceededException" sourceFile="MaxIterationsExceededException.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.MessagesResources_fr" sourceFile="MessagesResources_fr.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.analysis" total_bugs="0" total_types="27" total_size="1182">
+      <ClassStats class="org.apache.commons.math.analysis.BisectionSolver" sourceFile="BisectionSolver.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.BrentSolver" sourceFile="BrentSolver.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.DifferentiableUnivariateRealFunction" sourceFile="DifferentiableUnivariateRealFunction.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.DividedDifferenceInterpolator" sourceFile="DividedDifferenceInterpolator.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.LaguerreSolver" sourceFile="LaguerreSolver.java" interface="false" size="122" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.MullerSolver" sourceFile="MullerSolver.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.NevilleInterpolator" sourceFile="NevilleInterpolator.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.NewtonSolver" sourceFile="NewtonSolver.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialFunction" sourceFile="PolynomialFunction.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialFunctionLagrangeForm" sourceFile="PolynomialFunctionLagrangeForm.java" interface="false" size="99" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialFunctionNewtonForm" sourceFile="PolynomialFunctionNewtonForm.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialSplineFunction" sourceFile="PolynomialSplineFunction.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.RiddersSolver" sourceFile="RiddersSolver.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.RombergIntegrator" sourceFile="RombergIntegrator.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.SecantSolver" sourceFile="SecantSolver.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.SimpsonIntegrator" sourceFile="SimpsonIntegrator.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.SplineInterpolator" sourceFile="SplineInterpolator.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.TrapezoidIntegrator" sourceFile="TrapezoidIntegrator.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealFunction" sourceFile="UnivariateRealFunction.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealIntegrator" sourceFile="UnivariateRealIntegrator.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealIntegratorImpl" sourceFile="UnivariateRealIntegratorImpl.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealInterpolator" sourceFile="UnivariateRealInterpolator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolver" sourceFile="UnivariateRealSolver.java" interface="true" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverFactory" sourceFile="UnivariateRealSolverFactory.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverFactoryImpl" sourceFile="UnivariateRealSolverFactoryImpl.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverImpl" sourceFile="UnivariateRealSolverImpl.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverUtils" sourceFile="UnivariateRealSolverUtils.java" interface="false" size="44" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.complex" total_bugs="0" total_types="3" total_size="290">
+      <ClassStats class="org.apache.commons.math.complex.Complex" sourceFile="Complex.java" interface="false" size="167" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.complex.ComplexFormat" sourceFile="ComplexFormat.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.complex.ComplexUtils" sourceFile="ComplexUtils.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.distribution" total_bugs="0" total_types="35" total_size="824">
+      <ClassStats class="org.apache.commons.math.distribution.AbstractContinuousDistribution" sourceFile="AbstractContinuousDistribution.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.AbstractContinuousDistribution$1" sourceFile="AbstractContinuousDistribution.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.AbstractDistribution" sourceFile="AbstractDistribution.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.AbstractIntegerDistribution" sourceFile="AbstractIntegerDistribution.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.BetaDistribution" sourceFile="BetaDistribution.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.BetaDistributionImpl" sourceFile="BetaDistributionImpl.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.BinomialDistribution" sourceFile="BinomialDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.BinomialDistributionImpl" sourceFile="BinomialDistributionImpl.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.CauchyDistribution" sourceFile="CauchyDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.CauchyDistributionImpl" sourceFile="CauchyDistributionImpl.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ChiSquaredDistribution" sourceFile="ChiSquaredDistribution.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ChiSquaredDistributionImpl" sourceFile="ChiSquaredDistributionImpl.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ContinuousDistribution" sourceFile="ContinuousDistribution.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.DiscreteDistribution" sourceFile="DiscreteDistribution.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.Distribution" sourceFile="Distribution.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ExponentialDistribution" sourceFile="ExponentialDistribution.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ExponentialDistributionImpl" sourceFile="ExponentialDistributionImpl.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.FDistribution" sourceFile="FDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.FDistributionImpl" sourceFile="FDistributionImpl.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.GammaDistribution" sourceFile="GammaDistribution.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.GammaDistributionImpl" sourceFile="GammaDistributionImpl.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.HasDensity" sourceFile="HasDensity.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.HypergeometricDistribution" sourceFile="HypergeometricDistribution.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.HypergeometricDistributionImpl" sourceFile="HypergeometricDistributionImpl.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.IntegerDistribution" sourceFile="IntegerDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.NormalDistribution" sourceFile="NormalDistribution.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.NormalDistributionImpl" sourceFile="NormalDistributionImpl.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PascalDistribution" sourceFile="PascalDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PascalDistributionImpl" sourceFile="PascalDistributionImpl.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PoissonDistribution" sourceFile="PoissonDistribution.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PoissonDistributionImpl" sourceFile="PoissonDistributionImpl.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.TDistribution" sourceFile="TDistribution.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.TDistributionImpl" sourceFile="TDistributionImpl.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.WeibullDistribution" sourceFile="WeibullDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.WeibullDistributionImpl" sourceFile="WeibullDistributionImpl.java" interface="false" size="43" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.estimation" total_bugs="0" total_types="9" total_size="601">
+      <ClassStats class="org.apache.commons.math.estimation.AbstractEstimator" sourceFile="AbstractEstimator.java" interface="false" size="97" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.EstimatedParameter" sourceFile="EstimatedParameter.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.EstimationException" sourceFile="EstimationException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.EstimationProblem" sourceFile="EstimationProblem.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.Estimator" sourceFile="Estimator.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.GaussNewtonEstimator" sourceFile="GaussNewtonEstimator.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.LevenbergMarquardtEstimator" sourceFile="LevenbergMarquardtEstimator.java" interface="false" size="356" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.SimpleEstimationProblem" sourceFile="SimpleEstimationProblem.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.estimation.WeightedMeasurement" sourceFile="WeightedMeasurement.java" interface="false" size="29" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.fraction" total_bugs="1" total_types="4" total_size="377" priority_2="1">
+      <ClassStats class="org.apache.commons.math.fraction.Fraction" sourceFile="Fraction.java" interface="false" size="184" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.math.fraction.FractionConversionException" sourceFile="FractionConversionException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.fraction.FractionFormat" sourceFile="FractionFormat.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.fraction.ProperFractionFormat" sourceFile="ProperFractionFormat.java" interface="false" size="73" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.genetics" total_bugs="0" total_types="9" total_size="79">
+      <ClassStats class="org.apache.commons.math.genetics.Chromosome" sourceFile="Chromosome.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.ChromosomePair" sourceFile="ChromosomePair.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.CrossoverPolicy" sourceFile="CrossoverPolicy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.Fitness" sourceFile="Fitness.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.GeneticAlgorithm" sourceFile="GeneticAlgorithm.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.MutationPolicy" sourceFile="MutationPolicy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.Population" sourceFile="Population.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.SelectionPolicy" sourceFile="SelectionPolicy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.genetics.StoppingCondition" sourceFile="StoppingCondition.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.geometry" total_bugs="1" total_types="6" total_size="689" priority_1="1">
+      <ClassStats class="org.apache.commons.math.geometry.CardanEulerSingularityException" sourceFile="CardanEulerSingularityException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.geometry.NotARotationMatrixException" sourceFile="NotARotationMatrixException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.geometry.Rotation" sourceFile="Rotation.java" interface="false" size="379" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.geometry.RotationOrder" sourceFile="RotationOrder.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.geometry.Vector3D" sourceFile="Vector3D.java" interface="false" size="155" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.math.geometry.Vector3DFormat" sourceFile="Vector3DFormat.java" interface="false" size="100" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.linear" total_bugs="0" total_types="16" total_size="2584">
+      <ClassStats class="org.apache.commons.math.linear.BiDiagonalTransformer" sourceFile="BiDiagonalTransformer.java" interface="false" size="174" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.BigMatrix" sourceFile="BigMatrix.java" interface="true" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.BigMatrixImpl" sourceFile="BigMatrixImpl.java" interface="false" size="573" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.DecompositionSolver" sourceFile="DecompositionSolver.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.InvalidMatrixException" sourceFile="InvalidMatrixException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.LUDecomposition" sourceFile="LUDecomposition.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.LUDecompositionImpl" sourceFile="LUDecompositionImpl.java" interface="false" size="192" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.MatrixIndexException" sourceFile="MatrixIndexException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.MatrixUtils" sourceFile="MatrixUtils.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.QRDecomposition" sourceFile="QRDecomposition.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.QRDecompositionImpl" sourceFile="QRDecompositionImpl.java" interface="false" size="160" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealMatrix" sourceFile="RealMatrix.java" interface="true" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealMatrixImpl" sourceFile="RealMatrixImpl.java" interface="false" size="540" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealVector" sourceFile="RealVector.java" interface="true" size="86" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealVectorFormat" sourceFile="RealVectorFormat.java" interface="false" size="95" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealVectorImpl" sourceFile="RealVectorImpl.java" interface="false" size="589" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.ode" total_bugs="1" total_types="11" total_size="257" priority_2="1">
+      <ClassStats class="org.apache.commons.math.ode.AbstractIntegrator" sourceFile="AbstractIntegrator.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.AbstractIntegrator$EndTimeChecker" sourceFile="AbstractIntegrator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.ContinuousOutputModel" sourceFile="ContinuousOutputModel.java" interface="false" size="127" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.DerivativeException" sourceFile="DerivativeException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.FirstOrderConverter" sourceFile="FirstOrderConverter.java" interface="false" size="24" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.math.ode.FirstOrderDifferentialEquations" sourceFile="FirstOrderDifferentialEquations.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.FirstOrderIntegrator" sourceFile="FirstOrderIntegrator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.IntegratorException" sourceFile="IntegratorException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.ODEIntegrator" sourceFile="ODEIntegrator.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.SecondOrderDifferentialEquations" sourceFile="SecondOrderDifferentialEquations.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.SecondOrderIntegrator" sourceFile="SecondOrderIntegrator.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.ode.events" total_bugs="0" total_types="5" total_size="212">
+      <ClassStats class="org.apache.commons.math.ode.events.CombinedEventsManager" sourceFile="CombinedEventsManager.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.events.EventException" sourceFile="EventException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.events.EventHandler" sourceFile="EventHandler.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.events.EventState" sourceFile="EventState.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.events.EventState$1" sourceFile="EventState.java" interface="false" size="12" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.ode.nonstiff" total_bugs="2" total_types="31" total_size="2021" priority_2="2">
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator" sourceFile="AdamsBashforthIntegrator.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.AdamsBashforthStepInterpolator" sourceFile="AdamsBashforthStepInterpolator.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator" sourceFile="AdamsMoultonIntegrator.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.AdamsMoultonStepInterpolator" sourceFile="AdamsMoultonStepInterpolator.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator" sourceFile="AdaptiveStepsizeIntegrator.java" interface="false" size="96" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.ClassicalRungeKuttaIntegrator" sourceFile="ClassicalRungeKuttaIntegrator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.ClassicalRungeKuttaStepInterpolator" sourceFile="ClassicalRungeKuttaStepInterpolator.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.DormandPrince54Integrator" sourceFile="DormandPrince54Integrator.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.DormandPrince54StepInterpolator" sourceFile="DormandPrince54StepInterpolator.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.DormandPrince853Integrator" sourceFile="DormandPrince853Integrator.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.DormandPrince853StepInterpolator" sourceFile="DormandPrince853StepInterpolator.java" interface="false" size="169" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.EmbeddedRungeKuttaIntegrator" sourceFile="EmbeddedRungeKuttaIntegrator.java" interface="false" size="136" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.EulerIntegrator" sourceFile="EulerIntegrator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.EulerStepInterpolator" sourceFile="EulerStepInterpolator.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.GillIntegrator" sourceFile="GillIntegrator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.GillStepInterpolator" sourceFile="GillStepInterpolator.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.GraggBulirschStoerIntegrator" sourceFile="GraggBulirschStoerIntegrator.java" interface="false" size="372" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.GraggBulirschStoerStepInterpolator" sourceFile="GraggBulirschStoerStepInterpolator.java" interface="false" size="158" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.HighamHall54Integrator" sourceFile="HighamHall54Integrator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.HighamHall54StepInterpolator" sourceFile="HighamHall54StepInterpolator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MidpointIntegrator" sourceFile="MidpointIntegrator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MidpointStepInterpolator" sourceFile="MidpointStepInterpolator.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MultistepIntegrator" sourceFile="MultistepIntegrator.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MultistepIntegrator$FilteringWrapper" sourceFile="MultistepIntegrator.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MultistepIntegrator$ResetCheckingWrapper" sourceFile="MultistepIntegrator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MultistepIntegrator$StoringStepHandler" sourceFile="MultistepIntegrator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.MultistepStepInterpolator" sourceFile="MultistepStepInterpolator.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator" sourceFile="RungeKuttaIntegrator.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.RungeKuttaStepInterpolator" sourceFile="RungeKuttaStepInterpolator.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.ThreeEighthesIntegrator" sourceFile="ThreeEighthesIntegrator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.nonstiff.ThreeEighthesStepInterpolator" sourceFile="ThreeEighthesStepInterpolator.java" interface="false" size="29" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.ode.sampling" total_bugs="0" total_types="7" total_size="232">
+      <ClassStats class="org.apache.commons.math.ode.sampling.AbstractStepInterpolator" sourceFile="AbstractStepInterpolator.java" interface="false" size="131" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.sampling.DummyStepHandler" sourceFile="DummyStepHandler.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.sampling.DummyStepInterpolator" sourceFile="DummyStepInterpolator.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.sampling.FixedStepHandler" sourceFile="FixedStepHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.sampling.StepHandler" sourceFile="StepHandler.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.sampling.StepInterpolator" sourceFile="StepInterpolator.java" interface="true" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.ode.sampling.StepNormalizer" sourceFile="StepNormalizer.java" interface="false" size="44" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.optimization" total_bugs="0" total_types="8" total_size="285">
+      <ClassStats class="org.apache.commons.math.optimization.ConvergenceChecker" sourceFile="ConvergenceChecker.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.CostException" sourceFile="CostException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.CostFunction" sourceFile="CostFunction.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.DirectSearchOptimizer" sourceFile="DirectSearchOptimizer.java" interface="false" size="139" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.DirectSearchOptimizer$1" sourceFile="DirectSearchOptimizer.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.MultiDirectional" sourceFile="MultiDirectional.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.NelderMead" sourceFile="NelderMead.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.optimization.PointCostPair" sourceFile="PointCostPair.java" interface="false" size="12" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.random" total_bugs="4" total_types="21" total_size="749" priority_2="1" priority_1="3">
+      <ClassStats class="org.apache.commons.math.random.AbstractRandomGenerator" sourceFile="AbstractRandomGenerator.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.CorrelatedRandomVectorGenerator" sourceFile="CorrelatedRandomVectorGenerator.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistribution" sourceFile="EmpiricalDistribution.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="124" bugs="3" priority_2="1" priority_1="2"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$1" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$ArrayDataAdapter" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$DataAdapter" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$DataAdapterFactory" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$StreamDataAdapter" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.GaussianRandomGenerator" sourceFile="GaussianRandomGenerator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.JDKRandomGenerator" sourceFile="JDKRandomGenerator.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.NormalizedRandomGenerator" sourceFile="NormalizedRandomGenerator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.NotPositiveDefiniteMatrixException" sourceFile="NotPositiveDefiniteMatrixException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomAdaptor" sourceFile="RandomAdaptor.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomData" sourceFile="RandomData.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomDataImpl" sourceFile="RandomDataImpl.java" interface="false" size="180" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomGenerator" sourceFile="RandomGenerator.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomVectorGenerator" sourceFile="RandomVectorGenerator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.UncorrelatedRandomVectorGenerator" sourceFile="UncorrelatedRandomVectorGenerator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.UniformRandomGenerator" sourceFile="UniformRandomGenerator.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.ValueServer" sourceFile="ValueServer.java" interface="false" size="114" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.special" total_bugs="0" total_types="5" total_size="116">
+      <ClassStats class="org.apache.commons.math.special.Beta" sourceFile="Beta.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Beta$1" sourceFile="Beta.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Erf" sourceFile="Erf.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Gamma" sourceFile="Gamma.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Gamma$1" sourceFile="Gamma.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat" total_bugs="0" total_types="4" total_size="232">
+      <ClassStats class="org.apache.commons.math.stat.Frequency" sourceFile="Frequency.java" interface="false" size="133" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.Frequency$1" sourceFile="Frequency.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.Frequency$NaturalComparator" sourceFile="Frequency.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.StatUtils" sourceFile="StatUtils.java" interface="false" size="91" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive" total_bugs="0" total_types="13" total_size="859">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.AbstractStorelessUnivariateStatistic" sourceFile="AbstractStorelessUnivariateStatistic.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic" sourceFile="AbstractUnivariateStatistic.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.DescriptiveStatistics" sourceFile="DescriptiveStatistics.java" interface="false" size="177" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.MultivariateSummaryStatistics" sourceFile="MultivariateSummaryStatistics.java" interface="false" size="182" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StatisticalMultivariateSummary" sourceFile="StatisticalMultivariateSummary.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StatisticalSummary" sourceFile="StatisticalSummary.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StatisticalSummaryValues" sourceFile="StatisticalSummaryValues.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StorelessUnivariateStatistic" sourceFile="StorelessUnivariateStatistic.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.SummaryStatistics" sourceFile="SummaryStatistics.java" interface="false" size="186" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.SynchronizedDescriptiveStatistics" sourceFile="SynchronizedDescriptiveStatistics.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.SynchronizedMultivariateSummaryStatistics" sourceFile="SynchronizedMultivariateSummaryStatistics.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.SynchronizedSummaryStatistics" sourceFile="SynchronizedSummaryStatistics.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.UnivariateStatistic" sourceFile="UnivariateStatistic.java" interface="true" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive.moment" total_bugs="0" total_types="12" total_size="468">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.FirstMoment" sourceFile="FirstMoment.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.FourthMoment" sourceFile="FourthMoment.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.GeometricMean" sourceFile="GeometricMean.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Kurtosis" sourceFile="Kurtosis.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Mean" sourceFile="Mean.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.SecondMoment" sourceFile="SecondMoment.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Skewness" sourceFile="Skewness.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.StandardDeviation" sourceFile="StandardDeviation.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.ThirdMoment" sourceFile="ThirdMoment.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Variance" sourceFile="Variance.java" interface="false" size="86" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.VectorialCovariance" sourceFile="VectorialCovariance.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.VectorialMean" sourceFile="VectorialMean.java" interface="false" size="22" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive.rank" total_bugs="0" total_types="4" total_size="111">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Max" sourceFile="Max.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Median" sourceFile="Median.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Min" sourceFile="Min.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Percentile" sourceFile="Percentile.java" interface="false" size="46" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive.summary" total_bugs="0" total_types="4" total_size="120">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.Product" sourceFile="Product.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.Sum" sourceFile="Sum.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.SumOfLogs" sourceFile="SumOfLogs.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.SumOfSquares" sourceFile="SumOfSquares.java" interface="false" size="30" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.inference" total_bugs="0" total_types="9" total_size="453">
+      <ClassStats class="org.apache.commons.math.stat.inference.ChiSquareTest" sourceFile="ChiSquareTest.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.ChiSquareTestImpl" sourceFile="ChiSquareTestImpl.java" interface="false" size="140" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.OneWayAnova" sourceFile="OneWayAnova.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.OneWayAnovaImpl" sourceFile="OneWayAnovaImpl.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.OneWayAnovaImpl$AnovaStats" sourceFile="OneWayAnovaImpl.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TTest" sourceFile="TTest.java" interface="true" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TTestImpl" sourceFile="TTestImpl.java" interface="false" size="116" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TestUtils" sourceFile="TestUtils.java" interface="false" size="97" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.UnknownDistributionChiSquareTest" sourceFile="UnknownDistributionChiSquareTest.java" interface="true" size="4" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.regression" total_bugs="0" total_types="5" total_size="269">
+      <ClassStats class="org.apache.commons.math.stat.regression.AbstractMultipleLinearRegression" sourceFile="AbstractMultipleLinearRegression.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.regression.GLSMultipleLinearRegression" sourceFile="GLSMultipleLinearRegression.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.regression.MultipleLinearRegression" sourceFile="MultipleLinearRegression.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.regression.OLSMultipleLinearRegression" sourceFile="OLSMultipleLinearRegression.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.regression.SimpleRegression" sourceFile="SimpleRegression.java" interface="false" size="129" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.transform" total_bugs="0" total_types="3" total_size="272">
+      <ClassStats class="org.apache.commons.math.transform.FastCosineTransformer" sourceFile="FastCosineTransformer.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.transform.FastFourierTransformer" sourceFile="FastFourierTransformer.java" interface="false" size="159" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.transform.FastSineTransformer" sourceFile="FastSineTransformer.java" interface="false" size="56" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.util" total_bugs="0" total_types="8" total_size="621">
+      <ClassStats class="org.apache.commons.math.util.CompositeFormat" sourceFile="CompositeFormat.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.ContinuedFraction" sourceFile="ContinuedFraction.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.DefaultTransformer" sourceFile="DefaultTransformer.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.DoubleArray" sourceFile="DoubleArray.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.MathUtils" sourceFile="MathUtils.java" interface="false" size="270" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.NumberTransformer" sourceFile="NumberTransformer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.ResizableDoubleArray" sourceFile="ResizableDoubleArray.java" interface="false" size="181" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.TransformerMap" sourceFile="TransformerMap.java" interface="false" size="36" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="1214" invocations="2041" avgMicrosecondsPerInvocation="594" maxMicrosecondsPerInvocation="431144" standardDeviationMircosecondsPerInvocation="9733"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1182" invocations="2061" avgMicrosecondsPerInvocation="573" maxMicrosecondsPerInvocation="107853" standardDeviationMircosecondsPerInvocation="3541"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1133" invocations="2010" avgMicrosecondsPerInvocation="563" maxMicrosecondsPerInvocation="87314" standardDeviationMircosecondsPerInvocation="3511"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1089" invocations="2017" avgMicrosecondsPerInvocation="540" maxMicrosecondsPerInvocation="50974" standardDeviationMircosecondsPerInvocation="2623"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="821" invocations="2874" avgMicrosecondsPerInvocation="285" maxMicrosecondsPerInvocation="66102" standardDeviationMircosecondsPerInvocation="2138"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="783" invocations="2017" avgMicrosecondsPerInvocation="388" maxMicrosecondsPerInvocation="55474" standardDeviationMircosecondsPerInvocation="2140"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="724" invocations="1624" avgMicrosecondsPerInvocation="446" maxMicrosecondsPerInvocation="105801" standardDeviationMircosecondsPerInvocation="3410"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="717" invocations="2017" avgMicrosecondsPerInvocation="355" maxMicrosecondsPerInvocation="31557" standardDeviationMircosecondsPerInvocation="1920"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="691" invocations="415" avgMicrosecondsPerInvocation="1665" maxMicrosecondsPerInvocation="73586" standardDeviationMircosecondsPerInvocation="6148"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="636" invocations="1144" avgMicrosecondsPerInvocation="556" maxMicrosecondsPerInvocation="24254" standardDeviationMircosecondsPerInvocation="2071"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="458" invocations="415" avgMicrosecondsPerInvocation="1104" maxMicrosecondsPerInvocation="30431" standardDeviationMircosecondsPerInvocation="3628"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="448" invocations="2462" avgMicrosecondsPerInvocation="182" maxMicrosecondsPerInvocation="96162" standardDeviationMircosecondsPerInvocation="2378"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="435" invocations="268" avgMicrosecondsPerInvocation="1625" maxMicrosecondsPerInvocation="52101" standardDeviationMircosecondsPerInvocation="5676"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="424" invocations="2017" avgMicrosecondsPerInvocation="210" maxMicrosecondsPerInvocation="35161" standardDeviationMircosecondsPerInvocation="1545"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="361" invocations="268" avgMicrosecondsPerInvocation="1350" maxMicrosecondsPerInvocation="101623" standardDeviationMircosecondsPerInvocation="7370"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="295" invocations="415" avgMicrosecondsPerInvocation="711" maxMicrosecondsPerInvocation="60563" standardDeviationMircosecondsPerInvocation="4248"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="287" invocations="489" avgMicrosecondsPerInvocation="587" maxMicrosecondsPerInvocation="45970" standardDeviationMircosecondsPerInvocation="3320"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="260" invocations="1084" avgMicrosecondsPerInvocation="240" maxMicrosecondsPerInvocation="44787" standardDeviationMircosecondsPerInvocation="2292"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="252" invocations="1148" avgMicrosecondsPerInvocation="219" maxMicrosecondsPerInvocation="43759" standardDeviationMircosecondsPerInvocation="1619"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="238" invocations="17502" avgMicrosecondsPerInvocation="13" maxMicrosecondsPerInvocation="24127" standardDeviationMircosecondsPerInvocation="361"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="237" invocations="268" avgMicrosecondsPerInvocation="886" maxMicrosecondsPerInvocation="29619" standardDeviationMircosecondsPerInvocation="3657"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="213" invocations="415" avgMicrosecondsPerInvocation="514" maxMicrosecondsPerInvocation="137473" standardDeviationMircosecondsPerInvocation="6783"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="208" invocations="268" avgMicrosecondsPerInvocation="777" maxMicrosecondsPerInvocation="23016" standardDeviationMircosecondsPerInvocation="2897"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="205" invocations="415" avgMicrosecondsPerInvocation="494" maxMicrosecondsPerInvocation="24603" standardDeviationMircosecondsPerInvocation="2407"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="205" invocations="268" avgMicrosecondsPerInvocation="765" maxMicrosecondsPerInvocation="25409" standardDeviationMircosecondsPerInvocation="2631"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="193" invocations="415" avgMicrosecondsPerInvocation="467" maxMicrosecondsPerInvocation="36134" standardDeviationMircosecondsPerInvocation="2695"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="181" invocations="1997" avgMicrosecondsPerInvocation="91" maxMicrosecondsPerInvocation="35205" standardDeviationMircosecondsPerInvocation="1057"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="165" invocations="268" avgMicrosecondsPerInvocation="617" maxMicrosecondsPerInvocation="24114" standardDeviationMircosecondsPerInvocation="2703"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.Naming" totalMilliseconds="162" invocations="268" avgMicrosecondsPerInvocation="606" maxMicrosecondsPerInvocation="16656" standardDeviationMircosecondsPerInvocation="2280"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="162" invocations="2462" avgMicrosecondsPerInvocation="66" maxMicrosecondsPerInvocation="20952" standardDeviationMircosecondsPerInvocation="763"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="162" invocations="268" avgMicrosecondsPerInvocation="606" maxMicrosecondsPerInvocation="22101" standardDeviationMircosecondsPerInvocation="2740"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="151" invocations="268" avgMicrosecondsPerInvocation="565" maxMicrosecondsPerInvocation="32953" standardDeviationMircosecondsPerInvocation="2782"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CrossSiteScripting" totalMilliseconds="151" invocations="268" avgMicrosecondsPerInvocation="564" maxMicrosecondsPerInvocation="70146" standardDeviationMircosecondsPerInvocation="4783"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="149" invocations="268" avgMicrosecondsPerInvocation="558" maxMicrosecondsPerInvocation="34472" standardDeviationMircosecondsPerInvocation="2879"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="144" invocations="268" avgMicrosecondsPerInvocation="539" maxMicrosecondsPerInvocation="21566" standardDeviationMircosecondsPerInvocation="2222"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

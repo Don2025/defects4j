@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680367072459" analysisTimestamp="1680689549093" release="">
+  <Project projectName="">
+    <Jar>Gson/15_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="MS_CANNOT_BE_FINAL" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.google.gson.internal.JsonReaderInternalAccess">
+      <SourceLine classname="com.google.gson.internal.JsonReaderInternalAccess" start="25" end="25" sourcefile="JsonReaderInternalAccess.java" sourcepath="com/google/gson/internal/JsonReaderInternalAccess.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.JsonReaderInternalAccess" name="INSTANCE" signature="Lcom/google/gson/internal/JsonReaderInternalAccess;" isStatic="true">
+      <SourceLine classname="com.google.gson.internal.JsonReaderInternalAccess" sourcefile="JsonReaderInternalAccess.java" sourcepath="com/google/gson/internal/JsonReaderInternalAccess.java"/>
+    </Field>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="1594" end="1594" startBytecode="15" endBytecode="15" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+  </BugInstance>
+  <BugInstance type="NP_LOAD_OF_KNOWN_NULL_VALUE" priority="2" rank="16" abbrev="NP" category="STYLE">
+    <Class classname="com.google.gson.internal.LinkedHashTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="40" end="862" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Class>
+    <Method classname="com.google.gson.internal.LinkedHashTreeMap" name="find" signature="(Ljava/lang/Object;Z)Lcom/google/gson/internal/LinkedHashTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="132" end="196" startBytecode="0" endBytecode="150" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Method>
+    <LocalVariable name="nearest" register="7" pc="206" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="179" end="179" startBytecode="207" endBytecode="207" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedHashTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="40" end="862" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedHashTreeMap" name="entrySet" signature="Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;" role="TYPE_FOUND">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$EntrySet" start="794" end="826" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedHashTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="40" end="862" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedHashTreeMap" name="header" signature="Lcom/google/gson/internal/LinkedHashTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedHashTreeMap$Node;" role="TYPE_FOUND" typeParameters="&lt;K,V&gt;">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$Node" start="479" end="553" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedHashTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="40" end="862" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedHashTreeMap" name="keySet" signature="Lcom/google/gson/internal/LinkedHashTreeMap$KeySet;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedHashTreeMap$KeySet;" role="TYPE_FOUND">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$KeySet" start="829" end="852" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedHashTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" start="40" end="862" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedHashTreeMap" name="table" signature="[Lcom/google/gson/internal/LinkedHashTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedHashTreeMap$Node;" role="TYPE_FOUND">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$Node" start="479" end="553" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SA_FIELD_SELF_ASSIGNMENT" priority="1" rank="1" abbrev="SA" category="CORRECTNESS">
+    <Class classname="com.google.gson.internal.LinkedHashTreeMap$AvlBuilder">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$AvlBuilder" start="670" end="756" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Class>
+    <Method classname="com.google.gson.internal.LinkedHashTreeMap$AvlBuilder" name="add" signature="(Lcom/google/gson/internal/LinkedHashTreeMap$Node;)V" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$AvlBuilder" start="687" end="749" startBytecode="0" endBytecode="668" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Method>
+    <Field classname="com.google.gson.internal.LinkedHashTreeMap$Node" name="parent" signature="Lcom/google/gson/internal/LinkedHashTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$Node" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+    </Field>
+    <SourceLine classname="com.google.gson.internal.LinkedHashTreeMap$AvlBuilder" start="743" end="743" startBytecode="277" endBytecode="277" sourcefile="LinkedHashTreeMap.java" sourcepath="com/google/gson/internal/LinkedHashTreeMap.java"/>
+  </BugInstance>
+  <BugInstance type="NP_LOAD_OF_KNOWN_NULL_VALUE" priority="2" rank="16" abbrev="NP" category="STYLE">
+    <Class classname="com.google.gson.internal.LinkedTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="38" end="628" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Class>
+    <Method classname="com.google.gson.internal.LinkedTreeMap" name="find" signature="(Ljava/lang/Object;Z)Lcom/google/gson/internal/LinkedTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="122" end="180" startBytecode="0" endBytecode="126" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Method>
+    <LocalVariable name="nearest" register="4" pc="180" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="166" end="166" startBytecode="181" endBytecode="181" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="38" end="628" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedTreeMap" name="header" signature="Lcom/google/gson/internal/LinkedTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedTreeMap$Node;" role="TYPE_FOUND" typeParameters="&lt;K,V&gt;">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap$Node" start="450" end="522" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="38" end="628" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedTreeMap" name="keySet" signature="Lcom/google/gson/internal/LinkedTreeMap$KeySet;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedTreeMap$KeySet;" role="TYPE_FOUND">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap$KeySet" start="595" end="618" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="38" end="628" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedTreeMap" name="root" signature="Lcom/google/gson/internal/LinkedTreeMap$Node;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedTreeMap$Node;" role="TYPE_FOUND" typeParameters="&lt;K,V&gt;">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap$Node" start="450" end="522" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.LinkedTreeMap">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" start="38" end="628" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Class>
+    <Field classname="com.google.gson.internal.LinkedTreeMap" name="entrySet" signature="Lcom/google/gson/internal/LinkedTreeMap$EntrySet;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Field>
+    <Type descriptor="Lcom/google/gson/internal/LinkedTreeMap$EntrySet;" role="TYPE_FOUND">
+      <SourceLine classname="com.google.gson.internal.LinkedTreeMap$EntrySet" start="560" end="592" sourcefile="LinkedTreeMap.java" sourcepath="com/google/gson/internal/LinkedTreeMap.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE">
+    <Class classname="com.google.gson.internal.UnsafeAllocator">
+      <SourceLine classname="com.google.gson.internal.UnsafeAllocator" start="31" end="122" sourcefile="UnsafeAllocator.java" sourcepath="com/google/gson/internal/UnsafeAllocator.java"/>
+    </Class>
+    <Method classname="com.google.gson.internal.UnsafeAllocator" name="create" signature="()Lcom/google/gson/internal/UnsafeAllocator;" isStatic="true">
+      <SourceLine classname="com.google.gson.internal.UnsafeAllocator" start="40" end="101" startBytecode="0" endBytecode="464" sourcefile="UnsafeAllocator.java" sourcepath="com/google/gson/internal/UnsafeAllocator.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.internal.UnsafeAllocator" start="53" end="53" startBytecode="51" endBytecode="51" sourcefile="UnsafeAllocator.java" sourcepath="com/google/gson/internal/UnsafeAllocator.java"/>
+    <SourceLine classname="com.google.gson.internal.UnsafeAllocator" start="77" end="77" startBytecode="138" endBytecode="138" sourcefile="UnsafeAllocator.java" sourcepath="com/google/gson/internal/UnsafeAllocator.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="com.google.gson.internal.UnsafeAllocator" start="97" end="97" startBytecode="178" endBytecode="178" sourcefile="UnsafeAllocator.java" sourcepath="com/google/gson/internal/UnsafeAllocator.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.bind.TypeAdapters$7">
+      <SourceLine classname="com.google.gson.internal.bind.TypeAdapters$7" start="133" end="148" sourcefile="TypeAdapters.java" sourcepath="com/google/gson/internal/bind/TypeAdapters.java"/>
+    </Class>
+    <Method classname="com.google.gson.internal.bind.TypeAdapters$7" name="read" signature="(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.bind.TypeAdapters$7" start="136" end="143" startBytecode="0" endBytecode="126" sourcefile="TypeAdapters.java" sourcepath="com/google/gson/internal/bind/TypeAdapters.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.internal.bind.TypeAdapters$7" start="138" end="138" startBytecode="15" endBytecode="15" sourcefile="TypeAdapters.java" sourcepath="com/google/gson/internal/bind/TypeAdapters.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.google.gson.internal.bind.TypeAdapters$8">
+      <SourceLine classname="com.google.gson.internal.bind.TypeAdapters$8" start="155" end="166" sourcefile="TypeAdapters.java" sourcepath="com/google/gson/internal/bind/TypeAdapters.java"/>
+    </Class>
+    <Method classname="com.google.gson.internal.bind.TypeAdapters$8" name="read" signature="(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.google.gson.internal.bind.TypeAdapters$8" start="157" end="161" startBytecode="0" endBytecode="96" sourcefile="TypeAdapters.java" sourcepath="com/google/gson/internal/bind/TypeAdapters.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.internal.bind.TypeAdapters$8" start="159" end="159" startBytecode="15" endBytecode="15" sourcefile="TypeAdapters.java" sourcepath="com/google/gson/internal/bind/TypeAdapters.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.google.gson.stream.JsonReader">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="192" end="1616" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Class>
+    <Method classname="com.google.gson.stream.JsonReader" name="doPeek" signature="()I" isStatic="false">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="462" end="594" startBytecode="0" endBytecode="1258" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="472" end="474" startBytecode="88" endBytecode="91" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="487" end="489" startBytecode="180" endBytecode="183" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.google.gson.stream.JsonReader">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="192" end="1616" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Class>
+    <Method classname="com.google.gson.stream.JsonReader" name="isLiteral" signature="(C)Z" isStatic="false">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="745" end="765" startBytecode="0" endBytecode="224" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="751" end="763" startBytecode="141" endBytecode="144" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.google.gson.stream.JsonReader">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="192" end="1616" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Class>
+    <Method classname="com.google.gson.stream.JsonReader" name="nextUnquotedValue" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="1041" end="1092" startBytecode="0" endBytecode="487" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="1053" end="1065" startBytecode="169" endBytecode="172" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.google.gson.stream.JsonReader">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="192" end="1616" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Class>
+    <Method classname="com.google.gson.stream.JsonReader" name="readEscapeCharacter" signature="()C" isStatic="false">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="1504" end="1559" startBytecode="0" endBytecode="634" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="1549" end="1556" startBytecode="377" endBytecode="380" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.google.gson.stream.JsonReader">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="192" end="1616" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Class>
+    <Method classname="com.google.gson.stream.JsonReader" name="skipUnquotedValue" signature="()V" isStatic="false">
+      <SourceLine classname="com.google.gson.stream.JsonReader" start="1124" end="1150" startBytecode="0" endBytecode="310" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+    </Method>
+    <SourceLine classname="com.google.gson.stream.JsonReader" start="1132" end="1144" startBytecode="165" endBytecode="168" sourcefile="JsonReader.java" sourcepath="com/google/gson/stream/JsonReader.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 00:37:52 +0800" total_classes="177" referenced_classes="353" total_bugs="20" total_size="5916" num_packages="7" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="66.49" clock_seconds="14.64" peak_mbytes="305.55" alloc_mbytes="683.00" gc_seconds="0.74" priority_2="12" priority_1="8">
+    <PackageStats package="com.google.gson" total_bugs="0" total_types="40" total_size="1230">
+      <ClassStats class="com.google.gson.DefaultDateTypeAdapter" sourceFile="DefaultDateTypeAdapter.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="com.google.gson.ExclusionStrategy" sourceFile="ExclusionStrategy.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldAttributes" sourceFile="FieldAttributes.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingPolicy" sourceFile="FieldNamingPolicy.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingPolicy$1" sourceFile="FieldNamingPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingPolicy$2" sourceFile="FieldNamingPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingPolicy$3" sourceFile="FieldNamingPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingPolicy$4" sourceFile="FieldNamingPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingPolicy$5" sourceFile="FieldNamingPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.FieldNamingStrategy" sourceFile="FieldNamingStrategy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson" sourceFile="Gson.java" interface="false" size="293" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson$1" sourceFile="Gson.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson$2" sourceFile="Gson.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson$3" sourceFile="Gson.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson$4" sourceFile="Gson.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson$5" sourceFile="Gson.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="com.google.gson.Gson$FutureTypeAdapter" sourceFile="Gson.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.google.gson.GsonBuilder" sourceFile="GsonBuilder.java" interface="false" size="141" bugs="0"/>
+      <ClassStats class="com.google.gson.InstanceCreator" sourceFile="InstanceCreator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonArray" sourceFile="JsonArray.java" interface="false" size="106" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonDeserializationContext" sourceFile="JsonDeserializationContext.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonDeserializer" sourceFile="JsonDeserializer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonElement" sourceFile="JsonElement.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonIOException" sourceFile="JsonIOException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonNull" sourceFile="JsonNull.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonObject" sourceFile="JsonObject.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonParseException" sourceFile="JsonParseException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonParser" sourceFile="JsonParser.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonPrimitive" sourceFile="JsonPrimitive.java" interface="false" size="113" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonSerializationContext" sourceFile="JsonSerializationContext.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonSerializer" sourceFile="JsonSerializer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonStreamParser" sourceFile="JsonStreamParser.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.google.gson.JsonSyntaxException" sourceFile="JsonSyntaxException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.LongSerializationPolicy" sourceFile="LongSerializationPolicy.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.LongSerializationPolicy$1" sourceFile="LongSerializationPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.LongSerializationPolicy$2" sourceFile="LongSerializationPolicy.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.TypeAdapter" sourceFile="TypeAdapter.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.google.gson.TypeAdapter$1" sourceFile="TypeAdapter.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.google.gson.TypeAdapterFactory" sourceFile="TypeAdapterFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.google.gson.annotations" total_bugs="0" total_types="6" total_size="14">
+      <ClassStats class="com.google.gson.annotations.Expose" sourceFile="Expose.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.google.gson.annotations.JsonAdapter" sourceFile="JsonAdapter.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.google.gson.annotations.SerializedName" sourceFile="SerializedName.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.google.gson.annotations.Since" sourceFile="Since.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.annotations.Until" sourceFile="Until.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.annotations.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.google.gson.internal" total_bugs="12" total_types="53" total_size="1624" priority_2="4" priority_1="8">
+      <ClassStats class="com.google.gson.internal.$Gson$Preconditions" sourceFile="$Gson$Preconditions.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.$Gson$Types" sourceFile="$Gson$Types.java" interface="false" size="192" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.$Gson$Types$GenericArrayTypeImpl" sourceFile="$Gson$Types.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.$Gson$Types$ParameterizedTypeImpl" sourceFile="$Gson$Types.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.$Gson$Types$WildcardTypeImpl" sourceFile="$Gson$Types.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor" sourceFile="ConstructorConstructor.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$1" sourceFile="ConstructorConstructor.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$10" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$11" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$12" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$13" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$14" sourceFile="ConstructorConstructor.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$2" sourceFile="ConstructorConstructor.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$3" sourceFile="ConstructorConstructor.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$4" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$5" sourceFile="ConstructorConstructor.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$6" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$7" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$8" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ConstructorConstructor$9" sourceFile="ConstructorConstructor.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.Excluder" sourceFile="Excluder.java" interface="false" size="113" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.Excluder$1" sourceFile="Excluder.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.JsonReaderInternalAccess" sourceFile="JsonReaderInternalAccess.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LazilyParsedNumber" sourceFile="LazilyParsedNumber.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap" sourceFile="LinkedHashTreeMap.java" interface="false" size="268" bugs="5" priority_2="1" priority_1="4"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$1" sourceFile="LinkedHashTreeMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$AvlBuilder" sourceFile="LinkedHashTreeMap.java" interface="false" size="56" bugs="1" priority_1="1"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$AvlIterator" sourceFile="LinkedHashTreeMap.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$EntrySet" sourceFile="LinkedHashTreeMap.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$EntrySet$1" sourceFile="LinkedHashTreeMap.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$KeySet" sourceFile="LinkedHashTreeMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$KeySet$1" sourceFile="LinkedHashTreeMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$LinkedTreeMapIterator" sourceFile="LinkedHashTreeMap.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedHashTreeMap$Node" sourceFile="LinkedHashTreeMap.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap" sourceFile="LinkedTreeMap.java" interface="false" size="220" bugs="5" priority_2="2" priority_1="3"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$1" sourceFile="LinkedTreeMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$EntrySet" sourceFile="LinkedTreeMap.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$EntrySet$1" sourceFile="LinkedTreeMap.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$KeySet" sourceFile="LinkedTreeMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$KeySet$1" sourceFile="LinkedTreeMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$LinkedTreeMapIterator" sourceFile="LinkedTreeMap.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.LinkedTreeMap$Node" sourceFile="LinkedTreeMap.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.ObjectConstructor" sourceFile="ObjectConstructor.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.Primitives" sourceFile="Primitives.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.Streams" sourceFile="Streams.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.Streams$AppendableWriter" sourceFile="Streams.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.Streams$AppendableWriter$CurrentWrite" sourceFile="Streams.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.UnsafeAllocator" sourceFile="UnsafeAllocator.java" interface="false" size="31" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.gson.internal.UnsafeAllocator$1" sourceFile="UnsafeAllocator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.UnsafeAllocator$2" sourceFile="UnsafeAllocator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.UnsafeAllocator$3" sourceFile="UnsafeAllocator.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.UnsafeAllocator$4" sourceFile="UnsafeAllocator.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.google.gson.internal.bind" total_bugs="2" total_types="69" total_size="1714" priority_2="2">
+      <ClassStats class="com.google.gson.internal.bind.ArrayTypeAdapter" sourceFile="ArrayTypeAdapter.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ArrayTypeAdapter$1" sourceFile="ArrayTypeAdapter.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.CollectionTypeAdapterFactory" sourceFile="CollectionTypeAdapterFactory.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter" sourceFile="CollectionTypeAdapterFactory.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.DateTypeAdapter" sourceFile="DateTypeAdapter.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.DateTypeAdapter$1" sourceFile="DateTypeAdapter.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory" sourceFile="JsonAdapterAnnotationTypeAdapterFactory.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.JsonTreeReader" sourceFile="JsonTreeReader.java" interface="false" size="194" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.JsonTreeReader$1" sourceFile="JsonTreeReader.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.JsonTreeWriter" sourceFile="JsonTreeWriter.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.JsonTreeWriter$1" sourceFile="JsonTreeWriter.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.MapTypeAdapterFactory" sourceFile="MapTypeAdapterFactory.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter" sourceFile="MapTypeAdapterFactory.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ObjectTypeAdapter" sourceFile="ObjectTypeAdapter.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ObjectTypeAdapter$1" sourceFile="ObjectTypeAdapter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ObjectTypeAdapter$2" sourceFile="ObjectTypeAdapter.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory" sourceFile="ReflectiveTypeAdapterFactory.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1" sourceFile="ReflectiveTypeAdapterFactory.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter" sourceFile="ReflectiveTypeAdapterFactory.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField" sourceFile="ReflectiveTypeAdapterFactory.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.SqlDateTypeAdapter" sourceFile="SqlDateTypeAdapter.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.SqlDateTypeAdapter$1" sourceFile="SqlDateTypeAdapter.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TimeTypeAdapter" sourceFile="TimeTypeAdapter.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TimeTypeAdapter$1" sourceFile="TimeTypeAdapter.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TreeTypeAdapter" sourceFile="TreeTypeAdapter.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TreeTypeAdapter$1" sourceFile="TreeTypeAdapter.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl" sourceFile="TreeTypeAdapter.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory" sourceFile="TreeTypeAdapter.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper" sourceFile="TypeAdapterRuntimeTypeWrapper.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters" sourceFile="TypeAdapters.java" interface="false" size="119" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$1" sourceFile="TypeAdapters.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$10" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$11" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$12" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$13" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$14" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$15" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$16" sourceFile="TypeAdapters.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$17" sourceFile="TypeAdapters.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$18" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$19" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$2" sourceFile="TypeAdapters.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$20" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$21" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$22" sourceFile="TypeAdapters.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$23" sourceFile="TypeAdapters.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$24" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$25" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$26" sourceFile="TypeAdapters.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$26$1" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$27" sourceFile="TypeAdapters.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$28" sourceFile="TypeAdapters.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$29" sourceFile="TypeAdapters.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$3" sourceFile="TypeAdapters.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$30" sourceFile="TypeAdapters.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$31" sourceFile="TypeAdapters.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$32" sourceFile="TypeAdapters.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$33" sourceFile="TypeAdapters.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$34" sourceFile="TypeAdapters.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$35" sourceFile="TypeAdapters.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$35$1" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$36" sourceFile="TypeAdapters.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$4" sourceFile="TypeAdapters.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$5" sourceFile="TypeAdapters.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$6" sourceFile="TypeAdapters.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$7" sourceFile="TypeAdapters.java" interface="false" size="15" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$8" sourceFile="TypeAdapters.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$9" sourceFile="TypeAdapters.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter" sourceFile="TypeAdapters.java" interface="false" size="31" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.google.gson.internal.bind.util" total_bugs="0" total_types="1" total_size="163">
+      <ClassStats class="com.google.gson.internal.bind.util.ISO8601Utils" sourceFile="ISO8601Utils.java" interface="false" size="163" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.google.gson.reflect" total_bugs="0" total_types="2" total_size="114">
+      <ClassStats class="com.google.gson.reflect.TypeToken" sourceFile="TypeToken.java" interface="false" size="113" bugs="0"/>
+      <ClassStats class="com.google.gson.reflect.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.google.gson.stream" total_bugs="6" total_types="6" total_size="1057" priority_2="6">
+      <ClassStats class="com.google.gson.stream.JsonReader" sourceFile="JsonReader.java" interface="false" size="745" bugs="6" priority_2="6"/>
+      <ClassStats class="com.google.gson.stream.JsonReader$1" sourceFile="JsonReader.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.google.gson.stream.JsonScope" sourceFile="JsonScope.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.google.gson.stream.JsonToken" sourceFile="JsonToken.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="com.google.gson.stream.JsonWriter" sourceFile="JsonWriter.java" interface="false" size="243" bugs="0"/>
+      <ClassStats class="com.google.gson.stream.MalformedJsonException" sourceFile="MalformedJsonException.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="867" invocations="967" avgMicrosecondsPerInvocation="896" maxMicrosecondsPerInvocation="491162" standardDeviationMircosecondsPerInvocation="15903"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="860" invocations="1122" avgMicrosecondsPerInvocation="766" maxMicrosecondsPerInvocation="31111" standardDeviationMircosecondsPerInvocation="2655"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="671" invocations="975" avgMicrosecondsPerInvocation="688" maxMicrosecondsPerInvocation="57346" standardDeviationMircosecondsPerInvocation="3715"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="628" invocations="1032" avgMicrosecondsPerInvocation="609" maxMicrosecondsPerInvocation="54644" standardDeviationMircosecondsPerInvocation="3376"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="526" invocations="353" avgMicrosecondsPerInvocation="1490" maxMicrosecondsPerInvocation="65797" standardDeviationMircosecondsPerInvocation="6365"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="514" invocations="1008" avgMicrosecondsPerInvocation="510" maxMicrosecondsPerInvocation="37790" standardDeviationMircosecondsPerInvocation="2468"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="468" invocations="883" avgMicrosecondsPerInvocation="530" maxMicrosecondsPerInvocation="37331" standardDeviationMircosecondsPerInvocation="2421"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="427" invocations="975" avgMicrosecondsPerInvocation="438" maxMicrosecondsPerInvocation="43748" standardDeviationMircosecondsPerInvocation="2318"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="420" invocations="353" avgMicrosecondsPerInvocation="1190" maxMicrosecondsPerInvocation="23011" standardDeviationMircosecondsPerInvocation="3534"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="405" invocations="1628" avgMicrosecondsPerInvocation="249" maxMicrosecondsPerInvocation="25076" standardDeviationMircosecondsPerInvocation="1460"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="359" invocations="1125" avgMicrosecondsPerInvocation="319" maxMicrosecondsPerInvocation="133609" standardDeviationMircosecondsPerInvocation="4226"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="325" invocations="1003" avgMicrosecondsPerInvocation="324" maxMicrosecondsPerInvocation="66928" standardDeviationMircosecondsPerInvocation="3238"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="315" invocations="898" avgMicrosecondsPerInvocation="351" maxMicrosecondsPerInvocation="35625" standardDeviationMircosecondsPerInvocation="1940"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="254" invocations="401" avgMicrosecondsPerInvocation="634" maxMicrosecondsPerInvocation="38423" standardDeviationMircosecondsPerInvocation="3632"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="243" invocations="177" avgMicrosecondsPerInvocation="1378" maxMicrosecondsPerInvocation="65133" standardDeviationMircosecondsPerInvocation="5925"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="225" invocations="19756" avgMicrosecondsPerInvocation="11" maxMicrosecondsPerInvocation="34209" standardDeviationMircosecondsPerInvocation="410"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="202" invocations="353" avgMicrosecondsPerInvocation="572" maxMicrosecondsPerInvocation="56911" standardDeviationMircosecondsPerInvocation="3524"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="180" invocations="1066" avgMicrosecondsPerInvocation="168" maxMicrosecondsPerInvocation="36919" standardDeviationMircosecondsPerInvocation="1550"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="179" invocations="177" avgMicrosecondsPerInvocation="1013" maxMicrosecondsPerInvocation="38380" standardDeviationMircosecondsPerInvocation="4305"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="176" invocations="177" avgMicrosecondsPerInvocation="998" maxMicrosecondsPerInvocation="39085" standardDeviationMircosecondsPerInvocation="4258"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="174" invocations="177" avgMicrosecondsPerInvocation="984" maxMicrosecondsPerInvocation="48121" standardDeviationMircosecondsPerInvocation="4717"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="170" invocations="177" avgMicrosecondsPerInvocation="961" maxMicrosecondsPerInvocation="40805" standardDeviationMircosecondsPerInvocation="4235"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="167" invocations="353" avgMicrosecondsPerInvocation="475" maxMicrosecondsPerInvocation="46508" standardDeviationMircosecondsPerInvocation="2921"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="138" invocations="975" avgMicrosecondsPerInvocation="142" maxMicrosecondsPerInvocation="26062" standardDeviationMircosecondsPerInvocation="1109"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="138" invocations="177" avgMicrosecondsPerInvocation="782" maxMicrosecondsPerInvocation="31830" standardDeviationMircosecondsPerInvocation="3334"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="137" invocations="353" avgMicrosecondsPerInvocation="390" maxMicrosecondsPerInvocation="45029" standardDeviationMircosecondsPerInvocation="2820"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="133" invocations="177" avgMicrosecondsPerInvocation="756" maxMicrosecondsPerInvocation="51172" standardDeviationMircosecondsPerInvocation="4601"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadForLoop" totalMilliseconds="124" invocations="177" avgMicrosecondsPerInvocation="700" maxMicrosecondsPerInvocation="91582" standardDeviationMircosecondsPerInvocation="6951"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="108" invocations="177" avgMicrosecondsPerInvocation="615" maxMicrosecondsPerInvocation="40285" standardDeviationMircosecondsPerInvocation="3489"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="104" invocations="1003" avgMicrosecondsPerInvocation="103" maxMicrosecondsPerInvocation="21571" standardDeviationMircosecondsPerInvocation="993"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="103" invocations="353" avgMicrosecondsPerInvocation="293" maxMicrosecondsPerInvocation="24076" standardDeviationMircosecondsPerInvocation="1681"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="93" invocations="177" avgMicrosecondsPerInvocation="529" maxMicrosecondsPerInvocation="30698" standardDeviationMircosecondsPerInvocation="2558"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="91" invocations="353" avgMicrosecondsPerInvocation="259" maxMicrosecondsPerInvocation="17795" standardDeviationMircosecondsPerInvocation="1514"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="90" invocations="211" avgMicrosecondsPerInvocation="429" maxMicrosecondsPerInvocation="14874" standardDeviationMircosecondsPerInvocation="1754"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="88" invocations="880" avgMicrosecondsPerInvocation="100" maxMicrosecondsPerInvocation="21476" standardDeviationMircosecondsPerInvocation="875"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

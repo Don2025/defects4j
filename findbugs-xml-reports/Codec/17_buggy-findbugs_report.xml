@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680367898498" analysisTimestamp="1680691653363" release="">
+  <Project projectName="">
+    <Jar>Codec/17_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="SS_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SS" category="PERFORMANCE">
+    <Class classname="org.apache.commons.codec.binary.BaseNCodec">
+      <SourceLine classname="org.apache.commons.codec.binary.BaseNCodec" start="159" end="543" sourcefile="BaseNCodec.java" sourcepath="org/apache/commons/codec/binary/BaseNCodec.java"/>
+    </Class>
+    <Field classname="org.apache.commons.codec.binary.BaseNCodec" name="PAD" signature="B" isStatic="false">
+      <SourceLine classname="org.apache.commons.codec.binary.BaseNCodec" sourcefile="BaseNCodec.java" sourcepath="org/apache/commons/codec/binary/BaseNCodec.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.codec.binary.BaseNCodec" start="159" end="159" startBytecode="7" endBytecode="7" sourcefile="BaseNCodec.java" sourcepath="org/apache/commons/codec/binary/BaseNCodec.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.codec.digest.PureJavaCrc32C">
+      <SourceLine classname="org.apache.commons.codec.digest.PureJavaCrc32C" start="44" end="118" sourcefile="PureJavaCrc32C.java" sourcepath="org/apache/commons/codec/digest/PureJavaCrc32C.java"/>
+    </Class>
+    <Method classname="org.apache.commons.codec.digest.PureJavaCrc32C" name="update" signature="([BII)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.codec.digest.PureJavaCrc32C" start="61" end="98" startBytecode="0" endBytecode="752" sourcefile="PureJavaCrc32C.java" sourcepath="org/apache/commons/codec/digest/PureJavaCrc32C.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.codec.digest.PureJavaCrc32C" start="84" end="91" startBytecode="233" endBytecode="464" sourcefile="PureJavaCrc32C.java" sourcepath="org/apache/commons/codec/digest/PureJavaCrc32C.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="1" rank="14" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="553" end="633" startBytecode="0" endBytecode="227" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <String value="true" role="STRING_CONSTANT"/>
+    <LocalVariable name="str" register="0" pc="1" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="553" end="553" startBytecode="3" endBytecode="3" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER_IN_PUBLIC_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="negate" signature="(Ljava/lang/Boolean;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="63" end="66" startBytecode="0" endBytecode="86" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="64" end="64" startBytecode="5" endBytecode="5" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(IIII)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="324" end="334" startBytecode="0" endBytecode="141" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="331" end="331" startBytecode="24" endBytecode="24" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/Integer;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="238" end="241" startBytecode="0" endBytecode="86" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="239" end="239" startBytecode="5" endBytecode="5" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="356" end="374" startBytecode="0" endBytecode="207" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="364" end="364" startBytecode="25" endBytecode="25" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="371" end="371" startBytecode="59" endBytecode="59" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="553" end="633" startBytecode="0" endBytecode="903" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="557" end="557" startBytecode="15" endBytecode="15" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="633" end="633" startBytecode="464" endBytecode="464" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBooleanObject" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="656" end="674" startBytecode="0" endBytecode="207" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="664" end="664" startBytecode="25" endBytecode="25" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="671" end="671" startBytecode="59" endBytecode="59" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN" priority="2" rank="16" abbrev="RC" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.BooleanUtils">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="41" end="1098" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.BooleanUtils" name="toBoolean" signature="(Ljava/lang/String;)Z" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="709" end="709" startBytecode="0" endBytecode="7" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/Boolean;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.Boolean" start="43" end="333" sourcefile="Boolean.java" sourcepath="java/lang/Boolean.java"/>
+    </Type>
+    <Field classname="java.lang.Boolean" name="TRUE" signature="Ljava/lang/Boolean;" isStatic="true" role="FIELD_VALUE_OF">
+      <SourceLine classname="java.lang.Boolean" sourcefile="Boolean.java" sourcepath="java/lang/Boolean.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.lang3.BooleanUtils" start="709" end="709" startBytecode="7" endBytecode="7" sourcefile="BooleanUtils.java" sourcepath="org/apache/commons/lang3/BooleanUtils.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="1" rank="14" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.StringUtils">
+      <SourceLine classname="org.apache.commons.lang3.StringUtils" start="188" end="9414" sourcefile="StringUtils.java" sourcepath="org/apache/commons/lang3/StringUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.StringUtils" name="compare" signature="(Ljava/lang/String;Ljava/lang/String;Z)I" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.StringUtils" start="1122" end="1131" startBytecode="0" endBytecode="24" sourcefile="StringUtils.java" sourcepath="org/apache/commons/lang3/StringUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <LocalVariable name="str2" register="1" pc="1" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <LocalVariable name="str1" register="0" pc="1" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.StringUtils" start="1122" end="1122" startBytecode="2" endBytecode="2" sourcefile="StringUtils.java" sourcepath="org/apache/commons/lang3/StringUtils.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER_IN_PUBLIC_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="1" rank="14" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.StringUtils">
+      <SourceLine classname="org.apache.commons.lang3.StringUtils" start="188" end="9414" sourcefile="StringUtils.java" sourcepath="org/apache/commons/lang3/StringUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.StringUtils" name="compareIgnoreCase" signature="(Ljava/lang/String;Ljava/lang/String;Z)I" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.StringUtils" start="1215" end="1224" startBytecode="0" endBytecode="24" sourcefile="StringUtils.java" sourcepath="org/apache/commons/lang3/StringUtils.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <LocalVariable name="str2" register="1" pc="1" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <LocalVariable name="str1" register="0" pc="1" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.lang3.StringUtils" start="1215" end="1215" startBytecode="2" endBytecode="2" sourcefile="StringUtils.java" sourcepath="org/apache/commons/lang3/StringUtils.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER_IN_PUBLIC_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.math.NumberUtils">
+      <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="35" end="1823" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.math.NumberUtils" name="createNumber" signature="(Ljava/lang/String;)Ljava/lang/Number;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="651" end="816" startBytecode="0" endBytecode="2023" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="749" end="756" startBytecode="673" endBytecode="675" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.math.NumberUtils">
+      <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="35" end="1823" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.math.NumberUtils" name="createNumber" signature="(Ljava/lang/String;)Ljava/lang/Number;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="651" end="816" startBytecode="0" endBytecode="2023" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.math.NumberUtils" start="724" end="765" startBytecode="490" endBytecode="720" sourcefile="NumberUtils.java" sourcepath="org/apache/commons/lang3/math/NumberUtils.java"/>
+  </BugInstance>
+  <BugInstance type="UR_UNINIT_READ_CALLED_FROM_SUPER_CONSTRUCTOR" priority="2" rank="10" abbrev="UR" category="CORRECTNESS">
+    <Class classname="org.apache.commons.lang3.text.ExtendedMessageFormat">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="72" end="527" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="applyPattern" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="148" end="211" startBytecode="0" endBytecode="1049" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Method>
+    <Field classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="registry" signature="Ljava/util/Map;" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Field>
+    <Method classname="java.text.MessageFormat" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_SUPERCLASS_CONSTRUCTOR">
+      <SourceLine classname="java.text.MessageFormat" start="360" end="363" startBytecode="0" endBytecode="111" sourcefile="MessageFormat.java" sourcepath="java/text/MessageFormat.java"/>
+    </Method>
+    <SourceLine classname="java.text.MessageFormat" start="362" end="362" startBytecode="52" endBytecode="52" sourcefile="MessageFormat.java" sourcepath="java/text/MessageFormat.java" role="SOURCE_LINE_CALLED_FROM_SUPERCLASS_AT"/>
+    <Method classname="org.apache.commons.lang3.text.ExtendedMessageFormat" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/util/Locale;Ljava/util/Map;)V" isStatic="false" role="METHOD_CONSTRUCTOR">
+      <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="127" end="131" startBytecode="0" endBytecode="127" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="129" end="129" startBytecode="13" endBytecode="13" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java" role="SOURCE_LINE_FIELD_SET_TOO_LATE_AT"/>
+    <SourceLine classname="org.apache.commons.lang3.text.ExtendedMessageFormat" start="148" end="148" startBytecode="1" endBytecode="1" sourcefile="ExtendedMessageFormat.java" sourcepath="org/apache/commons/lang3/text/ExtendedMessageFormat.java"/>
+  </BugInstance>
+  <BugInstance type="CN_IDIOM_NO_SUPER_CALL" priority="1" rank="14" abbrev="CN" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.text.StrTokenizer">
+      <SourceLine classname="org.apache.commons.lang3.text.StrTokenizer" start="89" end="1111" sourcefile="StrTokenizer.java" sourcepath="org/apache/commons/lang3/text/StrTokenizer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.text.StrTokenizer" name="clone" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.text.StrTokenizer" start="1077" end="1079" startBytecode="0" endBytecode="87" sourcefile="StrTokenizer.java" sourcepath="org/apache/commons/lang3/text/StrTokenizer.java"/>
+    </Method>
+    <Class classname="org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer" role="CLASS_SUBCLASS">
+      <SourceLine classname="org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer" start="2932" end="2952" sourcefile="StrBuilder.java" sourcepath="org/apache/commons/lang3/text/StrBuilder.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.DateUtils">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="83" end="1786" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.DateUtils" name="getFragment" signature="(Ljava/util/Calendar;ILjava/util/concurrent/TimeUnit;)J" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1665" end="1707" startBytecode="0" endBytecode="459" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1693" end="1696" startBytecode="188" endBytecode="189" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1696" end="1699" startBytecode="205" endBytecode="206" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.apache.commons.lang3.time.DateUtils" start="1699" end="1702" startBytecode="222" endBytecode="223" sourcefile="DateUtils.java" sourcepath="org/apache/commons/lang3/time/DateUtils.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.FastDateParser">
+      <SourceLine classname="org.apache.commons.lang3.time.FastDateParser" start="73" end="998" sourcefile="FastDateParser.java" sourcepath="org/apache/commons/lang3/time/FastDateParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.FastDateParser" name="simpleQuote" signature="(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.FastDateParser" start="431" end="455" startBytecode="0" endBytecode="291" sourcefile="FastDateParser.java" sourcepath="org/apache/commons/lang3/time/FastDateParser.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.FastDateParser" start="433" end="446" startBytecode="17" endBytecode="130" sourcefile="FastDateParser.java" sourcepath="org/apache/commons/lang3/time/FastDateParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.FastDatePrinter">
+      <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="80" end="1328" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.FastDatePrinter" name="appendFullDigits" signature="(Ljava/lang/Appendable;II)V" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="696" end="757" startBytecode="0" endBytecode="562" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="717" end="719" startBytecode="113" endBytecode="114" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java"/>
+    <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="723" end="726" startBytecode="151" endBytecode="152" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="730" end="733" startBytecode="189" endBytecode="190" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.lang3.time.FastDatePrinter">
+      <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="80" end="1328" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.FastDatePrinter" name="appendFullDigits" signature="(Ljava/lang/Appendable;II)V" isStatic="true">
+      <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="696" end="757" startBytecode="0" endBytecode="562" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.FastDatePrinter" start="714" end="733" startBytecode="63" endBytecode="201" sourcefile="FastDatePrinter.java" sourcepath="org/apache/commons/lang3/time/FastDatePrinter.java"/>
+  </BugInstance>
+  <BugInstance type="BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS" priority="2" rank="16" abbrev="BC" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.FormatCache$MultipartKey">
+      <SourceLine classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" start="231" end="260" sourcefile="FormatCache.java" sourcepath="org/apache/commons/lang3/time/FormatCache.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" start="243" end="243" startBytecode="0" endBytecode="66" sourcefile="FormatCache.java" sourcepath="org/apache/commons/lang3/time/FormatCache.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" start="243" end="243" startBytecode="5" endBytecode="5" sourcefile="FormatCache.java" sourcepath="org/apache/commons/lang3/time/FormatCache.java"/>
+  </BugInstance>
+  <BugInstance type="NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT" priority="2" rank="11" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.lang3.time.FormatCache$MultipartKey">
+      <SourceLine classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" start="231" end="260" sourcefile="FormatCache.java" sourcepath="org/apache/commons/lang3/time/FormatCache.java"/>
+    </Class>
+    <Method classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.lang3.time.FormatCache$MultipartKey" start="243" end="243" startBytecode="0" endBytecode="66" sourcefile="FormatCache.java" sourcepath="org/apache/commons/lang3/time/FormatCache.java"/>
+    </Method>
+    <LocalVariable name="obj" register="1" pc="0" role="LOCAL_VARIABLE_PARAMETER_NAMED"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 00:51:38 +0800" total_classes="367" referenced_classes="647" total_bugs="22" total_size="24836" num_packages="20" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="127.62" clock_seconds="30.91" peak_mbytes="431.85" alloc_mbytes="683.00" gc_seconds="1.73" priority_2="18" priority_1="4">
+    <PackageStats package="org.apache.commons.codec" total_bugs="0" total_types="11" total_size="88">
+      <ClassStats class="org.apache.commons.codec.BinaryDecoder" sourceFile="BinaryDecoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.BinaryEncoder" sourceFile="BinaryEncoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.CharEncoding" sourceFile="CharEncoding.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.Charsets" sourceFile="Charsets.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.Decoder" sourceFile="Decoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.DecoderException" sourceFile="DecoderException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.Encoder" sourceFile="Encoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.EncoderException" sourceFile="EncoderException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.StringDecoder" sourceFile="StringDecoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.StringEncoder" sourceFile="StringEncoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.StringEncoderComparator" sourceFile="StringEncoderComparator.java" interface="false" size="19" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.binary" total_bugs="1" total_types="14" total_size="928" priority_2="1">
+      <ClassStats class="org.apache.commons.codec.binary.Base32" sourceFile="Base32.java" interface="false" size="192" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base32InputStream" sourceFile="Base32InputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base32OutputStream" sourceFile="Base32OutputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base64" sourceFile="Base64.java" interface="false" size="189" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base64InputStream" sourceFile="Base64InputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base64OutputStream" sourceFile="Base64OutputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodec" sourceFile="BaseNCodec.java" interface="false" size="119" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodec$Context" sourceFile="BaseNCodec.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodecInputStream" sourceFile="BaseNCodecInputStream.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodecOutputStream" sourceFile="BaseNCodecOutputStream.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BinaryCodec" sourceFile="BinaryCodec.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.CharSequenceUtils" sourceFile="CharSequenceUtils.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Hex" sourceFile="Hex.java" interface="false" size="99" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.StringUtils" sourceFile="StringUtils.java" interface="false" size="61" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.cli" total_bugs="0" total_types="1" total_size="66">
+      <ClassStats class="org.apache.commons.codec.cli.Digest" sourceFile="Digest.java" interface="false" size="66" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.digest" total_bugs="1" total_types="11" total_size="891" priority_2="1">
+      <ClassStats class="org.apache.commons.codec.digest.B64" sourceFile="B64.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.Crypt" sourceFile="Crypt.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.DigestUtils" sourceFile="DigestUtils.java" interface="false" size="173" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.HmacAlgorithms" sourceFile="HmacAlgorithms.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.HmacUtils" sourceFile="HmacUtils.java" interface="false" size="157" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.Md5Crypt" sourceFile="Md5Crypt.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.MessageDigestAlgorithms" sourceFile="MessageDigestAlgorithms.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.PureJavaCrc32" sourceFile="PureJavaCrc32.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.PureJavaCrc32C" sourceFile="PureJavaCrc32C.java" interface="false" size="52" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.codec.digest.Sha2Crypt" sourceFile="Sha2Crypt.java" interface="false" size="144" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.UnixCrypt" sourceFile="UnixCrypt.java" interface="false" size="170" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.language" total_bugs="0" total_types="20" total_size="1581">
+      <ClassStats class="org.apache.commons.codec.language.AbstractCaverphone" sourceFile="AbstractCaverphone.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Caverphone" sourceFile="Caverphone.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Caverphone1" sourceFile="Caverphone1.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Caverphone2" sourceFile="Caverphone2.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic" sourceFile="ColognePhonetic.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic$CologneBuffer" sourceFile="ColognePhonetic.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer" sourceFile="ColognePhonetic.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer" sourceFile="ColognePhonetic.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DaitchMokotoffSoundex" sourceFile="DaitchMokotoffSoundex.java" interface="false" size="156" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DaitchMokotoffSoundex$1" sourceFile="DaitchMokotoffSoundex.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch" sourceFile="DaitchMokotoffSoundex.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule" sourceFile="DaitchMokotoffSoundex.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DoubleMetaphone" sourceFile="DoubleMetaphone.java" interface="false" size="418" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult" sourceFile="DoubleMetaphone.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.MatchRatingApproachEncoder" sourceFile="MatchRatingApproachEncoder.java" interface="false" size="141" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Metaphone" sourceFile="Metaphone.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Nysiis" sourceFile="Nysiis.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.RefinedSoundex" sourceFile="RefinedSoundex.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Soundex" sourceFile="Soundex.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.SoundexUtils" sourceFile="SoundexUtils.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.language.bm" total_bugs="0" total_types="32" total_size="868">
+      <ClassStats class="org.apache.commons.codec.language.bm.BeiderMorseEncoder" sourceFile="BeiderMorseEncoder.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Lang" sourceFile="Lang.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Lang$1" sourceFile="Lang.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Lang$LangRule" sourceFile="Lang.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages" sourceFile="Languages.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$1" sourceFile="Languages.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$2" sourceFile="Languages.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$LanguageSet" sourceFile="Languages.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$SomeLanguages" sourceFile="Languages.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.NameType" sourceFile="NameType.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine" sourceFile="PhoneticEngine.java" interface="false" size="125" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine$1" sourceFile="PhoneticEngine.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder" sourceFile="PhoneticEngine.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication" sourceFile="PhoneticEngine.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.ResourceConstants" sourceFile="ResourceConstants.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule" sourceFile="Rule.java" interface="false" size="223" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$1" sourceFile="Rule.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$10" sourceFile="Rule.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$2" sourceFile="Rule.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$3" sourceFile="Rule.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$4" sourceFile="Rule.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$5" sourceFile="Rule.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$6" sourceFile="Rule.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$7" sourceFile="Rule.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$8" sourceFile="Rule.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$9" sourceFile="Rule.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$Phoneme" sourceFile="Rule.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$Phoneme$1" sourceFile="Rule.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$PhonemeExpr" sourceFile="Rule.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$PhonemeList" sourceFile="Rule.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$RPattern" sourceFile="Rule.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.RuleType" sourceFile="RuleType.java" interface="false" size="19" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.net" total_bugs="0" total_types="6" total_size="505">
+      <ClassStats class="org.apache.commons.codec.net.BCodec" sourceFile="BCodec.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.QCodec" sourceFile="QCodec.java" interface="false" size="125" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.QuotedPrintableCodec" sourceFile="QuotedPrintableCodec.java" interface="false" size="156" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.RFC1522Codec" sourceFile="RFC1522Codec.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.URLCodec" sourceFile="URLCodec.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.Utils" sourceFile="Utils.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3" total_bugs="10" total_types="51" total_size="7941" priority_2="7" priority_1="3">
+      <ClassStats class="org.apache.commons.lang3.AnnotationUtils" sourceFile="AnnotationUtils.java" interface="false" size="125" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.AnnotationUtils$1" sourceFile="AnnotationUtils.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ArchUtils" sourceFile="ArchUtils.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ArrayUtils" sourceFile="ArrayUtils.java" interface="false" size="2400" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ArrayUtils$1" sourceFile="ArrayUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.BitField" sourceFile="BitField.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.BooleanUtils" sourceFile="BooleanUtils.java" interface="false" size="232" bugs="8" priority_2="7" priority_1="1"/>
+      <ClassStats class="org.apache.commons.lang3.CharEncoding" sourceFile="CharEncoding.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharRange" sourceFile="CharRange.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharRange$1" sourceFile="CharRange.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharRange$CharacterIterator" sourceFile="CharRange.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharSequenceUtils" sourceFile="CharSequenceUtils.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharSet" sourceFile="CharSet.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharSetUtils" sourceFile="CharSetUtils.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.CharUtils" sourceFile="CharUtils.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassPathUtils" sourceFile="ClassPathUtils.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils" sourceFile="ClassUtils.java" interface="false" size="413" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils$1" sourceFile="ClassUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils$1$1" sourceFile="ClassUtils.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils$2" sourceFile="ClassUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils$2$1" sourceFile="ClassUtils.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ClassUtils$Interfaces" sourceFile="ClassUtils.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Conversion" sourceFile="Conversion.java" interface="false" size="523" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.EnumUtils" sourceFile="EnumUtils.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.JavaVersion" sourceFile="JavaVersion.java" interface="false" size="97" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.LocaleUtils" sourceFile="LocaleUtils.java" interface="false" size="111" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.LocaleUtils$SyncAvoid" sourceFile="LocaleUtils.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.NotImplementedException" sourceFile="NotImplementedException.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ObjectUtils" sourceFile="ObjectUtils.java" interface="false" size="204" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ObjectUtils$Null" sourceFile="ObjectUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.RandomStringUtils" sourceFile="RandomStringUtils.java" interface="false" size="88" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.RandomUtils" sourceFile="RandomUtils.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Range" sourceFile="Range.java" interface="false" size="113" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Range$ComparableComparator" sourceFile="Range.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.RegExUtils" sourceFile="RegExUtils.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.SerializationException" sourceFile="SerializationException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.SerializationUtils" sourceFile="SerializationUtils.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.SerializationUtils$ClassLoaderAwareObjectInputStream" sourceFile="SerializationUtils.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringEscapeUtils" sourceFile="StringEscapeUtils.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringEscapeUtils$CsvEscaper" sourceFile="StringEscapeUtils.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringEscapeUtils$CsvUnescaper" sourceFile="StringEscapeUtils.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.StringUtils" sourceFile="StringUtils.java" interface="false" size="1938" bugs="2" priority_1="2"/>
+      <ClassStats class="org.apache.commons.lang3.SystemUtils" sourceFile="SystemUtils.java" interface="false" size="254" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils" sourceFile="ThreadUtils.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils$1" sourceFile="ThreadUtils.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils$AlwaysTruePredicate" sourceFile="ThreadUtils.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils$NamePredicate" sourceFile="ThreadUtils.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils$ThreadGroupPredicate" sourceFile="ThreadUtils.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils$ThreadIdPredicate" sourceFile="ThreadUtils.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.ThreadUtils$ThreadPredicate" sourceFile="ThreadUtils.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.Validate" sourceFile="Validate.java" interface="false" size="222" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.arch" total_bugs="0" total_types="3" total_size="50">
+      <ClassStats class="org.apache.commons.lang3.arch.Processor" sourceFile="Processor.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.arch.Processor$Arch" sourceFile="Processor.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.arch.Processor$Type" sourceFile="Processor.java" interface="false" size="15" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.builder" total_bugs="0" total_types="45" total_size="2744">
+      <ClassStats class="org.apache.commons.lang3.builder.Builder" sourceFile="Builder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.CompareToBuilder" sourceFile="CompareToBuilder.java" interface="false" size="293" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.Diff" sourceFile="Diff.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder" sourceFile="DiffBuilder.java" interface="false" size="186" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$1" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$10" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$11" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$12" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$13" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$14" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$15" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$16" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$17" sourceFile="DiffBuilder.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$18" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$2" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$3" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$4" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$5" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$6" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$7" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$8" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffBuilder$9" sourceFile="DiffBuilder.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.DiffResult" sourceFile="DiffResult.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.Diffable" sourceFile="Diffable.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.EqualsBuilder" sourceFile="EqualsBuilder.java" interface="false" size="354" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.EqualsExclude" sourceFile="EqualsExclude.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.HashCodeBuilder" sourceFile="HashCodeBuilder.java" interface="false" size="193" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.HashCodeExclude" sourceFile="HashCodeExclude.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.IDKey" sourceFile="IDKey.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle" sourceFile="MultilineRecursiveToStringStyle.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.RecursiveToStringStyle" sourceFile="RecursiveToStringStyle.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ReflectionDiffBuilder" sourceFile="ReflectionDiffBuilder.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ReflectionToStringBuilder" sourceFile="ReflectionToStringBuilder.java" interface="false" size="135" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.StandardToStringStyle" sourceFile="StandardToStringStyle.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringBuilder" sourceFile="ToStringBuilder.java" interface="false" size="202" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringExclude" sourceFile="ToStringExclude.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="627" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$DefaultToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$JsonToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="124" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$MultiLineToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$NoClassNameToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$NoFieldNameToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$ShortPrefixToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringStyle$SimpleToStringStyle" sourceFile="ToStringStyle.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.builder.ToStringSummary" sourceFile="ToStringSummary.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.concurrent" total_bugs="0" total_types="37" total_size="783">
+      <ClassStats class="org.apache.commons.lang3.concurrent.AbstractCircuitBreaker" sourceFile="AbstractCircuitBreaker.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AbstractCircuitBreaker$1" sourceFile="AbstractCircuitBreaker.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AbstractCircuitBreaker$State" sourceFile="AbstractCircuitBreaker.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AbstractCircuitBreaker$State$1" sourceFile="AbstractCircuitBreaker.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AbstractCircuitBreaker$State$2" sourceFile="AbstractCircuitBreaker.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AtomicInitializer" sourceFile="AtomicInitializer.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.AtomicSafeInitializer" sourceFile="AtomicSafeInitializer.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BackgroundInitializer" sourceFile="BackgroundInitializer.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BackgroundInitializer$InitializationTask" sourceFile="BackgroundInitializer.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BasicThreadFactory" sourceFile="BasicThreadFactory.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BasicThreadFactory$1" sourceFile="BasicThreadFactory.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.BasicThreadFactory$Builder" sourceFile="BasicThreadFactory.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.CallableBackgroundInitializer" sourceFile="CallableBackgroundInitializer.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.CircuitBreaker" sourceFile="CircuitBreaker.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.CircuitBreakingException" sourceFile="CircuitBreakingException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.Computable" sourceFile="Computable.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentException" sourceFile="ConcurrentException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentInitializer" sourceFile="ConcurrentInitializer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentRuntimeException" sourceFile="ConcurrentRuntimeException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentUtils" sourceFile="ConcurrentUtils.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConcurrentUtils$ConstantFuture" sourceFile="ConcurrentUtils.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ConstantInitializer" sourceFile="ConstantInitializer.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.EventCountCircuitBreaker" sourceFile="EventCountCircuitBreaker.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.EventCountCircuitBreaker$1" sourceFile="EventCountCircuitBreaker.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.EventCountCircuitBreaker$CheckIntervalData" sourceFile="EventCountCircuitBreaker.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.EventCountCircuitBreaker$StateStrategy" sourceFile="EventCountCircuitBreaker.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.EventCountCircuitBreaker$StateStrategyClosed" sourceFile="EventCountCircuitBreaker.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.EventCountCircuitBreaker$StateStrategyOpen" sourceFile="EventCountCircuitBreaker.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.LazyInitializer" sourceFile="LazyInitializer.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.Memoizer" sourceFile="Memoizer.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.Memoizer$1" sourceFile="Memoizer.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.MultiBackgroundInitializer" sourceFile="MultiBackgroundInitializer.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.MultiBackgroundInitializer$1" sourceFile="MultiBackgroundInitializer.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.MultiBackgroundInitializer$MultiBackgroundInitializerResults" sourceFile="MultiBackgroundInitializer.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.ThresholdCircuitBreaker" sourceFile="ThresholdCircuitBreaker.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.TimedSemaphore" sourceFile="TimedSemaphore.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.concurrent.TimedSemaphore$1" sourceFile="TimedSemaphore.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.event" total_bugs="0" total_types="4" total_size="121">
+      <ClassStats class="org.apache.commons.lang3.event.EventListenerSupport" sourceFile="EventListenerSupport.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.event.EventListenerSupport$ProxyInvocationHandler" sourceFile="EventListenerSupport.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.event.EventUtils" sourceFile="EventUtils.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.event.EventUtils$EventBindingInvocationHandler" sourceFile="EventUtils.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.exception" total_bugs="0" total_types="6" total_size="364">
+      <ClassStats class="org.apache.commons.lang3.exception.CloneFailedException" sourceFile="CloneFailedException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ContextedException" sourceFile="ContextedException.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ContextedRuntimeException" sourceFile="ContextedRuntimeException.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.DefaultExceptionContext" sourceFile="DefaultExceptionContext.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ExceptionContext" sourceFile="ExceptionContext.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.exception.ExceptionUtils" sourceFile="ExceptionUtils.java" interface="false" size="182" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.math" total_bugs="2" total_types="3" total_size="908" priority_2="2">
+      <ClassStats class="org.apache.commons.lang3.math.Fraction" sourceFile="Fraction.java" interface="false" size="322" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.math.IEEE754rUtils" sourceFile="IEEE754rUtils.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.math.NumberUtils" sourceFile="NumberUtils.java" interface="false" size="523" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.mutable" total_bugs="0" total_types="9" total_size="668">
+      <ClassStats class="org.apache.commons.lang3.mutable.Mutable" sourceFile="Mutable.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableBoolean" sourceFile="MutableBoolean.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableByte" sourceFile="MutableByte.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableDouble" sourceFile="MutableDouble.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableFloat" sourceFile="MutableFloat.java" interface="false" size="99" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableInt" sourceFile="MutableInt.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableLong" sourceFile="MutableLong.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableObject" sourceFile="MutableObject.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.mutable.MutableShort" sourceFile="MutableShort.java" interface="false" size="98" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.reflect" total_bugs="0" total_types="14" total_size="1338">
+      <ClassStats class="org.apache.commons.lang3.reflect.ConstructorUtils" sourceFile="ConstructorUtils.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.FieldUtils" sourceFile="FieldUtils.java" interface="false" size="181" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.InheritanceUtils" sourceFile="InheritanceUtils.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.MemberUtils" sourceFile="MemberUtils.java" interface="false" size="95" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.MemberUtils$Executable" sourceFile="MemberUtils.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.MethodUtils" sourceFile="MethodUtils.java" interface="false" size="274" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeLiteral" sourceFile="TypeLiteral.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils" sourceFile="TypeUtils.java" interface="false" size="559" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils$1" sourceFile="TypeUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils$GenericArrayTypeImpl" sourceFile="TypeUtils.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils$ParameterizedTypeImpl" sourceFile="TypeUtils.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder" sourceFile="TypeUtils.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeImpl" sourceFile="TypeUtils.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.reflect.Typed" sourceFile="Typed.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.text" total_bugs="2" total_types="21" total_size="2227" priority_2="1" priority_1="1">
+      <ClassStats class="org.apache.commons.lang3.text.CompositeFormat" sourceFile="CompositeFormat.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.ExtendedMessageFormat" sourceFile="ExtendedMessageFormat.java" interface="false" size="214" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.lang3.text.FormatFactory" sourceFile="FormatFactory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.FormattableUtils" sourceFile="FormattableUtils.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder" sourceFile="StrBuilder.java" interface="false" size="921" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder$StrBuilderReader" sourceFile="StrBuilder.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer" sourceFile="StrBuilder.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrBuilder$StrBuilderWriter" sourceFile="StrBuilder.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrLookup" sourceFile="StrLookup.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrLookup$1" sourceFile="StrLookup.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrLookup$MapStrLookup" sourceFile="StrLookup.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrLookup$SystemPropertiesStrLookup" sourceFile="StrLookup.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher" sourceFile="StrMatcher.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$CharMatcher" sourceFile="StrMatcher.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$CharSetMatcher" sourceFile="StrMatcher.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$NoMatcher" sourceFile="StrMatcher.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$StringMatcher" sourceFile="StrMatcher.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrMatcher$TrimMatcher" sourceFile="StrMatcher.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrSubstitutor" sourceFile="StrSubstitutor.java" interface="false" size="337" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.StrTokenizer" sourceFile="StrTokenizer.java" interface="false" size="330" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.lang3.text.WordUtils" sourceFile="WordUtils.java" interface="false" size="150" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.text.translate" total_bugs="0" total_types="13" total_size="338">
+      <ClassStats class="org.apache.commons.lang3.text.translate.AggregateTranslator" sourceFile="AggregateTranslator.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.CharSequenceTranslator" sourceFile="CharSequenceTranslator.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.CodePointTranslator" sourceFile="CodePointTranslator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.EntityArrays" sourceFile="EntityArrays.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.JavaUnicodeEscaper" sourceFile="JavaUnicodeEscaper.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.LookupTranslator" sourceFile="LookupTranslator.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.NumericEntityEscaper" sourceFile="NumericEntityEscaper.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.NumericEntityUnescaper" sourceFile="NumericEntityUnescaper.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.NumericEntityUnescaper$OPTION" sourceFile="NumericEntityUnescaper.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.OctalUnescaper" sourceFile="OctalUnescaper.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.UnicodeEscaper" sourceFile="UnicodeEscaper.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.UnicodeUnescaper" sourceFile="UnicodeUnescaper.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemover" sourceFile="UnicodeUnpairedSurrogateRemover.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.time" total_bugs="6" total_types="60" total_size="2260" priority_2="6">
+      <ClassStats class="org.apache.commons.lang3.time.DateFormatUtils" sourceFile="DateFormatUtils.java" interface="false" size="78" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DateParser" sourceFile="DateParser.java" interface="true" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DatePrinter" sourceFile="DatePrinter.java" interface="true" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DateUtils" sourceFile="DateUtils.java" interface="false" size="366" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.lang3.time.DateUtils$DateIterator" sourceFile="DateUtils.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DateUtils$ModifyType" sourceFile="DateUtils.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DurationFormatUtils" sourceFile="DurationFormatUtils.java" interface="false" size="239" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.DurationFormatUtils$Token" sourceFile="DurationFormatUtils.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat" sourceFile="FastDateFormat.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateFormat$1" sourceFile="FastDateFormat.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser" sourceFile="FastDateParser.java" interface="false" size="199" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$1" sourceFile="FastDateParser.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$2" sourceFile="FastDateParser.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$3" sourceFile="FastDateParser.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$4" sourceFile="FastDateParser.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$5" sourceFile="FastDateParser.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$6" sourceFile="FastDateParser.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy" sourceFile="FastDateParser.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$CopyQuotedStrategy" sourceFile="FastDateParser.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$ISO8601TimeZoneStrategy" sourceFile="FastDateParser.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$NumberStrategy" sourceFile="FastDateParser.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$PatternStrategy" sourceFile="FastDateParser.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$Strategy" sourceFile="FastDateParser.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$StrategyAndWidth" sourceFile="FastDateParser.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$StrategyParser" sourceFile="FastDateParser.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$TimeZoneStrategy" sourceFile="FastDateParser.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDateParser$TimeZoneStrategy$TzInfo" sourceFile="FastDateParser.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter" sourceFile="FastDatePrinter.java" interface="false" size="286" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$CharacterLiteral" sourceFile="FastDatePrinter.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$DayInWeekField" sourceFile="FastDatePrinter.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$Iso8601_Rule" sourceFile="FastDatePrinter.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$NumberRule" sourceFile="FastDatePrinter.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$PaddedNumberField" sourceFile="FastDatePrinter.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$Rule" sourceFile="FastDatePrinter.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$StringLiteral" sourceFile="FastDatePrinter.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TextField" sourceFile="FastDatePrinter.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TimeZoneDisplayKey" sourceFile="FastDatePrinter.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNameRule" sourceFile="FastDatePrinter.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule" sourceFile="FastDatePrinter.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TwelveHourField" sourceFile="FastDatePrinter.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TwentyFourHourField" sourceFile="FastDatePrinter.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TwoDigitMonthField" sourceFile="FastDatePrinter.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TwoDigitNumberField" sourceFile="FastDatePrinter.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$TwoDigitYearField" sourceFile="FastDatePrinter.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$UnpaddedMonthField" sourceFile="FastDatePrinter.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$UnpaddedNumberField" sourceFile="FastDatePrinter.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastDatePrinter$WeekYear" sourceFile="FastDatePrinter.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FastTimeZone" sourceFile="FastTimeZone.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FormatCache" sourceFile="FormatCache.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.FormatCache$MultipartKey" sourceFile="FormatCache.java" interface="false" size="17" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.lang3.time.GmtTimeZone" sourceFile="GmtTimeZone.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch" sourceFile="StopWatch.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$1" sourceFile="StopWatch.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$SplitState" sourceFile="StopWatch.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$State" sourceFile="StopWatch.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$State$1" sourceFile="StopWatch.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$State$2" sourceFile="StopWatch.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$State$3" sourceFile="StopWatch.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.StopWatch$State$4" sourceFile="StopWatch.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.time.TimeZones" sourceFile="TimeZones.java" interface="false" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.lang3.tuple" total_bugs="0" total_types="6" total_size="167">
+      <ClassStats class="org.apache.commons.lang3.tuple.ImmutablePair" sourceFile="ImmutablePair.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.tuple.ImmutableTriple" sourceFile="ImmutableTriple.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.tuple.MutablePair" sourceFile="MutablePair.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.tuple.MutableTriple" sourceFile="MutableTriple.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.tuple.Pair" sourceFile="Pair.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.lang3.tuple.Triple" sourceFile="Triple.java" interface="false" size="31" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1934" invocations="4099" avgMicrosecondsPerInvocation="471" maxMicrosecondsPerInvocation="138805" standardDeviationMircosecondsPerInvocation="3621"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1719" invocations="5262" avgMicrosecondsPerInvocation="326" maxMicrosecondsPerInvocation="116193" standardDeviationMircosecondsPerInvocation="2644"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1712" invocations="4192" avgMicrosecondsPerInvocation="408" maxMicrosecondsPerInvocation="152100" standardDeviationMircosecondsPerInvocation="3321"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="1536" invocations="4235" avgMicrosecondsPerInvocation="362" maxMicrosecondsPerInvocation="70094" standardDeviationMircosecondsPerInvocation="2626"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1470" invocations="4133" avgMicrosecondsPerInvocation="355" maxMicrosecondsPerInvocation="123205" standardDeviationMircosecondsPerInvocation="3065"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1158" invocations="1626" avgMicrosecondsPerInvocation="712" maxMicrosecondsPerInvocation="81037" standardDeviationMircosecondsPerInvocation="3497"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="1115" invocations="4196" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="43890" standardDeviationMircosecondsPerInvocation="1942"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="1008" invocations="3602" avgMicrosecondsPerInvocation="280" maxMicrosecondsPerInvocation="98261" standardDeviationMircosecondsPerInvocation="2523"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="817" invocations="5501" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="64846" standardDeviationMircosecondsPerInvocation="1433"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="794" invocations="367" avgMicrosecondsPerInvocation="2164" maxMicrosecondsPerInvocation="339779" standardDeviationMircosecondsPerInvocation="18443"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="691" invocations="647" avgMicrosecondsPerInvocation="1069" maxMicrosecondsPerInvocation="33779" standardDeviationMircosecondsPerInvocation="3253"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="589" invocations="647" avgMicrosecondsPerInvocation="910" maxMicrosecondsPerInvocation="39171" standardDeviationMircosecondsPerInvocation="3087"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="574" invocations="4192" avgMicrosecondsPerInvocation="136" maxMicrosecondsPerInvocation="128399" standardDeviationMircosecondsPerInvocation="2359"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="435" invocations="367" avgMicrosecondsPerInvocation="1187" maxMicrosecondsPerInvocation="59074" standardDeviationMircosecondsPerInvocation="5485"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="389" invocations="4288" avgMicrosecondsPerInvocation="90" maxMicrosecondsPerInvocation="137661" standardDeviationMircosecondsPerInvocation="2241"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="382" invocations="4288" avgMicrosecondsPerInvocation="89" maxMicrosecondsPerInvocation="30697" standardDeviationMircosecondsPerInvocation="1062"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="373" invocations="647" avgMicrosecondsPerInvocation="577" maxMicrosecondsPerInvocation="113438" standardDeviationMircosecondsPerInvocation="4846"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="343" invocations="57909" avgMicrosecondsPerInvocation="5" maxMicrosecondsPerInvocation="32030" standardDeviationMircosecondsPerInvocation="279"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="323" invocations="367" avgMicrosecondsPerInvocation="881" maxMicrosecondsPerInvocation="53916" standardDeviationMircosecondsPerInvocation="4606"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="317" invocations="1629" avgMicrosecondsPerInvocation="194" maxMicrosecondsPerInvocation="29694" standardDeviationMircosecondsPerInvocation="1204"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="282" invocations="367" avgMicrosecondsPerInvocation="769" maxMicrosecondsPerInvocation="136000" standardDeviationMircosecondsPerInvocation="7417"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="280" invocations="1529" avgMicrosecondsPerInvocation="183" maxMicrosecondsPerInvocation="48298" standardDeviationMircosecondsPerInvocation="1764"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="277" invocations="367" avgMicrosecondsPerInvocation="756" maxMicrosecondsPerInvocation="35371" standardDeviationMircosecondsPerInvocation="3579"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="270" invocations="367" avgMicrosecondsPerInvocation="738" maxMicrosecondsPerInvocation="32435" standardDeviationMircosecondsPerInvocation="2919"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="260" invocations="367" avgMicrosecondsPerInvocation="710" maxMicrosecondsPerInvocation="72306" standardDeviationMircosecondsPerInvocation="4968"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="258" invocations="367" avgMicrosecondsPerInvocation="703" maxMicrosecondsPerInvocation="81996" standardDeviationMircosecondsPerInvocation="5083"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindFloatEquality" totalMilliseconds="254" invocations="367" avgMicrosecondsPerInvocation="692" maxMicrosecondsPerInvocation="28979" standardDeviationMircosecondsPerInvocation="3243"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="244" invocations="367" avgMicrosecondsPerInvocation="665" maxMicrosecondsPerInvocation="28116" standardDeviationMircosecondsPerInvocation="2669"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="231" invocations="738" avgMicrosecondsPerInvocation="313" maxMicrosecondsPerInvocation="28340" standardDeviationMircosecondsPerInvocation="1792"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="226" invocations="647" avgMicrosecondsPerInvocation="350" maxMicrosecondsPerInvocation="34061" standardDeviationMircosecondsPerInvocation="2098"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteRecursiveLoop" totalMilliseconds="212" invocations="367" avgMicrosecondsPerInvocation="579" maxMicrosecondsPerInvocation="41853" standardDeviationMircosecondsPerInvocation="3260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="207" invocations="367" avgMicrosecondsPerInvocation="566" maxMicrosecondsPerInvocation="32345" standardDeviationMircosecondsPerInvocation="2637"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethodInvocations" totalMilliseconds="206" invocations="367" avgMicrosecondsPerInvocation="563" maxMicrosecondsPerInvocation="87441" standardDeviationMircosecondsPerInvocation="4977"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="205" invocations="367" avgMicrosecondsPerInvocation="560" maxMicrosecondsPerInvocation="31061" standardDeviationMircosecondsPerInvocation="2655"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindSelfComparison" totalMilliseconds="204" invocations="367" avgMicrosecondsPerInvocation="556" maxMicrosecondsPerInvocation="67060" standardDeviationMircosecondsPerInvocation="4073"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="200" invocations="367" avgMicrosecondsPerInvocation="547" maxMicrosecondsPerInvocation="28394" standardDeviationMircosecondsPerInvocation="2674"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="199" invocations="367" avgMicrosecondsPerInvocation="543" maxMicrosecondsPerInvocation="32385" standardDeviationMircosecondsPerInvocation="2876"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="198" invocations="367" avgMicrosecondsPerInvocation="541" maxMicrosecondsPerInvocation="20551" standardDeviationMircosecondsPerInvocation="2221"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="186" invocations="367" avgMicrosecondsPerInvocation="507" maxMicrosecondsPerInvocation="48366" standardDeviationMircosecondsPerInvocation="3562"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="185" invocations="647" avgMicrosecondsPerInvocation="287" maxMicrosecondsPerInvocation="25000" standardDeviationMircosecondsPerInvocation="1700"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

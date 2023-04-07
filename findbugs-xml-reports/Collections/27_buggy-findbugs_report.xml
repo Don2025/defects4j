@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680361900909" analysisTimestamp="1680692241190" release="">
+  <Project projectName="">
+    <Jar>Collections/27_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="INT_BAD_COMPARISON_WITH_NONNEGATIVE_VALUE" priority="2" rank="7" abbrev="INT" category="CORRECTNESS">
+    <Class classname="org.apache.commons.collections4.ListUtils$Partition">
+      <SourceLine classname="org.apache.commons.collections4.ListUtils$Partition" start="662" end="696" sourcefile="ListUtils.java" sourcepath="org/apache/commons/collections4/ListUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.ListUtils$Partition" name="get" signature="(I)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.ListUtils$Partition" start="673" end="686" startBytecode="0" endBytecode="302" sourcefile="ListUtils.java" sourcepath="org/apache/commons/collections4/ListUtils.java"/>
+    </Method>
+    <Int value="0" role="INT_VALUE"/>
+    <LocalVariable name="listSize" register="2" pc="6" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.collections4.ListUtils$Partition" start="674" end="674" startBytecode="6" endBytecode="6" sourcefile="ListUtils.java" sourcepath="org/apache/commons/collections4/ListUtils.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.collections4.MapUtils">
+      <SourceLine classname="org.apache.commons.collections4.MapUtils" start="87" end="1793" sourcefile="MapUtils.java" sourcepath="org/apache/commons/collections4/MapUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.MapUtils" name="getBoolean" signature="(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="org.apache.commons.collections4.MapUtils" start="154" end="169" startBytecode="0" endBytecode="241" sourcefile="MapUtils.java" sourcepath="org/apache/commons/collections4/MapUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.collections4.MapUtils" start="169" end="169" startBytecode="73" endBytecode="73" sourcefile="MapUtils.java" sourcepath="org/apache/commons/collections4/MapUtils.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_UNUSUAL" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="org.apache.commons.collections4.bidimap.TreeBidiMap">
+      <SourceLine classname="org.apache.commons.collections4.bidimap.TreeBidiMap" start="78" end="1457" sourcefile="TreeBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/TreeBidiMap.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.bidimap.TreeBidiMap" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.bidimap.TreeBidiMap" start="472" end="472" startBytecode="0" endBytecode="78" sourcefile="TreeBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/TreeBidiMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="EQ_UNUSUAL" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse">
+      <SourceLine classname="org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse" start="2077" end="2224" sourcefile="TreeBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/TreeBidiMap.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse" start="2214" end="2214" startBytecode="0" endBytecode="81" sourcefile="TreeBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/TreeBidiMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap">
+      <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" start="37" end="133" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java"/>
+    </Class>
+    <Field classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" name="inverse" signature="Lorg/apache/commons/collections4/bidimap/UnmodifiableBidiMap;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java"/>
+    </Field>
+    <Int value="80" role="INT_SYNC_PERCENT"/>
+    <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" start="131" end="131" startBytecode="32" endBytecode="32" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" start="129" end="129" startBytecode="1" endBytecode="1" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" start="133" end="133" startBytecode="36" endBytecode="36" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" start="130" end="130" startBytecode="24" endBytecode="24" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" start="131" end="131" startBytecode="28" endBytecode="28" sourcefile="UnmodifiableBidiMap.java" sourcepath="org/apache/commons/collections4/bidimap/UnmodifiableBidiMap.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.collections4.iterators.ObjectArrayIterator">
+      <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" start="44" end="172" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" name="getArray" signature="()[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" start="146" end="146" startBytecode="0" endBytecode="64" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" name="array" signature="[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" start="146" end="146" startBytecode="4" endBytecode="4" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.collections4.iterators.ObjectArrayIterator">
+      <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" start="44" end="172" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" name="&lt;init&gt;" signature="([Ljava/lang/Object;II)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" start="83" end="100" startBytecode="0" endBytecode="272" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" name="array" signature="[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+    </Field>
+    <LocalVariable name="array" register="1" pc="72" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.collections4.iterators.ObjectArrayIterator" start="96" end="96" startBytecode="72" endBytecode="72" sourcefile="ObjectArrayIterator.java" sourcepath="org/apache/commons/collections4/iterators/ObjectArrayIterator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.collections4.keyvalue.MultiKey">
+      <SourceLine classname="org.apache.commons.collections4.keyvalue.MultiKey" start="67" end="279" sourcefile="MultiKey.java" sourcepath="org/apache/commons/collections4/keyvalue/MultiKey.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.keyvalue.MultiKey" name="&lt;init&gt;" signature="([Ljava/lang/Object;Z)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.keyvalue.MultiKey" start="158" end="169" startBytecode="0" endBytecode="188" sourcefile="MultiKey.java" sourcepath="org/apache/commons/collections4/keyvalue/MultiKey.java"/>
+    </Method>
+    <Field classname="org.apache.commons.collections4.keyvalue.MultiKey" name="keys" signature="[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.keyvalue.MultiKey" sourcefile="MultiKey.java" sourcepath="org/apache/commons/collections4/keyvalue/MultiKey.java"/>
+    </Field>
+    <LocalVariable name="keys" register="1" pc="38" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.collections4.keyvalue.MultiKey" start="165" end="165" startBytecode="38" endBytecode="38" sourcefile="MultiKey.java" sourcepath="org/apache/commons/collections4/keyvalue/MultiKey.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="1" rank="14" abbrev="UC" category="STYLE">
+    <Class classname="org.apache.commons.collections4.list.TreeList$AVLNode">
+      <SourceLine classname="org.apache.commons.collections4.list.TreeList$AVLNode" start="305" end="974" sourcefile="TreeList.java" sourcepath="org/apache/commons/collections4/list/TreeList.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.list.TreeList$AVLNode" name="removeSelf" signature="()Lorg/apache/commons/collections4/list/TreeList$AVLNode;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.list.TreeList$AVLNode" start="621" end="668" startBytecode="0" endBytecode="640" sourcefile="TreeList.java" sourcepath="org/apache/commons/collections4/list/TreeList.java"/>
+    </Method>
+    <String value="this.relativePosition &gt; 0"/>
+    <SourceLine classname="org.apache.commons.collections4.list.TreeList$AVLNode" start="626" end="626" startBytecode="53" endBytecode="53" sourcefile="TreeList.java" sourcepath="org/apache/commons/collections4/list/TreeList.java" role="SOURCE_UNREACHABLE_CODE"/>
+    <SourceLine classname="org.apache.commons.collections4.list.TreeList$AVLNode" start="626" end="626" startBytecode="46" endBytecode="46" sourcefile="TreeList.java" sourcepath="org/apache/commons/collections4/list/TreeList.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_DOESNT_OVERRIDE_EQUALS" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="org.apache.commons.collections4.map.AbstractLinkedMap$LinkEntry">
+      <SourceLine classname="org.apache.commons.collections4.map.AbstractLinkedMap$LinkEntry" start="517" end="518" sourcefile="AbstractLinkedMap.java" sourcepath="org/apache/commons/collections4/map/AbstractLinkedMap.java"/>
+    </Class>
+    <SourceLine classname="org.apache.commons.collections4.map.AbstractLinkedMap$LinkEntry" start="1" end="1" startBytecode="0" endBytecode="0" sourcefile="AbstractLinkedMap.java" sourcepath="org/apache/commons/collections4/map/AbstractLinkedMap.java"/>
+    <Method classname="org.apache.commons.collections4.map.AbstractHashedMap$HashEntry" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_DID_YOU_MEAN_TO_OVERRIDE">
+      <SourceLine classname="org.apache.commons.collections4.map.AbstractHashedMap$HashEntry" start="1104" end="1111" startBytecode="0" endBytecode="240" sourcefile="AbstractHashedMap.java" sourcepath="org/apache/commons/collections4/map/AbstractHashedMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE">
+    <Class classname="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator">
+      <SourceLine classname="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator" start="774" end="846" sourcefile="AbstractReferenceMap.java" sourcepath="org/apache/commons/collections4/map/AbstractReferenceMap.java"/>
+    </Class>
+    <Field classname="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator" name="currentValue" signature="Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator" sourcefile="AbstractReferenceMap.java" sourcepath="org/apache/commons/collections4/map/AbstractReferenceMap.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator" start="795" end="795" startBytecode="69" endBytecode="69" sourcefile="AbstractReferenceMap.java" sourcepath="org/apache/commons/collections4/map/AbstractReferenceMap.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.collections4.map.Flat3Map">
+      <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="73" end="1246" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.map.Flat3Map" name="convertToMap" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="397" end="415" startBytecode="0" endBytecode="293" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="400" end="402" startBytecode="59" endBytecode="60" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="402" end="404" startBytecode="75" endBytecode="76" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="404" end="406" startBytecode="91" endBytecode="92" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.collections4.map.Flat3Map">
+      <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="73" end="1246" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.map.Flat3Map" name="hashCode" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1191" end="1207" startBytecode="0" endBytecode="369" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1197" end="1199" startBytecode="77" endBytecode="78" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1199" end="1201" startBytecode="103" endBytecode="104" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1201" end="1203" startBytecode="129" endBytecode="130" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.collections4.map.Flat3Map">
+      <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="73" end="1246" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    </Class>
+    <Method classname="org.apache.commons.collections4.map.Flat3Map" name="toString" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1217" end="1246" startBytecode="0" endBytecode="595" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1230" end="1232" startBytecode="129" endBytecode="130" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java"/>
+    <SourceLine classname="org.apache.commons.collections4.map.Flat3Map" start="1235" end="1237" startBytecode="187" endBytecode="188" sourcefile="Flat3Map.java" sourcepath="org/apache/commons/collections4/map/Flat3Map.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 1 Apr 2023 23:11:40 +0800" total_classes="529" referenced_classes="685" total_bugs="14" total_size="19064" num_packages="18" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="102.33" clock_seconds="24.94" peak_mbytes="323.11" alloc_mbytes="683.00" gc_seconds="0.92" priority_2="13" priority_1="1">
+    <PackageStats package="org.apache.commons.collections4" total_bugs="2" total_types="91" total_size="2529" priority_2="2">
+      <ClassStats class="org.apache.commons.collections4.ArrayStack" sourceFile="ArrayStack.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Bag" sourceFile="Bag.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.BagUtils" sourceFile="BagUtils.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.BidiMap" sourceFile="BidiMap.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.BoundedCollection" sourceFile="BoundedCollection.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.BoundedMap" sourceFile="BoundedMap.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Closure" sourceFile="Closure.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ClosureUtils" sourceFile="ClosureUtils.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils" sourceFile="CollectionUtils.java" interface="false" size="412" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils$1" sourceFile="CollectionUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils$2" sourceFile="CollectionUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils$3" sourceFile="CollectionUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils$CardinalityHelper" sourceFile="CollectionUtils.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils$EquatorWrapper" sourceFile="CollectionUtils.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.CollectionUtils$SetOperationCardinalityHelper" sourceFile="CollectionUtils.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ComparatorUtils" sourceFile="ComparatorUtils.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.EnumerationUtils" sourceFile="EnumerationUtils.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Equator" sourceFile="Equator.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Factory" sourceFile="Factory.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.FactoryUtils" sourceFile="FactoryUtils.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.FluentIterable" sourceFile="FluentIterable.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.FunctorException" sourceFile="FunctorException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Get" sourceFile="Get.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableGet" sourceFile="IterableGet.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableMap" sourceFile="IterableMap.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableSortedMap" sourceFile="IterableSortedMap.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils" sourceFile="IterableUtils.java" interface="false" size="172" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$1" sourceFile="IterableUtils.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$10" sourceFile="IterableUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$11" sourceFile="IterableUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$12" sourceFile="IterableUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$13" sourceFile="IterableUtils.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$2" sourceFile="IterableUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$2$1" sourceFile="IterableUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$3" sourceFile="IterableUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$4" sourceFile="IterableUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$5" sourceFile="IterableUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$6" sourceFile="IterableUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$7" sourceFile="IterableUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$7$1" sourceFile="IterableUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$8" sourceFile="IterableUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$9" sourceFile="IterableUtils.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IterableUtils$UnmodifiableIterable" sourceFile="IterableUtils.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.IteratorUtils" sourceFile="IteratorUtils.java" interface="false" size="305" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.KeyValue" sourceFile="KeyValue.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ListUtils" sourceFile="ListUtils.java" interface="false" size="124" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ListUtils$1" sourceFile="ListUtils.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ListUtils$CharSequenceAsList" sourceFile="ListUtils.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ListUtils$LcsVisitor" sourceFile="ListUtils.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ListUtils$Partition" sourceFile="ListUtils.java" interface="false" size="26" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.ListValuedMap" sourceFile="ListValuedMap.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MapIterator" sourceFile="MapIterator.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MapUtils" sourceFile="MapUtils.java" interface="false" size="383" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.MapUtils$1" sourceFile="MapUtils.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MapUtils$2" sourceFile="MapUtils.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MultiMap" sourceFile="MultiMap.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MultiMapUtils" sourceFile="MultiMapUtils.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MultiSet" sourceFile="MultiSet.java" interface="true" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MultiSet$Entry" sourceFile="MultiSet.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.MultiValuedMap" sourceFile="MultiValuedMap.java" interface="true" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.OrderedBidiMap" sourceFile="OrderedBidiMap.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.OrderedIterator" sourceFile="OrderedIterator.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.OrderedMap" sourceFile="OrderedMap.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.OrderedMapIterator" sourceFile="OrderedMapIterator.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Predicate" sourceFile="Predicate.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.PredicateUtils" sourceFile="PredicateUtils.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Put" sourceFile="Put.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.QueueUtils" sourceFile="QueueUtils.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ResettableIterator" sourceFile="ResettableIterator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.ResettableListIterator" sourceFile="ResettableListIterator.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils" sourceFile="SetUtils.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$1" sourceFile="SetUtils.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$2" sourceFile="SetUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$3" sourceFile="SetUtils.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$4" sourceFile="SetUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$5" sourceFile="SetUtils.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$6" sourceFile="SetUtils.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetUtils$SetView" sourceFile="SetUtils.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SetValuedMap" sourceFile="SetValuedMap.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SortedBag" sourceFile="SortedBag.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SortedBidiMap" sourceFile="SortedBidiMap.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SplitMapUtils" sourceFile="SplitMapUtils.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SplitMapUtils$1" sourceFile="SplitMapUtils.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SplitMapUtils$WrappedGet" sourceFile="SplitMapUtils.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.SplitMapUtils$WrappedPut" sourceFile="SplitMapUtils.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Transformer" sourceFile="Transformer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.TransformerUtils" sourceFile="TransformerUtils.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Trie" sourceFile="Trie.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.TrieUtils" sourceFile="TrieUtils.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.Unmodifiable" sourceFile="Unmodifiable.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.bag" total_bugs="0" total_types="19" total_size="707">
+      <ClassStats class="org.apache.commons.collections4.bag.AbstractBagDecorator" sourceFile="AbstractBagDecorator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.AbstractMapBag" sourceFile="AbstractMapBag.java" interface="false" size="202" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.AbstractMapBag$BagIterator" sourceFile="AbstractMapBag.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger" sourceFile="AbstractMapBag.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.AbstractSortedBagDecorator" sourceFile="AbstractSortedBagDecorator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.CollectionBag" sourceFile="CollectionBag.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.CollectionSortedBag" sourceFile="CollectionSortedBag.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.HashBag" sourceFile="HashBag.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.PredicatedBag" sourceFile="PredicatedBag.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.PredicatedSortedBag" sourceFile="PredicatedSortedBag.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.SynchronizedBag" sourceFile="SynchronizedBag.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.SynchronizedBag$SynchronizedBagSet" sourceFile="SynchronizedBag.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.SynchronizedSortedBag" sourceFile="SynchronizedSortedBag.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.TransformedBag" sourceFile="TransformedBag.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.TransformedSortedBag" sourceFile="TransformedSortedBag.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.TreeBag" sourceFile="TreeBag.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.UnmodifiableBag" sourceFile="UnmodifiableBag.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.UnmodifiableSortedBag" sourceFile="UnmodifiableSortedBag.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bag.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.bidimap" total_bugs="3" total_types="37" total_size="1731" priority_2="3">
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractBidiMapDecorator" sourceFile="AbstractBidiMapDecorator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap" sourceFile="AbstractDualBidiMap.java" interface="false" size="99" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$BidiMapIterator" sourceFile="AbstractDualBidiMap.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$EntrySet" sourceFile="AbstractDualBidiMap.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$EntrySetIterator" sourceFile="AbstractDualBidiMap.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$KeySet" sourceFile="AbstractDualBidiMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$KeySetIterator" sourceFile="AbstractDualBidiMap.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$MapEntry" sourceFile="AbstractDualBidiMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$Values" sourceFile="AbstractDualBidiMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$ValuesIterator" sourceFile="AbstractDualBidiMap.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractDualBidiMap$View" sourceFile="AbstractDualBidiMap.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractOrderedBidiMapDecorator" sourceFile="AbstractOrderedBidiMapDecorator.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.AbstractSortedBidiMapDecorator" sourceFile="AbstractSortedBidiMapDecorator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.DualHashBidiMap" sourceFile="DualHashBidiMap.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.DualLinkedHashBidiMap" sourceFile="DualLinkedHashBidiMap.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.DualTreeBidiMap" sourceFile="DualTreeBidiMap.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.DualTreeBidiMap$BidiOrderedMapIterator" sourceFile="DualTreeBidiMap.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.DualTreeBidiMap$ViewMap" sourceFile="DualTreeBidiMap.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap" sourceFile="TreeBidiMap.java" interface="false" size="571" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$1" sourceFile="TreeBidiMap.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$DataElement" sourceFile="TreeBidiMap.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$EntryView" sourceFile="TreeBidiMap.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$Inverse" sourceFile="TreeBidiMap.java" interface="false" size="87" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$InverseEntryView" sourceFile="TreeBidiMap.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$InverseViewMapEntryIterator" sourceFile="TreeBidiMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$InverseViewMapIterator" sourceFile="TreeBidiMap.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$KeyView" sourceFile="TreeBidiMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$Node" sourceFile="TreeBidiMap.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$ValueView" sourceFile="TreeBidiMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$View" sourceFile="TreeBidiMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$ViewIterator" sourceFile="TreeBidiMap.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$ViewMapEntryIterator" sourceFile="TreeBidiMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.TreeBidiMap$ViewMapIterator" sourceFile="TreeBidiMap.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.UnmodifiableBidiMap" sourceFile="UnmodifiableBidiMap.java" interface="false" size="39" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.UnmodifiableOrderedBidiMap" sourceFile="UnmodifiableOrderedBidiMap.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.UnmodifiableSortedBidiMap" sourceFile="UnmodifiableSortedBidiMap.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.bidimap.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.collection" total_bugs="0" total_types="11" total_size="530">
+      <ClassStats class="org.apache.commons.collections4.collection.AbstractCollectionDecorator" sourceFile="AbstractCollectionDecorator.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.CompositeCollection" sourceFile="CompositeCollection.java" interface="false" size="126" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.CompositeCollection$CollectionMutator" sourceFile="CompositeCollection.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.IndexedCollection" sourceFile="IndexedCollection.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.PredicatedCollection" sourceFile="PredicatedCollection.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.PredicatedCollection$Builder" sourceFile="PredicatedCollection.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.SynchronizedCollection" sourceFile="SynchronizedCollection.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.TransformedCollection" sourceFile="TransformedCollection.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.UnmodifiableBoundedCollection" sourceFile="UnmodifiableBoundedCollection.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.UnmodifiableCollection" sourceFile="UnmodifiableCollection.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.collection.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.comparators" total_bugs="0" total_types="10" total_size="339">
+      <ClassStats class="org.apache.commons.collections4.comparators.BooleanComparator" sourceFile="BooleanComparator.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.ComparableComparator" sourceFile="ComparableComparator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.ComparatorChain" sourceFile="ComparatorChain.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.FixedOrderComparator" sourceFile="FixedOrderComparator.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.FixedOrderComparator$1" sourceFile="FixedOrderComparator.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.FixedOrderComparator$UnknownObjectBehavior" sourceFile="FixedOrderComparator.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.NullComparator" sourceFile="NullComparator.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.ReverseComparator" sourceFile="ReverseComparator.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.TransformingComparator" sourceFile="TransformingComparator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.comparators.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.functors" total_bugs="0" total_types="59" total_size="1224">
+      <ClassStats class="org.apache.commons.collections4.functors.AbstractQuantifierPredicate" sourceFile="AbstractQuantifierPredicate.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.AllPredicate" sourceFile="AllPredicate.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.AndPredicate" sourceFile="AndPredicate.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.AnyPredicate" sourceFile="AnyPredicate.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.CatchAndRethrowClosure" sourceFile="CatchAndRethrowClosure.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ChainedClosure" sourceFile="ChainedClosure.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ChainedTransformer" sourceFile="ChainedTransformer.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.CloneTransformer" sourceFile="CloneTransformer.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ClosureTransformer" sourceFile="ClosureTransformer.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ComparatorPredicate" sourceFile="ComparatorPredicate.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ComparatorPredicate$1" sourceFile="ComparatorPredicate.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ComparatorPredicate$Criterion" sourceFile="ComparatorPredicate.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ConstantFactory" sourceFile="ConstantFactory.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ConstantTransformer" sourceFile="ConstantTransformer.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.DefaultEquator" sourceFile="DefaultEquator.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.EqualPredicate" sourceFile="EqualPredicate.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ExceptionClosure" sourceFile="ExceptionClosure.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ExceptionFactory" sourceFile="ExceptionFactory.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ExceptionPredicate" sourceFile="ExceptionPredicate.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ExceptionTransformer" sourceFile="ExceptionTransformer.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.FactoryTransformer" sourceFile="FactoryTransformer.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.FalsePredicate" sourceFile="FalsePredicate.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.ForClosure" sourceFile="ForClosure.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.FunctorUtils" sourceFile="FunctorUtils.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.IdentityPredicate" sourceFile="IdentityPredicate.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.IfClosure" sourceFile="IfClosure.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.IfTransformer" sourceFile="IfTransformer.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.InstanceofPredicate" sourceFile="InstanceofPredicate.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.InstantiateFactory" sourceFile="InstantiateFactory.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.InstantiateTransformer" sourceFile="InstantiateTransformer.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.InvokerTransformer" sourceFile="InvokerTransformer.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.MapTransformer" sourceFile="MapTransformer.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NOPClosure" sourceFile="NOPClosure.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NOPTransformer" sourceFile="NOPTransformer.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NonePredicate" sourceFile="NonePredicate.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NotNullPredicate" sourceFile="NotNullPredicate.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NotPredicate" sourceFile="NotPredicate.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NullIsExceptionPredicate" sourceFile="NullIsExceptionPredicate.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NullIsFalsePredicate" sourceFile="NullIsFalsePredicate.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NullIsTruePredicate" sourceFile="NullIsTruePredicate.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.NullPredicate" sourceFile="NullPredicate.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.OnePredicate" sourceFile="OnePredicate.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.OrPredicate" sourceFile="OrPredicate.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.PredicateDecorator" sourceFile="PredicateDecorator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.PredicateTransformer" sourceFile="PredicateTransformer.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.PrototypeFactory" sourceFile="PrototypeFactory.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.PrototypeFactory$1" sourceFile="PrototypeFactory.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.PrototypeFactory$PrototypeCloneFactory" sourceFile="PrototypeFactory.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.PrototypeFactory$PrototypeSerializationFactory" sourceFile="PrototypeFactory.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.StringValueTransformer" sourceFile="StringValueTransformer.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.SwitchClosure" sourceFile="SwitchClosure.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.SwitchTransformer" sourceFile="SwitchTransformer.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.TransformedPredicate" sourceFile="TransformedPredicate.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.TransformerClosure" sourceFile="TransformerClosure.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.TransformerPredicate" sourceFile="TransformerPredicate.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.TruePredicate" sourceFile="TruePredicate.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.UniquePredicate" sourceFile="UniquePredicate.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.WhileClosure" sourceFile="WhileClosure.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.functors.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.iterators" total_bugs="2" total_types="47" total_size="1726" priority_2="2">
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractEmptyIterator" sourceFile="AbstractEmptyIterator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractEmptyMapIterator" sourceFile="AbstractEmptyMapIterator.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractIteratorDecorator" sourceFile="AbstractIteratorDecorator.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractListIteratorDecorator" sourceFile="AbstractListIteratorDecorator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractMapIteratorDecorator" sourceFile="AbstractMapIteratorDecorator.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractOrderedMapIteratorDecorator" sourceFile="AbstractOrderedMapIteratorDecorator.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.AbstractUntypedIteratorDecorator" sourceFile="AbstractUntypedIteratorDecorator.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ArrayIterator" sourceFile="ArrayIterator.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ArrayListIterator" sourceFile="ArrayListIterator.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.BoundedIterator" sourceFile="BoundedIterator.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.CollatingIterator" sourceFile="CollatingIterator.java" interface="false" size="133" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EmptyIterator" sourceFile="EmptyIterator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EmptyListIterator" sourceFile="EmptyListIterator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EmptyMapIterator" sourceFile="EmptyMapIterator.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EmptyOrderedIterator" sourceFile="EmptyOrderedIterator.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EmptyOrderedMapIterator" sourceFile="EmptyOrderedMapIterator.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EntrySetMapIterator" sourceFile="EntrySetMapIterator.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.EnumerationIterator" sourceFile="EnumerationIterator.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.FilterIterator" sourceFile="FilterIterator.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.FilterListIterator" sourceFile="FilterListIterator.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.IteratorChain" sourceFile="IteratorChain.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.IteratorEnumeration" sourceFile="IteratorEnumeration.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.IteratorIterable" sourceFile="IteratorIterable.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.IteratorIterable$1" sourceFile="IteratorIterable.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.LazyIteratorChain" sourceFile="LazyIteratorChain.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ListIteratorWrapper" sourceFile="ListIteratorWrapper.java" interface="false" size="91" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.LoopingIterator" sourceFile="LoopingIterator.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.LoopingListIterator" sourceFile="LoopingListIterator.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.NodeListIterator" sourceFile="NodeListIterator.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ObjectArrayIterator" sourceFile="ObjectArrayIterator.java" interface="false" size="44" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ObjectArrayListIterator" sourceFile="ObjectArrayListIterator.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ObjectGraphIterator" sourceFile="ObjectGraphIterator.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.PeekingIterator" sourceFile="PeekingIterator.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.PermutationIterator" sourceFile="PermutationIterator.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.PushbackIterator" sourceFile="PushbackIterator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ReverseListIterator" sourceFile="ReverseListIterator.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.SingletonIterator" sourceFile="SingletonIterator.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.SingletonListIterator" sourceFile="SingletonListIterator.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.SkippingIterator" sourceFile="SkippingIterator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.TransformIterator" sourceFile="TransformIterator.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.UniqueFilterIterator" sourceFile="UniqueFilterIterator.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.UnmodifiableIterator" sourceFile="UnmodifiableIterator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.UnmodifiableListIterator" sourceFile="UnmodifiableListIterator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.UnmodifiableMapIterator" sourceFile="UnmodifiableMapIterator.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.UnmodifiableOrderedMapIterator" sourceFile="UnmodifiableOrderedMapIterator.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.ZippingIterator" sourceFile="ZippingIterator.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.iterators.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.keyvalue" total_bugs="1" total_types="9" total_size="214" priority_2="1">
+      <ClassStats class="org.apache.commons.collections4.keyvalue.AbstractKeyValue" sourceFile="AbstractKeyValue.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.AbstractMapEntry" sourceFile="AbstractMapEntry.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.AbstractMapEntryDecorator" sourceFile="AbstractMapEntryDecorator.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.DefaultKeyValue" sourceFile="DefaultKeyValue.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.DefaultMapEntry" sourceFile="DefaultMapEntry.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.MultiKey" sourceFile="MultiKey.java" interface="false" size="55" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.TiedMapEntry" sourceFile="TiedMapEntry.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.UnmodifiableMapEntry" sourceFile="UnmodifiableMapEntry.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.keyvalue.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.list" total_bugs="1" total_types="28" total_size="1663" priority_1="1">
+      <ClassStats class="org.apache.commons.collections4.list.AbstractLinkedList" sourceFile="AbstractLinkedList.java" interface="false" size="251" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.AbstractLinkedList$LinkedListIterator" sourceFile="AbstractLinkedList.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.AbstractLinkedList$LinkedSubList" sourceFile="AbstractLinkedList.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.AbstractLinkedList$LinkedSubListIterator" sourceFile="AbstractLinkedList.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.AbstractLinkedList$Node" sourceFile="AbstractLinkedList.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.AbstractListDecorator" sourceFile="AbstractListDecorator.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.AbstractSerializableListDecorator" sourceFile="AbstractSerializableListDecorator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.CursorableLinkedList" sourceFile="CursorableLinkedList.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.CursorableLinkedList$Cursor" sourceFile="CursorableLinkedList.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.CursorableLinkedList$SubCursor" sourceFile="CursorableLinkedList.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.FixedSizeList" sourceFile="FixedSizeList.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.FixedSizeList$FixedSizeListIterator" sourceFile="FixedSizeList.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.GrowthList" sourceFile="GrowthList.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.LazyList" sourceFile="LazyList.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.NodeCachingLinkedList" sourceFile="NodeCachingLinkedList.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.PredicatedList" sourceFile="PredicatedList.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.PredicatedList$PredicatedListIterator" sourceFile="PredicatedList.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.SetUniqueList" sourceFile="SetUniqueList.java" interface="false" size="99" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.SetUniqueList$SetListIterator" sourceFile="SetUniqueList.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.SetUniqueList$SetListListIterator" sourceFile="SetUniqueList.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.TransformedList" sourceFile="TransformedList.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.TransformedList$TransformedListIterator" sourceFile="TransformedList.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.TreeList" sourceFile="TreeList.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.TreeList$1" sourceFile="TreeList.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.TreeList$AVLNode" sourceFile="TreeList.java" interface="false" size="309" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.collections4.list.TreeList$TreeListIterator" sourceFile="TreeList.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.UnmodifiableList" sourceFile="UnmodifiableList.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.list.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.map" total_bugs="5" total_types="109" total_size="4482" priority_2="5">
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap" sourceFile="AbstractHashedMap.java" interface="false" size="358" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$EntrySet" sourceFile="AbstractHashedMap.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$EntrySetIterator" sourceFile="AbstractHashedMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$HashEntry" sourceFile="AbstractHashedMap.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$HashIterator" sourceFile="AbstractHashedMap.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$HashMapIterator" sourceFile="AbstractHashedMap.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$KeySet" sourceFile="AbstractHashedMap.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$KeySetIterator" sourceFile="AbstractHashedMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$Values" sourceFile="AbstractHashedMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractHashedMap$ValuesIterator" sourceFile="AbstractHashedMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractInputCheckedMapDecorator" sourceFile="AbstractInputCheckedMapDecorator.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractInputCheckedMapDecorator$EntrySet" sourceFile="AbstractInputCheckedMapDecorator.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractInputCheckedMapDecorator$EntrySetIterator" sourceFile="AbstractInputCheckedMapDecorator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractInputCheckedMapDecorator$MapEntry" sourceFile="AbstractInputCheckedMapDecorator.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractIterableMap" sourceFile="AbstractIterableMap.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap" sourceFile="AbstractLinkedMap.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap$EntrySetIterator" sourceFile="AbstractLinkedMap.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap$KeySetIterator" sourceFile="AbstractLinkedMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap$LinkEntry" sourceFile="AbstractLinkedMap.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap$LinkIterator" sourceFile="AbstractLinkedMap.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap$LinkMapIterator" sourceFile="AbstractLinkedMap.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractLinkedMap$ValuesIterator" sourceFile="AbstractLinkedMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractMapDecorator" sourceFile="AbstractMapDecorator.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractOrderedMapDecorator" sourceFile="AbstractOrderedMapDecorator.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap" sourceFile="AbstractReferenceMap.java" interface="false" size="150" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceBaseIterator" sourceFile="AbstractReferenceMap.java" interface="false" size="66" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceEntry" sourceFile="AbstractReferenceMap.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceEntrySet" sourceFile="AbstractReferenceMap.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceEntrySetIterator" sourceFile="AbstractReferenceMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceKeySet" sourceFile="AbstractReferenceMap.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceKeySetIterator" sourceFile="AbstractReferenceMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceMapIterator" sourceFile="AbstractReferenceMap.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceStrength" sourceFile="AbstractReferenceMap.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceValues" sourceFile="AbstractReferenceMap.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$ReferenceValuesIterator" sourceFile="AbstractReferenceMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$SoftRef" sourceFile="AbstractReferenceMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractReferenceMap$WeakRef" sourceFile="AbstractReferenceMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractSortedMapDecorator" sourceFile="AbstractSortedMapDecorator.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.AbstractSortedMapDecorator$SortedMapIterator" sourceFile="AbstractSortedMapDecorator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.CaseInsensitiveMap" sourceFile="CaseInsensitiveMap.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.CompositeMap" sourceFile="CompositeMap.java" interface="false" size="117" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.CompositeMap$MapMutator" sourceFile="CompositeMap.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.DefaultedMap" sourceFile="DefaultedMap.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.EntrySetToMapIteratorAdapter" sourceFile="EntrySetToMapIteratorAdapter.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.FixedSizeMap" sourceFile="FixedSizeMap.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.FixedSizeSortedMap" sourceFile="FixedSizeSortedMap.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map" sourceFile="Flat3Map.java" interface="false" size="407" bugs="3" priority_2="3"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$EntryIterator" sourceFile="Flat3Map.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$EntrySet" sourceFile="Flat3Map.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$EntrySetIterator" sourceFile="Flat3Map.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$FlatMapEntry" sourceFile="Flat3Map.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$FlatMapIterator" sourceFile="Flat3Map.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$KeySet" sourceFile="Flat3Map.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$KeySetIterator" sourceFile="Flat3Map.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$Values" sourceFile="Flat3Map.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.Flat3Map$ValuesIterator" sourceFile="Flat3Map.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.HashedMap" sourceFile="HashedMap.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.LRUMap" sourceFile="LRUMap.java" interface="false" size="137" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.LazyMap" sourceFile="LazyMap.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.LazySortedMap" sourceFile="LazySortedMap.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.LinkedMap" sourceFile="LinkedMap.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.LinkedMap$LinkedMapList" sourceFile="LinkedMap.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap" sourceFile="ListOrderedMap.java" interface="false" size="134" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$EntrySetView" sourceFile="ListOrderedMap.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$KeySetView" sourceFile="ListOrderedMap.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$KeySetView$1" sourceFile="ListOrderedMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$ListOrderedIterator" sourceFile="ListOrderedMap.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$ListOrderedMapEntry" sourceFile="ListOrderedMap.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$ListOrderedMapIterator" sourceFile="ListOrderedMap.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$ValuesView" sourceFile="ListOrderedMap.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ListOrderedMap$ValuesView$1" sourceFile="ListOrderedMap.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiKeyMap" sourceFile="MultiKeyMap.java" interface="false" size="356" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap" sourceFile="MultiValueMap.java" interface="false" size="114" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap$1" sourceFile="MultiValueMap.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap$1$1" sourceFile="MultiValueMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap$1$1$1" sourceFile="MultiValueMap.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap$ReflectionFactory" sourceFile="MultiValueMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap$Values" sourceFile="MultiValueMap.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.MultiValueMap$ValuesIterator" sourceFile="MultiValueMap.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.PassiveExpiringMap" sourceFile="PassiveExpiringMap.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.PassiveExpiringMap$ConstantTimeToLiveExpirationPolicy" sourceFile="PassiveExpiringMap.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.PassiveExpiringMap$ExpirationPolicy" sourceFile="PassiveExpiringMap.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.PredicatedMap" sourceFile="PredicatedMap.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.PredicatedSortedMap" sourceFile="PredicatedSortedMap.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ReferenceIdentityMap" sourceFile="ReferenceIdentityMap.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.ReferenceMap" sourceFile="ReferenceMap.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.SingletonMap" sourceFile="SingletonMap.java" interface="false" size="119" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.SingletonMap$SingletonMapIterator" sourceFile="SingletonMap.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.SingletonMap$SingletonValues" sourceFile="SingletonMap.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap" sourceFile="StaticBucketMap.java" interface="false" size="161" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$1" sourceFile="StaticBucketMap.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$BaseIterator" sourceFile="StaticBucketMap.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$EntryIterator" sourceFile="StaticBucketMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$EntrySet" sourceFile="StaticBucketMap.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$KeyIterator" sourceFile="StaticBucketMap.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$KeySet" sourceFile="StaticBucketMap.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$Lock" sourceFile="StaticBucketMap.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$Node" sourceFile="StaticBucketMap.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$ValueIterator" sourceFile="StaticBucketMap.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.StaticBucketMap$Values" sourceFile="StaticBucketMap.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.TransformedMap" sourceFile="TransformedMap.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.TransformedSortedMap" sourceFile="TransformedSortedMap.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.UnmodifiableEntrySet" sourceFile="UnmodifiableEntrySet.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.UnmodifiableEntrySet$UnmodifiableEntry" sourceFile="UnmodifiableEntrySet.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.UnmodifiableEntrySet$UnmodifiableEntrySetIterator" sourceFile="UnmodifiableEntrySet.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.UnmodifiableMap" sourceFile="UnmodifiableMap.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.UnmodifiableOrderedMap" sourceFile="UnmodifiableOrderedMap.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.UnmodifiableSortedMap" sourceFile="UnmodifiableSortedMap.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.map.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.multimap" total_bugs="0" total_types="25" total_size="778">
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractListValuedMap" sourceFile="AbstractListValuedMap.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractListValuedMap$ValuesListIterator" sourceFile="AbstractListValuedMap.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractListValuedMap$WrappedList" sourceFile="AbstractListValuedMap.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap" sourceFile="AbstractMultiValuedMap.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$1" sourceFile="AbstractMultiValuedMap.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$EntryValues" sourceFile="AbstractMultiValuedMap.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$EntryValues$1" sourceFile="AbstractMultiValuedMap.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$EntryValues$1$1" sourceFile="AbstractMultiValuedMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$KeysMultiSet" sourceFile="AbstractMultiValuedMap.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$KeysMultiSet$1" sourceFile="AbstractMultiValuedMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$KeysMultiSet$1$1" sourceFile="AbstractMultiValuedMap.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$MultiValuedMapEntry" sourceFile="AbstractMultiValuedMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$MultiValuedMapIterator" sourceFile="AbstractMultiValuedMap.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$Values" sourceFile="AbstractMultiValuedMap.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$ValuesIterator" sourceFile="AbstractMultiValuedMap.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMap$WrappedCollection" sourceFile="AbstractMultiValuedMap.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractMultiValuedMapDecorator" sourceFile="AbstractMultiValuedMapDecorator.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractSetValuedMap" sourceFile="AbstractSetValuedMap.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.AbstractSetValuedMap$WrappedSet" sourceFile="AbstractSetValuedMap.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.MultiValuedHashMap" sourceFile="MultiValuedHashMap.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.MultiValuedHashMap$ListValuedHashMap" sourceFile="MultiValuedHashMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.MultiValuedHashMap$SetValuedHashMap" sourceFile="MultiValuedHashMap.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.TransformedMultiValuedMap" sourceFile="TransformedMultiValuedMap.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.UnmodifiableMultiValuedMap" sourceFile="UnmodifiableMultiValuedMap.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multimap.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.multiset" total_bugs="0" total_types="15" total_size="518">
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet" sourceFile="AbstractMapMultiSet.java" interface="false" size="185" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$EntrySet" sourceFile="AbstractMapMultiSet.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$EntrySetIterator" sourceFile="AbstractMapMultiSet.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$MultiSetEntry" sourceFile="AbstractMapMultiSet.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$MultiSetIterator" sourceFile="AbstractMapMultiSet.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$MutableInteger" sourceFile="AbstractMapMultiSet.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$UniqueSet" sourceFile="AbstractMapMultiSet.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMapMultiSet$UniqueSetIterator" sourceFile="AbstractMapMultiSet.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.AbstractMultiSetDecorator" sourceFile="AbstractMultiSetDecorator.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.HashMultiSet" sourceFile="HashMultiSet.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.PredicatedMultiSet" sourceFile="PredicatedMultiSet.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.SynchronizedMultiSet" sourceFile="SynchronizedMultiSet.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.SynchronizedMultiSet$SynchronizedSet" sourceFile="SynchronizedMultiSet.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.UnmodifiableMultiSet" sourceFile="UnmodifiableMultiSet.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.multiset.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.queue" total_bugs="0" total_types="7" total_size="281">
+      <ClassStats class="org.apache.commons.collections4.queue.AbstractQueueDecorator" sourceFile="AbstractQueueDecorator.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.queue.CircularFifoQueue" sourceFile="CircularFifoQueue.java" interface="false" size="130" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.queue.CircularFifoQueue$1" sourceFile="CircularFifoQueue.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.queue.PredicatedQueue" sourceFile="PredicatedQueue.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.queue.TransformedQueue" sourceFile="TransformedQueue.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.queue.UnmodifiableQueue" sourceFile="UnmodifiableQueue.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.queue.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.sequence" total_bugs="0" total_types="11" total_size="202">
+      <ClassStats class="org.apache.commons.collections4.sequence.CommandVisitor" sourceFile="CommandVisitor.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.DeleteCommand" sourceFile="DeleteCommand.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.EditCommand" sourceFile="EditCommand.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.EditScript" sourceFile="EditScript.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.InsertCommand" sourceFile="InsertCommand.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.KeepCommand" sourceFile="KeepCommand.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.ReplacementsFinder" sourceFile="ReplacementsFinder.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.ReplacementsHandler" sourceFile="ReplacementsHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.SequencesComparator" sourceFile="SequencesComparator.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.SequencesComparator$Snake" sourceFile="SequencesComparator.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.sequence.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.set" total_bugs="0" total_types="20" total_size="716">
+      <ClassStats class="org.apache.commons.collections4.set.AbstractNavigableSetDecorator" sourceFile="AbstractNavigableSetDecorator.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.AbstractSerializableSetDecorator" sourceFile="AbstractSerializableSetDecorator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.AbstractSetDecorator" sourceFile="AbstractSetDecorator.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.AbstractSortedSetDecorator" sourceFile="AbstractSortedSetDecorator.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.CompositeSet" sourceFile="CompositeSet.java" interface="false" size="145" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.CompositeSet$SetMutator" sourceFile="CompositeSet.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.ListOrderedSet" sourceFile="ListOrderedSet.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.ListOrderedSet$1" sourceFile="ListOrderedSet.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.ListOrderedSet$OrderedSetIterator" sourceFile="ListOrderedSet.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.MapBackedSet" sourceFile="MapBackedSet.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.PredicatedNavigableSet" sourceFile="PredicatedNavigableSet.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.PredicatedSet" sourceFile="PredicatedSet.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.PredicatedSortedSet" sourceFile="PredicatedSortedSet.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.TransformedNavigableSet" sourceFile="TransformedNavigableSet.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.TransformedSet" sourceFile="TransformedSet.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.TransformedSortedSet" sourceFile="TransformedSortedSet.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.UnmodifiableNavigableSet" sourceFile="UnmodifiableNavigableSet.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.UnmodifiableSet" sourceFile="UnmodifiableSet.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.UnmodifiableSortedSet" sourceFile="UnmodifiableSortedSet.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.set.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.splitmap" total_bugs="0" total_types="3" total_size="87">
+      <ClassStats class="org.apache.commons.collections4.splitmap.AbstractIterableGetMapDecorator" sourceFile="AbstractIterableGetMapDecorator.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.splitmap.TransformedSplitMap" sourceFile="TransformedSplitMap.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.splitmap.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.trie" total_bugs="0" total_types="26" total_size="1279">
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractBitwiseTrie" sourceFile="AbstractBitwiseTrie.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractBitwiseTrie$BasicEntry" sourceFile="AbstractBitwiseTrie.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie" sourceFile="AbstractPatriciaTrie.java" interface="false" size="497" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$1" sourceFile="AbstractPatriciaTrie.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$EntrySet" sourceFile="AbstractPatriciaTrie.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$EntrySet$EntryIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$KeySet" sourceFile="AbstractPatriciaTrie.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$KeySet$KeyIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$PrefixRangeEntrySet" sourceFile="AbstractPatriciaTrie.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$PrefixRangeEntrySet$EntryIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$PrefixRangeEntrySet$SingletonIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$PrefixRangeMap" sourceFile="AbstractPatriciaTrie.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$RangeEntryMap" sourceFile="AbstractPatriciaTrie.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$RangeEntrySet" sourceFile="AbstractPatriciaTrie.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$RangeEntrySet$EntryIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$RangeMap" sourceFile="AbstractPatriciaTrie.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$Reference" sourceFile="AbstractPatriciaTrie.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$TrieEntry" sourceFile="AbstractPatriciaTrie.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$TrieIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$TrieMapIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$Values" sourceFile="AbstractPatriciaTrie.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.AbstractPatriciaTrie$Values$ValueIterator" sourceFile="AbstractPatriciaTrie.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.KeyAnalyzer" sourceFile="KeyAnalyzer.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.PatriciaTrie" sourceFile="PatriciaTrie.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.UnmodifiableTrie" sourceFile="UnmodifiableTrie.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.collections4.trie.analyzer" total_bugs="0" total_types="2" total_size="58">
+      <ClassStats class="org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer" sourceFile="StringKeyAnalyzer.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.apache.commons.collections4.trie.analyzer.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="1396" invocations="4418" avgMicrosecondsPerInvocation="316" maxMicrosecondsPerInvocation="96150" standardDeviationMircosecondsPerInvocation="2329"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1395" invocations="1294" avgMicrosecondsPerInvocation="1078" maxMicrosecondsPerInvocation="145753" standardDeviationMircosecondsPerInvocation="5957"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1319" invocations="4404" avgMicrosecondsPerInvocation="299" maxMicrosecondsPerInvocation="57998" standardDeviationMircosecondsPerInvocation="1871"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1256" invocations="4181" avgMicrosecondsPerInvocation="300" maxMicrosecondsPerInvocation="83162" standardDeviationMircosecondsPerInvocation="2078"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="1128" invocations="4036" avgMicrosecondsPerInvocation="279" maxMicrosecondsPerInvocation="122822" standardDeviationMircosecondsPerInvocation="2824"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="1011" invocations="4404" avgMicrosecondsPerInvocation="229" maxMicrosecondsPerInvocation="29378" standardDeviationMircosecondsPerInvocation="1602"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="886" invocations="4450" avgMicrosecondsPerInvocation="199" maxMicrosecondsPerInvocation="42211" standardDeviationMircosecondsPerInvocation="1402"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="847" invocations="4234" avgMicrosecondsPerInvocation="200" maxMicrosecondsPerInvocation="59091" standardDeviationMircosecondsPerInvocation="1562"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="560" invocations="4549" avgMicrosecondsPerInvocation="123" maxMicrosecondsPerInvocation="149101" standardDeviationMircosecondsPerInvocation="2482"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="519" invocations="685" avgMicrosecondsPerInvocation="758" maxMicrosecondsPerInvocation="32916" standardDeviationMircosecondsPerInvocation="2686"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="482" invocations="529" avgMicrosecondsPerInvocation="912" maxMicrosecondsPerInvocation="293143" standardDeviationMircosecondsPerInvocation="12829"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="476" invocations="5147" avgMicrosecondsPerInvocation="92" maxMicrosecondsPerInvocation="30854" standardDeviationMircosecondsPerInvocation="856"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="468" invocations="4404" avgMicrosecondsPerInvocation="106" maxMicrosecondsPerInvocation="31080" standardDeviationMircosecondsPerInvocation="1184"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="424" invocations="685" avgMicrosecondsPerInvocation="619" maxMicrosecondsPerInvocation="50295" standardDeviationMircosecondsPerInvocation="2835"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="394" invocations="529" avgMicrosecondsPerInvocation="745" maxMicrosecondsPerInvocation="44271" standardDeviationMircosecondsPerInvocation="3645"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="391" invocations="529" avgMicrosecondsPerInvocation="740" maxMicrosecondsPerInvocation="31038" standardDeviationMircosecondsPerInvocation="2843"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="328" invocations="254985" avgMicrosecondsPerInvocation="1" maxMicrosecondsPerInvocation="44044" standardDeviationMircosecondsPerInvocation="121"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="283" invocations="529" avgMicrosecondsPerInvocation="535" maxMicrosecondsPerInvocation="26606" standardDeviationMircosecondsPerInvocation="2281"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="261" invocations="529" avgMicrosecondsPerInvocation="493" maxMicrosecondsPerInvocation="76863" standardDeviationMircosecondsPerInvocation="4258"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="260" invocations="529" avgMicrosecondsPerInvocation="493" maxMicrosecondsPerInvocation="52494" standardDeviationMircosecondsPerInvocation="2758"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="244" invocations="529" avgMicrosecondsPerInvocation="462" maxMicrosecondsPerInvocation="63798" standardDeviationMircosecondsPerInvocation="3380"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="230" invocations="717" avgMicrosecondsPerInvocation="321" maxMicrosecondsPerInvocation="57683" standardDeviationMircosecondsPerInvocation="2594"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="224" invocations="529" avgMicrosecondsPerInvocation="424" maxMicrosecondsPerInvocation="28748" standardDeviationMircosecondsPerInvocation="2100"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="221" invocations="529" avgMicrosecondsPerInvocation="418" maxMicrosecondsPerInvocation="25914" standardDeviationMircosecondsPerInvocation="2322"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindHEmismatch" totalMilliseconds="217" invocations="529" avgMicrosecondsPerInvocation="411" maxMicrosecondsPerInvocation="32872" standardDeviationMircosecondsPerInvocation="2211"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="203" invocations="529" avgMicrosecondsPerInvocation="385" maxMicrosecondsPerInvocation="25227" standardDeviationMircosecondsPerInvocation="2104"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="203" invocations="685" avgMicrosecondsPerInvocation="297" maxMicrosecondsPerInvocation="41679" standardDeviationMircosecondsPerInvocation="2170"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUnrelatedTypesInGenericContainer" totalMilliseconds="203" invocations="529" avgMicrosecondsPerInvocation="384" maxMicrosecondsPerInvocation="61344" standardDeviationMircosecondsPerInvocation="3135"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="195" invocations="529" avgMicrosecondsPerInvocation="369" maxMicrosecondsPerInvocation="44205" standardDeviationMircosecondsPerInvocation="2413"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="192" invocations="529" avgMicrosecondsPerInvocation="363" maxMicrosecondsPerInvocation="26166" standardDeviationMircosecondsPerInvocation="2418"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="184" invocations="529" avgMicrosecondsPerInvocation="348" maxMicrosecondsPerInvocation="24835" standardDeviationMircosecondsPerInvocation="1854"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="181" invocations="63419" avgMicrosecondsPerInvocation="2" maxMicrosecondsPerInvocation="27595" standardDeviationMircosecondsPerInvocation="177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FormatStringChecker" totalMilliseconds="179" invocations="529" avgMicrosecondsPerInvocation="338" maxMicrosecondsPerInvocation="49553" standardDeviationMircosecondsPerInvocation="2729"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="176" invocations="4549" avgMicrosecondsPerInvocation="38" maxMicrosecondsPerInvocation="26556" standardDeviationMircosecondsPerInvocation="558"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.Naming" totalMilliseconds="168" invocations="529" avgMicrosecondsPerInvocation="318" maxMicrosecondsPerInvocation="27538" standardDeviationMircosecondsPerInvocation="1721"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="165" invocations="4063" avgMicrosecondsPerInvocation="40" maxMicrosecondsPerInvocation="29605" standardDeviationMircosecondsPerInvocation="631"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="161" invocations="1239" avgMicrosecondsPerInvocation="130" maxMicrosecondsPerInvocation="33565" standardDeviationMircosecondsPerInvocation="1254"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteRecursiveLoop" totalMilliseconds="159" invocations="529" avgMicrosecondsPerInvocation="301" maxMicrosecondsPerInvocation="29339" standardDeviationMircosecondsPerInvocation="2212"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="153" invocations="1297" avgMicrosecondsPerInvocation="118" maxMicrosecondsPerInvocation="12225" standardDeviationMircosecondsPerInvocation="441"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

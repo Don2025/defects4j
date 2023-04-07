@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680368767299" analysisTimestamp="1680690947200" release="">
+  <Project projectName="">
+    <Jar>JxPath/20_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.FunctionLibrary">
+      <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="35" end="126" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.FunctionLibrary" name="byNamespace" signature="Ljava/util/Map;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java"/>
+    </Field>
+    <Int value="75" role="INT_SYNC_PERCENT"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="45" end="45" startBytecode="13" endBytecode="13" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="54" end="54" startBytecode="13" endBytecode="13" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="104" end="104" startBytecode="1" endBytecode="1" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="126" end="126" startBytecode="197" endBytecode="197" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="105" end="105" startBytecode="15" endBytecode="15" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="112" end="112" startBytecode="89" endBytecode="89" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="114" end="114" startBytecode="107" endBytecode="107" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.FunctionLibrary" start="119" end="119" startBytecode="159" endBytecode="159" sourcefile="FunctionLibrary.java" sourcepath="org/apache/commons/jxpath/FunctionLibrary.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.JXPathBasicBeanInfo">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="41" end="173" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" name="getPropertyDescriptors" signature="()[Ljava/beans/PropertyDescriptor;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="102" end="131" startBytecode="0" endBytecode="349" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" name="propertyDescriptors" signature="[Ljava/beans/PropertyDescriptor;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="127" end="127" startBytecode="116" endBytecode="116" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_EXCEPTION" priority="2" rank="11" abbrev="NP" category="CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.JXPathBasicBeanInfo">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="41" end="173" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" name="getPropertyDescriptors" signature="()[Ljava/beans/PropertyDescriptor;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="102" end="131" startBytecode="0" endBytecode="349" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" name="propertyDescriptors" signature="[Ljava/beans/PropertyDescriptor;" isStatic="false" role="FIELD_CONTAINS_VALUE">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="126" end="126" startBytecode="108" endBytecode="108" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java" role="SOURCE_LINE_DEREF"/>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="102" end="102" startBytecode="4" endBytecode="4" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java" role="SOURCE_LINE_NULL_VALUE"/>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="121" end="121" startBytecode="99" endBytecode="99" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java" role="SOURCE_LINE_KNOWN_NULL"/>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathBasicBeanInfo" start="122" end="122" startBytecode="101" endBytecode="101" sourcefile="JXPathBasicBeanInfo.java" sourcepath="org/apache/commons/jxpath/JXPathBasicBeanInfo.java" role="SOURCE_LINE_KNOWN_NULL"/>
+    <Property name="edu.umd.cs.findbugs.detect.NullDerefProperty.ALWAYS_ON_EXCEPTION_PATH" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.NullDerefProperty.LONG_RANGE_NULL_SOURCE" value="true"/>
+  </BugInstance>
+  <BugInstance type="LI_LAZY_INIT_STATIC" priority="2" rank="14" abbrev="LI" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.JXPathContext">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContext" start="386" end="953" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.JXPathContext" name="compile" signature="(Ljava/lang/String;)Lorg/apache/commons/jxpath/CompiledExpression;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContext" start="649" end="652" startBytecode="0" endBytecode="8" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.JXPathContext" name="compilationContext" signature="Lorg/apache/commons/jxpath/JXPathContext;" isStatic="true" role="FIELD_ON">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContext" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathContext" start="649" end="650" startBytecode="0" endBytecode="10" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+  </BugInstance>
+  <BugInstance type="LI_LAZY_INIT_STATIC" priority="2" rank="14" abbrev="LI" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.JXPathContext">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContext" start="386" end="953" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.JXPathContext" name="getContextFactory" signature="()Lorg/apache/commons/jxpath/JXPathContextFactory;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContext" start="438" end="441" startBytecode="0" endBytecode="5" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.JXPathContext" name="contextFactory" signature="Lorg/apache/commons/jxpath/JXPathContextFactory;" isStatic="true" role="FIELD_ON">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContext" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathContext" start="438" end="439" startBytecode="0" endBytecode="9" sourcefile="JXPathContext.java" sourcepath="org/apache/commons/jxpath/JXPathContext.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.jxpath.JXPathContextFactory">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContextFactory" start="59" end="271" sourcefile="JXPathContextFactory.java" sourcepath="org/apache/commons/jxpath/JXPathContextFactory.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.JXPathContextFactory" name="findFactory" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.JXPathContextFactory" start="169" end="271" startBytecode="0" endBytecode="1276" sourcefile="JXPathContextFactory.java" sourcepath="org/apache/commons/jxpath/JXPathContextFactory.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.JXPathContextFactory" start="241" end="241" startBytecode="330" endBytecode="330" sourcefile="JXPathContextFactory.java" sourcepath="org/apache/commons/jxpath/JXPathContextFactory.java"/>
+  </BugInstance>
+  <BugInstance type="RpC_REPEATED_CONDITIONAL_TEST" priority="1" rank="6" abbrev="RpC" category="CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.ri.InfoSetUtil">
+      <SourceLine classname="org.apache.commons.jxpath.ri.InfoSetUtil" start="29" end="161" sourcefile="InfoSetUtil.java" sourcepath="org/apache/commons/jxpath/ri/InfoSetUtil.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.InfoSetUtil" name="booleanValue" signature="(Ljava/lang/Object;)Z" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.ri.InfoSetUtil" start="137" end="161" startBytecode="0" endBytecode="369" sourcefile="InfoSetUtil.java" sourcepath="org/apache/commons/jxpath/ri/InfoSetUtil.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.ri.InfoSetUtil" start="140" end="140" startBytecode="17" endBytecode="19" sourcefile="InfoSetUtil.java" sourcepath="org/apache/commons/jxpath/ri/InfoSetUtil.java"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.InfoSetUtil" start="140" end="140" startBytecode="23" endBytecode="25" sourcefile="InfoSetUtil.java" sourcepath="org/apache/commons/jxpath/ri/InfoSetUtil.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl">
+      <SourceLine classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" start="72" end="834" sourcefile="JXPathContextReferenceImpl.java" sourcepath="org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" name="getNodePointerFactories" signature="()[Lorg/apache/commons/jxpath/ri/model/NodePointerFactory;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" start="153" end="153" startBytecode="0" endBytecode="27" sourcefile="JXPathContextReferenceImpl.java" sourcepath="org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" name="nodeFactoryArray" signature="[Lorg/apache/commons/jxpath/ri/model/NodePointerFactory;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" sourcefile="JXPathContextReferenceImpl.java" sourcepath="org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" start="153" end="153" startBytecode="3" endBytecode="3" sourcefile="JXPathContextReferenceImpl.java" sourcepath="org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java"/>
+  </BugInstance>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.ri.NamespaceResolver">
+      <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="38" end="200" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.NamespaceResolver" name="pointer" signature="Lorg/apache/commons/jxpath/ri/model/NodePointer;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java"/>
+    </Field>
+    <Int value="50" role="INT_SYNC_PERCENT"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="114" end="114" startBytecode="1" endBytecode="1" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="117" end="117" startBytecode="23" endBytecode="23" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="106" end="106" startBytecode="2" endBytecode="2" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="157" end="157" startBytecode="11" endBytecode="11" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="157" end="157" startBytecode="18" endBytecode="18" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="132" end="132" startBytecode="11" endBytecode="11" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.NamespaceResolver" start="132" end="132" startBytecode="18" endBytecode="18" sourcefile="NamespaceResolver.java" sourcepath="org/apache/commons/jxpath/ri/NamespaceResolver.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.axes.UnionContext">
+      <SourceLine classname="org.apache.commons.jxpath.ri.axes.UnionContext" start="44" end="74" sourcefile="UnionContext.java" sourcepath="org/apache/commons/jxpath/ri/axes/UnionContext.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.axes.UnionContext" name="&lt;init&gt;" signature="(Lorg/apache/commons/jxpath/ri/EvalContext;[Lorg/apache/commons/jxpath/ri/EvalContext;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.axes.UnionContext" start="44" end="46" startBytecode="0" endBytecode="87" sourcefile="UnionContext.java" sourcepath="org/apache/commons/jxpath/ri/axes/UnionContext.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.axes.UnionContext" name="contexts" signature="[Lorg/apache/commons/jxpath/ri/EvalContext;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.axes.UnionContext" sourcefile="UnionContext.java" sourcepath="org/apache/commons/jxpath/ri/axes/UnionContext.java"/>
+    </Field>
+    <LocalVariable name="contexts" register="2" pc="14" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.axes.UnionContext" start="45" end="45" startBytecode="14" endBytecode="14" sourcefile="UnionContext.java" sourcepath="org/apache/commons/jxpath/ri/axes/UnionContext.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.CoreFunction">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.CoreFunction" start="45" end="929" sourcefile="CoreFunction.java" sourcepath="org/apache/commons/jxpath/ri/compiler/CoreFunction.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.CoreFunction" name="functionPosition" signature="(Lorg/apache/commons/jxpath/ri/EvalContext;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.CoreFunction" start="343" end="344" startBytecode="0" endBytecode="72" sourcefile="CoreFunction.java" sourcepath="org/apache/commons/jxpath/ri/compiler/CoreFunction.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.CoreFunction" start="344" end="344" startBytecode="13" endBytecode="13" sourcefile="CoreFunction.java" sourcepath="org/apache/commons/jxpath/ri/compiler/CoreFunction.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" start="40" end="193" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" name="getPredicates" signature="()[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" start="70" end="70" startBytecode="0" endBytecode="46" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" name="predicates" signature="[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" start="70" end="70" startBytecode="4" endBytecode="4" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" start="40" end="193" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" name="&lt;init&gt;" signature="(Lorg/apache/commons/jxpath/ri/compiler/Expression;[Lorg/apache/commons/jxpath/ri/compiler/Expression;[Lorg/apache/commons/jxpath/ri/compiler/Step;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" start="51" end="54" startBytecode="0" endBytecode="108" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" name="predicates" signature="[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+    </Field>
+    <LocalVariable name="predicates" register="2" pc="17" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.ExpressionPath" start="53" end="53" startBytecode="17" endBytecode="17" sourcefile="ExpressionPath.java" sourcepath="org/apache/commons/jxpath/ri/compiler/ExpressionPath.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.Operation">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" start="32" end="52" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.Operation" name="getArguments" signature="()[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" start="41" end="41" startBytecode="0" endBytecode="46" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.Operation" name="args" signature="[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" start="41" end="41" startBytecode="4" endBytecode="4" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.Operation">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" start="32" end="52" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.Operation" name="&lt;init&gt;" signature="([Lorg/apache/commons/jxpath/ri/compiler/Expression;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" start="32" end="34" startBytecode="0" endBytecode="69" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.Operation" name="args" signature="[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+    </Field>
+    <LocalVariable name="args" register="1" pc="6" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Operation" start="33" end="33" startBytecode="6" endBytecode="6" sourcefile="Operation.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Operation.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.Path">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" start="44" end="327" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.Path" name="getSteps" signature="()[Lorg/apache/commons/jxpath/ri/compiler/Step;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" start="60" end="60" startBytecode="0" endBytecode="46" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.Path" name="steps" signature="[Lorg/apache/commons/jxpath/ri/compiler/Step;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" start="60" end="60" startBytecode="4" endBytecode="4" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.Path">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" start="44" end="327" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.Path" name="&lt;init&gt;" signature="([Lorg/apache/commons/jxpath/ri/compiler/Step;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" start="51" end="53" startBytecode="0" endBytecode="78" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.Path" name="steps" signature="[Lorg/apache/commons/jxpath/ri/compiler/Step;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+    </Field>
+    <LocalVariable name="steps" register="1" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Path" start="52" end="52" startBytecode="11" endBytecode="11" sourcefile="Path.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Path.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.compiler.Step">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Step" start="36" end="162" sourcefile="Step.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Step.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.compiler.Step" name="getPredicates" signature="()[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Step" start="63" end="63" startBytecode="0" endBytecode="46" sourcefile="Step.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Step.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.compiler.Step" name="predicates" signature="[Lorg/apache/commons/jxpath/ri/compiler/Expression;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Step" sourcefile="Step.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Step.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.compiler.Step" start="63" end="63" startBytecode="4" endBytecode="4" sourcefile="Step.java" sourcepath="org/apache/commons/jxpath/ri/compiler/Step.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" start="37" end="310" sourcefile="BeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/BeanPropertyPointer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" name="getPropertyNames" signature="()[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" start="77" end="84" startBytecode="0" endBytecode="158" sourcefile="BeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/BeanPropertyPointer.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" name="names" signature="[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" sourcefile="BeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/BeanPropertyPointer.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" start="84" end="84" startBytecode="54" endBytecode="54" sourcefile="BeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/BeanPropertyPointer.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC" priority="2" rank="8" abbrev="Eq" category="CORRECTNESS">
+    <Class classname="org.apache.commons.jxpath.ri.model.beans.NullElementPointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.NullElementPointer" start="44" end="142" sourcefile="NullElementPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/NullElementPointer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.model.beans.NullElementPointer" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.NullElementPointer" start="106" end="115" startBytecode="0" endBytecode="148" sourcefile="NullElementPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/NullElementPointer.java"/>
+    </Method>
+    <Method classname="org.apache.commons.jxpath.ri.model.beans.CollectionPointer" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_OVERRIDDEN">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.beans.CollectionPointer" start="159" end="168" startBytecode="0" endBytecode="148" sourcefile="CollectionPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/beans/CollectionPointer.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer" start="45" end="136" sourcefile="DOMAttributePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dom/DOMAttributePointer.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer" name="attr" signature="Lorg/w3c/dom/Attr;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer" sourcefile="DOMAttributePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dom/DOMAttributePointer.java"/>
+    </Field>
+    <Type descriptor="Lorg/w3c/dom/Attr;" role="TYPE_FOUND">
+      <SourceLine classname="org.w3c.dom.Attr" sourcefile="Attr.java" sourcepath="org/w3c/dom/Attr.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.model.dom.DOMNodePointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dom.DOMNodePointer" start="78" end="791" sourcefile="DOMNodePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.model.dom.DOMNodePointer" name="node" signature="Lorg/w3c/dom/Node;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dom.DOMNodePointer" sourcefile="DOMNodePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java"/>
+    </Field>
+    <Type descriptor="Lorg/w3c/dom/Node;" role="TYPE_FOUND">
+      <SourceLine classname="org.w3c.dom.Node" sourcefile="Node.java" sourcepath="org/w3c/dom/Node.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" start="53" end="277" sourcefile="DynaBeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/DynaBeanPropertyPointer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" name="getPropertyNames" signature="()[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" start="75" end="88" startBytecode="0" endBytecode="279" sourcefile="DynaBeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/DynaBeanPropertyPointer.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" name="names" signature="[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" sourcefile="DynaBeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/DynaBeanPropertyPointer.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" start="88" end="88" startBytecode="108" endBytecode="108" sourcefile="DynaBeanPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/DynaBeanPropertyPointer.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_DOESNT_OVERRIDE_EQUALS" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer" start="39" end="69" sourcefile="StrictLazyDynaBeanPointerFactory.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/StrictLazyDynaBeanPointerFactory.java"/>
+    </Class>
+    <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer" start="1" end="1" startBytecode="0" endBytecode="0" sourcefile="StrictLazyDynaBeanPointerFactory.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/StrictLazyDynaBeanPointerFactory.java"/>
+    <Method classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPointer" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_DID_YOU_MEAN_TO_OVERRIDE">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPointer" start="98" end="113" startBytecode="0" endBytecode="260" sourcefile="DynaBeanPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynabeans/DynaBeanPointer.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" start="53" end="303" sourcefile="DynamicPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynamic/DynamicPropertyPointer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" name="getPropertyNames" signature="()[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" start="78" end="96" startBytecode="0" endBytecode="288" sourcefile="DynamicPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynamic/DynamicPropertyPointer.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" name="names" signature="[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" sourcefile="DynamicPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynamic/DynamicPropertyPointer.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" start="96" end="96" startBytecode="135" endBytecode="135" sourcefile="DynamicPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynamic/DynamicPropertyPointer.java"/>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" start="53" end="303" sourcefile="DynamicPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynamic/DynamicPropertyPointer.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" name="handler" signature="Lorg/apache/commons/jxpath/DynamicPropertyHandler;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" sourcefile="DynamicPropertyPointer.java" sourcepath="org/apache/commons/jxpath/ri/model/dynamic/DynamicPropertyPointer.java"/>
+    </Field>
+    <Type descriptor="Lorg/apache/commons/jxpath/DynamicPropertyHandler;" role="TYPE_FOUND">
+      <SourceLine classname="org.apache.commons.jxpath.DynamicPropertyHandler" sourcefile="DynamicPropertyHandler.java" sourcepath="org/apache/commons/jxpath/DynamicPropertyHandler.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer" start="71" end="817" sourcefile="JDOMNodePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer" name="getRelativePositionByQName" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer" start="685" end="705" startBytecode="0" endBytecode="54" sourcefile="JDOMNodePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java"/>
+    </Method>
+    <LocalVariable name="name" register="4" pc="52" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer" start="693" end="693" startBytecode="50" endBytecode="50" sourcefile="JDOMNodePointer.java" sourcepath="org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="name"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.ParseException">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="32" end="189" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.ParseException" name="&lt;init&gt;" signature="(Lorg/apache/commons/jxpath/ri/parser/Token;[[I[Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="32" end="37" startBytecode="0" endBytecode="133" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.parser.ParseException" name="expectedTokenSequences" signature="[[I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Field>
+    <LocalVariable name="expectedTokenSequencesVal" register="2" pc="29" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="35" end="35" startBytecode="29" endBytecode="29" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.ParseException">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="32" end="189" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.ParseException" name="&lt;init&gt;" signature="(Lorg/apache/commons/jxpath/ri/parser/Token;[[I[Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="32" end="37" startBytecode="0" endBytecode="133" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Method>
+    <Field classname="org.apache.commons.jxpath.ri.parser.ParseException" name="tokenImage" signature="[Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Field>
+    <LocalVariable name="tokenImageVal" register="3" pc="34" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="36" end="36" startBytecode="34" endBytecode="34" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.ParseException">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="32" end="189" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.ParseException" name="getMessage" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="98" end="134" startBytecode="0" endBytecode="752" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.ParseException" start="108" end="108" startBytecode="62" endBytecode="62" sourcefile="ParseException.java" sourcepath="org/apache/commons/jxpath/ri/parser/ParseException.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" start="15" end="399" sourcefile="SimpleCharStream.java" sourcepath="org/apache/commons/jxpath/ri/parser/SimpleCharStream.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" name="&lt;init&gt;" signature="(Ljava/io/InputStream;III)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" start="292" end="293" startBytecode="0" endBytecode="103" sourcefile="SimpleCharStream.java" sourcepath="org/apache/commons/jxpath/ri/parser/SimpleCharStream.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" start="292" end="292" startBytecode="6" endBytecode="6" sourcefile="SimpleCharStream.java" sourcepath="org/apache/commons/jxpath/ri/parser/SimpleCharStream.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" start="15" end="399" sourcefile="SimpleCharStream.java" sourcepath="org/apache/commons/jxpath/ri/parser/SimpleCharStream.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" name="ReInit" signature="(Ljava/io/InputStream;III)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" start="309" end="310" startBytecode="0" endBytecode="103" sourcefile="SimpleCharStream.java" sourcepath="org/apache/commons/jxpath/ri/parser/SimpleCharStream.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.SimpleCharStream" start="309" end="309" startBytecode="6" endBytecode="6" sourcefile="SimpleCharStream.java" sourcepath="org/apache/commons/jxpath/ri/parser/SimpleCharStream.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.Token">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.Token" start="8" end="77" sourcefile="Token.java" sourcepath="org/apache/commons/jxpath/ri/parser/Token.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.Token" name="endColumn" signature="I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.Token" sourcefile="Token.java" sourcepath="org/apache/commons/jxpath/ri/parser/Token.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1806" end="1806" startBytecode="85" endBytecode="85" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.Token">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.Token" start="8" end="77" sourcefile="Token.java" sourcepath="org/apache/commons/jxpath/ri/parser/Token.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.Token" name="endLine" signature="I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.Token" sourcefile="Token.java" sourcepath="org/apache/commons/jxpath/ri/parser/Token.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1805" end="1805" startBytecode="74" endBytecode="74" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="17" abbrev="UuF" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.Token">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.Token" start="8" end="77" sourcefile="Token.java" sourcepath="org/apache/commons/jxpath/ri/parser/Token.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.Token" name="specialToken" signature="Lorg/apache/commons/jxpath/ri/parser/Token;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.Token" sourcefile="Token.java" sourcepath="org/apache/commons/jxpath/ri/parser/Token.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.TokenMgrError">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.TokenMgrError" start="44" end="151" sourcefile="TokenMgrError.java" sourcepath="org/apache/commons/jxpath/ri/parser/TokenMgrError.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.TokenMgrError" name="LexicalError" signature="(ZIIILjava/lang/String;C)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.TokenMgrError" start="101" end="101" startBytecode="0" endBytecode="234" sourcefile="TokenMgrError.java" sourcepath="org/apache/commons/jxpath/ri/parser/TokenMgrError.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="AbbreviatedAxisSpecifier" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="894" end="904" startBytecode="0" endBytecode="142" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="AbsoluteLocationPath" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="522" end="549" startBytecode="0" endBytecode="286" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="AdditiveExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1462" end="1485" startBytecode="0" endBytecode="293" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="AndExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1343" end="1366" startBytecode="0" endBytecode="293" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="Argument" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1144" end="1145" startBytecode="0" endBytecode="62" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="ArgumentList" signature="()Ljava/util/ArrayList;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1047" end="1137" startBytecode="0" endBytecode="614" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="AxisName" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="808" end="867" startBytecode="0" endBytecode="520" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="AxisSpecifier" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="775" end="795" startBytecode="0" endBytecode="185" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="CoreFunctionCall" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1033" end="1041" startBytecode="0" endBytecode="139" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="CoreFunctionName" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="180" end="310" startBytecode="0" endBytecode="1053" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="EqualityExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1373" end="1402" startBytecode="0" endBytecode="323" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="Expression" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="929" end="930" startBytecode="0" endBytecode="62" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="FilterExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1265" end="1301" startBytecode="0" endBytecode="381" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="FunctionCall" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1021" end="1027" startBytecode="0" endBytecode="135" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="FunctionName" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1672" end="1673" startBytecode="0" endBytecode="62" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="LocationPath" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="445" end="515" startBytecode="0" endBytecode="506" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="LocationStep" signature="(Ljava/util/ArrayList;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="586" end="602" startBytecode="0" endBytecode="229" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="MultiplicativeExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1514" end="1549" startBytecode="0" endBytecode="383" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="NodeTest" signature="(Ljava/util/ArrayList;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="607" end="770" startBytecode="0" endBytecode="1371" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="NodeType" signature="()I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1815" end="1837" startBytecode="0" endBytecode="243" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="OrExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1313" end="1336" startBytecode="0" endBytecode="293" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="PathExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1185" end="1258" startBytecode="0" endBytecode="517" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="Predicate" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="883" end="886" startBytecode="0" endBytecode="84" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="PrimaryExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="936" end="1009" startBytecode="0" endBytecode="618" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="ReInit" signature="(Ljava/io/InputStream;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="3120" end="3127" startBytecode="0" endBytecode="229" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="ReInit" signature="(Ljava/io/Reader;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="3140" end="3147" startBytecode="0" endBytecode="229" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="ReInit" signature="(Lorg/apache/commons/jxpath/ri/parser/XPathParserTokenManager;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="3159" end="3165" startBytecode="0" endBytecode="209" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="RelationalExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1410" end="1451" startBytecode="0" endBytecode="419" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="RelativeLocationPath" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="555" end="570" startBytecode="0" endBytecode="185" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="SubtractiveExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1490" end="1506" startBytecode="0" endBytecode="196" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="UnaryExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1556" end="1632" startBytecode="0" endBytecode="527" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="UnionExpr" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1156" end="1179" startBytecode="0" endBytecode="293" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="VariableReference" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1680" end="1682" startBytecode="0" endBytecode="82" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="WildcardName" signature="()Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="1689" end="1808" startBytecode="0" endBytecode="979" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="jj_rescan_token" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="3313" end="3332" startBytecode="0" endBytecode="313" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="3319" end="3325" startBytecode="53" endBytecode="136" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParser">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" start="11" end="3341" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.XPathParser" name="jj_semLA" signature="Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParser" sourcefile="XPathParser.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParser.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="MS_OOI_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserConstants">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserConstants" start="84" end="84" sourcefile="XPathParserConstants.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserConstants.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.XPathParserConstants" name="tokenImage" signature="[Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserConstants" sourcefile="XPathParserConstants.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserConstants.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserConstants" start="84" end="84" startBytecode="539" endBytecode="539" sourcefile="XPathParserConstants.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserConstants.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="8" end="1879" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" name="jjMoveStringLiteralDfa15_0" signature="(JJJJ)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1115" end="1137" startBytecode="0" endBytecode="75" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Method>
+    <LocalVariable name="active1" register="7" pc="13" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1115" end="1115" startBytecode="11" endBytecode="11" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="active1"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="8" end="1879" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" name="jjstrLiteralImages" signature="[Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1724" end="1724" startBytecode="1789" endBytecode="1789" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="8" end="1879" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" name="ReInit" signature="(Lorg/apache/commons/jxpath/ri/parser/SimpleCharStream;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1772" end="1776" startBytecode="0" endBytecode="95" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="8" end="1879" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" name="ReInit" signature="(Lorg/apache/commons/jxpath/ri/parser/SimpleCharStream;I)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1786" end="1788" startBytecode="0" endBytecode="80" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="8" end="1879" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" name="SwitchTo" signature="(I)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="1791" end="1795" startBytecode="0" endBytecode="123" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE">
+    <Class classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="8" end="1879" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Class>
+    <Field classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" name="debugStream" signature="Ljava/io/PrintStream;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" start="9" end="9" startBytecode="2" endBytecode="2" sourcefile="XPathParserTokenManager.java" sourcepath="org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="allocateNumber" signature="(Ljava/lang/Class;D)Ljava/lang/Number;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="356" end="401" startBytecode="0" endBytecode="469" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="&lt;init&gt;" signature="(B)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Byte" start="298" end="300" startBytecode="0" endBytecode="41" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="valueOf" signature="(B)Ljava/lang/Byte;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Byte" start="103" end="103" startBytecode="0" endBytecode="33" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="358" end="358" startBytecode="19" endBytecode="19" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="allocateNumber" signature="(Ljava/lang/Class;D)Ljava/lang/Number;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="356" end="401" startBytecode="0" endBytecode="469" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="364" end="364" startBytecode="54" endBytecode="54" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="allocateNumber" signature="(Ljava/lang/Class;D)Ljava/lang/Number;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="356" end="401" startBytecode="0" endBytecode="469" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="367" end="367" startBytecode="71" endBytecode="71" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="allocateNumber" signature="(Ljava/lang/Class;D)Ljava/lang/Number;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="356" end="401" startBytecode="0" endBytecode="469" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="&lt;init&gt;" signature="(S)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Short" start="303" end="305" startBytecode="0" endBytecode="41" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="valueOf" signature="(S)Ljava/lang/Short;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Short" start="232" end="236" startBytecode="0" endBytecode="81" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="361" end="361" startBytecode="37" endBytecode="37" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertNullToPrimitive" signature="(Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="287" end="311" startBytecode="0" endBytecode="256" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="&lt;init&gt;" signature="(B)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Byte" start="298" end="300" startBytecode="0" endBytecode="41" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="valueOf" signature="(B)Ljava/lang/Byte;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Byte" start="103" end="103" startBytecode="0" endBytecode="33" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="294" end="294" startBytecode="39" endBytecode="39" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertNullToPrimitive" signature="(Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="287" end="311" startBytecode="0" endBytecode="256" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="291" end="291" startBytecode="23" endBytecode="23" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertNullToPrimitive" signature="(Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="287" end="311" startBytecode="0" endBytecode="256" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="300" end="300" startBytecode="71" endBytecode="71" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertNullToPrimitive" signature="(Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="287" end="311" startBytecode="0" endBytecode="256" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="303" end="303" startBytecode="87" endBytecode="87" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertNullToPrimitive" signature="(Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="287" end="311" startBytecode="0" endBytecode="256" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="&lt;init&gt;" signature="(S)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Short" start="303" end="305" startBytecode="0" endBytecode="41" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="valueOf" signature="(S)Ljava/lang/Short;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Short" start="232" end="236" startBytecode="0" endBytecode="81" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="297" end="297" startBytecode="55" endBytecode="55" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertStringToPrimitive" signature="(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="321" end="346" startBytecode="0" endBytecode="304" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Byte" start="315" end="317" startBytecode="0" endBytecode="46" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="valueOf" signature="(Ljava/lang/String;)Ljava/lang/Byte;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Byte" start="231" end="231" startBytecode="0" endBytecode="30" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="329" end="329" startBytecode="58" endBytecode="58" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertStringToPrimitive" signature="(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="321" end="346" startBytecode="0" endBytecode="304" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="326" end="326" startBytecode="39" endBytecode="39" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertStringToPrimitive" signature="(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="321" end="346" startBytecode="0" endBytecode="304" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="866" end="868" startBytecode="0" endBytecode="46" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(Ljava/lang/String;)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="766" end="766" startBytecode="0" endBytecode="33" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="335" end="335" startBytecode="96" endBytecode="96" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertStringToPrimitive" signature="(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="321" end="346" startBytecode="0" endBytecode="304" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="964" end="966" startBytecode="0" endBytecode="46" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(Ljava/lang/String;)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="803" end="803" startBytecode="0" endBytecode="33" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="338" end="338" startBytecode="115" endBytecode="115" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="45" end="506" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter" name="convertStringToPrimitive" signature="(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="321" end="346" startBytecode="0" endBytecode="304" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Short" start="320" end="322" startBytecode="0" endBytecode="46" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="valueOf" signature="(Ljava/lang/String;)Ljava/lang/Short;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Short" start="200" end="200" startBytecode="0" endBytecode="30" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter" start="332" end="332" startBytecode="77" endBytecode="77" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_COMPARETO_USE_OBJECT_EQUALS" priority="2" rank="16" abbrev="Eq" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer" start="515" end="560" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer" name="compareTo" signature="(Ljava/lang/Object;)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer" start="540" end="540" startBytecode="0" endBytecode="53" sourcefile="BasicTypeConverter.java" sourcepath="org/apache/commons/jxpath/util/BasicTypeConverter.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.ValueUtils">
+      <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="43" end="659" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.ValueUtils" name="getIndexedPropertyLength" signature="(Ljava/lang/Object;Ljava/beans/IndexedPropertyDescriptor;)I" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="110" end="129" startBytecode="0" endBytecode="288" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="122" end="122" startBytecode="77" endBytecode="77" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.ValueUtils">
+      <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="43" end="659" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.ValueUtils" name="getValue" signature="(Ljava/lang/Object;Ljava/beans/PropertyDescriptor;I)Ljava/lang/Object;" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="438" end="467" startBytecode="0" endBytecode="358" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="444" end="444" startBytecode="37" endBytecode="37" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.jxpath.util.ValueUtils">
+      <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="43" end="659" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.jxpath.util.ValueUtils" name="setValue" signature="(Ljava/lang/Object;Ljava/beans/PropertyDescriptor;ILjava/lang/Object;)V" isStatic="true">
+      <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="481" end="515" startBytecode="0" endBytecode="378" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.jxpath.util.ValueUtils" start="487" end="487" startBytecode="39" endBytecode="39" sourcefile="ValueUtils.java" sourcepath="org/apache/commons/jxpath/util/ValueUtils.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="22">
+    <MissingClass>javax.servlet.ServletContext</MissingClass>
+    <MissingClass>javax.servlet.ServletRequest</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletRequest</MissingClass>
+    <MissingClass>javax.servlet.http.HttpSession</MissingClass>
+    <MissingClass>javax.servlet.jsp.PageContext</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.ConvertUtils</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.Converter</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.DynaBean</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.DynaClass</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.DynaProperty</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.LazyDynaBean</MissingClass>
+    <MissingClass>org.apache.commons.beanutils.LazyDynaClass</MissingClass>
+    <MissingClass>org.jdom.Attribute</MissingClass>
+    <MissingClass>org.jdom.CDATA</MissingClass>
+    <MissingClass>org.jdom.Comment</MissingClass>
+    <MissingClass>org.jdom.Document</MissingClass>
+    <MissingClass>org.jdom.Element</MissingClass>
+    <MissingClass>org.jdom.Namespace</MissingClass>
+    <MissingClass>org.jdom.Parent</MissingClass>
+    <MissingClass>org.jdom.ProcessingInstruction</MissingClass>
+    <MissingClass>org.jdom.Text</MissingClass>
+    <MissingClass>org.jdom.input.SAXBuilder</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 01:06:07 +0800" total_classes="187" referenced_classes="346" total_bugs="97" total_size="11637" num_packages="16" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="86.60" clock_seconds="19.92" peak_mbytes="318.65" alloc_mbytes="683.00" gc_seconds="0.95" priority_2="93" priority_1="4">
+    <PackageStats package="org.apache.commons.jxpath" total_bugs="6" total_types="35" total_size="820" priority_2="5" priority_1="1">
+      <ClassStats class="org.apache.commons.jxpath.AbstractFactory" sourceFile="AbstractFactory.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.BasicNodeSet" sourceFile="BasicNodeSet.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.BasicVariables" sourceFile="BasicVariables.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ClassFunctions" sourceFile="ClassFunctions.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.CompiledExpression" sourceFile="CompiledExpression.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.Container" sourceFile="Container.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.DynamicPropertyHandler" sourceFile="DynamicPropertyHandler.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ExceptionHandler" sourceFile="ExceptionHandler.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ExpressionContext" sourceFile="ExpressionContext.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ExtendedKeyManager" sourceFile="ExtendedKeyManager.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.Function" sourceFile="Function.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.FunctionLibrary" sourceFile="FunctionLibrary.java" interface="false" size="49" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.Functions" sourceFile="Functions.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.IdentityManager" sourceFile="IdentityManager.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathAbstractFactoryException" sourceFile="JXPathAbstractFactoryException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathBasicBeanInfo" sourceFile="JXPathBasicBeanInfo.java" interface="false" size="77" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathBasicBeanInfo$1" sourceFile="JXPathBasicBeanInfo.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathBeanInfo" sourceFile="JXPathBeanInfo.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathContext" sourceFile="JXPathContext.java" interface="false" size="154" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathContextFactory" sourceFile="JXPathContextFactory.java" interface="false" size="83" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathContextFactoryConfigurationError" sourceFile="JXPathContextFactoryConfigurationError.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathException" sourceFile="JXPathException.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathFunctionNotFoundException" sourceFile="JXPathFunctionNotFoundException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathIntrospector" sourceFile="JXPathIntrospector.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathInvalidAccessException" sourceFile="JXPathInvalidAccessException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathInvalidSyntaxException" sourceFile="JXPathInvalidSyntaxException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathNotFoundException" sourceFile="JXPathNotFoundException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.JXPathTypeConversionException" sourceFile="JXPathTypeConversionException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.KeyManager" sourceFile="KeyManager.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.MapDynamicPropertyHandler" sourceFile="MapDynamicPropertyHandler.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.NodeSet" sourceFile="NodeSet.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.PackageFunctions" sourceFile="PackageFunctions.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.Pointer" sourceFile="Pointer.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.Variables" sourceFile="Variables.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.XMLDocumentContainer" sourceFile="XMLDocumentContainer.java" interface="false" size="31" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.functions" total_bugs="0" total_types="2" total_size="67">
+      <ClassStats class="org.apache.commons.jxpath.functions.ConstructorFunction" sourceFile="ConstructorFunction.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.functions.MethodFunction" sourceFile="MethodFunction.java" interface="false" size="41" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri" total_bugs="3" total_types="10" total_size="758" priority_2="2" priority_1="1">
+      <ClassStats class="org.apache.commons.jxpath.ri.Compiler" sourceFile="Compiler.java" interface="true" size="76" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.EvalContext" sourceFile="EvalContext.java" interface="false" size="139" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.InfoSetUtil" sourceFile="InfoSetUtil.java" interface="false" size="82" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.JXPathCompiledExpression" sourceFile="JXPathCompiledExpression.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.JXPathContextFactoryReferenceImpl" sourceFile="JXPathContextFactoryReferenceImpl.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl" sourceFile="JXPathContextReferenceImpl.java" interface="false" size="283" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.JXPathContextReferenceImpl$1" sourceFile="JXPathContextReferenceImpl.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.NamespaceResolver" sourceFile="NamespaceResolver.java" interface="false" size="69" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.Parser" sourceFile="Parser.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.QName" sourceFile="QName.java" interface="false" size="32" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.axes" total_bugs="1" total_types="14" total_size="889" priority_2="1">
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.AncestorContext" sourceFile="AncestorContext.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.AttributeContext" sourceFile="AttributeContext.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.ChildContext" sourceFile="ChildContext.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.DescendantContext" sourceFile="DescendantContext.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.InitialContext" sourceFile="InitialContext.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.NamespaceContext" sourceFile="NamespaceContext.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.NodeSetContext" sourceFile="NodeSetContext.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.ParentContext" sourceFile="ParentContext.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.PrecedingOrFollowingContext" sourceFile="PrecedingOrFollowingContext.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.PredicateContext" sourceFile="PredicateContext.java" interface="false" size="88" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.RootContext" sourceFile="RootContext.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.SelfContext" sourceFile="SelfContext.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.SimplePathInterpreter" sourceFile="SimplePathInterpreter.java" interface="false" size="275" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.axes.UnionContext" sourceFile="UnionContext.java" interface="false" size="26" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.compiler" total_bugs="8" total_types="36" total_size="1328" priority_2="8">
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Constant" sourceFile="Constant.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreFunction" sourceFile="CoreFunction.java" interface="false" size="405" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperation" sourceFile="CoreOperation.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationAdd" sourceFile="CoreOperationAdd.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationAnd" sourceFile="CoreOperationAnd.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationCompare" sourceFile="CoreOperationCompare.java" interface="false" size="73" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationDivide" sourceFile="CoreOperationDivide.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationEqual" sourceFile="CoreOperationEqual.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationGreaterThan" sourceFile="CoreOperationGreaterThan.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationGreaterThanOrEqual" sourceFile="CoreOperationGreaterThanOrEqual.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationLessThan" sourceFile="CoreOperationLessThan.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationLessThanOrEqual" sourceFile="CoreOperationLessThanOrEqual.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationMod" sourceFile="CoreOperationMod.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationMultiply" sourceFile="CoreOperationMultiply.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationNegate" sourceFile="CoreOperationNegate.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationNotEqual" sourceFile="CoreOperationNotEqual.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationOr" sourceFile="CoreOperationOr.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationRelationalExpression" sourceFile="CoreOperationRelationalExpression.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationSubtract" sourceFile="CoreOperationSubtract.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.CoreOperationUnion" sourceFile="CoreOperationUnion.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Expression" sourceFile="Expression.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Expression$PointerIterator" sourceFile="Expression.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Expression$ValueIterator" sourceFile="Expression.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.ExpressionPath" sourceFile="ExpressionPath.java" interface="false" size="68" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.ExtensionFunction" sourceFile="ExtensionFunction.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.LocationPath" sourceFile="LocationPath.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.NameAttributeTest" sourceFile="NameAttributeTest.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.NodeNameTest" sourceFile="NodeNameTest.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.NodeTest" sourceFile="NodeTest.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.NodeTypeTest" sourceFile="NodeTypeTest.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Operation" sourceFile="Operation.java" interface="false" size="14" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Path" sourceFile="Path.java" interface="false" size="119" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.ProcessingInstructionTest" sourceFile="ProcessingInstructionTest.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.Step" sourceFile="Step.java" interface="false" size="62" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.TreeCompiler" sourceFile="TreeCompiler.java" interface="false" size="88" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.compiler.VariableReference" sourceFile="VariableReference.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model" total_bugs="0" total_types="8" total_size="486">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.NodeIterator" sourceFile="NodeIterator.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.NodePointer" sourceFile="NodePointer.java" interface="false" size="277" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.NodePointerFactory" sourceFile="NodePointerFactory.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.VariablePointer" sourceFile="VariablePointer.java" interface="false" size="162" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.VariablePointer$1" sourceFile="VariablePointer.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.VariablePointerFactory" sourceFile="VariablePointerFactory.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.VariablePointerFactory$1" sourceFile="VariablePointerFactory.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.VariablePointerFactory$VariableContextWrapper" sourceFile="VariablePointerFactory.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model.beans" total_bugs="2" total_types="16" total_size="972" priority_2="2">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.BeanAttributeIterator" sourceFile="BeanAttributeIterator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.BeanPointer" sourceFile="BeanPointer.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.BeanPointerFactory" sourceFile="BeanPointerFactory.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.BeanPropertyPointer" sourceFile="BeanPropertyPointer.java" interface="false" size="139" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.CollectionAttributeNodeIterator" sourceFile="CollectionAttributeNodeIterator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.CollectionChildNodeIterator" sourceFile="CollectionChildNodeIterator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.CollectionNodeIterator" sourceFile="CollectionNodeIterator.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.CollectionPointer" sourceFile="CollectionPointer.java" interface="false" size="101" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.CollectionPointerFactory" sourceFile="CollectionPointerFactory.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.LangAttributePointer" sourceFile="LangAttributePointer.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.NullElementPointer" sourceFile="NullElementPointer.java" interface="false" size="53" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.NullPointer" sourceFile="NullPointer.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.NullPropertyPointer" sourceFile="NullPropertyPointer.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.PropertyIterator" sourceFile="PropertyIterator.java" interface="false" size="172" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.PropertyOwnerPointer" sourceFile="PropertyOwnerPointer.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.beans.PropertyPointer" sourceFile="PropertyPointer.java" interface="false" size="91" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model.container" total_bugs="0" total_types="2" total_size="74">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.container.ContainerPointer" sourceFile="ContainerPointer.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.container.ContainerPointerFactory" sourceFile="ContainerPointerFactory.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model.dom" total_bugs="2" total_types="7" total_size="691" priority_2="2">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.DOMAttributeIterator" sourceFile="DOMAttributeIterator.java" interface="false" size="74" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.DOMAttributePointer" sourceFile="DOMAttributePointer.java" interface="false" size="52" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.DOMNamespaceIterator" sourceFile="DOMNamespaceIterator.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.DOMNodeIterator" sourceFile="DOMNodeIterator.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.DOMNodePointer" sourceFile="DOMNodePointer.java" interface="false" size="390" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.DOMPointerFactory" sourceFile="DOMPointerFactory.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dom.NamespacePointer" sourceFile="NamespacePointer.java" interface="false" size="53" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model.dynabeans" total_bugs="2" total_types="6" total_size="200" priority_2="2">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPointer" sourceFile="DynaBeanPointer.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPointerFactory" sourceFile="DynaBeanPointerFactory.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanPropertyPointer" sourceFile="DynaBeanPropertyPointer.java" interface="false" size="113" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory" sourceFile="StrictLazyDynaBeanPointerFactory.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer" sourceFile="StrictLazyDynaBeanPointerFactory.java" interface="false" size="15" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynabeans.StrictLazyDynaBeanPointerFactory$StrictLazyDynaBeanPointer$1" sourceFile="StrictLazyDynaBeanPointerFactory.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model.dynamic" total_bugs="2" total_types="5" total_size="200" priority_2="2">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynamic.DynamicAttributeIterator" sourceFile="DynamicAttributeIterator.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynamic.DynamicPointer" sourceFile="DynamicPointer.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynamic.DynamicPointerFactory" sourceFile="DynamicPointerFactory.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyIterator" sourceFile="DynamicPropertyIterator.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.dynamic.DynamicPropertyPointer" sourceFile="DynamicPropertyPointer.java" interface="false" size="119" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.model.jdom" total_bugs="1" total_types="7" total_size="708" priority_2="1">
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMAttributeIterator" sourceFile="JDOMAttributeIterator.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMAttributePointer" sourceFile="JDOMAttributePointer.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMNamespaceIterator" sourceFile="JDOMNamespaceIterator.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMNamespacePointer" sourceFile="JDOMNamespacePointer.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMNodeIterator" sourceFile="JDOMNodeIterator.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMNodePointer" sourceFile="JDOMNodePointer.java" interface="false" size="416" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.model.jdom.JDOMPointerFactory" sourceFile="JDOMPointerFactory.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.ri.parser" total_bugs="52" total_types="10" total_size="3293" priority_2="50" priority_1="2">
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.ParseException" sourceFile="ParseException.java" interface="false" size="78" bugs="3" priority_2="3"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.SimpleCharStream" sourceFile="SimpleCharStream.java" interface="false" size="223" bugs="2" priority_1="2"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.Token" sourceFile="Token.java" interface="false" size="16" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.TokenMgrError" sourceFile="TokenMgrError.java" interface="false" size="55" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.XPathParser" sourceFile="XPathParser.java" interface="false" size="1693" bugs="36" priority_2="36"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.XPathParser$1" sourceFile="XPathParser.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.XPathParser$JJCalls" sourceFile="XPathParser.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.XPathParser$LookaheadSuccess" sourceFile="XPathParser.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.XPathParserConstants" sourceFile="XPathParserConstants.java" interface="true" size="80" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.ri.parser.XPathParserTokenManager" sourceFile="XPathParserTokenManager.java" interface="false" size="1136" bugs="8" priority_2="8"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.servlet" total_bugs="0" total_types="11" total_size="229">
+      <ClassStats class="org.apache.commons.jxpath.servlet.Constants" sourceFile="Constants.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.HttpSessionAndServletContext" sourceFile="HttpSessionAndServletContext.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.HttpSessionHandler" sourceFile="HttpSessionHandler.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.JXPathServletContexts" sourceFile="JXPathServletContexts.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.KeywordVariables" sourceFile="KeywordVariables.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.PageContextHandler" sourceFile="PageContextHandler.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.PageScopeContext" sourceFile="PageScopeContext.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.PageScopeContextHandler" sourceFile="PageScopeContextHandler.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.ServletContextHandler" sourceFile="ServletContextHandler.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.ServletRequestAndContext" sourceFile="ServletRequestAndContext.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.servlet.ServletRequestHandler" sourceFile="ServletRequestHandler.java" interface="false" size="31" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.util" total_bugs="18" total_types="13" total_size="779" priority_2="18">
+      <ClassStats class="org.apache.commons.jxpath.util.BasicTypeConverter" sourceFile="BasicTypeConverter.java" interface="false" size="228" bugs="14" priority_2="14"/>
+      <ClassStats class="org.apache.commons.jxpath.util.BasicTypeConverter$ValueNodeSet" sourceFile="BasicTypeConverter.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.BasicTypeConverter$ValuePointer" sourceFile="BasicTypeConverter.java" interface="false" size="32" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.jxpath.util.ClassLoaderUtil" sourceFile="ClassLoaderUtil.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.JXPath11CompatibleTypeConverter" sourceFile="JXPath11CompatibleTypeConverter.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.KeyManagerUtils" sourceFile="KeyManagerUtils.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.KeyManagerUtils$SingleNodeExtendedKeyManager" sourceFile="KeyManagerUtils.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.MethodLookupUtils" sourceFile="MethodLookupUtils.java" interface="false" size="137" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.ReverseComparator" sourceFile="ReverseComparator.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.TypeConverter" sourceFile="TypeConverter.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.TypeUtils" sourceFile="TypeUtils.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.TypeUtils$1" sourceFile="TypeUtils.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.util.ValueUtils" sourceFile="ValueUtils.java" interface="false" size="241" bugs="3" priority_2="3"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.jxpath.xml" total_bugs="0" total_types="5" total_size="143">
+      <ClassStats class="org.apache.commons.jxpath.xml.DOMParser" sourceFile="DOMParser.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.xml.DocumentContainer" sourceFile="DocumentContainer.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.xml.JDOMParser" sourceFile="JDOMParser.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.xml.XMLParser" sourceFile="XMLParser.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.jxpath.xml.XMLParser2" sourceFile="XMLParser2.java" interface="false" size="46" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1337" invocations="1058" avgMicrosecondsPerInvocation="1264" maxMicrosecondsPerInvocation="184385" standardDeviationMircosecondsPerInvocation="6926"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="901" invocations="1631" avgMicrosecondsPerInvocation="552" maxMicrosecondsPerInvocation="66402" standardDeviationMircosecondsPerInvocation="3918"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="868" invocations="187" avgMicrosecondsPerInvocation="4647" maxMicrosecondsPerInvocation="689008" standardDeviationMircosecondsPerInvocation="50346"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="864" invocations="1631" avgMicrosecondsPerInvocation="529" maxMicrosecondsPerInvocation="73736" standardDeviationMircosecondsPerInvocation="2879"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="832" invocations="346" avgMicrosecondsPerInvocation="2407" maxMicrosecondsPerInvocation="93378" standardDeviationMircosecondsPerInvocation="9269"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="796" invocations="1647" avgMicrosecondsPerInvocation="483" maxMicrosecondsPerInvocation="67206" standardDeviationMircosecondsPerInvocation="3242"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="776" invocations="1667" avgMicrosecondsPerInvocation="465" maxMicrosecondsPerInvocation="26877" standardDeviationMircosecondsPerInvocation="2248"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="770" invocations="1631" avgMicrosecondsPerInvocation="472" maxMicrosecondsPerInvocation="64348" standardDeviationMircosecondsPerInvocation="2854"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="602" invocations="2234" avgMicrosecondsPerInvocation="269" maxMicrosecondsPerInvocation="31375" standardDeviationMircosecondsPerInvocation="1793"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="583" invocations="1631" avgMicrosecondsPerInvocation="357" maxMicrosecondsPerInvocation="34799" standardDeviationMircosecondsPerInvocation="1678"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="578" invocations="346" avgMicrosecondsPerInvocation="1673" maxMicrosecondsPerInvocation="59754" standardDeviationMircosecondsPerInvocation="5555"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="403" invocations="1306" avgMicrosecondsPerInvocation="309" maxMicrosecondsPerInvocation="34651" standardDeviationMircosecondsPerInvocation="2030"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="380" invocations="1752" avgMicrosecondsPerInvocation="216" maxMicrosecondsPerInvocation="131081" standardDeviationMircosecondsPerInvocation="3455"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="330" invocations="985" avgMicrosecondsPerInvocation="335" maxMicrosecondsPerInvocation="90030" standardDeviationMircosecondsPerInvocation="3465"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="281" invocations="1061" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="24395" standardDeviationMircosecondsPerInvocation="1463"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="261" invocations="1752" avgMicrosecondsPerInvocation="149" maxMicrosecondsPerInvocation="45262" standardDeviationMircosecondsPerInvocation="1744"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="246" invocations="1631" avgMicrosecondsPerInvocation="150" maxMicrosecondsPerInvocation="47062" standardDeviationMircosecondsPerInvocation="1672"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="239" invocations="187" avgMicrosecondsPerInvocation="1282" maxMicrosecondsPerInvocation="39103" standardDeviationMircosecondsPerInvocation="4983"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="234" invocations="346" avgMicrosecondsPerInvocation="678" maxMicrosecondsPerInvocation="27530" standardDeviationMircosecondsPerInvocation="2815"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="229" invocations="346" avgMicrosecondsPerInvocation="662" maxMicrosecondsPerInvocation="66284" standardDeviationMircosecondsPerInvocation="4403"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="222" invocations="187" avgMicrosecondsPerInvocation="1191" maxMicrosecondsPerInvocation="40502" standardDeviationMircosecondsPerInvocation="4635"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="215" invocations="187" avgMicrosecondsPerInvocation="1154" maxMicrosecondsPerInvocation="38845" standardDeviationMircosecondsPerInvocation="4695"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="210" invocations="423" avgMicrosecondsPerInvocation="498" maxMicrosecondsPerInvocation="24036" standardDeviationMircosecondsPerInvocation="2333"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="196" invocations="346" avgMicrosecondsPerInvocation="569" maxMicrosecondsPerInvocation="59282" standardDeviationMircosecondsPerInvocation="3785"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="182" invocations="187" avgMicrosecondsPerInvocation="978" maxMicrosecondsPerInvocation="48553" standardDeviationMircosecondsPerInvocation="4219"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="175" invocations="22730" avgMicrosecondsPerInvocation="7" maxMicrosecondsPerInvocation="104028" standardDeviationMircosecondsPerInvocation="710"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="175" invocations="187" avgMicrosecondsPerInvocation="936" maxMicrosecondsPerInvocation="19338" standardDeviationMircosecondsPerInvocation="2809"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="170" invocations="187" avgMicrosecondsPerInvocation="911" maxMicrosecondsPerInvocation="41955" standardDeviationMircosecondsPerInvocation="4608"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="163" invocations="1627" avgMicrosecondsPerInvocation="100" maxMicrosecondsPerInvocation="20066" standardDeviationMircosecondsPerInvocation="945"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="159" invocations="35125" avgMicrosecondsPerInvocation="4" maxMicrosecondsPerInvocation="30568" standardDeviationMircosecondsPerInvocation="217"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="152" invocations="346" avgMicrosecondsPerInvocation="440" maxMicrosecondsPerInvocation="29048" standardDeviationMircosecondsPerInvocation="2330"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="134" invocations="187" avgMicrosecondsPerInvocation="720" maxMicrosecondsPerInvocation="17208" standardDeviationMircosecondsPerInvocation="2355"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="128" invocations="187" avgMicrosecondsPerInvocation="687" maxMicrosecondsPerInvocation="27831" standardDeviationMircosecondsPerInvocation="3186"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="128" invocations="187" avgMicrosecondsPerInvocation="687" maxMicrosecondsPerInvocation="36311" standardDeviationMircosecondsPerInvocation="3282"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

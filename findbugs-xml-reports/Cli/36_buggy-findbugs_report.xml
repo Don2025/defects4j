@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680372565851" analysisTimestamp="1680689440902" release="">
+  <Project projectName="">
+    <Jar>Cli/36_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.cli.HelpFormatter">
+      <SourceLine classname="org.apache.commons.cli.HelpFormatter" start="73" end="1072" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli/HelpFormatter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli.HelpFormatter" name="printHelp" signature="(ILjava/lang/String;Ljava/lang/String;Lorg/apache/commons/cli/Options;Ljava/lang/String;Z)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli.HelpFormatter" start="490" end="494" startBytecode="0" endBytecode="164" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli/HelpFormatter.java"/>
+    </Method>
+    <Method classname="java.io.PrintWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintWriter" start="131" end="132" startBytecode="0" endBytecode="34" sourcefile="PrintWriter.java" sourcepath="java/io/PrintWriter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.cli.HelpFormatter" start="490" end="490" startBytecode="7" endBytecode="7" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli/HelpFormatter.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 02:09:25 +0800" total_classes="27" referenced_classes="109" total_bugs="1" total_size="1551" num_packages="1" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="32.21" clock_seconds="5.97" peak_mbytes="288.49" alloc_mbytes="683.00" gc_seconds="0.37" priority_1="1">
+    <PackageStats package="org.apache.commons.cli" total_bugs="1" total_types="27" total_size="1551" priority_1="1">
+      <ClassStats class="org.apache.commons.cli.AlreadySelectedException" sourceFile="AlreadySelectedException.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.AmbiguousOptionException" sourceFile="AmbiguousOptionException.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.BasicParser" sourceFile="BasicParser.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.CommandLine" sourceFile="CommandLine.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.CommandLineParser" sourceFile="CommandLineParser.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.DefaultParser" sourceFile="DefaultParser.java" interface="false" size="217" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.GnuParser" sourceFile="GnuParser.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.HelpFormatter" sourceFile="HelpFormatter.java" interface="false" size="273" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.cli.HelpFormatter$1" sourceFile="HelpFormatter.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.HelpFormatter$OptionComparator" sourceFile="HelpFormatter.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.MissingArgumentException" sourceFile="MissingArgumentException.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.MissingOptionException" sourceFile="MissingOptionException.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.Option" sourceFile="Option.java" interface="false" size="193" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.Option$1" sourceFile="Option.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.Option$Builder" sourceFile="Option.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.OptionBuilder" sourceFile="OptionBuilder.java" interface="false" size="98" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.OptionGroup" sourceFile="OptionGroup.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.OptionValidator" sourceFile="OptionValidator.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.Options" sourceFile="Options.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.ParseException" sourceFile="ParseException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.Parser" sourceFile="Parser.java" interface="false" size="122" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.PatternOptionBuilder" sourceFile="PatternOptionBuilder.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.PosixParser" sourceFile="PosixParser.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.TypeHandler" sourceFile="TypeHandler.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.UnrecognizedOptionException" sourceFile="UnrecognizedOptionException.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.Util" sourceFile="Util.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="521" invocations="671" avgMicrosecondsPerInvocation="777" maxMicrosecondsPerInvocation="29227" standardDeviationMircosecondsPerInvocation="2499"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="248" invocations="577" avgMicrosecondsPerInvocation="429" maxMicrosecondsPerInvocation="24218" standardDeviationMircosecondsPerInvocation="1847"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="240" invocations="276" avgMicrosecondsPerInvocation="871" maxMicrosecondsPerInvocation="40542" standardDeviationMircosecondsPerInvocation="3480"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="235" invocations="109" avgMicrosecondsPerInvocation="2160" maxMicrosecondsPerInvocation="29916" standardDeviationMircosecondsPerInvocation="5240"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InstantiateStaticClass" totalMilliseconds="220" invocations="27" avgMicrosecondsPerInvocation="8184" maxMicrosecondsPerInvocation="219238" standardDeviationMircosecondsPerInvocation="41391"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="219" invocations="279" avgMicrosecondsPerInvocation="785" maxMicrosecondsPerInvocation="52299" standardDeviationMircosecondsPerInvocation="3889"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="185" invocations="276" avgMicrosecondsPerInvocation="671" maxMicrosecondsPerInvocation="17915" standardDeviationMircosecondsPerInvocation="2320"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="166" invocations="275" avgMicrosecondsPerInvocation="603" maxMicrosecondsPerInvocation="21090" standardDeviationMircosecondsPerInvocation="2255"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="164" invocations="109" avgMicrosecondsPerInvocation="1511" maxMicrosecondsPerInvocation="29194" standardDeviationMircosecondsPerInvocation="3517"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="140" invocations="279" avgMicrosecondsPerInvocation="503" maxMicrosecondsPerInvocation="24330" standardDeviationMircosecondsPerInvocation="1892"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="137" invocations="182" avgMicrosecondsPerInvocation="754" maxMicrosecondsPerInvocation="32035" standardDeviationMircosecondsPerInvocation="3230"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="134" invocations="109" avgMicrosecondsPerInvocation="1232" maxMicrosecondsPerInvocation="47914" standardDeviationMircosecondsPerInvocation="6146"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="118" invocations="276" avgMicrosecondsPerInvocation="427" maxMicrosecondsPerInvocation="25632" standardDeviationMircosecondsPerInvocation="1700"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="118" invocations="279" avgMicrosecondsPerInvocation="423" maxMicrosecondsPerInvocation="55394" standardDeviationMircosecondsPerInvocation="3525"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="115" invocations="674" avgMicrosecondsPerInvocation="172" maxMicrosecondsPerInvocation="13078" standardDeviationMircosecondsPerInvocation="658"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantPoolGenFactory" totalMilliseconds="112" invocations="27" avgMicrosecondsPerInvocation="4180" maxMicrosecondsPerInvocation="105488" standardDeviationMircosecondsPerInvocation="19886"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="92" invocations="150" avgMicrosecondsPerInvocation="619" maxMicrosecondsPerInvocation="34611" standardDeviationMircosecondsPerInvocation="3057"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="89" invocations="27" avgMicrosecondsPerInvocation="3330" maxMicrosecondsPerInvocation="62864" standardDeviationMircosecondsPerInvocation="11850"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="87" invocations="628" avgMicrosecondsPerInvocation="139" maxMicrosecondsPerInvocation="9806" standardDeviationMircosecondsPerInvocation="663"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="81" invocations="27" avgMicrosecondsPerInvocation="3035" maxMicrosecondsPerInvocation="51505" standardDeviationMircosecondsPerInvocation="9813"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="80" invocations="279" avgMicrosecondsPerInvocation="287" maxMicrosecondsPerInvocation="33014" standardDeviationMircosecondsPerInvocation="2345"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="69" invocations="109" avgMicrosecondsPerInvocation="633" maxMicrosecondsPerInvocation="23219" standardDeviationMircosecondsPerInvocation="2691"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="66" invocations="109" avgMicrosecondsPerInvocation="612" maxMicrosecondsPerInvocation="30537" standardDeviationMircosecondsPerInvocation="3044"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="64" invocations="109" avgMicrosecondsPerInvocation="587" maxMicrosecondsPerInvocation="19727" standardDeviationMircosecondsPerInvocation="2401"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="56" invocations="109" avgMicrosecondsPerInvocation="522" maxMicrosecondsPerInvocation="15351" standardDeviationMircosecondsPerInvocation="1854"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RepeatedConditionals" totalMilliseconds="56" invocations="27" avgMicrosecondsPerInvocation="2109" maxMicrosecondsPerInvocation="50050" standardDeviationMircosecondsPerInvocation="9409"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

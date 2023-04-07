@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680383357818" analysisTimestamp="1680692135184" release="">
+  <Project projectName="">
+    <Jar>Math/106_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.MathException">
+      <SourceLine classname="org.apache.commons.math.MathException" start="42" end="145" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.MathException" name="printStackTrace" signature="(Ljava/io/PrintStream;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.MathException" start="124" end="130" startBytecode="0" endBytecode="163" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+    </Method>
+    <Method classname="java.io.PrintWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;Z)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintWriter" start="148" end="154" startBytecode="0" endBytecode="93" sourcefile="PrintWriter.java" sourcepath="java/io/PrintWriter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.MathException" start="125" end="125" startBytecode="10" endBytecode="10" sourcefile="MathException.java" sourcepath="org/apache/commons/math/MathException.java"/>
+  </BugInstance>
+  <BugInstance type="FE_FLOATING_POINT_EQUALITY" priority="1" rank="15" abbrev="FE" category="STYLE">
+    <Class classname="org.apache.commons.math.analysis.BrentSolver">
+      <SourceLine classname="org.apache.commons.math.analysis.BrentSolver" start="41" end="191" sourcefile="BrentSolver.java" sourcepath="org/apache/commons/math/analysis/BrentSolver.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.analysis.BrentSolver" name="solve" signature="(DD)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.analysis.BrentSolver" start="84" end="191" startBytecode="0" endBytecode="1230" sourcefile="BrentSolver.java" sourcepath="org/apache/commons/math/analysis/BrentSolver.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.analysis.BrentSolver" start="143" end="143" startBytecode="315" endBytecode="315" sourcefile="BrentSolver.java" sourcepath="org/apache/commons/math/analysis/BrentSolver.java"/>
+  </BugInstance>
+  <BugInstance type="FE_FLOATING_POINT_EQUALITY" priority="1" rank="15" abbrev="FE" category="STYLE">
+    <Class classname="org.apache.commons.math.analysis.MullerSolver">
+      <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="45" end="275" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.analysis.MullerSolver" name="solve" signature="(DD)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="114" end="180" startBytecode="0" endBytecode="1227" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="155" end="155" startBytecode="374" endBytecode="374" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java"/>
+  </BugInstance>
+  <BugInstance type="FE_FLOATING_POINT_EQUALITY" priority="1" rank="15" abbrev="FE" category="STYLE">
+    <Class classname="org.apache.commons.math.analysis.MullerSolver">
+      <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="45" end="275" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.analysis.MullerSolver" name="solve2" signature="(DD)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="217" end="275" startBytecode="0" endBytecode="1193" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="247" end="247" startBytecode="294" endBytecode="294" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java"/>
+    <SourceLine classname="org.apache.commons.math.analysis.MullerSolver" start="247" end="247" startBytecode="302" endBytecode="302" sourcefile="MullerSolver.java" sourcepath="org/apache/commons/math/analysis/MullerSolver.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.linear.BigMatrixImpl">
+      <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" start="54" end="1315" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.linear.BigMatrixImpl" name="getDataRef" signature="()[[Ljava/math/BigDecimal;" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" start="367" end="367" startBytecode="0" endBytecode="46" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+    </Method>
+    <Field classname="org.apache.commons.math.linear.BigMatrixImpl" name="data" signature="[[Ljava/math/BigDecimal;" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" start="367" end="367" startBytecode="4" endBytecode="4" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" rank="16" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.linear.BigMatrixImpl">
+      <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" start="54" end="1315" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+    </Class>
+    <Field classname="org.apache.commons.math.linear.BigMatrixImpl" name="TOO_SMALL" signature="Ljava/math/BigDecimal;" isStatic="true">
+      <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.math.linear.BigMatrixImpl" start="74" end="74" startBytecode="10" endBytecode="10" sourcefile="BigMatrixImpl.java" sourcepath="org/apache/commons/math/linear/BigMatrixImpl.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.linear.RealMatrixImpl">
+      <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" start="56" end="1032" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.linear.RealMatrixImpl" name="getDataRef" signature="()[[D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" start="276" end="276" startBytecode="0" endBytecode="46" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+    </Method>
+    <Field classname="org.apache.commons.math.linear.RealMatrixImpl" name="data" signature="[[D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" start="276" end="276" startBytecode="4" endBytecode="4" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" rank="16" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.linear.RealMatrixImpl">
+      <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" start="56" end="1032" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+    </Class>
+    <Field classname="org.apache.commons.math.linear.RealMatrixImpl" name="TOO_SMALL" signature="D" isStatic="true">
+      <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.math.linear.RealMatrixImpl" start="70" end="70" startBytecode="3" endBytecode="3" sourcefile="RealMatrixImpl.java" sourcepath="org/apache/commons/math/linear/RealMatrixImpl.java"/>
+  </BugInstance>
+  <BugInstance type="BX_BOXING_IMMEDIATELY_UNBOXED" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.random.EmpiricalDistributionImpl">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="59" end="476" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.EmpiricalDistributionImpl" name="fillBinStats" signature="(Ljava/lang/Object;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="332" end="375" startBytecode="0" endBytecode="701" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="334" end="334" startBytecode="33" endBytecode="33" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.random.EmpiricalDistributionImpl">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="59" end="476" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.EmpiricalDistributionImpl" name="load" signature="(Ljava/io/File;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="154" end="174" startBytecode="0" endBytecode="407" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/io/File;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader" start="72" end="73" startBytecode="0" endBytecode="40" sourcefile="FileReader.java" sourcepath="java/io/FileReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="154" end="154" startBytecode="9" endBytecode="9" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="162" end="162" startBytecode="57" endBytecode="57" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.random.EmpiricalDistributionImpl">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="59" end="476" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.EmpiricalDistributionImpl" name="load" signature="(Ljava/net/URL;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="124" end="145" startBytecode="0" endBytecode="413" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="124" end="124" startBytecode="12" endBytecode="12" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java"/>
+    <SourceLine classname="org.apache.commons.math.random.EmpiricalDistributionImpl" start="133" end="133" startBytecode="63" endBytecode="63" sourcefile="EmpiricalDistributionImpl.java" sourcepath="org/apache/commons/math/random/EmpiricalDistributionImpl.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.random.RandomDataImpl">
+      <SourceLine classname="org.apache.commons.math.random.RandomDataImpl" start="87" end="595" sourcefile="RandomDataImpl.java" sourcepath="org/apache/commons/math/random/RandomDataImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.RandomDataImpl" name="nextHexString" signature="(I)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.RandomDataImpl" start="121" end="152" startBytecode="0" endBytecode="342" sourcefile="RandomDataImpl.java" sourcepath="org/apache/commons/math/random/RandomDataImpl.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.RandomDataImpl" start="137" end="137" startBytecode="64" endBytecode="64" sourcefile="RandomDataImpl.java" sourcepath="org/apache/commons/math/random/RandomDataImpl.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.random.RandomDataImpl">
+      <SourceLine classname="org.apache.commons.math.random.RandomDataImpl" start="87" end="595" sourcefile="RandomDataImpl.java" sourcepath="org/apache/commons/math/random/RandomDataImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.RandomDataImpl" name="nextSecureHexString" signature="(I)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.RandomDataImpl" start="204" end="248" startBytecode="0" endBytecode="539" sourcefile="RandomDataImpl.java" sourcepath="org/apache/commons/math/random/RandomDataImpl.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.RandomDataImpl" start="232" end="232" startBytecode="111" endBytecode="111" sourcefile="RandomDataImpl.java" sourcepath="org/apache/commons/math/random/RandomDataImpl.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.math.random.ValueServer">
+      <SourceLine classname="org.apache.commons.math.random.ValueServer" start="47" end="366" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.ValueServer" name="resetReplayFile" signature="()V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.ValueServer" start="230" end="239" startBytecode="0" endBytecode="145" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.random.ValueServer" start="238" end="238" startBytecode="39" endBytecode="39" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+  </BugInstance>
+  <BugInstance type="NP_DEREFERENCE_OF_READLINE_VALUE" priority="2" rank="15" abbrev="NP" category="STYLE">
+    <Class classname="org.apache.commons.math.random.ValueServer">
+      <SourceLine classname="org.apache.commons.math.random.ValueServer" start="47" end="366" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.random.ValueServer" name="getNextReplay" signature="()D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.random.ValueServer" start="316" end="325" startBytecode="0" endBytecode="147" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+    </Method>
+    <LocalVariable name="?" register="-1" pc="46" role="LOCAL_VARIABLE_UNKNOWN"/>
+    <SourceLine classname="org.apache.commons.math.random.ValueServer" start="325" end="325" startBytecode="46" endBytecode="46" sourcefile="ValueServer.java" sourcepath="org/apache/commons/math/random/ValueServer.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="addValue" signature="(C)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="146" end="147" startBytecode="0" endBytecode="68" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="146" end="146" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="addValue" signature="(I)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="119" end="120" startBytecode="0" endBytecode="69" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="119" end="119" startBytecode="7" endBytecode="7" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="addValue" signature="(J)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="137" end="138" startBytecode="0" endBytecode="68" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="137" end="137" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="addValue" signature="(Ljava/lang/Integer;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="128" end="129" startBytecode="0" endBytecode="71" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="128" end="128" startBytecode="9" endBytecode="9" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="addValue" signature="(Ljava/lang/Object;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="96" end="111" startBytecode="0" endBytecode="254" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="98" end="98" startBytecode="20" endBytecode="20" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="103" end="103" startBytecode="50" endBytecode="50" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="105" end="105" startBytecode="75" endBytecode="75" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCount" signature="(C)J" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="232" end="232" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="232" end="232" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCount" signature="(I)J" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="212" end="212" startBytecode="0" endBytecode="65" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="212" end="212" startBytecode="7" endBytecode="7" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCount" signature="(J)J" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="222" end="222" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="222" end="222" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCumFreq" signature="(C)J" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="371" end="371" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="371" end="371" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCumFreq" signature="(I)J" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="347" end="347" startBytecode="0" endBytecode="65" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="347" end="347" startBytecode="7" endBytecode="7" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCumFreq" signature="(J)J" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="359" end="359" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="359" end="359" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCumPct" signature="(C)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="430" end="430" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="430" end="430" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCumPct" signature="(I)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="404" end="404" startBytecode="0" endBytecode="65" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="404" end="404" startBytecode="7" endBytecode="7" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getCumPct" signature="(J)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="417" end="417" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="417" end="417" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getPct" signature="(C)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="283" end="283" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="283" end="283" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getPct" signature="(I)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="261" end="261" startBytecode="0" endBytecode="65" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="261" end="261" startBytecode="7" endBytecode="7" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.math.stat.Frequency">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="46" end="430" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.stat.Frequency" name="getPct" signature="(J)D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency" start="272" end="272" startBytecode="0" endBytecode="64" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.stat.Frequency" start="272" end="272" startBytecode="6" endBytecode="6" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.math.stat.Frequency$NaturalComparator">
+      <SourceLine classname="org.apache.commons.math.stat.Frequency$NaturalComparator" start="437" end="452" sourcefile="Frequency.java" sourcepath="org/apache/commons/math/stat/Frequency.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="FE_FLOATING_POINT_EQUALITY" priority="1" rank="15" abbrev="FE" category="STYLE">
+    <Class classname="org.apache.commons.math.util.MathUtils">
+      <SourceLine classname="org.apache.commons.math.util.MathUtils" start="49" end="738" sourcefile="MathUtils.java" sourcepath="org/apache/commons/math/util/MathUtils.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.util.MathUtils" name="roundUnscaled" signature="(DDI)D" isStatic="true">
+      <SourceLine classname="org.apache.commons.math.util.MathUtils" start="552" end="615" startBytecode="0" endBytecode="570" sourcefile="MathUtils.java" sourcepath="org/apache/commons/math/util/MathUtils.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.util.MathUtils" start="586" end="586" startBytecode="205" endBytecode="205" sourcefile="MathUtils.java" sourcepath="org/apache/commons/math/util/MathUtils.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.math.util.ResizableDoubleArray">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="87" end="685" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.util.ResizableDoubleArray" name="getValues" signature="()[D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="544" end="544" startBytecode="0" endBytecode="46" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Method>
+    <Field classname="org.apache.commons.math.util.ResizableDoubleArray" name="internalArray" signature="[D" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="544" end="544" startBytecode="4" endBytecode="4" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+  </BugInstance>
+  <BugInstance type="ICAST_IDIV_CAST_TO_DOUBLE" priority="2" rank="17" abbrev="ICAST" category="STYLE">
+    <Class classname="org.apache.commons.math.util.ResizableDoubleArray">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="87" end="685" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Class>
+    <Method classname="org.apache.commons.math.util.ResizableDoubleArray" name="shouldContract" signature="()Z" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="668" end="671" startBytecode="0" endBytecode="121" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="669" end="669" startBytecode="17" endBytecode="17" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+  </BugInstance>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS">
+    <Class classname="org.apache.commons.math.util.ResizableDoubleArray">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="87" end="685" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Class>
+    <Field classname="org.apache.commons.math.util.ResizableDoubleArray" name="initialCapacity" signature="I" isStatic="false">
+      <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java"/>
+    </Field>
+    <Int value="50" role="INT_SYNC_PERCENT"/>
+    <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="625" end="625" startBytecode="6" endBytecode="6" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="org.apache.commons.math.util.ResizableDoubleArray" start="343" end="343" startBytecode="7" endBytecode="7" sourcefile="ResizableDoubleArray.java" sourcepath="org/apache/commons/math/util/ResizableDoubleArray.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="1">
+    <MissingClass>org.apache.commons.discovery.tools.DiscoverClass</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 05:09:17 +0800" total_classes="146" referenced_classes="262" total_bugs="37" total_size="6580" num_packages="16" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="60.54" clock_seconds="12.66" peak_mbytes="296.49" alloc_mbytes="683.00" gc_seconds="0.46" priority_2="27" priority_1="10">
+    <PackageStats package="org.apache.commons.math" total_bugs="1" total_types="4" total_size="93" priority_1="1">
+      <ClassStats class="org.apache.commons.math.ConvergenceException" sourceFile="ConvergenceException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.FunctionEvaluationException" sourceFile="FunctionEvaluationException.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.MathConfigurationException" sourceFile="MathConfigurationException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.MathException" sourceFile="MathException.java" interface="false" size="49" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.analysis" total_bugs="3" total_types="27" total_size="1156" priority_1="3">
+      <ClassStats class="org.apache.commons.math.analysis.BisectionSolver" sourceFile="BisectionSolver.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.BrentSolver" sourceFile="BrentSolver.java" interface="false" size="73" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.math.analysis.DifferentiableUnivariateRealFunction" sourceFile="DifferentiableUnivariateRealFunction.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.DividedDifferenceInterpolator" sourceFile="DividedDifferenceInterpolator.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.LaguerreSolver" sourceFile="LaguerreSolver.java" interface="false" size="121" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.MullerSolver" sourceFile="MullerSolver.java" interface="false" size="100" bugs="2" priority_1="2"/>
+      <ClassStats class="org.apache.commons.math.analysis.NevilleInterpolator" sourceFile="NevilleInterpolator.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.NewtonSolver" sourceFile="NewtonSolver.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialFunction" sourceFile="PolynomialFunction.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialFunctionLagrangeForm" sourceFile="PolynomialFunctionLagrangeForm.java" interface="false" size="97" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialFunctionNewtonForm" sourceFile="PolynomialFunctionNewtonForm.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.PolynomialSplineFunction" sourceFile="PolynomialSplineFunction.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.RiddersSolver" sourceFile="RiddersSolver.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.RombergIntegrator" sourceFile="RombergIntegrator.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.SecantSolver" sourceFile="SecantSolver.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.SimpsonIntegrator" sourceFile="SimpsonIntegrator.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.SplineInterpolator" sourceFile="SplineInterpolator.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.TrapezoidIntegrator" sourceFile="TrapezoidIntegrator.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealFunction" sourceFile="UnivariateRealFunction.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealIntegrator" sourceFile="UnivariateRealIntegrator.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealIntegratorImpl" sourceFile="UnivariateRealIntegratorImpl.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealInterpolator" sourceFile="UnivariateRealInterpolator.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolver" sourceFile="UnivariateRealSolver.java" interface="true" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverFactory" sourceFile="UnivariateRealSolverFactory.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverFactoryImpl" sourceFile="UnivariateRealSolverFactoryImpl.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverImpl" sourceFile="UnivariateRealSolverImpl.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.analysis.UnivariateRealSolverUtils" sourceFile="UnivariateRealSolverUtils.java" interface="false" size="44" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.complex" total_bugs="0" total_types="3" total_size="352">
+      <ClassStats class="org.apache.commons.math.complex.Complex" sourceFile="Complex.java" interface="false" size="95" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.complex.ComplexFormat" sourceFile="ComplexFormat.java" interface="false" size="174" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.complex.ComplexUtils" sourceFile="ComplexUtils.java" interface="false" size="83" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.distribution" total_bugs="0" total_types="34" total_size="750">
+      <ClassStats class="org.apache.commons.math.distribution.AbstractContinuousDistribution" sourceFile="AbstractContinuousDistribution.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.AbstractContinuousDistribution$1" sourceFile="AbstractContinuousDistribution.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.AbstractDistribution" sourceFile="AbstractDistribution.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.AbstractIntegerDistribution" sourceFile="AbstractIntegerDistribution.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.BinomialDistribution" sourceFile="BinomialDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.BinomialDistributionImpl" sourceFile="BinomialDistributionImpl.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.CauchyDistribution" sourceFile="CauchyDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.CauchyDistributionImpl" sourceFile="CauchyDistributionImpl.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ChiSquaredDistribution" sourceFile="ChiSquaredDistribution.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ChiSquaredDistributionImpl" sourceFile="ChiSquaredDistributionImpl.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ContinuousDistribution" sourceFile="ContinuousDistribution.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.DiscreteDistribution" sourceFile="DiscreteDistribution.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.Distribution" sourceFile="Distribution.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.DistributionFactory" sourceFile="DistributionFactory.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.DistributionFactoryImpl" sourceFile="DistributionFactoryImpl.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ExponentialDistribution" sourceFile="ExponentialDistribution.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.ExponentialDistributionImpl" sourceFile="ExponentialDistributionImpl.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.FDistribution" sourceFile="FDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.FDistributionImpl" sourceFile="FDistributionImpl.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.GammaDistribution" sourceFile="GammaDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.GammaDistributionImpl" sourceFile="GammaDistributionImpl.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.HypergeometricDistribution" sourceFile="HypergeometricDistribution.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.HypergeometricDistributionImpl" sourceFile="HypergeometricDistributionImpl.java" interface="false" size="85" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.IntegerDistribution" sourceFile="IntegerDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.NormalDistribution" sourceFile="NormalDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.NormalDistributionImpl" sourceFile="NormalDistributionImpl.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PascalDistribution" sourceFile="PascalDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PascalDistributionImpl" sourceFile="PascalDistributionImpl.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PoissonDistribution" sourceFile="PoissonDistribution.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.PoissonDistributionImpl" sourceFile="PoissonDistributionImpl.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.TDistribution" sourceFile="TDistribution.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.TDistributionImpl" sourceFile="TDistributionImpl.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.WeibullDistribution" sourceFile="WeibullDistribution.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.distribution.WeibullDistributionImpl" sourceFile="WeibullDistributionImpl.java" interface="false" size="43" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.fraction" total_bugs="0" total_types="3" total_size="352">
+      <ClassStats class="org.apache.commons.math.fraction.Fraction" sourceFile="Fraction.java" interface="false" size="173" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.fraction.FractionFormat" sourceFile="FractionFormat.java" interface="false" size="112" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.fraction.ProperFractionFormat" sourceFile="ProperFractionFormat.java" interface="false" size="67" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.linear" total_bugs="4" total_types="9" total_size="1074" priority_2="2" priority_1="2">
+      <ClassStats class="org.apache.commons.math.linear.BigMatrix" sourceFile="BigMatrix.java" interface="true" size="34" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.BigMatrixImpl" sourceFile="BigMatrixImpl.java" interface="false" size="485" bugs="2" priority_2="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.math.linear.InvalidMatrixException" sourceFile="InvalidMatrixException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.MatrixIndexException" sourceFile="MatrixIndexException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.MatrixUtils" sourceFile="MatrixUtils.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.QRDecomposition" sourceFile="QRDecomposition.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.QRDecompositionImpl" sourceFile="QRDecompositionImpl.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealMatrix" sourceFile="RealMatrix.java" interface="true" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.linear.RealMatrixImpl" sourceFile="RealMatrixImpl.java" interface="false" size="385" bugs="2" priority_2="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.random" total_bugs="7" total_types="14" total_size="601" priority_2="4" priority_1="3">
+      <ClassStats class="org.apache.commons.math.random.AbstractRandomGenerator" sourceFile="AbstractRandomGenerator.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistribution" sourceFile="EmpiricalDistribution.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="122" bugs="3" priority_2="1" priority_1="2"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$1" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$ArrayDataAdapter" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$DataAdapter" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$DataAdapterFactory" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.EmpiricalDistributionImpl$StreamDataAdapter" sourceFile="EmpiricalDistributionImpl.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.JDKRandomGenerator" sourceFile="JDKRandomGenerator.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomAdaptor" sourceFile="RandomAdaptor.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomData" sourceFile="RandomData.java" interface="true" size="13" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.RandomDataImpl" sourceFile="RandomDataImpl.java" interface="false" size="178" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.math.random.RandomGenerator" sourceFile="RandomGenerator.java" interface="true" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.random.ValueServer" sourceFile="ValueServer.java" interface="false" size="113" bugs="2" priority_2="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.special" total_bugs="0" total_types="5" total_size="111">
+      <ClassStats class="org.apache.commons.math.special.Beta" sourceFile="Beta.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Beta$1" sourceFile="Beta.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Erf" sourceFile="Erf.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Gamma" sourceFile="Gamma.java" interface="false" size="54" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.special.Gamma$1" sourceFile="Gamma.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat" total_bugs="18" total_types="4" total_size="231" priority_2="18">
+      <ClassStats class="org.apache.commons.math.stat.Frequency" sourceFile="Frequency.java" interface="false" size="133" bugs="17" priority_2="17"/>
+      <ClassStats class="org.apache.commons.math.stat.Frequency$1" sourceFile="Frequency.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.Frequency$NaturalComparator" sourceFile="Frequency.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.math.stat.StatUtils" sourceFile="StatUtils.java" interface="false" size="91" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive" total_bugs="0" total_types="10" total_size="361">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.AbstractStorelessUnivariateStatistic" sourceFile="AbstractStorelessUnivariateStatistic.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic" sourceFile="AbstractUnivariateStatistic.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.DescriptiveStatistics" sourceFile="DescriptiveStatistics.java" interface="false" size="66" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.DescriptiveStatisticsImpl" sourceFile="DescriptiveStatisticsImpl.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StatisticalSummary" sourceFile="StatisticalSummary.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StatisticalSummaryValues" sourceFile="StatisticalSummaryValues.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.StorelessUnivariateStatistic" sourceFile="StorelessUnivariateStatistic.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.SummaryStatistics" sourceFile="SummaryStatistics.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.SummaryStatisticsImpl" sourceFile="SummaryStatisticsImpl.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.UnivariateStatistic" sourceFile="UnivariateStatistic.java" interface="true" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive.moment" total_bugs="0" total_types="10" total_size="381">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.FirstMoment" sourceFile="FirstMoment.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.FourthMoment" sourceFile="FourthMoment.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.GeometricMean" sourceFile="GeometricMean.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Kurtosis" sourceFile="Kurtosis.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Mean" sourceFile="Mean.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.SecondMoment" sourceFile="SecondMoment.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Skewness" sourceFile="Skewness.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.StandardDeviation" sourceFile="StandardDeviation.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.ThirdMoment" sourceFile="ThirdMoment.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.moment.Variance" sourceFile="Variance.java" interface="false" size="83" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive.rank" total_bugs="0" total_types="4" total_size="111">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Max" sourceFile="Max.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Median" sourceFile="Median.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Min" sourceFile="Min.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.rank.Percentile" sourceFile="Percentile.java" interface="false" size="46" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.descriptive.summary" total_bugs="0" total_types="4" total_size="120">
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.Product" sourceFile="Product.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.Sum" sourceFile="Sum.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.SumOfLogs" sourceFile="SumOfLogs.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.descriptive.summary.SumOfSquares" sourceFile="SumOfSquares.java" interface="false" size="30" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.inference" total_bugs="0" total_types="7" total_size="317">
+      <ClassStats class="org.apache.commons.math.stat.inference.ChiSquareTest" sourceFile="ChiSquareTest.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.ChiSquareTestImpl" sourceFile="ChiSquareTestImpl.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TTest" sourceFile="TTest.java" interface="true" size="21" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TTestImpl" sourceFile="TTestImpl.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TestFactory" sourceFile="TestFactory.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TestFactoryImpl" sourceFile="TestFactoryImpl.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.stat.inference.TestUtils" sourceFile="TestUtils.java" interface="false" size="65" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.stat.regression" total_bugs="0" total_types="1" total_size="100">
+      <ClassStats class="org.apache.commons.math.stat.regression.SimpleRegression" sourceFile="SimpleRegression.java" interface="false" size="100" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.math.util" total_bugs="4" total_types="7" total_size="470" priority_2="3" priority_1="1">
+      <ClassStats class="org.apache.commons.math.util.ContinuedFraction" sourceFile="ContinuedFraction.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.DefaultTransformer" sourceFile="DefaultTransformer.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.DoubleArray" sourceFile="DoubleArray.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.MathUtils" sourceFile="MathUtils.java" interface="false" size="186" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.math.util.NumberTransformer" sourceFile="NumberTransformer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.math.util.ResizableDoubleArray" sourceFile="ResizableDoubleArray.java" interface="false" size="179" bugs="3" priority_2="3"/>
+      <ClassStats class="org.apache.commons.math.util.TransformerMap" sourceFile="TransformerMap.java" interface="false" size="36" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="787" invocations="1077" avgMicrosecondsPerInvocation="731" maxMicrosecondsPerInvocation="110175" standardDeviationMircosecondsPerInvocation="4745"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="649" invocations="1077" avgMicrosecondsPerInvocation="603" maxMicrosecondsPerInvocation="44270" standardDeviationMircosecondsPerInvocation="3054"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="602" invocations="1077" avgMicrosecondsPerInvocation="559" maxMicrosecondsPerInvocation="44945" standardDeviationMircosecondsPerInvocation="2744"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="569" invocations="1093" avgMicrosecondsPerInvocation="521" maxMicrosecondsPerInvocation="28549" standardDeviationMircosecondsPerInvocation="2293"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="521" invocations="1083" avgMicrosecondsPerInvocation="481" maxMicrosecondsPerInvocation="56168" standardDeviationMircosecondsPerInvocation="2923"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="401" invocations="901" avgMicrosecondsPerInvocation="445" maxMicrosecondsPerInvocation="20424" standardDeviationMircosecondsPerInvocation="1391"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="398" invocations="1077" avgMicrosecondsPerInvocation="369" maxMicrosecondsPerInvocation="43563" standardDeviationMircosecondsPerInvocation="2026"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="393" invocations="146" avgMicrosecondsPerInvocation="2691" maxMicrosecondsPerInvocation="277998" standardDeviationMircosecondsPerInvocation="23032"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="377" invocations="1610" avgMicrosecondsPerInvocation="234" maxMicrosecondsPerInvocation="31161" standardDeviationMircosecondsPerInvocation="1612"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="371" invocations="262" avgMicrosecondsPerInvocation="1418" maxMicrosecondsPerInvocation="65404" standardDeviationMircosecondsPerInvocation="5639"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="357" invocations="887" avgMicrosecondsPerInvocation="402" maxMicrosecondsPerInvocation="52575" standardDeviationMircosecondsPerInvocation="2572"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="313" invocations="262" avgMicrosecondsPerInvocation="1197" maxMicrosecondsPerInvocation="25838" standardDeviationMircosecondsPerInvocation="3559"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="240" invocations="1077" avgMicrosecondsPerInvocation="223" maxMicrosecondsPerInvocation="57337" standardDeviationMircosecondsPerInvocation="2137"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="195" invocations="146" avgMicrosecondsPerInvocation="1340" maxMicrosecondsPerInvocation="40021" standardDeviationMircosecondsPerInvocation="4641"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="187" invocations="1354" avgMicrosecondsPerInvocation="138" maxMicrosecondsPerInvocation="66467" standardDeviationMircosecondsPerInvocation="1941"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="186" invocations="146" avgMicrosecondsPerInvocation="1279" maxMicrosecondsPerInvocation="25593" standardDeviationMircosecondsPerInvocation="3957"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="184" invocations="262" avgMicrosecondsPerInvocation="703" maxMicrosecondsPerInvocation="32301" standardDeviationMircosecondsPerInvocation="3198"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="178" invocations="146" avgMicrosecondsPerInvocation="1222" maxMicrosecondsPerInvocation="20408" standardDeviationMircosecondsPerInvocation="4177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="170" invocations="904" avgMicrosecondsPerInvocation="188" maxMicrosecondsPerInvocation="24105" standardDeviationMircosecondsPerInvocation="1136"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="168" invocations="146" avgMicrosecondsPerInvocation="1153" maxMicrosecondsPerInvocation="40458" standardDeviationMircosecondsPerInvocation="4579"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="155" invocations="321" avgMicrosecondsPerInvocation="485" maxMicrosecondsPerInvocation="44568" standardDeviationMircosecondsPerInvocation="2954"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="143" invocations="1354" avgMicrosecondsPerInvocation="106" maxMicrosecondsPerInvocation="30480" standardDeviationMircosecondsPerInvocation="1204"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="141" invocations="146" avgMicrosecondsPerInvocation="965" maxMicrosecondsPerInvocation="26438" standardDeviationMircosecondsPerInvocation="3606"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="140" invocations="7385" avgMicrosecondsPerInvocation="18" maxMicrosecondsPerInvocation="17625" standardDeviationMircosecondsPerInvocation="388"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="137" invocations="146" avgMicrosecondsPerInvocation="943" maxMicrosecondsPerInvocation="23782" standardDeviationMircosecondsPerInvocation="3325"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="109" invocations="146" avgMicrosecondsPerInvocation="750" maxMicrosecondsPerInvocation="31335" standardDeviationMircosecondsPerInvocation="3781"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="106" invocations="262" avgMicrosecondsPerInvocation="405" maxMicrosecondsPerInvocation="20352" standardDeviationMircosecondsPerInvocation="2083"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteRecursiveLoop" totalMilliseconds="94" invocations="146" avgMicrosecondsPerInvocation="645" maxMicrosecondsPerInvocation="24289" standardDeviationMircosecondsPerInvocation="3154"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="91" invocations="146" avgMicrosecondsPerInvocation="625" maxMicrosecondsPerInvocation="24428" standardDeviationMircosecondsPerInvocation="2547"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="89" invocations="262" avgMicrosecondsPerInvocation="340" maxMicrosecondsPerInvocation="18282" standardDeviationMircosecondsPerInvocation="1670"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="88" invocations="1077" avgMicrosecondsPerInvocation="82" maxMicrosecondsPerInvocation="24096" standardDeviationMircosecondsPerInvocation="871"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindFieldSelfAssignment" totalMilliseconds="88" invocations="146" avgMicrosecondsPerInvocation="605" maxMicrosecondsPerInvocation="28460" standardDeviationMircosecondsPerInvocation="3325"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="88" invocations="146" avgMicrosecondsPerInvocation="603" maxMicrosecondsPerInvocation="26394" standardDeviationMircosecondsPerInvocation="2803"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="83" invocations="146" avgMicrosecondsPerInvocation="571" maxMicrosecondsPerInvocation="47559" standardDeviationMircosecondsPerInvocation="4241"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RepeatedConditionals" totalMilliseconds="82" invocations="146" avgMicrosecondsPerInvocation="564" maxMicrosecondsPerInvocation="28276" standardDeviationMircosecondsPerInvocation="2898"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.Naming" totalMilliseconds="80" invocations="146" avgMicrosecondsPerInvocation="548" maxMicrosecondsPerInvocation="20252" standardDeviationMircosecondsPerInvocation="2555"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="78" invocations="262" avgMicrosecondsPerInvocation="300" maxMicrosecondsPerInvocation="17197" standardDeviationMircosecondsPerInvocation="1556"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

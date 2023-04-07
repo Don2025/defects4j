@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680421849383" analysisTimestamp="1680692136560" release="">
+  <Project projectName="">
+    <Jar>JacksonXml/2_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="1" rank="12" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="31" end="204" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" name="isOutputAsAttribute" signature="(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="110" end="114" startBytecode="0" endBytecode="128" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="114" end="114" startBytecode="35" endBytecode="35" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="1" rank="12" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="31" end="204" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" name="isOutputAsCData" signature="(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="129" end="133" startBytecode="0" endBytecode="128" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="133" end="133" startBytecode="35" endBytecode="35" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="1" rank="12" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="31" end="204" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" name="isOutputAsText" signature="(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="120" end="124" startBytecode="0" endBytecode="128" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" start="124" end="124" startBytecode="35" endBytecode="35" sourcefile="JacksonXmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlAnnotationIntrospector.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" start="30" end="123" sourcefile="JacksonXmlModule.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlModule.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" name="setupModule" signature="(Lcom/fasterxml/jackson/databind/Module$SetupContext;)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" start="57" end="73" startBytecode="0" endBytecode="31" sourcefile="JacksonXmlModule.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlModule.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <String value="" role="STRING_CONSTANT"/>
+    <Field classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" name="_cfgNameForTextElement" signature="Ljava/lang/String;" isStatic="false" role="FIELD_VALUE_OF">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" sourcefile="JacksonXmlModule.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlModule.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" start="64" end="64" startBytecode="46" endBytecode="46" sourcefile="JacksonXmlModule.java" sourcepath="com/fasterxml/jackson/dataformat/xml/JacksonXmlModule.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.EMPTY_AND_UNKNOWN" value="true"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="1" rank="12" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$JaxbWrapper">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$JaxbWrapper" start="160" end="188" sourcefile="XmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/XmlAnnotationIntrospector.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$JaxbWrapper" name="isOutputAsCData" signature="(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$JaxbWrapper" start="182" end="182" startBytecode="0" endBytecode="53" sourcefile="XmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/XmlAnnotationIntrospector.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$JaxbWrapper" start="182" end="182" startBytecode="1" endBytecode="1" sourcefile="XmlAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/XmlAnnotationIntrospector.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" start="23" end="981" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" name="getBinaryValue" signature="(Lcom/fasterxml/jackson/core/Base64Variant;)[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" start="843" end="857" startBytecode="0" endBytecode="231" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" name="_binaryValue" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" start="857" end="857" startBytecode="118" endBytecode="118" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" start="23" end="981" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" name="nextTextValue" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" start="604" end="694" startBytecode="0" endBytecode="831" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" start="644" end="692" startBytecode="179" endBytecode="459" sourcefile="FromXmlParser.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/FromXmlParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext" start="18" end="198" sourcefile="XmlReadContext.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/XmlReadContext.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext" name="toString" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext" start="176" end="198" startBytecode="0" endBytecode="264" sourcefile="XmlReadContext.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/XmlReadContext.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext" start="177" end="195" startBytecode="14" endBytecode="128" sourcefile="XmlReadContext.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/XmlReadContext.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream" start="68" end="523" sourcefile="XmlTokenStream.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/XmlTokenStream.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream" name="_next" signature="()I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream" start="311" end="355" startBytecode="0" endBytecode="390" sourcefile="XmlTokenStream.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/XmlTokenStream.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream" start="313" end="316" startBytecode="51" endBytecode="54" sourcefile="XmlTokenStream.java" sourcepath="com/fasterxml/jackson/dataformat/xml/deser/XmlTokenStream.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="1" rank="12" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.jaxb.XmlJaxbAnnotationIntrospector">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.jaxb.XmlJaxbAnnotationIntrospector" start="30" end="127" sourcefile="XmlJaxbAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/jaxb/XmlJaxbAnnotationIntrospector.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.jaxb.XmlJaxbAnnotationIntrospector" name="isOutputAsCData" signature="(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.jaxb.XmlJaxbAnnotationIntrospector" start="61" end="61" startBytecode="0" endBytecode="53" sourcefile="XmlJaxbAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/jaxb/XmlJaxbAnnotationIntrospector.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.jaxb.XmlJaxbAnnotationIntrospector" start="61" end="61" startBytecode="1" endBytecode="1" sourcefile="XmlJaxbAnnotationIntrospector.java" sourcepath="com/fasterxml/jackson/dataformat/xml/jaxb/XmlJaxbAnnotationIntrospector.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerBase">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerBase" start="35" end="394" sourcefile="XmlBeanSerializerBase.java" sourcepath="com/fasterxml/jackson/dataformat/xml/ser/XmlBeanSerializerBase.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerBase" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerBase" start="35" end="35" startBytecode="0" endBytecode="36" sourcefile="XmlBeanSerializerBase.java" sourcepath="com/fasterxml/jackson/dataformat/xml/ser/XmlBeanSerializerBase.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerBase" start="35" end="35" startBytecode="6" endBytecode="6" sourcefile="XmlBeanSerializerBase.java" sourcepath="com/fasterxml/jackson/dataformat/xml/ser/XmlBeanSerializerBase.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="8" end="78" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" name="findIsAttributeAnnotation" signature="(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="32" end="45" startBytecode="0" endBytecode="247" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="45" end="45" startBytecode="88" endBytecode="88" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="8" end="78" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" name="findIsCDataAnnotation" signature="(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="70" end="78" startBytecode="0" endBytecode="184" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="78" end="78" startBytecode="60" endBytecode="60" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="8" end="78" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" name="findIsTextAnnotation" signature="(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Boolean;" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="51" end="64" startBytecode="0" endBytecode="247" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" start="64" end="64" startBytecode="88" endBytecode="88" sourcefile="AnnotationUtil.java" sourcepath="com/fasterxml/jackson/dataformat/xml/util/AnnotationUtil.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="79">
+    <MissingClass>com.fasterxml.jackson.annotation.JsonTypeInfo$As</MissingClass>
+    <MissingClass>com.fasterxml.jackson.annotation.JsonTypeInfo$Id</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.FormatFeature</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonEncoding</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonFactory</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonGenerationException</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonGenerator</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonGenerator$Feature</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonLocation</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonParser</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonParser$Feature</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonStreamContext</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.JsonToken</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.ObjectCodec</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.PrettyPrinter</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.SerializableString</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.Versioned</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.base.GeneratorBase</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.base.ParserMinimalBase</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.format.InputAccessor</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.format.MatchStrength</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.io.CharTypes</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.io.IOContext</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.io.InputDecorator</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.json.JsonWriteContext</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.util.ByteArrayBuilder</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.util.Instantiatable</MissingClass>
+    <MissingClass>com.fasterxml.jackson.core.util.VersionUtil</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.AnnotationIntrospector</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.BeanDescription</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.DeserializationConfig</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.DeserializationContext</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.JavaType</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.JsonDeserializer</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.JsonMappingException</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.JsonMappingException$Reference</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.JsonSerializer</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.Module$SetupContext</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ObjectMapper</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.PropertyName</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.SerializationConfig</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.SerializerProvider</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.cfg.MapperConfig</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.deser.BeanDeserializerBase</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.deser.BeanDeserializerModifier</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.deser.SettableBeanProperty</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.deser.ValueInstantiator</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.introspect.Annotated</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.introspect.AnnotatedClass</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.introspect.AnnotatedParameter</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.introspect.BeanPropertyDefinition</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.jsontype.TypeSerializer</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.jsontype.impl.ClassNameIdResolver</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.jsontype.impl.MinimalClassNameIdResolver</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.jsontype.impl.StdTypeResolverBuilder</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.module.SimpleModule</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.AnyGetterWriter</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.BeanPropertyWriter</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.BeanSerializerModifier</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.DefaultSerializerProvider</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.PropertyFilter</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.impl.BeanAsArraySerializer</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.impl.PropertySerializerMap</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.ser.std.BeanSerializerBase</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.type.ClassKey</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.type.TypeFactory</MissingClass>
+    <MissingClass>com.fasterxml.jackson.databind.util.LRUMap</MissingClass>
+    <MissingClass>com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector</MissingClass>
+    <MissingClass>org.codehaus.stax2.LocationInfo</MissingClass>
+    <MissingClass>org.codehaus.stax2.XMLStreamLocation2</MissingClass>
+    <MissingClass>org.codehaus.stax2.XMLStreamReader2</MissingClass>
+    <MissingClass>org.codehaus.stax2.XMLStreamWriter2</MissingClass>
+    <MissingClass>org.codehaus.stax2.io.Stax2ByteArraySource</MissingClass>
+    <MissingClass>org.codehaus.stax2.io.Stax2CharArraySource</MissingClass>
+    <MissingClass>org.codehaus.stax2.ri.Stax2ReaderAdapter</MissingClass>
+    <MissingClass>org.codehaus.stax2.ri.Stax2WriterAdapter</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 15:50:49 +0800" total_classes="48" referenced_classes="116" total_bugs="14" total_size="2983" num_packages="6" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="46.19" clock_seconds="10.04" peak_mbytes="290.70" alloc_mbytes="683.00" gc_seconds="0.61" priority_2="9" priority_1="5">
+    <PackageStats package="com.fasterxml.jackson.dataformat.xml" total_bugs="5" total_types="14" total_size="660" priority_2="1" priority_1="4">
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.JacksonXmlAnnotationIntrospector" sourceFile="JacksonXmlAnnotationIntrospector.java" interface="false" size="78" bugs="3" priority_1="3"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.JacksonXmlModule" sourceFile="JacksonXmlModule.java" interface="false" size="26" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.PackageVersion" sourceFile="PackageVersion.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector" sourceFile="XmlAnnotationIntrospector.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$JaxbWrapper" sourceFile="XmlAnnotationIntrospector.java" interface="false" size="16" bugs="1" priority_1="1"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlAnnotationIntrospector$Pair" sourceFile="XmlAnnotationIntrospector.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlFactory" sourceFile="XmlFactory.java" interface="false" size="323" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlMapper" sourceFile="XmlMapper.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlPrettyPrinter" sourceFile="XmlPrettyPrinter.java" interface="true" size="15" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlTypeResolverBuilder" sourceFile="XmlTypeResolverBuilder.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlTypeResolverBuilder$1" sourceFile="XmlTypeResolverBuilder.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlTypeResolverBuilder$XmlClassNameIdResolver" sourceFile="XmlTypeResolverBuilder.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.XmlTypeResolverBuilder$XmlMinimalClassNameIdResolver" sourceFile="XmlTypeResolverBuilder.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.dataformat.xml.annotation" total_bugs="0" total_types="6" total_size="17">
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData" sourceFile="JacksonXmlCData.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper" sourceFile="JacksonXmlElementWrapper.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty" sourceFile="JacksonXmlProperty.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement" sourceFile="JacksonXmlRootElement.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText" sourceFile="JacksonXmlText.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.annotation.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.dataformat.xml.deser" total_bugs="4" total_types="9" total_size="859" priority_2="4">
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.ElementWrapper" sourceFile="ElementWrapper.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser" sourceFile="FromXmlParser.java" interface="false" size="351" bugs="2" priority_2="2"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser$1" sourceFile="FromXmlParser.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser$Feature" sourceFile="FromXmlParser.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer" sourceFile="WrapperHandlingDeserializer.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.XmlBeanDeserializerModifier" sourceFile="XmlBeanDeserializerModifier.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext" sourceFile="XmlReadContext.java" interface="false" size="82" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.XmlTextDeserializer" sourceFile="XmlTextDeserializer.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream" sourceFile="XmlTokenStream.java" interface="false" size="212" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.dataformat.xml.jaxb" total_bugs="1" total_types="1" total_size="48" priority_1="1">
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.jaxb.XmlJaxbAnnotationIntrospector" sourceFile="XmlJaxbAnnotationIntrospector.java" interface="false" size="48" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.dataformat.xml.ser" total_bugs="1" total_types="8" total_size="1006" priority_2="1">
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator" sourceFile="ToXmlGenerator.java" interface="false" size="482" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator$Feature" sourceFile="ToXmlGenerator.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.UnwrappingXmlBeanSerializer" sourceFile="UnwrappingXmlBeanSerializer.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanPropertyWriter" sourceFile="XmlBeanPropertyWriter.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializer" sourceFile="XmlBeanSerializer.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerBase" sourceFile="XmlBeanSerializerBase.java" interface="false" size="200" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.XmlBeanSerializerModifier" sourceFile="XmlBeanSerializerModifier.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider" sourceFile="XmlSerializerProvider.java" interface="false" size="134" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.dataformat.xml.util" total_bugs="3" total_types="10" total_size="393" priority_2="3">
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.AnnotationUtil" sourceFile="AnnotationUtil.java" interface="false" size="47" bugs="3" priority_2="3"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.DefaultXmlPrettyPrinter" sourceFile="DefaultXmlPrettyPrinter.java" interface="false" size="168" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.DefaultXmlPrettyPrinter$FixedSpaceIndenter" sourceFile="DefaultXmlPrettyPrinter.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.DefaultXmlPrettyPrinter$Indenter" sourceFile="DefaultXmlPrettyPrinter.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.DefaultXmlPrettyPrinter$Lf2SpacesIndenter" sourceFile="DefaultXmlPrettyPrinter.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.DefaultXmlPrettyPrinter$NopIndenter" sourceFile="DefaultXmlPrettyPrinter.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.StaxUtil" sourceFile="StaxUtil.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.TypeUtil" sourceFile="TypeUtil.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.XmlInfo" sourceFile="XmlInfo.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.dataformat.xml.util.XmlRootNameLookup" sourceFile="XmlRootNameLookup.java" interface="false" size="50" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="598" invocations="463" avgMicrosecondsPerInvocation="1292" maxMicrosecondsPerInvocation="78760" standardDeviationMircosecondsPerInvocation="6322"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="557" invocations="697" avgMicrosecondsPerInvocation="800" maxMicrosecondsPerInvocation="44059" standardDeviationMircosecondsPerInvocation="3287"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="445" invocations="445" avgMicrosecondsPerInvocation="1000" maxMicrosecondsPerInvocation="50618" standardDeviationMircosecondsPerInvocation="4343"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindJSR166LockMonitorenter" totalMilliseconds="404" invocations="48" avgMicrosecondsPerInvocation="8424" maxMicrosecondsPerInvocation="399359" standardDeviationMircosecondsPerInvocation="57024"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="355" invocations="457" avgMicrosecondsPerInvocation="778" maxMicrosecondsPerInvocation="131595" standardDeviationMircosecondsPerInvocation="6484"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="318" invocations="498" avgMicrosecondsPerInvocation="639" maxMicrosecondsPerInvocation="30052" standardDeviationMircosecondsPerInvocation="2538"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="309" invocations="498" avgMicrosecondsPerInvocation="621" maxMicrosecondsPerInvocation="37653" standardDeviationMircosecondsPerInvocation="2646"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="299" invocations="116" avgMicrosecondsPerInvocation="2580" maxMicrosecondsPerInvocation="55251" standardDeviationMircosecondsPerInvocation="7515"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="295" invocations="364" avgMicrosecondsPerInvocation="811" maxMicrosecondsPerInvocation="61023" standardDeviationMircosecondsPerInvocation="4133"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="290" invocations="773" avgMicrosecondsPerInvocation="375" maxMicrosecondsPerInvocation="37159" standardDeviationMircosecondsPerInvocation="2281"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="272" invocations="495" avgMicrosecondsPerInvocation="551" maxMicrosecondsPerInvocation="163230" standardDeviationMircosecondsPerInvocation="7442"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="263" invocations="463" avgMicrosecondsPerInvocation="569" maxMicrosecondsPerInvocation="25857" standardDeviationMircosecondsPerInvocation="2106"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="201" invocations="702" avgMicrosecondsPerInvocation="287" maxMicrosecondsPerInvocation="27100" standardDeviationMircosecondsPerInvocation="1606"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="192" invocations="116" avgMicrosecondsPerInvocation="1656" maxMicrosecondsPerInvocation="22354" standardDeviationMircosecondsPerInvocation="4191"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReadOfInstanceFieldInMethodInvokedByConstructorInSuperclass" totalMilliseconds="179" invocations="48" avgMicrosecondsPerInvocation="3746" maxMicrosecondsPerInvocation="144334" standardDeviationMircosecondsPerInvocation="20877"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="166" invocations="48" avgMicrosecondsPerInvocation="3470" maxMicrosecondsPerInvocation="36453" standardDeviationMircosecondsPerInvocation="8132"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="147" invocations="203" avgMicrosecondsPerInvocation="728" maxMicrosecondsPerInvocation="44218" standardDeviationMircosecondsPerInvocation="4094"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="147" invocations="48" avgMicrosecondsPerInvocation="3071" maxMicrosecondsPerInvocation="83960" standardDeviationMircosecondsPerInvocation="12448"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="140" invocations="495" avgMicrosecondsPerInvocation="284" maxMicrosecondsPerInvocation="24142" standardDeviationMircosecondsPerInvocation="1959"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="133" invocations="48" avgMicrosecondsPerInvocation="2777" maxMicrosecondsPerInvocation="49631" standardDeviationMircosecondsPerInvocation="8877"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="123" invocations="116" avgMicrosecondsPerInvocation="1064" maxMicrosecondsPerInvocation="34126" standardDeviationMircosecondsPerInvocation="4512"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="113" invocations="116" avgMicrosecondsPerInvocation="977" maxMicrosecondsPerInvocation="30501" standardDeviationMircosecondsPerInvocation="4221"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="112" invocations="551" avgMicrosecondsPerInvocation="203" maxMicrosecondsPerInvocation="14809" standardDeviationMircosecondsPerInvocation="1164"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="110" invocations="48" avgMicrosecondsPerInvocation="2309" maxMicrosecondsPerInvocation="60433" standardDeviationMircosecondsPerInvocation="8714"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="100" invocations="116" avgMicrosecondsPerInvocation="865" maxMicrosecondsPerInvocation="29781" standardDeviationMircosecondsPerInvocation="3434"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="99" invocations="48" avgMicrosecondsPerInvocation="2081" maxMicrosecondsPerInvocation="53083" standardDeviationMircosecondsPerInvocation="7874"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="89" invocations="116" avgMicrosecondsPerInvocation="775" maxMicrosecondsPerInvocation="29021" standardDeviationMircosecondsPerInvocation="3783"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="84" invocations="48" avgMicrosecondsPerInvocation="1770" maxMicrosecondsPerInvocation="40947" standardDeviationMircosecondsPerInvocation="6156"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="83" invocations="7586" avgMicrosecondsPerInvocation="11" maxMicrosecondsPerInvocation="13402" standardDeviationMircosecondsPerInvocation="247"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="80" invocations="48" avgMicrosecondsPerInvocation="1669" maxMicrosecondsPerInvocation="30037" standardDeviationMircosecondsPerInvocation="5702"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="79" invocations="463" avgMicrosecondsPerInvocation="170" maxMicrosecondsPerInvocation="10640" standardDeviationMircosecondsPerInvocation="950"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680403123974" analysisTimestamp="1680692220201" release="">
+  <Project projectName="">
+    <Jar>Mockito/38_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.exceptions.base.MockitoAssertionError">
+      <SourceLine classname="org.mockito.exceptions.base.MockitoAssertionError" start="17" end="26" sourcefile="MockitoAssertionError.java" sourcepath="org/mockito/exceptions/base/MockitoAssertionError.java"/>
+    </Class>
+    <Method classname="org.mockito.exceptions.base.MockitoAssertionError" name="getUnfilteredStackTrace" signature="()[Ljava/lang/StackTraceElement;" isStatic="false">
+      <SourceLine classname="org.mockito.exceptions.base.MockitoAssertionError" start="26" end="26" startBytecode="0" endBytecode="46" sourcefile="MockitoAssertionError.java" sourcepath="org/mockito/exceptions/base/MockitoAssertionError.java"/>
+    </Method>
+    <Field classname="org.mockito.exceptions.base.MockitoAssertionError" name="unfilteredStackTrace" signature="[Ljava/lang/StackTraceElement;" isStatic="false">
+      <SourceLine classname="org.mockito.exceptions.base.MockitoAssertionError" sourcefile="MockitoAssertionError.java" sourcepath="org/mockito/exceptions/base/MockitoAssertionError.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.exceptions.base.MockitoAssertionError" start="26" end="26" startBytecode="4" endBytecode="4" sourcefile="MockitoAssertionError.java" sourcepath="org/mockito/exceptions/base/MockitoAssertionError.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.exceptions.base.MockitoException">
+      <SourceLine classname="org.mockito.exceptions.base.MockitoException" start="17" end="34" sourcefile="MockitoException.java" sourcepath="org/mockito/exceptions/base/MockitoException.java"/>
+    </Class>
+    <Method classname="org.mockito.exceptions.base.MockitoException" name="getUnfilteredStackTrace" signature="()[Ljava/lang/StackTraceElement;" isStatic="false">
+      <SourceLine classname="org.mockito.exceptions.base.MockitoException" start="34" end="34" startBytecode="0" endBytecode="46" sourcefile="MockitoException.java" sourcepath="org/mockito/exceptions/base/MockitoException.java"/>
+    </Method>
+    <Field classname="org.mockito.exceptions.base.MockitoException" name="unfilteredStackTrace" signature="[Ljava/lang/StackTraceElement;" isStatic="false">
+      <SourceLine classname="org.mockito.exceptions.base.MockitoException" sourcefile="MockitoException.java" sourcepath="org/mockito/exceptions/base/MockitoException.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.exceptions.base.MockitoException" start="34" end="34" startBytecode="4" endBytecode="4" sourcefile="MockitoException.java" sourcepath="org/mockito/exceptions/base/MockitoException.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent">
+      <SourceLine classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" start="19" end="33" sourcefile="ArgumentsAreDifferent.java" sourcepath="org/mockito/exceptions/verification/junit/ArgumentsAreDifferent.java"/>
+    </Class>
+    <Method classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" name="getUnfilteredStackTrace" signature="()[Ljava/lang/StackTraceElement;" isStatic="false">
+      <SourceLine classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" start="33" end="33" startBytecode="0" endBytecode="46" sourcefile="ArgumentsAreDifferent.java" sourcepath="org/mockito/exceptions/verification/junit/ArgumentsAreDifferent.java"/>
+    </Method>
+    <Field classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" name="unfilteredStackTrace" signature="[Ljava/lang/StackTraceElement;" isStatic="false">
+      <SourceLine classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" sourcefile="ArgumentsAreDifferent.java" sourcepath="org/mockito/exceptions/verification/junit/ArgumentsAreDifferent.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" start="33" end="33" startBytecode="4" endBytecode="4" sourcefile="ArgumentsAreDifferent.java" sourcepath="org/mockito/exceptions/verification/junit/ArgumentsAreDifferent.java"/>
+  </BugInstance>
+  <BugInstance type="BX_BOXING_IMMEDIATELY_UNBOXED" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.creation.MethodInterceptorFilter">
+      <SourceLine classname="org.mockito.internal.creation.MethodInterceptorFilter" start="22" end="54" sourcefile="MethodInterceptorFilter.java" sourcepath="org/mockito/internal/creation/MethodInterceptorFilter.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.creation.MethodInterceptorFilter" name="hashCodeForMock" signature="(Ljava/lang/Object;)I" isStatic="false">
+      <SourceLine classname="org.mockito.internal.creation.MethodInterceptorFilter" start="50" end="50" startBytecode="0" endBytecode="84" sourcefile="MethodInterceptorFilter.java" sourcepath="org/mockito/internal/creation/MethodInterceptorFilter.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.creation.MethodInterceptorFilter" start="50" end="50" startBytecode="11" endBytecode="11" sourcefile="MethodInterceptorFilter.java" sourcepath="org/mockito/internal/creation/MethodInterceptorFilter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.creation.MethodInterceptorFilter">
+      <SourceLine classname="org.mockito.internal.creation.MethodInterceptorFilter" start="22" end="54" sourcefile="MethodInterceptorFilter.java" sourcepath="org/mockito/internal/creation/MethodInterceptorFilter.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.creation.MethodInterceptorFilter" name="hashCodeForMock" signature="(Ljava/lang/Object;)I" isStatic="false">
+      <SourceLine classname="org.mockito.internal.creation.MethodInterceptorFilter" start="50" end="50" startBytecode="0" endBytecode="84" sourcefile="MethodInterceptorFilter.java" sourcepath="org/mockito/internal/creation/MethodInterceptorFilter.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.creation.MethodInterceptorFilter" start="50" end="50" startBytecode="8" endBytecode="8" sourcefile="MethodInterceptorFilter.java" sourcepath="org/mockito/internal/creation/MethodInterceptorFilter.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.internal.creation.MockSettingsImpl">
+      <SourceLine classname="org.mockito.internal.creation.MockSettingsImpl" start="11" end="63" sourcefile="MockSettingsImpl.java" sourcepath="org/mockito/internal/creation/MockSettingsImpl.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.creation.MockSettingsImpl" name="getExtraInterfaces" signature="()[Ljava/lang/Class;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.creation.MockSettingsImpl" start="39" end="39" startBytecode="0" endBytecode="46" sourcefile="MockSettingsImpl.java" sourcepath="org/mockito/internal/creation/MockSettingsImpl.java"/>
+    </Method>
+    <Field classname="org.mockito.internal.creation.MockSettingsImpl" name="extraInterfaces" signature="[Ljava/lang/Class;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.creation.MockSettingsImpl" sourcefile="MockSettingsImpl.java" sourcepath="org/mockito/internal/creation/MockSettingsImpl.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.internal.creation.MockSettingsImpl" start="39" end="39" startBytecode="4" endBytecode="4" sourcefile="MockSettingsImpl.java" sourcepath="org/mockito/internal/creation/MockSettingsImpl.java"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.invocation.AllInvocationsFinder$SequenceNumberComparator">
+      <SourceLine classname="org.mockito.internal.invocation.AllInvocationsFinder$SequenceNumberComparator" start="33" end="37" sourcefile="AllInvocationsFinder.java" sourcepath="org/mockito/internal/invocation/AllInvocationsFinder.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.internal.invocation.Invocation">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" start="48" end="224" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.invocation.Invocation" name="getArguments" signature="()[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" start="89" end="89" startBytecode="0" endBytecode="46" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Method>
+    <Field classname="org.mockito.internal.invocation.Invocation" name="arguments" signature="[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.internal.invocation.Invocation" start="89" end="89" startBytecode="4" endBytecode="4" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.internal.invocation.Invocation">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" start="48" end="224" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.invocation.Invocation" name="getRawArguments" signature="()[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" start="216" end="216" startBytecode="0" endBytecode="46" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Method>
+    <Field classname="org.mockito.internal.invocation.Invocation" name="rawArguments" signature="[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.internal.invocation.Invocation" start="216" end="216" startBytecode="4" endBytecode="4" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.mockito.internal.invocation.Invocation">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" start="48" end="224" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.invocation.Invocation" name="&lt;init&gt;" signature="(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;ILorg/mockito/internal/invocation/realmethod/RealMethod;)V" isStatic="false">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" start="48" end="56" startBytecode="0" endBytecode="178" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Method>
+    <Field classname="org.mockito.internal.invocation.Invocation" name="rawArguments" signature="[Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.invocation.Invocation" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+    </Field>
+    <LocalVariable name="args" register="3" pc="34" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.mockito.internal.invocation.Invocation" start="53" end="53" startBytecode="34" endBytecode="34" sourcefile="Invocation.java" sourcepath="org/mockito/internal/invocation/Invocation.java"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.invocation.InvocationsFinder$RemoveNotMatching">
+      <SourceLine classname="org.mockito.internal.invocation.InvocationsFinder$RemoveNotMatching" start="125" end="133" sourcefile="InvocationsFinder.java" sourcepath="org/mockito/internal/invocation/InvocationsFinder.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.invocation.InvocationsFinder$RemoveUnverifiedInOrder">
+      <SourceLine classname="org.mockito.internal.invocation.InvocationsFinder$RemoveUnverifiedInOrder" start="137" end="139" sourcefile="InvocationsFinder.java" sourcepath="org/mockito/internal/invocation/InvocationsFinder.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH" priority="1" rank="6" abbrev="NP" category="CORRECTNESS">
+    <Class classname="org.mockito.internal.stubbing.BaseStubbing">
+      <SourceLine classname="org.mockito.internal.stubbing.BaseStubbing" start="13" end="58" sourcefile="BaseStubbing.java" sourcepath="org/mockito/internal/stubbing/BaseStubbing.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.stubbing.BaseStubbing" name="thenThrow" signature="([Ljava/lang/Throwable;)Lorg/mockito/stubbing/OngoingStubbing;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.stubbing.BaseStubbing" start="34" end="45" startBytecode="0" endBytecode="236" sourcefile="BaseStubbing.java" sourcepath="org/mockito/internal/stubbing/BaseStubbing.java"/>
+    </Method>
+    <LocalVariable name="throwables" register="1" pc="17" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.mockito.internal.stubbing.BaseStubbing" start="38" end="38" startBytecode="18" endBytecode="18" sourcefile="BaseStubbing.java" sourcepath="org/mockito/internal/stubbing/BaseStubbing.java" role="SOURCE_LINE_DEREF"/>
+    <SourceLine classname="org.mockito.internal.stubbing.BaseStubbing" start="34" end="34" startBytecode="1" endBytecode="1" sourcefile="BaseStubbing.java" sourcepath="org/mockito/internal/stubbing/BaseStubbing.java" role="SOURCE_LINE_NULL_VALUE"/>
+    <SourceLine classname="org.mockito.internal.stubbing.BaseStubbing" start="35" end="35" startBytecode="4" endBytecode="4" sourcefile="BaseStubbing.java" sourcepath="org/mockito/internal/stubbing/BaseStubbing.java" role="SOURCE_LINE_KNOWN_NULL"/>
+  </BugInstance>
+  <BugInstance type="JLM_JSR166_UTILCONCURRENT_MONITORENTER" priority="2" rank="8" abbrev="JLM" category="MT_CORRECTNESS">
+    <Class classname="org.mockito.internal.stubbing.StubbedInvocationMatcher">
+      <SourceLine classname="org.mockito.internal.stubbing.StubbedInvocationMatcher" start="17" end="37" sourcefile="StubbedInvocationMatcher.java" sourcepath="org/mockito/internal/stubbing/StubbedInvocationMatcher.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.stubbing.StubbedInvocationMatcher" name="answer" signature="(Lorg/mockito/invocation/InvocationOnMock;)Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="org.mockito.internal.stubbing.StubbedInvocationMatcher" start="26" end="28" startBytecode="0" endBytecode="142" sourcefile="StubbedInvocationMatcher.java" sourcepath="org/mockito/internal/stubbing/StubbedInvocationMatcher.java"/>
+    </Method>
+    <Type descriptor="Ljava/util/concurrent/ConcurrentLinkedQueue;">
+      <SourceLine classname="java.util.concurrent.ConcurrentLinkedQueue" start="255" end="947" sourcefile="ConcurrentLinkedQueue.java" sourcepath="java/util/concurrent/ConcurrentLinkedQueue.java"/>
+    </Type>
+    <Field classname="org.mockito.internal.stubbing.StubbedInvocationMatcher" name="answers" signature="Ljava/util/Queue;" sourceSignature="Ljava/util/Queue&lt;Lorg/mockito/stubbing/Answer;&gt;;" isStatic="false" role="FIELD_VALUE_OF">
+      <SourceLine classname="org.mockito.internal.stubbing.StubbedInvocationMatcher" sourcefile="StubbedInvocationMatcher.java" sourcepath="org/mockito/internal/stubbing/StubbedInvocationMatcher.java"/>
+    </Field>
+    <SourceLine classname="org.mockito.internal.stubbing.StubbedInvocationMatcher" start="26" end="26" startBytecode="6" endBytecode="6" sourcefile="StubbedInvocationMatcher.java" sourcepath="org/mockito/internal/stubbing/StubbedInvocationMatcher.java"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NOT_EXCEPTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.mockito.internal.stubbing.answers.ThrowsException">
+      <SourceLine classname="org.mockito.internal.stubbing.answers.ThrowsException" start="15" end="31" sourcefile="ThrowsException.java" sourcepath="org/mockito/internal/stubbing/answers/ThrowsException.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls$ThrowingInterceptor">
+      <SourceLine classname="org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls$ThrowingInterceptor" start="39" end="53" sourcefile="ReturnsSmartNulls.java" sourcepath="org/mockito/internal/stubbing/defaultanswers/ReturnsSmartNulls.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.util.Primitives">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="10" end="47" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.util.Primitives" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="24" end="47" startBytecode="0" endBytecode="391" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="&lt;init&gt;" signature="(B)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Byte" start="298" end="300" startBytecode="0" endBytecode="41" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <Method classname="java.lang.Byte" name="valueOf" signature="(B)Ljava/lang/Byte;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Byte" start="103" end="103" startBytecode="0" endBytecode="33" sourcefile="Byte.java" sourcepath="java/lang/Byte.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.util.Primitives" start="30" end="30" startBytecode="66" endBytecode="66" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.util.Primitives">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="10" end="47" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.util.Primitives" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="24" end="47" startBytecode="0" endBytecode="391" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="&lt;init&gt;" signature="(C)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Character" start="4555" end="4557" startBytecode="0" endBytecode="41" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <Method classname="java.lang.Character" name="valueOf" signature="(C)Ljava/lang/Character;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Character" start="4588" end="4591" startBytecode="0" endBytecode="61" sourcefile="Character.java" sourcepath="java/lang/Character.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.util.Primitives" start="29" end="29" startBytecode="46" endBytecode="46" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.util.Primitives">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="10" end="47" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.util.Primitives" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="24" end="47" startBytecode="0" endBytecode="391" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.util.Primitives" start="32" end="32" startBytecode="106" endBytecode="106" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.util.Primitives">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="10" end="47" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.util.Primitives" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="24" end="47" startBytecode="0" endBytecode="391" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="&lt;init&gt;" signature="(J)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Long" start="947" end="949" startBytecode="0" endBytecode="41" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <Method classname="java.lang.Long" name="valueOf" signature="(J)Ljava/lang/Long;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Long" start="837" end="840" startBytecode="0" endBytecode="76" sourcefile="Long.java" sourcepath="java/lang/Long.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.util.Primitives" start="33" end="33" startBytecode="126" endBytecode="126" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.mockito.internal.util.Primitives">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="10" end="47" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Class>
+    <Method classname="org.mockito.internal.util.Primitives" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="org.mockito.internal.util.Primitives" start="24" end="47" startBytecode="0" endBytecode="391" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="&lt;init&gt;" signature="(S)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Short" start="303" end="305" startBytecode="0" endBytecode="41" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <Method classname="java.lang.Short" name="valueOf" signature="(S)Ljava/lang/Short;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Short" start="232" end="236" startBytecode="0" endBytecode="81" sourcefile="Short.java" sourcepath="java/lang/Short.java"/>
+    </Method>
+    <SourceLine classname="org.mockito.internal.util.Primitives" start="31" end="31" startBytecode="86" endBytecode="86" sourcefile="Primitives.java" sourcepath="org/mockito/internal/util/Primitives.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="22">
+    <MissingClass>junit.framework.ComparisonFailure</MissingClass>
+    <MissingClass>org.hamcrest.BaseMatcher</MissingClass>
+    <MissingClass>org.hamcrest.Description</MissingClass>
+    <MissingClass>org.hamcrest.Matcher</MissingClass>
+    <MissingClass>org.hamcrest.SelfDescribing</MissingClass>
+    <MissingClass>org.hamcrest.StringDescription</MissingClass>
+    <MissingClass>org.junit.internal.runners.JUnit4ClassRunner</MissingClass>
+    <MissingClass>org.junit.runner.Runner</MissingClass>
+    <MissingClass>org.junit.runner.manipulation.Filterable</MissingClass>
+    <MissingClass>org.junit.runner.notification.Failure</MissingClass>
+    <MissingClass>org.junit.runner.notification.RunListener</MissingClass>
+    <MissingClass>org.junit.runner.notification.RunNotifier</MissingClass>
+    <MissingClass>org.junit.runners.BlockJUnit4ClassRunner</MissingClass>
+    <MissingClass>org.mockito.cglib.core.DefaultNamingPolicy</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.Callback</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.CallbackFilter</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.Enhancer</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.Factory</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.MethodInterceptor</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.MethodProxy</MissingClass>
+    <MissingClass>org.mockito.cglib.proxy.NoOp</MissingClass>
+    <MissingClass>org.objenesis.ObjenesisStd</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 10:38:43 +0800" total_classes="192" referenced_classes="332" total_bugs="21" total_size="3584" num_packages="34" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="44.70" clock_seconds="9.64" peak_mbytes="298.82" alloc_mbytes="683.00" gc_seconds="0.31" priority_2="20" priority_1="1">
+    <PackageStats package="org.mockito" total_bugs="0" total_types="16" total_size="437">
+      <ClassStats class="org.mockito.AdditionalMatchers" sourceFile="AdditionalMatchers.java" interface="false" size="144" bugs="0"/>
+      <ClassStats class="org.mockito.ArgumentCaptor" sourceFile="ArgumentCaptor.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.ArgumentMatcher" sourceFile="ArgumentMatcher.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.BDDMockito" sourceFile="BDDMockito.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.BDDMockito$BDDMyOngoingStubbing" sourceFile="BDDMockito.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.BDDMockito$BDDOngoingStubbingImpl" sourceFile="BDDMockito.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.BDDMockito$BDDStubber" sourceFile="BDDMockito.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.BDDMockito$BDDStubberImpl" sourceFile="BDDMockito.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.InOrder" sourceFile="InOrder.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.mockito.Matchers" sourceFile="Matchers.java" interface="false" size="102" bugs="0"/>
+      <ClassStats class="org.mockito.Mock" sourceFile="Mock.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.MockSettings" sourceFile="MockSettings.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.Mockito" sourceFile="Mockito.java" interface="false" size="72" bugs="0"/>
+      <ClassStats class="org.mockito.MockitoAnnotations" sourceFile="MockitoAnnotations.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.mockito.MockitoAnnotations$Mock" sourceFile="MockitoAnnotations.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.ReturnValues" sourceFile="ReturnValues.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.configuration" total_bugs="0" total_types="3" total_size="18">
+      <ClassStats class="org.mockito.configuration.AnnotationEngine" sourceFile="AnnotationEngine.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.configuration.DefaultMockitoConfiguration" sourceFile="DefaultMockitoConfiguration.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.configuration.IMockitoConfiguration" sourceFile="IMockitoConfiguration.java" interface="true" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.exceptions" total_bugs="0" total_types="4" total_size="130">
+      <ClassStats class="org.mockito.exceptions.Discrepancy" sourceFile="Discrepancy.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.Pluralizer" sourceFile="Pluralizer.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.PrintableInvocation" sourceFile="PrintableInvocation.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.Reporter" sourceFile="Reporter.java" interface="false" size="106" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.exceptions.base" total_bugs="2" total_types="2" total_size="29" priority_2="2">
+      <ClassStats class="org.mockito.exceptions.base.MockitoAssertionError" sourceFile="MockitoAssertionError.java" interface="false" size="11" bugs="1" priority_2="1"/>
+      <ClassStats class="org.mockito.exceptions.base.MockitoException" sourceFile="MockitoException.java" interface="false" size="18" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.exceptions.misusing" total_bugs="0" total_types="8" total_size="43">
+      <ClassStats class="org.mockito.exceptions.misusing.InvalidUseOfMatchersException" sourceFile="InvalidUseOfMatchersException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.MissingMethodInvocationException" sourceFile="MissingMethodInvocationException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.MockitoConfigurationException" sourceFile="MockitoConfigurationException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.NotAMockException" sourceFile="NotAMockException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.NullInsteadOfMockException" sourceFile="NullInsteadOfMockException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.UnfinishedStubbingException" sourceFile="UnfinishedStubbingException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.UnfinishedVerificationException" sourceFile="UnfinishedVerificationException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.misusing.WrongTypeOfReturnValue" sourceFile="WrongTypeOfReturnValue.java" interface="false" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.exceptions.verification" total_bugs="0" total_types="8" total_size="40">
+      <ClassStats class="org.mockito.exceptions.verification.ArgumentsAreDifferent" sourceFile="ArgumentsAreDifferent.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.NeverWantedButInvoked" sourceFile="NeverWantedButInvoked.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.NoInteractionsWanted" sourceFile="NoInteractionsWanted.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.SmartNullPointerException" sourceFile="SmartNullPointerException.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.TooLittleActualInvocations" sourceFile="TooLittleActualInvocations.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.TooManyActualInvocations" sourceFile="TooManyActualInvocations.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.VerificationInOrderFailure" sourceFile="VerificationInOrderFailure.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.exceptions.verification.WantedButNotInvoked" sourceFile="WantedButNotInvoked.java" interface="false" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.exceptions.verification.junit" total_bugs="1" total_types="2" total_size="34" priority_2="1">
+      <ClassStats class="org.mockito.exceptions.verification.junit.ArgumentsAreDifferent" sourceFile="ArgumentsAreDifferent.java" interface="false" size="15" bugs="1" priority_2="1"/>
+      <ClassStats class="org.mockito.exceptions.verification.junit.JUnitTool" sourceFile="JUnitTool.java" interface="false" size="19" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal" total_bugs="0" total_types="3" total_size="157">
+      <ClassStats class="org.mockito.internal.InOrderImpl" sourceFile="InOrderImpl.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.mockito.internal.MockHandler" sourceFile="MockHandler.java" interface="false" size="59" bugs="0"/>
+      <ClassStats class="org.mockito.internal.MockitoCore" sourceFile="MockitoCore.java" interface="false" size="79" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.configuration" total_bugs="0" total_types="3" total_size="49">
+      <ClassStats class="org.mockito.internal.configuration.ClassPathLoader" sourceFile="ClassPathLoader.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.mockito.internal.configuration.DefaultAnnotationEngine" sourceFile="DefaultAnnotationEngine.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.mockito.internal.configuration.GlobalConfiguration" sourceFile="GlobalConfiguration.java" interface="false" size="28" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.creation" total_bugs="3" total_types="3" total_size="67" priority_2="3">
+      <ClassStats class="org.mockito.internal.creation.ClassNameFinder" sourceFile="ClassNameFinder.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.MethodInterceptorFilter" sourceFile="MethodInterceptorFilter.java" interface="false" size="26" bugs="2" priority_2="2"/>
+      <ClassStats class="org.mockito.internal.creation.MockSettingsImpl" sourceFile="MockSettingsImpl.java" interface="false" size="34" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.creation.cglib" total_bugs="0" total_types="2" total_size="28">
+      <ClassStats class="org.mockito.internal.creation.cglib.CGLIBHacker" sourceFile="CGLIBHacker.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.cglib.MockitoNamingPolicy" sourceFile="MockitoNamingPolicy.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.creation.jmock" total_bugs="0" total_types="6" total_size="101">
+      <ClassStats class="org.mockito.internal.creation.jmock.ClassImposterizer" sourceFile="ClassImposterizer.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.jmock.ClassImposterizer$1" sourceFile="ClassImposterizer.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.jmock.ClassImposterizer$2" sourceFile="ClassImposterizer.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.jmock.ClassImposterizer$3" sourceFile="ClassImposterizer.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.jmock.ClassImposterizer$ClassWithSuperclassToWorkAroundCglibBug" sourceFile="ClassImposterizer.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.mockito.internal.creation.jmock.SearchingClassLoader" sourceFile="SearchingClassLoader.java" interface="false" size="29" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.debugging" total_bugs="0" total_types="4" total_size="103">
+      <ClassStats class="org.mockito.internal.debugging.DebuggingInfo" sourceFile="DebuggingInfo.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.mockito.internal.debugging.Localized" sourceFile="Localized.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.debugging.Location" sourceFile="Location.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.mockito.internal.debugging.WarningsPrinter" sourceFile="WarningsPrinter.java" interface="false" size="34" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.exceptions.base" total_bugs="0" total_types="2" total_size="39">
+      <ClassStats class="org.mockito.internal.exceptions.base.ConditionalStackTraceFilter" sourceFile="ConditionalStackTraceFilter.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.mockito.internal.exceptions.base.StackTraceFilter" sourceFile="StackTraceFilter.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.invocation" total_bugs="6" total_types="10" total_size="285" priority_2="6">
+      <ClassStats class="org.mockito.internal.invocation.AllInvocationsFinder" sourceFile="AllInvocationsFinder.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.AllInvocationsFinder$1" sourceFile="AllInvocationsFinder.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.AllInvocationsFinder$SequenceNumberComparator" sourceFile="AllInvocationsFinder.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="org.mockito.internal.invocation.Invocation" sourceFile="Invocation.java" interface="false" size="112" bugs="3" priority_2="3"/>
+      <ClassStats class="org.mockito.internal.invocation.InvocationMatcher" sourceFile="InvocationMatcher.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.InvocationsFinder" sourceFile="InvocationsFinder.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.InvocationsFinder$1" sourceFile="InvocationsFinder.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.InvocationsFinder$RemoveNotMatching" sourceFile="InvocationsFinder.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="org.mockito.internal.invocation.InvocationsFinder$RemoveUnverifiedInOrder" sourceFile="InvocationsFinder.java" interface="false" size="8" bugs="1" priority_2="1"/>
+      <ClassStats class="org.mockito.internal.invocation.MatchersBinder" sourceFile="MatchersBinder.java" interface="false" size="15" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.invocation.realmethod" total_bugs="0" total_types="4" total_size="30">
+      <ClassStats class="org.mockito.internal.invocation.realmethod.CGLIBProxyRealMethod" sourceFile="CGLIBProxyRealMethod.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.realmethod.FilteredCGLIBProxyRealMethod" sourceFile="FilteredCGLIBProxyRealMethod.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.realmethod.HasCGLIBMethodProxy" sourceFile="HasCGLIBMethodProxy.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.internal.invocation.realmethod.RealMethod" sourceFile="RealMethod.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.matchers" total_bugs="0" total_types="27" total_size="408">
+      <ClassStats class="org.mockito.internal.matchers.And" sourceFile="And.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Any" sourceFile="Any.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.ArrayEquals" sourceFile="ArrayEquals.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.CapturingMatcher" sourceFile="CapturingMatcher.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.CompareEqual" sourceFile="CompareEqual.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.CompareTo" sourceFile="CompareTo.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Contains" sourceFile="Contains.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.ContainsExtraTypeInformation" sourceFile="ContainsExtraTypeInformation.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.EndsWith" sourceFile="EndsWith.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Equals" sourceFile="Equals.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Equals$1" sourceFile="Equals.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.EqualsWithDelta" sourceFile="EqualsWithDelta.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Find" sourceFile="Find.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.GreaterOrEqual" sourceFile="GreaterOrEqual.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.GreaterThan" sourceFile="GreaterThan.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.InstanceOf" sourceFile="InstanceOf.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.LessOrEqual" sourceFile="LessOrEqual.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.LessThan" sourceFile="LessThan.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.LocalizedMatcher" sourceFile="LocalizedMatcher.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.MatchersPrinter" sourceFile="MatchersPrinter.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Matches" sourceFile="Matches.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Not" sourceFile="Not.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.NotNull" sourceFile="NotNull.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Null" sourceFile="Null.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Or" sourceFile="Or.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.Same" sourceFile="Same.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.StartsWith" sourceFile="StartsWith.java" interface="false" size="11" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.matchers.apachecommons" total_bugs="0" total_types="2" total_size="271">
+      <ClassStats class="org.mockito.internal.matchers.apachecommons.EqualsBuilder" sourceFile="EqualsBuilder.java" interface="false" size="258" bugs="0"/>
+      <ClassStats class="org.mockito.internal.matchers.apachecommons.ReflectionEquals" sourceFile="ReflectionEquals.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.progress" total_bugs="0" total_types="8" total_size="205">
+      <ClassStats class="org.mockito.internal.progress.ArgumentMatcherStorage" sourceFile="ArgumentMatcherStorage.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.ArgumentMatcherStorageImpl" sourceFile="ArgumentMatcherStorageImpl.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.HandyReturnValues" sourceFile="HandyReturnValues.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.IOngoingStubbing" sourceFile="IOngoingStubbing.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.MockingProgress" sourceFile="MockingProgress.java" interface="true" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.MockingProgressImpl" sourceFile="MockingProgressImpl.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.SequenceNumber" sourceFile="SequenceNumber.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.progress.ThreadSafeMockingProgress" sourceFile="ThreadSafeMockingProgress.java" interface="false" size="41" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.reporting" total_bugs="0" total_types="3" total_size="37">
+      <ClassStats class="org.mockito.internal.reporting.PrintSettings" sourceFile="PrintSettings.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.mockito.internal.reporting.PrintingFriendlyInvocation" sourceFile="PrintingFriendlyInvocation.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.internal.reporting.SmartPrinter" sourceFile="SmartPrinter.java" interface="false" size="15" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.runners" total_bugs="0" total_types="6" total_size="63">
+      <ClassStats class="org.mockito.internal.runners.JUnit44RunnerImpl" sourceFile="JUnit44RunnerImpl.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.mockito.internal.runners.JUnit44RunnerImpl$1" sourceFile="JUnit44RunnerImpl.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.runners.JUnit45AndHigherRunnerImpl" sourceFile="JUnit45AndHigherRunnerImpl.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.mockito.internal.runners.JUnit45AndHigherRunnerImpl$1" sourceFile="JUnit45AndHigherRunnerImpl.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.mockito.internal.runners.RunnerFactory" sourceFile="RunnerFactory.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.mockito.internal.runners.RunnerImpl" sourceFile="RunnerImpl.java" interface="true" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.runners.util" total_bugs="0" total_types="2" total_size="30">
+      <ClassStats class="org.mockito.internal.runners.util.FrameworkUsageValidator" sourceFile="FrameworkUsageValidator.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.mockito.internal.runners.util.RunnerProvider" sourceFile="RunnerProvider.java" interface="false" size="17" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.stubbing" total_bugs="2" total_types="7" total_size="178" priority_2="1" priority_1="1">
+      <ClassStats class="org.mockito.internal.stubbing.BaseStubbing" sourceFile="BaseStubbing.java" interface="false" size="29" bugs="1" priority_1="1"/>
+      <ClassStats class="org.mockito.internal.stubbing.ConsecutiveStubbing" sourceFile="ConsecutiveStubbing.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.MockitoStubber" sourceFile="MockitoStubber.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.OngoingStubbingImpl" sourceFile="OngoingStubbingImpl.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.StubbedInvocationMatcher" sourceFile="StubbedInvocationMatcher.java" interface="false" size="16" bugs="1" priority_2="1"/>
+      <ClassStats class="org.mockito.internal.stubbing.StubberImpl" sourceFile="StubberImpl.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.VoidMethodStubbableImpl" sourceFile="VoidMethodStubbableImpl.java" interface="false" size="19" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.stubbing.answers" total_bugs="1" total_types="6" total_size="84" priority_2="1">
+      <ClassStats class="org.mockito.internal.stubbing.answers.AnswerReturnValuesAdapter" sourceFile="AnswerReturnValuesAdapter.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.answers.AnswersValidator" sourceFile="AnswersValidator.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.answers.CallsRealMethods" sourceFile="CallsRealMethods.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.answers.DoesNothing" sourceFile="DoesNothing.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.answers.Returns" sourceFile="Returns.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.answers.ThrowsException" sourceFile="ThrowsException.java" interface="false" size="16" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.stubbing.defaultanswers" total_bugs="1" total_types="7" total_size="121" priority_2="1">
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.GloballyConfiguredAnswer" sourceFile="GloballyConfiguredAnswer.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues" sourceFile="ReturnsEmptyValues.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.ReturnsMocks" sourceFile="ReturnsMocks.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.ReturnsMoreEmptyValues" sourceFile="ReturnsMoreEmptyValues.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls" sourceFile="ReturnsSmartNulls.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls$1" sourceFile="ReturnsSmartNulls.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls$ThrowingInterceptor" sourceFile="ReturnsSmartNulls.java" interface="false" size="16" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.util" total_bugs="5" total_types="10" total_size="160" priority_2="5">
+      <ClassStats class="org.mockito.internal.util.CreationValidator" sourceFile="CreationValidator.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.Decamelizer" sourceFile="Decamelizer.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.ListUtil" sourceFile="ListUtil.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.ListUtil$Filter" sourceFile="ListUtil.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.MockName" sourceFile="MockName.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.MockUtil" sourceFile="MockUtil.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.MockitoLogger" sourceFile="MockitoLogger.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.MockitoLoggerImpl" sourceFile="MockitoLoggerImpl.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.Primitives" sourceFile="Primitives.java" interface="false" size="31" bugs="5" priority_2="5"/>
+      <ClassStats class="org.mockito.internal.util.StringJoiner" sourceFile="StringJoiner.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.util.copy" total_bugs="0" total_types="3" total_size="53">
+      <ClassStats class="org.mockito.internal.util.copy.AccessibilityChanger" sourceFile="AccessibilityChanger.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.copy.FieldCopier" sourceFile="FieldCopier.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.mockito.internal.util.copy.LenientCopyTool" sourceFile="LenientCopyTool.java" interface="false" size="29" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.verification" total_bugs="0" total_types="10" total_size="139">
+      <ClassStats class="org.mockito.internal.verification.AtLeast" sourceFile="AtLeast.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.AtMost" sourceFile="AtMost.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.InOrderWrapper" sourceFile="InOrderWrapper.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.NoMoreInteractions" sourceFile="NoMoreInteractions.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.RegisteredInvocations" sourceFile="RegisteredInvocations.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.RegisteredInvocations$1" sourceFile="RegisteredInvocations.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.RegisteredInvocations$RemoveToString" sourceFile="RegisteredInvocations.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.Times" sourceFile="Times.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.VerificationDataImpl" sourceFile="VerificationDataImpl.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.VerificationModeFactory" sourceFile="VerificationModeFactory.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.verification.api" total_bugs="0" total_types="3" total_size="7">
+      <ClassStats class="org.mockito.internal.verification.api.VerificationData" sourceFile="VerificationData.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.api.VerificationInOrderMode" sourceFile="VerificationInOrderMode.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.api.VerificationMode" sourceFile="VerificationMode.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.verification.argumentmatching" total_bugs="0" total_types="1" total_size="20">
+      <ClassStats class="org.mockito.internal.verification.argumentmatching.ArgumentMatchingTool" sourceFile="ArgumentMatchingTool.java" interface="false" size="20" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.internal.verification.checkers" total_bugs="0" total_types="7" total_size="134">
+      <ClassStats class="org.mockito.internal.verification.checkers.AtLeastDiscrepancy" sourceFile="AtLeastDiscrepancy.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.checkers.AtLeastXNumberOfInvocationsChecker" sourceFile="AtLeastXNumberOfInvocationsChecker.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.checkers.AtLeastXNumberOfInvocationsInOrderChecker" sourceFile="AtLeastXNumberOfInvocationsInOrderChecker.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.checkers.MissingInvocationChecker" sourceFile="MissingInvocationChecker.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.checkers.MissingInvocationInOrderChecker" sourceFile="MissingInvocationInOrderChecker.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.checkers.NumberOfInvocationsChecker" sourceFile="NumberOfInvocationsChecker.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.mockito.internal.verification.checkers.NumberOfInvocationsInOrderChecker" sourceFile="NumberOfInvocationsInOrderChecker.java" interface="false" size="24" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.invocation" total_bugs="0" total_types="1" total_size="5">
+      <ClassStats class="org.mockito.invocation.InvocationOnMock" sourceFile="InvocationOnMock.java" interface="true" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.runners" total_bugs="0" total_types="4" total_size="56">
+      <ClassStats class="org.mockito.runners.ConsoleSpammingMockitoJUnitRunner" sourceFile="ConsoleSpammingMockitoJUnitRunner.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.mockito.runners.ConsoleSpammingMockitoJUnitRunner$1" sourceFile="ConsoleSpammingMockitoJUnitRunner.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.mockito.runners.MockitoJUnit44Runner" sourceFile="MockitoJUnit44Runner.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.mockito.runners.MockitoJUnitRunner" sourceFile="MockitoJUnitRunner.java" interface="false" size="14" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.mockito.stubbing" total_bugs="0" total_types="5" total_size="23">
+      <ClassStats class="org.mockito.stubbing.Answer" sourceFile="Answer.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.mockito.stubbing.DeprecatedOngoingStubbing" sourceFile="DeprecatedOngoingStubbing.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.mockito.stubbing.OngoingStubbing" sourceFile="OngoingStubbing.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.stubbing.Stubber" sourceFile="Stubber.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.mockito.stubbing.VoidMethodStubbable" sourceFile="VoidMethodStubbable.java" interface="true" size="5" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="799" invocations="1167" avgMicrosecondsPerInvocation="685" maxMicrosecondsPerInvocation="45617" standardDeviationMircosecondsPerInvocation="2928"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="519" invocations="332" avgMicrosecondsPerInvocation="1566" maxMicrosecondsPerInvocation="105571" standardDeviationMircosecondsPerInvocation="7668"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="485" invocations="332" avgMicrosecondsPerInvocation="1462" maxMicrosecondsPerInvocation="101547" standardDeviationMircosecondsPerInvocation="6936"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="460" invocations="1369" avgMicrosecondsPerInvocation="336" maxMicrosecondsPerInvocation="69192" standardDeviationMircosecondsPerInvocation="2558"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="375" invocations="876" avgMicrosecondsPerInvocation="428" maxMicrosecondsPerInvocation="46425" standardDeviationMircosecondsPerInvocation="2590"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="322" invocations="843" avgMicrosecondsPerInvocation="382" maxMicrosecondsPerInvocation="26788" standardDeviationMircosecondsPerInvocation="1598"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="316" invocations="843" avgMicrosecondsPerInvocation="375" maxMicrosecondsPerInvocation="31231" standardDeviationMircosecondsPerInvocation="2011"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="310" invocations="839" avgMicrosecondsPerInvocation="369" maxMicrosecondsPerInvocation="51715" standardDeviationMircosecondsPerInvocation="2260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="296" invocations="192" avgMicrosecondsPerInvocation="1546" maxMicrosecondsPerInvocation="229612" standardDeviationMircosecondsPerInvocation="16575"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="278" invocations="877" avgMicrosecondsPerInvocation="317" maxMicrosecondsPerInvocation="17678" standardDeviationMircosecondsPerInvocation="1540"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="226" invocations="843" avgMicrosecondsPerInvocation="269" maxMicrosecondsPerInvocation="18169" standardDeviationMircosecondsPerInvocation="1292"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="215" invocations="332" avgMicrosecondsPerInvocation="649" maxMicrosecondsPerInvocation="40663" standardDeviationMircosecondsPerInvocation="3461"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="208" invocations="1170" avgMicrosecondsPerInvocation="177" maxMicrosecondsPerInvocation="29017" standardDeviationMircosecondsPerInvocation="1193"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="185" invocations="752" avgMicrosecondsPerInvocation="247" maxMicrosecondsPerInvocation="36248" standardDeviationMircosecondsPerInvocation="1763"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="182" invocations="332" avgMicrosecondsPerInvocation="550" maxMicrosecondsPerInvocation="41586" standardDeviationMircosecondsPerInvocation="3386"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="177" invocations="422" avgMicrosecondsPerInvocation="420" maxMicrosecondsPerInvocation="24438" standardDeviationMircosecondsPerInvocation="2127"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="160" invocations="332" avgMicrosecondsPerInvocation="484" maxMicrosecondsPerInvocation="24344" standardDeviationMircosecondsPerInvocation="2652"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="153" invocations="332" avgMicrosecondsPerInvocation="463" maxMicrosecondsPerInvocation="23391" standardDeviationMircosecondsPerInvocation="2376"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="126" invocations="923" avgMicrosecondsPerInvocation="137" maxMicrosecondsPerInvocation="56446" standardDeviationMircosecondsPerInvocation="1893"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="112" invocations="1088" avgMicrosecondsPerInvocation="103" maxMicrosecondsPerInvocation="26595" standardDeviationMircosecondsPerInvocation="974"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="100" invocations="192" avgMicrosecondsPerInvocation="521" maxMicrosecondsPerInvocation="32636" standardDeviationMircosecondsPerInvocation="3126"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="96" invocations="843" avgMicrosecondsPerInvocation="113" maxMicrosecondsPerInvocation="17728" standardDeviationMircosecondsPerInvocation="1030"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="71" invocations="8186" avgMicrosecondsPerInvocation="8" maxMicrosecondsPerInvocation="16842" standardDeviationMircosecondsPerInvocation="202"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="70" invocations="332" avgMicrosecondsPerInvocation="213" maxMicrosecondsPerInvocation="29154" standardDeviationMircosecondsPerInvocation="1664"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="70" invocations="332" avgMicrosecondsPerInvocation="212" maxMicrosecondsPerInvocation="17586" standardDeviationMircosecondsPerInvocation="1436"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="69" invocations="332" avgMicrosecondsPerInvocation="207" maxMicrosecondsPerInvocation="45459" standardDeviationMircosecondsPerInvocation="2497"/>
+      <ClassProfile name="edu.umd.cs.findbugs.NonReportingDetectorToDetector2Adapter" totalMilliseconds="68" invocations="4700" avgMicrosecondsPerInvocation="14" maxMicrosecondsPerInvocation="48975" standardDeviationMircosecondsPerInvocation="729"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.asm.ClassReaderAnalysisEngine" totalMilliseconds="67" invocations="1279" avgMicrosecondsPerInvocation="52" maxMicrosecondsPerInvocation="16932" standardDeviationMircosecondsPerInvocation="862"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="65" invocations="192" avgMicrosecondsPerInvocation="339" maxMicrosecondsPerInvocation="13284" standardDeviationMircosecondsPerInvocation="1340"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="65" invocations="832" avgMicrosecondsPerInvocation="78" maxMicrosecondsPerInvocation="17811" standardDeviationMircosecondsPerInvocation="758"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

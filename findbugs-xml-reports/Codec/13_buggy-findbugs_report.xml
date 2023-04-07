@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680366130599" analysisTimestamp="1680691649714" release="">
+  <Project projectName="">
+    <Jar>Codec/13_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="SS_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SS" category="PERFORMANCE">
+    <Class classname="org.apache.commons.codec.binary.BaseNCodec">
+      <SourceLine classname="org.apache.commons.codec.binary.BaseNCodec" start="159" end="522" sourcefile="BaseNCodec.java" sourcepath="org/apache/commons/codec/binary/BaseNCodec.java"/>
+    </Class>
+    <Field classname="org.apache.commons.codec.binary.BaseNCodec" name="PAD" signature="B" isStatic="false">
+      <SourceLine classname="org.apache.commons.codec.binary.BaseNCodec" sourcefile="BaseNCodec.java" sourcepath="org/apache/commons/codec/binary/BaseNCodec.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.codec.binary.BaseNCodec" start="159" end="159" startBytecode="7" endBytecode="7" sourcefile="BaseNCodec.java" sourcepath="org/apache/commons/codec/binary/BaseNCodec.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="2" rank="16" abbrev="UC" category="STYLE">
+    <Class classname="org.apache.commons.codec.language.MatchRatingApproachEncoder">
+      <SourceLine classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" start="32" end="423" sourcefile="MatchRatingApproachEncoder.java" sourcepath="org/apache/commons/codec/language/MatchRatingApproachEncoder.java"/>
+    </Class>
+    <Method classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" name="getMinRating" signature="(I)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" start="185" end="199" startBytecode="0" endBytecode="177" sourcefile="MatchRatingApproachEncoder.java" sourcepath="org/apache/commons/codec/language/MatchRatingApproachEncoder.java"/>
+    </Method>
+    <String value="sumLength &gt;= 5"/>
+    <SourceLine classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" start="189" end="189" startBytecode="14" endBytecode="14" sourcefile="MatchRatingApproachEncoder.java" sourcepath="org/apache/commons/codec/language/MatchRatingApproachEncoder.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="2" rank="16" abbrev="UC" category="STYLE">
+    <Class classname="org.apache.commons.codec.language.MatchRatingApproachEncoder">
+      <SourceLine classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" start="32" end="423" sourcefile="MatchRatingApproachEncoder.java" sourcepath="org/apache/commons/codec/language/MatchRatingApproachEncoder.java"/>
+    </Class>
+    <Method classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" name="getMinRating" signature="(I)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" start="185" end="199" startBytecode="0" endBytecode="177" sourcefile="MatchRatingApproachEncoder.java" sourcepath="org/apache/commons/codec/language/MatchRatingApproachEncoder.java"/>
+    </Method>
+    <String value="sumLength &gt;= 8"/>
+    <SourceLine classname="org.apache.commons.codec.language.MatchRatingApproachEncoder" start="191" end="191" startBytecode="31" endBytecode="31" sourcefile="MatchRatingApproachEncoder.java" sourcepath="org/apache/commons/codec/language/MatchRatingApproachEncoder.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 00:22:10 +0800" total_classes="85" referenced_classes="179" total_bugs="3" total_size="4143" num_packages="6" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="51.20" clock_seconds="11.33" peak_mbytes="291.07" alloc_mbytes="683.00" gc_seconds="0.48" priority_2="3">
+    <PackageStats package="org.apache.commons.codec" total_bugs="0" total_types="11" total_size="88">
+      <ClassStats class="org.apache.commons.codec.BinaryDecoder" sourceFile="BinaryDecoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.BinaryEncoder" sourceFile="BinaryEncoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.CharEncoding" sourceFile="CharEncoding.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.Charsets" sourceFile="Charsets.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.Decoder" sourceFile="Decoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.DecoderException" sourceFile="DecoderException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.Encoder" sourceFile="Encoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.EncoderException" sourceFile="EncoderException.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.StringDecoder" sourceFile="StringDecoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.StringEncoder" sourceFile="StringEncoder.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.StringEncoderComparator" sourceFile="StringEncoderComparator.java" interface="false" size="19" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.binary" total_bugs="1" total_types="13" total_size="859" priority_2="1">
+      <ClassStats class="org.apache.commons.codec.binary.Base32" sourceFile="Base32.java" interface="false" size="192" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base32InputStream" sourceFile="Base32InputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base32OutputStream" sourceFile="Base32OutputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base64" sourceFile="Base64.java" interface="false" size="189" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base64InputStream" sourceFile="Base64InputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Base64OutputStream" sourceFile="Base64OutputStream.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodec" sourceFile="BaseNCodec.java" interface="false" size="115" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodec$Context" sourceFile="BaseNCodec.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodecInputStream" sourceFile="BaseNCodecInputStream.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BaseNCodecOutputStream" sourceFile="BaseNCodecOutputStream.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.BinaryCodec" sourceFile="BinaryCodec.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.Hex" sourceFile="Hex.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.binary.StringUtils" sourceFile="StringUtils.java" interface="false" size="47" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.digest" total_bugs="0" total_types="7" total_size="559">
+      <ClassStats class="org.apache.commons.codec.digest.B64" sourceFile="B64.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.Crypt" sourceFile="Crypt.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.DigestUtils" sourceFile="DigestUtils.java" interface="false" size="121" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.Md5Crypt" sourceFile="Md5Crypt.java" interface="false" size="79" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.MessageDigestAlgorithms" sourceFile="MessageDigestAlgorithms.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.Sha2Crypt" sourceFile="Sha2Crypt.java" interface="false" size="144" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.digest.UnixCrypt" sourceFile="UnixCrypt.java" interface="false" size="170" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.language" total_bugs="2" total_types="16" total_size="1356" priority_2="2">
+      <ClassStats class="org.apache.commons.codec.language.AbstractCaverphone" sourceFile="AbstractCaverphone.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Caverphone" sourceFile="Caverphone.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Caverphone1" sourceFile="Caverphone1.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Caverphone2" sourceFile="Caverphone2.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic" sourceFile="ColognePhonetic.java" interface="false" size="104" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic$CologneBuffer" sourceFile="ColognePhonetic.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer" sourceFile="ColognePhonetic.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer" sourceFile="ColognePhonetic.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DoubleMetaphone" sourceFile="DoubleMetaphone.java" interface="false" size="418" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult" sourceFile="DoubleMetaphone.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.MatchRatingApproachEncoder" sourceFile="MatchRatingApproachEncoder.java" interface="false" size="142" bugs="2" priority_2="2"/>
+      <ClassStats class="org.apache.commons.codec.language.Metaphone" sourceFile="Metaphone.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Nysiis" sourceFile="Nysiis.java" interface="false" size="115" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.RefinedSoundex" sourceFile="RefinedSoundex.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.Soundex" sourceFile="Soundex.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.SoundexUtils" sourceFile="SoundexUtils.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.language.bm" total_bugs="0" total_types="32" total_size="827">
+      <ClassStats class="org.apache.commons.codec.language.bm.BeiderMorseEncoder" sourceFile="BeiderMorseEncoder.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Lang" sourceFile="Lang.java" interface="false" size="63" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Lang$1" sourceFile="Lang.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Lang$LangRule" sourceFile="Lang.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages" sourceFile="Languages.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$1" sourceFile="Languages.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$2" sourceFile="Languages.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$LanguageSet" sourceFile="Languages.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Languages$SomeLanguages" sourceFile="Languages.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.NameType" sourceFile="NameType.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine" sourceFile="PhoneticEngine.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine$1" sourceFile="PhoneticEngine.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder" sourceFile="PhoneticEngine.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication" sourceFile="PhoneticEngine.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.ResourceConstants" sourceFile="ResourceConstants.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule" sourceFile="Rule.java" interface="false" size="215" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$1" sourceFile="Rule.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$10" sourceFile="Rule.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$2" sourceFile="Rule.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$3" sourceFile="Rule.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$4" sourceFile="Rule.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$5" sourceFile="Rule.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$6" sourceFile="Rule.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$7" sourceFile="Rule.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$8" sourceFile="Rule.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$9" sourceFile="Rule.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$Phoneme" sourceFile="Rule.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$Phoneme$1" sourceFile="Rule.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$PhonemeExpr" sourceFile="Rule.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$PhonemeList" sourceFile="Rule.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.Rule$RPattern" sourceFile="Rule.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.language.bm.RuleType" sourceFile="RuleType.java" interface="false" size="19" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.codec.net" total_bugs="0" total_types="6" total_size="454">
+      <ClassStats class="org.apache.commons.codec.net.BCodec" sourceFile="BCodec.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.QCodec" sourceFile="QCodec.java" interface="false" size="125" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.QuotedPrintableCodec" sourceFile="QuotedPrintableCodec.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.RFC1522Codec" sourceFile="RFC1522Codec.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.URLCodec" sourceFile="URLCodec.java" interface="false" size="107" bugs="0"/>
+      <ClassStats class="org.apache.commons.codec.net.Utils" sourceFile="Utils.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="782" invocations="608" avgMicrosecondsPerInvocation="1287" maxMicrosecondsPerInvocation="72123" standardDeviationMircosecondsPerInvocation="6008"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="704" invocations="607" avgMicrosecondsPerInvocation="1160" maxMicrosecondsPerInvocation="126041" standardDeviationMircosecondsPerInvocation="6903"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="554" invocations="851" avgMicrosecondsPerInvocation="651" maxMicrosecondsPerInvocation="27919" standardDeviationMircosecondsPerInvocation="2070"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="492" invocations="606" avgMicrosecondsPerInvocation="812" maxMicrosecondsPerInvocation="85697" standardDeviationMircosecondsPerInvocation="4476"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="409" invocations="613" avgMicrosecondsPerInvocation="668" maxMicrosecondsPerInvocation="83499" standardDeviationMircosecondsPerInvocation="4447"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="395" invocations="609" avgMicrosecondsPerInvocation="650" maxMicrosecondsPerInvocation="43355" standardDeviationMircosecondsPerInvocation="3156"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="393" invocations="612" avgMicrosecondsPerInvocation="642" maxMicrosecondsPerInvocation="29236" standardDeviationMircosecondsPerInvocation="3133"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ObligationDataflowFactory" totalMilliseconds="377" invocations="118" avgMicrosecondsPerInvocation="3197" maxMicrosecondsPerInvocation="374634" standardDeviationMircosecondsPerInvocation="34339"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="302" invocations="1077" avgMicrosecondsPerInvocation="280" maxMicrosecondsPerInvocation="24144" standardDeviationMircosecondsPerInvocation="1453"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="295" invocations="523" avgMicrosecondsPerInvocation="564" maxMicrosecondsPerInvocation="46530" standardDeviationMircosecondsPerInvocation="2927"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="285" invocations="179" avgMicrosecondsPerInvocation="1592" maxMicrosecondsPerInvocation="22084" standardDeviationMircosecondsPerInvocation="3968"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="271" invocations="179" avgMicrosecondsPerInvocation="1518" maxMicrosecondsPerInvocation="34605" standardDeviationMircosecondsPerInvocation="4429"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="267" invocations="629" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="77235" standardDeviationMircosecondsPerInvocation="3651"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="185" invocations="629" avgMicrosecondsPerInvocation="294" maxMicrosecondsPerInvocation="49637" standardDeviationMircosecondsPerInvocation="2799"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="166" invocations="608" avgMicrosecondsPerInvocation="273" maxMicrosecondsPerInvocation="24703" standardDeviationMircosecondsPerInvocation="1805"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="165" invocations="854" avgMicrosecondsPerInvocation="194" maxMicrosecondsPerInvocation="16121" standardDeviationMircosecondsPerInvocation="895"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="156" invocations="85" avgMicrosecondsPerInvocation="1837" maxMicrosecondsPerInvocation="22053" standardDeviationMircosecondsPerInvocation="4448"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="152" invocations="179" avgMicrosecondsPerInvocation="853" maxMicrosecondsPerInvocation="99706" standardDeviationMircosecondsPerInvocation="7735"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="125" invocations="85" avgMicrosecondsPerInvocation="1478" maxMicrosecondsPerInvocation="31210" standardDeviationMircosecondsPerInvocation="4858"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="119" invocations="118" avgMicrosecondsPerInvocation="1016" maxMicrosecondsPerInvocation="25747" standardDeviationMircosecondsPerInvocation="3805"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="116" invocations="85" avgMicrosecondsPerInvocation="1374" maxMicrosecondsPerInvocation="24052" standardDeviationMircosecondsPerInvocation="4009"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="113" invocations="803" avgMicrosecondsPerInvocation="141" maxMicrosecondsPerInvocation="15332" standardDeviationMircosecondsPerInvocation="908"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="107" invocations="179" avgMicrosecondsPerInvocation="598" maxMicrosecondsPerInvocation="21942" standardDeviationMircosecondsPerInvocation="2325"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="100" invocations="179" avgMicrosecondsPerInvocation="558" maxMicrosecondsPerInvocation="16396" standardDeviationMircosecondsPerInvocation="2010"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="99" invocations="8554" avgMicrosecondsPerInvocation="11" maxMicrosecondsPerInvocation="25662" standardDeviationMircosecondsPerInvocation="358"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="98" invocations="85" avgMicrosecondsPerInvocation="1156" maxMicrosecondsPerInvocation="34998" standardDeviationMircosecondsPerInvocation="4899"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="94" invocations="219" avgMicrosecondsPerInvocation="431" maxMicrosecondsPerInvocation="18339" standardDeviationMircosecondsPerInvocation="1902"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="93" invocations="85" avgMicrosecondsPerInvocation="1099" maxMicrosecondsPerInvocation="30443" standardDeviationMircosecondsPerInvocation="4255"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="89" invocations="85" avgMicrosecondsPerInvocation="1056" maxMicrosecondsPerInvocation="20906" standardDeviationMircosecondsPerInvocation="3198"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="89" invocations="85" avgMicrosecondsPerInvocation="1054" maxMicrosecondsPerInvocation="28335" standardDeviationMircosecondsPerInvocation="4143"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SynchronizeAndNullCheckField" totalMilliseconds="89" invocations="85" avgMicrosecondsPerInvocation="1048" maxMicrosecondsPerInvocation="50584" standardDeviationMircosecondsPerInvocation="5972"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="83" invocations="85" avgMicrosecondsPerInvocation="982" maxMicrosecondsPerInvocation="33885" standardDeviationMircosecondsPerInvocation="3995"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.MethodReturnCheck" totalMilliseconds="83" invocations="85" avgMicrosecondsPerInvocation="979" maxMicrosecondsPerInvocation="28307" standardDeviationMircosecondsPerInvocation="3812"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680358657977" analysisTimestamp="1680689450935" release="">
+  <Project projectName="">
+    <Jar>JacksonCore/4_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="INT_BAD_COMPARISON_WITH_SIGNED_BYTE" priority="2" rank="4" abbrev="INT" category="CORRECTNESS">
+    <Class classname="com.fasterxml.jackson.core.Base64Variant">
+      <SourceLine classname="com.fasterxml.jackson.core.Base64Variant" start="55" end="590" sourcefile="Base64Variant.java" sourcepath="com/fasterxml/jackson/core/Base64Variant.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.Base64Variant" name="decodeBase64Byte" signature="(B)I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.Base64Variant" start="221" end="222" startBytecode="0" endBytecode="98" sourcefile="Base64Variant.java" sourcepath="com/fasterxml/jackson/core/Base64Variant.java"/>
+    </Method>
+    <Int value="127" role="INT_VALUE"/>
+    <LocalVariable name="b" register="1" pc="5" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.Base64Variant" start="222" end="222" startBytecode="5" endBytecode="5" sourcefile="Base64Variant.java" sourcepath="com/fasterxml/jackson/core/Base64Variant.java"/>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL">
+    <Class classname="com.fasterxml.jackson.core.JsonFactory">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="148" end="1420" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.JsonFactory" name="createGenerator" signature="(Ljava/io/File;Lcom/fasterxml/jackson/core/JsonEncoding;)Lcom/fasterxml/jackson/core/JsonGenerator;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="1072" end="1080" startBytecode="0" endBytecode="201" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java"/>
+    </Method>
+    <Class classname="java.io.OutputStream" role="CLASS_REFTYPE">
+      <SourceLine classname="java.io.OutputStream" start="46" end="152" sourcefile="OutputStream.java" sourcepath="java/io/OutputStream.java"/>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="1072" end="1072" startBytecode="5" endBytecode="5" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_OBLIGATION_CREATED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="1074" end="1074" startBytecode="9" endBytecode="9" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="1075" end="1075" startBytecode="17" endBytecode="17" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="1076" end="1076" startBytecode="23" endBytecode="23" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="1077" end="1077" startBytecode="30" endBytecode="30" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <String value="{OutputStream x 1}" role="STRING_REMAINING_OBLIGATIONS"/>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL">
+    <Class classname="com.fasterxml.jackson.core.JsonFactory">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="148" end="1420" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.JsonFactory" name="createParser" signature="(Ljava/io/File;)Lcom/fasterxml/jackson/core/JsonParser;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="707" end="709" startBytecode="0" endBytecode="107" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java"/>
+    </Method>
+    <Class classname="java.io.InputStream" role="CLASS_REFTYPE">
+      <SourceLine classname="java.io.InputStream" start="45" end="364" sourcefile="InputStream.java" sourcepath="java/io/InputStream.java"/>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="708" end="708" startBytecode="12" endBytecode="12" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_OBLIGATION_CREATED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="709" end="709" startBytecode="16" endBytecode="16" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <String value="{InputStream x 1}" role="STRING_REMAINING_OBLIGATIONS"/>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.JsonFactory">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" start="148" end="1420" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.JsonFactory" name="_objectCodec" signature="Lcom/fasterxml/jackson/core/ObjectCodec;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonFactory" sourcefile="JsonFactory.java" sourcepath="com/fasterxml/jackson/core/JsonFactory.java"/>
+    </Field>
+    <Type descriptor="Lcom/fasterxml/jackson/core/ObjectCodec;" role="TYPE_FOUND">
+      <SourceLine classname="com.fasterxml.jackson.core.ObjectCodec" start="27" end="183" sourcefile="ObjectCodec.java" sourcepath="com/fasterxml/jackson/core/ObjectCodec.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.JsonGenerator">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonGenerator" start="220" end="1565" sourcefile="JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/JsonGenerator.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.JsonGenerator" name="copyCurrentEvent" signature="(Lcom/fasterxml/jackson/core/JsonParser;)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonGenerator" start="1287" end="1356" startBytecode="0" endBytecode="612" sourcefile="JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/JsonGenerator.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonGenerator" start="1294" end="1296" startBytecode="91" endBytecode="94" sourcefile="JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/JsonGenerator.java"/>
+  </BugInstance>
+  <BugInstance type="SE_TRANSIENT_FIELD_NOT_RESTORED" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.JsonLocation">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonLocation" start="22" end="133" sourcefile="JsonLocation.java" sourcepath="com/fasterxml/jackson/core/JsonLocation.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.JsonLocation" name="_sourceRef" signature="Ljava/lang/Object;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonLocation" sourcefile="JsonLocation.java" sourcepath="com/fasterxml/jackson/core/JsonLocation.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.JsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonParser" start="246" end="1431" sourcefile="JsonParser.java" sourcepath="com/fasterxml/jackson/core/JsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.JsonParser" name="nextBooleanValue" signature="()Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonParser" start="594" end="597" startBytecode="0" endBytecode="107" sourcefile="JsonParser.java" sourcepath="com/fasterxml/jackson/core/JsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonParser" start="597" end="597" startBytecode="28" endBytecode="28" sourcefile="JsonParser.java" sourcepath="com/fasterxml/jackson/core/JsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.JsonToken">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonToken" start="12" end="200" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.JsonToken" name="asByteArray" signature="()[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonToken" start="170" end="170" startBytecode="0" endBytecode="46" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.JsonToken" name="_serializedBytes" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonToken" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonToken" start="170" end="170" startBytecode="4" endBytecode="4" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.JsonToken">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonToken" start="12" end="200" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.JsonToken" name="asCharArray" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonToken" start="169" end="169" startBytecode="0" endBytecode="46" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.JsonToken" name="_serializedChars" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.JsonToken" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.JsonToken" start="169" end="169" startBytecode="4" endBytecode="4" sourcefile="JsonToken.java" sourcepath="com/fasterxml/jackson/core/JsonToken.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.format.InputAccessor$Std">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="65" end="147" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.format.InputAccessor$Std" name="&lt;init&gt;" signature="(Ljava/io/InputStream;[B)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="65" end="71" startBytecode="0" endBytecode="115" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.format.InputAccessor$Std" name="_buffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Field>
+    <LocalVariable name="buffer" register="2" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="67" end="67" startBytecode="11" endBytecode="11" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.format.InputAccessor$Std">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="65" end="147" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.format.InputAccessor$Std" name="&lt;init&gt;" signature="([B)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="78" end="84" startBytecode="0" endBytecode="97" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.format.InputAccessor$Std" name="_buffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Field>
+    <LocalVariable name="inputDocument" register="1" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="80" end="80" startBytecode="11" endBytecode="11" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.format.InputAccessor$Std">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="65" end="147" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.format.InputAccessor$Std" name="&lt;init&gt;" signature="([BII)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="93" end="99" startBytecode="0" endBytecode="127" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.format.InputAccessor$Std" name="_buffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+    </Field>
+    <LocalVariable name="inputDocument" register="1" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.format.InputAccessor$Std" start="95" end="95" startBytecode="11" endBytecode="11" sourcefile="InputAccessor.java" sourcepath="com/fasterxml/jackson/core/format/InputAccessor.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="get7BitOutputEscapes" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="211" end="211" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sOutputEscapes128" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="211" end="211" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="getInputCodeComment" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="201" end="201" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sInputCodesComment" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="201" end="201" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="getInputCodeLatin1" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="195" end="195" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sInputCodes" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="195" end="195" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="getInputCodeLatin1JsNames" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="198" end="198" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sInputCodesJsNames" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="198" end="198" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="getInputCodeUtf8" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="196" end="196" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sInputCodesUTF8" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="196" end="196" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="getInputCodeUtf8JsNames" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="199" end="199" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sInputCodesUtf8JsNames" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="199" end="199" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="MS_EXPOSE_REP" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.CharTypes">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="5" end="256" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.CharTypes" name="getInputCodeWS" signature="()[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="202" end="202" startBytecode="0" endBytecode="27" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.CharTypes" name="sInputCodesWS" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.io.CharTypes" start="202" end="202" startBytecode="3" endBytecode="3" sourcefile="CharTypes.java" sourcepath="com/fasterxml/jackson/core/io/CharTypes.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.MergedStream">
+      <SourceLine classname="com.fasterxml.jackson.core.io.MergedStream" start="25" end="120" sourcefile="MergedStream.java" sourcepath="com/fasterxml/jackson/core/io/MergedStream.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.MergedStream" name="&lt;init&gt;" signature="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;[BII)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.io.MergedStream" start="25" end="31" startBytecode="0" endBytecode="147" sourcefile="MergedStream.java" sourcepath="com/fasterxml/jackson/core/io/MergedStream.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.MergedStream" name="_b" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.io.MergedStream" sourcefile="MergedStream.java" sourcepath="com/fasterxml/jackson/core/io/MergedStream.java"/>
+    </Field>
+    <LocalVariable name="buf" register="3" pc="16" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.io.MergedStream" start="28" end="28" startBytecode="16" endBytecode="16" sourcefile="MergedStream.java" sourcepath="com/fasterxml/jackson/core/io/MergedStream.java"/>
+  </BugInstance>
+  <BugInstance type="SE_NO_SERIALVERSIONID" priority="2" rank="16" abbrev="SnVI" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.io.SerializedString">
+      <SourceLine classname="com.fasterxml.jackson.core.io.SerializedString" start="47" end="267" sourcefile="SerializedString.java" sourcepath="com/fasterxml/jackson/core/io/SerializedString.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.io.UTF32Reader">
+      <SourceLine classname="com.fasterxml.jackson.core.io.UTF32Reader" start="37" end="266" sourcefile="UTF32Reader.java" sourcepath="com/fasterxml/jackson/core/io/UTF32Reader.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.io.UTF32Reader" name="&lt;init&gt;" signature="(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;[BIIZ)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.io.UTF32Reader" start="57" end="65" startBytecode="0" endBytecode="279" sourcefile="UTF32Reader.java" sourcepath="com/fasterxml/jackson/core/io/UTF32Reader.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.io.UTF32Reader" name="_buffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.io.UTF32Reader" sourcefile="UTF32Reader.java" sourcepath="com/fasterxml/jackson/core/io/UTF32Reader.java"/>
+    </Field>
+    <LocalVariable name="buf" register="3" pc="36" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.io.UTF32Reader" start="60" end="60" startBytecode="36" endBytecode="36" sourcefile="UTF32Reader.java" sourcepath="com/fasterxml/jackson/core/io/UTF32Reader.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="74" end="497" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" name="&lt;init&gt;" signature="(Lcom/fasterxml/jackson/core/io/IOContext;[BII)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="93" end="102" startBytecode="0" endBytecode="175" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" name="_inputBuffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Field>
+    <LocalVariable name="inputBuffer" register="2" pc="26" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="96" end="96" startBytecode="26" endBytecode="26" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="74" end="497" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" name="handleBOM" signature="(I)Z" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="384" end="421" startBytecode="0" endBytecode="382" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="396" end="398" startBytecode="91" endBytecode="94" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="74" end="497" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" name="handleBOM" signature="(I)Z" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="384" end="421" startBytecode="0" endBytecode="382" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" start="384" end="398" startBytecode="1" endBytecode="99" sourcefile="ByteSourceJsonBootstrapper.java" sourcepath="com/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper.java"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.JsonGeneratorImpl">
+      <SourceLine classname="com.fasterxml.jackson.core.json.JsonGeneratorImpl" start="31" end="171" sourcefile="JsonGeneratorImpl.java" sourcepath="com/fasterxml/jackson/core/json/JsonGeneratorImpl.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.json.JsonGeneratorImpl" name="sOutputEscapes" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.json.JsonGeneratorImpl" sourcefile="JsonGeneratorImpl.java" sourcepath="com/fasterxml/jackson/core/json/JsonGeneratorImpl.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.JsonGeneratorImpl" start="31" end="31" startBytecode="3" endBytecode="3" sourcefile="JsonGeneratorImpl.java" sourcepath="com/fasterxml/jackson/core/json/JsonGeneratorImpl.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.JsonReadContext">
+      <SourceLine classname="com.fasterxml.jackson.core.json.JsonReadContext" start="11" end="202" sourcefile="JsonReadContext.java" sourcepath="com/fasterxml/jackson/core/json/JsonReadContext.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.JsonReadContext" name="toString" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.JsonReadContext" start="180" end="202" startBytecode="0" endBytecode="264" sourcefile="JsonReadContext.java" sourcepath="com/fasterxml/jackson/core/json/JsonReadContext.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.JsonReadContext" start="181" end="199" startBytecode="14" endBytecode="128" sourcefile="JsonReadContext.java" sourcepath="com/fasterxml/jackson/core/json/JsonReadContext.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="getBinaryValue" signature="(Lcom/fasterxml/jackson/core/Base64Variant;)[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="374" end="399" startBytecode="0" endBytecode="301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="_binaryValue" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="399" end="399" startBytecode="156" endBytecode="156" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="getTextCharacters" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="290" end="320" startBytecode="0" endBytecode="310" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="_nameCopyBuffer" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="304" end="304" startBytecode="122" endBytecode="122" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="&lt;init&gt;" signature="(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;[CIIZ)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="96" end="105" startBytecode="0" endBytecode="233" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="_inputBuffer" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Field>
+    <LocalVariable name="inputBuffer" register="6" pc="19" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="98" end="98" startBytecode="19" endBytecode="19" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="_icLatin1" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="24" startBytecode="3" endBytecode="3" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="nextBooleanValue" signature="()Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="792" end="816" startBytecode="0" endBytecode="322" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="808" end="808" startBytecode="108" endBytecode="108" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="816" end="816" startBytecode="144" endBytecode="144" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="getTextCharacters" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="290" end="320" startBytecode="0" endBytecode="310" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="309" end="314" startBytecode="136" endBytecode="139" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="getTextLength" signature="()I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="326" end="345" startBytecode="0" endBytecode="176" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="334" end="339" startBytecode="68" endBytecode="71" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="getTextOffset" signature="()I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="352" end="368" startBytecode="0" endBytecode="153" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="359" end="364" startBytecode="59" endBytecode="62" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="nextToken" signature="()Lcom/fasterxml/jackson/core/JsonToken;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="559" end="692" startBytecode="0" endBytecode="948" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="649" end="651" startBytecode="488" endBytecode="491" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="1" rank="14" abbrev="UC" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="24" end="2301" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" name="_skipColon2" signature="(Z)I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="1752" end="1788" startBytecode="0" endBytecode="351" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+    </Method>
+    <String value="i &gt;= 32 (&apos; &apos;)"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="1771" end="1771" startBytecode="85" endBytecode="85" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java" role="SOURCE_UNREACHABLE_CODE"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" start="1770" end="1770" startBytecode="82" endBytecode="82" sourcefile="ReaderBasedJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator" start="35" end="1855" sourcefile="UTF8JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/UTF8JsonGenerator.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator" name="&lt;init&gt;" signature="(Lcom/fasterxml/jackson/core/io/IOContext;ILcom/fasterxml/jackson/core/ObjectCodec;Ljava/io/OutputStream;[BIZ)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator" start="146" end="157" startBytecode="0" endBytecode="312" sourcefile="UTF8JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/UTF8JsonGenerator.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator" name="_outputBuffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator" sourcefile="UTF8JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/UTF8JsonGenerator.java"/>
+    </Field>
+    <LocalVariable name="outputBuffer" register="5" pc="33" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8JsonGenerator" start="150" end="150" startBytecode="33" endBytecode="33" sourcefile="UTF8JsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/UTF8JsonGenerator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="getBinaryValue" signature="(Lcom/fasterxml/jackson/core/Base64Variant;)[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="426" end="451" startBytecode="0" endBytecode="301" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="_binaryValue" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="451" end="451" startBytecode="156" endBytecode="156" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="getTextCharacters" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="339" end="370" startBytecode="0" endBytecode="310" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="_nameCopyBuffer" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="354" end="354" startBytecode="122" endBytecode="122" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="&lt;init&gt;" signature="(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/InputStream;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;[BIIZ)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="115" end="126" startBytecode="0" endBytecode="254" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="_inputBuffer" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Field>
+    <LocalVariable name="inputBuffer" register="6" pc="39" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="119" end="119" startBytecode="39" endBytecode="39" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="_icLatin1" signature="[I" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="31" end="31" startBytecode="9" endBytecode="9" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="nextBooleanValue" signature="()Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="1139" end="1164" startBytecode="0" endBytecode="296" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="1155" end="1155" startBytecode="108" endBytecode="108" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="1164" end="1164" startBytecode="153" endBytecode="153" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="_handleUnexpectedValue" signature="(I)Lcom/fasterxml/jackson/core/JsonToken;" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="2327" end="2366" startBytecode="0" endBytecode="397" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="2332" end="2334" startBytecode="64" endBytecode="67" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="getTextCharacters" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="339" end="370" startBytecode="0" endBytecode="310" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="359" end="364" startBytecode="136" endBytecode="139" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="getTextLength" signature="()I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="377" end="396" startBytecode="0" endBytecode="176" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="385" end="390" startBytecode="68" endBytecode="71" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="getTextOffset" signature="()I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="403" end="419" startBytecode="0" endBytecode="153" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="410" end="415" startBytecode="59" endBytecode="62" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="1" rank="14" abbrev="UC" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="27" end="3371" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" name="_skipColon2" signature="(Z)I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="2741" end="2775" startBytecode="0" endBytecode="392" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+    </Method>
+    <String value="i &gt;= 32 (&apos; &apos;)"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="2759" end="2759" startBytecode="92" endBytecode="92" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java" role="SOURCE_UNREACHABLE_CODE"/>
+    <SourceLine classname="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" start="2758" end="2758" startBytecode="89" endBytecode="89" sourcefile="UTF8StreamJsonParser.java" sourcepath="com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.json.WriterBasedJsonGenerator">
+      <SourceLine classname="com.fasterxml.jackson.core.json.WriterBasedJsonGenerator" start="19" end="1881" sourcefile="WriterBasedJsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/WriterBasedJsonGenerator.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.json.WriterBasedJsonGenerator" name="HEX_CHARS" signature="[C" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.json.WriterBasedJsonGenerator" sourcefile="WriterBasedJsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/WriterBasedJsonGenerator.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.json.WriterBasedJsonGenerator" start="19" end="19" startBytecode="3" endBytecode="3" sourcefile="WriterBasedJsonGenerator.java" sourcepath="com/fasterxml/jackson/core/json/WriterBasedJsonGenerator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.ByteArrayBuilder">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="26" end="241" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" name="finishCurrentSegment" signature="()[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="159" end="160" startBytecode="0" endBytecode="54" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" name="_currBlock" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="160" end="160" startBytecode="8" endBytecode="8" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.ByteArrayBuilder">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="26" end="241" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" name="getCurrentSegment" signature="()[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="177" end="177" startBytecode="0" endBytecode="46" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" name="_currBlock" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="177" end="177" startBytecode="4" endBytecode="4" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.ByteArrayBuilder">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="26" end="241" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" name="resetAndGetFirstSegment" signature="()[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="149" end="150" startBytecode="0" endBytecode="54" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" name="_currBlock" signature="[B" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.ByteArrayBuilder" start="150" end="150" startBytecode="8" endBytecode="8" sourcefile="ByteArrayBuilder.java" sourcepath="com/fasterxml/jackson/core/util/ByteArrayBuilder.java"/>
+  </BugInstance>
+  <BugInstance type="SE_TRANSIENT_FIELD_NOT_RESTORED" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.util.DefaultPrettyPrinter">
+      <SourceLine classname="com.fasterxml.jackson.core.util.DefaultPrettyPrinter" start="16" end="367" sourcefile="DefaultPrettyPrinter.java" sourcepath="com/fasterxml/jackson/core/util/DefaultPrettyPrinter.java"/>
+    </Class>
+    <Field classname="com.fasterxml.jackson.core.util.DefaultPrettyPrinter" name="_nesting" signature="I" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.DefaultPrettyPrinter" sourcefile="DefaultPrettyPrinter.java" sourcepath="com/fasterxml/jackson/core/util/DefaultPrettyPrinter.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="EQ_DOESNT_OVERRIDE_EQUALS" priority="2" rank="17" abbrev="Eq" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.util.InternCache">
+      <SourceLine classname="com.fasterxml.jackson.core.util.InternCache" start="28" end="61" sourcefile="InternCache.java" sourcepath="com/fasterxml/jackson/core/util/InternCache.java"/>
+    </Class>
+    <SourceLine classname="com.fasterxml.jackson.core.util.InternCache" start="1" end="1" startBytecode="0" endBytecode="0" sourcefile="InternCache.java" sourcepath="com/fasterxml/jackson/core/util/InternCache.java"/>
+    <Method classname="java.util.concurrent.ConcurrentHashMap" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_DID_YOU_MEAN_TO_OVERRIDE">
+      <SourceLine classname="java.util.concurrent.ConcurrentHashMap" start="1341" end="1363" startBytecode="0" endBytecode="381" sourcefile="ConcurrentHashMap.java" sourcepath="java/util/concurrent/ConcurrentHashMap.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.TextBuffer">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="29" end="713" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.TextBuffer" name="getCurrentSegment" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="514" end="525" startBytecode="0" endBytecode="152" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.TextBuffer" name="_currentSegment" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="525" end="525" startBytecode="54" endBytecode="54" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.TextBuffer">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="29" end="713" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.TextBuffer" name="getTextBuffer" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="301" end="309" startBytecode="0" endBytecode="134" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.TextBuffer" name="_currentSegment" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="307" end="307" startBytecode="55" endBytecode="55" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.TextBuffer">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="29" end="713" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.TextBuffer" name="getTextBuffer" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="301" end="309" startBytecode="0" endBytecode="134" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.TextBuffer" name="_inputBuffer" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="301" end="301" startBytecode="11" endBytecode="11" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.TextBuffer">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="29" end="713" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.TextBuffer" name="getTextBuffer" signature="()[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="301" end="309" startBytecode="0" endBytecode="134" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.TextBuffer" name="_resultArray" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Field>
+    <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="302" end="302" startBytecode="23" endBytecode="23" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="com.fasterxml.jackson.core.util.TextBuffer">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="29" end="713" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.TextBuffer" name="resetWithShared" signature="([CII)V" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="179" end="191" startBytecode="0" endBytecode="145" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Method>
+    <Field classname="com.fasterxml.jackson.core.util.TextBuffer" name="_inputBuffer" signature="[C" isStatic="false">
+      <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+    </Field>
+    <LocalVariable name="buf" register="1" pc="12" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="com.fasterxml.jackson.core.util.TextBuffer" start="183" end="183" startBytecode="12" endBytecode="12" sourcefile="TextBuffer.java" sourcepath="com/fasterxml/jackson/core/util/TextBuffer.java"/>
+  </BugInstance>
+  <BugInstance type="DE_MIGHT_IGNORE" priority="2" rank="16" abbrev="DE" category="BAD_PRACTICE">
+    <Class classname="com.fasterxml.jackson.core.util.VersionUtil">
+      <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="25" end="213" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.VersionUtil" name="_close" signature="(Ljava/io/Closeable;)V" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="202" end="204" startBytecode="0" endBytecode="91" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+    </Method>
+    <Class classname="java.io.IOException" role="CLASS_EXCEPTION">
+      <SourceLine classname="java.io.IOException" start="47" end="100" sourcefile="IOException.java" sourcepath="java/io/IOException.java"/>
+    </Class>
+    <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="203" end="203" startBytecode="9" endBytecode="9" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+    <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="203" end="203" startBytecode="9" endBytecode="9" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE">
+    <Class classname="com.fasterxml.jackson.core.util.VersionUtil">
+      <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="25" end="213" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+    </Class>
+    <Method classname="com.fasterxml.jackson.core.util.VersionUtil" name="packageVersionFor" signature="(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;" isStatic="true">
+      <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="104" end="113" startBytecode="0" endBytecode="277" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+    </Method>
+    <SourceLine classname="com.fasterxml.jackson.core.util.VersionUtil" start="112" end="112" startBytecode="77" endBytecode="77" sourcefile="VersionUtil.java" sourcepath="com/fasterxml/jackson/core/util/VersionUtil.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 1 Apr 2023 22:17:37 +0800" total_classes="91" referenced_classes="266" total_bugs="61" total_size="11530" num_packages="8" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="75.07" clock_seconds="15.71" peak_mbytes="326.34" alloc_mbytes="683.00" gc_seconds="0.81" priority_2="59" priority_1="2">
+    <PackageStats package="com.fasterxml.jackson.core" total_bugs="9" total_types="27" total_size="1641" priority_2="9">
+      <ClassStats class="com.fasterxml.jackson.core.Base64Variant" sourceFile="Base64Variant.java" interface="false" size="234" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.Base64Variants" sourceFile="Base64Variants.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.FormatSchema" sourceFile="FormatSchema.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonEncoding" sourceFile="JsonEncoding.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonFactory" sourceFile="JsonFactory.java" interface="false" size="285" bugs="3" priority_2="3"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonFactory$Feature" sourceFile="JsonFactory.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonGenerationException" sourceFile="JsonGenerationException.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonGenerator" sourceFile="JsonGenerator.java" interface="false" size="275" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonGenerator$Feature" sourceFile="JsonGenerator.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonLocation" sourceFile="JsonLocation.java" interface="false" size="59" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonParseException" sourceFile="JsonParseException.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonParser" sourceFile="JsonParser.java" interface="false" size="156" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonParser$Feature" sourceFile="JsonParser.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonParser$NumberType" sourceFile="JsonParser.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonPointer" sourceFile="JsonPointer.java" interface="false" size="108" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonProcessingException" sourceFile="JsonProcessingException.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonStreamContext" sourceFile="JsonStreamContext.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonToken" sourceFile="JsonToken.java" interface="false" size="78" bugs="2" priority_2="2"/>
+      <ClassStats class="com.fasterxml.jackson.core.JsonTokenId" sourceFile="JsonTokenId.java" interface="true" size="15" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.ObjectCodec" sourceFile="ObjectCodec.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.PrettyPrinter" sourceFile="PrettyPrinter.java" interface="true" size="11" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.SerializableString" sourceFile="SerializableString.java" interface="true" size="14" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.TreeCodec" sourceFile="TreeCodec.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.TreeNode" sourceFile="TreeNode.java" interface="true" size="18" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.Version" sourceFile="Version.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.Versioned" sourceFile="Versioned.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.base" total_bugs="0" total_types="4" total_size="748">
+      <ClassStats class="com.fasterxml.jackson.core.base.GeneratorBase" sourceFile="GeneratorBase.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.base.ParserBase" sourceFile="ParserBase.java" interface="false" size="431" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.base.ParserMinimalBase" sourceFile="ParserMinimalBase.java" interface="false" size="223" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.base.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.format" total_bugs="3" total_types="6" total_size="172" priority_2="3">
+      <ClassStats class="com.fasterxml.jackson.core.format.DataFormatDetector" sourceFile="DataFormatDetector.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.format.DataFormatMatcher" sourceFile="DataFormatMatcher.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.format.InputAccessor" sourceFile="InputAccessor.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.format.InputAccessor$Std" sourceFile="InputAccessor.java" interface="false" size="52" bugs="3" priority_2="3"/>
+      <ClassStats class="com.fasterxml.jackson.core.format.MatchStrength" sourceFile="MatchStrength.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.format.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.io" total_bugs="10" total_types="13" total_size="1441" priority_2="10">
+      <ClassStats class="com.fasterxml.jackson.core.io.CharTypes" sourceFile="CharTypes.java" interface="false" size="129" bugs="7" priority_2="7"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.CharacterEscapes" sourceFile="CharacterEscapes.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.IOContext" sourceFile="IOContext.java" interface="false" size="108" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.InputDecorator" sourceFile="InputDecorator.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.JsonStringEncoder" sourceFile="JsonStringEncoder.java" interface="false" size="218" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.MergedStream" sourceFile="MergedStream.java" interface="false" size="69" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.NumberInput" sourceFile="NumberInput.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.NumberOutput" sourceFile="NumberOutput.java" interface="false" size="235" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.OutputDecorator" sourceFile="OutputDecorator.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.SegmentedStringWriter" sourceFile="SegmentedStringWriter.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.SerializedString" sourceFile="SerializedString.java" interface="false" size="124" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.UTF32Reader" sourceFile="UTF32Reader.java" interface="false" size="121" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.io.UTF8Writer" sourceFile="UTF8Writer.java" interface="false" size="212" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.json" total_bugs="27" total_types="11" total_size="5456" priority_2="25" priority_1="2">
+      <ClassStats class="com.fasterxml.jackson.core.json.ByteSourceJsonBootstrapper" sourceFile="ByteSourceJsonBootstrapper.java" interface="false" size="211" bugs="3" priority_2="3"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.DupDetector" sourceFile="DupDetector.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.JsonGeneratorImpl" sourceFile="JsonGeneratorImpl.java" interface="false" size="39" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.JsonReadContext" sourceFile="JsonReadContext.java" interface="false" size="84" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.JsonWriteContext" sourceFile="JsonWriteContext.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.PackageVersion" sourceFile="PackageVersion.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.ReaderBasedJsonParser" sourceFile="ReaderBasedJsonParser.java" interface="false" size="1211" bugs="10" priority_2="9" priority_1="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.UTF8JsonGenerator" sourceFile="UTF8JsonGenerator.java" interface="false" size="990" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.UTF8StreamJsonParser" sourceFile="UTF8StreamJsonParser.java" interface="false" size="1744" bugs="10" priority_2="9" priority_1="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.WriterBasedJsonGenerator" sourceFile="WriterBasedJsonGenerator.java" interface="false" size="1041" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.json.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.sym" total_bugs="0" total_types="11" total_size="849">
+      <ClassStats class="com.fasterxml.jackson.core.sym.BytesToNameCanonicalizer" sourceFile="BytesToNameCanonicalizer.java" interface="false" size="395" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.BytesToNameCanonicalizer$Bucket" sourceFile="BytesToNameCanonicalizer.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.BytesToNameCanonicalizer$TableInfo" sourceFile="BytesToNameCanonicalizer.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer" sourceFile="CharsToNameCanonicalizer.java" interface="false" size="249" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.CharsToNameCanonicalizer$Bucket" sourceFile="CharsToNameCanonicalizer.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.Name" sourceFile="Name.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.Name1" sourceFile="Name1.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.Name2" sourceFile="Name2.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.Name3" sourceFile="Name3.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.NameN" sourceFile="NameN.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.sym.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.type" total_bugs="0" total_types="3" total_size="39">
+      <ClassStats class="com.fasterxml.jackson.core.type.ResolvedType" sourceFile="ResolvedType.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.type.TypeReference" sourceFile="TypeReference.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.type.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.fasterxml.jackson.core.util" total_bugs="12" total_types="16" total_size="1184" priority_2="12">
+      <ClassStats class="com.fasterxml.jackson.core.util.BufferRecycler" sourceFile="BufferRecycler.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.ByteArrayBuilder" sourceFile="ByteArrayBuilder.java" interface="false" size="121" bugs="3" priority_2="3"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.DefaultPrettyPrinter" sourceFile="DefaultPrettyPrinter.java" interface="false" size="126" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.DefaultPrettyPrinter$FixedSpaceIndenter" sourceFile="DefaultPrettyPrinter.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.DefaultPrettyPrinter$Indenter" sourceFile="DefaultPrettyPrinter.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.DefaultPrettyPrinter$Lf2SpacesIndenter" sourceFile="DefaultPrettyPrinter.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.DefaultPrettyPrinter$NopIndenter" sourceFile="DefaultPrettyPrinter.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.Instantiatable" sourceFile="Instantiatable.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.InternCache" sourceFile="InternCache.java" interface="false" size="20" bugs="1" priority_2="1"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.JsonGeneratorDelegate" sourceFile="JsonGeneratorDelegate.java" interface="false" size="179" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.JsonParserDelegate" sourceFile="JsonParserDelegate.java" interface="false" size="134" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.JsonParserSequence" sourceFile="JsonParserSequence.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.MinimalPrettyPrinter" sourceFile="MinimalPrettyPrinter.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.TextBuffer" sourceFile="TextBuffer.java" interface="false" size="310" bugs="5" priority_2="5"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.VersionUtil" sourceFile="VersionUtil.java" interface="false" size="85" bugs="2" priority_2="2"/>
+      <ClassStats class="com.fasterxml.jackson.core.util.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="891" invocations="955" avgMicrosecondsPerInvocation="933" maxMicrosecondsPerInvocation="65876" standardDeviationMircosecondsPerInvocation="3697"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="852" invocations="1351" avgMicrosecondsPerInvocation="631" maxMicrosecondsPerInvocation="53367" standardDeviationMircosecondsPerInvocation="3177"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="779" invocations="1340" avgMicrosecondsPerInvocation="581" maxMicrosecondsPerInvocation="64571" standardDeviationMircosecondsPerInvocation="3010"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="745" invocations="1344" avgMicrosecondsPerInvocation="554" maxMicrosecondsPerInvocation="126087" standardDeviationMircosecondsPerInvocation="4083"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="645" invocations="1404" avgMicrosecondsPerInvocation="459" maxMicrosecondsPerInvocation="41135" standardDeviationMircosecondsPerInvocation="2403"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="509" invocations="2070" avgMicrosecondsPerInvocation="246" maxMicrosecondsPerInvocation="36918" standardDeviationMircosecondsPerInvocation="1625"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="493" invocations="27254" avgMicrosecondsPerInvocation="18" maxMicrosecondsPerInvocation="391576" standardDeviationMircosecondsPerInvocation="2379"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="484" invocations="266" avgMicrosecondsPerInvocation="1822" maxMicrosecondsPerInvocation="38464" standardDeviationMircosecondsPerInvocation="5181"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="480" invocations="1351" avgMicrosecondsPerInvocation="355" maxMicrosecondsPerInvocation="44743" standardDeviationMircosecondsPerInvocation="2310"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="472" invocations="1394" avgMicrosecondsPerInvocation="338" maxMicrosecondsPerInvocation="72567" standardDeviationMircosecondsPerInvocation="2434"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="445" invocations="1101" avgMicrosecondsPerInvocation="404" maxMicrosecondsPerInvocation="44392" standardDeviationMircosecondsPerInvocation="2662"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="431" invocations="266" avgMicrosecondsPerInvocation="1621" maxMicrosecondsPerInvocation="39541" standardDeviationMircosecondsPerInvocation="5048"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="419" invocations="1546" avgMicrosecondsPerInvocation="271" maxMicrosecondsPerInvocation="108799" standardDeviationMircosecondsPerInvocation="3640"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="317" invocations="959" avgMicrosecondsPerInvocation="330" maxMicrosecondsPerInvocation="110139" standardDeviationMircosecondsPerInvocation="3801"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="305" invocations="1351" avgMicrosecondsPerInvocation="226" maxMicrosecondsPerInvocation="32990" standardDeviationMircosecondsPerInvocation="1704"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="203" invocations="91" avgMicrosecondsPerInvocation="2239" maxMicrosecondsPerInvocation="42395" standardDeviationMircosecondsPerInvocation="6850"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="189" invocations="91" avgMicrosecondsPerInvocation="2084" maxMicrosecondsPerInvocation="37420" standardDeviationMircosecondsPerInvocation="6132"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="184" invocations="1546" avgMicrosecondsPerInvocation="119" maxMicrosecondsPerInvocation="23729" standardDeviationMircosecondsPerInvocation="1079"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="181" invocations="902" avgMicrosecondsPerInvocation="201" maxMicrosecondsPerInvocation="39387" standardDeviationMircosecondsPerInvocation="1920"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="180" invocations="266" avgMicrosecondsPerInvocation="679" maxMicrosecondsPerInvocation="56141" standardDeviationMircosecondsPerInvocation="4004"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="171" invocations="313" avgMicrosecondsPerInvocation="548" maxMicrosecondsPerInvocation="55279" standardDeviationMircosecondsPerInvocation="3555"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="159" invocations="91" avgMicrosecondsPerInvocation="1753" maxMicrosecondsPerInvocation="54283" standardDeviationMircosecondsPerInvocation="7883"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="145" invocations="266" avgMicrosecondsPerInvocation="546" maxMicrosecondsPerInvocation="25406" standardDeviationMircosecondsPerInvocation="2214"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="141" invocations="91" avgMicrosecondsPerInvocation="1550" maxMicrosecondsPerInvocation="27003" standardDeviationMircosecondsPerInvocation="4541"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="139" invocations="266" avgMicrosecondsPerInvocation="524" maxMicrosecondsPerInvocation="34003" standardDeviationMircosecondsPerInvocation="3473"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="137" invocations="91" avgMicrosecondsPerInvocation="1510" maxMicrosecondsPerInvocation="53649" standardDeviationMircosecondsPerInvocation="6164"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="122" invocations="91" avgMicrosecondsPerInvocation="1345" maxMicrosecondsPerInvocation="31044" standardDeviationMircosecondsPerInvocation="4049"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="122" invocations="91" avgMicrosecondsPerInvocation="1345" maxMicrosecondsPerInvocation="26787" standardDeviationMircosecondsPerInvocation="3977"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindReturnRef" totalMilliseconds="121" invocations="91" avgMicrosecondsPerInvocation="1334" maxMicrosecondsPerInvocation="28580" standardDeviationMircosecondsPerInvocation="5256"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="120" invocations="736" avgMicrosecondsPerInvocation="164" maxMicrosecondsPerInvocation="34489" standardDeviationMircosecondsPerInvocation="1537"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="115" invocations="266" avgMicrosecondsPerInvocation="434" maxMicrosecondsPerInvocation="27083" standardDeviationMircosecondsPerInvocation="2265"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReadOfInstanceFieldInMethodInvokedByConstructorInSuperclass" totalMilliseconds="112" invocations="91" avgMicrosecondsPerInvocation="1237" maxMicrosecondsPerInvocation="33017" standardDeviationMircosecondsPerInvocation="4850"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="110" invocations="266" avgMicrosecondsPerInvocation="416" maxMicrosecondsPerInvocation="21789" standardDeviationMircosecondsPerInvocation="2038"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="109" invocations="91" avgMicrosecondsPerInvocation="1207" maxMicrosecondsPerInvocation="30403" standardDeviationMircosecondsPerInvocation="3609"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680368756603" analysisTimestamp="1680689423873" release="">
+  <Project projectName="">
+    <Jar>Cli/21_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="org.apache.commons.cli2.commandline.Parser">
+      <SourceLine classname="org.apache.commons.cli2.commandline.Parser" start="38" end="175" sourcefile="Parser.java" sourcepath="org/apache/commons/cli2/commandline/Parser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.commandline.Parser" name="parse" signature="([Ljava/lang/String;)Lorg/apache/commons/cli2/CommandLine;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.commandline.Parser" start="58" end="107" startBytecode="0" endBytecode="474" sourcefile="Parser.java" sourcepath="org/apache/commons/cli2/commandline/Parser.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.cli2.commandline.Parser" start="66" end="66" startBytecode="28" endBytecode="28" sourcefile="Parser.java" sourcepath="org/apache/commons/cli2/commandline/Parser.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.option.GroupImpl">
+      <SourceLine classname="org.apache.commons.cli2.option.GroupImpl" start="71" end="513" sourcefile="GroupImpl.java" sourcepath="org/apache/commons/cli2/option/GroupImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.option.GroupImpl" name="process" signature="(Lorg/apache/commons/cli2/WriteableCommandLine;Ljava/util/ListIterator;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.option.GroupImpl" start="162" end="238" startBytecode="0" endBytecode="111" sourcefile="GroupImpl.java" sourcepath="org/apache/commons/cli2/option/GroupImpl.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <LocalVariable name="previous" register="3" pc="24" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <LocalVariable name="arg" register="4" pc="24" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.apache.commons.cli2.option.GroupImpl" start="170" end="170" startBytecode="25" endBytecode="25" sourcefile="GroupImpl.java" sourcepath="org/apache/commons/cli2/option/GroupImpl.java"/>
+  </BugInstance>
+  <BugInstance type="RV_NEGATING_RESULT_OF_COMPARETO" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.option.ReverseStringComparator">
+      <SourceLine classname="org.apache.commons.cli2.option.ReverseStringComparator" start="519" end="538" sourcefile="GroupImpl.java" sourcepath="org/apache/commons/cli2/option/GroupImpl.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.option.ReverseStringComparator" name="compare" signature="(Ljava/lang/Object;Ljava/lang/Object;)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.option.ReverseStringComparator" start="535" end="538" startBytecode="0" endBytecode="108" sourcefile="GroupImpl.java" sourcepath="org/apache/commons/cli2/option/GroupImpl.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="compareTo" signature="(Ljava/lang/String;)I" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="1154" end="1169" startBytecode="0" endBytecode="192" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="compareTo" signature="(Ljava/lang/String;)I" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.lang.String" start="1154" end="1169" startBytecode="0" endBytecode="192" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.cli2.option.ReverseStringComparator" start="538" end="538" startBytecode="17" endBytecode="17" sourcefile="GroupImpl.java" sourcepath="org/apache/commons/cli2/option/GroupImpl.java"/>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$CommandFirst">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$CommandFirst" start="287" end="298" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$DefaultOptionFirst">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$DefaultOptionFirst" start="322" end="333" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$GroupFirst">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$GroupFirst" start="217" end="228" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$Named">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$Named" start="370" end="386" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$PreferredName">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$PreferredName" start="410" end="415" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$Required">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$Required" start="439" end="453" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="RV_NEGATING_RESULT_OF_COMPARETO" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$Reverse">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$Reverse" start="188" end="193" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.util.Comparators$Reverse" name="compare" signature="(Ljava/lang/Object;Ljava/lang/Object;)I" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$Reverse" start="193" end="193" startBytecode="0" endBytecode="74" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Method>
+    <Method classname="java.util.Comparator" name="compare" signature="(Ljava/lang/Object;Ljava/lang/Object;)I" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Comparator" sourcefile="Comparator.java" sourcepath="java/util/Comparator.java"/>
+    </Method>
+    <Method classname="java.util.Comparator" name="compare" signature="(Ljava/lang/Object;Ljava/lang/Object;)I" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.util.Comparator" sourcefile="Comparator.java" sourcepath="java/util/Comparator.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.cli2.util.Comparators$Reverse" start="193" end="193" startBytecode="11" endBytecode="11" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" rank="19" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.apache.commons.cli2.util.Comparators$SwitchFirst">
+      <SourceLine classname="org.apache.commons.cli2.util.Comparators$SwitchFirst" start="252" end="263" sourcefile="Comparators.java" sourcepath="org/apache/commons/cli2/util/Comparators.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.cli2.util.HelpFormatter">
+      <SourceLine classname="org.apache.commons.cli2.util.HelpFormatter" start="83" end="636" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli2/util/HelpFormatter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.util.HelpFormatter" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.util.HelpFormatter" start="135" end="154" startBytecode="0" endBytecode="479" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli2/util/HelpFormatter.java"/>
+    </Method>
+    <Method classname="java.io.PrintWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintWriter" start="131" end="132" startBytecode="0" endBytecode="34" sourcefile="PrintWriter.java" sourcepath="java/io/PrintWriter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.cli2.util.HelpFormatter" start="110" end="110" startBytecode="85" endBytecode="85" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli2/util/HelpFormatter.java"/>
+  </BugInstance>
+  <BugInstance type="DM_NUMBER_CTOR" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
+    <Class classname="org.apache.commons.cli2.util.HelpFormatter">
+      <SourceLine classname="org.apache.commons.cli2.util.HelpFormatter" start="83" end="636" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli2/util/HelpFormatter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.util.HelpFormatter" name="wrap" signature="(Ljava/lang/String;I)Ljava/util/List;" isStatic="true">
+      <SourceLine classname="org.apache.commons.cli2.util.HelpFormatter" start="343" end="437" startBytecode="0" endBytecode="702" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli2/util/HelpFormatter.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer" start="849" end="851" startBytecode="0" endBytecode="41" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="valueOf" signature="(I)Ljava/lang/Integer;" isStatic="true" role="SHOULD_CALL">
+      <SourceLine classname="java.lang.Integer" start="830" end="832" startBytecode="0" endBytecode="72" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.cli2.util.HelpFormatter" start="344" end="344" startBytecode="25" endBytecode="25" sourcefile="HelpFormatter.java" sourcepath="org/apache/commons/cli2/util/HelpFormatter.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.cli2.validation.DateValidator">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="65" end="306" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.validation.DateValidator" name="getFormats" signature="()[Ljava/text/DateFormat;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="306" end="306" startBytecode="0" endBytecode="46" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.cli2.validation.DateValidator" name="formats" signature="[Ljava/text/DateFormat;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="306" end="306" startBytecode="4" endBytecode="4" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.cli2.validation.DateValidator">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="65" end="306" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.validation.DateValidator" name="getMaximum" signature="()Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="210" end="210" startBytecode="0" endBytecode="46" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.cli2.validation.DateValidator" name="maximum" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="210" end="210" startBytecode="4" endBytecode="4" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.cli2.validation.DateValidator">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="65" end="306" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.validation.DateValidator" name="getMinimum" signature="()Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="230" end="230" startBytecode="0" endBytecode="46" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.cli2.validation.DateValidator" name="minimum" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Field>
+    <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="230" end="230" startBytecode="4" endBytecode="4" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.cli2.validation.DateValidator">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="65" end="306" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.validation.DateValidator" name="setFormats" signature="([Ljava/text/DateFormat;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="296" end="298" startBytecode="0" endBytecode="73" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.cli2.validation.DateValidator" name="formats" signature="[Ljava/text/DateFormat;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Field>
+    <LocalVariable name="formats" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="296" end="296" startBytecode="2" endBytecode="2" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.cli2.validation.DateValidator">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="65" end="306" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.validation.DateValidator" name="setMaximum" signature="(Ljava/util/Date;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="220" end="221" startBytecode="0" endBytecode="61" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.cli2.validation.DateValidator" name="maximum" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Field>
+    <LocalVariable name="maximum" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="220" end="220" startBytecode="2" endBytecode="2" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.apache.commons.cli2.validation.DateValidator">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="65" end="306" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Class>
+    <Method classname="org.apache.commons.cli2.validation.DateValidator" name="setMinimum" signature="(Ljava/util/Date;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="240" end="241" startBytecode="0" endBytecode="61" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Method>
+    <Field classname="org.apache.commons.cli2.validation.DateValidator" name="minimum" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+    </Field>
+    <LocalVariable name="minimum" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.apache.commons.cli2.validation.DateValidator" start="240" end="240" startBytecode="2" endBytecode="2" sourcefile="DateValidator.java" sourcepath="org/apache/commons/cli2/validation/DateValidator.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 01:05:56 +0800" total_classes="54" referenced_classes="140" total_bugs="19" total_size="2718" num_packages="7" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="38.13" clock_seconds="7.92" peak_mbytes="294.84" alloc_mbytes="683.00" gc_seconds="0.44" priority_2="18" priority_1="1">
+    <PackageStats package="org.apache.commons.cli2" total_bugs="0" total_types="9" total_size="156">
+      <ClassStats class="org.apache.commons.cli2.Argument" sourceFile="Argument.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.CommandLine" sourceFile="CommandLine.java" interface="true" size="25" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.DisplaySetting" sourceFile="DisplaySetting.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.Group" sourceFile="Group.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.HelpLine" sourceFile="HelpLine.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.Option" sourceFile="Option.java" interface="true" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.OptionException" sourceFile="OptionException.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.Parent" sourceFile="Parent.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.WriteableCommandLine" sourceFile="WriteableCommandLine.java" interface="true" size="10" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.cli2.builder" total_bugs="0" total_types="6" total_size="389">
+      <ClassStats class="org.apache.commons.cli2.builder.ArgumentBuilder" sourceFile="ArgumentBuilder.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.builder.CommandBuilder" sourceFile="CommandBuilder.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.builder.DefaultOptionBuilder" sourceFile="DefaultOptionBuilder.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.builder.GroupBuilder" sourceFile="GroupBuilder.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.builder.PatternBuilder" sourceFile="PatternBuilder.java" interface="false" size="80" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.builder.SwitchBuilder" sourceFile="SwitchBuilder.java" interface="false" size="63" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.cli2.commandline" total_bugs="1" total_types="6" total_size="451" priority_2="1">
+      <ClassStats class="org.apache.commons.cli2.commandline.CommandLineImpl" sourceFile="CommandLineImpl.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.commandline.DefaultingCommandLine" sourceFile="DefaultingCommandLine.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.commandline.Parser" sourceFile="Parser.java" interface="false" size="56" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.commandline.PreferencesCommandLine" sourceFile="PreferencesCommandLine.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.commandline.PropertiesCommandLine" sourceFile="PropertiesCommandLine.java" interface="false" size="64" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.commandline.WriteableCommandLineImpl" sourceFile="WriteableCommandLineImpl.java" interface="false" size="134" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.cli2.option" total_bugs="2" total_types="11" total_size="910" priority_2="2">
+      <ClassStats class="org.apache.commons.cli2.option.ArgumentImpl" sourceFile="ArgumentImpl.java" interface="false" size="150" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.Command" sourceFile="Command.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.DefaultOption" sourceFile="DefaultOption.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.GroupImpl" sourceFile="GroupImpl.java" interface="false" size="215" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.option.HelpLineImpl" sourceFile="HelpLineImpl.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.OptionImpl" sourceFile="OptionImpl.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.ParentImpl" sourceFile="ParentImpl.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.PropertyOption" sourceFile="PropertyOption.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.ReverseStringComparator" sourceFile="GroupImpl.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.option.SourceDestArgument" sourceFile="SourceDestArgument.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.option.Switch" sourceFile="Switch.java" interface="false" size="106" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.cli2.resource" total_bugs="0" total_types="2" total_size="91">
+      <ClassStats class="org.apache.commons.cli2.resource.ResourceConstants" sourceFile="ResourceConstants.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.resource.ResourceHelper" sourceFile="ResourceHelper.java" interface="false" size="44" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.cli2.util" total_bugs="10" total_types="12" total_size="411" priority_2="9" priority_1="1">
+      <ClassStats class="org.apache.commons.cli2.util.Comparators" sourceFile="Comparators.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$1" sourceFile="Comparators.java" interface="false" size="1" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$Chain" sourceFile="Comparators.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$CommandFirst" sourceFile="Comparators.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$DefaultOptionFirst" sourceFile="Comparators.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$GroupFirst" sourceFile="Comparators.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$Named" sourceFile="Comparators.java" interface="false" size="16" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$PreferredName" sourceFile="Comparators.java" interface="false" size="8" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$Required" sourceFile="Comparators.java" interface="false" size="14" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$Reverse" sourceFile="Comparators.java" interface="false" size="8" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.Comparators$SwitchFirst" sourceFile="Comparators.java" interface="false" size="12" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.cli2.util.HelpFormatter" sourceFile="HelpFormatter.java" interface="false" size="258" bugs="2" priority_2="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.apache.commons.cli2.validation" total_bugs="6" total_types="8" total_size="310" priority_2="6">
+      <ClassStats class="org.apache.commons.cli2.validation.ClassValidator" sourceFile="ClassValidator.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.validation.DateValidator" sourceFile="DateValidator.java" interface="false" size="75" bugs="6" priority_2="6"/>
+      <ClassStats class="org.apache.commons.cli2.validation.EnumValidator" sourceFile="EnumValidator.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.validation.FileValidator" sourceFile="FileValidator.java" interface="false" size="68" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.validation.InvalidArgumentException" sourceFile="InvalidArgumentException.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.validation.NumberValidator" sourceFile="NumberValidator.java" interface="false" size="47" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.validation.UrlValidator" sourceFile="UrlValidator.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.apache.commons.cli2.validation.Validator" sourceFile="Validator.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="517" invocations="782" avgMicrosecondsPerInvocation="661" maxMicrosecondsPerInvocation="33951" standardDeviationMircosecondsPerInvocation="2249"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BadSyntaxForRegularExpression" totalMilliseconds="392" invocations="54" avgMicrosecondsPerInvocation="7265" maxMicrosecondsPerInvocation="386349" standardDeviationMircosecondsPerInvocation="52071"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="353" invocations="441" avgMicrosecondsPerInvocation="802" maxMicrosecondsPerInvocation="39499" standardDeviationMircosecondsPerInvocation="3054"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="338" invocations="140" avgMicrosecondsPerInvocation="2417" maxMicrosecondsPerInvocation="72194" standardDeviationMircosecondsPerInvocation="8565"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="313" invocations="441" avgMicrosecondsPerInvocation="709" maxMicrosecondsPerInvocation="41282" standardDeviationMircosecondsPerInvocation="3395"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="299" invocations="441" avgMicrosecondsPerInvocation="679" maxMicrosecondsPerInvocation="29355" standardDeviationMircosecondsPerInvocation="2828"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="256" invocations="447" avgMicrosecondsPerInvocation="573" maxMicrosecondsPerInvocation="23929" standardDeviationMircosecondsPerInvocation="2320"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="241" invocations="302" avgMicrosecondsPerInvocation="798" maxMicrosecondsPerInvocation="32644" standardDeviationMircosecondsPerInvocation="2967"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="238" invocations="441" avgMicrosecondsPerInvocation="541" maxMicrosecondsPerInvocation="25253" standardDeviationMircosecondsPerInvocation="2356"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="220" invocations="448" avgMicrosecondsPerInvocation="492" maxMicrosecondsPerInvocation="15367" standardDeviationMircosecondsPerInvocation="1646"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="201" invocations="140" avgMicrosecondsPerInvocation="1438" maxMicrosecondsPerInvocation="20146" standardDeviationMircosecondsPerInvocation="3182"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="199" invocations="821" avgMicrosecondsPerInvocation="242" maxMicrosecondsPerInvocation="18808" standardDeviationMircosecondsPerInvocation="1022"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="126" invocations="507" avgMicrosecondsPerInvocation="250" maxMicrosecondsPerInvocation="73817" standardDeviationMircosecondsPerInvocation="3357"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="121" invocations="785" avgMicrosecondsPerInvocation="154" maxMicrosecondsPerInvocation="19690" standardDeviationMircosecondsPerInvocation="807"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="117" invocations="140" avgMicrosecondsPerInvocation="842" maxMicrosecondsPerInvocation="20626" standardDeviationMircosecondsPerInvocation="2868"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="117" invocations="140" avgMicrosecondsPerInvocation="839" maxMicrosecondsPerInvocation="28261" standardDeviationMircosecondsPerInvocation="3378"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="115" invocations="435" avgMicrosecondsPerInvocation="266" maxMicrosecondsPerInvocation="38772" standardDeviationMircosecondsPerInvocation="2617"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="96" invocations="441" avgMicrosecondsPerInvocation="219" maxMicrosecondsPerInvocation="23013" standardDeviationMircosecondsPerInvocation="1597"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="96" invocations="54" avgMicrosecondsPerInvocation="1784" maxMicrosecondsPerInvocation="49669" standardDeviationMircosecondsPerInvocation="7242"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="95" invocations="140" avgMicrosecondsPerInvocation="683" maxMicrosecondsPerInvocation="24597" standardDeviationMircosecondsPerInvocation="3347"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="90" invocations="54" avgMicrosecondsPerInvocation="1682" maxMicrosecondsPerInvocation="42962" standardDeviationMircosecondsPerInvocation="6215"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="83" invocations="54" avgMicrosecondsPerInvocation="1553" maxMicrosecondsPerInvocation="55339" standardDeviationMircosecondsPerInvocation="7878"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="82" invocations="740" avgMicrosecondsPerInvocation="111" maxMicrosecondsPerInvocation="16322" standardDeviationMircosecondsPerInvocation="679"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="78" invocations="54" avgMicrosecondsPerInvocation="1455" maxMicrosecondsPerInvocation="37768" standardDeviationMircosecondsPerInvocation="5176"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="75" invocations="190" avgMicrosecondsPerInvocation="399" maxMicrosecondsPerInvocation="20840" standardDeviationMircosecondsPerInvocation="1604"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="74" invocations="507" avgMicrosecondsPerInvocation="147" maxMicrosecondsPerInvocation="20206" standardDeviationMircosecondsPerInvocation="1172"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="68" invocations="441" avgMicrosecondsPerInvocation="154" maxMicrosecondsPerInvocation="27016" standardDeviationMircosecondsPerInvocation="1512"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="61" invocations="140" avgMicrosecondsPerInvocation="441" maxMicrosecondsPerInvocation="14822" standardDeviationMircosecondsPerInvocation="1404"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="60" invocations="17" avgMicrosecondsPerInvocation="3581" maxMicrosecondsPerInvocation="27620" standardDeviationMircosecondsPerInvocation="7554"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.Naming" totalMilliseconds="60" invocations="54" avgMicrosecondsPerInvocation="1115" maxMicrosecondsPerInvocation="19840" standardDeviationMircosecondsPerInvocation="3493"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

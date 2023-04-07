@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1680364866167" analysisTimestamp="1680692232258" release="">
+  <Project projectName="">
+    <Jar>Csv/10_buggy/target/classes</Jar>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="org.apache.commons.csv.CSVParser">
+      <SourceLine classname="org.apache.commons.csv.CSVParser" start="154" end="499" sourcefile="CSVParser.java" sourcepath="org/apache/commons/csv/CSVParser.java"/>
+    </Class>
+    <Method classname="org.apache.commons.csv.CSVParser" name="parse" signature="(Ljava/io/File;Lorg/apache/commons/csv/CSVFormat;)Lorg/apache/commons/csv/CSVParser;" isStatic="true">
+      <SourceLine classname="org.apache.commons.csv.CSVParser" start="154" end="157" startBytecode="0" endBytecode="88" sourcefile="CSVParser.java" sourcepath="org/apache/commons/csv/CSVParser.java"/>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/io/File;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader" start="72" end="73" startBytecode="0" endBytecode="40" sourcefile="FileReader.java" sourcepath="java/io/FileReader.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.csv.CSVParser" start="157" end="157" startBytecode="21" endBytecode="21" sourcefile="CSVParser.java" sourcepath="org/apache/commons/csv/CSVParser.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_FALLTHROUGH" priority="2" rank="17" abbrev="SF" category="STYLE">
+    <Class classname="org.apache.commons.csv.CSVPrinter">
+      <SourceLine classname="org.apache.commons.csv.CSVPrinter" start="43" end="438" sourcefile="CSVPrinter.java" sourcepath="org/apache/commons/csv/CSVPrinter.java"/>
+    </Class>
+    <Method classname="org.apache.commons.csv.CSVPrinter" name="printComment" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.apache.commons.csv.CSVPrinter" start="298" end="325" startBytecode="0" endBytecode="325" sourcefile="CSVPrinter.java" sourcepath="org/apache/commons/csv/CSVPrinter.java"/>
+    </Method>
+    <SourceLine classname="org.apache.commons.csv.CSVPrinter" start="311" end="315" startBytecode="118" endBytecode="121" sourcefile="CSVPrinter.java" sourcepath="org/apache/commons/csv/CSVPrinter.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 2 Apr 2023 00:01:06 +0800" total_classes="15" referenced_classes="83" total_bugs="2" total_size="907" num_packages="1" java_version="1.8.0_362" vm_version="25.362-b09" cpu_seconds="27.14" clock_seconds="5.88" peak_mbytes="281.67" alloc_mbytes="683.00" gc_seconds="0.39" priority_2="1" priority_1="1">
+    <PackageStats package="org.apache.commons.csv" total_bugs="2" total_types="15" total_size="907" priority_2="1" priority_1="1">
+      <ClassStats class="org.apache.commons.csv.Assertions" sourceFile="Assertions.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.CSVFormat" sourceFile="CSVFormat.java" interface="false" size="232" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.CSVParser" sourceFile="CSVParser.java" interface="false" size="105" bugs="1" priority_1="1"/>
+      <ClassStats class="org.apache.commons.csv.CSVParser$1" sourceFile="CSVParser.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.CSVParser$2" sourceFile="CSVParser.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.CSVPrinter" sourceFile="CSVPrinter.java" interface="false" size="178" bugs="1" priority_2="1"/>
+      <ClassStats class="org.apache.commons.csv.CSVPrinter$1" sourceFile="CSVPrinter.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.CSVRecord" sourceFile="CSVRecord.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.Constants" sourceFile="Constants.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.ExtendedBufferedReader" sourceFile="ExtendedBufferedReader.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.Lexer" sourceFile="Lexer.java" interface="false" size="159" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.Quote" sourceFile="Quote.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.Token" sourceFile="Token.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.Token$Type" sourceFile="Token.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.apache.commons.csv.package-info" sourceFile="package-info.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="558" invocations="565" avgMicrosecondsPerInvocation="987" maxMicrosecondsPerInvocation="65765" standardDeviationMircosecondsPerInvocation="4047"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="274" invocations="15" avgMicrosecondsPerInvocation="18300" maxMicrosecondsPerInvocation="257051" standardDeviationMircosecondsPerInvocation="63831"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="244" invocations="83" avgMicrosecondsPerInvocation="2942" maxMicrosecondsPerInvocation="40177" standardDeviationMircosecondsPerInvocation="7014"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="227" invocations="140" avgMicrosecondsPerInvocation="1623" maxMicrosecondsPerInvocation="42519" standardDeviationMircosecondsPerInvocation="5191"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="193" invocations="83" avgMicrosecondsPerInvocation="2328" maxMicrosecondsPerInvocation="54138" standardDeviationMircosecondsPerInvocation="8725"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="172" invocations="15" avgMicrosecondsPerInvocation="11530" maxMicrosecondsPerInvocation="155046" standardDeviationMircosecondsPerInvocation="38498"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="171" invocations="141" avgMicrosecondsPerInvocation="1216" maxMicrosecondsPerInvocation="41726" standardDeviationMircosecondsPerInvocation="4697"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="166" invocations="139" avgMicrosecondsPerInvocation="1194" maxMicrosecondsPerInvocation="34051" standardDeviationMircosecondsPerInvocation="3765"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="165" invocations="353" avgMicrosecondsPerInvocation="469" maxMicrosecondsPerInvocation="35613" standardDeviationMircosecondsPerInvocation="2537"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="162" invocations="143" avgMicrosecondsPerInvocation="1134" maxMicrosecondsPerInvocation="27997" standardDeviationMircosecondsPerInvocation="3773"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="152" invocations="140" avgMicrosecondsPerInvocation="1091" maxMicrosecondsPerInvocation="32513" standardDeviationMircosecondsPerInvocation="3934"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="152" invocations="568" avgMicrosecondsPerInvocation="267" maxMicrosecondsPerInvocation="24248" standardDeviationMircosecondsPerInvocation="1437"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="140" invocations="83" avgMicrosecondsPerInvocation="1698" maxMicrosecondsPerInvocation="37383" standardDeviationMircosecondsPerInvocation="4851"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="122" invocations="140" avgMicrosecondsPerInvocation="874" maxMicrosecondsPerInvocation="82521" standardDeviationMircosecondsPerInvocation="7028"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="119" invocations="530" avgMicrosecondsPerInvocation="224" maxMicrosecondsPerInvocation="24094" standardDeviationMircosecondsPerInvocation="1579"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="117" invocations="139" avgMicrosecondsPerInvocation="847" maxMicrosecondsPerInvocation="44360" standardDeviationMircosecondsPerInvocation="3903"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="93" invocations="140" avgMicrosecondsPerInvocation="667" maxMicrosecondsPerInvocation="46723" standardDeviationMircosecondsPerInvocation="4358"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="91" invocations="112" avgMicrosecondsPerInvocation="817" maxMicrosecondsPerInvocation="24295" standardDeviationMircosecondsPerInvocation="3514"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="88" invocations="140" avgMicrosecondsPerInvocation="633" maxMicrosecondsPerInvocation="28323" standardDeviationMircosecondsPerInvocation="3280"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="88" invocations="83" avgMicrosecondsPerInvocation="1068" maxMicrosecondsPerInvocation="37646" standardDeviationMircosecondsPerInvocation="4598"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="82" invocations="83" avgMicrosecondsPerInvocation="995" maxMicrosecondsPerInvocation="28192" standardDeviationMircosecondsPerInvocation="4282"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="71" invocations="107" avgMicrosecondsPerInvocation="669" maxMicrosecondsPerInvocation="22167" standardDeviationMircosecondsPerInvocation="2613"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantPoolGenFactory" totalMilliseconds="66" invocations="15" avgMicrosecondsPerInvocation="4419" maxMicrosecondsPerInvocation="45531" standardDeviationMircosecondsPerInvocation="11814"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="60" invocations="83" avgMicrosecondsPerInvocation="724" maxMicrosecondsPerInvocation="19521" standardDeviationMircosecondsPerInvocation="2787"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
