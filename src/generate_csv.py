@@ -47,10 +47,11 @@ def statistical_warnings_type(work_folder):
     cols.append('Density*')
     df_res = df_res[cols].fillna(0)
     df_res = df_res.astype({col: int for col in cols if col != 'Density*'})
-    df_res.to_csv(f'{defects4j_dir}/csv/warnings_type_summary.csv', index=True)
+    df_res.iloc[0, 0] = 'Programs/bug_id'
+    df_res.to_csv(f'{defects4j_dir}/csv/spotbugs_warnings_type_summary.csv', index=True)
         
 
 
 if __name__ == '__main__':
-    work_folder = f'{defects4j_dir}/findbugs-html-reports'
+    work_folder = f'{defects4j_dir}/spotbugs-html-reports'
     statistical_warnings_type(work_folder)
